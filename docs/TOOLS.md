@@ -1,44 +1,26 @@
-# Tool installation and analysis
+# CI-installed tools
 
-The project uses several independent tools. Missing optional tools are reported as skipped; raw APK scanning remains available.
+The GitHub workflow installs all required tools on a hosted Ubuntu runner. No local installation is necessary.
 
-## Ubuntu / Debian
+| Tool | CI installation | Role |
+|---|---|---|
+| apkeep 1.1.0 | Official EFF release binary | Acquire current APKs |
+| Android SDK build-tools | Google SDK manager | `apksigner`, `aapt` |
+| JADX | Latest official GitHub release | DEX decompilation |
+| Apktool | Latest official GitHub release | Manifest/resources/Smali |
+| Androguard | Python dependency | Independent DEX parsing |
+| Ghidra | Latest official NSA GitHub release | Native ELF analysis |
+| Rizin | Latest official release | Native strings and imports |
 
-    sudo apt update
-    sudo apt install -y adb apksigner default-jre python3 python3-venv python3-pip unzip p7zip-full file binutils
-    python3 -m venv .venv
-    source .venv/bin/activate
-    pip install -e '.[dev]'
+The installation script is `scripts/install_ci_tools.sh`. Ghidra runs headlessly through `analyzeHeadless`; it does not require a graphical desktop.
 
-Install official upstream releases:
-- JADX: https://github.com/skylot/jadx
-- Apktool: https://apktool.org/
-- Ghidra: https://github.com/NationalSecurityAgency/ghidra
-- Androguard: https://github.com/androguard/androguard
-- Rizin: https://rizin.re/
-- Frida: https://frida.re/docs/installation/
+## Local reproduction (optional)
 
-Check each project's release notes for its current Java/Python requirements. Do not install reverse-engineering binaries from untrusted mirrors.
+For maintainers who want to reproduce the CI run locally:
 
-## Run every analysis pass
-
-    python scripts/acquire_adb.py --app all
-    python scripts/androguard_extract.py input/apks
-    python scripts/native_analysis.py --apk-root input/apks --ghidra /opt/ghidra
+    python -m pip install -e '.[dev]'
+    bash scripts/install_ci_tools.sh
+    python scripts/fetch_latest_apks.py
     python -m url_atlas.cli scan --app all
 
-JADX and Apktool are invoked by the main scan when installed. The Androguard pass independently extracts DEX files and string pools. The native pass extracts every .so from every split, runs Rizin/rabin2 and strings when available, and imports libraries into Ghidra headless when a Ghidra path is supplied.
-
-For Ghidra, the headless executable is normally GHIDRA_HOME/support/analyzeHeadless. Ghidra performs auto-analysis on imported ELF libraries. Review projects and decompiler output in the Ghidra GUI for deeper function-level analysis. Official headless guide: https://ghidra.re/ghidra_docs/analyzeHeadlessREADME.html
-
-## Signature and provenance
-
-    apksigner verify --print-certs base.apk
-    sha256sum base.apk
-    aapt dump badging base.apk
-
-The ADB collector stores SHA-256 for every APK split. Preserve the complete split set and metadata as one app-version acquisition. Compare signing certificate fingerprints across releases; unexpected changes should be reviewed rather than silently accepted.
-
-## Important coverage distinction
-
-JADX/Apktool source trees and raw APK bytes are scanned by URL Atlas. Androguard DEX/string-pool output and native ELF/Rizin string output are ingested by the scan as static URL candidates. Ghidra project databases are retained for interactive native analysis and are not recursively scanned as evidence. Ghidra decompilation and runtime instrumentation are additional independent passes, not guarantees of complete endpoint discovery.
+The APK acquisition step uses the APKPure research-only source by default. Do not use downloaded packages as installable software unless you have independently reviewed their provenance.
