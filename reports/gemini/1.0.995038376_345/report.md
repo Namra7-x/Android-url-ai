@@ -6,7 +6,7 @@
 - Unique domain references: 94
 - Unique hostnames: 119
 - First-seen URLs: 0
-- Previously known URLs not observed now: 5
+- Previously known URLs not observed now: 0
 
 ## Evidence by category
 
