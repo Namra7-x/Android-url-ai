@@ -1,7 +1,10 @@
-http://xmlpull.org/v1/doc/features.html
+http://xmlpull.org/v1/doc/features.html#process-docdecl
+http://xmlpull.org/v1/doc/features.html#process-namespaces
+https://ab.chatgpt.com/v1
 https://analytics.plaid.com/sentry/api/563/store/
 https://android.chat.openai.com/ces/v1/telemetry/intake
 https://api.mapbox.com/search/searchbox/v1/category/
+https://api.openai.com/v1
 https://api.stripe.com/v1/
 https://api.stripe.com/v1/3ds2/authenticate
 https://api.stripe.com/v1/3ds2/challenge_complete
@@ -43,7 +46,8 @@ https://firebaseinstallations.googleapis.com/v1/
 https://mfe.integration.us-exp-api.experiancs.com/api/embedded-experiences-ssr/resources/events
 https://mfe.prod.us-exp-api.experiancs.com/api/embedded-experiences-ssr/resources/events
 https://mfe.uat.us-exp-api.experiancs.com/api/embedded-experiences-ssr/resources/events
-https://plaid.com/docs/api/tokens/
+https://plaid.com/docs/api/tokens/#linktokencreate
 https://prodregistryv2.org/v1/
-https://stripe.com/docs/api/payment_intents/object
-https://stripe.com/docs/api/setup_intents/object
+https://stripe.com/docs/api/payment_intents/object#payment_intent_object-confirmation_method
+https://stripe.com/docs/api/payment_intents/object#payment_intent_object-status
+https://stripe.com/docs/api/setup_intents/object#setup_intent_object-status

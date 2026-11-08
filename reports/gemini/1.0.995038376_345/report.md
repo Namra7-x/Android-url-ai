@@ -1,12 +1,20 @@
 # URL Atlas: gemini
 
 - Version: 1.0.995038376_345
-- Evidence rows: 9817
-- Unique URL candidates: 2798
-- Unique domains: 34
-- First-seen URLs: 2798
-- Previously known URLs not observed now: 0
+- Evidence rows: 3546
+- Unique URL candidates (excluding bare domains): 59
+- Unique domain references: 94
+- Unique hostnames: 121
+- First-seen URLs: 2
+- Previously known URLs not observed now: 2719
+
+## Evidence by category
+
+- custom-uri: 8
+- domain-reference: 323
+- http-url: 3199
+- platform-uri: 16
 
 ## Coverage limitation
 
-These are URL candidates found in scanned files. Static and dynamic inspection cannot prove that every possible endpoint is known. Remote configuration, account/region conditions, runtime construction and untested server responses may expose additional URLs.
+These are static URL candidates found in acquired and scanned package files. Static analysis cannot guarantee discovery of URLs assembled at runtime, returned by remote configuration, encrypted, or enabled only for particular accounts, regions, experiments, or server responses. A missing URL means not observed in this artifact, not proof that the service no longer uses it.
