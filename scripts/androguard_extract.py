@@ -19,12 +19,11 @@ def main():
             dest.mkdir(parents=True,exist_ok=True)
             for i,dex in enumerate(dex_files):
                 (dest/f"classes-{i+1}.dex").write_bytes(dex)
-                # DEX string pool scan is retained separately for evidence.
                 try:
                     from androguard.core.dex import DEX
                     d=DEX(dex)
                     strings=sorted({str(s) for s in d.get_strings()})
-                    (dest/f"classes-{i+1}-strings.txt").write_text("\\n".join(strings),encoding="utf-8")
+                    (dest/f"classes-{i+1}-strings.txt").write_text("\n".join(strings),encoding="utf-8")
                 except Exception as e:
                     (dest/f"classes-{i+1}-strings-error.txt").write_text(str(e),encoding="utf-8")
                 count+=1
