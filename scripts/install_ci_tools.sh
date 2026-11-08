@@ -6,6 +6,11 @@ export DEBIAN_FRONTEND=noninteractive
 sudo apt-get update
 sudo apt-get install -y curl jq unzip zip xz-utils p7zip-full file binutils
 
+echo "Installing apkeep 1.1.0 (EFF release)..."
+curl -fL "https://github.com/EFForg/apkeep/releases/download/1.1.0/apkeep-x86_64-unknown-linux-gnu" -o "$TOOLS_DIR/apkeep"
+chmod +x "$TOOLS_DIR/apkeep"
+echo "$TOOLS_DIR" >> "$GITHUB_PATH"
+
 asset_url() {
   local repo="$1" pattern="$2"
   curl -fsSL "https://api.github.com/repos/$repo/releases/latest" \
