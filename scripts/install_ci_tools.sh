@@ -10,6 +10,7 @@ echo "Installing apkeep 1.1.0 (EFF release)..."
 curl -fL "https://github.com/EFForg/apkeep/releases/download/1.1.0/apkeep-x86_64-unknown-linux-gnu" -o "$TOOLS_DIR/apkeep"
 chmod +x "$TOOLS_DIR/apkeep"
 echo "$TOOLS_DIR" >> "$GITHUB_PATH"
+export PATH="$TOOLS_DIR:$PATH"
 
 asset_url() {
   local repo="$1" pattern="$2"
@@ -27,6 +28,7 @@ JADX_BIN="$(find "$TOOLS_DIR/jadx" -type f -path '*/bin/jadx' | head -n 1)"
 test -n "$JADX_BIN"
 chmod +x "$JADX_BIN"
 echo "$(dirname "$JADX_BIN")" >> "$GITHUB_PATH"
+export PATH="$(dirname "$JADX_BIN"):$PATH"
 
 APKTOOL_URL="$(asset_url iBotPeaches/Apktool '^apktool_[0-9].*\.jar$')"
 test -n "$APKTOOL_URL"
@@ -44,6 +46,7 @@ GHIDRA_DIR="$(find "$TOOLS_DIR/ghidra" -maxdepth 1 -type d -name 'ghidra_*_PUBLI
 test -n "$GHIDRA_DIR"
 echo "GHIDRA_HOME=$GHIDRA_DIR" >> "$GITHUB_ENV"
 echo "$GHIDRA_DIR/support" >> "$GITHUB_PATH"
+export PATH="$GHIDRA_DIR/support:$PATH"
 
 RIZIN_URL="$(asset_url rizinorg/rizin '^rizin-v[0-9].*-static-x86_64\.tar\.xz$')"
 if [[ -n "$RIZIN_URL" ]]; then
@@ -51,7 +54,7 @@ if [[ -n "$RIZIN_URL" ]]; then
   mkdir -p "$TOOLS_DIR/rizin"
   tar -xJf "$TOOLS_DIR/rizin.tar.xz" -C "$TOOLS_DIR/rizin"
   RIZIN_BIN="$(find "$TOOLS_DIR/rizin" -type f -name rizin -perm -u+x | head -n 1 || true)"
-  if [[ -n "$RIZIN_BIN" ]]; then echo "$(dirname "$RIZIN_BIN")" >> "$GITHUB_PATH"; fi
+  if [[ -n "$RIZIN_BIN" ]]; then echo "$(dirname "$RIZIN_BIN")" >> "$GITHUB_PATH"; export PATH="$(dirname "$RIZIN_BIN"):$PATH"; fi
 else
   echo "::warning::Rizin release unavailable; strings and Ghidra passes continue."
 fi
