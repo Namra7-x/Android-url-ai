@@ -4,7 +4,7 @@ from pathlib import Path
 from urllib.parse import urlsplit, urlunsplit
 
 URL_RE = re.compile(rb"(?i)(?:https?|wss?|ftp)://[^\s\x00\"'<>\\{}\[\]]{3,2048}")
-DOMAIN_RE = re.compile(rb"(?i)(?<![a-z0-9_-])(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+(?:com|net|org|io|ai|app|dev|co|uk|in|us|edu|gov|cloud|google|googleapis|gstatic|me|xyz|tech|info|biz|tv|gg|so)(?:/[^\s\x00\"'<>\\{}\[\]]{0,1024})?")
+DOMAIN_RE = re.compile(rb"(?i)(?<![a-z0-9_-])(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+(?:com|net|org|io|ai|app|dev|co|uk|in|us|edu|gov|cloud|google|googleapis|gstatic|me|xyz|tech|info|biz|tv|gg|so|[a-z]{2,63})(?:/[^\s\x00\"'<>\\{}\[\]]{0,1024})?")
 CUSTOM_RE = re.compile(rb"(?i)\b(?:[a-z][a-z0-9+.-]{1,30})://[^\s\x00\"'<>\\{}\[\]]{1,1024}")
 SECRET_KEYS = {"token","access_token","refresh_token","id_token","api_key","apikey","key","authorization","auth","signature","sig","password","code","session","sessionid"}
 
