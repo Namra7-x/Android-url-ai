@@ -9,7 +9,16 @@ def run(*args):
     if p.returncode: raise RuntimeError(p.stderr.strip() or "ADB command failed")
     return p.stdout.strip()
 
+def signer_fingerprint(apk: Path):
+    if not shutil.which("apksigner"):
+        return None
+    p=subprocess.run(["apksigner","verify","--print-certs",str(apk)],capture_output=True,text=True,check=False)
+    if p.returncode: return {"verification":"failed","details":p.stderr.strip()}
+    match=re.search(r"certificate SHA-256 digest:\s*([0-9a-fA-F:]+)",p.stdout)
+    return {"verification":"passed","sha256":match.group(1).lower() if match else None}
+
 def main():
+    import shutil
     p=argparse.ArgumentParser(); p.add_argument("--app",choices=["all","chatgpt","claude","gemini"],default="all")
     p.add_argument("--out",default="input/apks"); p.add_argument("--config",default="config/apps.json"); a=p.parse_args()
     try:
@@ -30,7 +39,8 @@ def main():
         for i,remote in enumerate(paths):
             name=Path(remote).name or f"split-{i}.apk"; local=dest/name
             run("pull",remote,str(local)); h=hashlib.sha256(local.read_bytes()).hexdigest()
-            splits.append({"remote_path":remote,"file":name,"sha256":h,"size_bytes":local.stat().st_size})
+            splits.append({"remote_path":remote,"file":name,"sha256":h,"size_bytes":local.stat().st_size,
+                           "signer":signer_fingerprint(local)})
         record={"app":app,"display_name":meta["display_name"],"package_name":package,
           "version_name":version,"version_code":int(vc.group(1)) if vc else None,
           "play_store_url":meta["play_store_url"],"acquired_at":datetime.now(timezone.utc).isoformat(),
