@@ -70,9 +70,11 @@ jobs:
         run: python -m pytest -q
 
       - name: Download current signed Android APKs
+        if: github.event_name != 'pull_request'
         run: python scripts/fetch_latest_apks.py
 
       - name: Run static URL extraction
+        if: github.event_name != 'pull_request'
         run: python -m url_atlas.cli scan --app "$APK_APP"
 
       - name: Upload reports and acquisition evidence
