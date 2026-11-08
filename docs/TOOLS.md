@@ -41,4 +41,4 @@ The ADB collector stores SHA-256 for every APK split. Preserve the complete spli
 
 ## Important coverage distinction
 
-JADX/Apktool source trees and raw APK bytes are scanned by URL Atlas. Androguard and native tools produce additional artefacts for review; their output is not automatically treated as verified URL evidence until scanned/ingested and source paths are attached. Ghidra decompilation and runtime instrumentation are additional independent passes, not guarantees of complete endpoint discovery.
+JADX/Apktool source trees and raw APK bytes are scanned by URL Atlas. Androguard DEX/string-pool output and native ELF/Rizin string output are ingested by the scan as static URL candidates. Ghidra project databases are retained for interactive native analysis and are not recursively scanned as evidence. Ghidra decompilation and runtime instrumentation are additional independent passes, not guarantees of complete endpoint discovery.
