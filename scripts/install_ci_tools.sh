@@ -65,4 +65,3 @@ jadx --version
 apktool --version
 apksigner version
 aapt version
-analyzeHeadless -help >/dev/null
