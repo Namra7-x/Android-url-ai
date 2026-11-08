@@ -31,7 +31,9 @@ It runs on pushes to relevant source/config paths, every six hours, and manually
 
 The default is APKPure via apkeep. This is a third-party mirror, not Google Play. APKPure itself documents that its source is for research use and can carry risk; therefore, this project does not trust the download host alone. It checks the APK's package ID and cryptographic publisher signing certificate before analysis. If the signature is not in the allowlist, the scan stops. See [EFF apkeep APKPure warning](https://github.com/EFForg/apkeep/blob/1.1.0/USAGE-apkpure.md).
 
-For direct Google Play downloads, set repository Actions secrets `GOOGLE_PLAY_EMAIL` and `GOOGLE_PLAY_AAS_TOKEN`, then set repository variable `APK_DOWNLOAD_SOURCE=google-play`. Google Play AAS token acquisition is an optional user-managed credential; it is not needed for the default mirror-based workflow. Do not put tokens in source files.
+APKPure may lag behind Google Play and may not carry every app. The downloader records unavailable apps as partial acquisitions and continues analysing packages that pass verification. Therefore, the mirror mode does not guarantee that every app's newest Play release is available.
+
+For complete and current Google Play coverage, set repository Actions secrets `GOOGLE_PLAY_EMAIL` and `GOOGLE_PLAY_AAS_TOKEN`, then set repository variable `APK_DOWNLOAD_SOURCE=google-play`. This makes the GitHub runner download directly from Google Play; no phone or local APK installation is needed. Google Play AAS token acquisition is an optional user-managed credential. Do not put tokens in source files.
 
 The signing allowlist is a trust boundary. If a publisher rotates its signing key, the workflow deliberately fails until the new fingerprint is independently verified and reviewed. References for the current fingerprints are recorded in [config/signers.json](config/signers.json).
 
