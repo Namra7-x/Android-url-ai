@@ -37,10 +37,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 120
     env:
-      APK_APP: \${{ github.event.inputs.app || 'all' }}
-      APK_DOWNLOAD_SOURCE: \${{ vars.APK_DOWNLOAD_SOURCE || 'apk-pure' }}
-      GOOGLE_PLAY_EMAIL: \${{ secrets.GOOGLE_PLAY_EMAIL }}
-      GOOGLE_PLAY_AAS_TOKEN: \${{ secrets.GOOGLE_PLAY_AAS_TOKEN }}
+      APK_APP: ${{ github.event.inputs.app || 'all' }}
+      APK_DOWNLOAD_SOURCE: ${{ vars.APK_DOWNLOAD_SOURCE || 'apk-pure' }}
+      GOOGLE_PLAY_EMAIL: ${{ secrets.GOOGLE_PLAY_EMAIL }}
+      GOOGLE_PLAY_AAS_TOKEN: ${{ secrets.GOOGLE_PLAY_AAS_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -90,7 +90,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v7
         with:
-          name: android-url-atlas-\${{ github.run_number }}
+          name: android-url-atlas-${{ github.run_number }}
           path: |
             reports/
             work/logs/
