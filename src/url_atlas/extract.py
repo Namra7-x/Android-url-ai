@@ -189,6 +189,14 @@ def _normalise_candidate(raw: str):
     if scheme:
         if scheme in {"javascript", "data"}:
             return None
+        # Binary/string-table boundaries can be lost when adjacent strings are
+        # concatenated (e.g. "ahttps://", "cfile:", "codexmlhttp://"). Do not
+        # reinterpret those malformed tokens as app-defined deep-link schemes.
+        if any(
+            scheme.endswith(standard)
+            for standard in (*STANDARD_SCHEMES, "file", "content", "android.resource")
+        ):
+            return None
         if not parsed.netloc and not parsed.path:
             return None
         normalised = redact_url(value)
