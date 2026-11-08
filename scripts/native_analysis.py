@@ -1,38 +1,99 @@
 #!/usr/bin/env python3
-"""Extract ELF libraries from acquired APK splits and run available native analyzers."""
-import argparse, shutil, subprocess, zipfile
+"""Extract native ELF libraries, inspect strings/imports and selectively run Ghidra."""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import re
+import shutil
+import subprocess
+import zipfile
 from pathlib import Path
 
-def main():
-    p=argparse.ArgumentParser(); p.add_argument("--apk-root",default="input/apks"); p.add_argument("--out",default="work/native")
-    p.add_argument("--ghidra",default=""); a=p.parse_args()
-    root,out=Path(a.apk_root),Path(a.out); out.mkdir(parents=True,exist_ok=True)
-    libs=[]
-    for apk in root.rglob("*.apk"):
+NETWORK_HINTS = re.compile(
+    rb"(?i)https?://|wss?://|graphql|grpc|cronet|okhttp|curl|websocket|"
+    rb"boringssl|openssl|ssl_write|ssl_read|websocket|connect"
+)
+NETWORK_NAMES = re.compile(r"(?i)cronet|grpc|ssl|crypto|curl|http|network|websocket|okhttp")
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--apk-root", default="input/apks")
+    parser.add_argument("--out", default="work/native")
+    parser.add_argument("--ghidra", default="")
+    parser.add_argument("--ghidra-limit", type=int, default=12)
+    parser.add_argument("--ghidra-timeout", type=int, default=90)
+    args = parser.parse_args()
+
+    root = Path(args.apk_root)
+    out = Path(args.out)
+    out.mkdir(parents=True, exist_ok=True)
+    libs: list[Path] = []
+    seen_hashes: set[str] = set()
+
+    for apk in sorted(root.rglob("*.apk")):
         try:
-            with zipfile.ZipFile(apk) as z:
-                for name in z.namelist():
-                    if name.startswith("lib/") and name.endswith(".so"):
-                        dest=out/"extracted"/apk.parent.parent.name/apk.parent.name/name
-                        dest.parent.mkdir(parents=True,exist_ok=True)
-                        dest.write_bytes(z.read(name)); libs.append(dest)
-        except (OSError,zipfile.BadZipFile) as e: print(f"[WARN] {apk}: {e}")
+            with zipfile.ZipFile(apk) as archive:
+                for name in archive.namelist():
+                    if not name.startswith("lib/") or not name.endswith(".so"):
+                        continue
+                    data = archive.read(name)
+                    digest = hashlib.sha256(data).hexdigest()
+                    if digest in seen_hashes:
+                        continue
+                    seen_hashes.add(digest)
+                    destination = out / "extracted" / apk.parent.parent.name / apk.parent.name / name
+                    destination.parent.mkdir(parents=True, exist_ok=True)
+                    destination.write_bytes(data)
+                    libs.append(destination)
+        except (OSError, zipfile.BadZipFile) as exc:
+            print(f"[WARN] {apk}: {exc}")
+
+    ghidra_candidates = []
     for lib in libs:
-        tag=str(lib.relative_to(out)).replace("/","_")
+        tag = str(lib.relative_to(out)).replace("/", "_")
+        data = lib.read_bytes()
+
         if shutil.which("rabin2"):
-            for suffix,cmd in (("strings",["rabin2","-zz",str(lib)]),("info",["rabin2","-I",str(lib)]),("imports",["rabin2","-i",str(lib)])):
-                with (out/f"{tag}.{suffix}.txt").open("w") as f:
-                    subprocess.run(cmd,stdout=f,stderr=subprocess.STDOUT,check=False)
+            for suffix, command in (
+                ("strings", ["rabin2", "-zz", str(lib)]),
+                ("info", ["rabin2", "-I", str(lib)]),
+                ("imports", ["rabin2", "-i", str(lib)]),
+            ):
+                with (out / f"{tag}.{suffix}.txt").open("w", encoding="utf-8") as stream:
+                    subprocess.run(command, stdout=stream, stderr=subprocess.STDOUT, check=False)
+
         if shutil.which("strings"):
-            with (out/f"{tag}.ascii.txt").open("w") as f:
-                subprocess.run(["strings","-a","-n","5",str(lib)],stdout=f,check=False)
-        if a.ghidra:
-            headless=Path(a.ghidra)/"support"/"analyzeHeadless"
-            if headless.exists():
-                project=out/"ghidra-projects"; project.mkdir(exist_ok=True)
-                subprocess.run([str(headless),str(project),"AndroidUrlAtlas","-import",str(lib),
-                                "-analysisTimeoutPerFile","300"],check=False)
-        print(f"[NATIVE] {lib}")
-    print(f"Extracted {len(libs)} native libraries. Ghidra runs only when --ghidra points to its installation.")
+            with (out / f"{tag}.ascii.txt").open("w", encoding="utf-8") as stream:
+                subprocess.run(["strings", "-a", "-n", "5", str(lib)],
+                               stdout=stream, check=False)
+
+        if NETWORK_HINTS.search(data) or NETWORK_NAMES.search(lib.name):
+            ghidra_candidates.append(lib)
+
+    if args.ghidra:
+        headless = Path(args.ghidra) / "support" / "analyzeHeadless"
+        if not headless.exists():
+            print(f"[WARN] Ghidra headless launcher not found: {headless}")
+        else:
+            project = out / "ghidra-projects"
+            project.mkdir(exist_ok=True)
+            selected = ghidra_candidates[:max(0, args.ghidra_limit)]
+            print(f"[GHIDRA] Analysing {len(selected)} network-relevant native libraries "
+                  f"(candidate count: {len(ghidra_candidates)}, cap: {args.ghidra_limit})")
+            for lib in selected:
+                result = subprocess.run(
+                    [str(headless), str(project), "AndroidUrlAtlas",
+                     "-import", str(lib),
+                     "-analysisTimeoutPerFile", str(args.ghidra_timeout)],
+                    check=False,
+                )
+                if result.returncode:
+                    print(f"[WARN] Ghidra returned {result.returncode} for {lib.name}")
+    print(f"Extracted and scanned {len(libs)} unique native libraries.")
     return 0
-if __name__=="__main__": raise SystemExit(main())
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
