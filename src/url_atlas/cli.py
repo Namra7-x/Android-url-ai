@@ -51,7 +51,7 @@ def scan(args):
             extracted=native/"extracted"/app/version
             if extracted.exists(): rows.extend(scan_tree(extracted,app,version))
             if native.exists():
-                for textfile in native.glob("*.txt"):
+                for textfile in native.glob(f"extracted_{app}_*.txt"):
                     rows.extend(scan_file(textfile,native,app,version,"native-tool-output"))
             meta_file=version_dir/"metadata.json"
             build=json.loads(meta_file.read_text()) if meta_file.exists() else {}
