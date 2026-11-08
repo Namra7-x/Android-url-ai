@@ -67,6 +67,9 @@ def run_download(package: str, output: Path, source: str, email: str | None, tok
         if not email or not token:
             raise RuntimeError("Google Play selected but GOOGLE_PLAY_EMAIL / GOOGLE_PLAY_AAS_TOKEN are missing.")
         command += ["-e", email, "-t", token, "--accept-tos", "-o", "split_apk=true"]
+    else:
+        # apkeep documents this acknowledgement for its APKPure research-only source.
+        command += ["-o", "acknowledge_dangers=true"]
     command.append(str(output))
     subprocess.run(command, check=True, timeout=900)
 
