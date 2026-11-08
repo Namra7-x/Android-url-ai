@@ -18,25 +18,6 @@ asset_url() {
     | head -n 1
 }
 
-SDK_ROOT="$TOOLS_DIR/android-sdk"
-mkdir -p "$SDK_ROOT/cmdline-tools"
-curl -fL "https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip" -o "$TOOLS_DIR/android-cmdline-tools.zip"
-mkdir -p "$SDK_ROOT/cmdline-tools/latest"
-unzip -q "$TOOLS_DIR/android-cmdline-tools.zip" -d "$SDK_ROOT/cmdline-tools"
-if [[ -d "$SDK_ROOT/cmdline-tools/cmdline-tools" ]]; then
-  mv "$SDK_ROOT/cmdline-tools/cmdline-tools/"* "$SDK_ROOT/cmdline-tools/latest/"
-  rmdir "$SDK_ROOT/cmdline-tools/cmdline-tools"
-fi
-export ANDROID_HOME="$SDK_ROOT"
-export ANDROID_SDK_ROOT="$SDK_ROOT"
-export PATH="$SDK_ROOT/cmdline-tools/latest/bin:$PATH"
-yes | sdkmanager --licenses >/dev/null
-sdkmanager "platform-tools" "build-tools;35.0.0" >/dev/null
-echo "$SDK_ROOT/platform-tools" >> "$GITHUB_PATH"
-echo "$SDK_ROOT/build-tools/35.0.0" >> "$GITHUB_PATH"
-echo "ANDROID_HOME=$SDK_ROOT" >> "$GITHUB_ENV"
-echo "ANDROID_SDK_ROOT=$SDK_ROOT" >> "$GITHUB_ENV"
-
 JADX_URL="$(asset_url skylot/jadx '^jadx-[0-9].*\.zip$')"
 test -n "$JADX_URL"
 curl -fL "$JADX_URL" -o "$TOOLS_DIR/jadx.zip"
