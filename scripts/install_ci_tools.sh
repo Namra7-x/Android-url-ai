@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
-TOOLS_DIR="\${RUNNER_TEMP:-/tmp}/android-url-atlas-tools"
+TOOLS_DIR="${RUNNER_TEMP:-/tmp}/android-url-atlas-tools"
 mkdir -p "$TOOLS_DIR"
 export DEBIAN_FRONTEND=noninteractive
 sudo apt-get update
