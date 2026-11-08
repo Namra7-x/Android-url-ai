@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Pull all APK splits for the official Play-installed apps from an authorised device."""
-import argparse, hashlib, json, re, subprocess
+import argparse, hashlib, json, re, shutil, subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -18,7 +18,6 @@ def signer_fingerprint(apk: Path):
     return {"verification":"passed","sha256":match.group(1).lower() if match else None}
 
 def main():
-    import shutil
     p=argparse.ArgumentParser(); p.add_argument("--app",choices=["all","chatgpt","claude","gemini"],default="all")
     p.add_argument("--out",default="input/apks"); p.add_argument("--config",default="config/apps.json"); a=p.parse_args()
     try:
