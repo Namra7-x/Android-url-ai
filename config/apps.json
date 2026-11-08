@@ -1,0 +1,19 @@
+{
+  "apps": {
+    "chatgpt": {
+      "display_name": "ChatGPT",
+      "package_name": "com.openai.chatgpt",
+      "play_store_url": "https://play.google.com/store/apps/details?id=com.openai.chatgpt"
+    },
+    "claude": {
+      "display_name": "Claude",
+      "package_name": "com.anthropic.claude",
+      "play_store_url": "https://play.google.com/store/apps/details?id=com.anthropic.claude"
+    },
+    "gemini": {
+      "display_name": "Gemini",
+      "package_name": "com.google.android.apps.bard",
+      "play_store_url": "https://play.google.com/store/apps/details?id=com.google.android.apps.bard"
+    }
+  }
+}
