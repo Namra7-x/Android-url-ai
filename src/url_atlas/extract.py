@@ -227,7 +227,7 @@ def candidates(data: bytes):
     searchable = re.sub(rb"\\u003[aA]", b":", data, flags=re.I)
     searchable = re.sub(rb"\\u002[fF]", b"/", searchable, flags=re.I)
     searchable = re.sub(rb"\\u0026", b"&", searchable, flags=re.I)
-    searchable = searchable.replace(b"\\/", b"/")
+    searchable = re.sub(rb"\\+/", b"/", searchable)
 
     for pattern, label in (
         (URL_RE, "bytes-ascii"),
@@ -355,7 +355,7 @@ def classify_url(url: str) -> str:
         return "websocket"
     if scheme in {"http", "https", "ftp"}:
         path = parsed.path.lower()
-        if any(token in path for token in ("/graphql", "/api/", "/v1/", "/v2/", "/rpc", "/rest/")):
+        if re.search(r"(?:^|/)(?:graphql|api|v1|v2|rpc|rest)(?:/|$)", path):
             return "api"
         host = (parsed.hostname or "").lower()
         if any(token in host for token in ("cdn", "static", "assets", "gstatic")):
