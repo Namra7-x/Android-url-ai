@@ -99,3 +99,22 @@ def test_scan_apk_decompresses_all_entries(tmp_path):
     assert any("classes.dex" in row["source_file"] for row in rows)
     assert any("assets/settings.json" in row["source_file"] for row in rows)
     assert any("libnetwork.so" in row["source_file"] for row in rows)
+
+
+
+def test_rejects_scheme_prefixes_glued_to_standard_urls():
+    data = (
+        b"ahttps://api.example.com/v1 "
+        b"bhttps://cdn.example.com/image.png "
+        b"cfile:/android_asset/index.html "
+        b"codexmlhttp://www.w3.org/2000/xmlns/ "
+        b"https://valid.example.com/path "
+        b"chatgpt://codex"
+    )
+    rows = scan_bytes(data, "classes.dex", "chatgpt", "1.0")
+    urls = {row["url"] for row in rows}
+    assert "https://valid.example.com/path" in urls
+    assert "chatgpt://codex" in urls
+    assert not any(url.startswith(("ahttps://", "bhttps://")) for url in urls)
+    assert "cfile:/android_asset/index.html" not in urls
+    assert "codexmlhttp://www.w3.org/2000/xmlns/" not in urls
