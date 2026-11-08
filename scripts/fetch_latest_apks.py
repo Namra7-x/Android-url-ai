@@ -75,6 +75,23 @@ def run_download(package: str, output: Path, source: str, email: str | None, tok
 
 
 def read_package(apk_path: Path):
+    # aapt reads the binary manifest without generating verbose DEX parser logs.
+    if shutil.which("aapt"):
+        result = subprocess.run(
+            ["aapt", "dump", "badging", str(apk_path)],
+            capture_output=True, text=True, check=False,
+        )
+        if result.returncode == 0:
+            match = re.search(
+                r"package: name='([^']+)' versionCode='([^']*)' versionName='([^']*)'",
+                result.stdout,
+            )
+            if match:
+                try:
+                    code = int(match.group(2))
+                except ValueError:
+                    code = 0
+                return match.group(1), match.group(3) or "unknown", code
     from androguard.core.apk import APK
     apk = APK(str(apk_path))
     package = apk.get_package()
@@ -193,9 +210,28 @@ def main() -> int:
     selected = os.getenv("APK_APP", "all")
     targets = apps if selected == "all" else {selected: apps[selected]}
     results = []
+    failed_apps = []
     for app_key, app in targets.items():
         print(f"\n=== {app['display_name']} ({app['package_name']}) ===", flush=True)
-        results.append(download_one(app_key, app, signers[app_key], source, email, token))
+        try:
+            results.append(download_one(app_key, app, signers[app_key], source, email, token))
+            continue
+        except Exception as primary_error:
+            # If the mirror has no current package, use direct Google Play only
+            # when the owner deliberately configured the AAS credentials in Secrets.
+            if source == "apk-pure" and email and token:
+                try:
+                    print(f"[FALLBACK] Retrying {app_key} directly from Google Play.", flush=True)
+                    results.append(download_one(app_key, app, signers[app_key],
+                                                "google-play", email, token))
+                    continue
+                except Exception as fallback_error:
+                    reason = f"APKPure: {primary_error}; Google Play: {fallback_error}"
+            else:
+                reason = str(primary_error)
+            failed_apps.append({"app": app_key, "package_name": app["package_name"],
+                                "reason": reason})
+            print(f"::warning::Skipping {app_key}: {reason}", flush=True)
 
     MANIFEST_OUT.parent.mkdir(parents=True, exist_ok=True)
     previous = {}
@@ -205,9 +241,22 @@ def main() -> int:
         except json.JSONDecodeError:
             previous = {}
     history = previous.get("scans", [])
-    history.append({"timestamp": datetime.now(UTC).isoformat(), "source": source, "apps": results})
+    status = "complete" if not failed_apps else "partial"
+    history.append({
+        "timestamp": datetime.now(UTC).isoformat(),
+        "source": source,
+        "status": status,
+        "apps": results,
+        "failed_apps": failed_apps,
+    })
     MANIFEST_OUT.write_text(json.dumps({"latest": history[-1], "scans": history[-30:]},
                                        indent=2), encoding="utf-8")
+    if failed_apps:
+        print(f"::warning::Partial acquisition: {len(results)} app(s) accepted, "
+              f"{len(failed_apps)} app(s) unavailable or failed verification.")
+    if not results:
+        print("No app packages passed acquisition and signature verification.", file=sys.stderr)
+        return 2
     return 0
 
 
