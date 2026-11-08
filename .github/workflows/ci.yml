@@ -23,9 +23,11 @@ on:
         default: all
         options: [all, chatgpt, claude, gemini]
 
+# Serialize scans and publication. Cancelling a run while it is committing
+# generated history/reports can create non-fast-forward pushes and lost work.
 concurrency:
-  group: android-url-atlas-scan-v2
-  cancel-in-progress: true
+  group: android-url-atlas-scan-v3
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -33,7 +35,7 @@ permissions:
 jobs:
   test-and-scan:
     runs-on: ubuntu-latest
-    timeout-minutes: 100
+    timeout-minutes: 120
     env:
       APK_APP: ${{ github.event.inputs.app || 'all' }}
       APK_DOWNLOAD_SOURCE: ${{ vars.APK_DOWNLOAD_SOURCE || 'apk-pure' }}
@@ -42,14 +44,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
       - name: Set up Java 21 (Ghidra and Apktool)
+        if: github.event_name != 'pull_request'
         uses: actions/setup-java@v6
         with:
           distribution: temurin
           java-version: "21"
 
       - name: Set up Android SDK
+        if: github.event_name != 'pull_request'
         uses: android-actions/setup-android@v4
         with:
           cmdline-tools-version: "12266719"
@@ -57,6 +63,7 @@ jobs:
           accept-android-sdk-licenses: true
 
       - name: Add Android build-tools to PATH
+        if: github.event_name != 'pull_request'
         run: echo "$ANDROID_HOME/build-tools/35.0.0" >> "$GITHUB_PATH"
 
       - name: Set up Python
@@ -69,6 +76,7 @@ jobs:
         run: python -m pip install -e ".[dev]"
 
       - name: Install Android and reverse-engineering tools
+        if: github.event_name != 'pull_request'
         run: bash scripts/install_ci_tools.sh
 
       - name: Run unit tests
@@ -102,7 +110,11 @@ jobs:
           git add reports data/history
           if git diff --cached --quiet; then
             echo "No report or URL-history changes."
-          else
-            git commit -m "Update Android app URL inventory"
-            git push
+            exit 0
           fi
+          git commit -m "Update Android app URL inventory"
+          # Rebase generated data onto the latest main in case an external
+          # maintainer commit landed during the scan.
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
