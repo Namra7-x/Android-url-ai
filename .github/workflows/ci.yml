@@ -39,23 +39,23 @@ jobs:
       APK_DOWNLOAD_SOURCE: apk-pure
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Java 21 (Ghidra and Apktool)
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v6
         with:
           distribution: temurin
           java-version: "21"
 
       - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
+        uses: android-actions/setup-android@v4
         with:
-          cmdline-tools-version: "11076708"
-          packages: "platform-tools, build-tools;35.0.0"
+          cmdline-tools-version: "12266719"
+          packages: "platform-tools build-tools;35.0.0"
           accept-android-sdk-licenses: true
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.11"
           cache: pip
@@ -79,7 +79,7 @@ jobs:
 
       - name: Upload reports and acquisition evidence
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: android-url-atlas-${{ github.run_number }}
           path: |
