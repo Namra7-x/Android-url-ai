@@ -142,7 +142,6 @@ aas.site
 ab.ca
 ab.chatgpt.com
 abashiri.hokkaido.jp
-abcdinamo.comopenai
 abeno.osaka.jp
 abiko.chiba.jp
 abira.hokkaido.jp
@@ -785,9 +784,6 @@ codex-cloud-environments.chatgpt.com
 codex-remote.invalid
 cog.mi.us
 collegefan.org
-com.heytap.market.exptrackprovider
-com.openai.codexremote.file
-com.vivo.attribution.provider
 community-pro.de
 community-pro.net
 conf.au
@@ -2877,7 +2873,6 @@ my-router.de
 my-vigor.de
 my-wan.de
 my.eu.org
-my_files
 myactivedirectory.com
 myamaze.net
 myasustor.com
@@ -3448,7 +3443,6 @@ pr.us
 prd.fr
 prequalifyme.today
 prerelease.replit.dev
-preview
 preview.csb.app
 primetel.cloud
 priv.instances.scw.cloud
@@ -4920,7 +4914,6 @@ www.unicode.org
 www.w3.org
 www.walmart.com
 www.webrtc.org
-www.world
 www.years
 www.youtube.com
 wy.us

@@ -1,19 +1,18 @@
 # URL Atlas: gemini
 
 - Version: 1.0.995038376_345
-- Evidence rows: 3546
-- Unique URL candidates (excluding bare domains): 59
+- Evidence rows: 3527
+- Unique URL candidates (excluding bare domains): 54
 - Unique domain references: 94
-- Unique hostnames: 121
-- First-seen URLs: 2
-- Previously known URLs not observed now: 2719
+- Unique hostnames: 119
+- First-seen URLs: 0
+- Previously known URLs not observed now: 5
 
 ## Evidence by category
 
-- custom-uri: 8
+- custom-uri: 5
 - domain-reference: 323
 - http-url: 3199
-- platform-uri: 16
 
 ## Coverage limitation
 

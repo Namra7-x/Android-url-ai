@@ -1,21 +1,20 @@
 # URL Atlas: chatgpt
 
 - Version: 1.2026.300_2630015
-- Evidence rows: 30614
-- Unique URL candidates (excluding bare domains): 1237
+- Evidence rows: 30140
+- Unique URL candidates (excluding bare domains): 1106
 - Unique domain references: 5968
-- Unique hostnames: 5070
-- First-seen URLs: 174
-- Previously known URLs not observed now: 17481
+- Unique hostnames: 5063
+- First-seen URLs: 0
+- Previously known URLs not observed now: 131
 
 ## Evidence by category
 
 - api: 192
 - asset-or-cdn: 326
-- custom-uri: 1075
+- custom-uri: 691
 - domain-reference: 16702
 - http-url: 12224
-- platform-uri: 90
 - websocket: 5
 
 ## Coverage limitation

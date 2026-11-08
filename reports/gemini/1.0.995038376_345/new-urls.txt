@@ -1,2 +1,0 @@
-http://go/tiktok-tracing#fixing-duplicate-trace-issues
-https://llvm.org/docs/DeveloperPolicy.html#legacy):

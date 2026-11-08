@@ -1,4 +1,0 @@
-content://com.google.android.gms.phenotype/
-content://com.google.android.gsf.gservices
-content://com.google.android.gsf.gservices/prefix
-file:///

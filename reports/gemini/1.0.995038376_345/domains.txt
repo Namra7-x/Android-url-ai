@@ -45,8 +45,6 @@ citi.umich.edu
 cn.google
 code.google.com
 codehaus.org
-com.google.android.gms.phenotype
-com.google.android.gsf.gservices
 config.ca
 config.de
 config.fr

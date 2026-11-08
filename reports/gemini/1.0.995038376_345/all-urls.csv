@@ -14,10 +14,7 @@ gemini,1.0.995038376_345,https://gemini.google.com,gemini.google.com,http-url,co
 gemini,1.0.995038376_345,https://gemini-autopush.corp.google.com,gemini-autopush.corp.google.com,http-url,com.google.android.apps.bard_com.google.android.apps.bard.apk,static,apk-container-byte-scan,bytes-ascii,candidate
 gemini,1.0.995038376_345,https://gemini-staging.corp.google.com,gemini-staging.corp.google.com,http-url,com.google.android.apps.bard_com.google.android.apps.bard.apk,static,apk-container-byte-scan,bytes-ascii,candidate
 gemini,1.0.995038376_345,https://gemini-preprod.corp.google.com,gemini-preprod.corp.google.com,http-url,com.google.android.apps.bard_com.google.android.apps.bard.apk,static,apk-container-byte-scan,bytes-ascii,candidate
-gemini,1.0.995038376_345,content://com.google.android.gsf.gservices,com.google.android.gsf.gservices,platform-uri,com.google.android.apps.bard_com.google.android.apps.bard.apk,static,apk-container-byte-scan,bytes-custom-uri,candidate
-gemini,1.0.995038376_345,ihttps://bard.google.com/android?source=bardshell&feature=accessibility_vi,bard.google.com,custom-uri,com.google.android.apps.bard_com.google.android.apps.bard.apk,static,apk-container-byte-scan,bytes-custom-uri,candidate
 gemini,1.0.995038376_345,market://details,details,custom-uri,com.google.android.apps.bard_com.google.android.apps.bard.apk,static,apk-container-byte-scan,bytes-custom-uri,candidate
-gemini,1.0.995038376_345,file:///,,platform-uri,com.google.android.apps.bard_com.google.android.apps.bard.apk,static,apk-container-byte-scan,bytes-custom-uri,candidate
 gemini,1.0.995038376_345,Dispatchers.IO,dispatchers.io,domain-reference,com.google.android.apps.bard_com.google.android.apps.bard.apk,static,apk-container-byte-scan,bytes-domain,candidate
 gemini,1.0.995038376_345,adwords.google.com,adwords.google.com,domain-reference,com.google.android.apps.bard_com.google.android.apps.bard.apk,static,apk-container-byte-scan,bytes-domain,candidate
 gemini,1.0.995038376_345,Fandroid.support.v4.app,fandroid.support.v4.app,domain-reference,com.google.android.apps.bard_com.google.android.apps.bard.apk,static,apk-container-byte-scan,bytes-domain,candidate
@@ -117,8 +114,6 @@ gemini,1.0.995038376_345,https://developer.android.com/training/articles/direct-
 gemini,1.0.995038376_345,http://schemas.android.com/apk/res/android,schemas.android.com,http-url,com.google.android.apps.bard_com.google.android.apps.bard.apk!/classes2.dex,static,apk-entry-scan,bytes-ascii,candidate
 gemini,1.0.995038376_345,https://gemini.google.com/,gemini.google.com,http-url,com.google.android.apps.bard_com.google.android.apps.bard.apk!/classes2.dex,static,apk-entry-scan,bytes-ascii,candidate
 gemini,1.0.995038376_345,https://support.google.com/gemini/?p=gemini_app_requirements,support.google.com,http-url,com.google.android.apps.bard_com.google.android.apps.bard.apk!/classes2.dex,static,apk-entry-scan,bytes-ascii,candidate
-gemini,1.0.995038376_345,content://com.google.android.gsf.gservices,com.google.android.gsf.gservices,platform-uri,com.google.android.apps.bard_com.google.android.apps.bard.apk!/classes2.dex,static,apk-entry-scan,bytes-custom-uri,candidate
-gemini,1.0.995038376_345,ihttps://bard.google.com/android?source=bardshell&feature=accessibility_vi,bard.google.com,custom-uri,com.google.android.apps.bard_com.google.android.apps.bard.apk!/classes2.dex,static,apk-entry-scan,bytes-custom-uri,candidate
 gemini,1.0.995038376_345,market://details,details,custom-uri,com.google.android.apps.bard_com.google.android.apps.bard.apk!/classes2.dex,static,apk-entry-scan,bytes-custom-uri,candidate
 gemini,1.0.995038376_345,Dispatchers.IO,dispatchers.io,domain-reference,com.google.android.apps.bard_com.google.android.apps.bard.apk!/classes2.dex,static,apk-entry-scan,bytes-domain,candidate
 gemini,1.0.995038376_345,adwords.google.com,adwords.google.com,domain-reference,com.google.android.apps.bard_com.google.android.apps.bard.apk!/classes2.dex,static,apk-entry-scan,bytes-domain,candidate
@@ -178,7 +173,6 @@ gemini,1.0.995038376_345,libcore.io,libcore.io,domain-reference,com.google.andro
 gemini,1.0.995038376_345,m.google.com,m.google.com,domain-reference,com.google.android.apps.bard_com.google.android.apps.bard.apk!/classes2.dex,static,apk-entry-scan,bytes-domain,candidate
 gemini,1.0.995038376_345,play.google.com,play.google.com,domain-reference,com.google.android.apps.bard_com.google.android.apps.bard.apk!/classes2.dex,static,apk-entry-scan,bytes-domain,candidate
 gemini,1.0.995038376_345,sandbox.google.com,sandbox.google.com,domain-reference,com.google.android.apps.bard_com.google.android.apps.bard.apk!/classes2.dex,static,apk-entry-scan,bytes-domain,candidate
-gemini,1.0.995038376_345,file:///,,platform-uri,com.google.android.apps.bard_com.google.android.apps.bard.apk!/classes3.dex,static,apk-entry-scan,bytes-custom-uri,candidate
 gemini,1.0.995038376_345,http://schemas.android.com/apk/res/android,schemas.android.com,http-url,com.google.android.apps.bard_com.google.android.apps.bard.apk!/res/-8.xml,static,apk-entry-scan,bytes-ascii,candidate
 gemini,1.0.995038376_345,http://schemas.android.com/apk/res/android,schemas.android.com,http-url,com.google.android.apps.bard_com.google.android.apps.bard.apk!/res/-F.xml,static,apk-entry-scan,bytes-ascii,candidate
 gemini,1.0.995038376_345,http://schemas.android.com/apk/res/android,schemas.android.com,http-url,com.google.android.apps.bard_com.google.android.apps.bard.apk!/res/-J.xml,static,apk-entry-scan,bytes-ascii,candidate
@@ -3399,8 +3393,6 @@ gemini,1.0.995038376_345,https://developer.android.com/training/articles/direct-
 gemini,1.0.995038376_345,play.google.com,play.google.com,domain-reference,smali_classes2/bxp.smali,static,raw-byte-scan,bytes-domain,candidate
 gemini,1.0.995038376_345,market://details,details,custom-uri,smali_classes2/cbm.smali,static,raw-byte-scan,bytes-custom-uri,candidate
 gemini,1.0.995038376_345,cn.google,cn.google,domain-reference,smali_classes2/cgz.smali,static,raw-byte-scan,bytes-domain,candidate
-gemini,1.0.995038376_345,content://com.google.android.gsf.gservices,com.google.android.gsf.gservices,platform-uri,smali_classes2/cla.smali,static,raw-byte-scan,bytes-custom-uri,candidate
-gemini,1.0.995038376_345,content://com.google.android.gsf.gservices/prefix,com.google.android.gsf.gservices,platform-uri,smali_classes2/cla.smali,static,raw-byte-scan,bytes-custom-uri,candidate
 gemini,1.0.995038376_345,https://bard.google.com/android?source=bardshell,bard.google.com,http-url,smali_classes2/com/google/android/apps/bard/shellapp/BardEntryPointActivity.smali,static,raw-byte-scan,bytes-ascii,candidate
 gemini,1.0.995038376_345,gemini.google.com,gemini.google.com,domain-reference,smali_classes2/com/google/android/apps/bard/shellapp/BardEntryPointActivity.smali,static,raw-byte-scan,bytes-domain,candidate
 gemini,1.0.995038376_345,https://gemini.google.com/,gemini.google.com,http-url,smali_classes2/com/google/android/apps/bard/shellapp/ErrorActivity.smali,static,raw-byte-scan,bytes-ascii,candidate
@@ -3412,7 +3404,6 @@ gemini,1.0.995038376_345,m.google.com,m.google.com,domain-reference,smali_classe
 gemini,1.0.995038376_345,sandbox.google.com,sandbox.google.com,domain-reference,smali_classes2/czd.smali,static,raw-byte-scan,bytes-domain,candidate
 gemini,1.0.995038376_345,googleapis.com,googleapis.com,domain-reference,smali_classes2/czd.smali,static,raw-byte-scan,bytes-domain,candidate
 gemini,1.0.995038376_345,adwords.google.com,adwords.google.com,domain-reference,smali_classes2/czd.smali,static,raw-byte-scan,bytes-domain,candidate
-gemini,1.0.995038376_345,content://com.google.android.gms.phenotype/,com.google.android.gms.phenotype,platform-uri,smali_classes2/dce.smali,static,raw-byte-scan,bytes-custom-uri,candidate
 gemini,1.0.995038376_345,http://go/tiktok-conformance-violations/TRACE_PROPAGATION_FOR_START_ACTIVITY,go,http-url,smali_classes2/dnz.smali,static,raw-byte-scan,bytes-ascii,candidate
 gemini,1.0.995038376_345,https://developer.android.com/reference/com/google/android/play/core/review/model/ReviewErrorCode.html,developer.android.com,http-url,smali_classes2/drh.smali,static,raw-byte-scan,bytes-ascii,candidate
 gemini,1.0.995038376_345,http://go/tiktok-tracing#fixing-duplicate-trace-issues,go,http-url,smali_classes2/eat.smali,static,raw-byte-scan,bytes-ascii,candidate
@@ -3422,9 +3413,6 @@ gemini,1.0.995038376_345,kotlinx.coroutines.internal,kotlinx.coroutines.internal
 gemini,1.0.995038376_345,kotlinx.coroutines.io,kotlinx.coroutines.io,domain-reference,smali_classes2/fvi.smali,static,raw-byte-scan,bytes-domain,candidate
 gemini,1.0.995038376_345,Dispatchers.IO,dispatchers.io,domain-reference,smali_classes2/fvi.smali,static,raw-byte-scan,bytes-domain,candidate
 gemini,1.0.995038376_345,Dispatchers.IO,dispatchers.io,domain-reference,smali_classes2/fvo.smali,static,raw-byte-scan,bytes-domain,candidate
-gemini,1.0.995038376_345,file:///,,platform-uri,smali_classes3/j$/adapter/b.smali,static,raw-byte-scan,bytes-custom-uri,candidate
-gemini,1.0.995038376_345,file:///,,platform-uri,smali_classes3/j$/desugar/sun/nio/fs/o.smali,static,raw-byte-scan,bytes-custom-uri,candidate
-gemini,1.0.995038376_345,file:///,,platform-uri,smali_classes3/j$/nio/file/k.smali,static,raw-byte-scan,bytes-custom-uri,candidate
 gemini,1.0.995038376_345,https://android.googlesource.com/toolchain/llvm-project,android.googlesource.com,http-url,lib/armeabi-v7a/libandroidx.graphics.path.so,static,raw-byte-scan,bytes-ascii,candidate
 gemini,1.0.995038376_345,libc.so,libc.so,domain-reference,lib/armeabi-v7a/libandroidx.graphics.path.so,static,raw-byte-scan,bytes-domain,candidate
 gemini,1.0.995038376_345,libm.so,libm.so,domain-reference,lib/armeabi-v7a/libandroidx.graphics.path.so,static,raw-byte-scan,bytes-domain,candidate
@@ -3450,8 +3438,6 @@ gemini,1.0.995038376_345,https://developer.android.com/training/articles/direct-
 gemini,1.0.995038376_345,http://schemas.android.com/apk/res/android,schemas.android.com,http-url,com.google.android.apps.bard_com.google.android.apps.bard/classes2.dex,static,raw-byte-scan,bytes-ascii,candidate
 gemini,1.0.995038376_345,https://gemini.google.com/,gemini.google.com,http-url,com.google.android.apps.bard_com.google.android.apps.bard/classes2.dex,static,raw-byte-scan,bytes-ascii,candidate
 gemini,1.0.995038376_345,https://support.google.com/gemini/?p=gemini_app_requirements,support.google.com,http-url,com.google.android.apps.bard_com.google.android.apps.bard/classes2.dex,static,raw-byte-scan,bytes-ascii,candidate
-gemini,1.0.995038376_345,content://com.google.android.gsf.gservices,com.google.android.gsf.gservices,platform-uri,com.google.android.apps.bard_com.google.android.apps.bard/classes2.dex,static,raw-byte-scan,bytes-custom-uri,candidate
-gemini,1.0.995038376_345,ihttps://bard.google.com/android?source=bardshell&feature=accessibility_vi,bard.google.com,custom-uri,com.google.android.apps.bard_com.google.android.apps.bard/classes2.dex,static,raw-byte-scan,bytes-custom-uri,candidate
 gemini,1.0.995038376_345,market://details,details,custom-uri,com.google.android.apps.bard_com.google.android.apps.bard/classes2.dex,static,raw-byte-scan,bytes-custom-uri,candidate
 gemini,1.0.995038376_345,Dispatchers.IO,dispatchers.io,domain-reference,com.google.android.apps.bard_com.google.android.apps.bard/classes2.dex,static,raw-byte-scan,bytes-domain,candidate
 gemini,1.0.995038376_345,adwords.google.com,adwords.google.com,domain-reference,com.google.android.apps.bard_com.google.android.apps.bard/classes2.dex,static,raw-byte-scan,bytes-domain,candidate
@@ -3523,9 +3509,6 @@ gemini,1.0.995038376_345,https://bard.google.com/android?source=bardshell&featur
 gemini,1.0.995038376_345,https://bard.google.com/android?source=bardshell&feature=accessibility_vi,bard.google.com,http-url,com.google.android.apps.bard_com.google.android.apps.bard/classes2.dex-strings.txt,static,raw-byte-scan,bytes-ascii,candidate
 gemini,1.0.995038376_345,https://gemini.google.com/,gemini.google.com,http-url,com.google.android.apps.bard_com.google.android.apps.bard/classes2.dex-strings.txt,static,raw-byte-scan,bytes-ascii,candidate
 gemini,1.0.995038376_345,https://support.google.com/gemini/?p=gemini_app_requirements,support.google.com,http-url,com.google.android.apps.bard_com.google.android.apps.bard/classes2.dex-strings.txt,static,raw-byte-scan,bytes-ascii,candidate
-gemini,1.0.995038376_345,content://com.google.android.gms.phenotype/,com.google.android.gms.phenotype,platform-uri,com.google.android.apps.bard_com.google.android.apps.bard/classes2.dex-strings.txt,static,raw-byte-scan,bytes-custom-uri,candidate
-gemini,1.0.995038376_345,content://com.google.android.gsf.gservices,com.google.android.gsf.gservices,platform-uri,com.google.android.apps.bard_com.google.android.apps.bard/classes2.dex-strings.txt,static,raw-byte-scan,bytes-custom-uri,candidate
-gemini,1.0.995038376_345,content://com.google.android.gsf.gservices/prefix,com.google.android.gsf.gservices,platform-uri,com.google.android.apps.bard_com.google.android.apps.bard/classes2.dex-strings.txt,static,raw-byte-scan,bytes-custom-uri,candidate
 gemini,1.0.995038376_345,market://details,details,custom-uri,com.google.android.apps.bard_com.google.android.apps.bard/classes2.dex-strings.txt,static,raw-byte-scan,bytes-custom-uri,candidate
 gemini,1.0.995038376_345,Dispatchers.IO,dispatchers.io,domain-reference,com.google.android.apps.bard_com.google.android.apps.bard/classes2.dex-strings.txt,static,raw-byte-scan,bytes-domain,candidate
 gemini,1.0.995038376_345,adwords.google.com,adwords.google.com,domain-reference,com.google.android.apps.bard_com.google.android.apps.bard/classes2.dex-strings.txt,static,raw-byte-scan,bytes-domain,candidate
@@ -3539,8 +3522,6 @@ gemini,1.0.995038376_345,libcore.io,libcore.io,domain-reference,com.google.andro
 gemini,1.0.995038376_345,m.google.com,m.google.com,domain-reference,com.google.android.apps.bard_com.google.android.apps.bard/classes2.dex-strings.txt,static,raw-byte-scan,bytes-domain,candidate
 gemini,1.0.995038376_345,play.google.com,play.google.com,domain-reference,com.google.android.apps.bard_com.google.android.apps.bard/classes2.dex-strings.txt,static,raw-byte-scan,bytes-domain,candidate
 gemini,1.0.995038376_345,sandbox.google.com,sandbox.google.com,domain-reference,com.google.android.apps.bard_com.google.android.apps.bard/classes2.dex-strings.txt,static,raw-byte-scan,bytes-domain,candidate
-gemini,1.0.995038376_345,file:///,,platform-uri,com.google.android.apps.bard_com.google.android.apps.bard/classes3.dex,static,raw-byte-scan,bytes-custom-uri,candidate
-gemini,1.0.995038376_345,file:///,,platform-uri,com.google.android.apps.bard_com.google.android.apps.bard/classes3.dex-strings.txt,static,raw-byte-scan,bytes-custom-uri,candidate
 gemini,1.0.995038376_345,https://android.googlesource.com/toolchain/llvm-project,android.googlesource.com,http-url,extracted_gemini_1.0.995038376_345_lib_armeabi-v7a_libandroidx.graphics.path.so.ascii.txt,static,native-tool-output,bytes-ascii,candidate
 gemini,1.0.995038376_345,libc.so,libc.so,domain-reference,extracted_gemini_1.0.995038376_345_lib_armeabi-v7a_libandroidx.graphics.path.so.ascii.txt,static,native-tool-output,bytes-domain,candidate
 gemini,1.0.995038376_345,libm.so,libm.so,domain-reference,extracted_gemini_1.0.995038376_345_lib_armeabi-v7a_libandroidx.graphics.path.so.ascii.txt,static,native-tool-output,bytes-domain,candidate
