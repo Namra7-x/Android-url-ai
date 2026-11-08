@@ -24,7 +24,7 @@ on:
         options: [all, chatgpt, claude, gemini]
 
 concurrency:
-  group: android-url-atlas-scan
+  group: android-url-atlas-scan-v2
   cancel-in-progress: true
 
 permissions:
