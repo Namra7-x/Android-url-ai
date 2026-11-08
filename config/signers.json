@@ -1,0 +1,17 @@
+{
+  "chatgpt": {
+    "package_name": "com.openai.chatgpt",
+    "accepted_certificate_sha256": ["b24f4bfbb3cf293f938703b9d87027c1102cc36dc4fa206910e08927db40473c"],
+    "fingerprint_reference": "https://www.apkmirror.com/apk/openai/chatgpt/chatgpt-1-2026-307-release/chatgpt-1-2026-307-5-android-apk-download/"
+  },
+  "claude": {
+    "package_name": "com.anthropic.claude",
+    "accepted_certificate_sha256": ["305a1e8a432e5ec0c612b2465359c3b88e3c95d6253599ac6088562b818b64a0"],
+    "fingerprint_reference": "https://www.apkba.com/claude-com-anthropic-claude/com.anthropic.claude"
+  },
+  "gemini": {
+    "package_name": "com.google.android.apps.bard",
+    "accepted_certificate_sha256": ["997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"],
+    "fingerprint_reference": "https://www.apkmirror.com/apk/google-inc/google-gemini/google-gemini-1-0-954677852-release/google-gemini-1-0-954677852-android-apk-download/"
+  }
+}
