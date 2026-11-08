@@ -1,0 +1,24 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+.env
+.DS_Store
+input/apks/
+work/
+.tmp/
+*.apk
+*.aab
+*.dex
+*.so
+*.class
+*.jar
+*.zip
+*.7z
+*.tar
+*.tar.gz
+*.log
+
+# Keep reports/ and data/history/ trackable when deliberately reviewed.
