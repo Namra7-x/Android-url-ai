@@ -5,8 +5,8 @@
 - Unique URL candidates (excluding bare domains): 1188
 - Unique domain references: 6093
 - Unique hostnames: 5193
-- First-seen URLs: 138
-- Previously known URLs not observed now: 88
+- First-seen URLs: 0
+- Previously known URLs not observed now: 0
 
 ## Evidence by category
 
