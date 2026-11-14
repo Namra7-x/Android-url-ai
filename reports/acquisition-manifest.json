@@ -1,6 +1,6 @@
 {
   "latest": {
-    "timestamp": "2026-11-13T23:30:39.936030+00:00",
+    "timestamp": "2026-11-14T05:46:00.057672+00:00",
     "source": "apk-pure",
     "status": "partial",
     "apps": [
@@ -13,7 +13,7 @@
         "download_source": "apk-pure",
         "source_note": "APKPure mirror; package ID and APK signing certificate were checked against the pre-reviewed publisher signer allowlist.",
         "play_store_url": "https://play.google.com/store/apps/details?id=com.openai.chatgpt",
-        "acquired_at": "2026-11-13T23:30:33.341396+00:00",
+        "acquired_at": "2026-11-14T05:45:47.681444+00:00",
         "splits": [
           {
             "file": "com.openai.chatgpt_com.openai.chatgpt.apk",
@@ -66,7 +66,7 @@
         "download_source": "apk-pure",
         "source_note": "APKPure mirror; package ID and APK signing certificate were checked against the pre-reviewed publisher signer allowlist.",
         "play_store_url": "https://play.google.com/store/apps/details?id=com.google.android.apps.bard",
-        "acquired_at": "2026-11-13T23:30:39.933717+00:00",
+        "acquired_at": "2026-11-14T05:46:00.055559+00:00",
         "splits": [
           {
             "file": "com.google.android.apps.bard_com.google.android.apps.bard.apk",
@@ -6108,6 +6108,286 @@
           "source_note": "APKPure mirror; package ID and APK signing certificate were checked against the pre-reviewed publisher signer allowlist.",
           "play_store_url": "https://play.google.com/store/apps/details?id=com.google.android.apps.bard",
           "acquired_at": "2026-11-13T23:30:39.933717+00:00",
+          "splits": [
+            {
+              "file": "com.google.android.apps.bard_com.google.android.apps.bard.apk",
+              "sha256": "793fdf8cdaf56729b9f63b1a3895b4a2c0284c38adbb2f638bf727ef491ff9be",
+              "size_bytes": 5351117,
+              "signing_certificates_sha256": [
+                "3257d599a49d2c961a471ca9843f59d341a405884583fc087df4237b733bbd6d",
+                "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+              ],
+              "approved_signer_sha256": "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+            },
+            {
+              "file": "com.google.android.apps.bard_config.es.apk",
+              "sha256": "9eaa5d80cafc7c416dc135f38b772cdae081a4a337215627b8e45a02641d16d8",
+              "size_bytes": 32978,
+              "signing_certificates_sha256": [
+                "3257d599a49d2c961a471ca9843f59d341a405884583fc087df4237b733bbd6d",
+                "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+              ],
+              "approved_signer_sha256": "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+            },
+            {
+              "file": "com.google.android.apps.bard_config.hdpi.apk",
+              "sha256": "bc2a55e3f1b4d2c7b1de33fa7d1c27af0c508f5d8c7dd8bc8ea697b97e7fc6cf",
+              "size_bytes": 47328,
+              "signing_certificates_sha256": [
+                "3257d599a49d2c961a471ca9843f59d341a405884583fc087df4237b733bbd6d",
+                "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+              ],
+              "approved_signer_sha256": "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+            },
+            {
+              "file": "com.google.android.apps.bard_config.hi.apk",
+              "sha256": "c738cba7a1e1a306fe5f243207a394ac379f2f409233a5f2888f2e57a677a7bb",
+              "size_bytes": 32978,
+              "signing_certificates_sha256": [
+                "3257d599a49d2c961a471ca9843f59d341a405884583fc087df4237b733bbd6d",
+                "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+              ],
+              "approved_signer_sha256": "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+            },
+            {
+              "file": "com.google.android.apps.bard_config.ru.apk",
+              "sha256": "44360f3017311377bd68ccb36a88d97ebdcd92b1fb2e0f92a22e99ed7a51b4f0",
+              "size_bytes": 28882,
+              "signing_certificates_sha256": [
+                "3257d599a49d2c961a471ca9843f59d341a405884583fc087df4237b733bbd6d",
+                "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+              ],
+              "approved_signer_sha256": "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+            },
+            {
+              "file": "com.google.android.apps.bard_config.vi.apk",
+              "sha256": "5f53fe84b79cd5a29211993d8891e0f1684d56c84504390fb49a5f2183b7f216",
+              "size_bytes": 28882,
+              "signing_certificates_sha256": [
+                "3257d599a49d2c961a471ca9843f59d341a405884583fc087df4237b733bbd6d",
+                "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+              ],
+              "approved_signer_sha256": "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+            },
+            {
+              "file": "com.google.android.apps.bard_config.de.apk",
+              "sha256": "d37d2eaf574671bbc18bcdbe13736ef4217e8ab07a7be8aac29022c4bbfbda02",
+              "size_bytes": 28882,
+              "signing_certificates_sha256": [
+                "3257d599a49d2c961a471ca9843f59d341a405884583fc087df4237b733bbd6d",
+                "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+              ],
+              "approved_signer_sha256": "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+            },
+            {
+              "file": "com.google.android.apps.bard_config.ko.apk",
+              "sha256": "071acf4f36e9c5c8079c7ad276bb620b3a37402ea144d20535260b3edde6f8ec",
+              "size_bytes": 28882,
+              "signing_certificates_sha256": [
+                "3257d599a49d2c961a471ca9843f59d341a405884583fc087df4237b733bbd6d",
+                "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+              ],
+              "approved_signer_sha256": "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+            },
+            {
+              "file": "com.google.android.apps.bard_config.my.apk",
+              "sha256": "70270fb64ed8ebc9183eba265e04fb8ca2a311ad87b835808210b79b1ba8d925",
+              "size_bytes": 24786,
+              "signing_certificates_sha256": [
+                "3257d599a49d2c961a471ca9843f59d341a405884583fc087df4237b733bbd6d",
+                "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+              ],
+              "approved_signer_sha256": "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+            },
+            {
+              "file": "com.google.android.apps.bard_config.armeabi_v7a.apk",
+              "sha256": "b6375d8ce6abadab43c75545598079d7e7fb5e9802506f18efe952c2642cc147",
+              "size_bytes": 41200,
+              "signing_certificates_sha256": [
+                "3257d599a49d2c961a471ca9843f59d341a405884583fc087df4237b733bbd6d",
+                "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+              ],
+              "approved_signer_sha256": "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+            },
+            {
+              "file": "com.google.android.apps.bard_config.en.apk",
+              "sha256": "fa733e1f2a328674cf67e966d4c7d64db935358d1cd258b19abf36e67ab4dc09",
+              "size_bytes": 41170,
+              "signing_certificates_sha256": [
+                "3257d599a49d2c961a471ca9843f59d341a405884583fc087df4237b733bbd6d",
+                "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+              ],
+              "approved_signer_sha256": "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+            },
+            {
+              "file": "com.google.android.apps.bard_config.fr.apk",
+              "sha256": "da0f948f5c0767d0c1b1aa00adb58b6024d90f913a885c631fb5fc4b7dfc64dc",
+              "size_bytes": 32978,
+              "signing_certificates_sha256": [
+                "3257d599a49d2c961a471ca9843f59d341a405884583fc087df4237b733bbd6d",
+                "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+              ],
+              "approved_signer_sha256": "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+            },
+            {
+              "file": "com.google.android.apps.bard_config.ja.apk",
+              "sha256": "db2f673a3915c799700d18f64a3d5cef0091ac06126020a671a59b814eed6d4a",
+              "size_bytes": 28882,
+              "signing_certificates_sha256": [
+                "3257d599a49d2c961a471ca9843f59d341a405884583fc087df4237b733bbd6d",
+                "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+              ],
+              "approved_signer_sha256": "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+            },
+            {
+              "file": "com.google.android.apps.bard_config.tr.apk",
+              "sha256": "8b88dc096b642b378b6621895537ee11e78517bac93d17998ce24382154af095",
+              "size_bytes": 28882,
+              "signing_certificates_sha256": [
+                "3257d599a49d2c961a471ca9843f59d341a405884583fc087df4237b733bbd6d",
+                "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+              ],
+              "approved_signer_sha256": "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+            },
+            {
+              "file": "com.google.android.apps.bard_config.zh.apk",
+              "sha256": "d482775ab36f8bb8bd6048bd2165b3f42135b8ede0bcacd9d8816ea4094d6aaf",
+              "size_bytes": 37074,
+              "signing_certificates_sha256": [
+                "3257d599a49d2c961a471ca9843f59d341a405884583fc087df4237b733bbd6d",
+                "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+              ],
+              "approved_signer_sha256": "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+            },
+            {
+              "file": "com.google.android.apps.bard_config.ar.apk",
+              "sha256": "d2a9abad7d11b9d8a41bf5b471b0c1c6d13222aeb66ed161521d28bc1d8dfd38",
+              "size_bytes": 28882,
+              "signing_certificates_sha256": [
+                "3257d599a49d2c961a471ca9843f59d341a405884583fc087df4237b733bbd6d",
+                "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+              ],
+              "approved_signer_sha256": "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+            },
+            {
+              "file": "com.google.android.apps.bard_config.in.apk",
+              "sha256": "517e188ead9380f68239916a95b04390be0f8489b1f5571575f6372756e1bef5",
+              "size_bytes": 28882,
+              "signing_certificates_sha256": [
+                "3257d599a49d2c961a471ca9843f59d341a405884583fc087df4237b733bbd6d",
+                "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+              ],
+              "approved_signer_sha256": "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+            },
+            {
+              "file": "com.google.android.apps.bard_config.it.apk",
+              "sha256": "2794000730bb2888680f9704a451f28f3931dd99e0fa59eec66568b234c70147",
+              "size_bytes": 24786,
+              "signing_certificates_sha256": [
+                "3257d599a49d2c961a471ca9843f59d341a405884583fc087df4237b733bbd6d",
+                "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+              ],
+              "approved_signer_sha256": "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+            },
+            {
+              "file": "com.google.android.apps.bard_config.pt.apk",
+              "sha256": "95dc323a06e5fc78b55a0900261431ede35b757e0ae40e076736b75290be85f6",
+              "size_bytes": 32978,
+              "signing_certificates_sha256": [
+                "3257d599a49d2c961a471ca9843f59d341a405884583fc087df4237b733bbd6d",
+                "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+              ],
+              "approved_signer_sha256": "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+            },
+            {
+              "file": "com.google.android.apps.bard_config.th.apk",
+              "sha256": "b6fc2d8dd5d09c791c33a2386b152deb0cc65cbf6cdd6c853e8ff1840aa2c53c",
+              "size_bytes": 28882,
+              "signing_certificates_sha256": [
+                "3257d599a49d2c961a471ca9843f59d341a405884583fc087df4237b733bbd6d",
+                "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+              ],
+              "approved_signer_sha256": "997c9c5d63e84a5024f308a615c4e4a87773a52073b0e1547a4d3b8b1081efa7"
+            }
+          ]
+        }
+      ],
+      "failed_apps": [
+        {
+          "app": "claude",
+          "package_name": "com.anthropic.claude",
+          "reason": "No signed APKs accepted for claude (com.anthropic.claude). The downloader returned no app package, or the signing key changed. The scan stops instead of analysing an unverified APK.\n"
+        }
+      ]
+    },
+    {
+      "timestamp": "2026-11-14T05:46:00.057672+00:00",
+      "source": "apk-pure",
+      "status": "partial",
+      "apps": [
+        {
+          "app": "chatgpt",
+          "display_name": "ChatGPT",
+          "package_name": "com.openai.chatgpt",
+          "version_name": "1.2026.307",
+          "version_code": 2630718,
+          "download_source": "apk-pure",
+          "source_note": "APKPure mirror; package ID and APK signing certificate were checked against the pre-reviewed publisher signer allowlist.",
+          "play_store_url": "https://play.google.com/store/apps/details?id=com.openai.chatgpt",
+          "acquired_at": "2026-11-14T05:45:47.681444+00:00",
+          "splits": [
+            {
+              "file": "com.openai.chatgpt_com.openai.chatgpt.apk",
+              "sha256": "cd62f37c0f5d9b2cac0fb381d4bef497d8097596b607664df9b09e6ca766098f",
+              "size_bytes": 101029714,
+              "signing_certificates_sha256": [
+                "3257d599a49d2c961a471ca9843f59d341a405884583fc087df4237b733bbd6d",
+                "b24f4bfbb3cf293f938703b9d87027c1102cc36dc4fa206910e08927db40473c"
+              ],
+              "approved_signer_sha256": "b24f4bfbb3cf293f938703b9d87027c1102cc36dc4fa206910e08927db40473c"
+            },
+            {
+              "file": "com.openai.chatgpt_config.arm64_v8a.apk",
+              "sha256": "7919279c0c06b59258002d48474b39529f90eeaa587532983bfc4841c0c0e508",
+              "size_bytes": 21779593,
+              "signing_certificates_sha256": [
+                "3257d599a49d2c961a471ca9843f59d341a405884583fc087df4237b733bbd6d",
+                "b24f4bfbb3cf293f938703b9d87027c1102cc36dc4fa206910e08927db40473c"
+              ],
+              "approved_signer_sha256": "b24f4bfbb3cf293f938703b9d87027c1102cc36dc4fa206910e08927db40473c"
+            },
+            {
+              "file": "com.openai.chatgpt_config.en.apk",
+              "sha256": "00fe474f68c60b0b919fc197fa74d6ed14c0a4732a7d40ab4e76531dbc640a5d",
+              "size_bytes": 1360082,
+              "signing_certificates_sha256": [
+                "3257d599a49d2c961a471ca9843f59d341a405884583fc087df4237b733bbd6d",
+                "b24f4bfbb3cf293f938703b9d87027c1102cc36dc4fa206910e08927db40473c"
+              ],
+              "approved_signer_sha256": "b24f4bfbb3cf293f938703b9d87027c1102cc36dc4fa206910e08927db40473c"
+            },
+            {
+              "file": "com.openai.chatgpt_config.xxhdpi.apk",
+              "sha256": "105245be74b3533145c5cb4b069682028a8dd53d03d60a5b00d3e99412239d5a",
+              "size_bytes": 467830,
+              "signing_certificates_sha256": [
+                "3257d599a49d2c961a471ca9843f59d341a405884583fc087df4237b733bbd6d",
+                "b24f4bfbb3cf293f938703b9d87027c1102cc36dc4fa206910e08927db40473c"
+              ],
+              "approved_signer_sha256": "b24f4bfbb3cf293f938703b9d87027c1102cc36dc4fa206910e08927db40473c"
+            }
+          ]
+        },
+        {
+          "app": "gemini",
+          "display_name": "Gemini",
+          "package_name": "com.google.android.apps.bard",
+          "version_name": "1.0.995038376",
+          "version_code": 345,
+          "download_source": "apk-pure",
+          "source_note": "APKPure mirror; package ID and APK signing certificate were checked against the pre-reviewed publisher signer allowlist.",
+          "play_store_url": "https://play.google.com/store/apps/details?id=com.google.android.apps.bard",
+          "acquired_at": "2026-11-14T05:46:00.055559+00:00",
           "splits": [
             {
               "file": "com.google.android.apps.bard_com.google.android.apps.bard.apk",
