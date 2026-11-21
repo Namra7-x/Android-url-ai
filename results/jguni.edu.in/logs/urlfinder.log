@@ -1,0 +1,4 @@
+
+$ urlfinder -d jguni.edu.in -o results/jguni.edu.in/urlfinder_raw.txt -duc -silent -max-time 0
+
+[exit 0]

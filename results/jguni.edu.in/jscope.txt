@@ -1,0 +1,131 @@
+======================================================================
+JSCOPE ANALYSIS REPORT
+======================================================================
+
+[executive snapshot]
+  files analyzed : 40
+  frameworks     : none detected
+  findings       : 18
+    MEDIUM         14
+    LOW            4
+
+[where to start testing]  (deterministic ranking; reasons shown)
+   42  [MEDIUM] JS-0005  dataflow: form_input -> jQuery .html() @ 45493a757e5485f6.js:117 (source 45493a757e5485f6.js:113)
+       test: Put a unique marker (e.g. `jscope"><i id=jscx>`) into the source and check, in a browser, whether it is parsed as markup at the sink. Use `jscope verify` with a scoped, authorised target to do this safely.
+       why : +36 attack surface 'dom_xss_candidate'; +6 confidence MEDIUM
+   42  [MEDIUM] JS-0006  dataflow: form_input -> jQuery .html() @ 45493a757e5485f6.js:118 (source 45493a757e5485f6.js:113)
+       test: Put a unique marker (e.g. `jscope"><i id=jscx>`) into the source and check, in a browser, whether it is parsed as markup at the sink. Use `jscope verify` with a scoped, authorised target to do this safely.
+       why : +36 attack surface 'dom_xss_candidate'; +6 confidence MEDIUM
+   42  [MEDIUM] JS-0007  dataflow: form_input -> jQuery .html() @ 45493a757e5485f6.js:119 (source 45493a757e5485f6.js:113)
+       test: Put a unique marker (e.g. `jscope"><i id=jscx>`) into the source and check, in a browser, whether it is parsed as markup at the sink. Use `jscope verify` with a scoped, authorised target to do this safely.
+       why : +36 attack surface 'dom_xss_candidate'; +6 confidence MEDIUM
+   42  [MEDIUM] JS-0008  dataflow: form_input -> jQuery .html() @ 45493a757e5485f6.js:120 (source 45493a757e5485f6.js:113)
+       test: Put a unique marker (e.g. `jscope"><i id=jscx>`) into the source and check, in a browser, whether it is parsed as markup at the sink. Use `jscope verify` with a scoped, authorised target to do this safely.
+       why : +36 attack surface 'dom_xss_candidate'; +6 confidence MEDIUM
+   42  [MEDIUM] JS-0009  dataflow: form_input -> jQuery .html() @ 45493a757e5485f6.js:121 (source 45493a757e5485f6.js:113)
+       test: Put a unique marker (e.g. `jscope"><i id=jscx>`) into the source and check, in a browser, whether it is parsed as markup at the sink. Use `jscope verify` with a scoped, authorised target to do this safely.
+       why : +36 attack surface 'dom_xss_candidate'; +6 confidence MEDIUM
+
+[route map]  1 route(s)   (R=route G=guard role=declared role E=endpoint)
+  R /                            UNPROTECTED
+
+[priority attack surfaces]
+  * dom_xss_candidate  (12 finding(s))
+      - [MEDIUM] JS-0005  form_input -> jQuery .html() @ 45493a757e5485f6.js:117 (source 45493a757e5485f6.js:113)
+          test: Put a unique marker (e.g. `jscope"><i id=jscx>`) into the source and check, in a browser, whether it is parsed as markup at the sink. Use `jscope verify` with a scoped, authorised target to do this safely.
+      - [MEDIUM] JS-0006  form_input -> jQuery .html() @ 45493a757e5485f6.js:118 (source 45493a757e5485f6.js:113)
+          test: Put a unique marker (e.g. `jscope"><i id=jscx>`) into the source and check, in a browser, whether it is parsed as markup at the sink. Use `jscope verify` with a scoped, authorised target to do this safely.
+      - [MEDIUM] JS-0007  form_input -> jQuery .html() @ 45493a757e5485f6.js:119 (source 45493a757e5485f6.js:113)
+          test: Put a unique marker (e.g. `jscope"><i id=jscx>`) into the source and check, in a browser, whether it is parsed as markup at the sink. Use `jscope verify` with a scoped, authorised target to do this safely.
+  * open_redirect_candidate  (2 finding(s))
+      - [MEDIUM] JS-0013  form_input -> window.location.href = ... @ 59ab7b38108575ae.js:1297 (source 59ab7b38108575ae.js:1287)
+          test: Supply an absolute URL on a domain you control and observe whether the browser navigates there; also try `//host` and `javascript:` forms.
+      - [MEDIUM] JS-0014  form_input -> window.location.href = ... @ 59ab7b38108575ae.js:1325 (source 59ab7b38108575ae.js:1315)
+          test: Supply an absolute URL on a domain you control and observe whether the browser navigates there; also try `//host` and `javascript:` forms.
+  * auth  (2 finding(s))
+      - [LOW] JS-0002  mechanism:header:x-csrf-token
+          test: Remove or tamper with this header per endpoint to find endpoints that do not validate it.
+      - [LOW] JS-0003  mechanism:csrf_token
+          test: Test per-endpoint CSRF enforcement: omit/replay the token, and try method override.
+
+[findings appendix]
+  -- auth (2) --
+  JS-0002  [LOW           score= 3]  mechanism:header:x-csrf-token
+       analyzers: auth_analyzer
+       - AST_PATTERN_MATCH (+2): custom auth/CSRF header 'X-CSRF-TOKEN' set
+       - AST_PATTERN_MATCH #2 (+1, diminished): custom auth/CSRF header 'X-CSRF-TOKEN' set
+  JS-0003  [LOW           score= 2]  mechanism:csrf_token
+       analyzers: auth_analyzer
+       - LITERAL_STRING_MATCH (+1): CSRF token name literal
+       - LITERAL_STRING_MATCH #2 (+0.5, diminished): CSRF token name literal
+
+  -- dataflow (14) --
+  JS-0005  [MEDIUM        score= 5]  form_input -> jQuery .html() @ 45493a757e5485f6.js:117 (source 45493a757e5485f6.js:113)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): DOM HTML insertion sink jQuery .html() receives a value derived from user-controlled form input
+       - DATA_FLOW (+3): data-flow path: 45493a757e5485f6.js:113 assigned to `total_attendance` -> 45493a757e5485f6.js:115 assigned to `attendanceArray` -> 45493a757e5485f6.js:117 reaches DOM HTML insertion sink jQuery .html()
+  JS-0006  [MEDIUM        score= 5]  form_input -> jQuery .html() @ 45493a757e5485f6.js:118 (source 45493a757e5485f6.js:113)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): DOM HTML insertion sink jQuery .html() receives a value derived from user-controlled form input
+       - DATA_FLOW (+3): data-flow path: 45493a757e5485f6.js:113 assigned to `total_attendance` -> 45493a757e5485f6.js:115 assigned to `attendanceArray` -> 45493a757e5485f6.js:118 reaches DOM HTML insertion sink jQuery .html()
+  JS-0007  [MEDIUM        score= 5]  form_input -> jQuery .html() @ 45493a757e5485f6.js:119 (source 45493a757e5485f6.js:113)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): DOM HTML insertion sink jQuery .html() receives a value derived from user-controlled form input
+       - DATA_FLOW (+3): data-flow path: 45493a757e5485f6.js:113 assigned to `total_attendance` -> 45493a757e5485f6.js:115 assigned to `attendanceArray` -> 45493a757e5485f6.js:119 reaches DOM HTML insertion sink jQuery .html()
+  JS-0008  [MEDIUM        score= 5]  form_input -> jQuery .html() @ 45493a757e5485f6.js:120 (source 45493a757e5485f6.js:113)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): DOM HTML insertion sink jQuery .html() receives a value derived from user-controlled form input
+       - DATA_FLOW (+3): data-flow path: 45493a757e5485f6.js:113 assigned to `total_attendance` -> 45493a757e5485f6.js:115 assigned to `attendanceArray` -> 45493a757e5485f6.js:120 reaches DOM HTML insertion sink jQuery .html()
+  JS-0009  [MEDIUM        score= 5]  form_input -> jQuery .html() @ 45493a757e5485f6.js:121 (source 45493a757e5485f6.js:113)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): DOM HTML insertion sink jQuery .html() receives a value derived from user-controlled form input
+       - DATA_FLOW (+3): data-flow path: 45493a757e5485f6.js:113 assigned to `total_attendance` -> 45493a757e5485f6.js:115 assigned to `attendanceArray` -> 45493a757e5485f6.js:121 reaches DOM HTML insertion sink jQuery .html()
+  JS-0010  [MEDIUM        score= 5]  form_input -> jQuery .html() @ 45493a757e5485f6.js:524 (source 45493a757e5485f6.js:524)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): DOM HTML insertion sink jQuery .html() receives a value derived from user-controlled form input
+       - DATA_FLOW (+3): data-flow path: 45493a757e5485f6.js:524 reaches DOM HTML insertion sink jQuery .html()
+  JS-0011  [MEDIUM        score= 5]  form_input -> jQuery .html() @ 45493a757e5485f6.js:537 (source 45493a757e5485f6.js:537)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): DOM HTML insertion sink jQuery .html() receives a value derived from user-controlled form input
+       - DATA_FLOW (+3): data-flow path: 45493a757e5485f6.js:537 reaches DOM HTML insertion sink jQuery .html()
+  JS-0012  [MEDIUM        score= 5]  form_input -> jQuery .html() @ 45493a757e5485f6.js:3342 (source 45493a757e5485f6.js:3341)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): DOM HTML insertion sink jQuery .html() receives a value derived from user-controlled form input
+       - DATA_FLOW (+3): data-flow path: 45493a757e5485f6.js:3341 assigned to `capacity` -> 45493a757e5485f6.js:3342 reaches DOM HTML insertion sink jQuery .html()
+  JS-0013  [MEDIUM        score= 5]  form_input -> window.location.href = ... @ 59ab7b38108575ae.js:1297 (source 59ab7b38108575ae.js:1287)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink window.location.href = ... receives a value derived from user-controlled form input
+       - DATA_FLOW (+3): data-flow path: 59ab7b38108575ae.js:1287 assigned to `url` -> 59ab7b38108575ae.js:1297 reaches URL navigation sink window.location.href = ...
+  JS-0014  [MEDIUM        score= 5]  form_input -> window.location.href = ... @ 59ab7b38108575ae.js:1325 (source 59ab7b38108575ae.js:1315)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink window.location.href = ... receives a value derived from user-controlled form input
+       - DATA_FLOW (+3): data-flow path: 59ab7b38108575ae.js:1315 assigned to `url` -> 59ab7b38108575ae.js:1325 reaches URL navigation sink window.location.href = ...
+  JS-0015  [MEDIUM        score= 5]  form_input -> jQuery .after() @ 59ab7b38108575ae.js:2084 (source 59ab7b38108575ae.js:2043)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): DOM HTML insertion sink jQuery .after() receives a value derived from user-controlled form input
+       - DATA_FLOW (+3): data-flow path: 59ab7b38108575ae.js:2043 assigned to `lang` -> 59ab7b38108575ae.js:2084 reaches DOM HTML insertion sink jQuery .after()
+  JS-0016  [MEDIUM        score= 5]  form_input -> jQuery .append() @ 59ab7b38108575ae.js:2086 (source 59ab7b38108575ae.js:2043)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): DOM HTML insertion sink jQuery .append() receives a value derived from user-controlled form input
+       - DATA_FLOW (+3): data-flow path: 59ab7b38108575ae.js:2043 assigned to `lang` -> 59ab7b38108575ae.js:2086 reaches DOM HTML insertion sink jQuery .append()
+  JS-0017  [MEDIUM        score= 5]  form_input -> jQuery .after() @ 59ab7b38108575ae.js:2708 (source 59ab7b38108575ae.js:2672)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): DOM HTML insertion sink jQuery .after() receives a value derived from user-controlled form input
+       - DATA_FLOW (+3): data-flow path: 59ab7b38108575ae.js:2672 assigned to `lang` -> 59ab7b38108575ae.js:2708 reaches DOM HTML insertion sink jQuery .after()
+  JS-0018  [MEDIUM        score= 5]  form_input -> jQuery .append() @ 59ab7b38108575ae.js:2710 (source 59ab7b38108575ae.js:2672)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): DOM HTML insertion sink jQuery .append() receives a value derived from user-controlled form input
+       - DATA_FLOW (+3): data-flow path: 59ab7b38108575ae.js:2672 assigned to `lang` -> 59ab7b38108575ae.js:2710 reaches DOM HTML insertion sink jQuery .append()
+
+  -- route (1) --
+  JS-0001  [LOW           score= 2]  /
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='' -> option; resolved full path /
+
+  -- storage (1) --
+  JS-0004  [LOW           score= 3]  sessionStorage:bio_role
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage read with key 'bio_role'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage write with key 'bio_role'
+
+(run `jscope explain <finding-id>` for the full evidence chain on any finding)

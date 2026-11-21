@@ -1,0 +1,5 @@
+urls:         https://jguni.edu.in/
+methods:      GET
+wordlist len: 3
+
+

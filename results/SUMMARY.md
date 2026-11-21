@@ -1,3 +1,3 @@
 # Summary
 
-- https://claude.ai: {'collected': 10076, 'probed': 5955, 'live200': 468, 'liveother': 4322, 'data': 1, 'subdomains': 14, 'js_endpoints': 0, 'vhosts': 1}
+- https://jguni.edu.in: {'collected': 595, 'probed': 521, 'live200': 68, 'liveother': 14, 'data': 2, 'subdomains': 2, 'js_endpoints': 0, 'vhosts': 2}

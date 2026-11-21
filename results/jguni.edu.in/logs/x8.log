@@ -1,0 +1,4 @@
+
+$ x8 -u https://jguni.edu.in/ -w results/jguni.edu.in/params.txt
+
+[exit 0] -> results/jguni.edu.in/x8.txt

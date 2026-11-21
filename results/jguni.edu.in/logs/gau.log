@@ -1,0 +1,5 @@
+
+$ gau jguni.edu.in --subs --threads 10 --blacklist png,jpg,jpeg,gif,svg,css,woff,woff2,ttf,eot,ico,mp4,mp3,pdf --o results/jguni.edu.in/gau.txt
+time="2026-11-21T18:41:59Z" level=warning msg="error reading config: Config file /home/runner/.gau.toml not found, using default config"
+
+[exit 0]
