@@ -16,7 +16,7 @@ fi
 
 MARKER="$HOME/.cache/hunt-tools-ready"
 
-REQUIRED="katana httpx ffuf uro subfinder dnsx uncover kr gau waybackurls jsluice urlfinder x8 jscope anastasis jq trufflehog"
+REQUIRED="katana httpx ffuf uro subfinder dnsx uncover kr gau waybackurls jsluice urlfinder x8 jscope anastasis jq trufflehog gospider"
 
 all_present() {
   for t in $REQUIRED; do
@@ -50,6 +50,7 @@ if [ -x "$GOBIN/kiterunner" ] && [ ! -x "$GOBIN/kr" ]; then
 fi
 go install github.com/lc/gau/v2/cmd/gau@latest || echo "WARN: gau"
 go install github.com/tomnomnom/waybackurls@latest || echo "WARN: waybackurls"
+go install github.com/jaeles-project/gospider@latest || echo "WARN: gospider"
 go install github.com/BishopFox/jsluice/cmd/jsluice@latest || echo "WARN: jsluice"
 # pinned to a Go-1.23-compatible release (verified on pkg.go.dev)
 go install -v github.com/projectdiscovery/urlfinder/cmd/urlfinder@v0.0.3 || echo "WARN: urlfinder"

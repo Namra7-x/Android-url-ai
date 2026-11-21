@@ -102,7 +102,7 @@ def tool_name(cmd) -> str:
 def check_tools() -> bool:
     required = ["katana", "httpx", "ffuf", "uro", "subfinder", "dnsx", "uncover",
                 "kr", "gau", "waybackurls", "jsluice", "urlfinder", "x8",
-                "jscope", "anastasis", "trufflehog", "jq"]
+                "jscope", "anastasis", "trufflehog", "jq", "gospider"]
     missing = [t for t in required if not which(t)]
     if missing:
         log("MISSING TOOLS: " + ", ".join(missing))
@@ -328,16 +328,48 @@ def step_katana(base, target_dir, logs, settings):
         return
     k = target_dir / "katana"
     k.mkdir(parents=True, exist_ok=True)
-    d = str(settings.get("katana_depth", 10))
-    # NOTE: JSONL flag is -j (NOT -json).
-    run(["katana", "-u", base, "-d", d, "-jc", "-jsl", "-kf", "all", "-aff",
-         "-ef", "png,jpg,jpeg,gif,svg,css,woff,woff2,ttf,eot,ico,mp4,mp3,pdf",
-         "-c", "30", "-timeout", "20", "-retry", "2", "-silent", "-j",
-         "-o", str(k / "pass1.jsonl")], logs / "katana_pass1.log", timeout=3600)
+    d = str(settings.get("katana_depth", 5))
+    mrs = str(settings.get("katana_max_response", 2097152))
+
+    # Lightweight, memory-safe flags.
+    # NO -jsl (officially "memory intensive" and redundant with jsluice/anastasis).
+    # NO -aff (experimental form filling).
+    # -fs fqdn keeps the crawl on this exact host instead of every subdomain.
+    # -or/-ob keep JSONL small; -mrs caps response bytes read.
+    common = ["-d", d, "-fs", "fqdn", "-mrs", mrs, "-iqp", "-or", "-ob", "-duc",
+              "-silent", "-j",
+              "-ef", "png,jpg,jpeg,gif,svg,css,woff,woff2,ttf,eot,ico,mp4,mp3,pdf"]
+
+    # Pass 1 — standard mode, JS link crawling, known files.
+    out1 = k / "pass1.jsonl"
+    cmd1 = ["katana", "-u", base, "-jc", "-kf", "all", "-c", "10", "-p", "5"] + common + ["-o", str(out1)]
+    if run(cmd1, logs / "katana_pass1.log", timeout=1800) != 0:
+        log("katana pass1: retrying with minimal flags")
+        run(["katana", "-u", base, "-d", d, "-jc", "-silent", "-j", "-o", str(out1)],
+            logs / "katana_pass1_fallback.log", timeout=1800)
+
+    # Pass 2 — headless for runtime-DOM/XHR endpoints (lower concurrency).
     if settings.get("enable_browser", True):
-        run(["katana", "-u", base, "-d", d, "-headless", "-xhr", "-no-sandbox",
-             "-jsl", "-c", "10", "-timeout", "20", "-silent", "-j",
-             "-o", str(k / "pass2.jsonl")], logs / "katana_pass2.log", timeout=3600)
+        out2 = k / "pass2.jsonl"
+        cmd2 = ["katana", "-u", base, "-headless", "-xhr", "-no-sandbox",
+                "-c", "5", "-p", "3"] + common + ["-o", str(out2)]
+        if run(cmd2, logs / "katana_pass2.log", timeout=1800) != 0:
+            log("katana pass2: retrying with minimal flags")
+            run(["katana", "-u", base, "-d", d, "-headless", "-xhr", "-no-sandbox",
+                 "-silent", "-j", "-o", str(out2)],
+                logs / "katana_pass2_fallback.log", timeout=1800)
+
+
+def step_gospider(base, target_dir, logs, settings):
+    """Lightweight second crawler — found more endpoints than katana in benchmarks."""
+    if not settings.get("enable_gospider", True):
+        return
+    out = target_dir / "gospider.txt"
+    run_capture(["gospider", "-s", base, "-c", "5", "-d", "3", "-m", "10",
+                 "--js", "--sitemap", "-q"],
+                out, logs / "gospider.log", timeout=1800)
+    count = sum(1 for _ in out.open(encoding="utf-8", errors="replace")) if out.exists() else 0
+    log(f"gospider: {count} URLs")
 
 
 def collect_js_urls(target_dir, base):
@@ -821,7 +853,7 @@ def report(target_dir, base, routes, probe_rows, extra_rows, settings):
         ("other_status.jsonl", "all other statuses"), ("data_files.jsonl", "JSON/CSV/XML among 200s"),
         ("params.jsonl", "parameters"), ("subdomains.jsonl", "subdomains + resolution"),
         ("js_endpoints.jsonl", "AST endpoints"), ("vhost.jsonl", "vhost checks"),
-        ("jsluice.jsonl", "JS-derived URLs"), ("anastasis_endpoints.jsonl", "AST endpoints"),
+        ("jsluice.jsonl", "JS-derived URLs"), ("gospider.txt", "second crawler URLs"), ("anastasis_endpoints.jsonl", "AST endpoints"),
         ("jscope.txt", "evidence-ranked JS analysis"), ("secrets.jsonl", "secret candidates"),
         ("wordlist.txt", "target-specific fuzz list"), ("params.txt", "parameter wordlist"),
         ("context.json", "shared context"), ("js_urls.txt", "JS chunk URLs"),
@@ -901,6 +933,7 @@ def main() -> int:
         step("urlfinder", step_urlfinder, host, td, logs, SETTINGS)
         step("gau", step_gau, host, td, logs, SETTINGS)
         step("katana", step_katana, base, td, logs, SETTINGS)
+        step("gospider", step_gospider, base, td, logs, SETTINGS)
         step("js-download", step_download_js, td, logs, SETTINGS)
         step("jsluice", step_jsluice, td, logs, SETTINGS)
         step("anastasis", step_anastasis, host, base, td, logs)

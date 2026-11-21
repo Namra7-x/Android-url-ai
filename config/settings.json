@@ -3,6 +3,7 @@
   "enable_urlfinder": true,
   "enable_gau": true,
   "enable_katana": true,
+  "enable_gospider": true,
   "enable_jsluice": true,
   "enable_anastasis": true,
   "enable_jscope": true,
@@ -31,6 +32,7 @@
   "ffuf_rate": 50,
   "ffuf_threads": 10,
   "max_brute_prefixes": 15,
-  "katana_depth": 10,
+  "katana_depth": 5,
+  "katana_max_response": 2097152,
   "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
 }

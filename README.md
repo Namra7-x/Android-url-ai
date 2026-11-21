@@ -35,18 +35,19 @@ When it finishes, open **`results/INDEX.md`** in this repo, then the target's `R
 | 1 | subfinder + dnsx + uncover | Go | subdomains, DNS-resolved only |
 | 2 | **urlfinder** | Go | 200k passive URLs in minutes, no API key needed |
 | 3 | gau | Go | extra archive sources (Wayback/CommonCrawl/OTX) |
-| 4 | katana (2 passes) | Go | active crawl: standard `-jc -jsl` + headless `-xhr` |
-| 5 | JS downloader | Python | downloads discovered JS chunks in parallel |
-| 6 | jsluice | Go | AST endpoints + secrets from JS |
-| 7 | **anastasis** | Node/AST | deeper endpoints, typed params, sourcemaps |
-| 8 | **jscope** | Python | evidence-backed JS findings — kills noise |
-| 9 | trufflehog | Go | verified secrets (1s per 27 MB) |
-| 10 | Collect + vhost | Python | dedupe everything; real Host-header hosts only |
-| 11 | Wordlist foundry | Python | target-specific 8,000-word list |
-| 12 | httpx | Go | probes **every** URL — this decides 200 vs blocked |
-| 13 | **x8** | Rust | hidden parameter discovery |
-| 14 | methods | Python | GET/POST/PUT/PATCH/DELETE/OPTIONS/HEAD |
-| 15 | Report | Python | 12-section readable report |
+| 4 | katana (2 passes, memory-safe flags) | Go | active crawl: standard `-jc` + headless `-xhr`; no `-jsl`/`-aff` |
+| 5 | gospider | Go | lightweight second crawler (found more endpoints than katana in benchmarks) |
+| 6 | JS downloader | Python | downloads discovered JS chunks in parallel |
+| 7 | jsluice | Go | AST endpoints + secrets from JS |
+| 8 | **anastasis** | Node/AST | deeper endpoints, typed params, sourcemaps |
+| 9 | **jscope** | Python | evidence-backed JS findings — kills noise |
+| 10 | trufflehog | Go | verified secrets (1s per 27 MB) |
+| 11 | Collect + vhost | Python | dedupe everything; real Host-header hosts only |
+| 12 | Wordlist foundry | Python | target-specific 8,000-word list |
+| 13 | httpx | Go | probes **every** URL — this decides 200 vs blocked |
+| 14 | **x8** | Rust | hidden parameter discovery |
+| 15 | methods | Python | GET/POST/PUT/PATCH/DELETE/OPTIONS/HEAD |
+| 16 | Report | Python | 12-section readable report |
 
 **Not run by default:** ffuf and kiterunner (wordlist is generated and ready — flip `enable_brute` in a later run).
 
