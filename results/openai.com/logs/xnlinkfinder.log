@@ -1,6 +1,0 @@
-
-$ xnLinkFinder -i results/openai.com/js_urls.txt -sf openai.com -d 3 -nb -o results/openai.com/xnlinkfinder.txt -op results/openai.com/xnlinkfinder_params.txt -owl results/openai.com/xnlinkfinder_wordlist.txt
-The config.yml file was created at /home/runner/.config/xnLinkFinder/config.yml
-
-
-[exit 0]

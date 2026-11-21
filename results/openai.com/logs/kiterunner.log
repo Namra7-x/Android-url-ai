@@ -1,7 +1,0 @@
-
-$ kr brute https://openai.com -w results/openai.com/wordlist.txt -x 10 -j 1 -e json,txt,xml -o json -q --progress=false
-{"level":"info","delay":"0s","dirsearch-compatability":false,"extensions":["json","txt","xml"],"full-scan":false,"full-scan-requests":167674,"headers":["x-forwarded-for:127.0.0.1"],"max-conn-per-host":10,"max-parallel-host":1,"max-redirects":3,"max-timeout":3000,"preflight-routes":11,"quarantine-threshold":10,"read-body":false,"read-headers":false,"scan-depth":1,"skip-preflight":false,"target":"https://openai.com","total-routes":32000,"user-agent":"Chrome. Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36","time":"2026-11-21T12:39:24Z","message":"scan options"}
-{"level":"info","target":"https://openai.com","time":"2026-11-21T12:40:01Z","message":"Target quarantined"}
-{"level":"info","results":115,"duration":37343.400531,"time":"2026-11-21T12:40:01Z","message":"scan complete"}
-
-[exit 0] -> results/openai.com/kiterunner.jsonl

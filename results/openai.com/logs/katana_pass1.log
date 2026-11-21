@@ -1,5 +1,0 @@
-
-$ katana -u https://openai.com -d 10 -jc -jsl -kf all -aff -ef png,jpg,jpeg,gif,svg,css,woff,woff2,ttf,eot,ico,mp4,mp3,pdf -c 30 -timeout 20 -retry 2 -silent -json -o results/openai.com/katana/pass1.jsonl
-flag provided but not defined: -json
-
-[exit 2]
