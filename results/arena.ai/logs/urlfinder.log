@@ -1,0 +1,4 @@
+
+$ urlfinder -d arena.ai -o results/arena.ai/urlfinder_raw.txt -duc -silent -max-time 0
+
+[exit 0]

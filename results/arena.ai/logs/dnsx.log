@@ -1,0 +1,31 @@
+
+$ dnsx -l results/arena.ai/subdomains_all.txt -silent -o results/arena.ai/subdomains_live.txt
+canary.arena.ai
+api.arena.ai
+console.arena.ai
+auth.arena.ai
+openpgpkey.arena.ai
+blog.arena.ai
+oldblog.arena.ai
+platform.arena.ai
+code.arena.ai
+indexable.arena.ai
+download.arena.ai
+mta-sts.everify.arena.ai
+agent.arena.ai
+portal.api.preview.arena.ai
+trust.arena.ai
+api.preview.arena.ai
+news.arena.ai
+cdn.arena.ai
+help.arena.ai
+www.arena.ai
+login.arena.ai
+status.arena.ai
+mail.arena.ai
+cn.arena.ai
+okta.arena.ai
+mta-sts.arena.ai
+portal.api-preview.arena.ai
+
+[exit 0]
