@@ -28,6 +28,8 @@ import time
 from pathlib import Path
 from urllib.parse import parse_qsl, urlencode, urljoin, urlparse, urlunparse
 
+import wordlist  # local module (scripts/ is on sys.path)
+
 # ----------------------------------------------------------------------------
 # constants
 # ----------------------------------------------------------------------------
@@ -279,13 +281,15 @@ def step_subdomains(host: str, target_dir: Path, logs: Path, settings: dict):
             logs / "dnsx.log", timeout=1200)
 
 
-def step_chakra(base: str, target_dir: Path, logs: Path):
+def step_chakra(base: str, target_dir: Path, logs: Path, settings: dict):
     if not os.path.exists(CHAKRA_PATH):
         log(f"Chakra not found at {CHAKRA_PATH}, skipping")
         return
     run([sys.executable, CHAKRA_PATH, base, "-o", str(target_dir / "chakra"),
-         "-t", "8", "--delay", "0.2"],
-        logs / "chakra.log", timeout=2400)
+         "-d", str(settings.get("chakra_depth", 10)),
+         "-t", str(settings.get("chakra_threads", 16)),
+         "--delay", str(settings.get("chakra_delay", 0.1))],
+        logs / "chakra.log", timeout=3000)
 
 
 def step_jsrecon(base: str, target_dir: Path, logs: Path, settings: dict):
@@ -296,11 +300,14 @@ def step_jsrecon(base: str, target_dir: Path, logs: Path, settings: dict):
     out.mkdir(parents=True, exist_ok=True)
 
     cmd = ["js-recon", "lazyload", "-u", base, "-o", str(out), "-y",
-           "--build-id", "--subsequent-requests", "--max-pages", "200",
-           "--lazyload-timeout", "30"]
+           "--build-id", "--subsequent-requests",
+           "--max-pages", str(settings.get("jsrecon_max_pages", 1000)),
+           "--max-iterations", str(settings.get("jsrecon_max_iterations", 20)),
+           "--lazyload-timeout", str(settings.get("jsrecon_timeout_min", 45)),
+           "--strings", "--research"]
     if settings.get("enable_browser", True):
         cmd.append("--no-sandbox")
-    run(cmd, logs / "jsrecon_lazyload.log", timeout=2400)
+    run(cmd, logs / "jsrecon_lazyload.log", timeout=3000)
 
     # strings: URLs + paths + secrets
     run(["js-recon", "strings", "-d", str(out), "-e", "-p", "-s",
@@ -322,16 +329,20 @@ def step_katana(base: str, target_dir: Path, logs: Path, settings: dict):
     k.mkdir(parents=True, exist_ok=True)
 
     # pass 1: JS string literals + known files
-    run(["katana", "-u", base, "-d", "5", "-jc", "-kf", "all",
+    run(["katana", "-u", base, "-d", str(settings.get("katana_depth", 10)),
+         "-jc", "-jsl", "-kf", "all", "-aff",
          "-ef", "png,jpg,jpeg,gif,svg,css,woff,woff2,ttf,eot,ico,mp4,mp3,pdf",
-         "-c", "20", "-silent", "-json", "-o", str(k / "pass1.jsonl")],
-        logs / "katana_pass1.log", timeout=2400)
+         "-c", "30", "-timeout", "20", "-retry", "2",
+         "-silent", "-json", "-o", str(k / "pass1.jsonl")],
+        logs / "katana_pass1.log", timeout=3000)
 
     # pass 2: headless runtime (XHR method capture)
     if settings.get("enable_browser", True):
-        run(["katana", "-u", base, "-d", "5", "-headless", "-xhr", "-no-sandbox",
-             "-c", "10", "-silent", "-json", "-o", str(k / "pass2.jsonl")],
-            logs / "katana_pass2.log", timeout=2400)
+        run(["katana", "-u", base, "-d", str(settings.get("katana_depth", 10)),
+             "-headless", "-xhr", "-no-sandbox", "-jsl",
+             "-c", "10", "-timeout", "20",
+             "-silent", "-json", "-o", str(k / "pass2.jsonl")],
+            logs / "katana_pass2.log", timeout=3000)
 
 
 def step_waymore(host: str, target_dir: Path, logs: Path):
@@ -355,7 +366,7 @@ def step_urlscan(host: str, target_dir: Path, logs: Path):
         import urllib.request
 
         req = urllib.request.Request(
-            f"https://urlscan.io/api/v1/search/?q=domain%3A{host}&size=1000",
+            f"https://urlscan.io/api/v1/search/?q=domain%3A{host}&size=10000",
             headers={"api-key": key, "User-Agent": "hunt-pipeline/1.0"},
         )
         with urllib.request.urlopen(req, timeout=60) as r:
@@ -373,7 +384,7 @@ def step_jsluice(target_dir: Path, logs: Path):
     out = target_dir / "jsluice.jsonl"
     secrets = target_dir / "jsluice_secrets.jsonl"
     with open(out, "w", encoding="utf-8") as f, open(secrets, "w", encoding="utf-8") as sf:
-        for js in js_files[:4000]:
+        for js in js_files[:8000]:
             try:
                 p = subprocess.run(["jsluice", "urls", str(js)],
                                    capture_output=True, timeout=60)
@@ -397,10 +408,11 @@ def step_xnlinkfinder(host: str, target_dir: Path, logs: Path):
     if not src.exists():
         src = target_dir
     run([sys.executable, XNLINK_PATH, "-i", str(src), "-sf", host,
+         "-d", "3",
          "-o", str(target_dir / "xnlinkfinder.txt"),
          "-op", str(target_dir / "xnlinkfinder_params.txt"),
          "-owl", str(target_dir / "xnlinkfinder_wordlist.txt")],
-        logs / "xnlinkfinder.log", timeout=1800)
+        logs / "xnlinkfinder.log", timeout=2400)
 
 
 def step_trufflehog(target_dir: Path, logs: Path):
@@ -412,6 +424,30 @@ def step_trufflehog(target_dir: Path, logs: Path):
         src = target_dir
     run_capture(["trufflehog", "filesystem", str(src), "--json", "--no-update"],
                 target_dir / "secrets.jsonl", logs / "trufflehog.log", timeout=1800)
+
+
+def step_kiterunner(base: str, target_dir: Path, logs: Path, wordlist_path: Path, settings: dict):
+    if not settings.get("enable_kiterunner", True) or not which("kr"):
+        return
+    if not Path(wordlist_path).exists():
+        return
+    run_capture(
+        ["kr", "brute", base, "-w", str(wordlist_path),
+         "-x", str(settings.get("kiterunner_conns", 10)), "-j", "1",
+         "-e", "json,txt,xml", "-o", "json", "-q", "--progress=false"],
+        target_dir / "kiterunner.jsonl", logs / "kiterunner.log", timeout=2400)
+
+
+def step_arjun(base: str, target_dir: Path, logs: Path, param_file: Path, settings: dict):
+    if not settings.get("enable_arjun", True) or not which("arjun"):
+        return
+    cmd = ["arjun", "-u", base, "-m", "GET,POST,JSON",
+           "-oJ", str(target_dir / "arjun.json"),
+           "-t", str(settings.get("arjun_threads", 10)), "--stable"]
+    if Path(param_file).exists():
+        cmd += ["-w", str(param_file)]
+    cmd.append("--passive")
+    run(cmd, logs / "arjun.log", timeout=1800)
 
 
 # ----------------------------------------------------------------------------
@@ -459,11 +495,12 @@ def derive_prefixes(routes, limit: int):
     return [k for k, _ in items[:limit]]
 
 
-def brute(routes, base: str, target_dir: Path, logs: Path, settings: dict):
+def brute(routes, base: str, target_dir: Path, logs: Path, settings: dict,
+          wordlist_path: Path):
     if not settings.get("enable_brute") or not which("ffuf"):
         return []
     prefixes = derive_prefixes(routes, int(settings.get("max_brute_prefixes", 15)))
-    wl = settings.get("wordlist", "wordlists/common.txt")
+    wl = str(wordlist_path) if Path(wordlist_path).exists() else settings.get("wordlist", "wordlists/common.txt")
     if not Path(wl).exists():
         log(f"wordlist missing: {wl}")
         return []
@@ -492,6 +529,36 @@ def brute(routes, base: str, target_dir: Path, logs: Path, settings: dict):
             except Exception:  # noqa: BLE001
                 pass
     return results
+
+
+def merge_hits(routes, hits, base: str) -> int:
+    """Feed brute-force hits back into the context so the next round learns."""
+    added = 0
+    for h in hits:
+        n = normalize(h.get("url"), base)
+        if not n:
+            continue
+        k = dedupe_key(n)
+        if k not in routes:
+            routes[k] = {"url": n, "method": "GET", "sources": {"brute"}}
+            added += 1
+        else:
+            routes[k].setdefault("sources", set()).add("brute")
+    return added
+
+
+def write_context(target_dir: Path, base: str, routes, stats: dict):
+    ctx = {
+        "target": base,
+        "generated": now(),
+        "routes": [{"url": r["url"], "method": r.get("method", "GET")}
+                   for r in routes.values()],
+        "stats": stats,
+    }
+    (target_dir / "context.json").write_text(
+        json.dumps(ctx, indent=1, ensure_ascii=False, default=list),
+        encoding="utf-8",
+    )
 
 
 # ----------------------------------------------------------------------------
@@ -707,7 +774,7 @@ def main() -> int:
                 log(f"STEP {name} FAILED: {e}")
 
         step("subdomains", step_subdomains, host, target_dir, logs, settings)
-        step("chakra", step_chakra, base, target_dir, logs)
+        step("chakra", step_chakra, base, target_dir, logs, settings)
         step("jsrecon", step_jsrecon, base, target_dir, logs, settings)
         step("katana", step_katana, base, target_dir, logs, settings)
         step("waymore", step_waymore, host, target_dir, logs)
@@ -719,10 +786,43 @@ def main() -> int:
         routes = collect(target_dir, base)
         log(f"collected {len(routes)} unique URLs")
 
-        probe_rows = probe(routes, target_dir, logs, settings)
-        brute_rows = brute(routes, base, target_dir, logs, settings)
+        # ---- context-aware wordlist foundry ----
+        wl_path = target_dir / "wordlist.txt"
+        param_path = target_dir / "params.txt"
+        winfo = wordlist.build(
+            target_dir, base,
+            settings.get("wordlist", "wordlists/common.txt"),
+            wl_path,
+            int(settings.get("wordlist_max", 8000)),
+            param_path,
+        )
+        log(f"wordlist built: {winfo}")
 
-        stats = report(target_dir, base, routes, probe_rows, brute_rows, settings)
+        probe_rows = probe(routes, target_dir, logs, settings)
+
+        all_brute = []
+        rounds = int(settings.get("wordlist_rounds", 2))
+        for rnd in range(rounds):
+            hits = brute(routes, base, target_dir, logs, settings, wl_path)
+            all_brute.extend(hits)
+            added = merge_hits(routes, hits, base)
+            log(f"brute round {rnd + 1}: hits={len(hits)} new={added} routes={len(routes)}")
+            if added == 0:
+                break
+            winfo = wordlist.build(
+                target_dir, base,
+                settings.get("wordlist", "wordlists/common.txt"),
+                wl_path,
+                int(settings.get("wordlist_max", 8000)),
+                param_path,
+            )
+            log(f"wordlist rebuilt: {winfo}")
+
+        step("kiterunner", step_kiterunner, base, target_dir, logs, wl_path, settings)
+        step("arjun", step_arjun, base, target_dir, logs, param_path, settings)
+
+        stats = report(target_dir, base, routes, probe_rows, all_brute, settings)
+        write_context(target_dir, base, routes, stats)
         summary.append((base, stats))
         log(f"REPORT {target_dir / 'REPORT.md'} -> {stats}")
 

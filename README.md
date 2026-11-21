@@ -58,18 +58,53 @@ Commit and push, then run the workflow again. That is the only change needed.
 
 ---
 
+## Mega system — context-aware wordlist foundry
+
+Tools do not work alone. Every layer writes findings, and the next layer reads them.
+
+```
+collect routes / params / chunks
+        ↓
+build target-specific wordlist   ← from what was actually found
+        ↓
+ffuf / kiterunner / arjun use it
+        ↓
+new routes / params found
+        ↓
+merge into context → rebuild wordlist → run again
+```
+
+The wordlist is generated **per target** from:
+
+- Chakra `_routes.txt` + all chunk strings
+- js-recon `extracted_urls.json` + `strings.json`
+- katana URLs (both passes)
+- jsluice URLs
+- xnLinkFinder `-owl` wordlist
+- waymore historical URLs
+- every parameter name found
+- base `wordlists/common.txt`
+
+Then it is scored (frequency + interesting words like `api`, `admin`, `internal`, `data`, `models`, `export`), merged, deduped and capped. A static wordlist guesses once — this one **learns the target** and guesses again.
+
+---
+
 ## What it runs (one shot, in order)
 
 1. **Subdomains** — subfinder + dnsx *(off by default)*
-2. **Chunks** — Chakra: all JS chunks, lazy chunks, routes, env vars, subdomains
-3. **Framework** — js-recon: lazyload + strings + endpoints
-4. **Crawl** — katana JS pass + headless XHR pass
+2. **Chunks** — Chakra: all JS chunks, lazy chunks, routes, env vars, subdomains (`-d 10`)
+3. **Framework** — js-recon: lazyload + strings + endpoints (`--max-pages 1000`, `--max-iterations 20`, `--strings`, `--subsequent-requests`)
+4. **Crawl** — katana `-jc -jsl -kf all -aff` + headless `-xhr` (`-d 10`)
 5. **History** — waymore (+ urlscan.io if `URLSCAN_API_KEY` secret is set)
-6. **Extract** — jsluice, xnLinkFinder, trufflehog
+6. **Extract** — jsluice, xnLinkFinder `-owl`, trufflehog
 7. **Normalize** — dedupe only, nothing filtered
-8. **Probe** — httpx, all status codes
-9. **Brute** — ffuf on discovered prefixes (rate-limited)
-10. **Report** — grouped `REPORT.md`
+8. **Wordlist** — build `wordlist.txt` + `params.txt` from everything above
+9. **Probe** — httpx, all status codes
+10. **Brute** — ffuf with the generated wordlist (2 rounds)
+11. **API** — kiterunner with the generated wordlist
+12. **Params** — arjun with the generated parameter list
+13. **Feedback** — merge hits → rebuild wordlist → round 2
+14. **Report** — grouped `REPORT.md` + `context.json`
 
 ---
 
@@ -87,6 +122,12 @@ output/
     historical.jsonl     old/removed paths
     hosts.txt            unique hosts
     secrets.jsonl        secret candidates
+    wordlist.txt         generated from THIS target's findings
+    params.txt           parameter names for arjun
+    context.json         shared context between layers
+    kiterunner.jsonl     API brute results
+    arjun.json           hidden parameter results
+    brute/               raw ffuf results
     chunks/              every JS file + lazy chunks
     REPORT.md            grouped report
     logs/                raw tool logs
@@ -103,11 +144,19 @@ output/
 | `enable_subdomains` | Expand subdomains (default `false`) |
 | `enable_brute` | Run ffuf (default `true`) |
 | `enable_browser` | Headless browser passes (default `true`) |
+| `enable_kiterunner` | API brute with `kr` (default `true`) |
+| `enable_arjun` | Hidden parameter discovery (default `true`) |
 | `probe_assets` | Probe images/css/fonts too (default `false`) |
 | `max_urls` | Probe cap (default `20000`) |
 | `ffuf_rate` | Requests/sec for ffuf (default `10`) |
-| `max_brute_prefixes` | How many folders to fuzz (default `15`) |
-| `wordlist` | Path list for ffuf |
+| `max_brute_prefixes` | How many folders to fuzz per round (default `15`) |
+| `wordlist` | Base path list |
+| `wordlist_max` | Max generated words (default `8000`) |
+| `wordlist_rounds` | Feedback rounds (default `2`) |
+| `chakra_depth` | Chakra BFS depth (default `10`) |
+| `jsrecon_max_pages` | js-recon page cap (default `1000`) |
+| `jsrecon_max_iterations` | js-recon crawl iterations (default `20`) |
+| `katana_depth` | katana crawl depth (default `10`) |
 
 > `probe_assets=false` only skips probing static assets to save time.
 > Collection still keeps **every** URL in `all_routes.jsonl`.
