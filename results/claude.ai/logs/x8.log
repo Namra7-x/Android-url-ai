@@ -1,0 +1,4 @@
+
+$ x8 -u https://claude.ai/ -w results/claude.ai/params.txt
+
+[exit 0] -> results/claude.ai/x8.txt

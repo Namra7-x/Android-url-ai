@@ -1,0 +1,6176 @@
+
+$ anastasis -u claude.ai --params -o json --save results/claude.ai/anastasis.json
+
+> anastasis@1.3.0 scan
+> node dist/scan.js -u claude.ai --params -o json --save results/claude.ai/anastasis.json
+
+
+🎯 Target: claude.ai
+
+
+🔍 JS FILE DISCOVERY
+──────────────────────────────────────────────────────────────────────
+  Sources:
+    ○ wayback
+    ○ otx
+    ○ urlscan
+    ○ jsmon
+    ○ html
+    ○ subjs
+    ○ gau
+    ○ link-crawler
+    ○ wayback: fetching...
+    ○ otx: fetching...
+    ○ urlscan: fetching...
+    ○ jsmon: fetching...
+    ○ html: fetching...
+    ○ subjs: fetching...
+    ○ gau: fetching...
+    ○ link-crawler: fetching...
+    ✗ subjs              failed (subjs not installed)
+    ✗ link-crawler       failed (2 page(s) failed)
+    ✗ otx                failed (HTTP 429: )
+    ✓ html               0 files
+    ✗ jsmon              failed (Could not find Chrome (ver. 143.0.7499.169). This can occur if either
+ 1. you did not perform an installation before running the script (e.g. `npx puppeteer browsers install chrome`) or
+ 2. your cache path is incorrectly configured (which is: /home/runner/.cache/puppeteer).
+For (2), check out our guide on configuring puppeteer at https://pptr.dev/guides/configuration.)
+    ✓ urlscan            0 files
+    ✓ wayback            1812 files
+    ✗ gau                failed (gau failed)
+
+
+  ⚠ Found 1812 unique JS URLs (3 sources succeeded, 5 failed)
+
+
+📚 API DOCUMENTATION DISCOVERY
+──────────────────────────────────────────────────────────────────────
+  ◐ Probing API endpoints and documentation...
+
+    ○ swagger            0 endpoints 0.0s
+    ○ graphql            0 endpoints 0.0s
+    ○ wadl               0 endpoints 0.0s
+    ○ wsdl               0 endpoints 0.0s
+    ○ nextjs-manifest    0 endpoints 0.1s
+    ○ webpack-manifest   0 endpoints 0.2s
+    ○ service-worker     0 endpoints 0.4s
+    ○ well-known         0 endpoints 0.0s
+    ✓ sitemap            1 endpoints 0.5s
+
+  ℹ Found 10 additional JS files from manifests
+
+
+
+  ✓ Discovered 1 API endpoints from 9 sources
+
+
+⚡ JS FILE PARSING
+──────────────────────────────────────────────────────────────────────
+    ✗ _buildManifest.js (Failed to fetch https://claude.ai/_next/static/0aeee8df2c/_buildManifest.js: 404)
+  Parsing: [██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 25% (447/1822)
+  Parsing: [██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 25% (448/1822)
+  Parsing: [██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 25% (449/1822)
+  Parsing: [██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 25% (450/1822)
+  Parsing: [██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 25% (451/1822)
+  Parsing: [██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 25% (452/1822)
+  Parsing: [██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 25% (453/1822)
+  Parsing: [██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 25% (454/1822)
+  Parsing: [██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 25% (455/1822)
+  Parsing: [██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 25% (456/1822)
+  Parsing: [██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 25% (457/1822)
+  Parsing: [██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 25% (458/1822)
+  Parsing: [██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 25% (459/1822)
+  Parsing: [██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 25% (460/1822)
+  Parsing: [██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 25% (461/1822)
+  Parsing: [██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 25% (462/1822)
+  Parsing: [██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 25% (463/1822)
+  Parsing: [██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 25% (464/1822)
+  Parsing: [████████████████████░░░░░░░░░░░░░░░░░░░░] 50% (902/1822)
+  Parsing: [████████████████████░░░░░░░░░░░░░░░░░░░░] 50% (903/1822)
+  Parsing: [████████████████████░░░░░░░░░░░░░░░░░░░░] 50% (904/1822)
+  Parsing: [████████████████████░░░░░░░░░░░░░░░░░░░░] 50% (905/1822)
+  Parsing: [████████████████████░░░░░░░░░░░░░░░░░░░░] 50% (906/1822)
+  Parsing: [████████████████████░░░░░░░░░░░░░░░░░░░░] 50% (907/1822)
+  Parsing: [████████████████████░░░░░░░░░░░░░░░░░░░░] 50% (908/1822)
+  Parsing: [████████████████████░░░░░░░░░░░░░░░░░░░░] 50% (909/1822)
+  Parsing: [████████████████████░░░░░░░░░░░░░░░░░░░░] 50% (910/1822)
+  Parsing: [████████████████████░░░░░░░░░░░░░░░░░░░░] 50% (911/1822)
+  Parsing: [████████████████████░░░░░░░░░░░░░░░░░░░░] 50% (912/1822)
+  Parsing: [████████████████████░░░░░░░░░░░░░░░░░░░░] 50% (913/1822)
+  Parsing: [████████████████████░░░░░░░░░░░░░░░░░░░░] 50% (914/1822)
+  Parsing: [████████████████████░░░░░░░░░░░░░░░░░░░░] 50% (915/1822)
+  Parsing: [████████████████████░░░░░░░░░░░░░░░░░░░░] 50% (916/1822)
+  Parsing: [████████████████████░░░░░░░░░░░░░░░░░░░░] 50% (917/1822)
+  Parsing: [████████████████████░░░░░░░░░░░░░░░░░░░░] 50% (918/1822)
+  Parsing: [████████████████████░░░░░░░░░░░░░░░░░░░░] 50% (919/1822)
+  Parsing: [████████████████████░░░░░░░░░░░░░░░░░░░░] 50% (920/1822)
+  Parsing: [██████████████████████████████░░░░░░░░░░] 75% (1358/1822)
+  Parsing: [██████████████████████████████░░░░░░░░░░] 75% (1359/1822)
+  Parsing: [██████████████████████████████░░░░░░░░░░] 75% (1360/1822)
+  Parsing: [██████████████████████████████░░░░░░░░░░] 75% (1361/1822)
+  Parsing: [██████████████████████████████░░░░░░░░░░] 75% (1362/1822)
+  Parsing: [██████████████████████████████░░░░░░░░░░] 75% (1363/1822)
+  Parsing: [██████████████████████████████░░░░░░░░░░] 75% (1364/1822)
+  Parsing: [██████████████████████████████░░░░░░░░░░] 75% (1365/1822)
+  Parsing: [██████████████████████████████░░░░░░░░░░] 75% (1366/1822)
+  Parsing: [██████████████████████████████░░░░░░░░░░] 75% (1367/1822)
+  Parsing: [██████████████████████████████░░░░░░░░░░] 75% (1368/1822)
+  Parsing: [██████████████████████████████░░░░░░░░░░] 75% (1369/1822)
+  Parsing: [██████████████████████████████░░░░░░░░░░] 75% (1370/1822)
+  Parsing: [██████████████████████████████░░░░░░░░░░] 75% (1371/1822)
+  Parsing: [██████████████████████████████░░░░░░░░░░] 75% (1372/1822)
+  Parsing: [██████████████████████████████░░░░░░░░░░] 75% (1373/1822)
+  Parsing: [██████████████████████████████░░░░░░░░░░] 75% (1374/1822)
+  Parsing: [██████████████████████████████░░░░░░░░░░] 75% (1375/1822)
+  ... processed 1811 files
+    ✗ 1688-2098d247624c9c21.js (Failed to fetch https://claude.ai/_next/static/chunks/1688-2098d247624c9c21.js: 404)
+  Parsing: [████████████████████████████████████████] 100% (1813/1822) │ 1s 1813.0/s
+  Parsing: [████████████████████████████████████████] 100% (1814/1822) │ 1s 1814.0/s
+  Parsing: [████████████████████████████████████████] 100% (1815/1822) │ 1s 1815.0/s
+  Parsing: [████████████████████████████████████████] 100% (1816/1822) │ 1s 1816.0/s
+  Parsing: [████████████████████████████████████████] 100% (1817/1822) │ 1s 1817.0/s
+  Parsing: [████████████████████████████████████████] 100% (1818/1822) │ 1s 1818.0/s
+  Parsing: [████████████████████████████████████████] 100% (1819/1822) │ 1s 1819.0/s
+  Parsing: [████████████████████████████████████████] 100% (1820/1822) │ 1s 1820.0/s
+  Parsing: [████████████████████████████████████████] 100% (1821/1822) │ 1s 1821.0/s
+  Parsing: [████████████████████████████████████████] 100% (1822/1822) │ 1s 1822.0/s
+  Parsing: [████████████████████████████████████████] 100% (1822/1822) │ 1s 1822.0/s
+  ... processed 9 files
+    ✓ firebase-messaging-sw.js                   246 endpoints
+  Total: 1821 files processed
+
+
+  ⚠ Parsed 246 endpoints (2/1822 files succeeded)
+
+  AST Parser: 198 │ Regex Parser: 35 │ SourceMap: 0
+
+╔═════════════════════════════════════╗
+║  🎯 SCAN COMPLETE                   ║
+║                                     ║
+║  Domain:                 claude.ai  ║
+║  JS Files Discovered:    1822       ║
+║  API Endpoints Found:    1          ║
+║  Total Unique Endpoints: 247        ║
+╚═════════════════════════════════════╝
+{
+  "domain": "claude.ai",
+  "totalEndpoints": 247,
+  "requestSpecs": [
+    {
+      "path": "/login",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/api/frame/access-request/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/access-request/:seg/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/access-requests/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/activity/:seg/viewers",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/duplicate/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/organizations/${e.organizationUuid}/chat_conversations/${e.conversationUuid}/tool_approval",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "e.organizationUuid",
+          "type": "uuid",
+          "required": true,
+          "confidence": 0.75
+        },
+        {
+          "name": "e.conversationUuid",
+          "type": "uuid",
+          "required": true,
+          "confidence": 0.75
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.75
+    },
+    {
+      "path": "/api/account/domain_claim_export/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/account/export_signed_url/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/auth/accounts/:seg/activate",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/auth/action_verification/challenges/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/billing/cw/offer/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/chat_snapshots/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/claude_code/onboarding/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/claude-offers/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/enterprise_orders/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/:shape",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "shape",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/access/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/activity/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/agent-space-labels/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/agent-space-resolve/:seg/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/agent-space/:seg/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/artifact/lookup/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/artifact/search/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/artifacts/:shape",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "shape",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/c2pa/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/claim/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/comments/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/compartment-claim/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/consent/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/control/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/db/:shape",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "shape",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/doc/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/endpoints/:shape",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "shape",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/events/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/external-sharing/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/favorite/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/files/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/handoff/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/invitation/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/invite/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/invite/:seg/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/invites/:shape",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "shape",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/lane/:seg/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/page-health/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/participants/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/perm/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/pre-publish/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/quiet-harbor/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/report/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/resident/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/retitle/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/self/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/share-key/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/template/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/types/:seg/:shape",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "shape",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/types/:seg/pins/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/types/:shape",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "shape",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/user/email/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/user/mint/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/user/resolve/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/versions/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/frame/viewed/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/organizations/:seg/artifact-versions/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/organizations/:seg/artifact-versions/by-artifact/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/organizations/:seg/artifacts/:seg/pending_shares",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/organizations/:seg/artifacts/:seg/review_comments",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/organizations/:seg/artifacts/:seg/share_notifications",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/organizations/:seg/artifacts/artifact_version/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/organizations/:seg/artifacts/artifact_version/:seg/storage/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/organizations/:seg/artifacts/artifact/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/organizations/:seg/artifacts/artifact/:seg/storage/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/organizations/:seg/artifacts/published_artifact/:seg/storage/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/organizations/:seg/artifacts/wiggle_artifact/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/organizations/:seg/artifacts/wiggle_artifact/:seg/storage/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/organizations/:seg/audit_logs/export_download/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/organizations/:seg/audit_logs/export_signed_url/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/organizations/:seg/chat_conversations/:seg/artifacts/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/organizations/:seg/chat_conversations/:seg/composer_notices",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/organizations/:seg/chat_snapshots/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/organizations/:seg/code/shares/:seg/report",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/organizations/:seg/cowork/scheduled_tasks/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/organizations/:seg/cowork/sessions/:shape",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "shape",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/organizations/:seg/export_download/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/organizations/:seg/export_signed_url/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/organizations/:seg/referral/tawny_finch/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/organizations/:seg/sessions/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/organizations/:seg/share/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/organizations/:seg/shared_artifact/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/organizations/:seg/snapshots/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/organizations/:seg/subscription/cw/offer/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/organizations/:seg/workbench/export/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/organizations/invite_link_preview/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/referral/code/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/referral/tawny_finch/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/signups/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/team_promo/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/code/${s}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "s",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/cowork/${s}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "s",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/admin-settings/plugins",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/api/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.55
+    },
+    {
+      "path": "/api/event_logging/v2/batch",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.55
+    },
+    {
+      "path": "/artifact",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/artifact/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/cai/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/chat/${s}?${bo}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "s",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "bo",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/claude-code-desktop",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/claudeai-rpc/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/claudeai-rpc/anthropic.bard.api.v1alpha.ConversationService/PerformAction",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/code",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/code/agents",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/code/artifact/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/code/disabled",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/code/enroll",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/code/family",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/code/frame/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/code/hub",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/code/memory",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/code/onboarding",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/code/preview",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/code/security",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/code/share",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/connect-github/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/connect/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/create/connectors",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/customize/connectors",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/customize/plugins/yours",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/design/anthropic.omelette.api.v1alpha.omeletteservice/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/design/mcp/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/design/v1/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/dm",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/dm/password-manager/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/duet",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/duet/password-manager/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/edge-api/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/email/usage-auto-reload/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/epitaxy",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/github-integration/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/login/app-google-auth/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/login/apple-callback/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/login/popup-google-auth/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/logout/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/lti/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/magic-link/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/mcp-registry/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/messages/password-manager/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/new",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/oauth/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/oauth/authorize",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/oauth/code",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/oauth/device",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/partner-callback/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/partner-callback/signed-out/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/partner-onboarding/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/perks/redeem/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/plugins/yours",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/redirect/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/referral/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/sandbox/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/settings/profile",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/space",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/sso-callback/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/task/new",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/v1/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/v1/code/rpc/anthropic.bard.api.v1alpha.ConversationService/PerformAction",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/v1/code/sessions",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/v2/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/web-api/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "error",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.9
+    },
+    {
+      "path": "https://fcmregistrations.googleapis.com/v1",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "https://firebaseinstallations.googleapis.com/v1",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "mcp____",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Connect-Protocol-Version",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "x-organization-uuid",
+          "value": "{e.organizationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "anthropic-chat-conversation-uuid",
+          "value": "{e.conversationUuid}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-service-name",
+          "value": "{Ge}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.9
+    },
+    {
+      "path": "/${Wt(e.sessionId)}/events",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "Wt(e.sessionId)",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/push-icons${e}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "e",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v1/agents/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v1/beta/agents/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v1/beta/deployment_runs/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v1/beta/deployments/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v1/beta/environments/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v1/beta/sessions/:shape",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "shape",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v1/beta/skills/:typed",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "typed",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v1/beta/vaults/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v1/beta/vaults/:seg/credentials/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v1/claude_code/routines/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v1/code/agent-proxy/provisioning-links/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v1/code/baku/sessions/:shape",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "shape",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v1/code/debug-shares/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v1/code/sessions/:shape",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "shape",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v1/code/shared-sessions/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v1/code/shared-threads/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v1/code/triggers/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v1/deployment_runs/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v1/deployments/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v1/environment_providers/private/organizations/:seg/mcp/manage-auth/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v1/environment_providers/private/organizations/:seg/mcp/start-auth/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v1/environments/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v1/environments/bridge/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v1/session_ingress/session/:shape",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "shape",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v1/sessions/:shape",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "shape",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v1/sessions/ws/:shape",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "shape",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v1/skills/:typed",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "typed",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v1/vaults/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v1/vaults/:seg/credentials/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v2/ccr-sessions-share/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v2/ccr-sessions/:shape",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "shape",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v2/ccr-sessions/ws/:shape",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "shape",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v2/sessions-share/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/_edge/",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/admin-settings/claude-tag/connectors/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/admin-settings/claude-tag/connectors/github/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/user-profiles/enrollment/:seg",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "seg",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/chat/${Ae}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "Ae",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/chat/${s}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "s",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/cowork/local_${Ae}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "Ae",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/local_sessions/${Ae}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "Ae",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/local_sessions/local_${Ae}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "Ae",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/project/${Ae}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "Ae",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/v1",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/_edge",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/api",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/claudeai-rpc",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/code/frame",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/connect-github",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/design/anthropic.omelette.api.v1alpha.omeletteservice",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/design/mcp",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/design/v1",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/dm/password-manager",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/duet/password-manager",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/edge-api",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/email/usage-auto-reload",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/github-integration",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/login/app-google-auth",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/login/apple-callback",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/login/popup-google-auth",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/logout",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/magic-link",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/mcp-registry",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/messages/password-manager",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/oauth",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/partner-callback",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/partner-callback/signed-out",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/partner-onboarding",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/perks/redeem",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/sso-callback",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/v2",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/web-api",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/code/artifact",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    }
+  ],
+  "stats": {
+    "jsFilesFound": 1822,
+    "apiEndpointsFound": 1,
+    "totalParams": 190,
+    "endpointsWithParams": 143,
+    "byLocation": {
+      "path": 190,
+      "query": 0,
+      "body": 0,
+      "cookie": 0
+    }
+  }
+}
+
+  ⚠ Could not write results/claude.ai/anastasis.json: ENOENT: no such file or directory, open 'results/claude.ai/anastasis.json.tmp'
+
+
+  ✗ Final save to results/claude.ai/anastasis.json failed: ENOENT: no such file or directory, open 'results/claude.ai/anastasis.json.tmp'
+
+
+
+[exit 0]

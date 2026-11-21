@@ -1,0 +1,5 @@
+urls:         https://claude.ai/
+methods:      GET
+wordlist len: 10
+
+
