@@ -19,6 +19,7 @@
   "max_urls": 0,
   "max_subdomains": 0,
   "max_js_files": 10000,
+  "js_crawl_rounds": 3,
   "method_targets": 200,
   "method_threads": 20,
   "method_timeout": 10,

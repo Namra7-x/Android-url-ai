@@ -63,6 +63,7 @@ UNCOVER_ENGINE_KEYS = [
 ABS_RE = re.compile(r"https?://[^\s\"'<>\\\)\]\},;]+", re.I)
 REL_RE = re.compile(r"[\"'`](/[A-Za-z0-9_\-./?=&%{}:;,@+~#\[\]]{1,300})[\"'`]")
 JS_RE = re.compile(r"\.js(\?|$)", re.I)
+JS_REF_RE = re.compile(r"[\"'`]([^\"'`\s]{1,400}\.js(?:\?[^\"'`\s]*)?)[\"'`]", re.I)
 
 RUN_STATUS = {}
 RUN_START = time.time()
@@ -398,17 +399,35 @@ def collect_js_urls(target_dir, base):
     return sorted(urls)
 
 
+def _resolve_js_ref(ref: str, source_url: str):
+    """Resolve a JS reference found inside a chunk into an absolute URL."""
+    ref = ref.strip().strip("\"'`")
+    if not ref or len(ref) > 500:
+        return None
+    if ref.startswith("//"):
+        ref = "https:" + ref
+    if re.match(r"^https?://", ref, re.I):
+        return ref
+    if ref.startswith("/") or ref.startswith("."):
+        try:
+            return urljoin(source_url, ref)
+        except Exception:  # noqa: BLE001
+            return None
+    return None
+
+
 def step_download_js(target_dir, logs, settings):
-    urls = collect_js_urls(target_dir, "")
+    seeds = collect_js_urls(target_dir, "")
     cap = int(settings.get("max_js_files", 10000) or 10000)
-    urls = urls[:cap] if cap > 0 else urls
-    if not urls:
+    rounds = max(1, int(settings.get("js_crawl_rounds", 3)))
+    if not seeds:
         record_status("js-download", 0, "no JS URLs found")
         return []
     chunks = target_dir / "chunks"
     chunks.mkdir(parents=True, exist_ok=True)
     ua = settings.get("user_agent", "hunt")
     timeout = int(settings.get("js_download_timeout", 15))
+    threads = int(settings.get("js_download_threads", 20))
 
     def fetch(u):
         try:
@@ -416,22 +435,45 @@ def step_download_js(target_dir, logs, settings):
             with urllib.request.urlopen(req, timeout=timeout) as r:
                 body = r.read()
             if len(body) < 20 or len(body) > 20_000_000:
-                return None
-            name = hashlib.sha256(u.encode()).hexdigest()[:16] + ".js"
-            (chunks / name).write_bytes(body)
-            return u
+                return u, None
+            return u, body
         except Exception:  # noqa: BLE001
-            return None
+            return u, None
 
-    saved = []
-    with ThreadPoolExecutor(max_workers=int(settings.get("js_download_threads", 20))) as pool:
-        for f in as_completed([pool.submit(fetch, u) for u in urls]):
-            r = f.result()
-            if r:
-                saved.append(r)
-    (target_dir / "js_urls.txt").write_text("\n".join(saved) + "\n", encoding="utf-8")
-    record_status("js-download", 0, f"{len(saved)} chunks saved of {len(urls)}")
-    log(f"JS chunks downloaded: {len(saved)} / {len(urls)}")
+    saved, seen = [], set()
+    queue = list(dict.fromkeys(seeds))
+    for rnd in range(rounds):
+        if not queue or (cap > 0 and len(saved) >= cap):
+            break
+        batch = [u for u in queue if u not in seen]
+        if cap > 0:
+            batch = batch[:cap - len(saved)]
+        seen.update(batch)
+        next_queue = []
+        with ThreadPoolExecutor(max_workers=threads) as pool:
+            for f in as_completed([pool.submit(fetch, u) for u in batch]):
+                u, body = f.result()
+                if body is None:
+                    continue
+                name = hashlib.sha256(u.encode()).hexdigest()[:16] + ".js"
+                try:
+                    (chunks / name).write_bytes(body)
+                except Exception:  # noqa: BLE001
+                    continue
+                saved.append(u)
+                # Follow chunk references discovered inside this chunk.
+                text = body.decode("utf-8", "replace")
+                for ref in JS_REF_RE.findall(text):
+                    abs_ref = _resolve_js_ref(ref, u)
+                    if (abs_ref and JS_RE.search(abs_ref) and abs_ref not in seen
+                            and abs_ref not in next_queue):
+                        next_queue.append(abs_ref)
+        queue = next_queue
+        log(f"JS round {rnd + 1}: {len(saved)} chunks saved, {len(queue)} new references")
+
+    (target_dir / "js_urls.txt").write_text("\n".join(sorted(set(saved))) + "\n", encoding="utf-8")
+    record_status("js-download", 0, f"{len(saved)} chunks saved over {rounds} round(s)")
+    log(f"JS chunks downloaded: {len(saved)} total")
     return saved
 
 
@@ -480,31 +522,54 @@ def _walk_anastasis(obj, urls, endpoints, params):
 def step_anastasis(host, base, target_dir, logs):
     if not settings_enabled("enable_anastasis"):
         return
+    target_dir, logs = Path(target_dir), Path(logs)
     out = target_dir / "anastasis.json"
-    rc = run(["anastasis", "-u", host, "--params", "-o", "json", "--save", str(out)],
+    # Anastasis runs from its own directory via the PATH wrapper, so a relative
+    # --save path lands in the tool folder. Always pass an absolute path.
+    save_path = str(out.resolve())
+    rc = run(["anastasis", "-u", host, "--params", "-o", "json", "--save", save_path],
              logs / "anastasis.log", timeout=3600)
     if rc != 0:
         chunks = target_dir / "chunks"
         if chunks.exists() and any(chunks.glob("*.js")):
             log("anastasis: primary mode failed, retrying in local-file mode")
-            rc = run(["anastasis", "-fs", str(chunks), "--params", "-o", "json",
-                      "--save", str(out)],
+            rc = run(["anastasis", "-fs", str(chunks.resolve()), "--params", "-o", "json",
+                      "--save", save_path],
                      logs / "anastasis_local.log", timeout=3600)
-    if rc != 0 and not out.exists():
-        record_status("anastasis", rc, "remote + local modes failed — see logs/")
+
+    raw = ""
+    if out.exists():
+        raw = out.read_text(encoding="utf-8", errors="replace")
+    if not raw.strip():
+        # Last resort: anastasis prints the same JSON into its log.
+        try:
+            txt = (logs / "anastasis.log").read_text(encoding="utf-8", errors="replace")
+            start, end = txt.find("{"), txt.rfind("}")
+            if start >= 0 and end > start:
+                candidate = txt[start:end + 1]
+                json.loads(candidate)
+                raw = candidate
+                out.write_text(raw, encoding="utf-8")
+        except Exception:  # noqa: BLE001
+            pass
+    if not raw.strip():
+        record_status("anastasis", rc if rc else 1, "no output produced — see logs/")
         return
+
     urls, endpoints, params = [], [], []
     try:
-        _walk_anastasis(json.loads(out.read_text(encoding="utf-8", errors="replace")),
-                        urls, endpoints, params)
+        _walk_anastasis(json.loads(raw), urls, endpoints, params)
     except Exception:  # noqa: BLE001
         pass
-    full = []
+
+    # Write full URLs so these endpoints enter the route pool and get probed.
+    prefix = base.rstrip("/")
+    full = set()
     for item in urls:
         parts = item.split(" ", 1)
         if len(parts) == 2:
-            full.append(parts[1])
-    (target_dir / "anastasis_urls.txt").write_text("\n".join(sorted(set(full))) + "\n", encoding="utf-8")
+            full.add(prefix + parts[1])
+    (target_dir / "anastasis_urls.txt").write_text("\n".join(sorted(full)) + "\n", encoding="utf-8")
     write_jsonl(target_dir / "anastasis_endpoints.jsonl", endpoints)
     record_status("anastasis", 0, f"{len(endpoints)} endpoints, {len(set(params))} params")
     log(f"anastasis: {len(endpoints)} endpoints, {len(set(params))} params")
