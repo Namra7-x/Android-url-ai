@@ -16,11 +16,14 @@ echo "::group::Go tools"
 go install github.com/projectdiscovery/katana/cmd/katana@latest || echo "WARN: katana"
 go install github.com/projectdiscovery/httpx/cmd/httpx@latest || echo "WARN: httpx"
 go install github.com/ffuf/ffuf/v2@latest || echo "WARN: ffuf"
-go install github.com/s0md3v/uro@latest || echo "WARN: uro"
 go install github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest || echo "WARN: subfinder"
 go install github.com/projectdiscovery/dnsx/cmd/dnsx@latest || echo "WARN: dnsx"
 go install github.com/projectdiscovery/uncover/cmd/uncover@latest || echo "WARN: uncover"
-go install github.com/assetnote/kiterunner/cmd/kr@latest || echo "WARN: kiterunner"
+go install github.com/assetnote/kiterunner/cmd/kiterunner@latest || echo "WARN: kiterunner"
+# the built binary is named "kiterunner"; the pipeline calls it "kr"
+if [ -x "$GOBIN/kiterunner" ] && [ ! -x "$GOBIN/kr" ]; then
+  ln -s "$GOBIN/kiterunner" "$GOBIN/kr"
+fi
 go install github.com/lc/gau/v2/cmd/gau@latest || echo "WARN: gau"
 go install github.com/tomnomnom/waybackurls@latest || echo "WARN: waybackurls"
 go install github.com/BishopFox/jsluice/cmd/jsluice@latest || echo "WARN: jsluice"
@@ -34,7 +37,7 @@ echo "::endgroup::"
 echo "::group::Python tools"
 python3 -m pip install --upgrade pip >/dev/null 2>&1 || true
 # xnLinkFinder now installs as a CLI on PATH (v8.2) — no clone/path guessing.
-python3 -m pip install waymore arjun xnLinkFinder || echo "WARN: pip tools"
+python3 -m pip install waymore arjun xnLinkFinder uro || echo "WARN: pip tools"
 echo "::endgroup::"
 
 echo "::group::Chakra"
