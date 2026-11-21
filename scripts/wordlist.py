@@ -127,7 +127,12 @@ def build(target_dir, base: str, static_file: str, out_file: str,
             raw = "https:" + raw
 
         if re.match(r"^https?://", raw, re.I):
-            p = urlparse(raw)
+            try:
+                p = urlparse(raw)
+            except (ValueError, TypeError):
+                # Broken bracketed hosts (e.g. "http://[abc") are junk from
+                # minified JS. Skip only this string, never the whole run.
+                return
             host = p.netloc.lower()
             if host.startswith("www."):
                 host = host[4:]

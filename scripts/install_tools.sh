@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# Install all CLI tools on an Ubuntu GitHub runner.
-# Failures are logged but do not stop the job (optional tools may be unavailable).
+# Install every tool the hunt pipeline needs.
+# FAIL LOUDLY if anything is missing — no silent skips, ever.
 set -uo pipefail
 
 export GOBIN="$HOME/go/bin"
-mkdir -p "$GOBIN"
+mkdir -p "$GOBIN" "$HOME/.local/bin" "$HOME/tools"
 export PATH="$GOBIN:$HOME/.local/bin:$PATH"
 
 if [ -n "${GITHUB_PATH:-}" ]; then
@@ -24,21 +24,22 @@ go install github.com/assetnote/kiterunner/cmd/kr@latest || echo "WARN: kiterunn
 go install github.com/lc/gau/v2/cmd/gau@latest || echo "WARN: gau"
 go install github.com/tomnomnom/waybackurls@latest || echo "WARN: waybackurls"
 go install github.com/BishopFox/jsluice/cmd/jsluice@latest || echo "WARN: jsluice"
-go install github.com/trufflesecurity/trufflehog/v3@latest || echo "WARN: trufflehog"
+echo "::endgroup::"
+
+echo "::group::TruffleHog (official prebuilt binary — no Go build needed)"
+curl -sSfL https://raw.githubusercontent.com/trufflesecurity/trufflehog/main/scripts/install.sh \
+  | sh -s -- -b "$GOBIN" || echo "WARN: trufflehog"
 echo "::endgroup::"
 
 echo "::group::Python tools"
 python3 -m pip install --upgrade pip >/dev/null 2>&1 || true
-python3 -m pip install waymore arjun || echo "WARN: pip waymore/arjun"
+# xnLinkFinder now installs as a CLI on PATH (v8.2) — no clone/path guessing.
+python3 -m pip install waymore arjun xnLinkFinder || echo "WARN: pip tools"
+echo "::endgroup::"
 
-mkdir -p "$HOME/tools"
+echo "::group::Chakra"
 git clone --depth 1 https://github.com/NavyTitanium/Chakra.git "$HOME/tools/Chakra" || true
-python3 -m pip install requests jsbeautifier brotlicffi || true
-
-git clone --depth 1 https://github.com/xnl-h4ck3r/xnLinkFinder.git "$HOME/tools/xnLinkFinder" || true
-if [ -f "$HOME/tools/xnLinkFinder/requirements.txt" ]; then
-  python3 -m pip install -r "$HOME/tools/xnLinkFinder/requirements.txt" || true
-fi
+python3 -m pip install requests jsbeautifier brotlicffi || echo "WARN: chakra python deps"
 echo "::endgroup::"
 
 echo "::group::Node tools"
@@ -51,11 +52,30 @@ sudo apt-get update -qq || true
 sudo apt-get install -y -qq jq >/dev/null 2>&1 || true
 echo "::endgroup::"
 
-echo "Installed versions:"
-for t in katana httpx ffuf uro subfinder dnsx uncover kr gau waybackurls jsluice trufflehog waymore arjun js-recon jq; do
+# ---------------------------------------------------------------------------
+# HARD VERIFICATION — a missing tool fails the job here, not silently later.
+# ---------------------------------------------------------------------------
+echo "::group::Verify all tools"
+REQUIRED="katana httpx ffuf uro subfinder dnsx uncover kr gau waybackurls jsluice trufflehog waymore arjun js-recon jq xnLinkFinder"
+MISSING=0
+for t in $REQUIRED; do
   if command -v "$t" >/dev/null 2>&1; then
-    echo "  OK  $t"
+    echo "  OK   $t"
   else
-    echo "  --  $t (missing)"
+    echo "  MISS $t"
+    MISSING=1
   fi
 done
+if [ -f "$HOME/tools/Chakra/chakra.py" ]; then
+  echo "  OK   Chakra"
+else
+  echo "  MISS Chakra"
+  MISSING=1
+fi
+echo "::endgroup::"
+
+if [ "$MISSING" -ne 0 ]; then
+  echo "::error::One or more required tools are missing. No silent skips allowed."
+  exit 1
+fi
+echo "All tools installed and verified."

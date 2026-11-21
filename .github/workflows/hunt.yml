@@ -27,11 +27,11 @@ on:
         required: false
         default: "true"
       enable_brute:
-        description: "Run ffuf brute force (true/false)"
+        description: "ffuf path brute (OFF = fast; wordlist still prepared)"
         required: false
-        default: "true"
+        default: "false"
       enable_vhost:
-        description: "Fuzz virtual hosts with ffuf (true/false)"
+        description: "Virtual-host discovery (no ffuf needed)"
         required: false
         default: "true"
       enable_methods:
@@ -52,7 +52,7 @@ on:
         default: "true"
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: web-hunt
@@ -114,25 +114,45 @@ jobs:
         run: |
           python3 scripts/hunt.py \
             --urls "${{ inputs.urls_file }}" \
-            --out output \
+            --out results \
             --settings config/settings.json
 
-      - name: Upload results
+      # Results are committed so you can browse them on GitHub — no download.
+      # Heavy chunk/source-map dirs stay in the artifact only.
+      - name: Commit results to repo
+        if: always()
+        run: |
+          git config user.name "hunt-bot"
+          git config user.email "hunt-bot@users.noreply.github.com"
+          mkdir -p results
+          find results -type f ! -path "*/chunks/*" ! -path "*/sourcemaps/*" -print0 \
+            | xargs -0 -r git add -f
+          if git diff --cached --quiet; then
+            echo "No result changes to commit"
+          else
+            git commit -m "Hunt results $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            git push
+          fi
+
+      - name: Upload results (backup)
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: hunt-results
-          path: output/
+          path: results/
           retention-days: 30
           if-no-files-found: warn
 
       - name: Job summary
         if: always()
         run: |
-          if [ -f output/SUMMARY.md ]; then
-            cat output/SUMMARY.md >> "$GITHUB_STEP_SUMMARY"
+          if [ -f results/INDEX.md ]; then
+            cat results/INDEX.md >> "$GITHUB_STEP_SUMMARY"
           fi
-          for f in output/*/REPORT.md; do
+          if [ -f results/SUMMARY.md ]; then
+            cat results/SUMMARY.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+          for f in results/*/REPORT.md; do
             if [ -f "$f" ]; then
               echo "" >> "$GITHUB_STEP_SUMMARY"
               cat "$f" >> "$GITHUB_STEP_SUMMARY"
