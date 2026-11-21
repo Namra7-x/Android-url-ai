@@ -1,0 +1,298 @@
+
+$ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python3 /home/runner/tools/Chakra/chakra.py https://openai.com -o results/openai.com/chakra -d 10 -t 16 --delay 0.1
+2026-11-21 11:11:53,920  INFO      MainThread            ========================================================================
+2026-11-21 11:11:53,920  INFO      MainThread              Target       : https://openai.com
+2026-11-21 11:11:53,920  INFO      MainThread              Origin       : https://openai.com
+2026-11-21 11:11:53,920  INFO      MainThread              Output dir   : results/openai.com/chakra
+2026-11-21 11:11:53,920  INFO      MainThread              Threads      : 16
+2026-11-21 11:11:53,920  INFO      MainThread              Max depth    : 10
+2026-11-21 11:11:53,920  INFO      MainThread              Timeout      : connect=10s  read=30s
+2026-11-21 11:11:53,920  INFO      MainThread              Retries      : 3
+2026-11-21 11:11:53,920  INFO      MainThread              Beautify     : True
+2026-11-21 11:11:53,920  INFO      MainThread              Scan         : True
+2026-11-21 11:11:53,920  INFO      MainThread              Source maps  : True
+2026-11-21 11:11:53,920  INFO      MainThread              Extra pages  : none
+2026-11-21 11:11:53,920  INFO      MainThread              jsbeautifier : yes
+2026-11-21 11:11:53,920  INFO      MainThread              brotli       : yes
+2026-11-21 11:11:53,921  INFO      MainThread              TLS verify   : True
+2026-11-21 11:11:53,921  INFO      MainThread            ========================================================================
+2026-11-21 11:11:53,921  INFO      MainThread            [BOOT] Seeding from: https://openai.com
+2026-11-21 11:11:54,128  INFO      MainThread            [BOOT] 200  458,617 bytes
+2026-11-21 11:11:54,129  INFO      MainThread            [BOOT] HTML → results/openai.com/chakra/index.html
+2026-11-21 11:11:54,493  INFO      MainThread              🌐 subdomain found: cdn.openai.com
+2026-11-21 11:11:54,493  INFO      MainThread              🌐 subdomain found: community.openai.com
+2026-11-21 11:11:54,493  INFO      MainThread              🌐 subdomain found: deploymentsafety.openai.com
+2026-11-21 11:11:54,493  INFO      MainThread              🌐 subdomain found: developers.openai.com
+2026-11-21 11:11:54,493  INFO      MainThread              🌐 subdomain found: help.openai.com
+2026-11-21 11:11:54,494  INFO      MainThread              🌐 subdomain found: platform.openai.com
+2026-11-21 11:11:54,494  INFO      MainThread              🌐 subdomain found: status.openai.com
+2026-11-21 11:11:54,527  INFO      MainThread            [BOOT] 116 JS URLs enqueued
+2026-11-21 11:11:54,528  WARNING   MainThread            [BOOT] No _buildManifest detected
+2026-11-21 11:11:54,528  INFO      MainThread            [RUN] BFS — 16 workers
+2026-11-21 11:11:54,628  INFO      worker_0              [0001] depth=1  GET  https://openai.com/_next/static/immutable/chunks/1hmdbc8xmwd_e.js
+2026-11-21 11:11:54,629  INFO      worker_1              [0002] depth=1  GET  https://openai.com/_next/static/immutable/chunks/3ddbkt-cccq9f.js
+2026-11-21 11:11:54,630  INFO      worker_2              [0003] depth=1  GET  https://openai.com/_next/static/immutable/chunks/turbopack-3h_ctkfaeun7f.js
+2026-11-21 11:11:54,631  INFO      worker_13             [0004] depth=1  GET  https://openai.com/_next/static/immutable/chunks/2rbpkzqpq0xu3.js
+2026-11-21 11:11:54,631  INFO      worker_14             [0005] depth=1  GET  https://openai.com/_next/static/immutable/chunks/2kuc9br_3m5ww.js
+2026-11-21 11:11:54,633  INFO      worker_9              [0006] depth=1  GET  https://openai.com/_next/static/immutable/chunks/2qe69o7acy76k.js
+2026-11-21 11:11:54,634  INFO      worker_12             [0007] depth=1  GET  https://openai.com/_next/static/immutable/chunks/0v89gmmxsqj_0.js
+2026-11-21 11:11:54,634  INFO      worker_5              [0008] depth=1  GET  https://openai.com/_next/static/immutable/chunks/2qj57lbhn71ut.js
+2026-11-21 11:11:54,635  INFO      worker_3              [0009] depth=1  GET  https://openai.com/_next/static/immutable/chunks/2wet2z_tolvq2.js
+2026-11-21 11:11:54,635  INFO      worker_10             [0010] depth=1  GET  https://openai.com/_next/static/immutable/chunks/09cxc790tp_jd.js
+2026-11-21 11:11:54,635  INFO      worker_11             [0011] depth=1  GET  https://openai.com/_next/static/immutable/chunks/05v3g2xkdo7yt.js
+2026-11-21 11:11:54,635  INFO      worker_6              [0012] depth=1  GET  https://openai.com/_next/static/immutable/chunks/0zwjmf093gvzg.js
+2026-11-21 11:11:54,636  INFO      worker_7              [0013] depth=1  GET  https://openai.com/_next/static/immutable/chunks/1q6ptu4xwkwjx.js
+2026-11-21 11:11:54,637  INFO      worker_8              [0014] depth=1  GET  https://openai.com/_next/static/immutable/chunks/3vq1e8140roiz.js
+2026-11-21 11:11:54,637  INFO      worker_15             [0015] depth=1  GET  https://openai.com/_next/static/immutable/chunks/3inxit9b9xqvr.js
+2026-11-21 11:11:54,638  INFO      worker_4              [0016] depth=1  GET  https://openai.com/_next/static/immutable/chunks/1bov61-oyzrs-.js
+2026-11-21 11:11:55,353  INFO      worker_1                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/3ddbkt-cccq9f.js  [18,452 chars]
+2026-11-21 11:11:55,660  INFO      worker_3                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/2wet2z_tolvq2.js  [53,752 chars]
+2026-11-21 11:11:55,757  INFO      worker_2                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/turbopack-3h_ctkfaeun7f.js  [16,795 chars]
+2026-11-21 11:11:55,775  INFO      worker_1              [0017] depth=1  GET  https://openai.com/_next/static/immutable/chunks/3je_-s5--l12z.js
+2026-11-21 11:11:56,001  INFO      worker_3              [0018] depth=1  GET  https://openai.com/_next/static/immutable/chunks/31n5nl5y7b6i7.js
+2026-11-21 11:11:56,006  INFO      worker_15               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/3inxit9b9xqvr.js  [61,394 chars]
+2026-11-21 11:11:56,022  INFO      worker_5                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/2qj57lbhn71ut.js  [35,705 chars]
+2026-11-21 11:11:56,110  INFO      worker_0                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/1hmdbc8xmwd_e.js  [49,018 chars]
+2026-11-21 11:11:56,211  INFO      worker_2              [0019] depth=1  GET  https://openai.com/_next/static/immutable/chunks/0vwoo0431l8d6.js
+2026-11-21 11:11:56,226  INFO      worker_11               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/05v3g2xkdo7yt.js  [48,419 chars]
+2026-11-21 11:11:56,283  INFO      worker_14               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/2kuc9br_3m5ww.js  [95,269 chars]
+2026-11-21 11:11:56,536  INFO      worker_9                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/2qe69o7acy76k.js  [53,895 chars]
+2026-11-21 11:11:56,536  INFO      worker_3                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/31n5nl5y7b6i7.js  [587 chars]
+2026-11-21 11:11:56,537  INFO      worker_15             [0020] depth=1  GET  https://openai.com/_next/static/immutable/chunks/2lw2ahmub8j27.js
+2026-11-21 11:11:56,547  INFO      worker_5              [0021] depth=1  GET  https://openai.com/_next/static/immutable/chunks/3wtvgu_zr60tc.js
+2026-11-21 11:11:56,743  INFO      worker_0              [0022] depth=1  GET  https://openai.com/_next/static/immutable/chunks/3vv2qqqk3sy54.js
+2026-11-21 11:11:56,874  INFO      worker_7                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/1q6ptu4xwkwjx.js  [41,427 chars]
+2026-11-21 11:11:56,965  INFO      worker_11             [0023] depth=1  GET  https://openai.com/_next/static/immutable/chunks/0qgskag91cjvv.js
+2026-11-21 11:11:56,965  INFO      worker_1                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/3je_-s5--l12z.js  [44,121 chars]
+2026-11-21 11:11:56,995  INFO      worker_8                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/3vq1e8140roiz.js  [81,911 chars]
+2026-11-21 11:11:57,096  INFO      worker_3              [0024] depth=1  GET  https://openai.com/_next/static/immutable/chunks/2knd-jmkk8un_.js
+2026-11-21 11:11:57,107  INFO      worker_12               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/0v89gmmxsqj_0.js  [124,361 chars]
+2026-11-21 11:11:57,138  INFO      worker_9              [0025] depth=1  GET  https://openai.com/_next/static/immutable/chunks/1td_dzyeqyvz2.js
+2026-11-21 11:11:57,229  INFO      worker_14             [0026] depth=1  GET  https://openai.com/_next/static/immutable/chunks/2nrhc90ouk8yr.js
+2026-11-21 11:11:57,356  INFO      worker_8                🔑 1 secret(s) → 3vq1e8140roiz.js
+2026-11-21 11:11:57,378  INFO      worker_7              [0027] depth=1  GET  https://openai.com/_next/static/immutable/chunks/3aui1-vckn_hq.js
+2026-11-21 11:11:57,451  INFO      worker_1              [0028] depth=1  GET  https://openai.com/_next/static/immutable/chunks/0sv_5qd6a2gsk.js
+2026-11-21 11:11:57,540  INFO      worker_8              [0029] depth=1  GET  https://openai.com/_next/static/immutable/chunks/1s_cf0zivhnd8.js
+2026-11-21 11:11:57,716  INFO      worker_12             [0030] depth=1  GET  https://openai.com/_next/static/immutable/chunks/1den392fqhgg7.js
+2026-11-21 11:11:57,891  INFO      worker_4                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/1bov61-oyzrs-.js  [219,277 chars]
+2026-11-21 11:11:58,656  INFO      worker_4              [0031] depth=1  GET  https://openai.com/_next/static/immutable/chunks/17z15t37vmuyu.js
+2026-11-21 11:11:58,986  INFO      worker_1                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/0sv_5qd6a2gsk.js  [43,094 chars]
+2026-11-21 11:11:59,131  INFO      worker_2                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/0vwoo0431l8d6.js  [95,822 chars]
+2026-11-21 11:11:59,450  INFO      worker_9                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/1td_dzyeqyvz2.js  [37,638 chars]
+2026-11-21 11:11:59,450  INFO      worker_1              [0032] depth=1  GET  https://openai.com/_next/static/immutable/chunks/36l4pnxjxtfib.js
+2026-11-21 11:12:00,169  INFO      worker_15               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/2lw2ahmub8j27.js  [73,709 chars]
+2026-11-21 11:12:00,201  INFO      worker_14               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/2nrhc90ouk8yr.js  [58,093 chars]
+2026-11-21 11:12:00,223  INFO      worker_2              [0033] depth=1  GET  https://openai.com/_next/static/immutable/chunks/192cwqqov843d.js
+2026-11-21 11:12:00,411  INFO      worker_9              [0034] depth=1  GET  https://openai.com/_next/static/immutable/chunks/2z8fvqwzou5_6.js
+2026-11-21 11:12:00,468  INFO      worker_5                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/3wtvgu_zr60tc.js  [139,952 chars]
+2026-11-21 11:12:00,507  INFO      worker_15             [0035] depth=1  GET  https://openai.com/_next/static/immutable/chunks/0ufpjn2glcvg6.js
+2026-11-21 11:12:01,255  INFO      worker_14             [0036] depth=1  GET  https://openai.com/_next/static/immutable/chunks/0p_v73-ntcjvo.js
+2026-11-21 11:12:01,275  INFO      worker_8                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/1s_cf0zivhnd8.js  [187,790 chars]
+2026-11-21 11:12:01,361  INFO      worker_6                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/0zwjmf093gvzg.js  [193,248 chars]
+2026-11-21 11:12:01,361  INFO      worker_7                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/3aui1-vckn_hq.js  [83,208 chars]
+2026-11-21 11:12:01,860  INFO      worker_11               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/0qgskag91cjvv.js  [110,819 chars]
+2026-11-21 11:12:02,624  INFO      worker_4                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/17z15t37vmuyu.js  [35,365 chars]
+2026-11-21 11:12:02,778  INFO      worker_8              [0037] depth=1  GET  https://openai.com/_next/static/immutable/chunks/2nom5lmfzm_8s.js
+2026-11-21 11:12:02,855  INFO      worker_11             [0038] depth=1  GET  https://openai.com/_next/static/immutable/chunks/2oxn356rbk0hm.js
+2026-11-21 11:12:02,953  INFO      worker_1                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/36l4pnxjxtfib.js  [53,969 chars]
+2026-11-21 11:12:03,020  INFO      worker_4              [0039] depth=1  GET  https://openai.com/_next/static/immutable/chunks/0g-_ylpxdhe-9.js
+2026-11-21 11:12:03,041  INFO      worker_7              [0040] depth=1  GET  https://openai.com/_next/static/immutable/chunks/39owsxv65ct1b.js
+2026-11-21 11:12:03,052  INFO      worker_6                🌐 subdomain found: go.openai.com
+2026-11-21 11:12:03,059  INFO      worker_5              [0041] depth=1  GET  https://openai.com/_next/static/immutable/chunks/0m9mrgdn6ukkq.js
+2026-11-21 11:12:03,080  INFO      worker_15               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/0ufpjn2glcvg6.js  [34,458 chars]
+2026-11-21 11:12:03,174  INFO      worker_1              [0042] depth=1  GET  https://openai.com/_next/static/immutable/chunks/2ksxljj4twdus.js
+2026-11-21 11:12:03,278  INFO      worker_6              [0043] depth=1  GET  https://openai.com/_next/static/immutable/chunks/1xlk8ie9oslg_.js
+2026-11-21 11:12:03,324  INFO      worker_15             [0044] depth=1  GET  https://openai.com/_next/static/immutable/chunks/095qxqm7i7zun.js
+2026-11-21 11:12:03,402  INFO      worker_10               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/09cxc790tp_jd.js  [250,093 chars]
+2026-11-21 11:12:04,043  INFO      worker_10             [0045] depth=1  GET  https://openai.com/_next/static/immutable/chunks/1x-z3n3bz-q49.js
+2026-11-21 11:12:04,742  INFO      worker_14               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/0p_v73-ntcjvo.js  [72,049 chars]
+2026-11-21 11:12:04,758  INFO      worker_11               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/2oxn356rbk0hm.js  [29,494 chars]
+2026-11-21 11:12:04,981  INFO      worker_11             [0046] depth=1  GET  https://openai.com/_next/static/immutable/chunks/05nbn8xkm68-r.js
+2026-11-21 11:12:05,066  INFO      worker_8                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/2nom5lmfzm_8s.js  [38,298 chars]
+2026-11-21 11:12:05,082  INFO      worker_14             [0047] depth=1  GET  https://openai.com/_next/static/immutable/chunks/22za8gbxbg0t0.js
+2026-11-21 11:12:05,407  INFO      worker_8              [0048] depth=1  GET  https://openai.com/_next/static/immutable/chunks/3vzc7oyun99la.js
+2026-11-21 11:12:05,680  INFO      worker_5                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/0m9mrgdn6ukkq.js  [41,388 chars]
+2026-11-21 11:12:06,025  INFO      worker_14               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/22za8gbxbg0t0.js  [52,307 chars]
+2026-11-21 11:12:06,248  INFO      worker_5              [0049] depth=1  GET  https://openai.com/_next/static/immutable/chunks/0douwzlviv1q3.js
+2026-11-21 11:12:06,513  INFO      worker_10               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/1x-z3n3bz-q49.js  [46,543 chars]
+2026-11-21 11:12:06,643  INFO      worker_14             [0050] depth=1  GET  https://openai.com/_next/static/immutable/chunks/196_l1nbh-ag8.js
+2026-11-21 11:12:06,756  INFO      worker_7                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/39owsxv65ct1b.js  [68,392 chars]
+2026-11-21 11:12:07,203  INFO      worker_11               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/05nbn8xkm68-r.js  [37,350 chars]
+2026-11-21 11:12:07,768  INFO      worker_15               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/095qxqm7i7zun.js  [110,480 chars]
+2026-11-21 11:12:07,825  INFO      worker_6                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/1xlk8ie9oslg_.js  [87,983 chars]
+2026-11-21 11:12:07,921  INFO      worker_5                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/0douwzlviv1q3.js  [14,592 chars]
+2026-11-21 11:12:08,049  INFO      worker_10             [0051] depth=1  GET  https://openai.com/_next/static/immutable/chunks/2y5zlqavofwi7.js
+2026-11-21 11:12:08,982  INFO      worker_15             [0052] depth=1  GET  https://openai.com/_next/static/immutable/chunks/3bt8ww955i1dr.js
+2026-11-21 11:12:09,028  INFO      worker_11             [0053] depth=1  GET  https://openai.com/_next/static/immutable/chunks/27am0wkazfxix.js
+2026-11-21 11:12:09,168  INFO      worker_7              [0054] depth=1  GET  https://openai.com/_next/static/immutable/chunks/10b4wwnj5ri6t.js
+2026-11-21 11:12:09,375  INFO      worker_5              [0055] depth=1  GET  https://openai.com/_next/static/immutable/chunks/3oqg6euhw9m7s.js
+2026-11-21 11:12:09,671  INFO      worker_6              [0056] depth=1  GET  https://openai.com/_next/static/immutable/chunks/0itp7pcp7tk97.js
+2026-11-21 11:12:09,692  INFO      worker_8                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/3vzc7oyun99la.js  [139,781 chars]
+2026-11-21 11:12:10,127  INFO      worker_12               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/1den392fqhgg7.js  [359,059 chars]
+2026-11-21 11:12:10,873  INFO      worker_7                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/10b4wwnj5ri6t.js  [39,554 chars]
+2026-11-21 11:12:10,971  INFO      worker_14               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/196_l1nbh-ag8.js  [66,858 chars]
+2026-11-21 11:12:11,102  INFO      worker_7              [0057] depth=1  GET  https://openai.com/_next/static/immutable/chunks/354b92djnmt_a.js
+2026-11-21 11:12:11,291  INFO      worker_8              [0058] depth=1  GET  https://openai.com/_next/static/immutable/chunks/1qp3o142f-njv.js
+2026-11-21 11:12:11,443  INFO      worker_11               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/27am0wkazfxix.js  [30,516 chars]
+2026-11-21 11:12:11,713  INFO      worker_14             [0059] depth=1  GET  https://openai.com/_next/static/immutable/chunks/444xd8q-ph1jw.js
+2026-11-21 11:12:12,125  INFO      worker_11             [0060] depth=1  GET  https://openai.com/_next/static/immutable/chunks/2ihhghc7hgxfo.js
+2026-11-21 11:12:12,613  INFO      worker_1                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/2ksxljj4twdus.js  [248,646 chars]
+2026-11-21 11:12:12,757  INFO      worker_12             [0061] depth=1  GET  https://openai.com/_next/static/immutable/chunks/0vi6rkw99ujlr.js
+2026-11-21 11:12:12,856  INFO      worker_7                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/354b92djnmt_a.js  [34,601 chars]
+2026-11-21 11:12:12,887  INFO      worker_10               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/2y5zlqavofwi7.js  [31,329 chars]
+2026-11-21 11:12:13,156  INFO      worker_11               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/2ihhghc7hgxfo.js  [39,568 chars]
+2026-11-21 11:12:13,178  INFO      worker_10             [0062] depth=1  GET  https://openai.com/_next/static/immutable/chunks/3ke7_z4epvxmu.js
+2026-11-21 11:12:13,185  INFO      worker_7              [0063] depth=1  GET  https://openai.com/_next/static/immutable/chunks/3varc1sc3txyg.js
+2026-11-21 11:12:13,627  INFO      worker_12               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/0vi6rkw99ujlr.js  [35,602 chars]
+2026-11-21 11:12:13,841  INFO      worker_1              [0064] depth=1  GET  https://openai.com/_next/static/immutable/chunks/2y0a-w30i4_mh.js
+2026-11-21 11:12:13,913  INFO      worker_11             [0065] depth=1  GET  https://openai.com/_next/static/immutable/chunks/3f2n09ysz0jv0.js
+2026-11-21 11:12:14,015  INFO      worker_5                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/3oqg6euhw9m7s.js  [89,391 chars]
+2026-11-21 11:12:14,124  INFO      worker_12             [0066] depth=1  GET  https://openai.com/_next/static/immutable/chunks/1z9530dru9lf2.js
+2026-11-21 11:12:14,157  INFO      worker_15               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/3bt8ww955i1dr.js  [84,654 chars]
+2026-11-21 11:12:14,327  INFO      worker_9                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/2z8fvqwzou5_6.js  [263,778 chars]
+2026-11-21 11:12:14,445  INFO      worker_8                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/1qp3o142f-njv.js  [66,090 chars]
+2026-11-21 11:12:14,450  INFO      worker_14               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/444xd8q-ph1jw.js  [34,523 chars]
+2026-11-21 11:12:14,819  INFO      worker_5              [0067] depth=1  GET  https://openai.com/_next/static/immutable/chunks/39u0x4e3h2c_3.js
+2026-11-21 11:12:15,693  INFO      worker_9              [0068] depth=1  GET  https://openai.com/_next/static/immutable/chunks/0c0hxoamwjsbw.js
+2026-11-21 11:12:15,730  INFO      worker_15             [0069] depth=1  GET  https://openai.com/_next/static/immutable/chunks/15pvy14-q3gdf.js
+2026-11-21 11:12:15,757  INFO      worker_8              [0070] depth=1  GET  https://openai.com/_next/static/immutable/chunks/2g90tjacodkrd.js
+2026-11-21 11:12:16,093  INFO      worker_14             [0071] depth=1  GET  https://openai.com/_next/static/immutable/chunks/0fnbaomkxcp0t.js
+2026-11-21 11:12:16,227  INFO      worker_13               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/2rbpkzqpq0xu3.js  [1,077,903 chars]
+2026-11-21 11:12:16,388  INFO      worker_10               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/3ke7_z4epvxmu.js  [83,337 chars]
+2026-11-21 11:12:16,913  INFO      worker_10             [0072] depth=1  GET  https://openai.com/_next/static/immutable/chunks/0h47yf2dbfyug.js
+2026-11-21 11:12:17,103  INFO      worker_0                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/3vv2qqqk3sy54.js  [481,727 chars]
+2026-11-21 11:12:18,575  INFO      worker_8                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/2g90tjacodkrd.js  [36,444 chars]
+2026-11-21 11:12:18,613  INFO      worker_2                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/192cwqqov843d.js  [1,182,757 chars]
+2026-11-21 11:12:18,692  INFO      worker_0              [0073] depth=1  GET  https://openai.com/_next/static/immutable/chunks/41wv_0ta90w6z.js
+2026-11-21 11:12:19,203  INFO      worker_8              [0074] depth=1  GET  https://openai.com/_next/static/immutable/chunks/1-n0unigg-zpi.js
+2026-11-21 11:12:19,486  INFO      worker_13             [0075] depth=1  GET  https://openai.com/_next/static/immutable/chunks/0d_42ikx-tja4.js
+2026-11-21 11:12:19,801  INFO      worker_6                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/0itp7pcp7tk97.js  [456,281 chars]
+2026-11-21 11:12:20,173  INFO      worker_14               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/0fnbaomkxcp0t.js  [53,712 chars]
+2026-11-21 11:12:21,008  INFO      worker_7                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/3varc1sc3txyg.js  [62,638 chars]
+2026-11-21 11:12:21,079  INFO      worker_6                🔑 1 secret(s) → 0itp7pcp7tk97.js
+2026-11-21 11:12:22,412  INFO      worker_2              [0076] depth=1  GET  https://openai.com/_next/static/immutable/chunks/1repbk-ajws_d.js
+2026-11-21 11:12:22,658  INFO      worker_6              [0077] depth=1  GET  https://openai.com/_next/static/immutable/chunks/2zy0rt47k6jvg.js
+2026-11-21 11:12:23,334  INFO      worker_15               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/15pvy14-q3gdf.js  [57,777 chars]
+2026-11-21 11:12:23,334  INFO      worker_14             [0078] depth=1  GET  https://openai.com/_next/static/immutable/chunks/2b2xsdcm2g3d0.js
+2026-11-21 11:12:23,589  INFO      worker_2                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/1repbk-ajws_d.js  [27,267 chars]
+2026-11-21 11:12:23,730  INFO      worker_7              [0079] depth=1  GET  https://openai.com/_next/static/immutable/chunks/2zegu52ivcgr3.js
+2026-11-21 11:12:23,762  INFO      worker_12               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/1z9530dru9lf2.js  [98,667 chars]
+2026-11-21 11:12:24,123  INFO      worker_1                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/2y0a-w30i4_mh.js  [229,180 chars]
+2026-11-21 11:12:24,447  INFO      worker_10               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/0h47yf2dbfyug.js  [151,208 chars]
+2026-11-21 11:12:24,560  INFO      worker_2              [0080] depth=1  GET  https://openai.com/_next/static/immutable/chunks/1n8o4_b0cnalh.js
+2026-11-21 11:12:24,636  INFO      worker_15             [0081] depth=1  GET  https://openai.com/_next/static/immutable/chunks/0ahufcjzgswla.js
+2026-11-21 11:12:24,868  INFO      worker_13               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/0d_42ikx-tja4.js  [60,949 chars]
+2026-11-21 11:12:25,040  INFO      worker_12             [0082] depth=1  GET  https://openai.com/_next/static/immutable/chunks/2rrchm80t5lxg.js
+2026-11-21 11:12:25,049  INFO      worker_8                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/1-n0unigg-zpi.js  [103,683 chars]
+2026-11-21 11:12:25,413  INFO      worker_10             [0083] depth=1  GET  https://openai.com/_next/static/immutable/chunks/38ov372-a5a-3.js
+2026-11-21 11:12:25,413  INFO      worker_7                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/2zegu52ivcgr3.js  [57,716 chars]
+2026-11-21 11:12:26,156  INFO      worker_1              [0084] depth=1  GET  https://openai.com/_next/static/immutable/chunks/0gkehlt8sxv_5.js
+2026-11-21 11:12:26,187  INFO      worker_13             [0085] depth=1  GET  https://openai.com/_next/static/immutable/chunks/0mneux8gjm893.js
+2026-11-21 11:12:26,899  INFO      worker_8              [0086] depth=1  GET  https://openai.com/_next/static/immutable/chunks/2gb1x1hhch0n6.js
+2026-11-21 11:12:26,978  INFO      worker_1                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/0gkehlt8sxv_5.js  [15,155 chars]
+2026-11-21 11:12:26,978  INFO      worker_7              [0087] depth=1  GET  https://openai.com/_next/static/immutable/chunks/2a7ssrxwj1baz.js
+2026-11-21 11:12:27,100  INFO      worker_9                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/0c0hxoamwjsbw.js  [176,093 chars]
+2026-11-21 11:12:27,445  INFO      worker_1              [0088] depth=1  GET  https://openai.com/_next/static/immutable/chunks/0k3g07hp6rh9d.js
+2026-11-21 11:12:27,878  INFO      worker_10               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/38ov372-a5a-3.js  [7,611 chars]
+2026-11-21 11:12:28,082  INFO      worker_14               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/2b2xsdcm2g3d0.js  [63,587 chars]
+2026-11-21 11:12:28,148  INFO      worker_0                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/41wv_0ta90w6z.js  [202,324 chars]
+2026-11-21 11:12:28,213  INFO      worker_9              [0089] depth=1  GET  https://openai.com/_next/static/immutable/chunks/2pqsckb64d2-_.js
+2026-11-21 11:12:28,264  INFO      worker_14             [0090] depth=1  GET  https://openai.com/_next/static/immutable/chunks/2wnqu_198s0pc.js
+2026-11-21 11:12:28,377  INFO      worker_5                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/39u0x4e3h2c_3.js  [299,921 chars]
+2026-11-21 11:12:28,417  INFO      worker_13               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/0mneux8gjm893.js  [47,839 chars]
+2026-11-21 11:12:28,531  INFO      worker_10             [0091] depth=1  GET  https://openai.com/_next/static/immutable/chunks/2j7i8sbmk3lv0.js
+2026-11-21 11:12:29,030  INFO      worker_13             [0092] depth=1  GET  https://openai.com/_next/static/immutable/chunks/3q-ox_5me73bh.js
+2026-11-21 11:12:29,030  INFO      worker_0              [0093] depth=1  GET  https://openai.com/_next/static/immutable/chunks/1fed_db2dplop.js
+2026-11-21 11:12:30,013  INFO      worker_1                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/0k3g07hp6rh9d.js  [35,244 chars]
+2026-11-21 11:12:31,271  INFO      worker_5              [0094] depth=1  GET  https://openai.com/_next/static/immutable/chunks/3ryum6fjk379z.js
+2026-11-21 11:12:32,021  INFO      worker_1              [0095] depth=1  GET  https://openai.com/_next/static/immutable/chunks/3ahsa3bquzz3e.js
+2026-11-21 11:12:32,345  INFO      worker_14               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/2wnqu_198s0pc.js  [53,515 chars]
+2026-11-21 11:12:32,514  INFO      worker_10               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/2j7i8sbmk3lv0.js  [55,600 chars]
+2026-11-21 11:12:32,614  INFO      worker_9                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/2pqsckb64d2-_.js  [53,875 chars]
+2026-11-21 11:12:32,678  INFO      worker_0                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/1fed_db2dplop.js  [96,915 chars]
+2026-11-21 11:12:32,685  INFO      worker_14             [0096] depth=1  GET  https://openai.com/_next/static/immutable/chunks/0tdvjz9d5s-p1.js
+2026-11-21 11:12:33,606  INFO      worker_13               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/3q-ox_5me73bh.js  [53,470 chars]
+2026-11-21 11:12:33,868  INFO      worker_10             [0097] depth=1  GET  https://openai.com/_next/static/immutable/chunks/1ghkl494912zu.js
+2026-11-21 11:12:34,046  INFO      worker_9              [0098] depth=1  GET  https://openai.com/_next/static/immutable/chunks/0ml-8erog3nuc.js
+2026-11-21 11:12:34,498  INFO      worker_7                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/2a7ssrxwj1baz.js  [180,505 chars]
+2026-11-21 11:12:34,743  INFO      worker_1                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/3ahsa3bquzz3e.js  [38,476 chars]
+2026-11-21 11:12:34,775  INFO      worker_0              [0099] depth=1  GET  https://openai.com/_next/static/immutable/chunks/44h88u_01svxe.js
+2026-11-21 11:12:34,879  INFO      worker_13             [0100] depth=1  GET  https://openai.com/_next/static/immutable/chunks/0_j2mksu5s1w-.js
+2026-11-21 11:12:35,228  INFO      worker_1              [0101] depth=1  GET  https://openai.com/_next/static/immutable/chunks/132k25t-1xdle.js
+2026-11-21 11:12:35,696  INFO      worker_9                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/0ml-8erog3nuc.js  [87,578 chars]
+2026-11-21 11:12:36,427  INFO      worker_9              [0102] depth=1  GET  https://openai.com/_next/static/immutable/chunks/2nepy2wmfqbd8.js
+2026-11-21 11:12:36,850  INFO      worker_7              [0103] depth=1  GET  https://openai.com/_next/static/immutable/chunks/13ti8gtxiqxyi.js
+2026-11-21 11:12:37,269  INFO      worker_4                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/0g-_ylpxdhe-9.js  [517,741 chars]
+2026-11-21 11:12:37,344  INFO      worker_6                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/2zy0rt47k6jvg.js  [307,615 chars]
+2026-11-21 11:12:37,686  INFO      worker_14               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/0tdvjz9d5s-p1.js  [48,784 chars]
+2026-11-21 11:12:37,998  INFO      worker_14             [0104] depth=1  GET  https://openai.com/_next/static/immutable/chunks/138k_tc-4nmop.js
+2026-11-21 11:12:38,489  INFO      worker_13               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/0_j2mksu5s1w-.js  [107,708 chars]
+2026-11-21 11:12:38,561  INFO      worker_10               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/1ghkl494912zu.js  [62,099 chars]
+2026-11-21 11:12:38,613  INFO      worker_0                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/44h88u_01svxe.js  [51,056 chars]
+2026-11-21 11:12:39,419  INFO      worker_6              [0105] depth=1  GET  https://openai.com/_next/static/immutable/chunks/3qy2a4qmr31jd.js
+2026-11-21 11:12:39,481  INFO      worker_10             [0106] depth=1  GET  https://openai.com/_next/static/immutable/chunks/3pcdqlpuf3jww.js
+2026-11-21 11:12:39,606  INFO      worker_1                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/132k25t-1xdle.js  [55,356 chars]
+2026-11-21 11:12:40,121  INFO      worker_13             [0107] depth=1  GET  https://openai.com/_next/static/immutable/chunks/0wn5he6tbkkmt.js
+2026-11-21 11:12:40,436  INFO      worker_0              [0108] depth=1  GET  https://openai.com/_next/static/immutable/chunks/3iqtrjjtf30k4.js
+2026-11-21 11:12:40,585  INFO      worker_1              [0109] depth=1  GET  https://openai.com/_next/static/immutable/chunks/3874sxzqz8jvj.js
+2026-11-21 11:12:40,785  INFO      worker_15               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/0ahufcjzgswla.js  [324,906 chars]
+2026-11-21 11:12:40,918  INFO      worker_4              [0110] depth=1  GET  https://openai.com/_next/static/immutable/chunks/0t9f4nzynvk6e.js
+2026-11-21 11:12:41,250  INFO      worker_7                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/13ti8gtxiqxyi.js  [42,470 chars]
+2026-11-21 11:12:41,536  INFO      worker_9                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/2nepy2wmfqbd8.js  [46,474 chars]
+2026-11-21 11:12:41,958  INFO      worker_7              [0111] depth=1  GET  https://openai.com/_next/static/immutable/chunks/41d8ew7g8bo8o.js
+2026-11-21 11:12:43,225  INFO      worker_13               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/0wn5he6tbkkmt.js  [45,613 chars]
+2026-11-21 11:12:43,389  INFO      worker_9              [0112] depth=1  GET  https://openai.com/_next/static/immutable/chunks/34wg8985s6a31.js
+2026-11-21 11:12:43,422  INFO      worker_5                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/3ryum6fjk379z.js  [394,024 chars]
+2026-11-21 11:12:43,952  INFO      worker_6                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/3qy2a4qmr31jd.js  [142,038 chars]
+2026-11-21 11:12:44,261  INFO      worker_15             [0113] depth=1  GET  https://openai.com/_next/static/immutable/chunks/40bxc0whtdu4p.js
+2026-11-21 11:12:44,261  INFO      worker_14               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/138k_tc-4nmop.js  [66,240 chars]
+2026-11-21 11:12:44,355  INFO      worker_13             [0114] depth=1  GET  https://openai.com/_next/static/immutable/chunks/20c7wmm3jwqwe.js
+2026-11-21 11:12:45,144  INFO      worker_7                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/41d8ew7g8bo8o.js  [79,340 chars]
+2026-11-21 11:12:45,212  INFO      worker_14             [0115] depth=1  GET  https://openai.com/_next/static/immutable/chunks/0su_lkag44wxe.js
+2026-11-21 11:12:45,230  INFO      worker_4                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/0t9f4nzynvk6e.js  [52,508 chars]
+2026-11-21 11:12:45,321  INFO      worker_13               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/20c7wmm3jwqwe.js  [19,564 chars]
+2026-11-21 11:12:45,327  INFO      worker_5              [0116] depth=1  GET  https://openai.com/_next/static/immutable/chunks/0jvgvuku-7uw9.js
+2026-11-21 11:12:45,526  INFO      worker_13             [0117] depth=1  GET  https://openai.com/_next/static/chunks/framework.js
+2026-11-21 11:12:45,532  INFO      worker_6              [0118] depth=1  GET  https://openai.com/_next/static/chunks/main.js
+2026-11-21 11:12:45,533  INFO      worker_4              [0119] depth=1  GET  https://openai.com/_next/static/chunks/polyfills.js
+2026-11-21 11:12:46,066  ERROR     worker_6                ✘ https://openai.com/_next/static/chunks/main.js  →  HTTP 404
+2026-11-21 11:12:46,273  ERROR     worker_13               ✘ https://openai.com/_next/static/chunks/framework.js  →  HTTP 404
+2026-11-21 11:12:46,778  INFO      worker_0                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/3iqtrjjtf30k4.js  [131,404 chars]
+2026-11-21 11:12:46,779  ERROR     worker_4                ✘ https://openai.com/_next/static/chunks/polyfills.js  →  HTTP 404
+2026-11-21 11:12:46,784  INFO      worker_6              [0120] depth=1  GET  https://openai.com/_next/static/chunks/pages/_app.js
+2026-11-21 11:12:46,966  INFO      worker_7              [0121] depth=1  GET  https://openai.com/_next/static/chunks/webpack.js
+2026-11-21 11:12:47,463  INFO      worker_13             [0122] depth=1  GET  https://openai.com/_next/static/chunks/pages/index.js
+2026-11-21 11:12:47,913  INFO      worker_5                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/0jvgvuku-7uw9.js  [50,519 chars]
+2026-11-21 11:12:47,985  INFO      worker_4              [0123] depth=2  GET  https://openai.com/_next/static/immutable/media/worker.13vlmdotveau9.js
+2026-11-21 11:12:48,175  ERROR     worker_6                ✘ https://openai.com/_next/static/chunks/pages/_app.js  →  HTTP 404
+2026-11-21 11:12:48,477  ERROR     worker_7                ✘ https://openai.com/_next/static/chunks/webpack.js  →  HTTP 404
+2026-11-21 11:12:48,701  INFO      worker_14               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/0su_lkag44wxe.js  [93,038 chars]
+2026-11-21 11:12:48,712  INFO      worker_8                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/2gb1x1hhch0n6.js  [369,405 chars]
+2026-11-21 11:12:49,056  ERROR     worker_13               ✘ https://openai.com/_next/static/chunks/pages/index.js  →  HTTP 404
+2026-11-21 11:12:49,172  INFO      worker_10               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/3pcdqlpuf3jww.js  [174,797 chars]
+2026-11-21 11:12:50,784  INFO      worker_4                ✔ saved  results/openai.com/chakra/_next/static/immutable/media/worker.13vlmdotveau9.js  [1,601 chars]
+2026-11-21 11:12:50,798  INFO      worker_14               🌐 subdomain found: ads.openai.com
+2026-11-21 11:12:50,839  INFO      worker_15               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/40bxc0whtdu4p.js  [231,470 chars]
+2026-11-21 11:12:51,794  INFO      worker_9                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/34wg8985s6a31.js  [324,381 chars]
+2026-11-21 11:12:52,697  INFO      worker_1                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/3874sxzqz8jvj.js  [228,031 chars]
+2026-11-21 11:12:54,154  INFO      worker_12               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/2rrchm80t5lxg.js  [794,993 chars]
+2026-11-21 11:12:55,928  INFO      worker_2                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/1n8o4_b0cnalh.js  [763,922 chars]
+2026-11-21 11:13:01,469  INFO      worker_3                ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/2knd-jmkk8un_.js  [2,579,771 chars]
+2026-11-21 11:13:01,554  INFO      worker_11               ✔ saved  results/openai.com/chakra/_next/static/immutable/chunks/3f2n09ysz0jv0.js  [2,382,409 chars]
+2026-11-21 11:13:04,852  INFO      worker_11               🌐 subdomain found: api.openai.com
+2026-11-21 11:13:04,863  INFO      worker_11               🌐 subdomain found: images.openai.com
+2026-11-21 11:13:04,982  INFO      worker_11               🌐 subdomain found: privacy.openai.com
+Traceback (most recent call last):
+  File "/home/runner/tools/Chakra/chakra.py", line 1364, in <module>
+    main()
+  File "/home/runner/tools/Chakra/chakra.py", line 1359, in main
+    ).run()
+      ^^^^^
+  File "/home/runner/tools/Chakra/chakra.py", line 1100, in run
+    for f in as_completed(list(futures.keys()),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/concurrent/futures/_base.py", line 239, in as_completed
+    raise TimeoutError(
+TimeoutError: 45 (of 122) futures unfinished
+
+[exit 1]

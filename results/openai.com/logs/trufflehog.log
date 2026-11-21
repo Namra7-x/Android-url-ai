@@ -1,0 +1,6 @@
+
+$ trufflehog filesystem results/openai.com/chakra --json --no-update
+{"level":"info-0","ts":"2026-11-21T12:39:04Z","logger":"trufflehog","msg":"running source","source_name":"trufflehog - filesystem","source_type":"SOURCE_TYPE_FILESYSTEM","source_id":1,"job_id":1,"source_manager_worker_id":"t5C92","with_units":true}
+{"level":"info-0","ts":"2026-11-21T12:39:05Z","logger":"trufflehog","msg":"finished scanning","chunks":2134,"bytes":27376912,"verified_secrets":0,"unverified_secrets":0,"scan_duration":"938.792273ms","trufflehog_version":"3.100.0","verification_caching":{"Hits":2,"Misses":3,"HitsWasted":0,"AttemptsSaved":2,"VerificationTimeSpentMS":520}}
+
+[exit 0] -> results/openai.com/secrets.jsonl

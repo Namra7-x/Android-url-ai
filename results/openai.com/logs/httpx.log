@@ -1,0 +1,5 @@
+
+$ httpx -l results/openai.com/urls_to_probe_uro.txt -mc all -sc -cl -ct -title -td -json -o results/openai.com/probe.jsonl -silent -timeout 20 -retries 1 -rl 50 -threads 50
+[[1;31mFTL[0m] Invalid value for match status code option: strconv.Atoi: parsing "all": invalid syntax
+
+[exit 1]
