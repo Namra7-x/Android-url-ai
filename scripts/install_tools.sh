@@ -78,7 +78,7 @@ if [ ! -f "$HOME/tools/Anastasis/package.json" ]; then
 fi
 if [ -d "$HOME/tools/Anastasis" ]; then
   cd "$HOME/tools/Anastasis"
-  PUPPETEER_SKIP_DOWNLOAD=true npm ci --omit=optional >/dev/null 2>&1 || npm install --omit=optional >/dev/null 2>&1 || true
+  PUPPETEER_SKIP_DOWNLOAD=true npm ci >/dev/null 2>&1 || npm install >/dev/null 2>&1 || true
   npm run build >/dev/null 2>&1 || true
   # wrapper on PATH so hunt.py can call `anastasis`
   cat > "$HOME/.local/bin/anastasis" <<'EOF'

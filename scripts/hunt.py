@@ -216,9 +216,14 @@ def normalize(u: str, base: str):
     return urlunparse((scheme, host, p.path or "/", "", query, ""))
 
 
+def clean_host(netloc: str) -> str:
+    h = str(netloc).lower()
+    return h[4:] if h.startswith("www.") else h
+
+
 def dedupe_key(u: str):
     p = urlparse(u)
-    host = p.netloc.lower().removeprefix("www.")
+    host = clean_host(p.netloc)
     return (host, p.path or "/", p.query)
 
 
@@ -374,11 +379,17 @@ def step_gospider(base, target_dir, logs, settings):
 
 def collect_js_urls(target_dir, base):
     urls = set()
-    for name in ("urlfinder_urls.txt", "gau_urls.txt", "js_urls.txt"):
+    # gospider is the main JS URL source — it found thousands of chunk URLs.
+    for name in ("urlfinder_urls.txt", "gau_urls.txt", "gospider.txt",
+                 "anastasis_urls.txt", "js_urls.txt"):
         p = target_dir / name
-        if p.exists():
-            urls.update(l.strip() for l in p.read_text(encoding="utf-8", errors="replace").splitlines()
-                        if l.strip() and JS_RE.search(l))
+        if not p.exists():
+            continue
+        text = p.read_text(encoding="utf-8", errors="replace")
+        for m in ABS_RE.finditer(text):
+            u = m.group(0).rstrip("\"',}]")
+            if JS_RE.search(u):
+                urls.add(u)
     for f in (target_dir / "katana").glob("*.jsonl"):
         for row in read_jsonl(f):
             u = (row.get("request") or {}).get("url") or row.get("url")
@@ -472,8 +483,15 @@ def step_anastasis(host, base, target_dir, logs):
     out = target_dir / "anastasis.json"
     rc = run(["anastasis", "-u", host, "--params", "-o", "json", "--save", str(out)],
              logs / "anastasis.log", timeout=3600)
-    if rc != 0 and out.exists() is False:
-        record_status("anastasis", rc, "see logs")
+    if rc != 0:
+        chunks = target_dir / "chunks"
+        if chunks.exists() and any(chunks.glob("*.js")):
+            log("anastasis: primary mode failed, retrying in local-file mode")
+            rc = run(["anastasis", "-fs", str(chunks), "--params", "-o", "json",
+                      "--save", str(out)],
+                     logs / "anastasis_local.log", timeout=3600)
+    if rc != 0 and not out.exists():
+        record_status("anastasis", rc, "remote + local modes failed — see logs/")
         return
     urls, endpoints, params = [], [], []
     try:
@@ -624,7 +642,40 @@ def probe(routes, target_dir, logs, settings):
          "-rl", str(settings.get("httpx_rate", 50)),
          "-threads", str(settings.get("httpx_threads", 50))],
         logs / "httpx.log", timeout=3600)
-    return read_jsonl(out)
+    rows_out = read_jsonl(out)
+
+    # Rate-limit recovery: retry 429s gently. No URLs are removed — this only
+    # gives blocked-by-rate-limit URLs a second chance to return a real status.
+    limited = [r for r in rows_out if (r.get("status_code") or r.get("status")) == 429]
+    if limited:
+        retry_urls = target_dir / "probe_retry_urls.txt"
+        retry_urls.write_text("\n".join(str(r["url"]) for r in limited if r.get("url")) + "\n", encoding="utf-8")
+        retry_out = target_dir / "probe_retry.jsonl"
+        run(["httpx", "-l", str(retry_urls), "-mc", ALL_CODES, "-sc", "-cl", "-ct",
+             "-title", "-td", "-j", "-o", str(retry_out), "-silent",
+             "-timeout", str(settings.get("request_timeout", 20)), "-retries", "2",
+             "-rl", "10", "-threads", "10"],
+            logs / "httpx_retry.log", timeout=3600)
+        fixed = read_jsonl(retry_out)
+        by_key = {}
+        for r in fixed:
+            if r.get("url"):
+                by_key[dedupe_key(str(r["url"]))] = r
+        final = []
+        for r in rows_out:
+            k = dedupe_key(str(r.get("url", "")))
+            repl = by_key.get(k)
+            if repl and (repl.get("status_code") or 0) != 429:
+                final.append(repl)
+                by_key.pop(k, None)
+            else:
+                final.append(r)
+        final.extend(by_key.values())
+        write_jsonl(out, final)
+        log(f"httpx rate-limit retry: {len(limited)} retried, "
+            f"{sum(1 for r in final if (r.get('status_code') or 0) not in (429, 0))} recovered")
+        rows_out = final
+    return rows_out
 
 
 def merge_hits(routes, hits, base):
@@ -712,8 +763,20 @@ def report(target_dir, base, routes, probe_rows, extra_rows, settings):
         else:
             merged[k].setdefault("source", r.get("source"))
 
+    # Distinct-route view: one row per URL. Method-probe responses are kept
+    # separately so 405/403 noise never inflates the "exists but blocked" count.
+    distinct = {}
+    for r in list(probe_rows) + list(extra_rows):
+        u = r.get("url")
+        if not u:
+            continue
+        k = dedupe_key(u)
+        cur = distinct.get(k)
+        if cur is None or (cur.get("source") == "method" and r.get("source") != "method"):
+            distinct[k] = dict(r)
+
     win, blocked, other = [], [], []
-    for r in merged.values():
+    for r in distinct.values():
         try:
             st = int(r.get("status_code") or r.get("status") or 0)
         except Exception:  # noqa: BLE001
@@ -727,6 +790,16 @@ def report(target_dir, base, routes, probe_rows, extra_rows, settings):
     all_routes = [{"url": r["url"], "method": r.get("method", "GET"),
                    "sources": sorted(r.get("sources", []))} for r in routes.values()]
     all_routes.sort(key=key)
+
+    # Noise is KEPT, just placed in its own files. Nothing is deleted.
+    apex = clean_host(urlparse(base).netloc)
+    first_party, third_party = [], []
+    for r in all_routes:
+        h = clean_host(urlparse(r["url"]).netloc)
+        (first_party if h == apex or h.endswith("." + apex) else third_party).append(r)
+    write_jsonl(target_dir / "third_party_routes.jsonl", third_party)
+    method_rows = [r for r in extra_rows if r.get("source") == "method"]
+    write_jsonl(target_dir / "method_responses.jsonl", method_rows)
 
     data_files = [r for r in win if
                   any(x in (r.get("content_type") or "").lower() for x in ("json", "csv", "xml", "spreadsheet"))
@@ -746,7 +819,11 @@ def report(target_dir, base, routes, probe_rows, extra_rows, settings):
     sub_rows = [{"host": h, "resolved": h in live_subs, "source": "subfinder/uncover"} for h in all_subs]
 
     js_endpoints = read_jsonl(target_dir / "anastasis_endpoints.jsonl")
-    vhosts = [v for v in read_jsonl(target_dir / "vhost.jsonl") if v.get("status_code") in VHOST_REAL]
+    all_vhosts = read_jsonl(target_dir / "vhost.jsonl")
+    vhosts = [v for v in all_vhosts if v.get("status_code") in (VHOST_REAL - {403})]
+    vhost_noise = [v for v in all_vhosts if v not in vhosts]
+    write_jsonl(target_dir / "vhost_real.jsonl", vhosts)
+    write_jsonl(target_dir / "vhost_blocked.jsonl", vhost_noise)
     secrets = [l for l in (target_dir / "secrets.jsonl").read_text(encoding="utf-8", errors="replace").splitlines() if l.strip()] if (target_dir / "secrets.jsonl").exists() else []
 
     write_jsonl(target_dir / "all_routes.jsonl", all_routes)
@@ -766,14 +843,19 @@ def report(target_dir, base, routes, probe_rows, extra_rows, settings):
          "> **Nothing is filtered during collection. This report is only a grouping.**", "",
          "## Summary", "", "| What | Count | Meaning |", "|---|---:|---|",
          f"| Routes collected | {len(all_routes)} | Every URL found, nothing removed |",
-         f"| Responses checked | {len(merged)} | Every URL actually requested |",
+         f"| Distinct routes verified | {len(distinct)} | One row per URL (method probes excluded) |",
+         f"| HTTP responses | {len(merged)} | Includes method probes — kept in `method_responses.jsonl` |",
          f"| **Accessible (200)** | **{len(win)}** | Confirmed live — the wins |",
          f"| Exists but different status | {len(blocked)} | 301/302/401/403/405 — real route, blocked |",
          f"| Other responses | {len(other)} | 404/500/etc — kept, not discarded |",
          f"| Subdomains (resolved) | {len(live_subs)} | DNS-verified |",
-         f"| Virtual hosts (real) | {len(vhosts)} | Cloudflare 530 excluded |",
+         f"| Virtual hosts (real) | {len(vhosts)} | Cloudflare 403/530/0 excluded |",
          f"| Parameters | {len(params)} | URLs with query params |",
          f"| JS endpoints (AST) | {len(js_endpoints)} | anastasis evidence-backed |",
+         f"| First-party URLs | {len(first_party)} | {apex} and subdomains |",
+         f"| Third-party URLs | {len(third_party)} | kept in `third_party_routes.jsonl` |",
+         f"| Method responses | {len(method_rows)} | kept in `method_responses.jsonl` |",
+         f"| Blocked vhost checks | {len(vhost_noise)} | kept in `vhost_blocked.jsonl` |",
          f"| Secret candidates | {len(secrets)} | verify manually |", ""]
 
     def section(title, rows, n=75):
@@ -793,6 +875,9 @@ def report(target_dir, base, routes, probe_rows, extra_rows, settings):
             L.append(f"| … | … | _{len(rows)-n} more in JSONL_ | … | … | … |")
         L.append("")
 
+    L.append(f"> Collection keeps third-party URLs by design ({len(third_party)}). "
+             f"See `third_party_routes.jsonl`. Method-probe responses are in `method_responses.jsonl`.")
+    L.append("")
     section("1. SUCCESS — HTTP 200", win)
     section("2. EXISTS BUT DIFFERENT STATUS (301/302/401/403/405)", blocked)
     section("3. OTHER RESPONSES — kept, never discarded", other)
@@ -813,7 +898,8 @@ def report(target_dir, base, routes, probe_rows, extra_rows, settings):
         for v in vhosts[:100]:
             L.append(f"| `{v.get('host')}` | {v.get('status_code')} |")
     else:
-        L.append("_None (Cloudflare 530 responses are excluded as noise)._")
+        L.append("_No non-blocked virtual hosts found._")
+    L.append(f"Blocked/noisy vhost checks (403/530/0) are kept in `vhost_blocked.jsonl` ({len(vhost_noise)}).")
     L.append("")
 
     L += ["## 7. JS ENDPOINTS (AST, evidence-backed)", ""]
@@ -852,7 +938,11 @@ def report(target_dir, base, routes, probe_rows, extra_rows, settings):
         ("accessible_200.jsonl", "HTTP 200 wins"), ("exists_blocked.jsonl", "exists but blocked"),
         ("other_status.jsonl", "all other statuses"), ("data_files.jsonl", "JSON/CSV/XML among 200s"),
         ("params.jsonl", "parameters"), ("subdomains.jsonl", "subdomains + resolution"),
-        ("js_endpoints.jsonl", "AST endpoints"), ("vhost.jsonl", "vhost checks"),
+        ("third_party_routes.jsonl", "third-party URLs — kept, not deleted"),
+        ("method_responses.jsonl", "all method-probe responses — kept"),
+        ("vhost_real.jsonl", "non-blocked virtual hosts"),
+        ("vhost_blocked.jsonl", "blocked vhost checks — kept"),
+        ("js_endpoints.jsonl", "AST endpoints"), ("vhost.jsonl", "all vhost checks"),
         ("jsluice.jsonl", "JS-derived URLs"), ("gospider.txt", "second crawler URLs"), ("anastasis_endpoints.jsonl", "AST endpoints"),
         ("jscope.txt", "evidence-ranked JS analysis"), ("secrets.jsonl", "secret candidates"),
         ("wordlist.txt", "target-specific fuzz list"), ("params.txt", "parameter wordlist"),
