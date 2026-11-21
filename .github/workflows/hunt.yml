@@ -1,55 +1,14 @@
 name: Web Hunt Pipeline
 
-# ONE-SHOT ONLY. No schedule. No push trigger.
-# You start it manually from the Actions tab.
+# ONE-SHOT. Manual trigger only. ONE URL per run (no matrix, no concurrency limit issues).
 
 on:
   workflow_dispatch:
     inputs:
       urls_file:
-        description: "Path to the URL list"
+        description: "Path to URL list (one URL is recommended per run)"
         required: false
         default: "urls.txt"
-      enable_subdomains:
-        description: "Expand subdomains (true/false)"
-        required: false
-        default: "true"
-      enable_uncover:
-        description: "Query Shodan/Censys/etc (needs API key secret)"
-        required: false
-        default: "true"
-      enable_urlscan:
-        description: "Query urlscan.io (works with or without key)"
-        required: false
-        default: "true"
-      enable_uro:
-        description: "Deduplicate probe list with uro"
-        required: false
-        default: "true"
-      enable_brute:
-        description: "ffuf path brute (OFF = fast; wordlist still prepared)"
-        required: false
-        default: "false"
-      enable_vhost:
-        description: "Virtual-host discovery (no ffuf needed)"
-        required: false
-        default: "true"
-      enable_methods:
-        description: "Test all HTTP methods on live routes (true/false)"
-        required: false
-        default: "true"
-      enable_browser:
-        description: "Run headless browser steps (true/false)"
-        required: false
-        default: "true"
-      enable_kiterunner:
-        description: "Run kiterunner API brute (true/false)"
-        required: false
-        default: "true"
-      enable_arjun:
-        description: "Run arjun hidden parameter discovery (true/false)"
-        required: false
-        default: "true"
 
 permissions:
   contents: write
@@ -78,47 +37,36 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Setup Node
+      - name: Setup Node 22 LTS (Anastasis requires 20.18.1-23)
         uses: actions/setup-node@v4
         with:
           node-version: "22"
 
-      - name: Install tools
+      # Install once. Every later run restores these paths from cache.
+      - name: Cache tools
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/hunt-tools-ready
+            ~/go/bin
+            ~/.local/bin
+            ~/.cargo/bin
+            ~/tools/Anastasis/node_modules
+            ~/tools/Anastasis/dist
+            ~/.npm
+          key: hunt-tools-v1-${{ runner.os }}-${{ hashFiles('scripts/install_tools.sh') }}
+
+      - name: Install tools (cached after first run)
         run: bash scripts/install_tools.sh
 
       - name: Run hunt
-        env:
-          ENABLE_SUBDOMAINS: ${{ inputs.enable_subdomains }}
-          ENABLE_UNCOVER: ${{ inputs.enable_uncover }}
-          ENABLE_URLSCAN: ${{ inputs.enable_urlscan }}
-          ENABLE_URO: ${{ inputs.enable_uro }}
-          ENABLE_BRUTE: ${{ inputs.enable_brute }}
-          ENABLE_VHOST: ${{ inputs.enable_vhost }}
-          ENABLE_METHODS: ${{ inputs.enable_methods }}
-          ENABLE_BROWSER: ${{ inputs.enable_browser }}
-          ENABLE_KITERUNNER: ${{ inputs.enable_kiterunner }}
-          ENABLE_ARJUN: ${{ inputs.enable_arjun }}
-          URLSCAN_API_KEY: ${{ secrets.URLSCAN_API_KEY }}
-          SHODAN_API_KEY: ${{ secrets.SHODAN_API_KEY }}
-          CENSYS_API_ID: ${{ secrets.CENSYS_API_ID }}
-          CENSYS_API_SECRET: ${{ secrets.CENSYS_API_SECRET }}
-          FOFA_EMAIL: ${{ secrets.FOFA_EMAIL }}
-          FOFA_KEY: ${{ secrets.FOFA_KEY }}
-          QUAKE_TOKEN: ${{ secrets.QUAKE_TOKEN }}
-          HUNTER_API_KEY: ${{ secrets.HUNTER_API_KEY }}
-          ZOOMEYE_API_KEY: ${{ secrets.ZOOMEYE_API_KEY }}
-          NETLAS_API_KEY: ${{ secrets.NETLAS_API_KEY }}
-          CRIMINALIP_API_KEY: ${{ secrets.CRIMINALIP_API_KEY }}
-          PUBLICWWW_API_KEY: ${{ secrets.PUBLICWWW_API_KEY }}
-          BINARYEDGE_API_KEY: ${{ secrets.BINARYEDGE_API_KEY }}
         run: |
           python3 scripts/hunt.py \
             --urls "${{ inputs.urls_file }}" \
             --out results \
             --settings config/settings.json
 
-      # Results are committed so you can browse them on GitHub — no download.
-      # Heavy chunk/source-map dirs stay in the artifact only.
+      # Results live in the repo so you can browse them — no download needed.
       - name: Commit results to repo
         if: always()
         run: |
@@ -134,7 +82,7 @@ jobs:
             git push
           fi
 
-      - name: Upload results (backup)
+      - name: Upload results (backup artifact)
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -148,9 +96,6 @@ jobs:
         run: |
           if [ -f results/INDEX.md ]; then
             cat results/INDEX.md >> "$GITHUB_STEP_SUMMARY"
-          fi
-          if [ -f results/SUMMARY.md ]; then
-            cat results/SUMMARY.md >> "$GITHUB_STEP_SUMMARY"
           fi
           for f in results/*/REPORT.md; do
             if [ -f "$f" ]; then
