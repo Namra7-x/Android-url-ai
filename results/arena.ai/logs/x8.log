@@ -1,4 +1,0 @@
-
-$ x8 -u https://arena.ai/ -w results/arena.ai/params.txt
-
-[exit 0] -> results/arena.ai/x8.txt

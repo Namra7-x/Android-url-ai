@@ -1,5 +1,0 @@
-urls:         https://arena.ai/
-methods:      GET
-wordlist len: 15
-
-

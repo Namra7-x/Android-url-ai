@@ -1,6 +1,0 @@
-{"level":"info-0","ts":"2026-11-21T17:30:50Z","logger":"trufflehog","msg":"running source","source_name":"trufflehog - filesystem","source_type":"SOURCE_TYPE_FILESYSTEM","source_id":1,"job_id":1,"source_manager_worker_id":"3F4w1","with_units":true}
-{"level":"info-0","ts":"2026-11-21T17:30:50Z","logger":"trufflehog","msg":"finished scanning","chunks":65,"bytes":667212,"verified_secrets":0,"unverified_secrets":1,"scan_duration":"409.149612ms","trufflehog_version":"3.100.0","verification_caching":{"Hits":0,"Misses":9,"HitsWasted":0,"AttemptsSaved":0,"VerificationTimeSpentMS":1472}}
-
-$ trufflehog filesystem results/arena.ai --json --no-update
-
-[exit 0] -> results/arena.ai/secrets.jsonl

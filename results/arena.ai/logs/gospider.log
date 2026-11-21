@@ -1,4 +1,0 @@
-
-$ gospider -s https://arena.ai -c 5 -d 3 -m 10 --js --sitemap -q
-
-[exit 0] -> results/arena.ai/gospider.txt

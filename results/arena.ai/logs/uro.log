@@ -1,4 +1,0 @@
-
-$ uro -i results/arena.ai/urls_to_probe.txt -o results/arena.ai/urls_to_probe_uro.txt
-
-[exit 0]
