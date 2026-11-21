@@ -59,6 +59,29 @@ REL_RE = re.compile(r"[\"'`](/[A-Za-z0-9_\-./?=&%{}:;,@+~#\[\]]{1,300})[\"'`]")
 CHAKRA_PATH = os.environ.get("CHAKRA_PATH", os.path.expanduser("~/tools/Chakra/chakra.py"))
 XNLINK_PATH = os.environ.get("XNLINK_PATH", os.path.expanduser("~/tools/xnLinkFinder/xnLinkFinder.py"))
 
+METHODS = ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS", "HEAD"]
+
+# uncover needs at least one of these API keys; it is skipped otherwise.
+UNCOVER_ENGINE_KEYS = [
+    ("shodan", "SHODAN_API_KEY"),
+    ("censys", "CENSYS_API_ID"),
+    ("fofa", "FOFA_EMAIL"),
+    ("quake", "QUAKE_TOKEN"),
+    ("hunter", "HUNTER_API_KEY"),
+    ("zoomeye", "ZOOMEYE_API_KEY"),
+    ("netlas", "NETLAS_API_KEY"),
+    ("criminalip", "CRIMINALIP_API_KEY"),
+    ("publicwww", "PUBLICWWW_API_KEY"),
+    ("binaryedge", "BINARYEDGE_API_KEY"),
+]
+
+
+def uncover_engine():
+    for engine, key in UNCOVER_ENGINE_KEYS:
+        if os.environ.get(key, "").strip():
+            return engine
+    return None
+
 
 # ----------------------------------------------------------------------------
 # helpers
@@ -271,14 +294,49 @@ def collect(target_dir: Path, base: str):
 def step_subdomains(host: str, target_dir: Path, logs: Path, settings: dict):
     if not settings.get("enable_subdomains"):
         return
-    if not which("subfinder"):
+    subs = set()
+
+    if which("subfinder"):
+        out = target_dir / "subdomains.txt"
+        run(["subfinder", "-d", host, "-all", "-recursive", "-silent", "-o", str(out)],
+            logs / "subfinder.log", timeout=1800)
+        if out.exists():
+            subs.update(l.strip().lower() for l in out.read_text(encoding="utf-8", errors="replace").splitlines() if l.strip())
+    else:
         log("subfinder not found, skipping")
+
+    if settings.get("enable_uncover") and which("uncover"):
+        engine = uncover_engine()
+        if engine:
+            out = target_dir / "uncover.txt"
+            run(["uncover", "-q", f'ssl:"{host}"', "-e", engine,
+                 "-silent", "-o", str(out)],
+                logs / "uncover.log", timeout=1200)
+            if out.exists():
+                subs.update(l.strip().lower() for l in out.read_text(encoding="utf-8", errors="replace").splitlines() if l.strip())
+        else:
+            log("uncover enabled but no API key set, skipping")
+
+    if not subs:
         return
-    out = target_dir / "subdomains.txt"
-    run(["subfinder", "-d", host, "-silent", "-o", str(out)], logs / "subfinder.log", timeout=1200)
-    if which("dnsx") and out.exists():
-        run(["dnsx", "-l", str(out), "-silent", "-o", str(target_dir / "subdomains_live.txt")],
-            logs / "dnsx.log", timeout=1200)
+
+    raw = target_dir / "subdomains_all.txt"
+    raw.write_text("\n".join(sorted(subs)) + "\n", encoding="utf-8")
+
+    live = set(subs)
+    if which("dnsx"):
+        run(["dnsx", "-l", str(raw), "-silent", "-o", str(target_dir / "subdomains_live.txt")],
+            logs / "dnsx.log", timeout=1800)
+        lf = target_dir / "subdomains_live.txt"
+        if lf.exists():
+            resolved = {l.strip().lower() for l in lf.read_text(encoding="utf-8", errors="replace").splitlines() if l.strip()}
+            if resolved:
+                live = resolved
+
+    cap = int(settings.get("max_subdomains", 1000))
+    urls = [f"https://{h}" for h in sorted(live)[:cap]]
+    (target_dir / "subdomains_urls.txt").write_text("\n".join(urls) + "\n", encoding="utf-8")
+    log(f"subdomains: {len(subs)} found, {len(live)} live, {len(urls)} URLs queued")
 
 
 def step_chakra(base: str, target_dir: Path, logs: Path, settings: dict):
@@ -355,23 +413,26 @@ def step_waymore(host: str, target_dir: Path, logs: Path):
         logs / "waymore.log", timeout=1800)
 
 
-def step_urlscan(host: str, target_dir: Path, logs: Path):
-    key = os.environ.get("URLSCAN_API_KEY", "").strip()
-    if not key:
+def step_urlscan(host: str, target_dir: Path, logs: Path, settings: dict):
+    if not settings.get("enable_urlscan", True):
         return
+    key = os.environ.get("URLSCAN_API_KEY", "").strip()
     w = target_dir / "history"
     w.mkdir(parents=True, exist_ok=True)
     out = w / "urlscan.json"
+    headers = {"User-Agent": "hunt-pipeline/1.0"}
+    if key:
+        headers["api-key"] = key
     try:
         import urllib.request
 
         req = urllib.request.Request(
             f"https://urlscan.io/api/v1/search/?q=domain%3A{host}&size=10000",
-            headers={"api-key": key, "User-Agent": "hunt-pipeline/1.0"},
+            headers=headers,
         )
         with urllib.request.urlopen(req, timeout=60) as r:
             out.write_bytes(r.read())
-        log(f"urlscan saved -> {out}")
+        log(f"urlscan saved -> {out} ({'keyed' if key else 'no key'})")
     except Exception as e:  # noqa: BLE001
         log(f"urlscan failed: {e}")
 
@@ -450,6 +511,95 @@ def step_arjun(base: str, target_dir: Path, logs: Path, param_file: Path, settin
     run(cmd, logs / "arjun.log", timeout=1800)
 
 
+def step_vhost(base: str, target_dir: Path, logs: Path, settings: dict):
+    """Try discovered subdomain names as Host headers. Returns live vhost names."""
+    if not settings.get("enable_vhost", True) or not which("ffuf"):
+        return []
+    host = urlparse(base).netloc.split(":")[0]
+    src = target_dir / "subdomains_all.txt"
+    if not src.exists():
+        return []
+    words = set()
+    for line in src.read_text(encoding="utf-8", errors="replace").splitlines():
+        h = line.strip().lower()
+        if not h:
+            continue
+        if h.endswith("." + host):
+            w = h[:-(len(host) + 1)]
+            if w:
+                words.add(w)
+        elif h != host:
+            words.add(h)
+    if not words:
+        return []
+    wl = target_dir / "vhost_words.txt"
+    wl.write_text("\n".join(sorted(words)) + "\n", encoding="utf-8")
+
+    out = target_dir / "vhost.json"
+    run(["ffuf", "-u", base, "-H", f"Host: FUZZ.{host}", "-w", str(wl),
+         "-mc", "all", "-ac",
+         "-rate", str(settings.get("ffuf_rate", 10)),
+         "-t", str(settings.get("ffuf_threads", 10)),
+         "-of", "json", "-o", str(out), "-s"],
+        logs / "vhost.log", timeout=1800)
+
+    hits = []
+    if out.exists():
+        try:
+            data = json.loads(out.read_text(encoding="utf-8", errors="replace"))
+            for r in data.get("results", []):
+                w = (r.get("input") or {}).get("FUZZ") or ""
+                if w:
+                    hits.append(f"{w}.{host}")
+        except Exception:  # noqa: BLE001
+            pass
+    log(f"vhost: {len(hits)} live Host headers")
+    return hits
+
+
+def step_methods(probe_rows, logs: Path, settings: dict):
+    """Probe live routes with every HTTP method, in parallel."""
+    if not settings.get("enable_methods", True):
+        return []
+    import urllib.error
+    import urllib.request
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
+    targets = [r for r in probe_rows if r.get("status_code") in (200, 401, 403, 405)]
+    targets = targets[:int(settings.get("max_method_targets", 200))]
+    jobs = [(r["url"], m) for r in targets if r.get("url") for m in METHODS]
+    if not jobs:
+        return []
+
+    timeout = int(settings.get("method_timeout", 10))
+    ua = settings.get("user_agent", "hunt-pipeline/1.0")
+
+    def one(url, method):
+        try:
+            req = urllib.request.Request(url, method=method, headers={"User-Agent": ua})
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                return url, method, resp.status
+        except urllib.error.HTTPError as e:
+            return url, method, e.code
+        except Exception:  # noqa: BLE001
+            return url, method, None
+
+    results = []
+    with ThreadPoolExecutor(max_workers=int(settings.get("method_threads", 20))) as pool:
+        futures = [pool.submit(one, u, m) for u, m in jobs]
+        for f in as_completed(futures):
+            u, m, code = f.result()
+            if code is not None:
+                results.append({
+                    "url": u,
+                    "method": m,
+                    "status_code": code,
+                    "source": "method",
+                })
+    log(f"methods: {len(results)} method/status responses")
+    return results
+
+
 # ----------------------------------------------------------------------------
 # probe + brute
 # ----------------------------------------------------------------------------
@@ -467,8 +617,15 @@ def probe(routes, target_dir: Path, logs: Path, settings: dict):
         rows = rows[:cap]
     urls_file = target_dir / "urls_to_probe.txt"
     urls_file.write_text("\n".join(r["url"] for r in rows) + "\n", encoding="utf-8")
+    probe_list = urls_file
+    if settings.get("enable_uro") and which("uro"):
+        dedup = target_dir / "urls_to_probe_uro.txt"
+        run(["uro", "-i", str(urls_file), "-o", str(dedup)], logs / "uro.log", timeout=600)
+        if dedup.exists() and dedup.stat().st_size > 0:
+            probe_list = dedup
+            log(f"uro: probe list deduped for httpx (all routes still kept)")
     out = target_dir / "probe.jsonl"
-    run(["httpx", "-l", str(urls_file), "-mc", "all", "-sc", "-cl", "-ct",
+    run(["httpx", "-l", str(probe_list), "-mc", "all", "-sc", "-cl", "-ct",
          "-title", "-td", "-json", "-o", str(out), "-silent",
          "-timeout", str(settings.get("request_timeout", 20)),
          "-retries", "1", "-rl", str(settings.get("httpx_rate", 50)),
@@ -521,6 +678,7 @@ def brute(routes, base: str, target_dir: Path, logs: Path, settings: dict,
                 for r in data.get("results", []):
                     results.append({
                         "url": r.get("url"),
+                        "method": "GET",
                         "status_code": r.get("status"),
                         "content_type": r.get("content-type"),
                         "content_length": r.get("length"),
@@ -570,12 +728,13 @@ def report(target_dir: Path, base: str, routes, probe_rows, brute_rows, settings
     for r in probe_rows:
         u = r.get("url")
         if u:
-            merged[dedupe_key(u)] = dict(r)
+            k = (dedupe_key(u), (r.get("method") or "GET").upper())
+            merged[k] = dict(r)
     for r in brute_rows:
         u = r.get("url")
         if not u:
             continue
-        k = dedupe_key(u)
+        k = (dedupe_key(u), (r.get("method") or "GET").upper())
         if k not in merged:
             merged[k] = dict(r)
         else:
@@ -740,8 +899,15 @@ def main() -> int:
 
     settings = json.loads(Path(args.settings).read_text(encoding="utf-8"))
     for key, env in (("enable_subdomains", "ENABLE_SUBDOMAINS"),
+                     ("enable_uncover", "ENABLE_UNCOVER"),
+                     ("enable_urlscan", "ENABLE_URLSCAN"),
+                     ("enable_uro", "ENABLE_URO"),
                      ("enable_brute", "ENABLE_BRUTE"),
-                     ("enable_browser", "ENABLE_BROWSER")):
+                     ("enable_vhost", "ENABLE_VHOST"),
+                     ("enable_methods", "ENABLE_METHODS"),
+                     ("enable_browser", "ENABLE_BROWSER"),
+                     ("enable_kiterunner", "ENABLE_KITERUNNER"),
+                     ("enable_arjun", "ENABLE_ARJUN")):
         if os.environ.get(env) is not None:
             settings[key] = os.environ[env].strip().lower() in ("1", "true", "yes", "on")
 
@@ -768,23 +934,34 @@ def main() -> int:
         def step(name, fn, *a):
             try:
                 log(f"STEP {name} start")
-                fn(*a)
+                result = fn(*a)
                 log(f"STEP {name} done")
+                return result
             except Exception as e:  # noqa: BLE001
                 log(f"STEP {name} FAILED: {e}")
+                return None
 
         step("subdomains", step_subdomains, host, target_dir, logs, settings)
         step("chakra", step_chakra, base, target_dir, logs, settings)
         step("jsrecon", step_jsrecon, base, target_dir, logs, settings)
         step("katana", step_katana, base, target_dir, logs, settings)
         step("waymore", step_waymore, host, target_dir, logs)
-        step("urlscan", step_urlscan, host, target_dir, logs)
+        step("urlscan", step_urlscan, host, target_dir, logs, settings)
         step("jsluice", step_jsluice, target_dir, logs)
         step("xnlinkfinder", step_xnlinkfinder, host, target_dir, logs)
         step("trufflehog", step_trufflehog, target_dir, logs)
 
         routes = collect(target_dir, base)
         log(f"collected {len(routes)} unique URLs")
+
+        # vhost brute feeds new hosts back into the pool
+        vhost_hosts = step("vhost", step_vhost, base, target_dir, logs, settings) or []
+        for h in vhost_hosts:
+            n = normalize(f"https://{h}", base)
+            if n:
+                routes[dedupe_key(n)] = {"url": n, "method": "GET", "sources": {"vhost"}}
+        if vhost_hosts:
+            log(f"merged {len(vhost_hosts)} vhost hosts into routes")
 
         # ---- context-aware wordlist foundry ----
         wl_path = target_dir / "wordlist.txt"
@@ -820,6 +997,8 @@ def main() -> int:
 
         step("kiterunner", step_kiterunner, base, target_dir, logs, wl_path, settings)
         step("arjun", step_arjun, base, target_dir, logs, param_path, settings)
+        method_rows = step("methods", step_methods, probe_rows, logs, settings) or []
+        all_brute.extend(method_rows)
 
         stats = report(target_dir, base, routes, probe_rows, all_brute, settings)
         write_context(target_dir, base, routes, stats)

@@ -13,13 +13,41 @@ on:
       enable_subdomains:
         description: "Expand subdomains (true/false)"
         required: false
-        default: "false"
+        default: "true"
+      enable_uncover:
+        description: "Query Shodan/Censys/etc (needs API key secret)"
+        required: false
+        default: "true"
+      enable_urlscan:
+        description: "Query urlscan.io (works with or without key)"
+        required: false
+        default: "true"
+      enable_uro:
+        description: "Deduplicate probe list with uro"
+        required: false
+        default: "true"
       enable_brute:
         description: "Run ffuf brute force (true/false)"
         required: false
         default: "true"
+      enable_vhost:
+        description: "Fuzz virtual hosts with ffuf (true/false)"
+        required: false
+        default: "true"
+      enable_methods:
+        description: "Test all HTTP methods on live routes (true/false)"
+        required: false
+        default: "true"
       enable_browser:
         description: "Run headless browser steps (true/false)"
+        required: false
+        default: "true"
+      enable_kiterunner:
+        description: "Run kiterunner API brute (true/false)"
+        required: false
+        default: "true"
+      enable_arjun:
+        description: "Run arjun hidden parameter discovery (true/false)"
         required: false
         default: "true"
 
@@ -61,9 +89,28 @@ jobs:
       - name: Run hunt
         env:
           ENABLE_SUBDOMAINS: ${{ inputs.enable_subdomains }}
+          ENABLE_UNCOVER: ${{ inputs.enable_uncover }}
+          ENABLE_URLSCAN: ${{ inputs.enable_urlscan }}
+          ENABLE_URO: ${{ inputs.enable_uro }}
           ENABLE_BRUTE: ${{ inputs.enable_brute }}
+          ENABLE_VHOST: ${{ inputs.enable_vhost }}
+          ENABLE_METHODS: ${{ inputs.enable_methods }}
           ENABLE_BROWSER: ${{ inputs.enable_browser }}
+          ENABLE_KITERUNNER: ${{ inputs.enable_kiterunner }}
+          ENABLE_ARJUN: ${{ inputs.enable_arjun }}
           URLSCAN_API_KEY: ${{ secrets.URLSCAN_API_KEY }}
+          SHODAN_API_KEY: ${{ secrets.SHODAN_API_KEY }}
+          CENSYS_API_ID: ${{ secrets.CENSYS_API_ID }}
+          CENSYS_API_SECRET: ${{ secrets.CENSYS_API_SECRET }}
+          FOFA_EMAIL: ${{ secrets.FOFA_EMAIL }}
+          FOFA_KEY: ${{ secrets.FOFA_KEY }}
+          QUAKE_TOKEN: ${{ secrets.QUAKE_TOKEN }}
+          HUNTER_API_KEY: ${{ secrets.HUNTER_API_KEY }}
+          ZOOMEYE_API_KEY: ${{ secrets.ZOOMEYE_API_KEY }}
+          NETLAS_API_KEY: ${{ secrets.NETLAS_API_KEY }}
+          CRIMINALIP_API_KEY: ${{ secrets.CRIMINALIP_API_KEY }}
+          PUBLICWWW_API_KEY: ${{ secrets.PUBLICWWW_API_KEY }}
+          BINARYEDGE_API_KEY: ${{ secrets.BINARYEDGE_API_KEY }}
         run: |
           python3 scripts/hunt.py \
             --urls "${{ inputs.urls_file }}" \

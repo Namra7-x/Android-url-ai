@@ -91,20 +91,22 @@ Then it is scored (frequency + interesting words like `api`, `admin`, `internal`
 
 ## What it runs (one shot, in order)
 
-1. **Subdomains** — subfinder + dnsx *(off by default)*
+1. **Subdomains** — subfinder `-all -recursive` + dnsx + uncover *(on; uncover needs an API key)*
 2. **Chunks** — Chakra: all JS chunks, lazy chunks, routes, env vars, subdomains (`-d 10`)
 3. **Framework** — js-recon: lazyload + strings + endpoints (`--max-pages 1000`, `--max-iterations 20`, `--strings`, `--subsequent-requests`)
 4. **Crawl** — katana `-jc -jsl -kf all -aff` + headless `-xhr` (`-d 10`)
-5. **History** — waymore (+ urlscan.io if `URLSCAN_API_KEY` secret is set)
+5. **History** — waymore + urlscan.io *(works with or without `URLSCAN_API_KEY`)*
 6. **Extract** — jsluice, xnLinkFinder `-owl`, trufflehog
 7. **Normalize** — dedupe only, nothing filtered
-8. **Wordlist** — build `wordlist.txt` + `params.txt` from everything above
-9. **Probe** — httpx, all status codes
-10. **Brute** — ffuf with the generated wordlist (2 rounds)
-11. **API** — kiterunner with the generated wordlist
-12. **Params** — arjun with the generated parameter list
-13. **Feedback** — merge hits → rebuild wordlist → round 2
-14. **Report** — grouped `REPORT.md` + `context.json`
+8. **Vhosts** — ffuf `Host:` brute using discovered subdomains
+9. **Wordlist** — build `wordlist.txt` + `params.txt` from everything above
+10. **Probe** — httpx on a uro-deduped list, all status codes
+11. **Brute** — ffuf with the generated wordlist (2 rounds)
+12. **API** — kiterunner with the generated wordlist
+13. **Params** — arjun with the generated parameter list
+14. **Methods** — GET/POST/PUT/PATCH/DELETE/OPTIONS/HEAD on live routes
+15. **Feedback** — merge hits → rebuild wordlist → round 2
+16. **Report** — grouped `REPORT.md` + `context.json`
 
 ---
 
@@ -122,6 +124,11 @@ output/
     historical.jsonl     old/removed paths
     hosts.txt            unique hosts
     secrets.jsonl        secret candidates
+    subdomains.txt       raw subfinder output
+    subdomains_live.txt  dnsx-resolved hosts
+    subdomains_urls.txt  full URLs queued for probing
+    uncover.txt          uncover results (if API key)
+    vhost.json           ffuf Host-header results
     wordlist.txt         generated from THIS target's findings
     params.txt           parameter names for arjun
     context.json         shared context between layers
@@ -141,13 +148,21 @@ output/
 
 | Key | Meaning |
 |---|---|
-| `enable_subdomains` | Expand subdomains (default `false`) |
+| `enable_subdomains` | subfinder + dnsx (default `true`) |
+| `enable_uncover` | Shodan/Censys/etc via uncover (default `true`; needs API key) |
+| `enable_urlscan` | urlscan.io history (default `true`; key optional) |
+| `enable_uro` | Deduplicate the httpx probe list (default `true`) |
 | `enable_brute` | Run ffuf (default `true`) |
+| `enable_vhost` | ffuf Host-header brute (default `true`) |
+| `enable_methods` | Test all HTTP methods on live routes (default `true`) |
 | `enable_browser` | Headless browser passes (default `true`) |
 | `enable_kiterunner` | API brute with `kr` (default `true`) |
 | `enable_arjun` | Hidden parameter discovery (default `true`) |
 | `probe_assets` | Probe images/css/fonts too (default `false`) |
 | `max_urls` | Probe cap (default `20000`) |
+| `max_subdomains` | Max subdomain URLs queued (default `1000`) |
+| `max_method_targets` | Live routes to method-fuzz (default `200`) |
+| `method_threads` | Parallel method requests (default `20`) |
 | `ffuf_rate` | Requests/sec for ffuf (default `10`) |
 | `max_brute_prefixes` | How many folders to fuzz per round (default `15`) |
 | `wordlist` | Base path list |
@@ -160,15 +175,18 @@ output/
 
 > `probe_assets=false` only skips probing static assets to save time.
 > Collection still keeps **every** URL in `all_routes.jsonl`.
+> `uro` only dedupes the httpx input — no finding is deleted from the data files.
 
-The same three toggles are also available as workflow inputs.
+Every toggle above is also a workflow input under **Run workflow** (all default to `true`).
 
 ---
 
-## Optional secret
+## Optional secrets
 
-Add repository secret `URLSCAN_API_KEY` to include urlscan.io historical requests.
-Without it, that step is skipped silently.
+Nothing is required to run — everything works out of the box.
+
+- `URLSCAN_API_KEY` — raises urlscan.io rate limits. The step works without it (public API).
+- `SHODAN_API_KEY` / `CENSYS_API_ID` + `CENSYS_API_SECRET` / `FOFA_EMAIL` + `FOFA_KEY` / `QUAKE_TOKEN` / `HUNTER_API_KEY` / `ZOOMEYE_API_KEY` / etc. — needed by `uncover`. If none are set, uncover logs "no API key" and skips; everything else still runs.
 
 ---
 
