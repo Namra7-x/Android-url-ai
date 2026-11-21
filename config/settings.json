@@ -1,0 +1,14 @@
+{
+  "enable_subdomains": false,
+  "enable_brute": true,
+  "enable_browser": true,
+  "probe_assets": false,
+  "max_urls": 20000,
+  "httpx_rate": 50,
+  "ffuf_rate": 10,
+  "ffuf_threads": 10,
+  "max_brute_prefixes": 15,
+  "request_timeout": 20,
+  "wordlist": "wordlists/common.txt",
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+}

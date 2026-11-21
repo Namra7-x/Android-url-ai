@@ -1,0 +1,93 @@
+name: Web Hunt Pipeline
+
+# ONE-SHOT ONLY. No schedule. No push trigger.
+# You start it manually from the Actions tab.
+
+on:
+  workflow_dispatch:
+    inputs:
+      urls_file:
+        description: "Path to the URL list"
+        required: false
+        default: "urls.txt"
+      enable_subdomains:
+        description: "Expand subdomains (true/false)"
+        required: false
+        default: "false"
+      enable_brute:
+        description: "Run ffuf brute force (true/false)"
+        required: false
+        default: "true"
+      enable_browser:
+        description: "Run headless browser steps (true/false)"
+        required: false
+        default: "true"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: web-hunt
+  cancel-in-progress: false
+
+jobs:
+  hunt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.23"
+          cache: false
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install tools
+        run: bash scripts/install_tools.sh
+
+      - name: Run hunt
+        env:
+          ENABLE_SUBDOMAINS: ${{ inputs.enable_subdomains }}
+          ENABLE_BRUTE: ${{ inputs.enable_brute }}
+          ENABLE_BROWSER: ${{ inputs.enable_browser }}
+          URLSCAN_API_KEY: ${{ secrets.URLSCAN_API_KEY }}
+        run: |
+          python3 scripts/hunt.py \
+            --urls "${{ inputs.urls_file }}" \
+            --out output \
+            --settings config/settings.json
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hunt-results
+          path: output/
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: Job summary
+        if: always()
+        run: |
+          if [ -f output/SUMMARY.md ]; then
+            cat output/SUMMARY.md >> "$GITHUB_STEP_SUMMARY"
+          fi
+          for f in output/*/REPORT.md; do
+            if [ -f "$f" ]; then
+              echo "" >> "$GITHUB_STEP_SUMMARY"
+              cat "$f" >> "$GITHUB_STEP_SUMMARY"
+            fi
+          done
