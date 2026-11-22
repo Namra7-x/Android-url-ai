@@ -1,0 +1,49 @@
+======================================================================
+JSCOPE ANALYSIS REPORT
+======================================================================
+
+[executive snapshot]
+  files analyzed : 12
+  frameworks     : none detected
+  findings       : 2
+    MEDIUM         1
+    LOW            1
+
+[where to start testing]  (deterministic ranking; reasons shown)
+   46  [MEDIUM] JS-0002  dataflow: network_response -> eval() @ 913e75bca0af5c60.js:155 (source 913e75bca0af5c60.js:162)
+       test: Send a harmless unique expression through the source and confirm in the browser console whether it is evaluated.
+       why : +40 attack surface 'code_injection_candidate'; +6 confidence MEDIUM
+   39  [LOW] JS-0001  dataflow: url -> createContextualFragment() @ 913e75bca0af5c60.js:83 (source 913e75bca0af5c60.js:390)
+       test: Put a unique marker (e.g. `jscope"><i id=jscx>`) into the source and check, in a browser, whether it is parsed as markup at the sink. Use `jscope verify` with a scoped, authorised target to do this safely.
+       why : +36 attack surface 'dom_xss_candidate'; +3 confidence LOW
+
+[priority attack surfaces]
+  * code_injection_candidate  (1 finding(s))
+      - [MEDIUM] JS-0002  network_response -> eval() @ 913e75bca0af5c60.js:155 (source 913e75bca0af5c60.js:162)
+          test: Send a harmless unique expression through the source and confirm in the browser console whether it is evaluated.
+  * dom_xss_candidate  (1 finding(s))
+      - [LOW] JS-0001  url -> createContextualFragment() @ 913e75bca0af5c60.js:83 (source 913e75bca0af5c60.js:390)
+          test: Put a unique marker (e.g. `jscope"><i id=jscx>`) into the source and check, in a browser, whether it is parsed as markup at the sink. Use `jscope verify` with a scoped, authorised target to do this safely.
+
+[findings appendix]
+  -- dataflow (2) --
+  JS-0002  [MEDIUM        score= 5]  network_response -> eval() @ 913e75bca0af5c60.js:155 (source 913e75bca0af5c60.js:162)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): dynamic code execution sink eval() receives a value derived from network response body
+       - DATA_FLOW (+3): data-flow path: 913e75bca0af5c60.js:162 assigned to `a` -> 913e75bca0af5c60.js:162 assigned to `b` -> 913e75bca0af5c60.js:162 passed as argument to ei() -> 913e75bca0af5c60.js:155 assigned to `a` -> 913e75bca0af5c60.js:155 reaches dynamic code execution sink eval()
+  JS-0001  [LOW           score= 3]  url -> createContextualFragment() @ 913e75bca0af5c60.js:83 (source 913e75bca0af5c60.js:390)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): DOM HTML insertion sink createContextualFragment() receives a value derived from page URL
+       - DATA_FLOW_PARTIAL (+1): PARTIAL data-flow path (assumptions: passed through unresolved constructor new S(); passed through unresolved call b.createHTML(); passed through unresolved constructor new Kc()): 913e75bca0af5c60.js:390 passed as argument to Be() -> 913e75bca0af5c60.js:92 passed as argument to ve() -> 913e75bca0af5c60.js:86 passed as argument to we() -> 913e75bca0af5c60.js:87 passed as argument to ie() -> 913e75bca0af5c60.js:83 passed as argument to Lc() -> 913e75bca0af5c60.js:72 assigned to `a` -> 913e75bca0af5c60.js:72 returned from Lc() -> 913e75bca0af5c60.js:83 assigned to `a` -> 913e75bca0af5c60.js:83 passed as argument to Nc() -> 913e75bca0af5c60.js:72 returned from Nc() -> 913e75bca0af5c60.js:83 reaches DOM HTML insertion sink createContextualFragment()
+
+[diagnostics]
+  ! [endpoint_analyzer] crashed: RecursionError: maximum recursion depth exceeded (walk)
+  ! [secret_analyzer] crashed: RecursionError: maximum recursion depth exceeded (walk)
+  ! [router_analyzer] crashed: RecursionError: maximum recursion depth exceeded (walk)
+  ! [auth_analyzer] crashed: RecursionError: maximum recursion depth exceeded (walk)
+  ! [authorization_analyzer] crashed: RecursionError: maximum recursion depth exceeded (walk)
+  ! [storage_analyzer] crashed: RecursionError: maximum recursion depth exceeded (walk)
+  ! [graphql_analyzer] crashed: RecursionError: maximum recursion depth exceeded (walk)
+  ! [service_worker_analyzer] crashed: RecursionError: maximum recursion depth exceeded (walk)
+
+(run `jscope explain <finding-id>` for the full evidence chain on any finding)

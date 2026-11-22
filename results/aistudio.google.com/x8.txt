@@ -1,0 +1,5 @@
+urls:         https://aistudio.google.com/
+methods:      GET
+wordlist len: 541
+
+

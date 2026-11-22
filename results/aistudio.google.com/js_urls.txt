@@ -1,0 +1,12 @@
+https://aistudio.google.com/app/gtm.js
+https://aistudio.google.com/gtm.js
+https://aistudio.google.com/host-https-apis.google.com/js/api.js
+https://aistudio.google.com/host-https-www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.js
+https://apis.google.com/js/api.js
+https://books.google.com/books/previewlib.js
+https://maps.google.com/maps-api-v3/api/js/66/13d/onion.js
+https://sites.google.com/site/efeitojs/home/efeito/efeito.js
+https://sites.google.com/site/unwanted86/javascript/animatedrecentpost.js
+https://sites.google.com/site/unwanted86/javascript/bubblecursor.js
+https://sites.google.com/site/wordlisting/jumpa/cadang.js
+https://www.gstatic.com/glue/cookienotificationbar/cookienotificationbar.min.js

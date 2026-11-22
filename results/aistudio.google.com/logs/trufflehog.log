@@ -1,0 +1,6 @@
+{"level":"info-0","ts":"2026-11-22T19:43:37Z","logger":"trufflehog","msg":"running source","source_name":"trufflehog - filesystem","source_type":"SOURCE_TYPE_FILESYSTEM","source_id":1,"job_id":1,"source_manager_worker_id":"5Wtxy","with_units":true}
+{"level":"info-0","ts":"2026-11-22T19:43:38Z","logger":"trufflehog","msg":"finished scanning","chunks":1034,"bytes":13635186,"verified_secrets":0,"unverified_secrets":17,"scan_duration":"699.031196ms","trufflehog_version":"3.100.0","verification_caching":{"Hits":97,"Misses":38,"HitsWasted":0,"AttemptsSaved":97,"VerificationTimeSpentMS":6646}}
+
+$ trufflehog filesystem results/aistudio.google.com/chunks --json --no-update
+
+[exit 0] -> results/aistudio.google.com/secrets.jsonl
