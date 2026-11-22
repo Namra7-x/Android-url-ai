@@ -1,0 +1,4 @@
+
+$ urlfinder -d antigravity.google -o results/antigravity.google/urlfinder_raw.txt -duc -silent -max-time 0
+
+[exit 0]

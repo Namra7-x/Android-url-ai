@@ -1,0 +1,5 @@
+
+$ gau antigravity.google --subs --threads 10 --blacklist png,jpg,jpeg,gif,svg,css,woff,woff2,ttf,eot,ico,mp4,mp3,pdf --o results/antigravity.google/gau.txt
+time="2026-11-22T18:24:33Z" level=warning msg="error reading config: Config file /home/runner/.gau.toml not found, using default config"
+
+[exit 0]

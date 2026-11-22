@@ -1,0 +1,119 @@
+======================================================================
+JSCOPE ANALYSIS REPORT
+======================================================================
+
+[executive snapshot]
+  files analyzed : 89
+  frameworks     : none detected
+  findings       : 15
+    CONFIRMED      1
+    HIGH           1
+    MEDIUM         2
+    LOW            11
+
+[where to start testing]  (deterministic ranking; reasons shown)
+   39  [LOW] JS-0013  dataflow: network_response -> .innerHTML = ... @ aea8497ebbaee735.js:2 (source aea8497ebbaee735.js:2)
+       test: Put a unique marker (e.g. `jscope"><i id=jscx>`) into the source and check, in a browser, whether it is parsed as markup at the sink. Use `jscope verify` with a scoped, authorised target to do this safely.
+       why : +36 attack surface 'dom_xss_candidate'; +3 confidence LOW
+   37  [LOW] JS-0005  auth: mechanism:authorization_header
+       test: Call authenticated APIs with this header removed/replaced and diff responses; test token scope and expiry.
+       why : +34 attack surface 'auth'; +3 confidence LOW
+   30  [MEDIUM] JS-0015  dataflow: url -> window.location.href = ... @ aea8497ebbaee735.js:2 (source aea8497ebbaee735.js:2)
+       test: Supply an absolute URL on a domain you control and observe whether the browser navigates there; also try `//host` and `javascript:` forms.
+       why : +24 attack surface 'open_redirect_candidate'; +6 confidence MEDIUM
+   27  [LOW] JS-0014  dataflow: network_response -> setAttribute('href') @ aea8497ebbaee735.js:2 (source aea8497ebbaee735.js:2)
+       test: Supply an absolute URL on a domain you control and observe whether the browser navigates there; also try `//host` and `javascript:` forms.
+       why : +24 attack surface 'open_redirect_candidate'; +3 confidence LOW
+
+[priority attack surfaces]
+  * open_redirect_candidate  (2 finding(s))
+      - [MEDIUM] JS-0015  url -> window.location.href = ... @ aea8497ebbaee735.js:2 (source aea8497ebbaee735.js:2)
+          test: Supply an absolute URL on a domain you control and observe whether the browser navigates there; also try `//host` and `javascript:` forms.
+      - [LOW] JS-0014  network_response -> setAttribute('href') @ aea8497ebbaee735.js:2 (source aea8497ebbaee735.js:2)
+          test: Supply an absolute URL on a domain you control and observe whether the browser navigates there; also try `//host` and `javascript:` forms.
+  * dom_xss_candidate  (1 finding(s))
+      - [LOW] JS-0013  network_response -> .innerHTML = ... @ aea8497ebbaee735.js:2 (source aea8497ebbaee735.js:2)
+          test: Put a unique marker (e.g. `jscope"><i id=jscx>`) into the source and check, in a browser, whether it is parsed as markup at the sink. Use `jscope verify` with a scoped, authorised target to do this safely.
+  * auth  (1 finding(s))
+      - [LOW] JS-0005  mechanism:authorization_header
+          test: Call authenticated APIs with this header removed/replaced and diff responses; test token scope and expiry.
+
+[findings appendix]
+  -- auth (1) --
+  JS-0005  [LOW           score= 2]  mechanism:authorization_header
+       analyzers: auth_analyzer
+       - AST_PATTERN_MATCH (+2): Authorization header set (authorization_header)
+
+  -- dataflow (3) --
+  JS-0015  [MEDIUM        score= 5]  url -> window.location.href = ... @ aea8497ebbaee735.js:2 (source aea8497ebbaee735.js:2)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink window.location.href = ... receives a value derived from page URL
+       - DATA_FLOW (+3): data-flow path: aea8497ebbaee735.js:2 passed as argument to W() -> aea8497ebbaee735.js:2 passed as argument to o() -> aea8497ebbaee735.js:2 returned from o() -> aea8497ebbaee735.js:2 assigned to `e` -> aea8497ebbaee735.js:2 reaches URL navigation sink window.location.href = ...
+  JS-0013  [LOW           score= 3]  network_response -> .innerHTML = ... @ aea8497ebbaee735.js:2 (source aea8497ebbaee735.js:2)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): DOM HTML insertion sink .innerHTML = ... receives a value derived from network response body
+       - DATA_FLOW_PARTIAL (+1): PARTIAL data-flow path (assumptions: passed through unresolved call i.parseFromString(); passed through unresolved call a.querySelector()): aea8497ebbaee735.js:2 assigned to `e` -> aea8497ebbaee735.js:2 assigned to `r` -> aea8497ebbaee735.js:2 assigned to `a` -> aea8497ebbaee735.js:2 assigned to `e` -> aea8497ebbaee735.js:2 reaches DOM HTML insertion sink .innerHTML = ...
+  JS-0014  [LOW           score= 3]  network_response -> setAttribute('href') @ aea8497ebbaee735.js:2 (source aea8497ebbaee735.js:2)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink setAttribute('href') receives a value derived from network response body
+       - DATA_FLOW_PARTIAL (+1): PARTIAL data-flow path (assumptions: passed through unresolved call i.parseFromString(); passed through unresolved call a.querySelector()): aea8497ebbaee735.js:2 assigned to `e` -> aea8497ebbaee735.js:2 assigned to `r` -> aea8497ebbaee735.js:2 assigned to `a` -> aea8497ebbaee735.js:2 assigned to `E` -> aea8497ebbaee735.js:2 assigned to `O` -> aea8497ebbaee735.js:2 reaches URL navigation sink setAttribute('href')
+
+  -- endpoint (4) --
+  JS-0001  [LOW           score= 3]  https://services.google.com/fb/submissions/antigravity_interest_form/
+       analyzers: endpoint_analyzer
+       - AST_PATTERN_MATCH (+2): fetch() call with this URL argument
+       - LITERAL_STRING_MATCH (+1): URL is a literal string, not dynamically constructed
+  JS-0002  [LOW           score= 3]  https://antigravity-hub-auto-updater-974169037036.us-central1.run.app/releases
+       analyzers: endpoint_analyzer
+       - AST_PATTERN_MATCH (+2): fetch() call with this URL argument
+       - LITERAL_STRING_MATCH (+1): URL is a literal string, not dynamically constructed
+  JS-0003  [LOW           score= 3]  https://antigravity-ide-auto-updater-974169037036.us-central1.run.app/releases
+       analyzers: endpoint_analyzer
+       - AST_PATTERN_MATCH (+2): fetch() call with this URL argument
+       - LITERAL_STRING_MATCH (+1): URL is a literal string, not dynamically constructed
+  JS-0004  [LOW           score= 3]  https://api.github.com/repos/google-antigravity/antigravity-cli/releases?per_page=100
+       analyzers: endpoint_analyzer
+       - AST_PATTERN_MATCH (+2): fetch() call with this URL argument
+       - LITERAL_STRING_MATCH (+1): URL is a literal string, not dynamically constructed
+
+  -- storage (7) --
+  JS-0007  [CONFIRMED     score=10]  sessionStorage:${e}${t}:${n}
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage delete with key '${e}${t}:${n}'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage read with key '${e}${t}:${n}'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): sessionStorage read with key '${e}${t}:${n}'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): sessionStorage write with key '${e}${t}:${n}'
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): sessionStorage write with key '${e}${t}:${n}'
+       - AST_PATTERN_MATCH #6 (+0.2, diminished): sessionStorage write with key '${e}${t}:${n}'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #4 (+0.3, diminished): storage key resolved through a constant
+  JS-0008  [HIGH          score= 8]  sessionStorage:agy_client_arch_v1
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage read with key 'agy_client_arch_v1'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage write with key 'agy_client_arch_v1'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0009  [MEDIUM        score= 4]  sessionStorage:agy_docs_sidebar_scroll
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage read with key 'agy_docs_sidebar_scroll'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage read with key 'agy_docs_sidebar_scroll'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): sessionStorage write with key 'agy_docs_sidebar_scroll'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): sessionStorage write with key 'agy_docs_sidebar_scroll'
+  JS-0010  [LOW           score= 3]  localStorage:glue.CookieNotificationBar
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'glue.CookieNotificationBar'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'glue.CookieNotificationBar'
+  JS-0011  [LOW           score= 3]  localStorage:antigravity_selected_surface
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage write with key 'antigravity_selected_surface'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage read with key 'antigravity_selected_surface'
+  JS-0006  [LOW           score= 2]  sessionStorage:${a}${t}:${n}
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage read with key '${a}${t}:${n}'
+  JS-0012  [LOW           score= 2]  localStorage:antigravity_locale
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'antigravity_locale'
+
+(run `jscope explain <finding-id>` for the full evidence chain on any finding)

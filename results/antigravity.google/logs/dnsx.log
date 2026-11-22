@@ -1,0 +1,5 @@
+
+$ dnsx -l results/antigravity.google/subdomains_all.txt -silent -o results/antigravity.google/subdomains_live.txt
+www.antigravity.google
+
+[exit 0]
