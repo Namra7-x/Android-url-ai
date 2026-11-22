@@ -1,0 +1,5 @@
+urls:         https://gemini.google.com/
+methods:      GET
+wordlist len: 43
+
+

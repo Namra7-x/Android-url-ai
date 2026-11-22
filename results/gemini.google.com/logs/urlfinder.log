@@ -1,0 +1,4 @@
+
+$ urlfinder -d gemini.google.com -o results/gemini.google.com/urlfinder_raw.txt -duc -silent -max-time 0
+
+[exit 0]

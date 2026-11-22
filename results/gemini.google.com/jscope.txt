@@ -1,0 +1,488 @@
+======================================================================
+JSCOPE ANALYSIS REPORT
+======================================================================
+
+[executive snapshot]
+  files analyzed : 172
+  frameworks     : none detected
+  findings       : 140
+    HIGH           2
+    MEDIUM         5
+    LOW            133
+
+[where to start testing]  (deterministic ranking; reasons shown)
+   46  [MEDIUM] JS-0090  authorization: feature_flag:45790001
+       test: Feature flags gate UI, often not the API. Call the flagged feature's endpoints directly while the flag is off for your account.
+       why : +40 attack surface 'authorization'; +6 confidence MEDIUM
+   46  [MEDIUM] JS-0091  authorization: feature_flag:45723056
+       test: Feature flags gate UI, often not the API. Call the flagged feature's endpoints directly while the flag is off for your account.
+       why : +40 attack surface 'authorization'; +6 confidence MEDIUM
+   46  [MEDIUM] JS-0092  authorization: feature_flag:45820978
+       test: Feature flags gate UI, often not the API. Call the flagged feature's endpoints directly while the flag is off for your account.
+       why : +40 attack surface 'authorization'; +6 confidence MEDIUM
+   43  [LOW] JS-0002  authorization: feature_flag:45812015
+       test: Feature flags gate UI, often not the API. Call the flagged feature's endpoints directly while the flag is off for your account.
+       why : +40 attack surface 'authorization'; +3 confidence LOW
+   43  [LOW] JS-0003  authorization: feature_flag:45877580
+       test: Feature flags gate UI, often not the API. Call the flagged feature's endpoints directly while the flag is off for your account.
+       why : +40 attack surface 'authorization'; +3 confidence LOW
+
+[priority attack surfaces]
+  * authorization  (130 finding(s))
+      - [MEDIUM] JS-0090  feature_flag:45790001
+          test: Feature flags gate UI, often not the API. Call the flagged feature's endpoints directly while the flag is off for your account.
+      - [MEDIUM] JS-0091  feature_flag:45723056
+          test: Feature flags gate UI, often not the API. Call the flagged feature's endpoints directly while the flag is off for your account.
+      - [MEDIUM] JS-0092  feature_flag:45820978
+          test: Feature flags gate UI, often not the API. Call the flagged feature's endpoints directly while the flag is off for your account.
+  * auth  (1 finding(s))
+      - [MEDIUM] JS-0001  mechanism:cookie_credentials
+          test: Cookie-authenticated cross-origin calls: test CSRF (SameSite, token checks) and CORS reflection of credentials.
+
+[findings appendix]
+  -- auth (1) --
+  JS-0001  [MEDIUM        score= 4]  mechanism:cookie_credentials
+       analyzers: auth_analyzer
+       - AST_PATTERN_MATCH (+2): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #2 (+1, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): fetch credentials: 'include' (cookie-based session)
+
+  -- authorization (130) --
+  JS-0090  [MEDIUM        score= 5]  feature_flag:45790001
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45790001') feature-flag check
+       - SYMBOL_RESOLVED (+3): value resolved through a constant
+  JS-0091  [MEDIUM        score= 5]  feature_flag:45723056
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45723056') feature-flag check
+       - SYMBOL_RESOLVED (+3): value resolved through a constant
+  JS-0092  [MEDIUM        score= 5]  feature_flag:45820978
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45820978') feature-flag check
+       - SYMBOL_RESOLVED (+3): value resolved through a constant
+  JS-0002  [LOW           score= 2]  feature_flag:45812015
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45812015') feature-flag check
+  JS-0003  [LOW           score= 2]  feature_flag:45877580
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45877580') feature-flag check
+  JS-0004  [LOW           score= 2]  feature_flag:45873014
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45873014') feature-flag check
+  JS-0005  [LOW           score= 2]  feature_flag:45873013
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45873013') feature-flag check
+  JS-0006  [LOW           score= 2]  feature_flag:45850593
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45850593') feature-flag check
+  JS-0007  [LOW           score= 2]  feature_flag:45844696
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45844696') feature-flag check
+  JS-0008  [LOW           score= 2]  feature_flag:45849294
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45849294') feature-flag check
+  JS-0009  [LOW           score= 2]  feature_flag:106118758
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('106118758') feature-flag check
+  JS-0010  [LOW           score= 2]  feature_flag:45428847
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45428847') feature-flag check
+  JS-0011  [LOW           score= 2]  feature_flag:45622043
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45622043') feature-flag check
+  JS-0012  [LOW           score= 2]  feature_flag:45629637
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45629637') feature-flag check
+  JS-0013  [LOW           score= 2]  feature_flag:45885797
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45885797') feature-flag check
+  JS-0014  [LOW           score= 2]  feature_flag:45895315
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45895315') feature-flag check
+  JS-0015  [LOW           score= 2]  feature_flag:45845728
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45845728') feature-flag check
+  JS-0016  [LOW           score= 2]  feature_flag:45843753
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45843753') feature-flag check
+  JS-0017  [LOW           score= 2]  feature_flag:45886893
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45886893') feature-flag check
+  JS-0018  [LOW           score= 2]  feature_flag:45878929
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45878929') feature-flag check
+  JS-0019  [LOW           score= 2]  feature_flag:45798811
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45798811') feature-flag check
+  JS-0020  [LOW           score= 2]  feature_flag:45803236
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45803236') feature-flag check
+  JS-0021  [LOW           score= 2]  feature_flag:45824138
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45824138') feature-flag check
+  JS-0022  [LOW           score= 2]  feature_flag:45793228
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45793228') feature-flag check
+  JS-0023  [LOW           score= 2]  feature_flag:45793264
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45793264') feature-flag check
+  JS-0024  [LOW           score= 2]  feature_flag:45827963
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45827963') feature-flag check
+  JS-0025  [LOW           score= 2]  feature_flag:45811073
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45811073') feature-flag check
+  JS-0026  [LOW           score= 2]  feature_flag:45823942
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45823942') feature-flag check
+  JS-0027  [LOW           score= 2]  feature_flag:45813822
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45813822') feature-flag check
+  JS-0028  [LOW           score= 2]  feature_flag:45812621
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45812621') feature-flag check
+  JS-0029  [LOW           score= 2]  feature_flag:45823420
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45823420') feature-flag check
+  JS-0030  [LOW           score= 2]  feature_flag:45824452
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45824452') feature-flag check
+  JS-0031  [LOW           score= 2]  feature_flag:45835581
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45835581') feature-flag check
+  JS-0032  [LOW           score= 2]  feature_flag:45758523
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45758523') feature-flag check
+  JS-0033  [LOW           score= 2]  feature_flag:45894969
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45894969') feature-flag check
+  JS-0034  [LOW           score= 2]  feature_flag:45827447
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45827447') feature-flag check
+  JS-0035  [LOW           score= 2]  feature_flag:45845184
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45845184') feature-flag check
+  JS-0036  [LOW           score= 2]  feature_flag:45662690
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45662690') feature-flag check
+  JS-0037  [LOW           score= 2]  feature_flag:45786920
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45786920') feature-flag check
+  JS-0038  [LOW           score= 2]  feature_flag:45779535
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45779535') feature-flag check
+  JS-0039  [LOW           score= 2]  feature_flag:45847622
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45847622') feature-flag check
+  JS-0040  [LOW           score= 2]  feature_flag:45847623
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45847623') feature-flag check
+  JS-0041  [LOW           score= 2]  feature_flag:45786586
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45786586') feature-flag check
+  JS-0042  [LOW           score= 2]  feature_flag:45831565
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45831565') feature-flag check
+  JS-0043  [LOW           score= 2]  feature_flag:45777972
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45777972') feature-flag check
+  JS-0044  [LOW           score= 2]  feature_flag:45890658
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45890658') feature-flag check
+  JS-0045  [LOW           score= 2]  feature_flag:45742218
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45742218') feature-flag check
+  JS-0046  [LOW           score= 2]  feature_flag:45867422
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45867422') feature-flag check
+  JS-0047  [LOW           score= 2]  feature_flag:45788009
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45788009') feature-flag check
+  JS-0048  [LOW           score= 2]  feature_flag:45754757
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45754757') feature-flag check
+  JS-0049  [LOW           score= 2]  feature_flag:45793355
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45793355') feature-flag check
+  JS-0050  [LOW           score= 2]  feature_flag:45784800
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45784800') feature-flag check
+  JS-0051  [LOW           score= 2]  feature_flag:45742225
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45742225') feature-flag check
+  JS-0052  [LOW           score= 2]  feature_flag:45742297
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45742297') feature-flag check
+  JS-0053  [LOW           score= 2]  feature_flag:45774344
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45774344') feature-flag check
+  JS-0054  [LOW           score= 2]  feature_flag:45881408
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45881408') feature-flag check
+  JS-0055  [LOW           score= 2]  feature_flag:45869584
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45869584') feature-flag check
+  JS-0056  [LOW           score= 2]  feature_flag:45634115
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45634115') feature-flag check
+  JS-0057  [LOW           score= 2]  feature_flag:45614841
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45614841') feature-flag check
+  JS-0058  [LOW           score= 2]  feature_flag:45532323
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45532323') feature-flag check
+  JS-0059  [LOW           score= 2]  feature_flag:45851319
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45851319') feature-flag check
+  JS-0060  [LOW           score= 2]  feature_flag:45783726
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45783726') feature-flag check
+  JS-0061  [LOW           score= 2]  feature_flag:45663720
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45663720') feature-flag check
+  JS-0062  [LOW           score= 2]  feature_flag:45664056
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45664056') feature-flag check
+  JS-0063  [LOW           score= 2]  feature_flag:45720482
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45720482') feature-flag check
+  JS-0064  [LOW           score= 2]  feature_flag:45844983
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45844983') feature-flag check
+  JS-0065  [LOW           score= 2]  feature_flag:45847511
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45847511') feature-flag check
+  JS-0066  [LOW           score= 2]  feature_flag:45692461
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45692461') feature-flag check
+  JS-0067  [LOW           score= 2]  feature_flag:45711245
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45711245') feature-flag check
+  JS-0068  [LOW           score= 2]  feature_flag:45815982
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45815982') feature-flag check
+  JS-0069  [LOW           score= 2]  feature_flag:45700008
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45700008') feature-flag check
+  JS-0070  [LOW           score= 2]  feature_flag:45827439
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45827439') feature-flag check
+  JS-0071  [LOW           score= 2]  feature_flag:45428871
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45428871') feature-flag check
+  JS-0072  [LOW           score= 2]  feature_flag:45428874
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45428874') feature-flag check
+  JS-0073  [LOW           score= 2]  feature_flag:45428875
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45428875') feature-flag check
+  JS-0074  [LOW           score= 2]  feature_flag:45807430
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45807430') feature-flag check
+  JS-0075  [LOW           score= 2]  feature_flag:45891258
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45891258') feature-flag check
+  JS-0076  [LOW           score= 2]  feature_flag:45884811
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45884811') feature-flag check
+  JS-0077  [LOW           score= 2]  feature_flag:45884813
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45884813') feature-flag check
+  JS-0078  [LOW           score= 2]  feature_flag:45884812
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45884812') feature-flag check
+  JS-0079  [LOW           score= 2]  feature_flag:45883073
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45883073') feature-flag check
+  JS-0080  [LOW           score= 2]  feature_flag:45899202
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45899202') feature-flag check
+  JS-0081  [LOW           score= 2]  feature_flag:45892753
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45892753') feature-flag check
+  JS-0082  [LOW           score= 2]  feature_flag:45856348
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45856348') feature-flag check
+  JS-0083  [LOW           score= 2]  feature_flag:45841767
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45841767') feature-flag check
+  JS-0084  [LOW           score= 2]  feature_flag:45891316
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45891316') feature-flag check
+  JS-0085  [LOW           score= 2]  feature_flag:45835362
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45835362') feature-flag check
+  JS-0086  [LOW           score= 2]  feature_flag:45869463
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45869463') feature-flag check
+  JS-0087  [LOW           score= 2]  feature_flag:45836709
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45836709') feature-flag check
+  JS-0088  [LOW           score= 2]  feature_flag:45891318
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45891318') feature-flag check
+  JS-0089  [LOW           score= 2]  feature_flag:45887145
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45887145') feature-flag check
+  JS-0093  [LOW           score= 2]  feature_flag:45835450
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45835450') feature-flag check
+  JS-0094  [LOW           score= 2]  feature_flag:45870522
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45870522') feature-flag check
+  JS-0095  [LOW           score= 2]  feature_flag:45739302
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45739302') feature-flag check
+  JS-0096  [LOW           score= 2]  feature_flag:45894477
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45894477') feature-flag check
+  JS-0097  [LOW           score= 2]  feature_flag:45802368
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45802368') feature-flag check
+  JS-0098  [LOW           score= 2]  feature_flag:45848480
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45848480') feature-flag check
+  JS-0099  [LOW           score= 2]  feature_flag:45838433
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45838433') feature-flag check
+  JS-0100  [LOW           score= 2]  feature_flag:45854755
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45854755') feature-flag check
+  JS-0101  [LOW           score= 2]  feature_flag:45799661
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45799661') feature-flag check
+  JS-0102  [LOW           score= 2]  feature_flag:45791234
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45791234') feature-flag check
+  JS-0103  [LOW           score= 2]  feature_flag:45823305
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45823305') feature-flag check
+  JS-0104  [LOW           score= 2]  feature_flag:45857175
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45857175') feature-flag check
+  JS-0105  [LOW           score= 2]  feature_flag:45843732
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45843732') feature-flag check
+  JS-0106  [LOW           score= 2]  feature_flag:45880859
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45880859') feature-flag check
+  JS-0107  [LOW           score= 2]  feature_flag:45788841
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45788841') feature-flag check
+  JS-0108  [LOW           score= 2]  feature_flag:45861985
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45861985') feature-flag check
+  JS-0109  [LOW           score= 2]  feature_flag:45821469
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45821469') feature-flag check
+  JS-0110  [LOW           score= 2]  feature_flag:45833744
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45833744') feature-flag check
+  JS-0111  [LOW           score= 2]  feature_flag:45821351
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45821351') feature-flag check
+  JS-0112  [LOW           score= 2]  feature_flag:45866440
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45866440') feature-flag check
+  JS-0113  [LOW           score= 2]  feature_flag:45845677
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45845677') feature-flag check
+  JS-0114  [LOW           score= 2]  feature_flag:45854096
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45854096') feature-flag check
+  JS-0115  [LOW           score= 2]  feature_flag:45831564
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45831564') feature-flag check
+  JS-0116  [LOW           score= 2]  feature_flag:45754220
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45754220') feature-flag check
+  JS-0117  [LOW           score= 2]  feature_flag:45805891
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45805891') feature-flag check
+  JS-0118  [LOW           score= 2]  feature_flag:45803203
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45803203') feature-flag check
+  JS-0119  [LOW           score= 2]  feature_flag:45854619
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45854619') feature-flag check
+  JS-0120  [LOW           score= 2]  feature_flag:45891247
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45891247') feature-flag check
+  JS-0121  [LOW           score= 2]  feature_flag:45780015
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45780015') feature-flag check
+  JS-0122  [LOW           score= 2]  feature_flag:45757491
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45757491') feature-flag check
+  JS-0123  [LOW           score= 2]  feature_flag:45783042
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45783042') feature-flag check
+  JS-0124  [LOW           score= 2]  feature_flag:45797638
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45797638') feature-flag check
+  JS-0125  [LOW           score= 2]  feature_flag:45777289
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45777289') feature-flag check
+  JS-0126  [LOW           score= 2]  feature_flag:45845192
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45845192') feature-flag check
+  JS-0127  [LOW           score= 2]  feature_flag:45773868
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45773868') feature-flag check
+  JS-0128  [LOW           score= 2]  feature_flag:45834475
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45834475') feature-flag check
+  JS-0129  [LOW           score= 2]  feature_flag:45782504
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45782504') feature-flag check
+  JS-0130  [LOW           score= 2]  feature_flag:45804850
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45804850') feature-flag check
+  JS-0131  [LOW           score= 2]  feature_flag:45804888
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.getBooleanValue('45804888') feature-flag check
+
+  -- storage (9) --
+  JS-0132  [HIGH          score= 9]  sessionStorage:gemini_web_btw_opt_in
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage read with key 'gemini_web_btw_opt_in'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage write with key 'gemini_web_btw_opt_in'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): sessionStorage delete with key 'gemini_web_btw_opt_in'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+  JS-0136  [HIGH          score= 9]  sessionStorage:gemini_web_space_split_opt_in
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage read with key 'gemini_web_space_split_opt_in'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage write with key 'gemini_web_space_split_opt_in'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): sessionStorage delete with key 'gemini_web_space_split_opt_in'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+  JS-0135  [MEDIUM        score= 5]  localStorage:has_redirected_to_ge
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage write with key 'has_redirected_to_ge'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+  JS-0137  [LOW           score= 3]  localStorage:_gcl_ls
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key '_gcl_ls'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key '_gcl_ls'
+  JS-0138  [LOW           score= 3]  localStorage:${hl}${e}
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key '${hl}${e}'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key '${hl}${e}'
+  JS-0139  [LOW           score= 3]  cookie:UULE
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): cookie write with key 'UULE'
+       - AST_PATTERN_MATCH #2 (+1, diminished): cookie write with key 'UULE'
+  JS-0133  [LOW           score= 2]  localStorage:gemini.zeroState.dismissed.${e}
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'gemini.zeroState.dismissed.${e}'
+  JS-0134  [LOW           score= 2]  localStorage:${Wt}${e}
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage write with key '${Wt}${e}'
+  JS-0140  [LOW           score= 2]  cookie:EUULE
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): cookie write with key 'EUULE'
+
+(run `jscope explain <finding-id>` for the full evidence chain on any finding)

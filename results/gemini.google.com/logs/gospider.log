@@ -1,0 +1,4 @@
+
+$ gospider -s https://gemini.google.com -c 5 -d 3 -m 10 --js --sitemap -q
+
+[exit 0] -> results/gemini.google.com/gospider.txt
