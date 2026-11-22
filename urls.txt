@@ -1,3 +1,5 @@
 # One target per line. Add more later.
 # First test target:
-https://jguni.edu.in
+https://antigravity.google/
+https://aistudio.google.com/
+https://gemini.google.com/
