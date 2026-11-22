@@ -15,6 +15,7 @@
   "enable_uro": true,
   "enable_uncover": true,
   "enable_brute": false,
+  "enable_result_push": true,
   "enable_kiterunner": false,
   "max_urls": 0,
   "max_subdomains": 0,

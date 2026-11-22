@@ -811,6 +811,47 @@ def write_context(target_dir, base, routes, stats):
         json.dumps(ctx, indent=1, ensure_ascii=False, default=list), encoding="utf-8")
 
 
+def push_target_results(target_dir: Path, base: str):
+    """Commit and push ONE target's results immediately, so later URLs never
+    hold up earlier findings. Called from the runner where git credentials
+    are already configured by actions/checkout."""
+    host = urlparse(base).netloc.replace(":", "_")
+    rel = f"results/{host}"
+    try:
+        subprocess.run(["git", "config", "user.name", "hunt-bot"],
+                       capture_output=True, check=False)
+        subprocess.run(["git", "config", "user.email", "hunt-bot@users.noreply.github.com"],
+                       capture_output=True, check=False)
+        # Stage only this target's files; skip heavy chunk/source-map dirs.
+        proc = subprocess.run(
+            ["bash", "-c",
+             f"find {rel} -type f ! -path '*/chunks/*' ! -path '*/sourcemaps/*' -print0 "
+             "| xargs -0 -r git add -f"],
+            capture_output=True, check=False,
+        )
+        if proc.returncode != 0:
+            log(f"result push: staging failed for {host}: {proc.stderr.decode('utf-8', 'replace')[:300]}")
+            return
+        staged = subprocess.run(["git", "diff", "--cached", "--quiet"],
+                                capture_output=True, check=False)
+        if staged.returncode == 0:
+            log(f"result push: no new changes for {host}")
+            return
+        msg = f"Hunt results {host} {now()}"
+        commit = subprocess.run(["git", "commit", "-m", msg],
+                                capture_output=True, check=False)
+        if commit.returncode != 0:
+            log(f"result push: commit failed: {commit.stderr.decode('utf-8', 'replace')[:300]}")
+            return
+        push = subprocess.run(["git", "push"], capture_output=True, check=False)
+        if push.returncode != 0:
+            log(f"result push: push failed: {push.stderr.decode('utf-8', 'replace')[:300]}")
+            return
+        log(f"result push: pushed {rel} immediately")
+    except Exception as e:  # noqa: BLE001
+        log(f"result push: error for {host}: {e}")
+
+
 # ---------------------------------------------------------------------------
 # report
 # ---------------------------------------------------------------------------
@@ -1121,6 +1162,9 @@ def main() -> int:
 
         stats = report(td, base, routes, probe_rows, extra, SETTINGS)
         write_context(td, base, routes, stats)
+        # Save this target's findings immediately — don't wait for other URLs.
+        if SETTINGS.get("enable_result_push", True):
+            push_target_results(td, base)
         summary.append((base, stats))
         log(f"REPORT {td / 'REPORT.md'} -> {stats}")
 
