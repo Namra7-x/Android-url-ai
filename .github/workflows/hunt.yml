@@ -1,14 +1,20 @@
 name: Web Hunt Pipeline
 
-# ONE-SHOT. Manual trigger only. ONE URL per run (no matrix, no concurrency limit issues).
+# ONE-SHOT manual trigger. MULTIPLE URLs supported: one parallel job per URL.
+# Each job pushes its own results the moment it finishes and uploads its own
+# artifact, so a slow/failing/cancelled URL never blocks or loses the others.
 
 on:
   workflow_dispatch:
     inputs:
       urls_file:
-        description: "Path to URL list (one URL is recommended per run)"
+        description: "Path to URL list (one URL per line)"
         required: false
         default: "urls.txt"
+      max_parallel:
+        description: "Max URLs hunting at once (be polite to your other repos)"
+        required: false
+        default: "3"
 
 permissions:
   contents: write
@@ -18,75 +24,145 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  hunt:
+  prepare:
     runs-on: ubuntu-latest
-    timeout-minutes: 350
-
+    outputs:
+      matrix: ${{ steps.set.outputs.matrix }}
+      count: ${{ steps.set.outputs.count }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+      - id: set
+        env:
+          URLS_FILE: ${{ inputs.urls_file }}
+        run: |
+          python3 - "$URLS_FILE" >> "$GITHUB_OUTPUT" <<'EOF'
+          import json, sys
+          path = sys.argv[1] if len(sys.argv) > 1 else "urls.txt"
+          urls = []
+          with open(path, encoding="utf-8") as f:
+              for line in f:
+                  s = line.strip()
+                  if s and not s.startswith("#"):
+                      urls.append(s)
+          print("matrix=" + json.dumps({"target": urls}))
+          print("count=" + str(len(urls)))
+          EOF
 
-      - name: Setup Go
-        uses: actions/setup-go@v5
+  tools:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
         with:
-          go-version: "1.23"
+          go-version: "1.26"
           cache: false
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-
-      - name: Setup Node 22 LTS (Anastasis requires 20.18.1-23)
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: "22"
-
-      # Install once. Every later run restores these paths from cache.
-      - name: Cache tools
+      - name: Cache toolchain
         uses: actions/cache@v4
         with:
           path: |
             ~/.cache/hunt-tools-ready
             ~/go/bin
-            ~/.local/bin
-            ~/.cargo/bin
-            ~/tools/Anastasis/node_modules
-            ~/tools/Anastasis/dist
+            ~/go/pkg/mod
+            ~/.cache/go-build
+            ~/.local
+            ~/tools
+            ~/.cache/puppeteer
+            ~/nuclei-templates
             ~/.npm
-          key: hunt-tools-v1-${{ runner.os }}-${{ hashFiles('scripts/install_tools.sh') }}
-
-      - name: Install tools (cached after first run)
+          key: hunt-tools-v2-${{ runner.os }}-${{ hashFiles('scripts/install_tools.sh') }}
+          restore-keys: |
+            hunt-tools-v2-${{ runner.os }}-
+      - name: Build/warm tool cache
         run: bash scripts/install_tools.sh
 
-      - name: Run hunt
+  hunt:
+    needs: [prepare, tools]
+    if: needs.prepare.outputs.count != '0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    strategy:
+      fail-fast: false
+      max-parallel: ${{ fromJSON(inputs.max_parallel) }}
+      matrix: ${{ fromJSON(needs.prepare.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.26"
+          cache: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      # restore-keys means even after installer edits we restore the previous
+      # cache and the installer skips everything already present -> zero installs.
+      - name: Cache toolchain
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/hunt-tools-ready
+            ~/go/bin
+            ~/go/pkg/mod
+            ~/.cache/go-build
+            ~/.local
+            ~/tools
+            ~/.cache/puppeteer
+            ~/nuclei-templates
+            ~/.npm
+          key: hunt-tools-v2-${{ runner.os }}-${{ hashFiles('scripts/install_tools.sh') }}
+          restore-keys: |
+            hunt-tools-v2-${{ runner.os }}-
+
+      - name: Install tools (zero installs when cached)
+        run: bash scripts/install_tools.sh
+
+      - name: Hunt ${{ matrix.target }}
         run: |
           python3 scripts/hunt.py \
-            --urls "${{ inputs.urls_file }}" \
+            --url "${{ matrix.target }}" \
             --out results \
             --settings config/settings.json
 
-      # Results live in the repo so you can browse them — no download needed.
-      - name: Commit results to repo
+      - name: Push this target's results (retry-safe)
         if: always()
         run: |
           git config user.name "hunt-bot"
           git config user.email "hunt-bot@users.noreply.github.com"
-          mkdir -p results
-          find results -type f ! -path "*/chunks/*" ! -path "*/sourcemaps/*" -print0 \
-            | xargs -0 -r git add -f
-          if git diff --cached --quiet; then
-            echo "No result changes to commit"
-          else
-            git commit -m "Hunt results $(date -u +%Y-%m-%dT%H:%M:%SZ)"
-            git push
-          fi
+          for i in 1 2 3 4; do
+            mkdir -p results
+            find results -type f ! -path "*/chunks/*" ! -path "*/sourcemaps/*" -print0 \
+              | xargs -0 -r git add -f
+            if git diff --cached --quiet; then echo "nothing to commit"; break; fi
+            git commit -m "Hunt results $(date -u +%Y-%m-%dT%H:%M:%SZ)" || true
+            if git push; then echo "pushed"; break; fi
+            echo "push rejected, rebasing (attempt $i)"
+            git pull --rebase origin main || true
+          done
 
-      - name: Upload results (backup artifact)
+      - name: Artifact name
+        id: meta
+        if: always()
+        run: |
+          NAME=$(echo "${{ matrix.target }}" | sed -E 's#https?://##; s#[^A-Za-z0-9._-]#_#g')
+          echo "name=hunt-$NAME" >> "$GITHUB_OUTPUT"
+
+      - name: Upload this target's artifact (backup)
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: hunt-results
+          name: ${{ steps.meta.outputs.name }}
           path: results/
           retention-days: 30
           if-no-files-found: warn
@@ -94,12 +170,27 @@ jobs:
       - name: Job summary
         if: always()
         run: |
-          if [ -f results/INDEX.md ]; then
-            cat results/INDEX.md >> "$GITHUB_STEP_SUMMARY"
-          fi
           for f in results/*/REPORT.md; do
-            if [ -f "$f" ]; then
-              echo "" >> "$GITHUB_STEP_SUMMARY"
-              cat "$f" >> "$GITHUB_STEP_SUMMARY"
-            fi
+            [ -f "$f" ] && cat "$f" >> "$GITHUB_STEP_SUMMARY"
           done
+
+  index:
+    needs: hunt
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rebuild INDEX.md from all targets
+        run: python3 scripts/make_index.py results
+      - name: Commit index
+        run: |
+          git config user.name "hunt-bot"
+          git config user.email "hunt-bot@users.noreply.github.com"
+          git add -f results/INDEX.md results/SUMMARY.md || true
+          if git diff --cached --quiet; then echo "index unchanged"; else
+            for i in 1 2 3; do
+              git commit -m "Update hunt index" || true
+              git push && break
+              git pull --rebase origin main || true
+            done
+          fi

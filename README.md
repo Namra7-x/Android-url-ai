@@ -1,109 +1,93 @@
 # Web Hunt Pipeline
 
-One-shot, maximum-discovery web hunt. One URL per run. Results are **committed into this repo** and uploaded as an artifact — no download needed.
+One-shot, maximum-discovery web hunt. **Multiple URLs supported** — one parallel
+job per URL. Each job pushes its results to `results/<host>/` the moment it
+finishes and uploads its own artifact, so a slow/failing/cancelled URL never
+blocks or loses the others.
 
-**No schedule. No cron.** It only starts when you click **Run workflow**.
+**No schedule.** Manual trigger only: **Actions → Web Hunt Pipeline → Run workflow**.
 
 ---
 
 ## Golden rule
 
-> **Collect wide. Verify status. Categorize last.**
+> Collect wide. Verify status. Categorize last. Nothing is deleted.
 
-- No content-type / method / shape filter during collection.
-- **200** = confirmed win. **301/302/401/403/405** = route exists but blocked. Everything else kept.
-- Nothing is deleted from the data files. The report is only a grouping.
-
----
-
-## First run
-
-1. **Actions** → **Web Hunt Pipeline** → **Run workflow**.
-2. Leave `urls_file=urls.txt`. Add one URL per line (one URL per run is recommended).
-3. Click **Run workflow**.
-
-When it finishes, open **`results/INDEX.md`** in this repo, then the target's `REPORT.md`.
-
-**Tool caching:** tools install once; every later run restores them from the Actions cache, so installs are skipped.
+- **200** = confirmed win. **301/302/401/403/405** = exists but blocked.
+- Everything else kept in `other_status.jsonl`.
+- Noise (third-party, method probes, blocked vhosts) is **kept in separate files**, never mixed into the headline counts.
 
 ---
 
-## Pipeline (one URL, fast, no discovery time limits)
+## Speed architecture
 
-| Order | Tool | Language | Job |
-|---|---|---|---|
-| 1 | subfinder + dnsx + uncover | Go | subdomains, DNS-resolved only |
-| 2 | **urlfinder** | Go | 200k passive URLs in minutes, no API key needed |
-| 3 | gau | Go | extra archive sources (Wayback/CommonCrawl/OTX) |
-| 4 | katana (2 passes, memory-safe flags) | Go | active crawl: standard `-jc` + headless `-xhr`; no `-jsl`/`-aff` |
-| 5 | gospider | Go | lightweight second crawler (found more endpoints than katana in benchmarks) |
-| 6 | JS downloader | Python | downloads discovered JS chunks in parallel |
-| 7 | jsluice | Go | AST endpoints + secrets from JS |
-| 8 | **anastasis** | Node/AST | deeper endpoints, typed params, sourcemaps |
-| 9 | **jscope** | Python | evidence-backed JS findings — kills noise |
-| 10 | trufflehog | Go | verified secrets (1s per 27 MB) |
-| 11 | Collect + vhost | Python | dedupe everything; real Host-header hosts only |
-| 12 | Wordlist foundry | Python | target-specific 8,000-word list |
-| 13 | httpx | Go | probes **every** URL — this decides 200 vs blocked |
-| 14 | **x8** | Rust | hidden parameter discovery |
-| 15 | methods | Python | GET/POST/PUT/PATCH/DELETE/OPTIONS/HEAD |
-| 16 | Report | Python | 12-section readable report |
-
-**Not run by default:** ffuf and kiterunner (wordlist is generated and ready — flip `enable_brute` in a later run).
-
-**Removed because they were slow or broken:** js-recon (82 min + OOM), Chakra (timeout), waymore (slow), urlscan (429), arjun (network error), xnLinkFinder (0 bytes).
+- **Zero installs on repeat runs.** A dedicated `tools` job warms a full cache
+  (Go bins + build cache, pip `--user`, Anastasis folder, Chrome, nuclei templates,
+  prebuilt binaries). Hunt jobs restore it and install nothing.
+- **Installer only installs what's missing** (`have <tool> || install`), and
+  `restore-keys` means even after installer edits the previous cache is reused.
+- **One job per URL** (`max-parallel` input, default 3) → N URLs ≈ time of one.
+- **jsluice batched** (100 files/process) instead of 2 processes/file.
+- **Recursive JS chunk download** (3 rounds) feeds jsluice/anastasis/jscope.
+- **anastasis local-first** (`-fs chunks`) — no flaky network dependency.
 
 ---
 
-## Noise control
+## Tool stack (latest, verified)
 
-- Subdomains: only DNS-resolved hosts are counted.
-- Vhosts: `530` (Cloudflare) and `0` are excluded — only real statuses count.
-- Params: from collected URLs + anastasis AST + x8 confirmation.
-- JS findings: jscope shows only evidence-backed candidates.
-- Every URL is verified by httpx; 404s are kept in `other_status.jsonl`, not shown as wins.
+| Layer | Tool | Note |
+|---|---|---|
+| Subdomains | subfinder + dnsx + uncover | Go |
+| Passive URLs | **urlfinder @dev** + waybackurls | dev has the source fixes missing from v0.0.3; gau dropped (open no-output bug) |
+| Crawl | katana v1.8 (2 passes) + **cariddi** | cariddi = crawl + secrets + endpoints + juicy files, one pass |
+| JS seeds | getJS + subjs | |
+| JS parse | jsluice (batched) + anastasis (local) + jscope | |
+| Secrets | trufflehog (verify) + **noseyparker** (GB/s bulk) | |
+| Probe | httpx (all statuses) + uro dedupe | |
+| Params | x8 (Rust) + methods | |
+| Findings | **nuclei** (exposure/misconfig/tech/panel on live hosts) | real verified findings |
+| Vhosts | pure-Python Host-header check | Cloudflare 403/530 excluded from "real" |
+| Fuzz (off) | ffuf + kiterunner | wordlist always generated |
+
+---
+
+## Results
+
+```
+results/
+  INDEX.md            rebuilt by aggregate job from every target
+  SUMMARY.md
+  <host>/
+    REPORT.md         13 sections incl. route-patterns + nuclei findings
+    accessible_200.jsonl / exists_blocked.jsonl / other_status.jsonl
+    data_files.jsonl / params.jsonl / subdomains.jsonl
+    js_endpoints.jsonl / jsluice.jsonl / noseyparker.jsonl / nuclei.jsonl
+    third_party_routes.jsonl / method_responses.jsonl / vhost_*.jsonl
+    wordlist.txt / params.txt / context.json / js_urls.txt / logs/
+```
+
+Per-target **artifact** (`hunt-<host>`) uploaded as backup.
 
 ---
 
 ## Report sections
 
-```
-results/<host>/REPORT.md
-  1. SUCCESS — HTTP 200
-  2. EXISTS BUT DIFFERENT STATUS (301/302/401/403/405)
-  3. OTHER RESPONSES — kept, never discarded
-  4. DATA FILES (accessible)
-  5. SUBDOMAINS (detailed, resolved)
-  6. VIRTUAL HOSTS (real statuses only)
-  7. JS ENDPOINTS (AST, evidence-backed)
-  8. PARAMETERS
-  9. SECRET CANDIDATES
- 10. TOOL RUN STATUS (no silent skips)
- 11. INTENTIONALLY NOT RUN
- 12. OUTPUT FILES (sizes + links)
-```
-
-Also written: `all_routes.jsonl`, `accessible_200.jsonl`, `exists_blocked.jsonl`, `other_status.jsonl`, `data_files.jsonl`, `params.jsonl`, `subdomains.jsonl`, `js_endpoints.jsonl`, `vhost.jsonl`, `jsluice.jsonl`, `secrets.jsonl`, `wordlist.txt`, `params.txt`, `context.json`, `js_urls.txt`, `logs/`.
-
-Old aliases `live_200.jsonl` / `live_other.jsonl` are still written.
+0 Top route patterns (IDs collapsed) · 1 Accessible 200 · 2 Exists/blocked ·
+3 Other · 4 Data files · 5 Subdomains · 6 Vhosts · 7 JS endpoints · 8 Params ·
+9 Secrets · 10 Nuclei findings · 11 Tool run status · 12 Not run · 13 Output files.
 
 ---
 
 ## Settings
 
-`config/settings.json` — all toggles on. `max_urls=0` and `max_subdomains=0` mean **no cap**. Safety timeouts only log and continue; they are not discovery limits.
-
----
-
-## Runtime
-
-One URL typically finishes in ~20–30 minutes including install. Cached runs are faster. The GitHub job cap is 350 minutes, which we never approach.
+`config/settings.json` — all discovery on; `enable_brute:false`;
+`enable_result_push:true`; `max_urls:0` (no cap). `nuclei_max_targets`,
+`jsluice_batch`, `js_crawl_rounds` tune speed/depth.
 
 ---
 
 ## Notes
 
-- Private repo recommended — results contain findings.
-- Cloudflare/WAF may return 403/530 from datacenter IPs; these are recorded honestly, never hidden.
-- Only run against targets you are authorised to analyse.
-- The previous project in this repo is preserved in git history.
+- Private repo recommended (results contain findings).
+- Runner IPs are datacenter; WAF 403/530 recorded honestly, never hidden.
+- Only test targets you are authorised to analyse.

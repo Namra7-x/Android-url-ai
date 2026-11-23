@@ -7,9 +7,9 @@ Fast, layered, Go/Rust-first. One URL per run. No discovery time limits.
 Collect wide -> verify every URL with httpx -> categorize last.
 
 Pipeline:
-  subfinder/dnsx/uncover -> urlfinder -> gau -> katana (2 passes)
-  -> download JS chunks -> jsluice -> anastasis -> jscope -> trufflehog
-  -> collect -> vhost -> wordlist -> httpx -> x8 -> methods -> report
+  subfinder/dnsx/uncover -> urlfinder(dev) -> waybackurls -> katana -> cariddi
+  -> recursive JS chunks -> jsluice(batched)/anastasis(local)/jscope
+  -> trufflehog+noseyparker -> httpx -> x8/methods -> nuclei -> report+push
 """
 from __future__ import annotations
 
@@ -102,8 +102,9 @@ def tool_name(cmd) -> str:
 
 def check_tools() -> bool:
     required = ["katana", "httpx", "ffuf", "uro", "subfinder", "dnsx", "uncover",
-                "kr", "gau", "waybackurls", "jsluice", "urlfinder", "x8",
-                "jscope", "anastasis", "trufflehog", "jq", "gospider"]
+                "kr", "waybackurls", "jsluice", "urlfinder", "x8",
+                "jscope", "anastasis", "trufflehog", "jq", "cariddi",
+                "noseyparker", "getJS", "subjs", "nuclei"]
     missing = [t for t in required if not which(t)]
     if missing:
         log("MISSING TOOLS: " + ", ".join(missing))
@@ -310,23 +311,22 @@ def step_urlfinder(host, target_dir, logs, settings):
     if not settings.get("enable_urlfinder", True):
         return
     raw = target_dir / "urlfinder_raw.txt"
-    cmd = ["urlfinder", "-d", host, "-o", str(raw), "-duc", "-silent", "-max-time", "0"]
+    # No -silent: it hides source errors (upstream issue #166).
+    cmd = ["urlfinder", "-d", host, "-o", str(raw), "-duc", "-max-time", "0"]
     rc = run(cmd, logs / "urlfinder.log", timeout=3600)
     if rc != 0:  # older builds don't accept -max-time 0
-        run(["urlfinder", "-d", host, "-o", str(raw), "-duc", "-silent"],
+        run(["urlfinder", "-d", host, "-o", str(raw), "-duc"],
             logs / "urlfinder.log", timeout=3600)
     n = clean_url_lines(raw, target_dir / "urlfinder_urls.txt")
     log(f"urlfinder: {n} URLs")
 
 
-def step_gau(host, target_dir, logs, settings):
-    if not settings.get("enable_gau", True):
+def step_waybackurls(host, target_dir, logs, settings):
+    if not settings.get("enable_waybackurls", True):
         return
-    out = target_dir / "gau.txt"
-    run(["gau", host, "--subs", "--threads", "10",
-         "--blacklist", "png,jpg,jpeg,gif,svg,css,woff,woff2,ttf,eot,ico,mp4,mp3,pdf",
-         "--o", str(out)], logs / "gau.log", timeout=3600)
-    clean_url_lines(out, target_dir / "gau_urls.txt")
+    out = target_dir / "wayback.txt"
+    run_capture(["waybackurls", host], out, logs / "waybackurls.log", timeout=1800)
+    clean_url_lines(out, target_dir / "wayback_urls.txt")
 
 
 def step_katana(base, target_dir, logs, settings):
@@ -366,23 +366,54 @@ def step_katana(base, target_dir, logs, settings):
                 logs / "katana_pass2_fallback.log", timeout=1800)
 
 
-def step_gospider(base, target_dir, logs, settings):
-    """Lightweight second crawler — found more endpoints than katana in benchmarks."""
-    if not settings.get("enable_gospider", True):
+def step_cariddi(base, target_dir, logs, settings):
+    """Crawl + hunt secrets/endpoints/juicy files in one fast Go pass (stdin)."""
+    if not settings.get("enable_cariddi", True):
         return
-    out = target_dir / "gospider.txt"
-    run_capture(["gospider", "-s", base, "-c", "5", "-d", "3", "-m", "10",
-                 "--js", "--sitemap", "-q"],
-                out, logs / "gospider.log", timeout=1800)
+    out = target_dir / "cariddi.txt"
+    try:
+        proc = subprocess.run(
+            ["bash", "-c",
+             f"printf '%s\\n' {shlex_quote(base)} | cariddi -s -e -info -ext 2 -c 50 -t 10"],
+            capture_output=True, timeout=1800)
+        out.write_bytes(proc.stdout or b"")
+        (logs / "cariddi.log").write_bytes(proc.stderr or b"")
+        record_status("cariddi", proc.returncode)
+    except Exception as e:  # noqa: BLE001
+        record_status("cariddi", 1, str(e))
     count = sum(1 for _ in out.open(encoding="utf-8", errors="replace")) if out.exists() else 0
-    log(f"gospider: {count} URLs")
+    log(f"cariddi: {count} lines")
+
+
+def shlex_quote(s: str) -> str:
+    import shlex
+    return shlex.quote(s)
+
+
+def step_js_seeds(base, target_dir, logs, settings):
+    """getJS + subjs: extra JS-file seeds from the live page."""
+    if not settings.get("enable_js_seeds", True):
+        return
+    out = target_dir / "js_seeds.txt"
+    parts = []
+    if which("getJS"):
+        p = subprocess.run(["getJS", "-url", base], capture_output=True, timeout=300)
+        parts.append(p.stdout or b"")
+        record_status("getJS", p.returncode)
+    if which("subjs"):
+        p = subprocess.run(["bash", "-c", f"printf '%s\\n' {shlex_quote(base)} | subjs"],
+                           capture_output=True, timeout=300)
+        parts.append(p.stdout or b"")
+        record_status("subjs", p.returncode)
+    out.write_bytes(b"\n".join(parts))
+    log(f"js seeds: {out.stat().st_size} bytes")
 
 
 def collect_js_urls(target_dir, base):
     urls = set()
-    # gospider is the main JS URL source — it found thousands of chunk URLs.
-    for name in ("urlfinder_urls.txt", "gau_urls.txt", "gospider.txt",
-                 "anastasis_urls.txt", "js_urls.txt"):
+    # cariddi + passive sources are the main JS URL providers.
+    for name in ("urlfinder_urls.txt", "wayback_urls.txt", "cariddi.txt",
+                 "js_seeds.txt", "anastasis_urls.txt", "js_urls.txt"):
         p = target_dir / name
         if not p.exists():
             continue
@@ -483,20 +514,23 @@ def step_jsluice(target_dir, logs, settings):
     js = sorted((target_dir / "chunks").glob("*.js")) if (target_dir / "chunks").exists() else []
     out = target_dir / "jsluice.jsonl"
     secrets = target_dir / "jsluice_secrets.jsonl"
+    batch = int(settings.get("jsluice_batch", 100))
+    # ONE process per batch instead of two per file: 10-50x faster.
     with open(out, "w", encoding="utf-8") as fo, open(secrets, "w", encoding="utf-8") as fs:
-        for p in js:
+        for i in range(0, len(js), batch):
+            group = [str(p) for p in js[i:i + batch]]
             try:
-                r = subprocess.run(["jsluice", "urls", str(p)], capture_output=True, timeout=60)
+                r = subprocess.run(["jsluice", "urls", *group], capture_output=True, timeout=600)
                 fo.write((r.stdout or b"").decode("utf-8", "replace"))
             except Exception:  # noqa: BLE001
                 pass
             try:
-                r = subprocess.run(["jsluice", "secrets", str(p)], capture_output=True, timeout=60)
+                r = subprocess.run(["jsluice", "secrets", *group], capture_output=True, timeout=600)
                 fs.write((r.stdout or b"").decode("utf-8", "replace"))
             except Exception:  # noqa: BLE001
                 pass
-    record_status("jsluice", 0, f"{len(js)} files parsed")
-    log(f"jsluice: parsed {len(js)} chunks")
+    record_status("jsluice", 0, f"{len(js)} files parsed in batches of {batch}")
+    log(f"jsluice: parsed {len(js)} chunks (batched)")
 
 
 def _walk_anastasis(obj, urls, endpoints, params):
@@ -527,40 +561,49 @@ def step_anastasis(host, base, target_dir, logs):
     # Anastasis runs from its own directory via the PATH wrapper, so a relative
     # --save path lands in the tool folder. Always pass an absolute path.
     save_path = str(out.resolve())
-    rc = run(["anastasis", "-u", host, "--params", "-o", "json", "--save", save_path],
-             logs / "anastasis.log", timeout=3600)
-    if rc != 0:
-        chunks = target_dir / "chunks"
-        if chunks.exists() and any(chunks.glob("*.js")):
-            log("anastasis: primary mode failed, retrying in local-file mode")
-            rc = run(["anastasis", "-fs", str(chunks.resolve()), "--params", "-o", "json",
-                      "--save", save_path],
-                     logs / "anastasis_local.log", timeout=3600)
+    chunks = target_dir / "chunks"
+    have_chunks = chunks.exists() and any(chunks.glob("*.js"))
 
-    raw = ""
-    if out.exists():
-        raw = out.read_text(encoding="utf-8", errors="replace")
-    if not raw.strip():
-        # Last resort: anastasis prints the same JSON into its log.
+    def load_raw(logfile):
+        if out.exists():
+            txt = out.read_text(encoding="utf-8", errors="replace")
+            if txt.strip():
+                return txt
         try:
-            txt = (logs / "anastasis.log").read_text(encoding="utf-8", errors="replace")
-            start, end = txt.find("{"), txt.rfind("}")
-            if start >= 0 and end > start:
-                candidate = txt[start:end + 1]
-                json.loads(candidate)
-                raw = candidate
-                out.write_text(raw, encoding="utf-8")
+            txt = logfile.read_text(encoding="utf-8", errors="replace")
+            s, e = txt.find("{"), txt.rfind("}")
+            if s >= 0 and e > s:
+                cand = txt[s:e + 1]
+                json.loads(cand)
+                out.write_text(cand, encoding="utf-8")
+                return cand
         except Exception:  # noqa: BLE001
             pass
-    if not raw.strip():
-        record_status("anastasis", rc if rc else 1, "no output produced — see logs/")
-        return
+        return ""
 
+    def parse(raw):
+        u, ep, pa = [], [], []
+        try:
+            _walk_anastasis(json.loads(raw), u, ep, pa)
+        except Exception:  # noqa: BLE001
+            pass
+        return u, ep, pa
+
+    # LOCAL-FIRST: parse the chunks we already downloaded (deterministic, fast,
+    # no flaky network sources). Fall back to remote discovery only if empty.
     urls, endpoints, params = [], [], []
-    try:
-        _walk_anastasis(json.loads(raw), urls, endpoints, params)
-    except Exception:  # noqa: BLE001
-        pass
+    rc = 1
+    if have_chunks:
+        rc = run(["anastasis", "-fs", str(chunks.resolve()), "--params", "-o", "json",
+                  "--save", save_path], logs / "anastasis_local.log", timeout=3600)
+        urls, endpoints, params = parse(load_raw(logs / "anastasis_local.log"))
+    if not endpoints:
+        rc = run(["anastasis", "-u", host, "--params", "-o", "json", "--save", save_path],
+                 logs / "anastasis.log", timeout=3600)
+        urls, endpoints, params = parse(load_raw(logs / "anastasis.log"))
+    if not endpoints:
+        record_status("anastasis", rc if rc else 1, "no endpoints from local or remote mode")
+        return
 
     # Write full URLs so these endpoints enter the route pool and get probed.
     prefix = base.rstrip("/")
@@ -598,6 +641,48 @@ def step_trufflehog(target_dir, logs):
         src = target_dir
     run_capture(["trufflehog", "filesystem", str(src), "--json", "--no-update"],
                 target_dir / "secrets.jsonl", logs / "trufflehog.log", timeout=3600)
+
+
+def step_noseyparker(target_dir, logs):
+    """Rust GB/s secret scan over downloaded chunks (complements trufflehog)."""
+    if not settings_enabled("enable_noseyparker") or not which("noseyparker"):
+        return
+    src = target_dir / "chunks"
+    if not src.exists() or not any(src.glob("*.js")):
+        record_status("noseyparker", 0, "no chunks")
+        return
+    ds = target_dir / "np-datastore"
+    run(["noseyparker", "scan", "--datastore", str(ds), str(src)],
+        logs / "noseyparker_scan.log", timeout=1800)
+    run_capture(["noseyparker", "report", "--datastore", str(ds), "--format", "jsonl"],
+                target_dir / "noseyparker.jsonl", logs / "noseyparker.log", timeout=600)
+
+
+def step_nuclei(probe_rows, target_dir, logs, settings):
+    """Curated fast nuclei templates on VERIFIED-LIVE hosts only -> real findings."""
+    if not settings_enabled("enable_nuclei") or not which("nuclei"):
+        return []
+    live = {}
+    for r in probe_rows:
+        if (r.get("status_code") or 0) in (200, 401, 403):
+            u = r.get("url")
+            if u:
+                live[u] = True
+    urls = list(live)[:int(settings.get("nuclei_max_targets", 300))]
+    if not urls:
+        record_status("nuclei", 0, "no live hosts")
+        return []
+    lst = target_dir / "nuclei_urls.txt"
+    lst.write_text("\n".join(urls) + "\n", encoding="utf-8")
+    out = target_dir / "nuclei.jsonl"
+    run(["nuclei", "-l", str(lst), "-tags", "exposure,misconfig,tech,panel",
+         "-rl", "50", "-c", "25", "-jsonl", "-o", str(out), "-silent", "-duc",
+         "-timeout", "10", "-retries", "1"],
+        logs / "nuclei.log", timeout=1800)
+    rows = read_jsonl(out)
+    record_status("nuclei", 0, f"{len(rows)} findings on {len(urls)} live hosts")
+    log(f"nuclei: {len(rows)} findings")
+    return rows
 
 
 def collect(target_dir: Path, base: str):
@@ -843,11 +928,16 @@ def push_target_results(target_dir: Path, base: str):
         if commit.returncode != 0:
             log(f"result push: commit failed: {commit.stderr.decode('utf-8', 'replace')[:300]}")
             return
-        push = subprocess.run(["git", "push"], capture_output=True, check=False)
-        if push.returncode != 0:
-            log(f"result push: push failed: {push.stderr.decode('utf-8', 'replace')[:300]}")
-            return
-        log(f"result push: pushed {rel} immediately")
+        # Retry with rebase: parallel jobs / user edits can move the remote.
+        for attempt in range(4):
+            push = subprocess.run(["git", "push"], capture_output=True, check=False)
+            if push.returncode == 0:
+                log(f"result push: pushed {rel} immediately")
+                return
+            log(f"result push: rejected (attempt {attempt + 1}), rebasing")
+            subprocess.run(["git", "pull", "--rebase", "origin", "main"],
+                           capture_output=True, check=False)
+        log("result push: gave up after retries; final workflow step will retry")
     except Exception as e:  # noqa: BLE001
         log(f"result push: error for {host}: {e}")
 
@@ -856,7 +946,7 @@ def push_target_results(target_dir: Path, base: str):
 # report
 # ---------------------------------------------------------------------------
 
-def report(target_dir, base, routes, probe_rows, extra_rows, settings):
+def report(target_dir, base, routes, probe_rows, extra_rows, settings, nuclei_rows=None):
     target_dir = Path(target_dir)
     merged = {}
     for r in list(probe_rows) + list(extra_rows):
@@ -940,6 +1030,20 @@ def report(target_dir, base, routes, probe_rows, extra_rows, settings):
     write_jsonl(target_dir / "params.jsonl", params)
     write_jsonl(target_dir / "subdomains.jsonl", sub_rows)
     write_jsonl(target_dir / "js_endpoints.jsonl", js_endpoints)
+    nuclei = list(nuclei_rows or [])
+    write_jsonl(target_dir / "nuclei.jsonl", nuclei)
+
+    # Collapse repeated ID-like path segments so the report leads with structure,
+    # not thousands of near-identical artifact/session URLs. Raw data stays intact.
+    import re as _re
+    from collections import Counter as _Counter
+    id_seg = _re.compile(r"^([0-9a-f]{8,}|[0-9a-f-]{36}|[A-Za-z0-9_-]{20,}|\d+)$")
+    pat = _Counter()
+    for r in all_routes:
+        segs = [s for s in urlparse(r["url"]).path.split("/") if s]
+        collapsed = "/".join("{id}" if id_seg.match(s) else s for s in segs)
+        pat["/" + collapsed] += 1
+    top_patterns = pat.most_common(40)
     write_jsonl(target_dir / "live_200.jsonl", win)
     write_jsonl(target_dir / "live_other.jsonl", blocked)
 
@@ -984,6 +1088,12 @@ def report(target_dir, base, routes, probe_rows, extra_rows, settings):
     L.append(f"> Collection keeps third-party URLs by design ({len(third_party)}). "
              f"See `third_party_routes.jsonl`. Method-probe responses are in `method_responses.jsonl`.")
     L.append("")
+    L += ["## 0. TOP ROUTE PATTERNS (IDs collapsed)", "",
+          "| Pattern | Count |", "|---|---:|"]
+    for p, c in top_patterns:
+        L.append(f"| `{p}` | {c} |")
+    L.append("")
+
     section("1. SUCCESS — HTTP 200", win)
     section("2. EXISTS BUT DIFFERENT STATUS (301/302/401/403/405)", blocked)
     section("3. OTHER RESPONSES — kept, never discarded", other)
@@ -1029,13 +1139,25 @@ def report(target_dir, base, routes, probe_rows, extra_rows, settings):
     L += ["## 9. SECRET CANDIDATES", "",
           f"{len(secrets)} candidate(s) in `secrets.jsonl`. Verify manually." if secrets else "_None found._", ""]
 
-    L += ["## 10. TOOL RUN STATUS (no silent skips)", "", "| Tool | Result | Detail |", "|---|---|---|"]
+    L += ["## 10. NUCLEI FINDINGS (verified exposures / misconfigs)", ""]
+    if nuclei:
+        L += ["| Severity | Template | Host |", "|---|---|---|"]
+        for n in nuclei[:80]:
+            info = n.get("info", {}) or {}
+            L.append(f"| {info.get('severity','?')} | `{n.get('template-id','?')}` | `{n.get('host','')}` |")
+        if len(nuclei) > 80:
+            L.append(f"| … | _{len(nuclei)-80} more in nuclei.jsonl_ | |")
+    else:
+        L.append("_No nuclei findings on live hosts._")
+    L.append("")
+
+    L += ["## 11. TOOL RUN STATUS (no silent skips)", "", "| Tool | Result | Detail |", "|---|---|---|"]
     for name in sorted(RUN_STATUS):
         s = RUN_STATUS[name]
         L.append(f"| `{name}` | {'OK' if s['exit'] == 0 else 'exit ' + str(s['exit'])} | {s.get('note') or ('see logs/' if s['exit'] else 'completed')} |")
     L.append("")
 
-    L += ["## 11. INTENTIONALLY NOT RUN", "",
+    L += ["## 12. INTENTIONALLY NOT RUN", "",
           "- **ffuf path brute** — off by default; `wordlist.txt` is ready. Set `enable_brute: true` later.",
           "- **kiterunner** — off by default alongside ffuf.", ""]
 
@@ -1049,13 +1171,15 @@ def report(target_dir, base, routes, probe_rows, extra_rows, settings):
         ("vhost_real.jsonl", "non-blocked virtual hosts"),
         ("vhost_blocked.jsonl", "blocked vhost checks — kept"),
         ("js_endpoints.jsonl", "AST endpoints"), ("vhost.jsonl", "all vhost checks"),
-        ("jsluice.jsonl", "JS-derived URLs"), ("gospider.txt", "second crawler URLs"), ("anastasis_endpoints.jsonl", "AST endpoints"),
+        ("jsluice.jsonl", "JS-derived URLs"), ("cariddi.txt", "crawl + secrets/endpoints"),
+        ("wayback_urls.txt", "archive URLs"), ("noseyparker.jsonl", "fast secret scan"),
+        ("nuclei.jsonl", "verified exposure findings"), ("anastasis_endpoints.jsonl", "AST endpoints"),
         ("jscope.txt", "evidence-ranked JS analysis"), ("secrets.jsonl", "secret candidates"),
         ("wordlist.txt", "target-specific fuzz list"), ("params.txt", "parameter wordlist"),
         ("context.json", "shared context"), ("js_urls.txt", "JS chunk URLs"),
         ("logs/", "raw tool logs"),
     ]
-    L += ["## 12. OUTPUT FILES", "", "| File | Meaning |", "|---|---|"]
+    L += ["## 13. OUTPUT FILES", "", "| File | Meaning |", "|---|---|"]
     for name, meaning in out_files:
         p = target_dir / name
         if p.exists():
@@ -1069,7 +1193,7 @@ def report(target_dir, base, routes, probe_rows, extra_rows, settings):
     (target_dir / "REPORT.md").write_text("\n".join(L), encoding="utf-8")
     return {"collected": len(all_routes), "probed": len(merged), "live200": len(win),
             "liveother": len(blocked), "data": len(data_files), "subdomains": len(live_subs),
-            "js_endpoints": len(js_endpoints), "vhosts": len(vhosts)}
+            "js_endpoints": len(js_endpoints), "vhosts": len(vhosts), "nuclei": len(nuclei)}
 
 
 # ---------------------------------------------------------------------------
@@ -1083,6 +1207,7 @@ def main() -> int:
     global SETTINGS
     ap = argparse.ArgumentParser()
     ap.add_argument("--urls", default="urls.txt")
+    ap.add_argument("--url", default="", help="single target (matrix mode)")
     ap.add_argument("--out", default="results")
     ap.add_argument("--settings", default="config/settings.json")
     args = ap.parse_args()
@@ -1097,10 +1222,11 @@ def main() -> int:
     if not check_tools():
         return 2
 
-    raw_urls = [l.strip() for l in Path(args.urls).read_text(encoding="utf-8").splitlines()
-                if l.strip() and not l.strip().startswith("#")]
+    raw_urls = ([args.url] if args.url else
+                [l.strip() for l in Path(args.urls).read_text(encoding="utf-8").splitlines()
+                 if l.strip() and not l.strip().startswith("#")])
     if not raw_urls:
-        log("no targets in urls file")
+        log("no targets")
         return 2
 
     out_root = Path(args.out)
@@ -1124,65 +1250,60 @@ def main() -> int:
         logs = td / "logs"
         logs.mkdir(parents=True, exist_ok=True)
         log(f"=== TARGET {base} -> {td} ===")
+        probe_rows, extra, nuclei_rows, routes = [], [], [], {}
+        try:
+            step("subdomains", step_subdomains, host, td, logs, SETTINGS)
+            step("urlfinder", step_urlfinder, host, td, logs, SETTINGS)
+            step("waybackurls", step_waybackurls, host, td, logs, SETTINGS)
+            step("katana", step_katana, base, td, logs, SETTINGS)
+            step("cariddi", step_cariddi, base, td, logs, SETTINGS)
+            step("js-seeds", step_js_seeds, base, td, logs, SETTINGS)
+            step("js-download", step_download_js, td, logs, SETTINGS)
+            step("jsluice", step_jsluice, td, logs, SETTINGS)
+            step("anastasis", step_anastasis, host, base, td, logs)
+            step("jscope", step_jscope, td, logs)
+            step("trufflehog", step_trufflehog, td, logs)
+            step("noseyparker", step_noseyparker, td, logs)
 
-        step("subdomains", step_subdomains, host, td, logs, SETTINGS)
-        step("urlfinder", step_urlfinder, host, td, logs, SETTINGS)
-        step("gau", step_gau, host, td, logs, SETTINGS)
-        step("katana", step_katana, base, td, logs, SETTINGS)
-        step("gospider", step_gospider, base, td, logs, SETTINGS)
-        step("js-download", step_download_js, td, logs, SETTINGS)
-        step("jsluice", step_jsluice, td, logs, SETTINGS)
-        step("anastasis", step_anastasis, host, base, td, logs)
-        step("jscope", step_jscope, td, logs)
-        step("trufflehog", step_trufflehog, td, logs)
+            routes = collect(td, base)
+            log(f"collected {len(routes)} unique URLs")
 
-        routes = collect(td, base)
-        log(f"collected {len(routes)} unique URLs")
+            live_vhosts = step("vhost", step_vhost, base, td, logs, SETTINGS) or []
+            for h in live_vhosts:
+                n = normalize(f"https://{h}", base)
+                if n:
+                    routes[dedupe_key(n)] = {"url": n, "method": "GET", "sources": {"vhost"}}
 
-        live_vhosts = step("vhost", step_vhost, base, td, logs, SETTINGS) or []
-        for h in live_vhosts:
-            n = normalize(f"https://{h}", base)
-            if n:
-                routes[dedupe_key(n)] = {"url": n, "method": "GET", "sources": {"vhost"}}
+            wl = td / "wordlist.txt"
+            pf = td / "params.txt"
+            info = wordlist.build(td, base, SETTINGS.get("wordlist", "wordlists/common.txt"),
+                                  wl, int(SETTINGS.get("wordlist_max", 8000)), pf)
+            log(f"wordlist built: {info}")
 
-        wl = td / "wordlist.txt"
-        pf = td / "params.txt"
-        info = wordlist.build(td, base, SETTINGS.get("wordlist", "wordlists/common.txt"),
-                              wl, int(SETTINGS.get("wordlist_max", 8000)), pf)
-        log(f"wordlist built: {info}")
+            probe_rows = probe(routes, td, logs, SETTINGS) or []
+            extra = step_methods(probe_rows, logs, SETTINGS) or []
+            step("x8", step_x8, base, td, logs, SETTINGS, pf)
+            nuclei_rows = step("nuclei", step_nuclei, probe_rows, td, logs, SETTINGS) or []
 
-        probe_rows = probe(routes, td, logs, SETTINGS) or []
-        extra = step_methods(probe_rows, logs, SETTINGS) or []
-        step("x8", step_x8, base, td, logs, SETTINGS, pf)
+            if SETTINGS.get("enable_brute", False):
+                log("ffuf brute enabled (wordlist ready)")
+            else:
+                record_status("ffuf", 0, "off by choice — wordlist prepared")
+        except Exception as e:  # noqa: BLE001
+            # One bad target must never kill the others or lose partial data.
+            log(f"TARGET {base} partial failure: {e}")
+            record_status("pipeline", 1, str(e))
 
-        if SETTINGS.get("enable_brute", False):
-            log("ffuf brute enabled (wordlist ready)")
-        else:
-            record_status("ffuf", 0, "off by choice — wordlist prepared")
-
-        stats = report(td, base, routes, probe_rows, extra, SETTINGS)
+        stats = report(td, base, routes, probe_rows, extra, SETTINGS, nuclei_rows)
         write_context(td, base, routes, stats)
-        # Save this target's findings immediately — don't wait for other URLs.
         if SETTINGS.get("enable_result_push", True):
             push_target_results(td, base)
         summary.append((base, stats))
         log(f"REPORT {td / 'REPORT.md'} -> {stats}")
 
-    idx = ["# Hunt results", "", f"Generated: {now()}", "",
-           "Open a target's **REPORT.md** for the full findings.", "",
-           "| Target | Report | Accessible 200 | Exists/blocked | Subdomains | JS endpoints | Routes |",
-           "|---|---|---:|---:|---:|---:|---:|"]
-    for base, s in summary:
-        h = urlparse(base).netloc.replace(":", "_")
-        idx.append(f"| `{h}` | [REPORT.md]({h}/REPORT.md) | {s['live200']} | {s['liveother']} | "
-                   f"{s['subdomains']} | {s['js_endpoints']} | {s['collected']} |")
-    idx += ["", "- **Accessible 200** = confirmed live responses.",
-            "- **Exists/blocked** = real routes returning 301/302/401/403/405.",
-            "- No time limits were applied to discovery. ffuf was off by choice; wordlists are ready.", ""]
-    (out_root / "INDEX.md").write_text("\n".join(idx), encoding="utf-8")
-    (out_root / "SUMMARY.md").write_text(
-        "\n".join(["# Summary", ""] + [f"- {b}: {s}" for b, s in summary]) + "\n", encoding="utf-8")
-    log(f"INDEX {out_root / 'INDEX.md'}")
+    # INDEX.md / SUMMARY.md are built by the aggregate workflow job
+    # (scripts/make_index.py) so parallel per-URL jobs never race on them.
+    log("done")
     return 0
 
 
