@@ -1,0 +1,320 @@
+======================================================================
+JSCOPE ANALYSIS REPORT
+======================================================================
+
+[executive snapshot]
+  files analyzed : 86
+  frameworks     : Next.js
+  findings       : 49
+    HIGH           12
+    MEDIUM         11
+    LOW            26
+
+[where to start testing]  (deterministic ranking; reasons shown)
+   46  [MEDIUM] JS-0014  authorization: role:admin
+       test: Client-side check only: it proves the UI hides this, not that the server refuses it. Replay the underlying API calls with a lower-privilege (or no) token. Also test whether the server accepts a client-supplied 'isAdmin' (mass assignment) or trusts a tampered token/response claim.
+       why : +40 attack surface 'authorization'; +6 confidence MEDIUM
+   43  [LOW] JS-0013  authorization: role:user
+       test: Client-side check only: it proves the UI hides this, not that the server refuses it. Replay the underlying API calls with a lower-privilege (or no) token.
+       why : +40 attack surface 'authorization'; +3 confidence LOW
+   43  [LOW] JS-0015  authorization: feature_flag:toolbarDebugMode
+       test: Feature flags gate UI, often not the API. Call the flagged feature's endpoints directly.
+       why : +40 attack surface 'authorization'; +3 confidence LOW
+   43  [LOW] JS-0016  authorization: feature_flag:distributedTracing
+       test: Feature flags gate UI, often not the API. Call the flagged feature's endpoints directly.
+       why : +40 attack surface 'authorization'; +3 confidence LOW
+   43  [LOW] JS-0017  authorization: feature_flag:flagsWithoutSecret
+       test: Feature flags gate UI, often not the API. Call the flagged feature's endpoints directly.
+       why : +40 attack surface 'authorization'; +3 confidence LOW
+
+[route map]  1 route(s)   (R=route G=guard role=declared role E=endpoint)
+  R /_next/image                 UNPROTECTED
+
+[priority attack surfaces]
+  * authorization  (12 finding(s))
+      - [MEDIUM] JS-0014  role:admin
+          test: Client-side check only: it proves the UI hides this, not that the server refuses it. Replay the underlying API calls with a lower-privilege (or no) token. Also test whether the server accepts a client-supplied 'isAdmin' (mass assignment) or trusts a tampered token/response claim.
+      - [LOW] JS-0013  role:user
+          test: Client-side check only: it proves the UI hides this, not that the server refuses it. Replay the underlying API calls with a lower-privilege (or no) token.
+      - [LOW] JS-0017  feature_flag:flagsWithoutSecret
+          test: Feature flags gate UI, often not the API. Call the flagged feature's endpoints directly.
+  * auth  (4 finding(s))
+      - [MEDIUM] JS-0010  mechanism:cookie_credentials
+          test: Cookie-authenticated cross-origin calls: test CSRF (SameSite, token checks) and CORS reflection of credentials.
+      - [LOW] JS-0011  mechanism:bearer
+          test: Call authenticated APIs with this header removed/replaced and diff responses; test token scope and expiry.
+      - [LOW] JS-0009  session:token_in_sessionStorage
+          test: Token is readable by any script on the origin. Hunt XSS sinks; check token lifetime/scope.
+  * open_redirect_candidate  (3 finding(s))
+      - [MEDIUM] JS-0047  url_query -> location.assign() @ 0e4d2b1c1f128526.js:1 (source 0e4d2b1c1f128526.js:1)
+          test: Supply an absolute URL on a domain you control and observe whether the browser navigates there; also try `//host` and `javascript:` forms.
+      - [MEDIUM] JS-0048  url_query -> location.assign() @ 75e8a01f30476f20.js:1 (source 75e8a01f30476f20.js:1)
+          test: Supply an absolute URL on a domain you control and observe whether the browser navigates there; also try `//host` and `javascript:` forms.
+      - [MEDIUM] JS-0049  url_query -> location.assign() @ 768df551eedfb580.js:1 (source 768df551eedfb580.js:1)
+          test: Supply an absolute URL on a domain you control and observe whether the browser navigates there; also try `//host` and `javascript:` forms.
+  * token_storage  (1 finding(s))
+      - [MEDIUM] JS-0031  sessionStorage:vc-mfe-session-cleared
+          test: Script-readable storage: any XSS (or malicious third-party script) can read this. Look for XSS sinks, and check whether the token is long-lived and unscoped.
+
+[findings appendix]
+  -- auth (4) --
+  JS-0010  [MEDIUM        score= 4]  mechanism:cookie_credentials
+       analyzers: auth_analyzer
+       - AST_PATTERN_MATCH (+2): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #2 (+1, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): fetch credentials: 'include' (cookie-based session)
+  JS-0011  [LOW           score= 3]  mechanism:bearer
+       analyzers: auth_analyzer
+       - AST_PATTERN_MATCH (+2): Authorization header set (bearer)
+       - LITERAL_STRING_MATCH (+1): 'bearer' scheme literal present
+  JS-0009  [LOW           score= 2]  session:token_in_sessionStorage
+       analyzers: auth_analyzer
+       - AST_PATTERN_MATCH (+2): credential-like key 'vc-mfe-session-cleared' written to sessionStorage
+  JS-0012  [LOW           score= 2]  mechanism:authorization_header
+       analyzers: auth_analyzer
+       - AST_PATTERN_MATCH (+2): Authorization header set (authorization_header)
+
+  -- authorization (12) --
+  JS-0014  [MEDIUM        score= 5]  role:admin
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): reads privilege flag e.isAdmin
+       - AST_PATTERN_MATCH #2 (+1, diminished): reads privilege flag ye.isAdmin
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): reads privilege flag n.isAdmin
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): reads privilege flag e.isAdmin
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): reads privilege flag e.isAdmin
+       - AST_PATTERN_MATCH #6 (+0.2, diminished): reads privilege flag e.isAdmin
+       - AST_PATTERN_MATCH #7 (+0.2, diminished): reads privilege flag t.isAdmin
+       - AST_PATTERN_MATCH #8 (+0.2, diminished): reads privilege flag t.isAdmin
+       - AST_PATTERN_MATCH #9 (+0.2, diminished): reads privilege flag t.isAdmin
+       - AST_PATTERN_MATCH #10 (+0.2, diminished): reads privilege flag n.isAdmin
+  JS-0013  [LOW           score= 3]  role:user
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.role compared to 'user'
+       - AST_PATTERN_MATCH #2 (+1, diminished): e.role compared to 'user'
+  JS-0017  [LOW           score= 3]  feature_flag:flagsWithoutSecret
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): reads feature flag d.flags.flagsWithoutSecret
+       - AST_PATTERN_MATCH #2 (+1, diminished): reads feature flag j.flags.flagsWithoutSecret
+  JS-0015  [LOW           score= 2]  feature_flag:toolbarDebugMode
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): reads feature flag h.flags.toolbarDebugMode
+  JS-0016  [LOW           score= 2]  feature_flag:distributedTracing
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): reads feature flag a.flags.distributedTracing
+  JS-0018  [LOW           score= 2]  feature_flag:signedOverrides
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): reads feature flag j.flags.signedOverrides
+  JS-0019  [LOW           score= 2]  feature_flag:kmsFlagsDiscovery
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): reads feature flag j.flags.kmsFlagsDiscovery
+  JS-0020  [LOW           score= 2]  feature_flag:v0App
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): reads feature flag e.flags.v0App
+  JS-0021  [LOW           score= 2]  feature_flag:v0Tip
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): reads feature flag e.flags.v0Tip
+  JS-0022  [LOW           score= 2]  feature_flag:definitions
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): reads feature flag T.flags.definitions
+  JS-0023  [LOW           score= 2]  feature_flag:reduce
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): reads feature flag r.flags.reduce
+  JS-0024  [LOW           score= 2]  feature_flag:some
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): reads feature flag r.flags.some
+
+  -- dataflow (3) --
+  JS-0047  [MEDIUM        score= 5]  url_query -> location.assign() @ 0e4d2b1c1f128526.js:1 (source 0e4d2b1c1f128526.js:1)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink location.assign() receives a value derived from URL query string (location.search)
+       - DATA_FLOW (+3): data-flow path: 0e4d2b1c1f128526.js:1 assigned to `e` -> 0e4d2b1c1f128526.js:1 reaches URL navigation sink location.assign()
+  JS-0048  [MEDIUM        score= 5]  url_query -> location.assign() @ 75e8a01f30476f20.js:1 (source 75e8a01f30476f20.js:1)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink location.assign() receives a value derived from URL query string (location.search)
+       - DATA_FLOW (+3): data-flow path: 75e8a01f30476f20.js:1 assigned to `e` -> 75e8a01f30476f20.js:1 reaches URL navigation sink location.assign()
+  JS-0049  [MEDIUM        score= 5]  url_query -> location.assign() @ 768df551eedfb580.js:1 (source 768df551eedfb580.js:1)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink location.assign() receives a value derived from URL query string (location.search)
+       - DATA_FLOW (+3): data-flow path: 768df551eedfb580.js:1 assigned to `e` -> 768df551eedfb580.js:1 reaches URL navigation sink location.assign()
+
+  -- endpoint (6) --
+  JS-0002  [LOW           score= 3]  https://api.hsforms.com/submissions/v3/integration/submit/46599998/${k}
+       analyzers: endpoint_analyzer
+       - AST_PATTERN_MATCH (+2): fetch() call with this URL argument
+       - LITERAL_STRING_MATCH (+1): URL is a literal string, not dynamically constructed
+  JS-0003  [LOW           score= 3]  /
+       analyzers: endpoint_analyzer
+       - AST_PATTERN_MATCH (+2): fetch() call with this URL argument
+       - LITERAL_STRING_MATCH (+1): URL is a literal string, not dynamically constructed
+  JS-0004  [LOW           score= 3]  /.well-known/vercel/jwe
+       analyzers: endpoint_analyzer
+       - AST_PATTERN_MATCH (+2): fetch() call with this URL argument
+       - LITERAL_STRING_MATCH (+1): URL is a literal string, not dynamically constructed
+  JS-0005  [LOW           score= 3]  https://api.hsforms.com/submissions/v3/integration/submit/46599998/${j}
+       analyzers: endpoint_analyzer
+       - AST_PATTERN_MATCH (+2): fetch() call with this URL argument
+       - LITERAL_STRING_MATCH (+1): URL is a literal string, not dynamically constructed
+  JS-0006  [LOW           score= 3]  https://api.hsforms.com/submissions/v3/integration/submit/46599998/${S}
+       analyzers: endpoint_analyzer
+       - AST_PATTERN_MATCH (+2): fetch() call with this URL argument
+       - LITERAL_STRING_MATCH (+1): URL is a literal string, not dynamically constructed
+  JS-0007  [LOW           score= 3]  /.well-known/vercel/microfrontends/routing
+       analyzers: endpoint_analyzer
+       - AST_PATTERN_MATCH (+2): fetch() call with this URL argument
+       - LITERAL_STRING_MATCH (+1): URL is a literal string, not dynamically constructed
+
+  -- framework (1) --
+  JS-0001  [MEDIUM        score= 5]  Next.js
+       analyzers: framework_detector
+       - LITERAL_STRING_MATCH (+1): found _next/static chunk path convention
+       - LITERAL_STRING_MATCH #2 (+0.5, diminished): found _next/static chunk path convention
+       - LITERAL_STRING_MATCH #3 (+0.25, diminished): found Next.js App Router flight marker (__next_f)
+       - AST_PATTERN_MATCH (+2): Next.js marker recurs across 3 files
+       - AST_PATTERN_MATCH #2 (+1, diminished): Next.js marker recurs across 3 files
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): Next.js marker recurs across 3 files
+
+  -- route (1) --
+  JS-0008  [MEDIUM        score= 6]  /_next/image
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/_next/image'
+       - AST_PATTERN_MATCH #2 (+1, diminished): config route definition path='/_next/image'
+       - FRAMEWORK_CONTEXT (+2): Next.js detected and route shape matches its router
+       - FRAMEWORK_CONTEXT #2 (+1, diminished): Next.js detected and route shape matches its router
+
+  -- storage (22) --
+  JS-0027  [HIGH          score= 9]  sessionStorage:vt-init-retry-count
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage read with key 'vt-init-retry-count'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage write with key 'vt-init-retry-count'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): sessionStorage delete with key 'vt-init-retry-count'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+  JS-0029  [HIGH          score= 9]  sessionStorage:vc-dt-src
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage write with key 'vc-dt-src'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage delete with key 'vc-dt-src'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): sessionStorage write with key 'vc-dt-src'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+  JS-0030  [HIGH          score= 9]  sessionStorage:vercel-toolbar-intent
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage read with key 'vercel-toolbar-intent'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage write with key 'vercel-toolbar-intent'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): sessionStorage write with key 'vercel-toolbar-intent'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+  JS-0033  [HIGH          score= 9]  localStorage:devin_privacy_optout
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'devin_privacy_optout'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage read with key 'devin_privacy_optout'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage delete with key 'devin_privacy_optout'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): localStorage write with key 'devin_privacy_optout'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+  JS-0035  [HIGH          score= 9]  localStorage:devin_privacy_method
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'devin_privacy_method'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage delete with key 'devin_privacy_method'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage write with key 'devin_privacy_method'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+  JS-0043  [HIGH          score= 9]  localStorage:__vercel_toolbar_injector
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key '__vercel_toolbar_injector'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key '__vercel_toolbar_injector'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage write with key '__vercel_toolbar_injector'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+  JS-0028  [HIGH          score= 8]  localStorage:vercel-toolbar-position
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage write with key 'vercel-toolbar-position'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage read with key 'vercel-toolbar-position'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0037  [HIGH          score= 8]  localStorage:test
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage write with key 'test'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage delete with key 'test'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0039  [HIGH          score= 8]  localStorage:bots-section-order
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'bots-section-order'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'bots-section-order'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0040  [HIGH          score= 8]  sessionStorage:bot-avatar-variant
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage read with key 'bot-avatar-variant'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage write with key 'bot-avatar-variant'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0045  [HIGH          score= 8]  localStorage:__vercel_toolbar_csp_warning_dismissed_v1
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key '__vercel_toolbar_csp_warning_dismissed_v1'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key '__vercel_toolbar_csp_warning_dismissed_v1'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0046  [HIGH          score= 8]  localStorage:__vti
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key '__vti'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key '__vti'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0025  [MEDIUM        score= 4]  localStorage:devin_client_uuid
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'devin_client_uuid'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage read with key 'devin_client_uuid'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage read with key 'devin_client_uuid'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): localStorage read with key 'devin_client_uuid'
+  JS-0031  [MEDIUM        score= 4]  sessionStorage:vc-mfe-session-cleared
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage read with key 'vc-mfe-session-cleared'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage write with key 'vc-mfe-session-cleared'
+       - NAMING_CONVENTION (+1): key 'vc-mfe-session-cleared' looks credential-bearing
+       - NAMING_CONVENTION #2 (+0.5, diminished): key 'vc-mfe-session-cleared' looks credential-bearing
+  JS-0041  [MEDIUM        score= 4]  sessionStorage:vercel-live-feedback-hidden
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage delete with key 'vercel-live-feedback-hidden'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage write with key 'vercel-live-feedback-hidden'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): sessionStorage write with key 'vercel-live-feedback-hidden'
+  JS-0042  [MEDIUM        score= 4]  sessionStorage:vercel-preview-skip-animation
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage read with key 'vercel-preview-skip-animation'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage delete with key 'vercel-preview-skip-animation'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): sessionStorage delete with key 'vercel-preview-skip-animation'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): sessionStorage write with key 'vercel-preview-skip-animation'
+  JS-0026  [LOW           score= 3]  sessionStorage:vercel-live-script-origin-override
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage read with key 'vercel-live-script-origin-override'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage write with key 'vercel-live-script-origin-override'
+  JS-0036  [LOW           score= 3]  cookie:${s}
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): cookie write with key '${s}'
+       - AST_PATTERN_MATCH #2 (+1, diminished): cookie write with key '${s}'
+  JS-0038  [LOW           score= 3]  localStorage:_gcl_ls
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key '_gcl_ls'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key '_gcl_ls'
+  JS-0044  [LOW           score= 3]  sessionStorage:vercel-live-feedback-optout
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage write with key 'vercel-live-feedback-optout'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage write with key 'vercel-live-feedback-optout'
+  JS-0032  [LOW           score= 2]  cookie:__vercel_toolbar_code
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): cookie write with key '__vercel_toolbar_code'
+  JS-0034  [LOW           score= 2]  localStorage:devin_gpc_first_seen
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'devin_gpc_first_seen'
+
+[diagnostics]
+  ! [incremental] reused 0 file(s), re-analyzed 86, dropped 0 removed
+
+(run `jscope explain <finding-id>` for the full evidence chain on any finding)

@@ -1,0 +1,4 @@
+
+$ noseyparker report --datastore results/devin.ai/np-datastore --format jsonl
+
+[exit 0] -> results/devin.ai/noseyparker.jsonl

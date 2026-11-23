@@ -1,0 +1,8006 @@
+
+$ anastasis -fs /home/runner/work/Android-url-ai/Android-url-ai/results/devin.ai/chunks --params -o json --save /home/runner/work/Android-url-ai/Android-url-ai/results/devin.ai/anastasis.json
+
+> anastasis@1.3.0 scan
+> node dist/scan.js -fs /home/runner/work/Android-url-ai/Android-url-ai/results/devin.ai/chunks --params -o json --save /home/runner/work/Android-url-ai/Android-url-ai/results/devin.ai/anastasis.json
+
+
+▶ LOCAL FILE SCAN
+──────────────────────────────────────────────────────────────────────
+  Path: /home/runner/work/Android-url-ai/Android-url-ai/results/devin.ai/chunks
+
+  Found 86 JS file(s) to scan
+
+  ✓ 002512f31d8dae49.js: 14 endpoints
+  ✓ 008115662e0d70bb.js: 7 endpoints
+  ✓ 08640a907e719b73.js: 1 endpoints
+  ✓ 0f962cde6e9a4ccf.js: 8 endpoints
+  ✓ 10dcdcd8eedbddfb.js: 1 endpoints
+  ✓ 11ed34560040983e.js: 1 endpoints
+  ✓ 17c846f4fdb17119.js: 5 endpoints
+  ✓ 1ba1c041366ac43b.js: 1 endpoints
+  ✓ 2e67fefb9b90ae82.js: 1 endpoints
+  ✓ 3106df879b1d0936.js: 8 endpoints
+  ✓ 320d4256fc0e4146.js: 4 endpoints
+  ✓ 4e1e866a7a27a102.js: 1 endpoints
+  ✓ 5006c1740d95b56e.js: 4 endpoints
+  ✓ 506ea8d016224cc3.js: 2 endpoints
+  ✓ 509c1da4b1d5f30b.js: 1 endpoints
+  ✓ 5ae87cd7e54a9963.js: 4 endpoints
+  ✓ 5c4ea8c4845b23f7.js: 3 endpoints
+  ✓ 5ee02b4b04ebbf0f.js: 24 endpoints
+  ✓ 6050a5800692d65c.js: 5 endpoints
+  ✓ 60ec2991253b4bf1.js: 30 endpoints
+  ✓ 6ec7ef6d7bed1757.js: 3 endpoints
+  ✓ 7076d0b1440fd0e6.js: 17 endpoints
+  ✓ 72f31718c9fedd66.js: 45 endpoints
+  ✓ 7525678e4ae96a9f.js: 1 endpoints
+  ✓ 75b49bf294ea11c6.js: 3 endpoints
+  ✓ 75e8a01f30476f20.js: 4 endpoints
+  ✓ 7b7d86014aee032b.js: 4 endpoints
+  ✓ 844317c80ba05f16.js: 6 endpoints
+  ✓ 854afda7eae78303.js: 1 endpoints
+  ✓ 8d58ecc9b925ba96.js: 1 endpoints
+  ✓ 8f8154d0ecbbb335.js: 3 endpoints
+  ✓ 9e5b3765f9907cee.js: 1 endpoints
+  ✓ a45341ab52401ec5.js: 4 endpoints
+  ✓ a621a23716e7914d.js: 2 endpoints
+  ✓ b589e85fe3f2d524.js: 5 endpoints
+  ✓ ba718281d1d433e3.js: 1 endpoints
+  ✓ bb19c9da31d606d2.js: 1 endpoints
+  ✓ bc87b015140119e5.js: 1 endpoints
+  ✓ bec6625e7af61fb8.js: 9 endpoints
+  ✓ c5acbaebd7a0b381.js: 30 endpoints
+  ✓ c7c8eae7061518da.js: 27 endpoints
+  ✓ c7fc615552c0e3d4.js: 32 endpoints
+  ✓ cb19c34fa26f341d.js: 1 endpoints
+  ✓ cb971fcfaf146e22.js: 97 endpoints
+  ✓ d1c05eba7198f558.js: 1 endpoints
+  ✓ d6a8702f893b2b92.js: 1 endpoints
+  ✓ d997d377af5acc2d.js: 4 endpoints
+  ✓ da89b7394a12a73e.js: 4 endpoints
+  ✓ dc24abc71f797157.js: 2 endpoints
+  ✓ e002a224cbb09f18.js: 1 endpoints
+  ✓ e31d83dde1c67e00.js: 1 endpoints
+  ✓ e43df3bd52a0e31c.js: 11 endpoints
+  ✓ ec4077564ec33fe3.js: 1 endpoints
+  ✓ f1fd2ae0fa7c004a.js: 1 endpoints
+
+╔════════════════════════════╗
+║  📁 LOCAL SCAN COMPLETE    ║
+║                            ║
+║  Files Scanned:       86   ║
+║  Total Endpoints:     349  ║
+╚════════════════════════════╝
+{
+  "source": "/home/runner/work/Android-url-ai/Android-url-ai/results/devin.ai/chunks",
+  "filesScanned": 86,
+  "totalEndpoints": 349,
+  "requestSpecs": [
+    {
+      "path": "/cli",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/cloud",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/community",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/customers",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/desktop",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/government",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/guarantee",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/partners",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/plugins",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/pricing",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/security",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/university",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/windows",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "https://app.devin.ai/auth/signup",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/demo",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/download",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/jetbrains",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "https://app.devin.ai/signup",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "https://docs.devin.ai/desktop/devin-desktop-faq",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/signup",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/desktop/devin-desktop-faq",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/CognitionAI/devin-marketplace",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/customers/angellist-oncall",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/customers/crosby",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/customers/modal",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/customers/reducto",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/.well-known/vercel/jwe",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": ".concat(r, ",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": "__vercel_toolbar_code",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        }
+      ],
+      "headers": [
+        {
+          "name": "x-vercel-draft-status",
+          "value": "1",
+          "isStatic": true,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.78
+    },
+    {
+      "path": "/assets/brand/motion",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/${d}.eps",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "d",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/${u}/${m}.mov",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "u",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "m",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/${u}/DEVIN_SYMBOL-WORDMARK.aep",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "u",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/assets/brand/logos/${f}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "f",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/action-err/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{d}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/action/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{d}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/actionp/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{d}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/p/action/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{d}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "https://clarity.microsoft.com/js/EXPR",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{d}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.7
+    },
+    {
+      "path": "/action-err",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/js",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/p/action",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/wa/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{Je}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Accept",
+          "value": "*",
+          "isStatic": true,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "https://px.ads.linkedin.com/collect?",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{Je}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Accept",
+          "value": "*",
+          "isStatic": true,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "next",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{Je}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Accept",
+          "value": "*",
+          "isStatic": true,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.7
+    },
+    {
+      "path": "/collect",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/gtag/js?id=G-L4DZSL59Y4",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/ads/pixel.js?pixel_id=a2_h6pgq02q3ehg",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/gtm.js?id=GTM-KH5W49RR",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/pixel/conv/ppt=27178;g=sitewide;gid=71752;ord=",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "https://app.devin.ai/review",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "${s}",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.74
+    },
+    {
+      "path": "/review",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "https://react.dev/errors/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/assets/images/new-home/frontier-models",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/api/[inferred]",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/API_URL=http:/localhost:8080",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/brand",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/ja",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/privacy-choices",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "https://app.devin.ai/login",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "https://cognition.com/legal/acceptable-use-policy",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "https://cognition.com/legal/data-processing-statement",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "https://cognition.com/legal/platform-terms-of-service",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "https://cognition.com/legal/privacy-policy",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "https://www.linkedin.com/company/cognition-ai-labs/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "https://www.reddit.com/r/CognitionLabs/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "https://www.youtube.com/@cognition-labs",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "https://x.com/cognition",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/login",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/@cognition-labs",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/company/cognition-ai-labs",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/legal/acceptable-use-policy",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/legal/data-processing-statement",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/legal/platform-terms-of-service",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/legal/privacy-policy",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/r/CognitionLabs",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/cognition",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "https://api.unifyintent.com/analytics/v1",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json; charset=UTF-8}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Write-Key",
+          "value": "{this._writeKey}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "https://api.unifyintent.com/analytics/v1/_internal/logs",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json; charset=UTF-8}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Write-Key",
+          "value": "{this._writeKey}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "https://api.unifyintent.com/analytics/v1/_internal/logs",
+      "method": "POST",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json; charset=UTF-8}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Write-Key",
+          "value": "{this._writeKey}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.7999999999999999
+    },
+    {
+      "path": "/analytics/v1/_internal/logs",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/analytics/v1",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/api/ordersでのIDOR",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.55
+    },
+    {
+      "path": "/data/frontier-code-1.1/current-models.json",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/data/frontier-code-2.0/data.json",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/data/frontier-code-2.0/fable-5.2-launch.json",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/data/frontier-code-2.0/gemini-4-carbon-launch.json",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/data/frontier-code-2.0/gemini-4-hydrogen-launch.json",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/data/frontier-code-2.0/gemini-4-neon-launch.json",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/loginでのオープンリダイレクト",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "https://arxiv.org/abs/2602.07549",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "https://arxiv.org/abs/2602.07962",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "https://arxiv.org/abs/2606.14066",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "https://auth.devin.ai/login/callback",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "https://docs.devin.ai/integrations/slack#automations-triggered-from-slack",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/abs/2602.07549",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/abs/2602.07962",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/abs/2606.14066",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/api/errors",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/app.devin.ai",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/app.devin.ai/org/northstar/settings/authentication",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/backend/",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/integrations/slack",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/MEMORY.md",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/posthog/api/posthog.api",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/posthog/src/main/java/com/posthog/internal/PostHogLegacyQueue.kt",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/posthog/src/main/java/com/posthog/internal/PostHogQueue.kt",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/posthog/src/main/java/com/posthog/internal/PostHogSendCachedEventsIntegration.kt",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/posthog/src/main/java/com/posthog/PostHog.kt",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/tooling/",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/login/callback",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/app/tools/GSEA_Linux_4.4.0/gsea-cli.sh GSEA",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "https://github.com/zloirock/core-js",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "+ r.message)\n    }\n  }\n\n  function M(r, t) {\n    return r.slice(r.length - 1 - t).join(",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "+ r.message)\n    }\n  }\n\n  function N(r) {\n    var t",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "return",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "+ r.message)\n    }\n  }\n\n  function X() {\n    return D(s)\n  }\n\n  function Z() {\n    return D(l)\n  }\n\n  function Q() {\n    return D(f)\n  }\n\n  function V() {\n    /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */\n    var r, t, n",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6799999999999999
+    },
+    {
+      "path": "https://github.com/zloirock/core-js/blob/v3.32.2/LICENSE",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "+ r.message)\n    }\n  }\n\n  function M(r, t) {\n    return r.slice(r.length - 1 - t).join(",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "+ r.message)\n    }\n  }\n\n  function N(r) {\n    var t",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "return",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "+ r.message)\n    }\n  }\n\n  function X() {\n    return D(s)\n  }\n\n  function Z() {\n    return D(l)\n  }\n\n  function Q() {\n    return D(f)\n  }\n\n  function V() {\n    /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */\n    var r, t, n",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6799999999999999
+    },
+    {
+      "path": "/get-started",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/review",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "https://cognition.com/get-started#company",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/${n.M}/login",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "n.M",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/ccm/geo",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/a?",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/a?v=3&t=l",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "v",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6,
+          "constraints": {
+            "maxLength": 1,
+            "confidence": 0.7
+          }
+        },
+        {
+          "name": "t",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.56
+    },
+    {
+      "path": "/ag/g/c",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/as",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/as/d",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/as/d/ccm/conversion",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/as/p/c",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/ccm/collect",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/ccm/conversion",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/ccm/form-data",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/ccm/s/collect",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/d/ccm/form-data",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/ddm/activity",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/debug/bootstrap?id=",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "type": "integer",
+          "required": true,
+          "confidence": 0.8
+        }
+      ],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6799999999999999
+    },
+    {
+      "path": "/g/collect",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/g/d",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/g/d/ccm/conversion",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/ga/g/c",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/gs",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/gs/ccm/conversion",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/gtag/destination",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/gtag/js",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/measurement/conversion",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/measurement/enhanced",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/pagead/1p-conversion",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/pagead/conversion",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/pagead/form-data",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/pagead/gen_204?id=tcfe",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "type": "integer",
+          "required": true,
+          "confidence": 0.8
+        }
+      ],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6799999999999999
+    },
+    {
+      "path": "/pagead/set_partitioned_cookie",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/pagead/uconversion",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/rmkt/collect",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/td",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "https://ad.doubleclick.net/activity;",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "https://adservice.google.com/pagead/regclk",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "https://t.vibe.co/pixel/s?",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "https://www.google.com/ccm/geo",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.7
+    },
+    {
+      "path": "https://www.google.com/gmp/conversion;",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/activity;",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/gmp/conversion;",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/gtm.js /gtm/js /gtag.js /gtag/js /gtag/destination /gtd",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/_/service_worker",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/pagead/regclk",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/pixel/s",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/wp-content",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/bots/templates",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/video/1199624852?h=f1ddb43fb0&${y}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "y",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/video/1210532977?h=6f607a5d1a&${y}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "y",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/video/1210533558?h=1dbffaba0f&${y}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "y",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": ";path=/",
+      "method": "POST",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7999999999999999
+    },
+    {
+      "path": "/dataLayer",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/dataLayer.push",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/dataLayer[${t}]",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "t",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/desktop/getting-started",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "https://docs.devin.ai/desktop/getting-started",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/model fusion",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/bots",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "autoResize",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "message",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "onload",
+      "method": "POST",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7999999999999999
+    },
+    {
+      "path": "/model",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "https://app.devin.ai/sessions/8c41f0e2",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/sessions/8c41f0e2",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/handoff Open a PR and fix anything CI or review flags",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "https://docs.windsurf.com/windsurf/models",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "https://github.com/.../pull/128",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "https://github.com/.../pull/131",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/windsurf/models",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/.../pull/128",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/.../pull/131",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/datasets/karpathy/climbmix-400b-shuffle/resolve/main",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/whl/cu128",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/log/error",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "+ e.message),",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "+ e.message)\n              }\n              var a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (s) try {\n                  m.setComparedCookieRaw(w(e, o, n, r))\n                } catch (e) {\n                  i(",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/x-www-form-urlencoded}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.6799999999999999
+    },
+    {
+      "path": "/signals/iwl.js?pixel_id=",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "pixel_id",
+          "type": "integer",
+          "required": true,
+          "confidence": 0.75
+        }
+      ],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "+ e.message),",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "+ e.message)\n              }\n              var a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (s) try {\n                  m.setComparedCookieRaw(w(e, o, n, r))\n                } catch (e) {\n                  i(",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/x-www-form-urlencoded}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.6739999999999999
+    },
+    {
+      "path": "0123456789abcdef",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "+ e.message),",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "+ e.message)\n              }\n              var a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (s) try {\n                  m.setComparedCookieRaw(w(e, o, n, r))\n                } catch (e) {\n                  i(",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/x-www-form-urlencoded}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.76
+    },
+    {
+      "path": "http://schema.org/aggregateoffer",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "+ e.message),",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "+ e.message)\n              }\n              var a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (s) try {\n                  m.setComparedCookieRaw(w(e, o, n, r))\n                } catch (e) {\n                  i(",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/x-www-form-urlencoded}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.6799999999999999
+    },
+    {
+      "path": "http://schema.org/aggregaterating",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "+ e.message),",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "+ e.message)\n              }\n              var a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (s) try {\n                  m.setComparedCookieRaw(w(e, o, n, r))\n                } catch (e) {\n                  i(",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/x-www-form-urlencoded}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.6799999999999999
+    },
+    {
+      "path": "http://schema.org/brand",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "+ e.message),",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "+ e.message)\n              }\n              var a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (s) try {\n                  m.setComparedCookieRaw(w(e, o, n, r))\n                } catch (e) {\n                  i(",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/x-www-form-urlencoded}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.6799999999999999
+    },
+    {
+      "path": "http://schema.org/offer",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "+ e.message),",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "+ e.message)\n              }\n              var a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (s) try {\n                  m.setComparedCookieRaw(w(e, o, n, r))\n                } catch (e) {\n                  i(",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/x-www-form-urlencoded}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.6799999999999999
+    },
+    {
+      "path": "http://schema.org/product",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "+ e.message),",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "+ e.message)\n              }\n              var a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (s) try {\n                  m.setComparedCookieRaw(w(e, o, n, r))\n                } catch (e) {\n                  i(",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/x-www-form-urlencoded}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.6799999999999999
+    },
+    {
+      "path": "https://schema.org/aggregateoffer",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "+ e.message),",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "+ e.message)\n              }\n              var a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (s) try {\n                  m.setComparedCookieRaw(w(e, o, n, r))\n                } catch (e) {\n                  i(",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/x-www-form-urlencoded}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.6799999999999999
+    },
+    {
+      "path": "https://schema.org/aggregaterating",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "+ e.message),",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "+ e.message)\n              }\n              var a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (s) try {\n                  m.setComparedCookieRaw(w(e, o, n, r))\n                } catch (e) {\n                  i(",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/x-www-form-urlencoded}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.6799999999999999
+    },
+    {
+      "path": "https://schema.org/brand",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "+ e.message),",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "+ e.message)\n              }\n              var a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (s) try {\n                  m.setComparedCookieRaw(w(e, o, n, r))\n                } catch (e) {\n                  i(",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/x-www-form-urlencoded}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.6799999999999999
+    },
+    {
+      "path": "https://schema.org/offer",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "+ e.message),",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "+ e.message)\n              }\n              var a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (s) try {\n                  m.setComparedCookieRaw(w(e, o, n, r))\n                } catch (e) {\n                  i(",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/x-www-form-urlencoded}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.6799999999999999
+    },
+    {
+      "path": "https://schema.org/product",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "+ e.message),",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "+ e.message)\n              }\n              var a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (s) try {\n                  m.setComparedCookieRaw(w(e, o, n, r))\n                } catch (e) {\n                  i(",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/x-www-form-urlencoded}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.6799999999999999
+    },
+    {
+      "path": "https://www.facebook.com/privacy_sandbox/topics/registration/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "+ e.message),",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "+ e.message)\n              }\n              var a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (s) try {\n                  m.setComparedCookieRaw(w(e, o, n, r))\n                } catch (e) {\n                  i(",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/x-www-form-urlencoded}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.6799999999999999
+    },
+    {
+      "path": "https://www.facebook.com/tr",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "+ e.message),",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "+ e.message)\n              }\n              var a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (s) try {\n                  m.setComparedCookieRaw(w(e, o, n, r))\n                } catch (e) {\n                  i(",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/x-www-form-urlencoded}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.6799999999999999
+    },
+    {
+      "path": "https://www.facebook.com/tr/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "+ e.message),",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "+ e.message)\n              }\n              var a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (s) try {\n                  m.setComparedCookieRaw(w(e, o, n, r))\n                } catch (e) {\n                  i(",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/x-www-form-urlencoded}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.6799999999999999
+    },
+    {
+      "path": "https://www.instagram.com/tr/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "+ e.message),",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "+ e.message)\n              }\n              var a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (s) try {\n                  m.setComparedCookieRaw(w(e, o, n, r))\n                } catch (e) {\n                  i(",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/x-www-form-urlencoded}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.6799999999999999
+    },
+    {
+      "path": "meta_qe",
+      "method": "POST",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "+ e.message),",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "+ e.message)\n              }\n              var a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (s) try {\n                  m.setComparedCookieRaw(w(e, o, n, r))\n                } catch (e) {\n                  i(",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/x-www-form-urlencoded}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.8
+    },
+    {
+      "path": "pixel_mutex:",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "+ e.message),",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "+ e.message)\n              }\n              var a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (a",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "if (s) try {\n                  m.setComparedCookieRaw(w(e, o, n, r))\n                } catch (e) {\n                  i(",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/x-www-form-urlencoded}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.76
+    },
+    {
+      "path": "/privacy_sandbox/topics/registration",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/tr",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/aggregateoffer",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/aggregaterating",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/brand",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/docs/ads-for-websites/pixel-events",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/log/fbevents_telemetry",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/offer",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/product",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "https://luma.com/devincon26",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "https://www.hmc.conventionhall.jp/access/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "https://x.com/cognition_jp",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/cognition_jp",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/devincon26",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/access",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/analytics",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/apps",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/automations",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/cost-controls",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/enterprise",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/fusion",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/mac",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/mobile",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/oncall",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/outposts",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/startups",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "https://base-ui.com/production-error",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "https://cognition.com/frontiercode",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/frontiercode",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/production-error",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/bots/templates/${r}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "r",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/.well-known/vercel/microfrontends/routing",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.825
+    },
+    {
+      "path": "/api/www/avatar/?",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6849999999999999
+    },
+    {
+      "path": "/activity",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "/alerts",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "/api",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "/api/1.0",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6849999999999999
+    },
+    {
+      "path": "/api/logs",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6849999999999999
+    },
+    {
+      "path": "/api/www/avatar",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6849999999999999
+    },
+    {
+      "path": "/api/www/avatar?",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6849999999999999
+    },
+    {
+      "path": "/attachments/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "/branch/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "/c/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "/commit/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "/commits/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "/deployments",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "/domains",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "/favicon?teamId=",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "teamId",
+          "type": "integer",
+          "required": true,
+          "confidence": 0.75
+        }
+      ],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6619999999999999
+    },
+    {
+      "path": "/filters",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "/flag/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "/flags",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "/functions",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "/integrations",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "/license/active",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "/license/status",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "/logs",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "/logs?myLogs=true",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "myLogs",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.644
+    },
+    {
+      "path": "/microfrontend-config",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "/monitoring",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "/monitoring?",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "/og",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "/settings",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "/source",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "/speed-insights",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "/speed-insights?",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "/stores",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "/traces",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "/traces/find?",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "/tree/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "/usage",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "Amazon",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.7449999999999999
+    },
+    {
+      "path": "https://addons.mozilla.org/en-US/firefox/addon/vercel",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "https://app.datadoghq.com/apm/trace/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "https://assets.vercel.com/image/upload",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "https://cursor.com/codebase/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "https://flags-sdk.dev?utm_campaign=v4",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "utm_campaign",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.644
+    },
+    {
+      "path": "https://github.com/vercel/flags/blob/main/packages/flags/guides/upgrade-to-v4.md",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "https://v0.app/chat?q=",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "q",
+          "type": "string",
+          "required": false,
+          "confidence": 0.6
+        }
+      ],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.644
+    },
+    {
+      "path": "https://v0.app/chat/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "https://v0.app/chat/api/open",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6849999999999999
+    },
+    {
+      "path": "https://vercel.com/account",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "https://vercel.com/api/v0/deployments/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6849999999999999
+    },
+    {
+      "path": "https://vercel.com/api/www/avatar?u=",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "u",
+          "type": "string",
+          "required": false,
+          "confidence": 0.6,
+          "constraints": {
+            "default": "!0",
+            "source": "destructuring",
+            "enum": [
+              "mounted",
+              "unmountSuspended"
+            ],
+            "confidence": 0.7
+          }
+        }
+      ],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.664
+    },
+    {
+      "path": "https://vercel.com/api/www/avatar/?u=",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "u",
+          "type": "string",
+          "required": false,
+          "confidence": 0.6,
+          "constraints": {
+            "default": "!0",
+            "source": "destructuring",
+            "enum": [
+              "mounted",
+              "unmountSuspended"
+            ],
+            "confidence": 0.7
+          }
+        }
+      ],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.664
+    },
+    {
+      "path": "https://vercel.com/dashboard",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "https://vercel.com/deployments/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "https://vercel.com/docs/feature-flags/flags-explorer",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "https://vercel.com/docs/feature-flags/flags-explorer/getting-started",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "https://vercel.com/docs/feature-flags/flags-explorer/getting-started#creating-the-flags-discovery-endpoint",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "https://vercel.com/docs/feature-flags/flags-explorer/reference#verifying-a-request-to-the-api-endpoint",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "https://vercel.com/docs/vercel-toolbar/managing-toolbar#using-a-content-security-policy",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "https://vercel.com/feedback-api",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "https://vercel.com/integrations/slack/new",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.7449999999999999
+    },
+    {
+      "path": "https://vercel.com/LIVE-MODE-DEV",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "https://vercel.com/teams/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "https://vercel.sentry.io/discover/homepage/?",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6649999999999999
+    },
+    {
+      "path": "margin",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.825
+    },
+    {
+      "path": "model",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.7449999999999999
+    },
+    {
+      "path": "vercel-micro-frontends-override",
+      "method": "POST",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.7849999999999999
+    },
+    {
+      "path": "width-before-scroll-bar",
+      "method": "POST",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "__vercel_toolbar",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": ".concat(ji.i,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ".concat(o.name,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": ",o,",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "headers": [
+        {
+          "name": "Content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Replicache-RequestID",
+          "value": "{o}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.7849999999999999
+    },
+    {
+      "path": "/api/v0/deployments",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/docs/feature-flags/flags-explorer/getting-started",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/api/www/avatar?u=",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/chat?q=",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/.well-known/vercel/flags",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/integrations/slack/new",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/image/upload",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/resources/how-vercel-improves-your-websites-search-engine-ranking",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/?utm_campaign=v4",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/.well-known/vercel-auth-redirect",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/api/www/avatar/?u=",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/docs/feature-flags/flags-explorer",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/docs/feature-flags/flags-explorer/reference",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/en-US/firefox/addon/vercel",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/account",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/chat/api/open",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/dashboard",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/api/assets/twemoji/1",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/apm/trace",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/chat",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/codebase",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/discover/homepage",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/docs/vercel-toolbar/managing-toolbar",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/feedback-api",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/LIVE-MODE-DEV",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/teams",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/a/b",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "location",
+          "value": "{t}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.5
+    },
+    {
+      "path": "/a/i",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "location",
+          "value": "{t}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.5
+    },
+    {
+      "path": "https://github.com/zloirock/core-js/blob/v3.38.1/LICENSE",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "location",
+          "value": "{t}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.5
+    },
+    {
+      "path": "/r/q46p0g",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/embed/q46p0g?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "enrichment",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Accept",
+          "value": "*/*",
+          "isStatic": true,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.7
+    },
+    {
+      "path": "https://api.eu.amplitude.com/2/httpapi",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Accept",
+          "value": "*/*",
+          "isStatic": true,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "https://api.eu.amplitude.com/batch",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Accept",
+          "value": "*/*",
+          "isStatic": true,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "https://api2.amplitude.com/2/httpapi",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Accept",
+          "value": "*/*",
+          "isStatic": true,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "https://api2.amplitude.com/batch",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Accept",
+          "value": "*/*",
+          "isStatic": true,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "https://sr-client-cfg.amplitude.com/config",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Accept",
+          "value": "*/*",
+          "isStatic": true,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "https://sr-client-cfg.eu.amplitude.com/config",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Accept",
+          "value": "*/*",
+          "isStatic": true,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "https://sr-client-cfg.stag2.amplitude.com/config",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Accept",
+          "value": "*/*",
+          "isStatic": true,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/2/httpapi",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/batch",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/config",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    }
+  ],
+  "stats": {
+    "totalParams": 385,
+    "endpointsWithParams": 105,
+    "byLocation": {
+      "path": 11,
+      "query": 11,
+      "body": 0,
+      "cookie": 363
+    }
+  }
+}
+
+  ✓ Output saved to /home/runner/work/Android-url-ai/Android-url-ai/results/devin.ai/anastasis.json
+
+
+[exit 0]

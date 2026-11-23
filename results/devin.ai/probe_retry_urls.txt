@@ -1,0 +1,2 @@
+https://deepwiki.com
+https://github.com/zloirock/core-js/blob/v3.32.2/LICENSE

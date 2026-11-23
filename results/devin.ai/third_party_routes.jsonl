@@ -1,0 +1,155 @@
+{"url": "http://w3.org/2000/svg%5C", "method": "GET", "sources": ["pass1.jsonl"]}
+{"url": "https://ad.doubleclick.net/activity", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://addons.mozilla.org/en-US/firefox/addon/vercel", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://ade.googlesyndication.com/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://adservice.google.com/pagead/regclk", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://api.devinenterprise.com/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://api.eu.amplitude.com/2/httpapi", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://api.eu.amplitude.com/batch", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://api.hsforms.com/submissions/v3/integration/submit/46599998/${S", "method": "GET", "sources": ["jscope.txt"]}
+{"url": "https://api.hsforms.com/submissions/v3/integration/submit/46599998/${j", "method": "GET", "sources": ["jscope.txt"]}
+{"url": "https://api.hsforms.com/submissions/v3/integration/submit/46599998/${k", "method": "GET", "sources": ["jscope.txt"]}
+{"url": "https://api.unifyintent.com/analytics/v1", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://api.unifyintent.com/analytics/v1/_internal/logs", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://api2.amplitude.com/2/httpapi", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://api2.amplitude.com/batch", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://app.amplitude.com/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://app.datadoghq.com/apm/trace/", "method": "GET", "sources": ["anastasis.json"]}
+{"url": "https://app.devinenterprise.com/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://app.eu.amplitude.com/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://apps.stag2.amplitude.com/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://arxiv.org/abs/2602.07549", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://arxiv.org/abs/2602.07962", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://arxiv.org/abs/2606.14066", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://assets.vercel.com/image/upload", "method": "GET", "sources": ["anastasis.json"]}
+{"url": "https://base-ui.com/production-error", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://bat.bing.com/bat.js", "method": "GET", "sources": ["js_urls.txt", "jsluice.jsonl"]}
+{"url": "https://capi-automation.s3.us-east-2.amazonaws.com/public/client_js/capiParamBuilder/clientParamBuilder.bundle.js", "method": "GET", "sources": ["js_urls.txt", "jsluice.jsonl"]}
+{"url": "https://capture.navattic.com/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://cct.google/taggy/agent.js", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://cdn.amplitude.com/libs/visual-tagging-selector-1.0.0-alpha.js.gz", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://cdn.cr-relay.com/v1/site/b4b021de-a595-4d20-a2ad-5f1ba1678b06/signals.js", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://chrome.google.com/webstore/detail/vercel/lahhiofdgnbcgmemekkmjnpifojdaelb", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://clarity.microsoft.com/js/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://clarity.microsoft.com/js/EXPR", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://clay.com/blog/how-we-run-bug-triage", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://cognition.com/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://cognition.com/about", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://cognition.com/about%5C", "method": "GET", "sources": ["pass1.jsonl"]}
+{"url": "https://cognition.com/blog/swe-2", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://cognition.com/careers", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://cognition.com/careers%5C", "method": "GET", "sources": ["pass1.jsonl"]}
+{"url": "https://cognition.com/contact", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://cognition.com/frontiercode", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://cognition.com/get-started", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://cognition.com/legal/acceptable-use-policy", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://cognition.com/legal/acceptable-use-policy%5C", "method": "GET", "sources": ["pass1.jsonl"]}
+{"url": "https://cognition.com/legal/data-processing-statement", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://cognition.com/legal/data-processing-statement%5C", "method": "GET", "sources": ["pass1.jsonl"]}
+{"url": "https://cognition.com/legal/platform-terms-of-service", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://cognition.com/legal/platform-terms-of-service%5C", "method": "GET", "sources": ["pass1.jsonl"]}
+{"url": "https://cognition.com/legal/privacy-policy", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://cognition.com/legal/privacy-policy%5C", "method": "GET", "sources": ["pass1.jsonl"]}
+{"url": "https://connect.facebook.net/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://connect.facebook.net/en_US/fbevents.js", "method": "GET", "sources": ["js_urls.txt", "jsluice.jsonl"]}
+{"url": "https://connect.facebook.net/log/fbevents_telemetry/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://cursor.com/codebase/", "method": "GET", "sources": ["anastasis.json"]}
+{"url": "https://deepwiki.com/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://docs.windsurf.com/windsurf/models", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://exafunction.github.io/public/videos/cascade_jetbrains/jetbrains_cascade_terminal.mp4", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://exafunction.github.io/public/videos/cascade_jetbrains/jetbrains_context_aware.mp4", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://facebook.com/privacy_sandbox/topics/registration/", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://facebook.com/tr", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://facebook.com/tr/", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://flags-sdk.dev/", "method": "GET", "sources": ["anastasis.json"]}
+{"url": "https://forms.default.com/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://github.com/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://github.com/.../pull/128", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://github.com/.../pull/131", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE", "method": "GET", "sources": ["anastasis.json"]}
+{"url": "https://github.com/vercel/flags/blob/main/packages/flags/guides/upgrade-to-v4.md", "method": "GET", "sources": ["anastasis.json"]}
+{"url": "https://github.com/zloirock/core-js", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://github.com/zloirock/core-js/blob/v3.32.2/LICENSE", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://github.com/zloirock/core-js/blob/v3.38.1/LICENSE", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://google.com/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://google.com/ccm/geo", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://google.com/gmp/conversion", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://googleadservices.com/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://googletagmanager.com/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://googletagmanager.com/gtag/js?id=G-L4DZSL59Y4", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://googletagmanager.com/gtm.js?id=GTM-KH5W49RR", "method": "GET", "sources": ["js_urls.txt", "jsluice.jsonl"]}
+{"url": "https://googletagmanager.com/static/service_worker/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://gw.conversionsapigateway.com/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://hmc.conventionhall.jp/access/", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://instagram.com/tr/", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://linkedin.com/company/cognition-ai-labs/", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://linkedin.com/company/cognition-ai-labs/%5C", "method": "GET", "sources": ["pass1.jsonl"]}
+{"url": "https://luma.com/devincon26", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://m.youtube.com/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://pagead2.googlesyndication.com/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://player.vimeo.com/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://px.ads.linkedin.com/collect", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://px.ads.linkedin.com/insight_tag_errors.gif", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://react.dev/errors/", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://reddit.com/r/CognitionLabs/", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://reddit.com/r/CognitionLabs/%5C", "method": "GET", "sources": ["pass1.jsonl"]}
+{"url": "https://redditstatic.com/ads/pixel.js", "method": "GET", "sources": ["js_urls.txt", "jsluice.jsonl"]}
+{"url": "https://redditstatic.com/ads/pixel.js?pixel_id=a2_h6pgq02q3ehg", "method": "GET", "sources": ["js_urls.txt", "jsluice.jsonl"]}
+{"url": "https://scheduler.default.com/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://schema.org/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://schema.org/aggregateoffer", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://schema.org/aggregaterating", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://schema.org/brand", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://schema.org/offer", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://schema.org/product", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://snap.licdn.com/li.lms-analytics/insight.min.js", "method": "GET", "sources": ["js_urls.txt", "jsluice.jsonl"]}
+{"url": "https://sr-client-cfg.amplitude.com/config", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://sr-client-cfg.eu.amplitude.com/config", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://sr-client-cfg.stag2.amplitude.com/config", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://staging.itsdev.in/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://static.ads-twitter.com/uwt.js", "method": "GET", "sources": ["js_urls.txt", "jsluice.jsonl"]}
+{"url": "https://t.vibe.co/pixel/s", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://tag.unifyintent.com/v1/JEyswVyX2LeEph31CuYGUE/script.js", "method": "GET", "sources": ["js_urls.txt", "jsluice.jsonl"]}
+{"url": "https://tally.so/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://tally.so/embed/q46p0g?alignLeft=1", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://tally.so/embed/q46p0g?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://tally.so/r/q46p0g", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://tally.so/widgets/embed.js", "method": "GET", "sources": ["js_urls.txt", "jsluice.jsonl"]}
+{"url": "https://trust.cognition.ai/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://ui.ads.microsoft.com/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://unicorn.studio/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://unicorn.studio/embed/S9qZz1Wdl6bkGZci3QvX", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://v0.app/chat/", "method": "GET", "sources": ["anastasis.json"]}
+{"url": "https://v0.app/chat/api/open", "method": "GET", "sources": ["anastasis.json"]}
+{"url": "https://v0.app/chat?q=", "method": "GET", "sources": ["anastasis.json"]}
+{"url": "https://v1fv4i0sohsnvnms.public.blob.vercel-storage.com/DevinBots-LaunchFilm-1920x1080-v1.mp4", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://v1fv4i0sohsnvnms.public.blob.vercel-storage.com/DevinBots-landingpage-v2.mp4", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://v1fv4i0sohsnvnms.public.blob.vercel-storage.com/DevinBots_BryanJohnson_1920X1080-v1.mp4", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://v1fv4i0sohsnvnms.public.blob.vercel-storage.com/DevinBots_GrantSanderson_1920X1080-v1.mp4", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://v1fv4i0sohsnvnms.public.blob.vercel-storage.com/DevinBots_JoaoAdriano_1920X1080-v1.mp4", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://v1fv4i0sohsnvnms.public.blob.vercel-storage.com/DevinBots_SageCadence_1920X1080-v1.mp4", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://v1fv4i0sohsnvnms.public.blob.vercel-storage.com/DevinBots_VenusWilliams_1920X1080-v1.mp4", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://vercel.com/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://vercel.com/LIVE-MODE-DEV", "method": "GET", "sources": ["anastasis.json"]}
+{"url": "https://vercel.com/account", "method": "GET", "sources": ["anastasis.json"]}
+{"url": "https://vercel.com/api/v0/deployments/", "method": "GET", "sources": ["anastasis.json"]}
+{"url": "https://vercel.com/api/www/avatar/?u=", "method": "GET", "sources": ["anastasis.json"]}
+{"url": "https://vercel.com/api/www/avatar?u=", "method": "GET", "sources": ["anastasis.json"]}
+{"url": "https://vercel.com/dashboard", "method": "GET", "sources": ["anastasis.json"]}
+{"url": "https://vercel.com/deployments/", "method": "GET", "sources": ["anastasis.json"]}
+{"url": "https://vercel.com/docs/feature-flags/flags-explorer", "method": "GET", "sources": ["anastasis.json"]}
+{"url": "https://vercel.com/docs/feature-flags/flags-explorer/getting-started", "method": "GET", "sources": ["anastasis.json"]}
+{"url": "https://vercel.com/docs/feature-flags/flags-explorer/reference", "method": "GET", "sources": ["anastasis.json"]}
+{"url": "https://vercel.com/docs/vercel-toolbar/managing-toolbar", "method": "GET", "sources": ["anastasis.json"]}
+{"url": "https://vercel.com/feedback-api", "method": "GET", "sources": ["anastasis.json"]}
+{"url": "https://vercel.com/integrations/slack/new", "method": "GET", "sources": ["anastasis.json"]}
+{"url": "https://vercel.com/teams/", "method": "GET", "sources": ["anastasis.json"]}
+{"url": "https://vercel.live/_next-live/feedback/feedback.js", "method": "GET", "sources": ["js_urls.txt", "jsluice.jsonl"]}
+{"url": "https://vercel.live/_next-live/feedback/instrument.d676b2a5ce5b14aa6dd7.js?dpl=dpl_9HT5zTaF2xzcEyHWtKmgxrGf9qpH%3Fdpl%3Ddpl_9HT5zTaF2xzcEyHWtKmgxrGf9qpH", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://vercel.sentry.io/discover/homepage/", "method": "GET", "sources": ["anastasis.json"]}
+{"url": "https://wa.me/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://x.com/cognition", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://x.com/cognition%5C", "method": "GET", "sources": ["pass1.jsonl"]}
+{"url": "https://x.com/cognition_jp", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://youtube.com/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://youtube.com/@cognition-labs", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
