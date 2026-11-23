@@ -1,5 +1,6 @@
 # One target per line. Add more later.
 # First test target:
-https://antigravity.google/
-https://aistudio.google.com/
-https://gemini.google.com/
+https://devin.ai/
+https://higgsfield.ai/
+https://modelstudio.console.alibabacloud.com/
+https://ai.azure.com/catalog
