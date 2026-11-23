@@ -1,0 +1,6 @@
+{"level":"info-0","ts":"2026-11-23T15:45:18Z","logger":"trufflehog","msg":"running source","source_name":"trufflehog - filesystem","source_type":"SOURCE_TYPE_FILESYSTEM","source_id":1,"job_id":1,"source_manager_worker_id":"58XkL","with_units":true}
+{"level":"info-0","ts":"2026-11-23T15:45:18Z","logger":"trufflehog","msg":"finished scanning","chunks":742,"bytes":7636278,"verified_secrets":0,"unverified_secrets":0,"scan_duration":"120.22751ms","trufflehog_version":"3.100.0","verification_caching":{"Hits":0,"Misses":0,"HitsWasted":0,"AttemptsSaved":0,"VerificationTimeSpentMS":0}}
+
+$ trufflehog filesystem results/modelstudio.console.alibabacloud.com/chunks --json --no-update
+
+[exit 0] -> results/modelstudio.console.alibabacloud.com/secrets.jsonl

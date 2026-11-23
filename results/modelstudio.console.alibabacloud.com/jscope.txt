@@ -1,0 +1,624 @@
+======================================================================
+JSCOPE ANALYSIS REPORT
+======================================================================
+
+[executive snapshot]
+  files analyzed : 214
+  frameworks     : React
+  findings       : 104
+    HIGH           11
+    MEDIUM         77
+    LOW            16
+
+[where to start testing]  (deterministic ranking; reasons shown)
+   43  [LOW] JS-0064  authorization: feature_flag:map
+       test: Feature flags gate UI, often not the API. Call the flagged feature's endpoints directly.
+       why : +40 attack surface 'authorization'; +3 confidence LOW
+   43  [LOW] JS-0065  authorization: feature_flag:includes
+       test: Feature flags gate UI, often not the API. Call the flagged feature's endpoints directly.
+       why : +40 attack surface 'authorization'; +3 confidence LOW
+   43  [LOW] JS-0066  authorization: feature_flag:length
+       test: Feature flags gate UI, often not the API. Call the flagged feature's endpoints directly.
+       why : +40 attack surface 'authorization'; +3 confidence LOW
+   40  [MEDIUM] JS-0012  route: /model/market/detail/:id
+       test: Client-side guards are not access control: replay this route's API calls (see related endpoints) without credentials and as a low-privilege user.
+       why : +34 attack surface 'idor_candidate'; +6 confidence MEDIUM
+   40  [MEDIUM] JS-0057  route: /detail/:workspaceId/:agentName/:defaultAgent/:tenantId
+       test: Client-side guards are not access control: replay this route's API calls (see related endpoints) without credentials and as a low-privilege user.
+       why : +34 attack surface 'idor_candidate'; +6 confidence MEDIUM
+
+[route map]  57 route(s)   (R=route G=guard role=declared role E=endpoint)
+  R /                            UNPROTECTED
+  R /${Fi.text.slice(1)}/*       UNPROTECTED
+  R /${Fi.video.slice(1)}/*      UNPROTECTED
+  R /${Fi.vision.slice(1)}/*     UNPROTECTED
+  R /${e}/*                      UNPROTECTED
+  R /${t}/settings/api-key       UNPROTECTED
+  R /${t}/settings/billing       UNPROTECTED
+  R /${t}/settings/kms           UNPROTECTED
+  R /${t}/settings/permission    UNPROTECTED
+  R /*                           UNPROTECTED
+  R /connector/*                 UNPROTECTED
+  R /costing-balance             UNPROTECTED
+  R /costing-balance/account-balance UNPROTECTED
+  R /debug/apiDebug              UNPROTECTED
+  R /detail                      UNPROTECTED
+  R /detail/:workspaceId/:agentName/:defaultAgent/:tenantId UNPROTECTED
+  R /flow-agent/*                UNPROTECTED
+  R /flow-agent/app-center       UNPROTECTED
+  R /home                        UNPROTECTED
+  R /loop/*                      UNPROTECTED
+  R /managed-agent/*             UNPROTECTED
+  R /memory/*                    UNPROTECTED
+  R /model                       UNPROTECTED
+  R /model/experience            UNPROTECTED
+  R /model/experience/:type/*    UNPROTECTED
+  R /model/experience/multimodal UNPROTECTED
+  R /model/experience/multimodal/* UNPROTECTED
+  R /model/experience/video      UNPROTECTED
+  R /model/market                UNPROTECTED
+  R /model/market/detail/:id     UNPROTECTED
+  R /model/market/intl/model-prices UNPROTECTED
+  R /model/market/pricing        UNPROTECTED
+  R /model/settings/api-key      UNPROTECTED
+  R /model/settings/billing      UNPROTECTED
+  R /model/settings/kms          UNPROTECTED
+  R /model/settings/permission   UNPROTECTED
+  R /parsex/*                    UNPROTECTED
+  R /playground/*                UNPROTECTED
+  R /price                       UNPROTECTED
+  R /pricing                     UNPROTECTED
+  R /pricing/*                   UNPROTECTED
+  R /rag/*                       UNPROTECTED
+  R /sandbox/*                   UNPROTECTED
+  R /security/*                  UNPROTECTED
+  R /settings/api-key            UNPROTECTED
+  R /settings/app-model-config   UNPROTECTED
+  R /settings/network-config     UNPROTECTED
+  R /settings/permission         UNPROTECTED
+  R /settings/quota-management/* UNPROTECTED
+  R /settings/security           UNPROTECTED
+  R /settings/user-management    UNPROTECTED
+  R /settings/workspace/*        UNPROTECTED
+  R /spaceListEdit               UNPROTECTED
+  R /store/*                     UNPROTECTED
+  R /subscription/uac-admin      UNPROTECTED
+  R /usage/*                     UNPROTECTED
+  R /vpcConfig                   UNPROTECTED
+
+[priority attack surfaces]
+  * open_redirect_candidate  (13 finding(s))
+      - [MEDIUM] JS-0093  url -> location.href = ... @ 102f0043a7d3085f.js:1 (source 102f0043a7d3085f.js:1)
+          test: Supply an absolute URL on a domain you control and observe whether the browser navigates there; also try `//host` and `javascript:` forms.
+      - [MEDIUM] JS-0094  url -> window.location.href = ... @ 23f390d46d2a0ffc.js:84 (source 23f390d46d2a0ffc.js:84)
+          test: Supply an absolute URL on a domain you control and observe whether the browser navigates there; also try `//host` and `javascript:` forms.
+      - [MEDIUM] JS-0095  url -> setAttribute('href') @ 23f390d46d2a0ffc.js:158 (source 23f390d46d2a0ffc.js:158)
+          test: Supply an absolute URL on a domain you control and observe whether the browser navigates there; also try `//host` and `javascript:` forms.
+  * token_storage  (5 finding(s))
+      - [HIGH] JS-0091  localStorage:bailian_myApiKeys_lastEmpty_v1
+          test: Script-readable storage: any XSS (or malicious third-party script) can read this. Look for XSS sinks, and check whether the token is long-lived and unscoped.
+      - [HIGH] JS-0068  sessionStorage:BAILIAN_APIKEY_OPEN_REGISTER_MODAL
+          test: Script-readable storage: any XSS (or malicious third-party script) can read this. Look for XSS sinks, and check whether the token is long-lived and unscoped.
+      - [MEDIUM] JS-0078  localStorage:apiKeyCenter:pageSize
+          test: Script-readable storage: any XSS (or malicious third-party script) can read this. Look for XSS sinks, and check whether the token is long-lived and unscoped.
+  * auth  (4 finding(s))
+      - [MEDIUM] JS-0060  mechanism:request_interceptor
+          test: Find what the interceptor attaches; then call APIs without it to see which endpoints do not enforce auth.
+      - [MEDIUM] JS-0062  session:token_in_sessionStorage
+          test: Token is readable by any script on the origin. Hunt XSS sinks; check token lifetime/scope.
+      - [MEDIUM] JS-0063  session:token_in_localStorage
+          test: Token is readable by any script on the origin. Hunt XSS sinks; check token lifetime/scope.
+  * authorization  (4 finding(s))
+      - [LOW] JS-0064  feature_flag:map
+          test: Feature flags gate UI, often not the API. Call the flagged feature's endpoints directly.
+      - [LOW] JS-0066  feature_flag:length
+          test: Feature flags gate UI, often not the API. Call the flagged feature's endpoints directly.
+      - [LOW] JS-0067  unguarded_route:/debug/apiDebug
+          test: No client-side guard seen around a privileged route. Load it unauthenticated, and replay its API calls as a low-privilege user.
+  * payment  (2 finding(s))
+      - [MEDIUM] JS-0007  /${t}/settings/billing
+          test: Client-side guards are not access control: replay this route's API calls (see related endpoints) without credentials and as a low-privilege user.
+      - [MEDIUM] JS-0045  /model/settings/billing
+          test: Client-side guards are not access control: replay this route's API calls (see related endpoints) without credentials and as a low-privilege user.
+
+[findings appendix]
+  -- auth (4) --
+  JS-0060  [MEDIUM        score= 5]  mechanism:request_interceptor
+       analyzers: auth_analyzer
+       - AST_PATTERN_MATCH (+2): axios request interceptor (typically attaches credentials)
+       - AST_PATTERN_MATCH #2 (+1, diminished): axios request interceptor (typically attaches credentials)
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): axios request interceptor (typically attaches credentials)
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): axios request interceptor (typically attaches credentials)
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): axios request interceptor (typically attaches credentials)
+       - AST_PATTERN_MATCH #6 (+0.2, diminished): axios request interceptor (typically attaches credentials)
+       - AST_PATTERN_MATCH #7 (+0.2, diminished): axios request interceptor (typically attaches credentials)
+       - AST_PATTERN_MATCH #8 (+0.2, diminished): axios request interceptor (typically attaches credentials)
+       - AST_PATTERN_MATCH #9 (+0.2, diminished): axios request interceptor (typically attaches credentials)
+       - AST_PATTERN_MATCH #10 (+0.2, diminished): axios request interceptor (typically attaches credentials)
+       - AST_PATTERN_MATCH #11 (+0.2, diminished): axios request interceptor (typically attaches credentials)
+  JS-0062  [MEDIUM        score= 5]  session:token_in_sessionStorage
+       analyzers: auth_analyzer
+       - AST_PATTERN_MATCH (+2): credential-like key 'BAILIAN_APIKEY_OPEN_REGISTER_MODAL' written to sessionStorage
+       - SYMBOL_RESOLVED (+3): key resolved through a constant
+  JS-0063  [MEDIUM        score= 5]  session:token_in_localStorage
+       analyzers: auth_analyzer
+       - AST_PATTERN_MATCH (+2): credential-like key 'bailian_myApiKeys_lastEmpty_v1' written to localStorage
+       - SYMBOL_RESOLVED (+3): key resolved through a constant
+  JS-0061  [LOW           score= 2]  mechanism:csrf_token
+       analyzers: auth_analyzer
+       - LITERAL_STRING_MATCH (+1): CSRF token name literal
+       - LITERAL_STRING_MATCH #2 (+0.5, diminished): CSRF token name literal
+
+  -- authorization (4) --
+  JS-0064  [LOW           score= 3]  feature_flag:map
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): reads feature flag n.features?.map
+       - AST_PATTERN_MATCH #2 (+1, diminished): reads feature flag e.features.map
+  JS-0066  [LOW           score= 3]  feature_flag:length
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): reads feature flag n.features.length
+       - AST_PATTERN_MATCH #2 (+1, diminished): reads feature flag n.features.length
+  JS-0067  [LOW           score= 3]  unguarded_route:/debug/apiDebug
+       analyzers: authorization_analyzer
+       - NAMING_CONVENTION (+1): route path matches 'debug' naming convention
+       - AST_PATTERN_MATCH (+2): route definition found with no guard wrapper, guard prop, meta flag or role declaration (absence-based: a guard could live in a layout, the component, or the server)
+  JS-0065  [LOW           score= 2]  feature_flag:includes
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): reads feature flag e.features?.includes
+
+  -- dataflow (13) --
+  JS-0093  [MEDIUM        score= 5]  url -> location.href = ... @ 102f0043a7d3085f.js:1 (source 102f0043a7d3085f.js:1)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink location.href = ... receives a value derived from page URL
+       - DATA_FLOW (+3): data-flow path: 102f0043a7d3085f.js:1 returned from da() -> 102f0043a7d3085f.js:1 assigned to `t` -> 102f0043a7d3085f.js:1 reaches URL navigation sink location.href = ...
+  JS-0094  [MEDIUM        score= 5]  url -> window.location.href = ... @ 23f390d46d2a0ffc.js:84 (source 23f390d46d2a0ffc.js:84)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink window.location.href = ... receives a value derived from page URL
+       - DATA_FLOW (+3): data-flow path: 23f390d46d2a0ffc.js:84 assigned to `jn` -> 23f390d46d2a0ffc.js:84 assigned to `l` -> 23f390d46d2a0ffc.js:84 passed as argument to Mt() -> 23f390d46d2a0ffc.js:84 assigned to `t` -> 23f390d46d2a0ffc.js:84 reaches URL navigation sink window.location.href = ...
+  JS-0095  [MEDIUM        score= 5]  url -> setAttribute('href') @ 23f390d46d2a0ffc.js:158 (source 23f390d46d2a0ffc.js:158)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink setAttribute('href') receives a value derived from page URL
+       - DATA_FLOW (+3): data-flow path: 23f390d46d2a0ffc.js:158 passed as argument to i() -> 23f390d46d2a0ffc.js:158 assigned to `r` -> 23f390d46d2a0ffc.js:158 reaches URL navigation sink setAttribute('href')
+  JS-0097  [MEDIUM        score= 5]  url -> window.location.href = ... @ 348bbfb4d4cafe03.js:206 (source 348bbfb4d4cafe03.js:206)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink window.location.href = ... receives a value derived from page URL
+       - DATA_FLOW (+3): data-flow path: 348bbfb4d4cafe03.js:206 assigned to `n` -> 348bbfb4d4cafe03.js:206 reaches URL navigation sink window.location.href = ...
+  JS-0098  [MEDIUM        score= 5]  url -> window.location.href = ... @ 348bbfb4d4cafe03.js:512 (source 348bbfb4d4cafe03.js:512)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink window.location.href = ... receives a value derived from page URL
+       - DATA_FLOW (+3): data-flow path: 348bbfb4d4cafe03.js:512 assigned to `n` -> 348bbfb4d4cafe03.js:512 reaches URL navigation sink window.location.href = ...
+  JS-0099  [MEDIUM        score= 5]  url -> location.replace() @ 348bbfb4d4cafe03.js:688 (source 348bbfb4d4cafe03.js:688)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink location.replace() receives a value derived from page URL
+       - DATA_FLOW (+3): data-flow path: 348bbfb4d4cafe03.js:688 passed as argument to kv() -> 348bbfb4d4cafe03.js:688 assigned to `t` -> 348bbfb4d4cafe03.js:688 assigned to `n` -> 348bbfb4d4cafe03.js:688 assigned to `r` -> 348bbfb4d4cafe03.js:688 passed as argument to vv() -> 348bbfb4d4cafe03.js:688 assigned to `o` -> 348bbfb4d4cafe03.js:688 returned from vv() -> 348bbfb4d4cafe03.js:688 assigned to `l` -> 348bbfb4d4cafe03.js:688 returned from kv() -> 348bbfb4d4cafe03.js:688 reaches URL navigation sink location.replace()
+  JS-0102  [MEDIUM        score= 5]  url -> setAttribute('href') @ 7d5e81a57b603f3d.js:2 (source 7d5e81a57b603f3d.js:2)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink setAttribute('href') receives a value derived from page URL
+       - DATA_FLOW (+3): data-flow path: 7d5e81a57b603f3d.js:2 passed as argument to i() -> 7d5e81a57b603f3d.js:2 assigned to `r` -> 7d5e81a57b603f3d.js:2 reaches URL navigation sink setAttribute('href')
+  JS-0103  [MEDIUM        score= 5]  url -> location.replace() @ c2445329384f8bcc.js:4714 (source c2445329384f8bcc.js:4714)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink location.replace() receives a value derived from page URL
+       - DATA_FLOW (+3): data-flow path: c2445329384f8bcc.js:4714 assigned to `r` -> c2445329384f8bcc.js:4714 reaches URL navigation sink location.replace()
+  JS-0104  [MEDIUM        score= 5]  url -> location.replace() @ c76c794d48b867e2.js:2 (source c76c794d48b867e2.js:2)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink location.replace() receives a value derived from page URL
+       - DATA_FLOW (+3): data-flow path: c76c794d48b867e2.js:2 assigned to `n` -> c76c794d48b867e2.js:2 reaches URL navigation sink location.replace()
+  JS-0092  [LOW           score= 3]  url -> window.open() @ 0b48c605c5be5040.js:59 (source 0b48c605c5be5040.js:59)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink window.open() receives a value derived from page URL
+       - DATA_FLOW_PARTIAL (+1): PARTIAL data-flow path (assumptions: passed through unresolved call i.mutateAsync()): 0b48c605c5be5040.js:59 assigned to `t` -> 0b48c605c5be5040.js:59 assigned to `n` -> 0b48c605c5be5040.js:59 reaches URL navigation sink window.open()
+  JS-0096  [LOW           score= 3]  url -> location.href = ... @ 348bbfb4d4cafe03.js:158 (source 348bbfb4d4cafe03.js:158)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink location.href = ... receives a value derived from page URL
+       - DATA_FLOW_PARTIAL (+1): PARTIAL data-flow path (uncertain validation: encodeURIComponent (neutralises markup but is not a URL validator)): 348bbfb4d4cafe03.js:158 reaches URL navigation sink location.href = ...
+  JS-0100  [LOW           score= 3]  url -> window.location.href = ... @ 348bbfb4d4cafe03.js:689 (source 348bbfb4d4cafe03.js:689)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink window.location.href = ... receives a value derived from page URL
+       - DATA_FLOW_PARTIAL (+1): PARTIAL data-flow path (assumptions: passed through unresolved call hi()): 348bbfb4d4cafe03.js:689 reaches URL navigation sink window.location.href = ...
+  JS-0101  [LOW           score= 3]  url -> window.location.href = ... @ 348bbfb4d4cafe03.js:992 (source 348bbfb4d4cafe03.js:992)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink window.location.href = ... receives a value derived from page URL
+       - DATA_FLOW_PARTIAL (+1): PARTIAL data-flow path (assumptions: passed through unresolved call hi()): 348bbfb4d4cafe03.js:992 reaches URL navigation sink window.location.href = ...
+
+  -- endpoint (1) --
+  JS-0002  [LOW           score= 3]  /data/api.json
+       analyzers: endpoint_analyzer
+       - AST_PATTERN_MATCH (+2): fetch() call with this URL argument
+       - LITERAL_STRING_MATCH (+1): URL is a literal string, not dynamically constructed
+
+  -- framework (1) --
+  JS-0001  [MEDIUM        score= 4]  React
+       analyzers: framework_detector
+       - LITERAL_STRING_MATCH (+1): found ReactDOM global reference
+       - LITERAL_STRING_MATCH #2 (+0.5, diminished): found ReactDOM global reference
+       - AST_PATTERN_MATCH (+2): React marker recurs across 2 files
+       - AST_PATTERN_MATCH #2 (+1, diminished): React marker recurs across 2 files
+
+  -- route (57) --
+  JS-0008  [HIGH          score= 8]  /
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/'
+       - AST_PATTERN_MATCH #2 (+1, diminished): config route definition path=''; resolved full path /
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): config route definition path=''; resolved full path /
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): config route definition path='' -> o; resolved full path /
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): config route definition path='' -> C; resolved full path /
+       - AST_PATTERN_MATCH #6 (+0.2, diminished): config route definition path=''; resolved full path /
+       - AST_PATTERN_MATCH #7 (+0.2, diminished): config route definition path=''; resolved full path /
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+       - FRAMEWORK_CONTEXT #2 (+1, diminished): React detected and route shape matches its router
+       - FRAMEWORK_CONTEXT #3 (+0.5, diminished): React detected and route shape matches its router
+  JS-0007  [MEDIUM        score= 5]  /${t}/settings/billing
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='${t}/settings/billing'; resolved full path /${t}/settings/billing
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+       - NAMING_CONVENTION (+1): route path matches 'payment' naming convention
+  JS-0012  [MEDIUM        score= 5]  /model/market/detail/:id
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='model/market/detail/:id'; resolved full path /model/market/detail/:id
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+       - NAMING_CONVENTION (+1): route path matches 'idor_candidate' naming convention
+  JS-0030  [MEDIUM        score= 5]  /debug/apiDebug
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='debug/apiDebug'; resolved full path /debug/apiDebug
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+       - NAMING_CONVENTION (+1): route path matches 'debug' naming convention
+  JS-0045  [MEDIUM        score= 5]  /model/settings/billing
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='model/settings/billing'; resolved full path /model/settings/billing
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+       - NAMING_CONVENTION (+1): route path matches 'payment' naming convention
+  JS-0057  [MEDIUM        score= 5]  /detail/:workspaceId/:agentName/:defaultAgent/:tenantId
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='detail/:workspaceId/:agentName/:defaultAgent/:tenantId'; resolved full path /detail/:workspaceId/:agentName/:defaultAgent/:tenantId
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+       - NAMING_CONVENTION (+1): route path matches 'idor_candidate' naming convention
+  JS-0003  [MEDIUM        score= 4]  /${e}/*
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='${e}/*'; resolved full path /${e}/*
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0004  [MEDIUM        score= 4]  /${t}/settings/api-key
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='${t}/settings/api-key'; resolved full path /${t}/settings/api-key
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0005  [MEDIUM        score= 4]  /${t}/settings/kms
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='${t}/settings/kms'; resolved full path /${t}/settings/kms
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0006  [MEDIUM        score= 4]  /${t}/settings/permission
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='${t}/settings/permission'; resolved full path /${t}/settings/permission
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0009  [MEDIUM        score= 4]  /home
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='home'; resolved full path /home
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0010  [MEDIUM        score= 4]  /model
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='model'; resolved full path /model
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0011  [MEDIUM        score= 4]  /model/market
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='model/market'; resolved full path /model/market
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0013  [MEDIUM        score= 4]  /model/experience
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='model/experience'; resolved full path /model/experience
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0014  [MEDIUM        score= 4]  /${Fi.vision.slice(1)}/*
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='${Fi.vision.slice(1)}/*'; resolved full path /${Fi.vision.slice(1)}/*
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0015  [MEDIUM        score= 4]  /${Fi.text.slice(1)}/*
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='${Fi.text.slice(1)}/*'; resolved full path /${Fi.text.slice(1)}/*
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0016  [MEDIUM        score= 4]  /${Fi.video.slice(1)}/*
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='${Fi.video.slice(1)}/*'; resolved full path /${Fi.video.slice(1)}/*
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0017  [MEDIUM        score= 4]  /model/experience/video
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='model/experience/video'; resolved full path /model/experience/video
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0018  [MEDIUM        score= 4]  /model/experience/multimodal
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='model/experience/multimodal'; resolved full path /model/experience/multimodal
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0019  [MEDIUM        score= 4]  /model/experience/multimodal/*
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='model/experience/multimodal/*'; resolved full path /model/experience/multimodal/*
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0020  [MEDIUM        score= 4]  /pricing
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='pricing'; resolved full path /pricing
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0021  [MEDIUM        score= 4]  /pricing/*
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='pricing/*'; resolved full path /pricing/*
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0022  [MEDIUM        score= 4]  /model/experience/:type/*
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='model/experience/:type/*'; resolved full path /model/experience/:type/*
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0023  [MEDIUM        score= 4]  /price
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='price'; resolved full path /price
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0024  [MEDIUM        score= 4]  /model/market/pricing
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='model/market/pricing'; resolved full path /model/market/pricing
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0025  [MEDIUM        score= 4]  /model/market/intl/model-prices
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='model/market/intl/model-prices'; resolved full path /model/market/intl/model-prices
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0026  [MEDIUM        score= 4]  /costing-balance
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='costing-balance'; resolved full path /costing-balance
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0027  [MEDIUM        score= 4]  /costing-balance/account-balance
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='costing-balance/account-balance'; resolved full path /costing-balance/account-balance
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0028  [MEDIUM        score= 4]  /subscription/uac-admin
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='subscription/uac-admin'; resolved full path /subscription/uac-admin
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0029  [MEDIUM        score= 4]  /usage/*
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='usage/*'; resolved full path /usage/*
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0031  [MEDIUM        score= 4]  /flow-agent/app-center
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='flow-agent/app-center'; resolved full path /flow-agent/app-center
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0032  [MEDIUM        score= 4]  /flow-agent/*
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='flow-agent/*'; resolved full path /flow-agent/*
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0033  [MEDIUM        score= 4]  /managed-agent/*
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='managed-agent/*'; resolved full path /managed-agent/*
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0034  [MEDIUM        score= 4]  /loop/*
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='loop/*'; resolved full path /loop/*
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0035  [MEDIUM        score= 4]  /memory/*
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='memory/*'; resolved full path /memory/*
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0036  [MEDIUM        score= 4]  /security/*
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='security/*'; resolved full path /security/*
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0037  [MEDIUM        score= 4]  /parsex/*
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='parsex/*'; resolved full path /parsex/*
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0038  [MEDIUM        score= 4]  /sandbox/*
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='sandbox/*'; resolved full path /sandbox/*
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0039  [MEDIUM        score= 4]  /connector/*
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='connector/*'; resolved full path /connector/*
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0040  [MEDIUM        score= 4]  /playground/*
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='playground/*'; resolved full path /playground/*
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0041  [MEDIUM        score= 4]  /rag/*
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='rag/*'; resolved full path /rag/*
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0042  [MEDIUM        score= 4]  /store/*
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='store/*'; resolved full path /store/*
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0043  [MEDIUM        score= 4]  /model/settings/api-key
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='model/settings/api-key'; resolved full path /model/settings/api-key
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0044  [MEDIUM        score= 4]  /model/settings/permission
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='model/settings/permission'; resolved full path /model/settings/permission
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0046  [MEDIUM        score= 4]  /model/settings/kms
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='model/settings/kms'; resolved full path /model/settings/kms
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0047  [MEDIUM        score= 4]  /settings/api-key
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='settings/api-key'; resolved full path /settings/api-key
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0048  [MEDIUM        score= 4]  /settings/permission
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='settings/permission'; resolved full path /settings/permission
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0049  [MEDIUM        score= 4]  /settings/user-management
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='settings/user-management'; resolved full path /settings/user-management
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0050  [MEDIUM        score= 4]  /settings/network-config
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='settings/network-config'; resolved full path /settings/network-config
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0051  [MEDIUM        score= 4]  /settings/security
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='settings/security'; resolved full path /settings/security
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0052  [MEDIUM        score= 4]  /settings/app-model-config
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='settings/app-model-config'; resolved full path /settings/app-model-config
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0053  [MEDIUM        score= 4]  /settings/quota-management/*
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='settings/quota-management/*'; resolved full path /settings/quota-management/*
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0054  [MEDIUM        score= 4]  /settings/workspace/*
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='settings/workspace/*'; resolved full path /settings/workspace/*
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0055  [MEDIUM        score= 4]  /*
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='*'; resolved full path /*
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0056  [MEDIUM        score= 4]  /detail
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='detail'; resolved full path /detail
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0058  [MEDIUM        score= 4]  /vpcConfig
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='vpcConfig'; resolved full path /vpcConfig
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0059  [MEDIUM        score= 4]  /spaceListEdit
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='spaceListEdit'; resolved full path /spaceListEdit
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+
+  -- storage (24) --
+  JS-0072  [HIGH          score= 9]  sessionStorage:service_status_reopen_from_runtime
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage read with key 'service_status_reopen_from_runtime'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage write with key 'service_status_reopen_from_runtime'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): sessionStorage read with key 'service_status_reopen_from_runtime'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): sessionStorage delete with key 'service_status_reopen_from_runtime'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #4 (+0.3, diminished): storage key resolved through a constant
+  JS-0074  [HIGH          score= 9]  sessionStorage:bfal-promo-popup:landing
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage read with key 'bfal-promo-popup:landing'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage write with key 'bfal-promo-popup:landing'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): sessionStorage delete with key 'bfal-promo-popup:landing'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+  JS-0084  [HIGH          score= 9]  sessionStorage:bfal:sidebar:return-url
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage read with key 'bfal:sidebar:return-url'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage delete with key 'bfal:sidebar:return-url'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): sessionStorage delete with key 'bfal:sidebar:return-url'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): sessionStorage write with key 'bfal:sidebar:return-url'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #4 (+0.3, diminished): storage key resolved through a constant
+  JS-0086  [HIGH          score= 9]  sessionStorage:bfal-micro:__dev__
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage delete with key 'bfal-micro:__dev__'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage write with key 'bfal-micro:__dev__'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): sessionStorage read with key 'bfal-micro:__dev__'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+  JS-0091  [HIGH          score= 9]  localStorage:bailian_myApiKeys_lastEmpty_v1
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'bailian_myApiKeys_lastEmpty_v1'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'bailian_myApiKeys_lastEmpty_v1'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - NAMING_CONVENTION (+1): key 'bailian_myApiKeys_lastEmpty_v1' looks credential-bearing
+       - NAMING_CONVENTION #2 (+0.5, diminished): key 'bailian_myApiKeys_lastEmpty_v1' looks credential-bearing
+  JS-0068  [HIGH          score= 8]  sessionStorage:BAILIAN_APIKEY_OPEN_REGISTER_MODAL
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage read with key 'BAILIAN_APIKEY_OPEN_REGISTER_MODAL'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage delete with key 'BAILIAN_APIKEY_OPEN_REGISTER_MODAL'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): sessionStorage write with key 'BAILIAN_APIKEY_OPEN_REGISTER_MODAL'
+       - NAMING_CONVENTION (+1): key 'BAILIAN_APIKEY_OPEN_REGISTER_MODAL' looks credential-bearing
+       - NAMING_CONVENTION #2 (+0.5, diminished): key 'BAILIAN_APIKEY_OPEN_REGISTER_MODAL' looks credential-bearing
+       - NAMING_CONVENTION #3 (+0.25, diminished): key 'BAILIAN_APIKEY_OPEN_REGISTER_MODAL' looks credential-bearing
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+  JS-0069  [HIGH          score= 8]  sessionStorage:bfal-phone-viewport-normalized
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage read with key 'bfal-phone-viewport-normalized'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage write with key 'bfal-phone-viewport-normalized'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0070  [HIGH          score= 8]  localStorage:${Ki}:LRU_INDEX
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key '${Ki}:LRU_INDEX'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key '${Ki}:LRU_INDEX'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0073  [HIGH          score= 8]  localStorage:service_status_dismissed_error
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'service_status_dismissed_error'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'service_status_dismissed_error'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0081  [HIGH          score= 8]  localStorage:api-config
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'api-config'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'api-config'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0078  [MEDIUM        score= 6]  localStorage:apiKeyCenter:pageSize
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'apiKeyCenter:pageSize'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - NAMING_CONVENTION (+1): key 'apiKeyCenter:pageSize' looks credential-bearing
+  JS-0075  [MEDIUM        score= 5]  localStorage:__visited_legacy_console__
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage write with key '__visited_legacy_console__'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+  JS-0077  [MEDIUM        score= 5]  sessionStorage:bailian_landing_subscribe_flow
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage delete with key 'bailian_landing_subscribe_flow'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+  JS-0076  [MEDIUM        score= 4]  localStorage:authorityTabCode
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'authorityTabCode'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage delete with key 'authorityTabCode'
+       - NAMING_CONVENTION (+1): key 'authorityTabCode' looks credential-bearing
+       - NAMING_CONVENTION #2 (+0.5, diminished): key 'authorityTabCode' looks credential-bearing
+  JS-0087  [MEDIUM        score= 4]  localStorage:web_behavior_time
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'web_behavior_time'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'web_behavior_time'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage read with key 'web_behavior_time'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): localStorage write with key 'web_behavior_time'
+  JS-0088  [MEDIUM        score= 4]  localStorage:web_behavior_jsArr_conf
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'web_behavior_jsArr_conf'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'web_behavior_jsArr_conf'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage read with key 'web_behavior_jsArr_conf'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): localStorage write with key 'web_behavior_jsArr_conf'
+  JS-0089  [MEDIUM        score= 4]  localStorage:baxia_entry_config_time
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'baxia_entry_config_time'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'baxia_entry_config_time'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage read with key 'baxia_entry_config_time'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): localStorage write with key 'baxia_entry_config_time'
+  JS-0090  [MEDIUM        score= 4]  localStorage:baxia_entry_config
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'baxia_entry_config'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'baxia_entry_config'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage read with key 'baxia_entry_config'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): localStorage write with key 'baxia_entry_config'
+  JS-0079  [LOW           score= 3]  sessionStorage:auto_open_tokens_refreshed
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage delete with key 'auto_open_tokens_refreshed'
+       - NAMING_CONVENTION (+1): key 'auto_open_tokens_refreshed' looks credential-bearing
+  JS-0071  [LOW           score= 2]  localStorage:currentRegionId
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'currentRegionId'
+  JS-0080  [LOW           score= 2]  sessionStorage:service_status_dismissed_error
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage delete with key 'service_status_dismissed_error'
+  JS-0082  [LOW           score= 2]  localStorage:spark-flow-data-prefers-language
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage write with key 'spark-flow-data-prefers-language'
+  JS-0083  [LOW           score= 2]  localStorage:enableConsoleLog
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'enableConsoleLog'
+  JS-0085  [LOW           score= 2]  localStorage:spaceListEdit
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage write with key 'spaceListEdit'
+
+[diagnostics]
+  ! [incremental] reused 0 file(s), re-analyzed 214, dropped 0 removed
+
+(run `jscope explain <finding-id>` for the full evidence chain on any finding)

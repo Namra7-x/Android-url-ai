@@ -1,0 +1,5 @@
+
+$ dnsx -l results/modelstudio.console.alibabacloud.com/subdomains_all.txt -silent -o results/modelstudio.console.alibabacloud.com/subdomains_live.txt
+docs.modelstudio.console.alibabacloud.com
+
+[exit 0]

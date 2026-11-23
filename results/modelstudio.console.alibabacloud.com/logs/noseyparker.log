@@ -1,0 +1,4 @@
+
+$ noseyparker report --datastore results/modelstudio.console.alibabacloud.com/np-datastore --format jsonl
+
+[exit 0] -> results/modelstudio.console.alibabacloud.com/noseyparker.jsonl

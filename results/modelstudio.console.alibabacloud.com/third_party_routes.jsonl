@@ -1,0 +1,293 @@
+{"url": "https://account.alibabacloud.com/login/login.htm?oauth_callback=EXPR&clearRedirectCookie=1", "method": "GET", "sources": ["anastasis.json"]}
+{"url": "https://account.aliyun.com/login/fast_login_config", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://account.aliyun.com/login/login.htm?oauth_callback=EXPR", "method": "GET", "sources": ["anastasis.json"]}
+{"url": "https://account.{expr/", "method": "GET", "sources": ["anastasis.json"]}
+{"url": "https://acjs.aliyun.com/error?v=", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://aeis.alicdn.com/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://aplus.alibabacloud.com/eg.js", "method": "GET", "sources": ["pass2.jsonl"]}
+{"url": "https://aplus.alibabacloud.com/tongyi-cn.bailian-intl.exp_back_to_legacy_entry?gmkey=EXP", "method": "GET", "sources": ["pass2.jsonl"]}
+{"url": "https://aplus.alibabacloud.com/tongyi-cn.bailian-intl.expose_feature_section?gmkey=EXP", "method": "GET", "sources": ["pass2.jsonl"]}
+{"url": "https://aplus.alibabacloud.com/tongyi-cn.bailian-intl.expose_header_nav?gmkey=EXP", "method": "GET", "sources": ["pass2.jsonl"]}
+{"url": "https://aplus.alibabacloud.com/tongyi-cn.bailian-intl.page_view?gmkey=EXP", "method": "GET", "sources": ["pass2.jsonl"]}
+{"url": "https://assets.alicdn.com/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://assets.alicdn.com/g/?%3F%2FAWSC%2FAWSC%2Fawsc.js=", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://assets.alicdn.com/g/?%3F=", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://assets.aliexpress-media.com/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://at.alicdn.com/", "method": "GET", "sources": ["pass1.jsonl", "pass2.jsonl"]}
+{"url": "https://bailian-singapore-cs.alibabacloud.com/data/api.json?action=IntlBroadScopeAspnGateway", "method": "GET", "sources": ["pass2.jsonl"]}
+{"url": "https://bdc.alibabachengdun.com/wcfg.json", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://cloud-assets.alicdn.com/console.js", "method": "GET", "sources": ["js_seeds.txt", "js_urls.txt", "pass1.jsonl", "pass2.jsonl"]}
+{"url": "https://cws.alicdn.com/", "method": "GET", "sources": ["pass1.jsonl", "pass2.jsonl"]}
+{"url": "https://cws.alicdn.com/Release/pkgs/${id", "method": "GET", "sources": ["anastasis.json"]}
+{"url": "https://cws.aliyun-inc.com/Release/pkgs/${id", "method": "GET", "sources": ["anastasis.json"]}
+{"url": "https://fecs.console.aliyun.com/", "method": "GET", "sources": ["pass1.jsonl", "pass2.jsonl"]}
+{"url": "https://fourier.taobao.com/rp?ext=51", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://fourier.taobao.com/rp?ext=51&data=jm_", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://g.alicdn.com/", "method": "GET", "sources": ["jsluice.jsonl", "pass1.jsonl", "pass2.jsonl"]}
+{"url": "https://g.alicdn.com/?%3F%2FAWSC%2FAWSC%2Fawsc.js=", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/?%3F=", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://g.alicdn.com/AWSC/AWSC/awsc.js", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://g.alicdn.com/AWSC/fireyejs/1.234.24/fireyejs.js", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://g.alicdn.com/BigDipper/diagnosis/js/track.js", "method": "GET", "sources": ["js_urls.txt", "jsluice.jsonl"]}
+{"url": "https://g.alicdn.com/alicloud-components/common/feedback/feedback.js", "method": "GET", "sources": ["js_seeds.txt", "pass1.jsonl", "pass2.jsonl"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/APIKeyEmpty.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/ActionsColumn.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/ApiKeyCreateSuccessModal.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/ApiKeyEditModal.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/BfalAlertCircle.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/BfalAlertCircleFilled.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/BfalArrowUp.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/BfalArrowUpRight.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/BfalArrowsMinimize.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/BfalChartLine.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/BfalCheck.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/BfalCheckupList.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/BfalChevronDown.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/BfalChevronUp.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/BfalCircleCheck.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/BfalCircleCheckFilled.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/BfalCode.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/BfalCopy.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/BfalExclamationCircle.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/BfalExternalLink.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/BfalFileText.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/BfalFilter.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/BfalHelpCircle.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/BfalInfoCircle.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/BfalLoader.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/BfalPlus.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/BfalReload.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/BfalRobot.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/BfalSearch.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/BfalTrash.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/BfalUser.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/BfalVideo.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/BfalX.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/CheckOutlined.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/CloseOutlined.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/ContextIsolator.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/CopyableIdColumn.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/CreateApiKeyModal.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/CutConfirm.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/FilterBar.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/FilterSelect.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/GlobalNotice.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/GuideEmpty.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/HighlightedCode.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/Icon.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/InitLoadingPage.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/InnerLayout.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/IpWhitelistInput.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/LayoutContainerContext.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/LoadingOutlined.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/ModelChooseModal.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/ModelOfflineTag.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/PlusOutlined.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/PrismHighlighter.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/ResizeObserver.es.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/SearchOutlined.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/SpaceDetailModal.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/StartErrorContent.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/Table2.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/TablePagination.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/Tag2.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/TextArea.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/__mock__.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/api-debug.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/api-key-center.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/apiKeyCenter.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/apiKeysManagerPrefetch.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/app-model-config.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/assign.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/auth.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/builtin_esm-external-require-react-dom.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/button.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/capture-first-screen.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/channel.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/checkbox.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/chunk-4S56U2I6.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/classnames.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/cls.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/console-url.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/constants.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/constants2.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/constants3.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/context.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/context2.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/createClass.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/createServiceWithNewLogin.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/customParseFormat.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/data.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/date-picker.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/debounce.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/defineProperty.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/detail.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/dist.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/drawer.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/emotion-css.development.cjs.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/empty.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/en-us.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/esm.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/eventemitter3.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/experience-handoff.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/experience-nav.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/extends.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/extends2.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/fetcher.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/fetcher2.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/first-screen-intl.js", "method": "GET", "sources": ["js_seeds.txt", "js_urls.txt", "pass1.jsonl", "pass2.jsonl"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/flex.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/form.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/functions.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/g-config.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/gapSize.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/handledStorage.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/hoist-non-react-statics.cjs.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/home.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/hooks.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/i18n.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/i18n2.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/i18n3.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/i18n4.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/index.js", "method": "GET", "sources": ["js_seeds.txt", "js_urls.txt", "pass1.jsonl", "pass2.jsonl"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/inner-layout.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/input-number.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/input.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/interopRequireDefault.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/intl-site.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/isSymbol.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/iterator.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/kms-management.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/lib.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/lib2.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/locale.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/main.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/message.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/mobile-experience.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/mobile-model-market.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/modal.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/my-api-key-list.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/network-config.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/notification.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/objectWithoutProperties.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/ops-config.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/pagination.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/parse.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/pay-as-you-go.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/permission-management.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/permission.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/popconfirm.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/popover.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/prefetch-gate.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/preload-helper.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/quota-management.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/radio.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/region-guard.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/region.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/renderOverflowTip.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/request.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/request2.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/resolveLanguage.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/routes.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/security-commitment.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/security-management.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/segmented.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/select.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/services.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/services2.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/services3.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/space.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/spin.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/src.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/startup-cache.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/static-first-screen.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/switch.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/table.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/tag.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/toConsumableArray.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/toNumber.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/tokenPlanApiKeyStatus.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/tokenplan-fire.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/tooltip.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/top-nav-sale-chat.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/tracking.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/typography.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/use-home-exposure.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/use-home-navigate.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/use-page-hidden.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/useAuthModal.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/useBreakpoint.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/useBubbleLock.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/useCrWhitelist.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/useCustomRequest.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/useDebounceFn.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/useForm.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/useMemoizedFn.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/useMount.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/useRequest.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/useSetState.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/useUserCreateOrUpdateModal.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/utils.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/utils2.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/utils3.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/utils4.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/utils5.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/vanilla.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/wanCommodity.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/workspace-management.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/zh-cn.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-vendors/0.0.2/react-dom/18.2.0/esm/client.production.min.js", "method": "GET", "sources": ["pass1.jsonl", "pass2.jsonl"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-vendors/0.0.2/react-dom/18.2.0/esm/react-dom.production.min.js", "method": "GET", "sources": ["pass1.jsonl", "pass2.jsonl"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-vendors/0.0.2/react/18.2.0/esm/jsx-runtime.production.min.js", "method": "GET", "sources": ["pass1.jsonl", "pass2.jsonl"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-vendors/0.0.2/react/18.2.0/esm/react.production.min.js", "method": "GET", "sources": ["pass1.jsonl", "pass2.jsonl"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/antd.bundle.js", "method": "GET", "sources": ["pass2.jsonl"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/index.js", "method": "GET", "sources": ["pass2.jsonl"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/locale/en.js", "method": "GET", "sources": ["pass2.jsonl"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/locale/zh-cn.js", "method": "GET", "sources": ["pass2.jsonl"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/plugin/", "method": "GET", "sources": ["pass2.jsonl"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/plugin/advancedFormat.js", "method": "GET", "sources": ["pass2.jsonl"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/plugin/customParseFormat.js", "method": "GET", "sources": ["pass2.jsonl"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/plugin/duration.js", "method": "GET", "sources": ["pass2.jsonl"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/plugin/isoWeek.js", "method": "GET", "sources": ["pass2.jsonl"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/plugin/localeData.js", "method": "GET", "sources": ["pass2.jsonl"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/plugin/quarterOfYear.js", "method": "GET", "sources": ["pass2.jsonl"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/plugin/relativeTime.js", "method": "GET", "sources": ["pass2.jsonl"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/plugin/timezone.js", "method": "GET", "sources": ["pass2.jsonl"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/plugin/updateLocale.js", "method": "GET", "sources": ["pass2.jsonl"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/plugin/utc.js", "method": "GET", "sources": ["pass2.jsonl"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/plugin/weekOfYear.js", "method": "GET", "sources": ["pass2.jsonl"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/plugin/weekYear.js", "method": "GET", "sources": ["pass2.jsonl"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/plugin/weekday.js", "method": "GET", "sources": ["pass2.jsonl"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/locale/en_US.js", "method": "GET", "sources": ["pass2.jsonl"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/locale/zh_CN.js", "method": "GET", "sources": ["pass2.jsonl"]}
+{"url": "https://g.alicdn.com/console/performance-reporter/index.js", "method": "GET", "sources": ["js_seeds.txt", "js_urls.txt", "pass1.jsonl", "pass2.jsonl"]}
+{"url": "https://g.alicdn.com/dawn/assets-loader/scripts/fast-login.js", "method": "GET", "sources": ["js_urls.txt"]}
+{"url": "https://g.alicdn.com/one-mcms/wind-v2/[object", "method": "GET", "sources": ["anastasis.json"]}
+{"url": "https://g.alicdn.com/secdev/sufei_data/3.9.14/index.js", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://g.lazcdn.com/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://g.lazcdn.com/g/?%3F=", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://g.mrvcdn.com/?%3F=", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://gj.mmstat.com/", "method": "GET", "sources": ["pass1.jsonl", "pass2.jsonl"]}
+{"url": "https://gm.mmstat.com/fsp.1.1", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://help.aliyun.com/", "method": "GET", "sources": ["pass1.jsonl", "pass2.jsonl"]}
+{"url": "https://img.alicdn.com/imgextra/i1/O1CN01Es0c28049TL083Vo_!!6000000002263-2-tps-64-64.png", "method": "GET", "sources": ["pass2.jsonl"]}
+{"url": "https://img.alicdn.com/imgextra/i2/O1CN01JiWo7t1xljFrksp6L_!!6000000006484-55-tps-192-192.svg", "method": "GET", "sources": ["pass2.jsonl"]}
+{"url": "https://img.alicdn.com/tfs/TB1_ZXuNcfpK1RjSZFOXXa6nFXa-32-32.ico", "method": "GET", "sources": ["pass2.jsonl"]}
+{"url": "https://laz-g-cdn.alicdn.com/?%3F=", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://lzd-g.slatic.net/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://lzd-g.slatic.net/g/?%3F=", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://modelstudio.alibabacloud.com/intl/blog/", "method": "GET", "sources": ["anastasis.json"]}
+{"url": "https://o.alicdn.com/console/hijack-for-service/index.js", "method": "GET", "sources": ["js_seeds.txt", "js_urls.txt", "pass1.jsonl", "pass2.jsonl"]}
+{"url": "https://oneconsole.alicdn.com/one-mcms/visage/1.0.7/visage_en-us.js", "method": "GET", "sources": ["js_seeds.txt", "js_urls.txt", "pass1.jsonl", "pass2.jsonl"]}
+{"url": "https://uaction.alicdn.com/", "method": "GET", "sources": ["pass1.jsonl", "pass2.jsonl"]}
+{"url": "https://umdc-global.alibaba.com/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://umdc-global.aliexpress.com/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://umdc.alibaba-inc.com/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://umdc.alibaba-inc.com/EXPR", "method": "GET", "sources": ["anastasis.json"]}
+{"url": "https://umdc.goofish.com/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://umdc.taobao.com/wcfg.json", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://umdc.tmall.com/wcfg.json", "method": "GET", "sources": ["anastasis.json", "jsluice.jsonl"]}
+{"url": "https://umdc.tmall.hk/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://umdcv4.taobao.com/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://umdcv4.tmall.com/", "method": "GET", "sources": ["jsluice.jsonl"]}
+{"url": "https://ynuf.alipay.com/", "method": "GET", "sources": ["pass1.jsonl", "pass2.jsonl"]}

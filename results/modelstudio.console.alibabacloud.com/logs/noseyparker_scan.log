@@ -1,0 +1,11 @@
+
+$ noseyparker scan --datastore results/modelstudio.console.alibabacloud.com/np-datastore results/modelstudio.console.alibabacloud.com/chunks
+Scanned 5.77 MiB from 215 blobs in 0 seconds (232.04 MiB/s); 1/1 new matches
+
+ Rule              Findings   Matches 
+──────────────────────────────────────
+ Generic API Key          1         1 
+
+Run the `report` command next to show finding details.
+
+[exit 0]

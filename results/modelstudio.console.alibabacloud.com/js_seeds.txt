@@ -1,0 +1,8 @@
+
+https://g.alicdn.com/console/performance-reporter/index.js
+https://cloud-assets.alicdn.com/console.js
+https://oneconsole.alicdn.com/one-mcms/visage/1.0.7/visage_en-us.js
+https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/first-screen-intl.js
+https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.241/assets/index.js
+https://g.alicdn.com/alicloud-components/common/feedback/feedback.js
+https://o.alicdn.com/console/hijack-for-service/index.js
