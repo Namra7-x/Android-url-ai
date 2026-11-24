@@ -1,0 +1,4 @@
+
+$ x8 -u https://flowith.io/ -w results/flowith.io/params.txt
+
+[exit 0] -> results/flowith.io/x8.txt

@@ -1,0 +1,5 @@
+urls:         https://flowith.io/
+methods:      GET
+wordlist len: 27
+
+

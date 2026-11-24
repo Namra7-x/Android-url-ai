@@ -1,0 +1,6 @@
+{"level":"info-0","ts":"2026-11-24T19:35:04Z","logger":"trufflehog","msg":"running source","source_name":"trufflehog - filesystem","source_type":"SOURCE_TYPE_FILESYSTEM","source_id":1,"job_id":1,"source_manager_worker_id":"Cm4ck","with_units":true}
+{"level":"info-0","ts":"2026-11-24T19:35:05Z","logger":"trufflehog","msg":"finished scanning","chunks":2852,"bytes":31200504,"verified_secrets":0,"unverified_secrets":0,"scan_duration":"741.707523ms","trufflehog_version":"3.100.0","verification_caching":{"Hits":0,"Misses":4,"HitsWasted":0,"AttemptsSaved":0,"VerificationTimeSpentMS":783}}
+
+$ trufflehog filesystem results/flowith.io/chunks --json --no-update
+
+[exit 0] -> results/flowith.io/secrets.jsonl

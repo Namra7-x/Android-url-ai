@@ -1,0 +1,417 @@
+{"method": "UNKNOWN", "path": "/knowledge-garden", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/apps/adult-character?entry=adult-tools", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/apps/adult-comic?entry=adult-tools", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/apps/adult-makeover?entry=adult-tools", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/apps/adult-story-studio?entry=adult-tools", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/apps/adult-video-continuation?entry=adult-tools", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/apps/adult-video?entry=adult-tools", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/apps/nsfw-image-editor?entry=adult-tools", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/apps/nsfw-video-editor?entry=adult-tools", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/tools/adult-ai-video-generator", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/tools/adult-character-generator", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/tools/adult-comic-generator", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/tools/adult-makeover", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/tools/adult-story-prompt-generator", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/tools/adult-video-continuation", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/tools/nsfw-ai-image-editor", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/tools/nsfw-ai-video-editor", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/conv/${e}", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/api/knowledge-garden/${W}", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/api/knowledge-garden/${W}/payment", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/7.x/lorelei/svg?seed=${e.author_id}", "confidence": 0.75, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/ajax/libs/emojione/2.2.7/assets", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/ajax/libs/twemoji/12.0.4/2", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/cdn.jsdelivr.net/emojione/assets/4.0", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/cdnjs.cloudflare.com/ajax/libs/twemoji/12.0.4/2", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/emojione/assets/4.0", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/api-dashboard/api-keys", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/conv-guide", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/9.x/glass/svg?seed=", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/repo-detail/${e.id}", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/npm/emoji-datasource-apple/img/apple/64", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/npm/emoji-datasource-facebook/img/facebook/64", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/npm/emoji-datasource-google/img/google/64", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/npm/emoji-datasource-twitter/img/twitter/64", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/image_edit/submit", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/video_edit/lipsync/submit", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/video_edit/motion-transfer/submit", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/video_edit/remove-background/submit", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/video_edit/submit", "confidence": 0.5, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/M ${dP(e)} L ${dP(t)}", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/?key=${t.value}", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/embed?url={url}", "confidence": 0.8, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/video-studio/model-logos/v1", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/creator-elements/official", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/blank?{EXPR}", "confidence": 0.6399999999999999, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/user/bug-report", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/user/error-report", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/miniapps/nsfw/access", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/apps/${t}", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/apps/${e.targetAppSlug}", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/apps/${i.targetAppSlug}", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/conv/${t.conversationId}", "confidence": 0.75, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/conv/${t}", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/miniapps/nsfw/assets", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/home", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/ASCII85Decode", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/ASCII85Encode", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/ASCIIHexDecode", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/ASCIIHexEncode", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/FlateDecode", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/Annot", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/Btn", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/Ch", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/CIDSystemInfo", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/FlateEncode", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/Form", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/Image", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/Outlines", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/Pattern", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/Sig", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/Tx", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/Widget", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/XObject", "confidence": 0.5, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/Annots [", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/ArtBox [", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/BleedBox [", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/Border [0 0 0] /Dest [", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/CIDToGIDMap /Identity", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/ColorSpace /DeviceRGB", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/Contents (", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/Coords [", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/CreationDate (", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/CropBox [", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/DescendantFonts [", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/DW 1000", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/Extend [true true]", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/F1 0 Tf 0 g", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/Filter /Standard", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/FirstChar 32", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/Flags 96", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/Kids [", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/LastChar 255", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/Matrix [", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/MediaBox [", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/N /Print", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/OpenAction [3 0 R /Fit]", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/OpenAction [3 0 R /FitH null]", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/OpenAction [3 0 R /FitV null]", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/OpenAction [3 0 R /XYZ null null 1]", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/Ordering (", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/PageLayout /OneColumn", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/PageLayout /SinglePage", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/PageLayout /TwoColumnLeft", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/PageLayout /TwoColumnRight", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/Pattern cs", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/ProcSet [/PDF /Text /ImageB /ImageC /ImageI]", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/Producer (", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/Rect [", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/Registry (Adobe)", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/S /Named", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/Subtype /CIDFontType2", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/Subtype /Type0", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/Subtype /Type1", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/Supplement 0", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/TrimBox [", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/Tx BMC", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/Type /Action", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/Type /Catalog", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/Type /Font", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/Type /FontDescriptor", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/([^\\\\/]*)", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/flowith-ai/canvas-cowork", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/mail", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/miniapps/services", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/director-stage/kenney/v1", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/blank", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/chat/:conversationId", "confidence": 0.75, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/compliance/:page", "confidence": 0.8, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/composer/:id", "confidence": 0.8, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/conv/:conversationId", "confidence": 0.75, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/gallery/:recordId", "confidence": 0.75, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/garden-creator/:userId", "confidence": 0.75, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/oracle-play/:conversationId", "confidence": 0.75, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/project/:projectId", "confidence": 0.75, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/recipe-detail/:recipeId", "confidence": 0.75, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/repo-detail/:repoId", "confidence": 0.75, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/view/:conversationId", "confidence": 0.75, "source": "anastasis"}
+{"method": "GET", "path": "/__dev/session-inject", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/auth/nsfw-popup", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/black-pass", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/black-pass/claim", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/churn-prevention", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/community", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/compliance/{page}", "confidence": 0.8, "source": "anastasis"}
+{"method": "GET", "path": "/composer/{id}", "confidence": 0.8, "source": "anastasis"}
+{"method": "GET", "path": "/connect-agent", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/conv-guide", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/enterprise", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/flo", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/flows", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/gallery", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/gallery/{recordId}", "confidence": 0.75, "source": "anastasis"}
+{"method": "GET", "path": "/garden-creator/{userId}", "confidence": 0.75, "source": "anastasis"}
+{"method": "GET", "path": "/knowledge", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/knowledge-garden", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/knowledge-legacy", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/notifications", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/oracle-play/{conversationId}", "confidence": 0.75, "source": "anastasis"}
+{"method": "GET", "path": "/order", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/plugins", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/pricing", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/project/{projectId}", "confidence": 0.75, "source": "anastasis"}
+{"method": "GET", "path": "/recipe-detail/{recipeId}", "confidence": 0.75, "source": "anastasis"}
+{"method": "GET", "path": "/repo-detail/{repoId}", "confidence": 0.75, "source": "anastasis"}
+{"method": "GET", "path": "/skills", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/team/join", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/view/{conversationId}", "confidence": 0.75, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/*", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/${w}/:slug", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/${w}/aspect", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/${w}/color-palette", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/${w}/service/:slug", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/${w}/style-snap", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/knowledge-legacy${t}", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/api/models", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/view/${e}", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/flo#toolkit", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/project/${n}", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/project/${t}", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/blank", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/completion", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/runs/${encodeURIComponent(i)}/stream", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/auth/nsfw-popup", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/blank?", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/user/notifications/${e}/read", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/user/notifications/read-all${n?", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/chat/${e}", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/draft-04/schema", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/draft-07/schema", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/draft/2020-12/schema", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/oracle_stream/create", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/oracle_stream/create_rerun", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/plugins/photoroom/api-key", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/user/notifications?${t.toString()}", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/black-pass/claim", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/team/join", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/image_gen", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/invites/accept", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/invites/preview", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/memory/edits", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/oracle_stream/push_oracle_task", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/oracle_stream/rerun_process", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/ai/chat", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/ai/oracle-tool", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/ai/stt", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/ai/tts", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/coupon/spend", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/google/graph", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/migrate/transfer-conv-from-local-to-remote", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/oracle/like", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/oracle/node_types", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/payment/checkout", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/payment/orders", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/payment/provider_history", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/payment/stripe_cancel_scheduled_order", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/payment/stripe_portal", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/payment/sub_types", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/payment/topup/settle", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/pricing/embed", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/api/generate-content", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/docs/api-reference/chat/create", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/docs/api-reference/images/create", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/en/api/messages", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/v1/chat/completions", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/zh/models/alibaba/happyhorse-1.1/text-to-video", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/pricing", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/billing/auto-topup", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/enterprise/claude", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/enterprise/v1", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/keys/${e}", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/keys/${e}/reveal", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/usage/today", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/billing/checkout", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/billing/setup", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/enterprise", "confidence": 0.7, "source": "anastasis"}
+{"method": "POST", "path": "/file/media-preview", "confidence": 0.7, "source": "anastasis"}
+{"method": "POST", "path": "/kg/general/seed_and_token_count", "confidence": 0.7, "source": "anastasis"}
+{"method": "DELETE", "path": "/miniapps/nsfw/assets", "confidence": 0.7, "source": "anastasis"}
+{"method": "POST", "path": "/miniapps/nsfw/enroll", "confidence": 0.7, "source": "anastasis"}
+{"method": "PATCH", "path": "/miniapps/nsfw/preference", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/kling", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/connect-agent", "confidence": 0.7, "source": "anastasis"}
+{"method": "POST", "path": "/kg/project/create", "confidence": 0.7, "source": "anastasis"}
+{"method": "POST", "path": "/kg/project/generate_cover", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/kg/project/previous_version?repo_id=", "confidence": 0.7, "source": "anastasis"}
+{"method": "POST", "path": "/kg/project/upload_cover", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/mjs/pdf.worker.min-GB3t0DcA.mjs", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/detail/flowith-web-clipper/jkcpodicdboheakkkoblnflccfihcblb", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/visitor/login", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/visitor/order", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/visitor/refund", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/visitor/register", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/visitor/track", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/visitor/use", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/visitor/win-back", "confidence": 0.5, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/v1", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/css2?family=Inter:wght@300;400;500;600;700&display=swap", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/css2?family=Inter:wght@400;500;600&display=swap", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/conv/${n.conversationId}", "confidence": 0.75, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/html/head/title/text()", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/black_pass_cards", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/links/claim", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/links/preview", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/static-site/v/11261bae7d072970/_astro/fashion-studio-supplied/runway.webp?v=11261bae7d072970", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/static-site/v/155298d3bdf52fe9/_astro/fashion-studio-supplied/women-perfume.webp?v=155298d3bdf52fe9", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/static-site/v/1928ad67e3af3243/_astro/fashion-studio-supplied/men-perfume.webp?v=1928ad67e3af3243", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/static-site/v/6ebbfc91743d1359/_astro/fashion-studio-supplied/selfie-woman.webp?v=6ebbfc91743d1359", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/static-site/v/98ff0a3f925d80da/_astro/fashion-studio-supplied/selfie-man.webp?v=98ff0a3f925d80da", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/static-site/v/e644496af61aa193/_astro/fashion-studio-supplied/red-carpet.webp?v=e644496af61aa193", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/blank?playbook=cinematic", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/blank?playbook=high-endperfumead", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/blank?playbook=model", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/blank?playbook=parfum_homme", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/accept-discount", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/status", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/blank?entry=adult-tools", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/auth/nsfw-popup/", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/project/${n.id}", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/project/${e}", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/user", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/creator", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/terms/api-services-user-data-policy", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/workspace/workspace-api-user-data-developer-policy", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/connections", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/gallery/${e}", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/gallery", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/cdn-cgi", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/video-studio/sample-film/v1", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/gemini-proxy-go", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/gemini-proxy-go-temp", "confidence": 0.7, "source": "anastasis"}
+{"method": "POST", "path": "/file/store", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/></a:lstStyle>", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/></a:solidFill>", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/><a:round/></a:ln>", "confidence": 0.6, "source": "anastasis"}
+{"method": "GET", "path": "/a/b", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/a/i", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/ppt/charts/chart", "confidence": 0.5, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/officeDocument/2006/relationships/extended-properties", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/package/2006/relationships/metadata/core-properties", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/dc/dcmitype", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/dc/elements/1.1", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/dc/terms", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/drawingml/2006/chart", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/drawingml/2006/main", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/drawingml/2006/table", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/markup-compatibility/2006", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/office/thememl/2012/main", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/officeDocument/2006/extended-properties", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/package/2006/content-types", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/package/2006/metadata/core-properties", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/ppt/slides/slide", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/presentationml/2006/main", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/spreadsheetml/2006/main", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/mcp", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/discord/invite-link", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/company/flowith", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/invite/g95B77xbpD", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/advertiser-advertiser-info/Mangata-Ltd.brand", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/affiliate-program", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/flowith", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/miniapps/covers/2611r", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/miniapps/covers/nsfw-2026-09", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/static-site/tools/adult-ai-video-generator/templates", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/static-site/tools/adult-character-generator", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/static-site/tools/adult-comic-generator", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/plugins", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/skills", "confidence": 0.7, "source": "anastasis"}
+{"method": "POST", "path": "/payment/old-annual-unlimited-upgrade/confirm", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/payment/old-annual-unlimited-upgrade/status", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/invitation/access-new-version", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/conv", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/compliance/privacy-policy", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/compliance/tos", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/?preset=${e}", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/knowledge", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/turnstile/v0/api.js?render=explicit", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/conv/${e.conversationId}", "confidence": 0.75, "source": "anastasis"}
+{"method": "GET", "path": "/canvas-agent/film-plan/prepare", "confidence": 0.9, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/creation/process?id=%E2%80%A6", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/video-studio/shot-language/v1", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/models?logo=1&desc=1", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/payment/antom_subscription", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/payment/stripe_subscription", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/event", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/knowledge?", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/view", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/cdn-cgi/challenge-platform/", "confidence": 0.5, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/cdn-cgi/challenge-platform", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/runs/${e}", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/canvas-agent/tasks", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/flo#memory", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/video-studio/skill-covers/v1", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/flo", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/css2?family=Splash&display=swap", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/static-site/v", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/object/upload/sign/${o}", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/api/broadcast", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/iceberg", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/vector", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/auth", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/auth?", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/auth#", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/tools/ready-to-use-templates", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/home", "confidence": 0.76, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/keyframe", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/tools/adult-ai-image-editor", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/tools/adult-ai-video-generator", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/tools/adult-character-generator", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/tools/adult-comic-generator", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/tools/adult-makeover", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/tools/adult-story-prompt-generator", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/tools/adult-video-continuation", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/tools/nsfw-ai-image-editor", "confidence": 0.5, "source": "anastasis"}
+{"method": "GET", "path": "/tools/nsfw-ai-video-editor", "confidence": 0.5, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/title:${a}", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/legacy", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/?utm_source=attribution", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/storage", "confidence": 0.7, "source": "anastasis"}
+{"method": "POST", "path": "/file/farm", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/conv/", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/conv/EXPR", "confidence": 0.7, "source": "anastasis"}
+{"method": "GET", "path": "/deploy-meta.json?t=EXPR", "confidence": 0.72, "source": "anastasis"}
+{"method": "GET", "path": "/icons/flowith", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/project/${e.id}", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/project/${r.id}", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/project/${t.id}", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/conv/${a}", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/conv/${e.convId}", "confidence": 0.75, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/conv/${o.id}", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/conv/${r}", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/login", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/profile", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/project/${r}", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/order", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/project", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/4cbc3a19-411e-42eb-94f8-df3aeb0652c5", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/chat", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/churn-prevention", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/composer", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/compliance/terms-of-service", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/#${e}", "confidence": 0.6, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/ảnh", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/Sek.", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/xA0clip de 5xA0s", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/xA0image", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/xA0s", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/guest/paid", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/Annot", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/Btn", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/Ch", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/FlateEncode", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/Sig", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/Tx", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/Widget", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/canvas-agent/code-video", "confidence": 0.7, "source": "anastasis"}
+{"method": "UNKNOWN", "path": "/jobs/${e}/cancel", "confidence": 0.6, "source": "anastasis"}

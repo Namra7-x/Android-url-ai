@@ -1,0 +1,1249 @@
+======================================================================
+JSCOPE ANALYSIS REPORT
+======================================================================
+
+[executive snapshot]
+  files analyzed : 673
+  frameworks     : React
+  findings       : 178
+    CONFIRMED      8
+    HIGH           55
+    MEDIUM         75
+    LOW            40
+
+[where to start testing]  (deterministic ranking; reasons shown)
+   49  [HIGH] JS-0047  authorization: role:user
+       test: Client-side check only: it proves the UI hides this, not that the server refuses it. Replay the underlying API calls with a lower-privilege (or no) token.
+       why : +40 attack surface 'authorization'; +9 confidence HIGH
+   46  [CONFIRMED] JS-0043  auth: session:token_in_localStorage
+       test: Token is readable by any script on the origin. Hunt XSS sinks; check token lifetime/scope.
+       why : +34 attack surface 'auth'; +12 confidence CONFIRMED
+   46  [CONFIRMED] JS-0045  auth: mechanism:bearer
+       test: Call authenticated APIs with this header removed/replaced and diff responses; test token scope and expiry.
+       why : +34 attack surface 'auth'; +12 confidence CONFIRMED
+   43  [HIGH] JS-0042  auth: session:token_in_sessionStorage
+       test: Token is readable by any script on the origin. Hunt XSS sinks; check token lifetime/scope.
+       why : +34 attack surface 'auth'; +9 confidence HIGH
+   43  [HIGH] JS-0044  auth: mechanism:authorization_header
+       test: Call authenticated APIs with this header removed/replaced and diff responses; test token scope and expiry.
+       why : +34 attack surface 'auth'; +9 confidence HIGH
+
+[route map]  39 route(s)   (R=route G=guard role=declared role E=endpoint)
+  R /                            UNPROTECTED
+  R /${w}/:slug                  UNPROTECTED
+  R /${w}/aspect                 UNPROTECTED
+  R /${w}/color-palette          UNPROTECTED
+  R /${w}/service/:slug          UNPROTECTED
+  R /${w}/style-snap             UNPROTECTED
+  R /*                           UNPROTECTED
+  R /__dev/session-inject        UNPROTECTED
+  R /apps                        UNPROTECTED
+  R /auth/nsfw-popup             UNPROTECTED
+  R /black-pass                  UNPROTECTED
+  R /black-pass/claim            UNPROTECTED
+  R /blank                       UNPROTECTED
+  R /churn-prevention            UNPROTECTED
+  R /community                   UNPROTECTED
+  R /compliance/:page            UNPROTECTED
+  R /composer/:id                UNPROTECTED
+  R /connect-agent               UNPROTECTED
+  R /conv-guide                  UNPROTECTED
+  R /enterprise                  UNPROTECTED
+  R /flo                         UNPROTECTED
+  R /flows                       UNPROTECTED
+  R /gallery                     UNPROTECTED
+  R /gallery/:recordId           UNPROTECTED
+  R /garden-creator/:userId      UNPROTECTED
+  R /knowledge                   UNPROTECTED
+  R /knowledge-garden            UNPROTECTED
+  R /knowledge-legacy            UNPROTECTED
+  R /notifications               UNPROTECTED
+  R /oracle-play/:conversationId UNPROTECTED
+  R /order                       UNPROTECTED
+  R /plugins                     UNPROTECTED
+  R /pricing                     UNPROTECTED
+  R /project/:projectId          UNPROTECTED
+  R /recipe-detail/:recipeId     UNPROTECTED
+  R /repo-detail/:repoId         UNPROTECTED
+  R /skills                      UNPROTECTED
+  R /team/join                   UNPROTECTED
+  R /view/:conversationId        UNPROTECTED
+
+[priority attack surfaces]
+  * open_redirect_candidate  (18 finding(s))
+      - [MEDIUM] JS-0159  url -> window.open() @ 10c86bbb8a462264.js:1 (source 10c86bbb8a462264.js:1)
+          test: Supply an absolute URL on a domain you control and observe whether the browser navigates there; also try `//host` and `javascript:` forms.
+      - [MEDIUM] JS-0161  url_query -> location.replace() @ 19477bc472607694.js:1 (source 19477bc472607694.js:1)
+          test: Supply an absolute URL on a domain you control and observe whether the browser navigates there; also try `//host` and `javascript:` forms.
+      - [MEDIUM] JS-0164  url -> window.location.href = ... @ 1dc0ea4a61105157.js:12 (source 1dc0ea4a61105157.js:9)
+          test: Supply an absolute URL on a domain you control and observe whether the browser navigates there; also try `//host` and `javascript:` forms.
+  * token_storage  (8 finding(s))
+      - [CONFIRMED] JS-0089  localStorage:flowith_auth_return_url
+          test: Script-readable storage: any XSS (or malicious third-party script) can read this. Look for XSS sinks, and check whether the token is long-lived and unscoped.
+      - [CONFIRMED] JS-0074  sessionStorage:flowith:pending-oauth:v1
+          test: Script-readable storage: any XSS (or malicious third-party script) can read this. Look for XSS sinks, and check whether the token is long-lived and unscoped.
+      - [CONFIRMED] JS-0127  localStorage:canvas-bot-session
+          test: Script-readable storage: any XSS (or malicious third-party script) can read this. Look for XSS sinks, and check whether the token is long-lived and unscoped.
+  * idor_candidate  (8 finding(s))
+      - [MEDIUM] JS-0024  /project/:projectId
+          test: Client-side guards are not access control: replay this route's API calls (see related endpoints) without credentials and as a low-privilege user.
+      - [MEDIUM] JS-0028  /gallery/:recordId
+          test: Client-side guards are not access control: replay this route's API calls (see related endpoints) without credentials and as a low-privilege user.
+      - [MEDIUM] JS-0030  /view/:conversationId
+          test: Client-side guards are not access control: replay this route's API calls (see related endpoints) without credentials and as a low-privilege user.
+  * auth  (6 finding(s))
+      - [CONFIRMED] JS-0045  mechanism:bearer
+          test: Call authenticated APIs with this header removed/replaced and diff responses; test token scope and expiry.
+      - [CONFIRMED] JS-0043  session:token_in_localStorage
+          test: Token is readable by any script on the origin. Hunt XSS sinks; check token lifetime/scope.
+      - [HIGH] JS-0042  session:token_in_sessionStorage
+          test: Token is readable by any script on the origin. Hunt XSS sinks; check token lifetime/scope.
+  * dom_xss_candidate  (4 finding(s))
+      - [MEDIUM] JS-0160  network_response -> .innerHTML = ... @ 11ce30af9219119d.js:1 (source 11ce30af9219119d.js:1)
+          test: Put a unique marker (e.g. `jscope"><i id=jscx>`) into the source and check, in a browser, whether it is parsed as markup at the sink. Use `jscope verify` with a scoped, authorised target to do this safely.
+      - [MEDIUM] JS-0163  network_response -> .innerHTML = ... @ 1a458d11feca1984.js:1 (source 1a458d11feca1984.js:1)
+          test: Put a unique marker (e.g. `jscope"><i id=jscx>`) into the source and check, in a browser, whether it is parsed as markup at the sink. Use `jscope verify` with a scoped, authorised target to do this safely.
+      - [MEDIUM] JS-0166  postmessage -> .innerHTML = ... @ 39f713eaa457c0f9.js:1 (source 39f713eaa457c0f9.js:1)
+          test: Put a unique marker (e.g. `jscope"><i id=jscx>`) into the source and check, in a browser, whether it is parsed as markup at the sink. Use `jscope verify` with a scoped, authorised target to do this safely.
+
+[findings appendix]
+  -- auth (5) --
+  JS-0045  [CONFIRMED     score=11]  mechanism:bearer
+       analyzers: auth_analyzer
+       - AST_PATTERN_MATCH (+2): Authorization header set (bearer)
+       - AST_PATTERN_MATCH #2 (+1, diminished): Authorization header set (bearer)
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): Authorization header set (bearer)
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): Authorization header set (bearer)
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): Authorization header set (bearer)
+       - AST_PATTERN_MATCH #6 (+0.2, diminished): Authorization header set (bearer)
+       - AST_PATTERN_MATCH #7 (+0.2, diminished): Authorization header set (bearer)
+       - AST_PATTERN_MATCH #8 (+0.2, diminished): Authorization header set (bearer)
+       - AST_PATTERN_MATCH #9 (+0.2, diminished): Authorization header set (bearer)
+       - AST_PATTERN_MATCH #10 (+0.2, diminished): Authorization header set (bearer)
+       - AST_PATTERN_MATCH #11 (+0.2, diminished): Authorization header set (bearer)
+       - AST_PATTERN_MATCH #12 (+0.2, diminished): Authorization header set (bearer)
+       - AST_PATTERN_MATCH #13 (+0.2, diminished): Authorization header set (bearer)
+       - AST_PATTERN_MATCH #14 (+0.2, diminished): Authorization header set (bearer)
+       - AST_PATTERN_MATCH #15 (+0.2, diminished): Authorization header set (bearer)
+       - AST_PATTERN_MATCH #16 (+0.2, diminished): Authorization header set (bearer)
+       - AST_PATTERN_MATCH #17 (+0.2, diminished): Authorization header set (bearer)
+       - AST_PATTERN_MATCH #18 (+0.2, diminished): Authorization header set (bearer)
+       - AST_PATTERN_MATCH #19 (+0.2, diminished): Authorization header set (bearer)
+       - AST_PATTERN_MATCH #20 (+0.2, diminished): Authorization header set (bearer)
+       - AST_PATTERN_MATCH #21 (+0.2, diminished): Authorization header set (bearer)
+       - AST_PATTERN_MATCH #22 (+0.2, diminished): Authorization header set (bearer)
+       - LITERAL_STRING_MATCH (+1): 'bearer' scheme literal present
+       - LITERAL_STRING_MATCH #2 (+0.5, diminished): 'bearer' scheme literal present
+       - LITERAL_STRING_MATCH #3 (+0.25, diminished): 'bearer' scheme literal present
+       - LITERAL_STRING_MATCH #4 (+0.1, diminished): 'bearer' scheme literal present
+       - LITERAL_STRING_MATCH #5 (+0.1, diminished): 'bearer' scheme literal present
+       - LITERAL_STRING_MATCH #6 (+0.1, diminished): 'bearer' scheme literal present
+       - LITERAL_STRING_MATCH #7 (+0.1, diminished): 'bearer' scheme literal present
+       - LITERAL_STRING_MATCH #8 (+0.1, diminished): 'bearer' scheme literal present
+       - LITERAL_STRING_MATCH #9 (+0.1, diminished): 'bearer' scheme literal present
+       - LITERAL_STRING_MATCH #10 (+0.1, diminished): 'bearer' scheme literal present
+       - LITERAL_STRING_MATCH #11 (+0.1, diminished): 'bearer' scheme literal present
+       - LITERAL_STRING_MATCH #12 (+0.1, diminished): 'bearer' scheme literal present
+       - LITERAL_STRING_MATCH #13 (+0.1, diminished): 'bearer' scheme literal present
+       - LITERAL_STRING_MATCH #14 (+0.1, diminished): 'bearer' scheme literal present
+       - LITERAL_STRING_MATCH #15 (+0.1, diminished): 'bearer' scheme literal present
+       - LITERAL_STRING_MATCH #16 (+0.1, diminished): 'bearer' scheme literal present
+       - LITERAL_STRING_MATCH #17 (+0.1, diminished): 'bearer' scheme literal present
+       - LITERAL_STRING_MATCH #18 (+0.1, diminished): 'bearer' scheme literal present
+       - LITERAL_STRING_MATCH #19 (+0.1, diminished): 'bearer' scheme literal present
+       - LITERAL_STRING_MATCH #20 (+0.1, diminished): 'bearer' scheme literal present
+       - LITERAL_STRING_MATCH #21 (+0.1, diminished): 'bearer' scheme literal present
+       - LITERAL_STRING_MATCH #22 (+0.1, diminished): 'bearer' scheme literal present
+  JS-0043  [CONFIRMED     score=10]  session:token_in_localStorage
+       analyzers: auth_analyzer
+       - AST_PATTERN_MATCH (+2): credential-like key 'sb-server-auth-token' written to localStorage
+       - AST_PATTERN_MATCH #2 (+1, diminished): credential-like key 'flowith:last-auth:v1' written to localStorage
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): credential-like key 'sb-server-auth-token' written to localStorage
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): credential-like key 'flowith:last-auth:v1' written to localStorage
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): credential-like key 'flowith_auth_return_url' written to localStorage
+       - AST_PATTERN_MATCH #6 (+0.2, diminished): credential-like key 'sb-server-auth-token' written to localStorage
+       - AST_PATTERN_MATCH #7 (+0.2, diminished): credential-like key 'canvas-bot-revoked-sessions' written to localStorage
+       - AST_PATTERN_MATCH #8 (+0.2, diminished): credential-like key 'flowith_auth_return_url' written to localStorage
+       - SYMBOL_RESOLVED (+3): key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): key resolved through a constant
+       - SYMBOL_RESOLVED #4 (+0.3, diminished): key resolved through a constant
+       - SYMBOL_RESOLVED #5 (+0.3, diminished): key resolved through a constant
+  JS-0042  [HIGH          score= 8]  session:token_in_sessionStorage
+       analyzers: auth_analyzer
+       - AST_PATTERN_MATCH (+2): credential-like key 'creator.plugins.oauth:${i}' written to sessionStorage
+       - AST_PATTERN_MATCH #2 (+1, diminished): credential-like key 'flowith:pending-oauth:v1' written to sessionStorage
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): credential-like key 'flowith:pending-oauth:v1' written to sessionStorage
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): credential-like key 'oauth-preset-id' written to sessionStorage
+       - SYMBOL_RESOLVED (+3): key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): key resolved through a constant
+  JS-0044  [HIGH          score= 7]  mechanism:authorization_header
+       analyzers: auth_analyzer
+       - AST_PATTERN_MATCH (+2): Authorization header set (authorization_header)
+       - AST_PATTERN_MATCH #2 (+1, diminished): Authorization header set (authorization_header)
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): Authorization header set (authorization_header)
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): Authorization header set (authorization_header)
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): Authorization header set (authorization_header)
+       - AST_PATTERN_MATCH #6 (+0.2, diminished): Authorization header set (authorization_header)
+       - AST_PATTERN_MATCH #7 (+0.2, diminished): Authorization header set (authorization_header)
+       - AST_PATTERN_MATCH #8 (+0.2, diminished): Authorization header set (authorization_header)
+       - AST_PATTERN_MATCH #9 (+0.2, diminished): Authorization header set (authorization_header)
+       - AST_PATTERN_MATCH #10 (+0.2, diminished): Authorization header set (authorization_header)
+       - AST_PATTERN_MATCH #11 (+0.2, diminished): Authorization header set (authorization_header)
+       - AST_PATTERN_MATCH #12 (+0.2, diminished): Authorization header set (authorization_header)
+       - AST_PATTERN_MATCH #13 (+0.2, diminished): Authorization header set (authorization_header)
+       - AST_PATTERN_MATCH #14 (+0.2, diminished): Authorization header set (authorization_header)
+       - AST_PATTERN_MATCH #15 (+0.2, diminished): Authorization header set (authorization_header)
+       - AST_PATTERN_MATCH #16 (+0.2, diminished): Authorization header set (authorization_header)
+       - AST_PATTERN_MATCH #17 (+0.2, diminished): Authorization header set (authorization_header)
+       - AST_PATTERN_MATCH #18 (+0.2, diminished): Authorization header set (authorization_header)
+       - AST_PATTERN_MATCH #19 (+0.2, diminished): Authorization header set (authorization_header)
+       - AST_PATTERN_MATCH #20 (+0.2, diminished): Authorization header set (authorization_header)
+  JS-0046  [LOW           score= 2]  mechanism:header:x-api-key
+       analyzers: auth_analyzer
+       - AST_PATTERN_MATCH (+2): custom auth/CSRF header 'X-API-Key' set
+
+  -- authorization (1) --
+  JS-0047  [HIGH          score= 8]  role:user
+       analyzers: authorization_analyzer
+       - AST_PATTERN_MATCH (+2): e.role compared to 'user'
+       - AST_PATTERN_MATCH #2 (+1, diminished): t.role compared to 'user'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): e.role compared to 'user'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): e.role compared to 'user'
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): e.role compared to 'user'
+       - AST_PATTERN_MATCH #6 (+0.2, diminished): e.role compared to 'user'
+       - AST_PATTERN_MATCH #7 (+0.2, diminished): e.role compared to 'user'
+       - AST_PATTERN_MATCH #8 (+0.2, diminished): n.role compared to 'user'
+       - AST_PATTERN_MATCH #9 (+0.2, diminished): e.role compared to 'user'
+       - AST_PATTERN_MATCH #10 (+0.2, diminished): i.role compared to 'user'
+       - AST_PATTERN_MATCH #11 (+0.2, diminished): e.role compared to 'user'
+       - AST_PATTERN_MATCH #12 (+0.2, diminished): e.role compared to 'user'
+       - AST_PATTERN_MATCH #13 (+0.2, diminished): e.role compared to 'user'
+       - AST_PATTERN_MATCH #14 (+0.2, diminished): a.role compared to 'user'
+       - AST_PATTERN_MATCH #15 (+0.2, diminished): p.role compared to 'user'
+       - AST_PATTERN_MATCH #16 (+0.2, diminished): p.role compared to 'user'
+       - AST_PATTERN_MATCH #17 (+0.2, diminished): p.role compared to 'user'
+       - AST_PATTERN_MATCH #18 (+0.2, diminished): p.role compared to 'user'
+       - AST_PATTERN_MATCH #19 (+0.2, diminished): e.role compared to 'user'
+       - AST_PATTERN_MATCH #20 (+0.2, diminished): e.role compared to 'user'
+       - AST_PATTERN_MATCH #21 (+0.2, diminished): e.role compared to 'user'
+       - AST_PATTERN_MATCH #22 (+0.2, diminished): e.role compared to 'user'
+       - AST_PATTERN_MATCH #23 (+0.2, diminished): co.role compared to 'user'
+       - AST_PATTERN_MATCH #24 (+0.2, diminished): co.role compared to 'user'
+       - AST_PATTERN_MATCH #25 (+0.2, diminished): e.role compared to 'user'
+       - AST_PATTERN_MATCH #26 (+0.2, diminished): e.role compared to 'user'
+       - AST_PATTERN_MATCH #27 (+0.2, diminished): r.role compared to 'user'
+
+  -- dataflow (22) --
+  JS-0159  [MEDIUM        score= 5]  url -> window.open() @ 10c86bbb8a462264.js:1 (source 10c86bbb8a462264.js:1)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink window.open() receives a value derived from page URL
+       - DATA_FLOW (+3): data-flow path: 10c86bbb8a462264.js:1 assigned to `n` -> 10c86bbb8a462264.js:1 returned from t() -> 10c86bbb8a462264.js:1 assigned to `n` -> 10c86bbb8a462264.js:1 reaches URL navigation sink window.open()
+  JS-0160  [MEDIUM        score= 5]  network_response -> .innerHTML = ... @ 11ce30af9219119d.js:1 (source 11ce30af9219119d.js:1)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): DOM HTML insertion sink .innerHTML = ... receives a value derived from network response body
+       - DATA_FLOW (+3): data-flow path: 11ce30af9219119d.js:1 returned from o() -> 11ce30af9219119d.js:1 assigned to `i` -> 11ce30af9219119d.js:1 assigned to `o` -> 11ce30af9219119d.js:1 assigned to `u` -> 11ce30af9219119d.js:1 reaches DOM HTML insertion sink .innerHTML = ...
+  JS-0161  [MEDIUM        score= 5]  url_query -> location.replace() @ 19477bc472607694.js:1 (source 19477bc472607694.js:1)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink location.replace() receives a value derived from URL query string (location.search)
+       - DATA_FLOW (+3): data-flow path: 19477bc472607694.js:1 reaches URL navigation sink location.replace()
+  JS-0163  [MEDIUM        score= 5]  network_response -> .innerHTML = ... @ 1a458d11feca1984.js:1 (source 1a458d11feca1984.js:1)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): DOM HTML insertion sink .innerHTML = ... receives a value derived from network response body
+       - DATA_FLOW (+3): data-flow path: 1a458d11feca1984.js:1 assigned to `e` -> 1a458d11feca1984.js:1 assigned to `n` -> 1a458d11feca1984.js:1 passed as argument to a() -> 1a458d11feca1984.js:1 assigned to `r` -> 1a458d11feca1984.js:1 returned from a() -> 1a458d11feca1984.js:1 assigned to `r` -> 1a458d11feca1984.js:1 reaches DOM HTML insertion sink .innerHTML = ...
+  JS-0164  [MEDIUM        score= 5]  url -> window.location.href = ... @ 1dc0ea4a61105157.js:12 (source 1dc0ea4a61105157.js:9)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink window.location.href = ... receives a value derived from page URL
+       - DATA_FLOW (+3): data-flow path: 1dc0ea4a61105157.js:9 assigned to `e` -> 1dc0ea4a61105157.js:9 passed as argument to y() -> 1dc0ea4a61105157.js:9 returned from y() -> 1dc0ea4a61105157.js:9 assigned to `r` -> 1dc0ea4a61105157.js:9 assigned to `n` -> 1dc0ea4a61105157.js:9 returned from Ge() -> 1dc0ea4a61105157.js:12 assigned to `i` -> 1dc0ea4a61105157.js:12 assigned to `a` -> 1dc0ea4a61105157.js:12 reaches URL navigation sink window.location.href = ...
+  JS-0166  [MEDIUM        score= 5]  postmessage -> .innerHTML = ... @ 39f713eaa457c0f9.js:1 (source 39f713eaa457c0f9.js:1)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): DOM HTML insertion sink .innerHTML = ... receives a value derived from postMessage event data
+       - DATA_FLOW (+3): data-flow path: 39f713eaa457c0f9.js:1 passed as argument to <anonymous>() -> 39f713eaa457c0f9.js:1 passed as argument to l() -> 39f713eaa457c0f9.js:1 reaches DOM HTML insertion sink .innerHTML = ...
+  JS-0167  [MEDIUM        score= 5]  postmessage -> window.open() @ afc59ba23bd962db.js:2 (source afc59ba23bd962db.js:2)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink window.open() receives a value derived from postMessage event data
+       - DATA_FLOW (+3): data-flow path: afc59ba23bd962db.js:2 passed as argument to I() -> afc59ba23bd962db.js:2 assigned to `v` -> afc59ba23bd962db.js:2 passed as argument to P() -> afc59ba23bd962db.js:2 passed as argument to sn() -> afc59ba23bd962db.js:2 passed as argument to qo() -> afc59ba23bd962db.js:2 assigned to `r` -> afc59ba23bd962db.js:2 returned from qo() -> afc59ba23bd962db.js:2 assigned to `S` -> afc59ba23bd962db.js:2 reaches URL navigation sink window.open()
+  JS-0168  [MEDIUM        score= 5]  url -> window.open() @ afc59ba23bd962db.js:2 (source afc59ba23bd962db.js:2)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink window.open() receives a value derived from page URL
+       - DATA_FLOW (+3): data-flow path: afc59ba23bd962db.js:2 assigned to `r` -> afc59ba23bd962db.js:2 returned from qo() -> afc59ba23bd962db.js:2 assigned to `S` -> afc59ba23bd962db.js:2 reaches URL navigation sink window.open()
+  JS-0169  [MEDIUM        score= 5]  postmessage -> setAttribute('src') @ afc59ba23bd962db.js:2 (source afc59ba23bd962db.js:2)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink setAttribute('src') receives a value derived from postMessage event data
+       - DATA_FLOW (+3): data-flow path: afc59ba23bd962db.js:2 passed as argument to I() -> afc59ba23bd962db.js:2 assigned to `v` -> afc59ba23bd962db.js:2 passed as argument to P() -> afc59ba23bd962db.js:2 passed as argument to sn() -> afc59ba23bd962db.js:2 passed as argument to qo() -> afc59ba23bd962db.js:2 assigned to `r` -> afc59ba23bd962db.js:2 returned from qo() -> afc59ba23bd962db.js:2 assigned to `S` -> afc59ba23bd962db.js:2 reaches URL navigation sink setAttribute('src')
+  JS-0170  [MEDIUM        score= 5]  url -> setAttribute('src') @ afc59ba23bd962db.js:2 (source afc59ba23bd962db.js:2)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink setAttribute('src') receives a value derived from page URL
+       - DATA_FLOW (+3): data-flow path: afc59ba23bd962db.js:2 assigned to `r` -> afc59ba23bd962db.js:2 returned from qo() -> afc59ba23bd962db.js:2 assigned to `S` -> afc59ba23bd962db.js:2 reaches URL navigation sink setAttribute('src')
+  JS-0157  [LOW           score= 3]  url -> window.location.href = ... @ 064f3199c8fe01b9.js:9 (source 064f3199c8fe01b9.js:9)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink window.location.href = ... receives a value derived from page URL
+       - DATA_FLOW_PARTIAL (+1): PARTIAL data-flow path (assumptions: passed through unresolved call p()): 064f3199c8fe01b9.js:9 assigned to `t` -> 064f3199c8fe01b9.js:9 reaches URL navigation sink window.location.href = ...
+  JS-0158  [LOW           score= 3]  network_response -> location.replace() @ 08b5354444c6a52b.js:1 (source 08b5354444c6a52b.js:1)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink location.replace() receives a value derived from network response body
+       - DATA_FLOW_PARTIAL (+1): PARTIAL data-flow path (assumptions: passed through unresolved call e()): 08b5354444c6a52b.js:1 assigned to `o` -> 08b5354444c6a52b.js:1 assigned to `c` -> 08b5354444c6a52b.js:1 reaches URL navigation sink location.replace()
+  JS-0162  [LOW           score= 3]  storage -> location.replace() @ 19477bc472607694.js:1 (source 19477bc472607694.js:1)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink location.replace() receives a value derived from web storage
+       - DATA_FLOW_PARTIAL (+1): PARTIAL data-flow path (assumptions: passed through unresolved call t()): 19477bc472607694.js:1 assigned to `i` -> 19477bc472607694.js:1 assigned to `o` -> 19477bc472607694.js:1 assigned to `s` -> 19477bc472607694.js:1 reaches URL navigation sink location.replace()
+  JS-0165  [LOW           score= 3]  storage -> .innerHTML = ... @ 2afbfbaf1a2129f8.js:1 (source 2afbfbaf1a2129f8.js:1)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): DOM HTML insertion sink .innerHTML = ... receives a value derived from web storage
+       - DATA_FLOW_PARTIAL (+1): PARTIAL data-flow path (assumptions: passed through unresolved call F().replace(); uncertain validation: string replace() (partial filtering by replace() is rarely complete)): 2afbfbaf1a2129f8.js:1 assigned to `e` -> 2afbfbaf1a2129f8.js:1 returned from ut() -> 2afbfbaf1a2129f8.js:1 assigned to `I` -> 2afbfbaf1a2129f8.js:1 passed as argument to F() -> 2afbfbaf1a2129f8.js:1 returned from F() -> 2afbfbaf1a2129f8.js:1 returned from st() -> 2afbfbaf1a2129f8.js:1 reaches DOM HTML insertion sink .innerHTML = ...
+  JS-0171  [LOW           score= 3]  url_hash -> window.location.href = ... @ c2983c66ecfa8012.js:2 (source c2983c66ecfa8012.js:2)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink window.location.href = ... receives a value derived from URL fragment (location.hash)
+       - DATA_FLOW_PARTIAL (+1): PARTIAL data-flow path (assumptions: passed through unresolved call i()): c2983c66ecfa8012.js:2 assigned to `e` -> c2983c66ecfa8012.js:2 reaches URL navigation sink window.location.href = ...
+  JS-0172  [LOW           score= 3]  url_query -> window.location.href = ... @ c2983c66ecfa8012.js:2 (source c2983c66ecfa8012.js:2)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink window.location.href = ... receives a value derived from URL query string (location.search)
+       - DATA_FLOW_PARTIAL (+1): PARTIAL data-flow path (assumptions: passed through unresolved call i()): c2983c66ecfa8012.js:2 assigned to `e` -> c2983c66ecfa8012.js:2 reaches URL navigation sink window.location.href = ...
+  JS-0173  [LOW           score= 3]  url_path -> window.location.href = ... @ c2983c66ecfa8012.js:2 (source c2983c66ecfa8012.js:2)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink window.location.href = ... receives a value derived from URL path
+       - DATA_FLOW_PARTIAL (+1): PARTIAL data-flow path (assumptions: passed through unresolved call i()): c2983c66ecfa8012.js:2 assigned to `e` -> c2983c66ecfa8012.js:2 reaches URL navigation sink window.location.href = ...
+  JS-0174  [LOW           score= 3]  storage -> location.replace() @ cfea64c692b1ade6.js:1 (source cfea64c692b1ade6.js:1)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink location.replace() receives a value derived from web storage
+       - DATA_FLOW_PARTIAL (+1): PARTIAL data-flow path (uncertain validation: string replace() (partial filtering by replace() is rarely complete)): cfea64c692b1ade6.js:1 assigned to `e` -> cfea64c692b1ade6.js:1 returned from D() -> cfea64c692b1ade6.js:1 returned from O() -> cfea64c692b1ade6.js:1 assigned to `n` -> cfea64c692b1ade6.js:1 reaches URL navigation sink location.replace()
+  JS-0175  [LOW           score= 3]  storage -> window.location.href = ... @ cfea64c692b1ade6.js:1 (source cfea64c692b1ade6.js:1)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink window.location.href = ... receives a value derived from web storage
+       - DATA_FLOW_PARTIAL (+1): PARTIAL data-flow path (uncertain validation: string replace() (partial filtering by replace() is rarely complete)): cfea64c692b1ade6.js:1 assigned to `e` -> cfea64c692b1ade6.js:1 returned from D() -> cfea64c692b1ade6.js:1 returned from O() -> cfea64c692b1ade6.js:1 assigned to `n` -> cfea64c692b1ade6.js:1 reaches URL navigation sink window.location.href = ...
+  JS-0176  [LOW           score= 3]  url_query -> location.assign() @ d8eafd684d8358ae.js:1 (source d8eafd684d8358ae.js:1)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink location.assign() receives a value derived from URL query string (location.search)
+       - DATA_FLOW_PARTIAL (+1): PARTIAL data-flow path (assumptions: passed through unresolved call f()): d8eafd684d8358ae.js:1 passed as argument to <anonymous>() -> d8eafd684d8358ae.js:1 reaches URL navigation sink location.assign()
+  JS-0177  [LOW           score= 3]  url -> window.location.href = ... @ df87a0b3c4e0f663.js:2 (source df87a0b3c4e0f663.js:2)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink window.location.href = ... receives a value derived from page URL
+       - DATA_FLOW_PARTIAL (+1): PARTIAL data-flow path (assumptions: passed through unresolved call await()()): df87a0b3c4e0f663.js:2 passed as argument to f() -> df87a0b3c4e0f663.js:2 passed as argument to d() -> df87a0b3c4e0f663.js:2 assigned to `t` -> df87a0b3c4e0f663.js:2 assigned to `n` -> df87a0b3c4e0f663.js:2 returned from d() -> df87a0b3c4e0f663.js:2 passed as argument to l() -> df87a0b3c4e0f663.js:2 assigned to `c` -> df87a0b3c4e0f663.js:2 assigned to `l` -> df87a0b3c4e0f663.js:2 returned from l() -> df87a0b3c4e0f663.js:2 assigned to `r` -> df87a0b3c4e0f663.js:2 assigned to `i` -> df87a0b3c4e0f663.js:2 returned from f() -> df87a0b3c4e0f663.js:2 reaches URL navigation sink window.location.href = ...
+  JS-0178  [LOW           score= 3]  url -> window.location.href = ... @ e354fe0f43faeafa.js:2 (source e354fe0f43faeafa.js:2)
+       analyzers: dataflow_analyzer
+       - AST_PATTERN_MATCH (+2): URL navigation sink window.location.href = ... receives a value derived from page URL
+       - DATA_FLOW_PARTIAL (+1): PARTIAL data-flow path (assumptions: passed through unresolved call _e(); passed through unresolved call e.fetchPackCheckout()): e354fe0f43faeafa.js:2 assigned to `t` -> e354fe0f43faeafa.js:2 reaches URL navigation sink window.location.href = ...
+
+  -- endpoint (1) --
+  JS-0001  [MEDIUM        score= 5]  https://s2s.adjust.com/event
+       analyzers: endpoint_analyzer
+       - AST_PATTERN_MATCH (+2): fetch() call with this URL argument
+       - SYMBOL_RESOLVED (+3): URL resolved through a local variable binding, not a raw literal in the call
+
+  -- route (39) --
+  JS-0004  [MEDIUM        score= 5]  /auth/nsfw-popup
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/auth/nsfw-popup' -> jn
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+       - NAMING_CONVENTION (+1): route path matches 'auth' naming convention
+  JS-0024  [MEDIUM        score= 5]  /project/:projectId
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/project/:projectId' -> yn
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+       - NAMING_CONVENTION (+1): route path matches 'idor_candidate' naming convention
+  JS-0028  [MEDIUM        score= 5]  /gallery/:recordId
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/gallery/:recordId' -> P
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+       - NAMING_CONVENTION (+1): route path matches 'idor_candidate' naming convention
+  JS-0030  [MEDIUM        score= 5]  /view/:conversationId
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/view/:conversationId' -> ln
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+       - NAMING_CONVENTION (+1): route path matches 'idor_candidate' naming convention
+  JS-0034  [MEDIUM        score= 5]  /recipe-detail/:recipeId
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/recipe-detail/:recipeId' -> c
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+       - NAMING_CONVENTION (+1): route path matches 'idor_candidate' naming convention
+  JS-0035  [MEDIUM        score= 5]  /repo-detail/:repoId
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/repo-detail/:repoId' -> mn
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+       - NAMING_CONVENTION (+1): route path matches 'idor_candidate' naming convention
+  JS-0037  [MEDIUM        score= 5]  /garden-creator/:userId
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/garden-creator/:userId' -> vn
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+       - NAMING_CONVENTION (+1): route path matches 'idor_candidate' naming convention
+  JS-0038  [MEDIUM        score= 5]  /composer/:id
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/composer/:id' -> Zt
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+       - NAMING_CONVENTION (+1): route path matches 'idor_candidate' naming convention
+  JS-0039  [MEDIUM        score= 5]  /oracle-play/:conversationId
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/oracle-play/:conversationId' -> Fn
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+       - NAMING_CONVENTION (+1): route path matches 'idor_candidate' naming convention
+  JS-0003  [MEDIUM        score= 4]  /__dev/session-inject
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/__dev/session-inject' -> An
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0005  [MEDIUM        score= 4]  /conv-guide
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/conv-guide' -> un
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0006  [MEDIUM        score= 4]  /black-pass
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/black-pass' -> Pn
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0007  [MEDIUM        score= 4]  /blank
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/blank' -> In
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0008  [MEDIUM        score= 4]  /skills
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/skills' -> tn
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0009  [MEDIUM        score= 4]  /plugins
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/plugins' -> en
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0010  [MEDIUM        score= 4]  /connect-agent
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/connect-agent' -> nn
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0011  [MEDIUM        score= 4]  /flo
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/flo' -> rn
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0012  [MEDIUM        score= 4]  /apps
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/apps' -> wn
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0013  [MEDIUM        score= 4]  /${w}/aspect
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='${w}/aspect' -> En; resolved full path /${w}/aspect
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0014  [MEDIUM        score= 4]  /${w}/color-palette
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='${w}/color-palette' -> Dn; resolved full path /${w}/color-palette
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0015  [MEDIUM        score= 4]  /${w}/service/:slug
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='${w}/service/:slug' -> On; resolved full path /${w}/service/:slug
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0016  [MEDIUM        score= 4]  /${w}/style-snap
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='${w}/style-snap' -> c; resolved full path /${w}/style-snap
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0017  [MEDIUM        score= 4]  /${w}/:slug
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='${w}/:slug' -> Tn; resolved full path /${w}/:slug
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0018  [MEDIUM        score= 4]  /order
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/order' -> hn
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0019  [MEDIUM        score= 4]  /knowledge
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/knowledge' -> cn
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0020  [MEDIUM        score= 4]  /knowledge-legacy
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/knowledge-legacy' -> cn
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0021  [MEDIUM        score= 4]  /knowledge-garden
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/knowledge-garden' -> pn
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0022  [MEDIUM        score= 4]  /enterprise
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/enterprise' -> Cn
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0023  [MEDIUM        score= 4]  /notifications
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/notifications' -> kn
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0025  [MEDIUM        score= 4]  /flows
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/flows' -> xn
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0026  [MEDIUM        score= 4]  /churn-prevention
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/churn-prevention' -> dn
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0027  [MEDIUM        score= 4]  /gallery
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/gallery' -> P
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0029  [MEDIUM        score= 4]  /
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/' -> Xt
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0031  [MEDIUM        score= 4]  /community
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/community' -> $t
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0032  [MEDIUM        score= 4]  /team/join
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/team/join' -> Mn
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0033  [MEDIUM        score= 4]  /black-pass/claim
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/black-pass/claim' -> Nn
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0036  [MEDIUM        score= 4]  /compliance/:page
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/compliance/:page' -> Qt
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0040  [MEDIUM        score= 4]  /pricing
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='/pricing' -> bn
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+  JS-0041  [MEDIUM        score= 4]  /*
+       analyzers: router_analyzer
+       - AST_PATTERN_MATCH (+2): config route definition path='*' -> c; resolved full path /*
+       - FRAMEWORK_CONTEXT (+2): React detected and route shape matches its router
+
+  -- secret (1) --
+  JS-0002  [LOW           score= 2]  Supabase:https://...e.co
+       analyzers: secret_analyzer
+       - LITERAL_STRING_MATCH (+1): string literal matches Supabase supabase_url pattern
+       - LITERAL_STRING_MATCH #2 (+0.5, diminished): string literal matches Supabase supabase_url pattern
+       - LITERAL_STRING_MATCH #3 (+0.25, diminished): string literal matches Supabase supabase_url pattern
+       - LITERAL_STRING_MATCH #4 (+0.1, diminished): string literal matches Supabase supabase_url pattern
+       - LITERAL_STRING_MATCH #5 (+0.1, diminished): string literal matches Supabase supabase_url pattern
+       - LITERAL_STRING_MATCH #6 (+0.1, diminished): string literal matches Supabase supabase_url pattern
+       - LITERAL_STRING_MATCH #7 (+0.1, diminished): string literal matches Supabase supabase_url pattern
+
+  -- service_worker (1) --
+  JS-0156  [LOW           score= 3]  capability:message_channel
+       analyzers: service_worker_analyzer
+       - AST_PATTERN_MATCH (+2): worker handles 'message' event
+       - AST_PATTERN_MATCH #2 (+1, diminished): worker handles 'message' event
+
+  -- storage (108) --
+  JS-0089  [CONFIRMED     score=14]  localStorage:flowith_auth_return_url
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'flowith_auth_return_url'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage read with key 'flowith_auth_return_url'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage write with key 'flowith_auth_return_url'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): localStorage read with key 'flowith_auth_return_url'
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): localStorage write with key 'flowith_auth_return_url'
+       - AST_PATTERN_MATCH #6 (+0.2, diminished): localStorage read with key 'flowith_auth_return_url'
+       - AST_PATTERN_MATCH #7 (+0.2, diminished): localStorage delete with key 'flowith_auth_return_url'
+       - AST_PATTERN_MATCH #8 (+0.2, diminished): localStorage delete with key 'flowith_auth_return_url'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #4 (+0.3, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #5 (+0.3, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #6 (+0.3, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #7 (+0.3, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #8 (+0.3, diminished): storage key resolved through a constant
+       - NAMING_CONVENTION (+1): key 'flowith_auth_return_url' looks credential-bearing
+       - NAMING_CONVENTION #2 (+0.5, diminished): key 'flowith_auth_return_url' looks credential-bearing
+       - NAMING_CONVENTION #3 (+0.25, diminished): key 'flowith_auth_return_url' looks credential-bearing
+       - NAMING_CONVENTION #4 (+0.1, diminished): key 'flowith_auth_return_url' looks credential-bearing
+       - NAMING_CONVENTION #5 (+0.1, diminished): key 'flowith_auth_return_url' looks credential-bearing
+       - NAMING_CONVENTION #6 (+0.1, diminished): key 'flowith_auth_return_url' looks credential-bearing
+       - NAMING_CONVENTION #7 (+0.1, diminished): key 'flowith_auth_return_url' looks credential-bearing
+       - NAMING_CONVENTION #8 (+0.1, diminished): key 'flowith_auth_return_url' looks credential-bearing
+  JS-0074  [CONFIRMED     score=12]  sessionStorage:flowith:pending-oauth:v1
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage write with key 'flowith:pending-oauth:v1'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage read with key 'flowith:pending-oauth:v1'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): sessionStorage delete with key 'flowith:pending-oauth:v1'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): sessionStorage write with key 'flowith:pending-oauth:v1'
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): sessionStorage read with key 'flowith:pending-oauth:v1'
+       - AST_PATTERN_MATCH #6 (+0.2, diminished): sessionStorage delete with key 'flowith:pending-oauth:v1'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #4 (+0.3, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #5 (+0.3, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #6 (+0.3, diminished): storage key resolved through a constant
+       - NAMING_CONVENTION (+1): key 'flowith:pending-oauth:v1' looks credential-bearing
+       - NAMING_CONVENTION #2 (+0.5, diminished): key 'flowith:pending-oauth:v1' looks credential-bearing
+       - NAMING_CONVENTION #3 (+0.25, diminished): key 'flowith:pending-oauth:v1' looks credential-bearing
+       - NAMING_CONVENTION #4 (+0.1, diminished): key 'flowith:pending-oauth:v1' looks credential-bearing
+       - NAMING_CONVENTION #5 (+0.1, diminished): key 'flowith:pending-oauth:v1' looks credential-bearing
+       - NAMING_CONVENTION #6 (+0.1, diminished): key 'flowith:pending-oauth:v1' looks credential-bearing
+  JS-0075  [CONFIRMED     score=12]  localStorage:inv_code
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage write with key 'inv_code'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage delete with key 'inv_code'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage write with key 'inv_code'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): localStorage write with key 'inv_code'
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): localStorage delete with key 'inv_code'
+       - AST_PATTERN_MATCH #6 (+0.2, diminished): localStorage write with key 'inv_code'
+       - AST_PATTERN_MATCH #7 (+0.2, diminished): localStorage read with key 'inv_code'
+       - AST_PATTERN_MATCH #8 (+0.2, diminished): localStorage read with key 'inv_code'
+       - AST_PATTERN_MATCH #9 (+0.2, diminished): localStorage read with key 'inv_code'
+       - AST_PATTERN_MATCH #10 (+0.2, diminished): localStorage write with key 'inv_code'
+       - AST_PATTERN_MATCH #11 (+0.2, diminished): localStorage read with key 'inv_code'
+       - AST_PATTERN_MATCH #12 (+0.2, diminished): localStorage delete with key 'inv_code'
+       - AST_PATTERN_MATCH #13 (+0.2, diminished): localStorage read with key 'inv_code'
+       - AST_PATTERN_MATCH #14 (+0.2, diminished): localStorage delete with key 'inv_code'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #4 (+0.3, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #5 (+0.3, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #6 (+0.3, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #7 (+0.3, diminished): storage key resolved through a constant
+  JS-0127  [CONFIRMED     score=12]  localStorage:canvas-bot-session
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'canvas-bot-session'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage delete with key 'canvas-bot-session'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage delete with key 'canvas-bot-session'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): localStorage delete with key 'canvas-bot-session'
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): localStorage read with key 'canvas-bot-session'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #4 (+0.3, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #5 (+0.3, diminished): storage key resolved through a constant
+       - NAMING_CONVENTION (+1): key 'canvas-bot-session' looks credential-bearing
+       - NAMING_CONVENTION #2 (+0.5, diminished): key 'canvas-bot-session' looks credential-bearing
+       - NAMING_CONVENTION #3 (+0.25, diminished): key 'canvas-bot-session' looks credential-bearing
+       - NAMING_CONVENTION #4 (+0.1, diminished): key 'canvas-bot-session' looks credential-bearing
+       - NAMING_CONVENTION #5 (+0.1, diminished): key 'canvas-bot-session' looks credential-bearing
+  JS-0072  [CONFIRMED     score=11]  localStorage:flowith:last-auth:v1
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'flowith:last-auth:v1'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'flowith:last-auth:v1'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage read with key 'flowith:last-auth:v1'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): localStorage write with key 'flowith:last-auth:v1'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+       - NAMING_CONVENTION (+1): key 'flowith:last-auth:v1' looks credential-bearing
+       - NAMING_CONVENTION #2 (+0.5, diminished): key 'flowith:last-auth:v1' looks credential-bearing
+       - NAMING_CONVENTION #3 (+0.25, diminished): key 'flowith:last-auth:v1' looks credential-bearing
+       - NAMING_CONVENTION #4 (+0.1, diminished): key 'flowith:last-auth:v1' looks credential-bearing
+  JS-0093  [CONFIRMED     score=10]  localStorage:language
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'language'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'language'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage read with key 'language'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): localStorage read with key 'language'
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): localStorage read with key 'language'
+       - AST_PATTERN_MATCH #6 (+0.2, diminished): localStorage read with key 'language'
+       - AST_PATTERN_MATCH #7 (+0.2, diminished): localStorage write with key 'language'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #4 (+0.3, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #5 (+0.3, diminished): storage key resolved through a constant
+  JS-0056  [HIGH          score= 9]  localStorage:guest-signup:draft:v1
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage delete with key 'guest-signup:draft:v1'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'guest-signup:draft:v1'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage read with key 'guest-signup:draft:v1'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+  JS-0063  [HIGH          score= 9]  sessionStorage:flowith:canvas-edges
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage delete with key 'flowith:canvas-edges'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage write with key 'flowith:canvas-edges'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): sessionStorage read with key 'flowith:canvas-edges'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+  JS-0081  [HIGH          score= 9]  localStorage:global_models_expire
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'global_models_expire'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage delete with key 'global_models_expire'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage write with key 'global_models_expire'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+  JS-0082  [HIGH          score= 9]  localStorage:global_models
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'global_models'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage delete with key 'global_models'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage write with key 'global_models'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+  JS-0084  [HIGH          score= 9]  sessionStorage:home.inputDraft
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage read with key 'home.inputDraft'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage write with key 'home.inputDraft'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): sessionStorage delete with key 'home.inputDraft'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+  JS-0095  [HIGH          score= 9]  sessionStorage:flowith:daily-rewards-onboarding-pending
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage write with key 'flowith:daily-rewards-onboarding-pending'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage read with key 'flowith:daily-rewards-onboarding-pending'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): sessionStorage delete with key 'flowith:daily-rewards-onboarding-pending'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): sessionStorage delete with key 'flowith:daily-rewards-onboarding-pending'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #4 (+0.3, diminished): storage key resolved through a constant
+  JS-0105  [HIGH          score= 9]  localStorage:flowith_director_site_link
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'flowith_director_site_link'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'flowith_director_site_link'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage delete with key 'flowith_director_site_link'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+  JS-0106  [HIGH          score= 9]  sessionStorage:blank.pageToastMessage
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage read with key 'blank.pageToastMessage'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage delete with key 'blank.pageToastMessage'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): sessionStorage write with key 'blank.pageToastMessage'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+  JS-0110  [HIGH          score= 9]  sessionStorage:${He}toolbar-hidden
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage read with key '${He}toolbar-hidden'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage write with key '${He}toolbar-hidden'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): sessionStorage delete with key '${He}toolbar-hidden'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+  JS-0119  [HIGH          score= 9]  sessionStorage:gallery.locateNodeMissingToast
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage read with key 'gallery.locateNodeMissingToast'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage delete with key 'gallery.locateNodeMissingToast'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): sessionStorage delete with key 'gallery.locateNodeMissingToast'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+  JS-0123  [HIGH          score= 9]  sessionStorage:flowith_black_pass_cards_preview
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage write with key 'flowith_black_pass_cards_preview'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage delete with key 'flowith_black_pass_cards_preview'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): sessionStorage read with key 'flowith_black_pass_cards_preview'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+  JS-0125  [HIGH          score= 9]  localStorage:canvas-bot-agent-keys
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'canvas-bot-agent-keys'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'canvas-bot-agent-keys'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage delete with key 'canvas-bot-agent-keys'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+  JS-0126  [HIGH          score= 9]  localStorage:canvas-bot-agent-sign-ins
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'canvas-bot-agent-sign-ins'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'canvas-bot-agent-sign-ins'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage delete with key 'canvas-bot-agent-sign-ins'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+  JS-0128  [HIGH          score= 9]  localStorage:canvas-bot-revoked-sessions
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'canvas-bot-revoked-sessions'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'canvas-bot-revoked-sessions'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - NAMING_CONVENTION (+1): key 'canvas-bot-revoked-sessions' looks credential-bearing
+       - NAMING_CONVENTION #2 (+0.5, diminished): key 'canvas-bot-revoked-sessions' looks credential-bearing
+  JS-0132  [HIGH          score= 9]  localStorage:version_${m}
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'version_${m}'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage read with key 'version_${m}'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage write with key 'version_${m}'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): localStorage write with key 'version_${m}'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #4 (+0.3, diminished): storage key resolved through a constant
+  JS-0134  [HIGH          score= 9]  sessionStorage:playbook_prompt_use_attribution
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage write with key 'playbook_prompt_use_attribution'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage read with key 'playbook_prompt_use_attribution'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): sessionStorage delete with key 'playbook_prompt_use_attribution'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+  JS-0135  [HIGH          score= 9]  localStorage:creator-studio.output-intent
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'creator-studio.output-intent'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage delete with key 'creator-studio.output-intent'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage write with key 'creator-studio.output-intent'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+  JS-0148  [HIGH          score= 9]  localStorage:deploy_update_snooze
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage delete with key 'deploy_update_snooze'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage read with key 'deploy_update_snooze'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage write with key 'deploy_update_snooze'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+  JS-0153  [HIGH          score= 9]  sessionStorage:flowith:daily-rewards-case-onboarding-attribution:v1
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage write with key 'flowith:daily-rewards-case-onboarding-attribution:v1'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage delete with key 'flowith:daily-rewards-case-onboarding-attribution:v1'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): sessionStorage read with key 'flowith:daily-rewards-case-onboarding-attribution:v1'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+  JS-0154  [HIGH          score= 9]  sessionStorage:media_history.locate_provenance
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage delete with key 'media_history.locate_provenance'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage write with key 'media_history.locate_provenance'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): sessionStorage read with key 'media_history.locate_provenance'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+  JS-0155  [HIGH          score= 9]  localStorage:media_history.locate_provenance
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage delete with key 'media_history.locate_provenance'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'media_history.locate_provenance'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage read with key 'media_history.locate_provenance'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+       - SYMBOL_RESOLVED #3 (+0.75, diminished): storage key resolved through a constant
+  JS-0059  [HIGH          score= 8]  localStorage:epr_suggested
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'epr_suggested'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'epr_suggested'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0065  [HIGH          score= 8]  localStorage:flowith.beatCut
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'flowith.beatCut'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'flowith.beatCut'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0071  [HIGH          score= 8]  sessionStorage:remix-router-transitions
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage read with key 'remix-router-transitions'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage write with key 'remix-router-transitions'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0077  [HIGH          score= 8]  sessionStorage:flowith:adult-search-touch:v1
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage write with key 'flowith:adult-search-touch:v1'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage delete with key 'flowith:adult-search-touch:v1'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0085  [HIGH          score= 8]  localStorage:flowith:keyboard-shortcuts
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'flowith:keyboard-shortcuts'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage delete with key 'flowith:keyboard-shortcuts'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0091  [HIGH          score= 8]  localStorage:command-states:active-scope
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'command-states:active-scope'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'command-states:active-scope'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0096  [HIGH          score= 8]  localStorage:flowith.pauseCut
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'flowith.pauseCut'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'flowith.pauseCut'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0098  [HIGH          score= 8]  localStorage:flowith.voiceRecord.silentCut
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'flowith.voiceRecord.silentCut'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'flowith.voiceRecord.silentCut'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0099  [HIGH          score= 8]  localStorage:flowith.video.ignoredTakes
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'flowith.video.ignoredTakes'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'flowith.video.ignoredTakes'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage read with key 'flowith.video.ignoredTakes'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0101  [HIGH          score= 8]  localStorage:theme
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'theme'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'theme'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage write with key 'theme'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0103  [HIGH          score= 8]  localStorage:flowith:character-boards:v2
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'flowith:character-boards:v2'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'flowith:character-boards:v2'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0104  [HIGH          score= 8]  localStorage:flowith:claude-code:models
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'flowith:claude-code:models'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'flowith:claude-code:models'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0108  [HIGH          score= 8]  localStorage:creator-last-chats
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'creator-last-chats'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'creator-last-chats'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0115  [HIGH          score= 8]  localStorage:guide:followupPrompt
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'guide:followupPrompt'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'guide:followupPrompt'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0117  [HIGH          score= 8]  localStorage:flowith:canvas-box-select-tip:v1
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'flowith:canvas-box-select-tip:v1'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'flowith:canvas-box-select-tip:v1'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0118  [HIGH          score= 8]  localStorage:flowith:director-writeback:v1
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'flowith:director-writeback:v1'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'flowith:director-writeback:v1'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0120  [HIGH          score= 8]  localStorage:flowith:canvas-guides-enabled
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'flowith:canvas-guides-enabled'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'flowith:canvas-guides-enabled'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0122  [HIGH          score= 8]  localStorage:storyboard-sound-tasks
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'storyboard-sound-tasks'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'storyboard-sound-tasks'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0136  [HIGH          score= 8]  localStorage:flowith:video-models:new-seen
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'flowith:video-models:new-seen'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'flowith:video-models:new-seen'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0137  [HIGH          score= 8]  localStorage:flowith:video-upscale:quality
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'flowith:video-upscale:quality'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'flowith:video-upscale:quality'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0138  [HIGH          score= 8]  localStorage:creator-studio.output-model-modes
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'creator-studio.output-model-modes'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'creator-studio.output-model-modes'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0139  [HIGH          score= 8]  localStorage:creator-studio.text-tier
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'creator-studio.text-tier'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'creator-studio.text-tier'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0140  [HIGH          score= 8]  localStorage:creator-studio.model-selection
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'creator-studio.model-selection'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'creator-studio.model-selection'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0141  [HIGH          score= 8]  localStorage:creator-studio.media-preferences
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'creator-studio.media-preferences'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'creator-studio.media-preferences'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0142  [HIGH          score= 8]  localStorage:creator-studio.reasoning-effort
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'creator-studio.reasoning-effort'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'creator-studio.reasoning-effort'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0143  [HIGH          score= 8]  localStorage:creator-studio.model-selection-mode
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'creator-studio.model-selection-mode'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'creator-studio.model-selection-mode'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0145  [HIGH          score= 8]  localStorage:flowith.storyboardBoard.view
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'flowith.storyboardBoard.view'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'flowith.storyboardBoard.view'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0146  [HIGH          score= 8]  localStorage:sidebar:expanded-projects
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'sidebar:expanded-projects'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'sidebar:expanded-projects'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0150  [HIGH          score= 8]  sessionStorage:flo:online:country
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage read with key 'flo:online:country'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage write with key 'flo:online:country'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0151  [HIGH          score= 8]  indexedDB:flowith_node_cache
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): indexedDB open with key 'flowith_node_cache'
+       - AST_PATTERN_MATCH #2 (+1, diminished): indexedDB open with key 'flowith_node_cache'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+       - SYMBOL_RESOLVED #2 (+1.5, diminished): storage key resolved through a constant
+  JS-0057  [HIGH          score= 7]  localStorage:sb-server-auth-token
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage write with key 'sb-server-auth-token'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'sb-server-auth-token'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage read with key 'sb-server-auth-token'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): localStorage read with key 'sb-server-auth-token'
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): localStorage delete with key 'sb-server-auth-token'
+       - AST_PATTERN_MATCH #6 (+0.2, diminished): localStorage write with key 'sb-server-auth-token'
+       - AST_PATTERN_MATCH #7 (+0.2, diminished): localStorage read with key 'sb-server-auth-token'
+       - AST_PATTERN_MATCH #8 (+0.2, diminished): localStorage delete with key 'sb-server-auth-token'
+       - NAMING_CONVENTION (+1): key 'sb-server-auth-token' looks credential-bearing
+       - NAMING_CONVENTION #2 (+0.5, diminished): key 'sb-server-auth-token' looks credential-bearing
+       - NAMING_CONVENTION #3 (+0.25, diminished): key 'sb-server-auth-token' looks credential-bearing
+       - NAMING_CONVENTION #4 (+0.1, diminished): key 'sb-server-auth-token' looks credential-bearing
+       - NAMING_CONVENTION #5 (+0.1, diminished): key 'sb-server-auth-token' looks credential-bearing
+       - NAMING_CONVENTION #6 (+0.1, diminished): key 'sb-server-auth-token' looks credential-bearing
+       - NAMING_CONVENTION #7 (+0.1, diminished): key 'sb-server-auth-token' looks credential-bearing
+       - NAMING_CONVENTION #8 (+0.1, diminished): key 'sb-server-auth-token' looks credential-bearing
+  JS-0067  [MEDIUM        score= 6]  localStorage:userId
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'userId'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage read with key 'userId'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage read with key 'userId'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): localStorage read with key 'userId'
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): localStorage read with key 'userId'
+       - AST_PATTERN_MATCH #6 (+0.2, diminished): localStorage read with key 'userId'
+       - AST_PATTERN_MATCH #7 (+0.2, diminished): localStorage write with key 'userId'
+       - AST_PATTERN_MATCH #8 (+0.2, diminished): localStorage read with key 'userId'
+       - AST_PATTERN_MATCH #9 (+0.2, diminished): localStorage read with key 'userId'
+       - AST_PATTERN_MATCH #10 (+0.2, diminished): localStorage read with key 'userId'
+       - AST_PATTERN_MATCH #11 (+0.2, diminished): localStorage read with key 'userId'
+       - AST_PATTERN_MATCH #12 (+0.2, diminished): localStorage read with key 'userId'
+       - AST_PATTERN_MATCH #13 (+0.2, diminished): localStorage read with key 'userId'
+       - AST_PATTERN_MATCH #14 (+0.2, diminished): localStorage read with key 'userId'
+       - AST_PATTERN_MATCH #15 (+0.2, diminished): localStorage read with key 'userId'
+       - AST_PATTERN_MATCH #16 (+0.2, diminished): localStorage read with key 'userId'
+  JS-0058  [MEDIUM        score= 5]  indexedDB:flowith_viewport_db
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): indexedDB open with key 'flowith_viewport_db'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+  JS-0061  [MEDIUM        score= 5]  localStorage:newChatText
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage delete with key 'newChatText'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage delete with key 'newChatText'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage delete with key 'newChatText'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): localStorage read with key 'newChatText'
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): localStorage delete with key 'newChatText'
+       - AST_PATTERN_MATCH #6 (+0.2, diminished): localStorage read with key 'newChatText'
+       - AST_PATTERN_MATCH #7 (+0.2, diminished): localStorage delete with key 'newChatText'
+       - AST_PATTERN_MATCH #8 (+0.2, diminished): localStorage delete with key 'newChatText'
+       - AST_PATTERN_MATCH #9 (+0.2, diminished): localStorage delete with key 'newChatText'
+  JS-0062  [MEDIUM        score= 5]  localStorage:canvas-far-sizes-index:v${cj}
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage write with key 'canvas-far-sizes-index:v${cj}'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+  JS-0068  [MEDIUM        score= 5]  indexedDB:flowith_canvas_preferences_db
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): indexedDB open with key 'flowith_canvas_preferences_db'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+  JS-0076  [MEDIUM        score= 5]  localStorage:adjust_signup_invcode
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage write with key 'adjust_signup_invcode'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'adjust_signup_invcode'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage read with key 'adjust_signup_invcode'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): localStorage delete with key 'adjust_signup_invcode'
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): localStorage read with key 'adjust_signup_invcode'
+       - AST_PATTERN_MATCH #6 (+0.2, diminished): localStorage delete with key 'adjust_signup_invcode'
+       - AST_PATTERN_MATCH #7 (+0.2, diminished): localStorage write with key 'adjust_signup_invcode'
+       - AST_PATTERN_MATCH #8 (+0.2, diminished): localStorage write with key 'adjust_signup_invcode'
+       - AST_PATTERN_MATCH #9 (+0.2, diminished): localStorage read with key 'adjust_signup_invcode'
+       - AST_PATTERN_MATCH #10 (+0.2, diminished): localStorage delete with key 'adjust_signup_invcode'
+  JS-0078  [MEDIUM        score= 5]  localStorage:flowith:home-template-covers
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage write with key 'flowith:home-template-covers'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+  JS-0094  [MEDIUM        score= 5]  localStorage:flowith_pricing_embed_ctx_v1
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage write with key 'flowith_pricing_embed_ctx_v1'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+  JS-0107  [MEDIUM        score= 5]  indexedDB:db_drag_offset
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): indexedDB open with key 'db_drag_offset'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+  JS-0124  [MEDIUM        score= 5]  indexedDB:flowith_composer_page_draft_db
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): indexedDB open with key 'flowith_composer_page_draft_db'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+  JS-0129  [MEDIUM        score= 5]  localStorage:guide:starterPrompt
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage write with key 'guide:starterPrompt'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+  JS-0130  [MEDIUM        score= 5]  localStorage:guide:starterFile
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage write with key 'guide:starterFile'
+       - SYMBOL_RESOLVED (+3): storage key resolved through a constant
+  JS-0048  [MEDIUM        score= 4]  localStorage:kp-sharing
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'kp-sharing'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'kp-sharing'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage delete with key 'kp-sharing'
+  JS-0053  [MEDIUM        score= 4]  sessionStorage:creator.plugins.returnTo
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage write with key 'creator.plugins.returnTo'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage read with key 'creator.plugins.returnTo'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): sessionStorage delete with key 'creator.plugins.returnTo'
+  JS-0054  [MEDIUM        score= 4]  sessionStorage:creator.plugins.shopify.install
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage write with key 'creator.plugins.shopify.install'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage read with key 'creator.plugins.shopify.install'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): sessionStorage delete with key 'creator.plugins.shopify.install'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): sessionStorage write with key 'creator.plugins.shopify.install'
+  JS-0060  [MEDIUM        score= 4]  localStorage:imageStyle
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'imageStyle'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage read with key 'imageStyle'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage read with key 'imageStyle'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): localStorage read with key 'imageStyle'
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): localStorage read with key 'imageStyle'
+  JS-0064  [MEDIUM        score= 4]  sessionStorage:flowith_pending_launch_params
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage write with key 'flowith_pending_launch_params'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage write with key 'flowith_pending_launch_params'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): sessionStorage delete with key 'flowith_pending_launch_params'
+  JS-0066  [MEDIUM        score= 4]  sessionStorage:${Ki}${e}
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage read with key '${Ki}${e}'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage write with key '${Ki}${e}'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): sessionStorage delete with key '${Ki}${e}'
+  JS-0073  [MEDIUM        score= 4]  localStorage:userHasLoggedOut
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'userHasLoggedOut'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage read with key 'userHasLoggedOut'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage delete with key 'userHasLoggedOut'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): localStorage read with key 'userHasLoggedOut'
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): localStorage write with key 'userHasLoggedOut'
+  JS-0080  [MEDIUM        score= 4]  localStorage:adjust_prev_login_user
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage delete with key 'adjust_prev_login_user'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage read with key 'adjust_prev_login_user'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage write with key 'adjust_prev_login_user'
+  JS-0102  [MEDIUM        score= 4]  localStorage:initialTextFromHash
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage write with key 'initialTextFromHash'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'initialTextFromHash'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage write with key 'initialTextFromHash'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): localStorage write with key 'initialTextFromHash'
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): localStorage read with key 'initialTextFromHash'
+       - AST_PATTERN_MATCH #6 (+0.2, diminished): localStorage delete with key 'initialTextFromHash'
+       - AST_PATTERN_MATCH #7 (+0.2, diminished): localStorage write with key 'initialTextFromHash'
+  JS-0114  [MEDIUM        score= 4]  cookie:fl_logged_in
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): cookie write with key 'fl_logged_in'
+       - AST_PATTERN_MATCH #2 (+1, diminished): cookie write with key 'fl_logged_in'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): cookie write with key 'fl_logged_in'
+  JS-0144  [MEDIUM        score= 4]  localStorage:userHabits:intelligentSplit
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'userHabits:intelligentSplit'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'userHabits:intelligentSplit'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage write with key 'userHabits:intelligentSplit'
+  JS-0149  [MEDIUM        score= 4]  localStorage:user_language
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'user_language'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage read with key 'user_language'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage write with key 'user_language'
+  JS-0152  [MEDIUM        score= 4]  localStorage:stream_lastId_${e}
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'stream_lastId_${e}'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'stream_lastId_${e}'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage delete with key 'stream_lastId_${e}'
+  JS-0049  [LOW           score= 3]  localStorage:redirect
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage delete with key 'redirect'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'redirect'
+  JS-0055  [LOW           score= 3]  sessionStorage:creator.plugins.oauth:${i}
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage write with key 'creator.plugins.oauth:${i}'
+       - NAMING_CONVENTION (+1): key 'creator.plugins.oauth:${i}' looks credential-bearing
+  JS-0069  [LOW           score= 3]  localStorage:latestPath
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage delete with key 'latestPath'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'latestPath'
+  JS-0070  [LOW           score= 3]  localStorage:userHabits:followUpMode
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'userHabits:followUpMode'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'userHabits:followUpMode'
+  JS-0083  [LOW           score= 3]  localStorage:adjust_has_opened
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'adjust_has_opened'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'adjust_has_opened'
+  JS-0087  [LOW           score= 3]  localStorage:${Em}:${e}
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage write with key '${Em}:${e}'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage read with key '${Em}:${e}'
+  JS-0090  [LOW           score= 3]  sessionStorage:oauth-preset-id
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage write with key 'oauth-preset-id'
+       - NAMING_CONVENTION (+1): key 'oauth-preset-id' looks credential-bearing
+  JS-0092  [LOW           score= 3]  localStorage:c-consumed
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'c-consumed'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'c-consumed'
+  JS-0097  [LOW           score= 3]  localStorage:flowith.videoSkim
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'flowith.videoSkim'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'flowith.videoSkim'
+  JS-0100  [LOW           score= 3]  sessionStorage:conversationId
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage read with key 'conversationId'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage read with key 'conversationId'
+  JS-0111  [LOW           score= 3]  localStorage:feedback-toolbar-settings
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'feedback-toolbar-settings'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'feedback-toolbar-settings'
+  JS-0112  [LOW           score= 3]  localStorage:feedback-toolbar-theme
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'feedback-toolbar-theme'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'feedback-toolbar-theme'
+  JS-0113  [LOW           score= 3]  localStorage:feedback-toolbar-position
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'feedback-toolbar-position'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'feedback-toolbar-position'
+  JS-0116  [LOW           score= 3]  localStorage:anv-${g?.id}
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'anv-${g?.id}'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'anv-${g?.id}'
+  JS-0131  [LOW           score= 3]  localStorage:supabase.gotrue-js.locks.debug
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'supabase.gotrue-js.locks.debug'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage read with key 'supabase.gotrue-js.locks.debug'
+  JS-0133  [LOW           score= 3]  cookie:${o}
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): cookie write with key '${o}'
+       - AST_PATTERN_MATCH #2 (+1, diminished): cookie write with key '${o}'
+  JS-0050  [LOW           score= 2]  localStorage:redirectToAgentId
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage delete with key 'redirectToAgentId'
+  JS-0051  [LOW           score= 2]  cookie:${t}
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): cookie write with key '${t}'
+  JS-0052  [LOW           score= 2]  cookie:${e.key}
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): cookie write with key '${e.key}'
+  JS-0079  [LOW           score= 2]  indexedDB:db_flo
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): indexedDB open with key 'db_flo'
+  JS-0086  [LOW           score= 2]  localStorage:shortcutSendMode
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage write with key 'shortcutSendMode'
+  JS-0088  [LOW           score= 2]  localStorage:invitationCode
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'invitationCode'
+  JS-0109  [LOW           score= 2]  sessionStorage:needReload
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage delete with key 'needReload'
+  JS-0121  [LOW           score= 2]  localStorage:flowith.video-ops
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'flowith.video-ops'
+  JS-0147  [LOW           score= 2]  sessionStorage:previousPath
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage read with key 'previousPath'
+
+[diagnostics]
+  ! [incremental] reused 0 file(s), re-analyzed 673, dropped 0 removed
+
+(run `jscope explain <finding-id>` for the full evidence chain on any finding)

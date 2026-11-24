@@ -1,0 +1,7 @@
+
+$ noseyparker scan --datastore results/flowith.io/np-datastore results/flowith.io/chunks
+Scanned 23.48 MiB from 674 blobs in 0 seconds (261.58 MiB/s); 0/0 new matches
+
+Run the `report` command next to show finding details.
+
+[exit 0]

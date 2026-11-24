@@ -1,0 +1,5454 @@
+{
+  "source": "/home/runner/work/Android-url-ai/Android-url-ai/results/flowith.io/chunks",
+  "filesScanned": 673,
+  "totalEndpoints": 456,
+  "requestSpecs": [
+    {
+      "path": "; expires={EXPR}",
+      "method": "GET",
+      "pathParams": [
+        {
+          "name": "EXPR",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "${t}",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        },
+        {
+          "name": "${e.key}",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        }
+      ],
+      "confidence": 0.76
+    },
+    {
+      "path": "/knowledge-garden",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/apps/adult-character?entry=adult-tools",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/apps/adult-comic?entry=adult-tools",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/apps/adult-makeover?entry=adult-tools",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/apps/adult-story-studio?entry=adult-tools",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/apps/adult-video-continuation?entry=adult-tools",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/apps/adult-video?entry=adult-tools",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/apps/nsfw-image-editor?entry=adult-tools",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/apps/nsfw-video-editor?entry=adult-tools",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/tools/adult-ai-video-generator",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/tools/adult-character-generator",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/tools/adult-comic-generator",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/tools/adult-makeover",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/tools/adult-story-prompt-generator",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/tools/adult-video-continuation",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/tools/nsfw-ai-image-editor",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/tools/nsfw-ai-video-editor",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/conv/${e}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "e",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "https://api.dicebear.com/9.x/glass/svg?seed=EXPR",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "seed",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "🥠",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        },
+        {
+          "name": "🍪",
+          "type": "string",
+          "required": false,
+          "confidence": 0.8
+        }
+      ],
+      "confidence": 0.72
+    },
+    {
+      "path": "/api/knowledge-garden/${W}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "W",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/knowledge-garden/${W}/payment",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "W",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/7.x/lorelei/svg?seed=${e.author_id}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "e.author_id",
+          "type": "integer",
+          "required": true,
+          "confidence": 0.75
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.75
+    },
+    {
+      "path": "/ajax/libs/emojione/2.2.7/assets",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/ajax/libs/twemoji/12.0.4/2",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/cdn.jsdelivr.net/emojione/assets/4.0",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/cdnjs.cloudflare.com/ajax/libs/twemoji/12.0.4/2",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/emojione/assets/4.0",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "https://m1.openfpcdn.io/fingerprintjs/v4.6.2/npm-monitoring",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.85
+    },
+    {
+      "path": "/api-dashboard/api-keys",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/conv-guide",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/9.x/glass/svg?seed=",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/repo-detail/${e.id}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "e.id",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/npm/emoji-datasource-apple/img/apple/64",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/npm/emoji-datasource-facebook/img/facebook/64",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/npm/emoji-datasource-google/img/google/64",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/npm/emoji-datasource-twitter/img/twitter/64",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/image_edit/submit",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.5
+    },
+    {
+      "path": "/video_edit/lipsync/submit",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.5
+    },
+    {
+      "path": "/video_edit/motion-transfer/submit",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.5
+    },
+    {
+      "path": "/video_edit/remove-background/submit",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.5
+    },
+    {
+      "path": "/video_edit/submit",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.5
+    },
+    {
+      "path": "cc-bolt-{EXPR}",
+      "method": "GET",
+      "pathParams": [
+        {
+          "name": "EXPR",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.6399999999999999
+    },
+    {
+      "path": "/M ${dP(e)} L ${dP(t)}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "dP(e)",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "dP(t)",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/?key=${t.value}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "t.value",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/embed?url={url}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "url",
+          "type": "url",
+          "required": true,
+          "confidence": 0.8
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.8
+    },
+    {
+      "path": "/video-studio/model-logos/v1",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/creator-elements/official",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/blank?{EXPR}",
+      "method": "GET",
+      "pathParams": [
+        {
+          "name": "EXPR",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "{EXPR}",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6399999999999999
+    },
+    {
+      "path": "/user/bug-report",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/user/error-report",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/miniapps/nsfw/access",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/apps/${t}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "t",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/apps/${e.targetAppSlug}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "e.targetAppSlug",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/apps/${i.targetAppSlug}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "i.targetAppSlug",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/conv/${t.conversationId}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "t.conversationId",
+          "type": "integer",
+          "required": true,
+          "confidence": 0.75
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.75
+    },
+    {
+      "path": "/conv/${t}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "t",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/miniapps/nsfw/assets",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/home",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/ASCII85Decode",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/ASCII85Encode",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/ASCIIHexDecode",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/ASCIIHexEncode",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/FlateDecode",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/Annot",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/Btn",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/Ch",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/CIDSystemInfo",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/FlateEncode",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/Form",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/Image",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/Outlines",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/Pattern",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/Sig",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/Tx",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/Widget",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/XObject",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/Annots [",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/ArtBox [",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/BleedBox [",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/Border [0 0 0] /Dest [",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/CIDToGIDMap /Identity",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/ColorSpace /DeviceRGB",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/Contents (",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/Coords [",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/CreationDate (",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/CropBox [",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/DescendantFonts [",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/DW 1000",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/Extend [true true]",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/F1 0 Tf 0 g",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/Filter /Standard",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/FirstChar 32",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/Flags 96",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/Kids [",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/LastChar 255",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/Matrix [",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/MediaBox [",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/N /Print",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/OpenAction [3 0 R /Fit]",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/OpenAction [3 0 R /FitH null]",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/OpenAction [3 0 R /FitV null]",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/OpenAction [3 0 R /XYZ null null 1]",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/Ordering (",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/PageLayout /OneColumn",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/PageLayout /SinglePage",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/PageLayout /TwoColumnLeft",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/PageLayout /TwoColumnRight",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/Pattern cs",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/ProcSet [/PDF /Text /ImageB /ImageC /ImageI]",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/Producer (",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/Rect [",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/Registry (Adobe)",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/S /Named",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/Subtype /CIDFontType2",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/Subtype /Type0",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/Subtype /Type1",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/Supplement 0",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/TrimBox [",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/Tx BMC",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/Type /Action",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/Type /Catalog",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/Type /Font",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/Type /FontDescriptor",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/([^\\\\/]*)",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "PUSH",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "get",
+          "value": "(...t) => e.headers.get(...t)",
+          "isStatic": true,
+          "required": true
+        }
+      ],
+      "confidence": 0.7
+    },
+    {
+      "path": "/flowith-ai/canvas-cowork",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "https://challenges.cloudflare.com/turnstile/v0/api.js?onload=flowithTurnstileOnLoad&render=explicit",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "onload",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "render",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Request-Id",
+          "value": "{Et()}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.6399999999999999
+    },
+    {
+      "path": "/mail",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/miniapps/services",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/director-stage/kenney/v1",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/blank",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/chat/:conversationId",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "conversationId",
+          "type": "integer",
+          "required": true,
+          "confidence": 0.75
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.75
+    },
+    {
+      "path": "/compliance/:page",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "page",
+          "type": "integer",
+          "required": true,
+          "confidence": 0.8
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.8
+    },
+    {
+      "path": "/composer/:id",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "id",
+          "type": "integer",
+          "required": true,
+          "confidence": 0.8
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.8
+    },
+    {
+      "path": "/conv/:conversationId",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "conversationId",
+          "type": "integer",
+          "required": true,
+          "confidence": 0.75
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.75
+    },
+    {
+      "path": "/gallery/:recordId",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "recordId",
+          "type": "integer",
+          "required": true,
+          "confidence": 0.75
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.75
+    },
+    {
+      "path": "/garden-creator/:userId",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "userId",
+          "type": "integer",
+          "required": true,
+          "confidence": 0.75
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.75
+    },
+    {
+      "path": "/oracle-play/:conversationId",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "conversationId",
+          "type": "integer",
+          "required": true,
+          "confidence": 0.75
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.75
+    },
+    {
+      "path": "/project/:projectId",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "projectId",
+          "type": "integer",
+          "required": true,
+          "confidence": 0.75
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.75
+    },
+    {
+      "path": "/recipe-detail/:recipeId",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "recipeId",
+          "type": "integer",
+          "required": true,
+          "confidence": 0.75
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.75
+    },
+    {
+      "path": "/repo-detail/:repoId",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "repoId",
+          "type": "integer",
+          "required": true,
+          "confidence": 0.75
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.75
+    },
+    {
+      "path": "/view/:conversationId",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "conversationId",
+          "type": "integer",
+          "required": true,
+          "confidence": 0.75
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.75
+    },
+    {
+      "path": "{EXPR}/templates/{EXPR}",
+      "method": "GET",
+      "pathParams": [
+        {
+          "name": "EXPR",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "EXPR",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6399999999999999
+    },
+    {
+      "path": "{EXPR}/templates/{EXPR}",
+      "method": "DELETE",
+      "pathParams": [
+        {
+          "name": "EXPR",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "EXPR",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6799999999999999
+    },
+    {
+      "path": "/__dev/session-inject",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/auth/nsfw-popup",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/black-pass",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/black-pass/claim",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/churn-prevention",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/community",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/compliance/{page}",
+      "method": "GET",
+      "pathParams": [
+        {
+          "name": "page",
+          "type": "integer",
+          "required": true,
+          "confidence": 0.8
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.8
+    },
+    {
+      "path": "/composer/{id}",
+      "method": "GET",
+      "pathParams": [
+        {
+          "name": "id",
+          "type": "integer",
+          "required": true,
+          "confidence": 0.8
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.8
+    },
+    {
+      "path": "/connect-agent",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/conv-guide",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/enterprise",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/flo",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/flows",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/gallery",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/gallery/{recordId}",
+      "method": "GET",
+      "pathParams": [
+        {
+          "name": "recordId",
+          "type": "integer",
+          "required": true,
+          "confidence": 0.75
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.75
+    },
+    {
+      "path": "/garden-creator/{userId}",
+      "method": "GET",
+      "pathParams": [
+        {
+          "name": "userId",
+          "type": "integer",
+          "required": true,
+          "confidence": 0.75
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.75
+    },
+    {
+      "path": "/knowledge",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/knowledge-garden",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/knowledge-legacy",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/notifications",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/oracle-play/{conversationId}",
+      "method": "GET",
+      "pathParams": [
+        {
+          "name": "conversationId",
+          "type": "integer",
+          "required": true,
+          "confidence": 0.75
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.75
+    },
+    {
+      "path": "/order",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/plugins",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/pricing",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/project/{projectId}",
+      "method": "GET",
+      "pathParams": [
+        {
+          "name": "projectId",
+          "type": "integer",
+          "required": true,
+          "confidence": 0.75
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.75
+    },
+    {
+      "path": "/recipe-detail/{recipeId}",
+      "method": "GET",
+      "pathParams": [
+        {
+          "name": "recipeId",
+          "type": "integer",
+          "required": true,
+          "confidence": 0.75
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.75
+    },
+    {
+      "path": "/repo-detail/{repoId}",
+      "method": "GET",
+      "pathParams": [
+        {
+          "name": "repoId",
+          "type": "integer",
+          "required": true,
+          "confidence": 0.75
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.75
+    },
+    {
+      "path": "/skills",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/team/join",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/view/{conversationId}",
+      "method": "GET",
+      "pathParams": [
+        {
+          "name": "conversationId",
+          "type": "integer",
+          "required": true,
+          "confidence": 0.75
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.75
+    },
+    {
+      "path": "/*",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/${w}/:slug",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "w",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "slug",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/${w}/aspect",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "w",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/${w}/color-palette",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "w",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/${w}/service/:slug",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "w",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "slug",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/${w}/style-snap",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "w",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/knowledge-legacy${t}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "t",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/models",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/view/${e}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "e",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/flo#toolkit",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/project/${n}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "n",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/project/${t}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "t",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/blank",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/completion",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/runs/${encodeURIComponent(i)}/stream",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "encodeURIComponent(i)",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "Unknown error",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{i}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "[Kh]",
+          "value": "{Gh}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Authorization",
+          "value": "{t}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Accept",
+          "value": "{text/event-stream}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Last-Event-ID",
+          "value": "{H(this}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Request-Id",
+          "value": "{t}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "responseType",
+          "value": "{stream}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",responseType",
+          "value": "{stream}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "...t?.headers,authorization",
+          "value": "{n}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "bearer",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.9
+    },
+    {
+      "path": "Unknown error/time",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "{i}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "[Kh]",
+          "value": "{Gh}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Authorization",
+          "value": "{t}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Accept",
+          "value": "{text/event-stream}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Last-Event-ID",
+          "value": "{H(this}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Request-Id",
+          "value": "{t}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "responseType",
+          "value": "{stream}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",responseType",
+          "value": "{stream}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "...t?.headers,authorization",
+          "value": "{n}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "bearer",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.9
+    },
+    {
+      "path": "/auth/nsfw-popup",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/blank?",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/user/notifications/${e}/read",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "e",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/user/notifications/read-all${n?",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/chat/${e}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "e",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/draft-04/schema",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/draft-07/schema",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/draft/2020-12/schema",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/oracle_stream/create",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/oracle_stream/create_rerun",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/plugins/photoroom/api-key",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/user/notifications?${t.toString()}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "t.toString()",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/black-pass/claim",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/team/join",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/image_gen",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/invites/accept",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/invites/preview",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/memory/edits",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/oracle_stream/push_oracle_task",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/oracle_stream/rerun_process",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/ai/chat",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/ai/oracle-tool",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/ai/stt",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/ai/tts",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/coupon/spend",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/google/graph",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/migrate/transfer-conv-from-local-to-remote",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/oracle/like",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/oracle/node_types",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/payment/checkout",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/payment/orders",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/payment/provider_history",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/payment/stripe_cancel_scheduled_order",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/payment/stripe_portal",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/payment/sub_types",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/payment/topup/settle",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/pricing/embed",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/api/generate-content",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/docs/api-reference/chat/create",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/docs/api-reference/images/create",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/en/api/messages",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/v1/chat/completions",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/zh/models/alibaba/happyhorse-1.1/text-to-video",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/pricing",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/billing/auto-topup",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/enterprise/claude",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/enterprise/v1",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/keys/${e}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "e",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/keys/${e}/reveal",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "e",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/usage/today",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/billing/checkout",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/billing/setup",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/enterprise",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/file/media-preview",
+      "method": "POST",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/kg/general/seed_and_token_count",
+      "method": "POST",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/miniapps/nsfw/assets",
+      "method": "DELETE",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/miniapps/nsfw/enroll",
+      "method": "POST",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/miniapps/nsfw/preference",
+      "method": "PATCH",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/kling",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/connect-agent",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "{EXPR}/?kp-sharing={EXPR}",
+      "method": "GET",
+      "pathParams": [
+        {
+          "name": "EXPR",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "EXPR",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "kp-sharing",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "{await _.fetchSession()}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6399999999999999
+    },
+    {
+      "path": "https://chromewebstore.google.com/detail/flowith-web-clipper/jkcpodicdboheakkkoblnflccfihcblb",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "{await _.fetchSession()}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.7
+    },
+    {
+      "path": "/kg/project/create",
+      "method": "POST",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/kg/project/generate_cover",
+      "method": "POST",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/kg/project/previous_version?repo_id=",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/kg/project/upload_cover",
+      "method": "POST",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/mjs/pdf.worker.min-GB3t0DcA.mjs",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/detail/flowith-web-clipper/jkcpodicdboheakkkoblnflccfihcblb",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/visitor/login",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-API-Key",
+          "value": "{v}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Nonce",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Signature",
+          "value": "{f}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Timestamp",
+          "value": "{String(n)}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "api-key",
+        "name": "X-API-Key",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/visitor/order",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-API-Key",
+          "value": "{v}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Nonce",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Signature",
+          "value": "{f}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Timestamp",
+          "value": "{String(n)}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "api-key",
+        "name": "X-API-Key",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/visitor/refund",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-API-Key",
+          "value": "{v}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Nonce",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Signature",
+          "value": "{f}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Timestamp",
+          "value": "{String(n)}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "api-key",
+        "name": "X-API-Key",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/visitor/register",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-API-Key",
+          "value": "{v}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Nonce",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Signature",
+          "value": "{f}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Timestamp",
+          "value": "{String(n)}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "api-key",
+        "name": "X-API-Key",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/visitor/track",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-API-Key",
+          "value": "{v}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Nonce",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Signature",
+          "value": "{f}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Timestamp",
+          "value": "{String(n)}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "api-key",
+        "name": "X-API-Key",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/visitor/use",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-API-Key",
+          "value": "{v}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Nonce",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Signature",
+          "value": "{f}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Timestamp",
+          "value": "{String(n)}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "api-key",
+        "name": "X-API-Key",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/visitor/win-back",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-API-Key",
+          "value": "{v}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Nonce",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Signature",
+          "value": "{f}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Timestamp",
+          "value": "{String(n)}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "api-key",
+        "name": "X-API-Key",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "https://api.cakegrowth.cn/v1",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-API-Key",
+          "value": "{v}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Nonce",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Signature",
+          "value": "{f}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Timestamp",
+          "value": "{String(n)}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "api-key",
+        "name": "X-API-Key",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "https://cg-api-cn-test.ai-rich.cn/v1",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Accept",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-API-Key",
+          "value": "{v}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Nonce",
+          "value": "{r}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Signature",
+          "value": "{f}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "X-Timestamp",
+          "value": "{String(n)}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "api-key",
+        "name": "X-API-Key",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.5
+    },
+    {
+      "path": "/v1",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/css2?family=Inter:wght@300;400;500;600;700&display=swap",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "wght",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/css2?family=Inter:wght@400;500;600&display=swap",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "wght",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "{EXPR}/models?logo=1",
+      "method": "GET",
+      "pathParams": [
+        {
+          "name": "EXPR",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [
+        {
+          "name": "logo",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "bodyParams": [],
+      "confidence": 0.72
+    },
+    {
+      "path": "kt1ojko8wwe8",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "{e}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.9
+    },
+    {
+      "path": "/conv/${n.conversationId}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "n.conversationId",
+          "type": "integer",
+          "required": true,
+          "confidence": 0.75
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.75
+    },
+    {
+      "path": "base",
+      "method": "POST",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.7999999999999999
+    },
+    {
+      "path": "base",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.9
+    },
+    {
+      "path": "font-weight: {EXPR};",
+      "method": "POST",
+      "pathParams": [
+        {
+          "name": "EXPR",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6799999999999999
+    },
+    {
+      "path": "url(data:{EXPR};base64,{EXPR});",
+      "method": "GET",
+      "pathParams": [
+        {
+          "name": "EXPR",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "EXPR",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "auth": {
+        "type": "basic",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.72
+    },
+    {
+      "path": "/html/head/title/text()",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/black_pass_cards",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/links/claim",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/links/preview",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/static-site/v/11261bae7d072970/_astro/fashion-studio-supplied/runway.webp?v=11261bae7d072970",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/static-site/v/155298d3bdf52fe9/_astro/fashion-studio-supplied/women-perfume.webp?v=155298d3bdf52fe9",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/static-site/v/1928ad67e3af3243/_astro/fashion-studio-supplied/men-perfume.webp?v=1928ad67e3af3243",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/static-site/v/6ebbfc91743d1359/_astro/fashion-studio-supplied/selfie-woman.webp?v=6ebbfc91743d1359",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/static-site/v/98ff0a3f925d80da/_astro/fashion-studio-supplied/selfie-man.webp?v=98ff0a3f925d80da",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/static-site/v/e644496af61aa193/_astro/fashion-studio-supplied/red-carpet.webp?v=e644496af61aa193",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/blank?playbook=cinematic",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/blank?playbook=high-endperfumead",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/blank?playbook=model",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/blank?playbook=parfum_homme",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/accept-discount",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/status",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/blank?entry=adult-tools",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/auth/nsfw-popup/",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/project/${n.id}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "n.id",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/project/${e}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "e",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/user",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/creator",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/terms/api-services-user-data-policy",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/workspace/workspace-api-user-data-developer-policy",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/connections",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "{EXPR}/linear-gradient(to bottom, black 0%, black 100%){EXPR}",
+      "method": "GET",
+      "pathParams": [
+        {
+          "name": "EXPR",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "EXPR",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6399999999999999
+    },
+    {
+      "path": "linear-gradient(to bottom, black 0%, black 100%)",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/gallery/${e}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "e",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/gallery",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/cdn-cgi",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "https://static-content.flowith.net/video-studio/sample-film/v1/EXPR",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/video-studio/sample-film/v1",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "{EXPR}/api/send",
+      "method": "GET",
+      "pathParams": [
+        {
+          "name": "EXPR",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "x-umami-cache",
+          "value": "{z}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.74
+    },
+    {
+      "path": "/gemini-proxy-go",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/gemini-proxy-go-temp",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/file/store",
+      "method": "POST",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/></a:lstStyle>",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "lstStyle",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/></a:solidFill>",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "solidFill",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/><a:round/></a:ln>",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "round",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "ln",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/a/b",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/a/i",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/ppt/charts/chart",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "<a:effectLst>",
+      "method": "GET",
+      "pathParams": [
+        {
+          "name": "effectLst",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6399999999999999
+    },
+    {
+      "path": "/officeDocument/2006/relationships/extended-properties",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/package/2006/relationships/metadata/core-properties",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/dc/dcmitype",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/dc/elements/1.1",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/dc/terms",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/drawingml/2006/chart",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/drawingml/2006/main",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/drawingml/2006/table",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/markup-compatibility/2006",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/office/thememl/2012/main",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/officeDocument/2006/extended-properties",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/package/2006/content-types",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/package/2006/metadata/core-properties",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/ppt/slides/slide",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/presentationml/2006/main",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/spreadsheetml/2006/main",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/mcp",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/discord/invite-link",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/company/flowith",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/invite/g95B77xbpD",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/advertiser-advertiser-info/Mangata-Ltd.brand",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/affiliate-program",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/flowith",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/miniapps/covers/2611r",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/miniapps/covers/nsfw-2026-09",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/static-site/tools/adult-ai-video-generator/templates",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/static-site/tools/adult-character-generator",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/static-site/tools/adult-comic-generator",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/plugins",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/skills",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/payment/old-annual-unlimited-upgrade/confirm",
+      "method": "POST",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/payment/old-annual-unlimited-upgrade/status",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/invitation/access-new-version",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/conv",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/compliance/privacy-policy",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/compliance/tos",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/?preset=${e}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "e",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/knowledge",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "render",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "content-type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.6399999999999999
+    },
+    {
+      "path": "/turnstile/v0/api.js?render=explicit",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/conv/${e.conversationId}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "e.conversationId",
+          "type": "integer",
+          "required": true,
+          "confidence": 0.75
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.75
+    },
+    {
+      "path": "<!DOCTYPE html>\n<html lang=\"zh-CN\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>{EXPR}</title>\n  <style>\n    body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans CJK SC', 'Segoe UI', Roboto, sans-serif; max-width: 800px; margin: 0 auto; padding: 2rem; line-height: 1.8; color: #333; }\n    pre { background: #f5f5f5; padding: 1rem; border-radius: 8px; overflow-x: auto; }\n    code { background: #f5f5f5; padding: 0.2rem 0.4rem; border-radius: 4px; font-family: 'Monaco', 'Menlo', 'Consolas', monospace; }\n    pre code { background: none; padding: 0; }\n    blockquote { border-left: 4px solid #ddd; margin: 0; padding-left: 1rem; color: #666; }\n    img { max-width: 100%; height: auto; }\n    table { border-collapse: collapse; width: 100%; }\n    th, td { border: 1px solid #ddd; padding: 0.5rem; text-align: left; }\n    th { background: #f5f5f5; }\n    @media print { body { padding: 0; } }\n  </style>\n</head>\n<body>\n{EXPR}\n<script>\n  window.onload = function() {\n    setTimeout(function() {\n      window.print();\n      window.onafterprint = function() { window.close(); };\n    }, 300);\n  };\n</script>\n</body>\n</html>",
+      "method": "GET",
+      "pathParams": [
+        {
+          "name": "EXPR",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": " font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans CJK SC', 'Segoe UI', Roboto, sans-serif; max-width: 800px; margin: 0 auto; padding: 2rem; line-height: 1.8; color: #333; ",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": " background: #f5f5f5; padding: 1rem; border-radius: 8px; overflow-x: auto; ",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": " background: #f5f5f5; padding: 0.2rem 0.4rem; border-radius: 4px; font-family: 'Monaco', 'Menlo', 'Consolas', monospace; ",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": " background: none; padding: 0; ",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": " border-left: 4px solid #ddd; margin: 0; padding-left: 1rem; color: #666; ",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": " max-width: 100%; height: auto; ",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": " border-collapse: collapse; width: 100%; ",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": " border: 1px solid #ddd; padding: 0.5rem; text-align: left; ",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": " background: #f5f5f5; ",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": " body { padding: 0; ",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "EXPR",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "\n    setTimeout(function() {\n      window.print();\n      window.onafterprint = function() { window.close(); ",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6399999999999999
+    },
+    {
+      "path": "/canvas-agent/film-plan/prepare",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "`Bearer ${l",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "Accept",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "bearer",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.9
+    },
+    {
+      "path": "correct any garbled, misspelled or malformed lettering into clean, legible text that makes sense in context, in the same style and place./proxy/download-pptx/EXPR",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "`Bearer ${l",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "Accept",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "bearer",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.7
+    },
+    {
+      "path": "https://api.liblib.tv/api/community/project/template/detail?projectTemplateUuid=EXPR",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "projectTemplateUuid",
+          "type": "uuid",
+          "required": true,
+          "confidence": 0.75
+        }
+      ],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "`Bearer ${l",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "Accept",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "bearer",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.8300000000000001
+    },
+    {
+      "path": "https://content.flo.host/download/{EXPR}:{EXPR}",
+      "method": "GET",
+      "pathParams": [
+        {
+          "name": "EXPR",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "EXPR",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": ",Authorization",
+          "value": "`Bearer ${l",
+          "isStatic": true,
+          "required": true
+        },
+        {
+          "name": "Accept",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "bearer",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.6399999999999999
+    },
+    {
+      "path": "/creation/process?id=%E2%80%A6",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/video-studio/shot-language/v1",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/models?logo=1&desc=1",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/payment/antom_subscription",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/payment/stripe_subscription",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "https://s2s.adjust.com/event",
+      "method": "POST",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/x-www-form-urlencoded}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.7999999999999999
+    },
+    {
+      "path": "https://s2s.adjust.com/event",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/x-www-form-urlencoded}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.9
+    },
+    {
+      "path": "/event",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/knowledge?",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/view",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/cdn-cgi/challenge-platform/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "{application/json}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.5
+    },
+    {
+      "path": "/cdn-cgi/challenge-platform",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/runs/${e}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "e",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/canvas-agent/tasks",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "<chat-canvas-card data-ref=\"{EXPR}\" data-label=\"{EXPR}\"></chat-canvas-card>",
+      "method": "GET",
+      "pathParams": [
+        {
+          "name": "EXPR",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "EXPR",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6399999999999999
+    },
+    {
+      "path": "<chat-canvas-card data-ref=\"{EXPR}\" data-label=\"{EXPR}\"></chat-canvas-card>",
+      "method": "DELETE",
+      "pathParams": [
+        {
+          "name": "EXPR",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "EXPR",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6799999999999999
+    },
+    {
+      "path": "/flo#memory",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/video-studio/skill-covers/v1",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "https://content.flo.host/download/EXPR",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/flo",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "https://fonts.googleapis.com/css2?family=Splash&display=swap",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "family",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        },
+        {
+          "name": "display",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "bodyParams": [],
+      "confidence": 0.6399999999999999
+    },
+    {
+      "path": "/css2?family=Splash&display=swap",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/static-site/v",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/object/upload/sign/${o}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "o",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/api/broadcast",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/iceberg",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/vector",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/auth",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/auth?",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/auth#",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/tools/ready-to-use-templates",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/home",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "cookieParams": [
+        {
+          "name": "${o}",
+          "type": "integer",
+          "required": false,
+          "confidence": 0.9
+        },
+        {
+          "name": "fl_logged_in",
+          "type": "string",
+          "required": false,
+          "confidence": 0.7
+        }
+      ],
+      "confidence": 0.76
+    },
+    {
+      "path": "/keyframe",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/tools/adult-ai-image-editor",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/tools/adult-ai-video-generator",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/tools/adult-character-generator",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/tools/adult-comic-generator",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/tools/adult-makeover",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/tools/adult-story-prompt-generator",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/tools/adult-video-continuation",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/tools/nsfw-ai-image-editor",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/tools/nsfw-ai-video-editor",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.5
+    },
+    {
+      "path": "/title:${a}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "a",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "https://flowith.io/blank",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "`Bearer ${t",
+          "isStatic": true,
+          "required": true
+        }
+      ],
+      "auth": {
+        "type": "bearer",
+        "name": "Authorization",
+        "location": "header",
+        "required": true
+      },
+      "confidence": 0.7
+    },
+    {
+      "path": "/legacy",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/?utm_source=attribution",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/storage",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/file/farm",
+      "method": "POST",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/conv/",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Cache-Control",
+          "value": "{no-cache}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Pragma",
+          "value": "{no-cache}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.7
+    },
+    {
+      "path": "/conv/EXPR",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Cache-Control",
+          "value": "{no-cache}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Pragma",
+          "value": "{no-cache}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.7
+    },
+    {
+      "path": "/deploy-meta.json?t=EXPR",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "t",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6,
+          "constraints": {
+            "minLength": 4,
+            "maxLength": 4,
+            "pattern": "^@\\([^\\\\()[\\]{}|]+\\)$",
+            "confidence": 0.7
+          }
+        }
+      ],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Cache-Control",
+          "value": "{no-cache}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Pragma",
+          "value": "{no-cache}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.72
+    },
+    {
+      "path": "https://lobehub.com/icons/flowith",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "headers": [
+        {
+          "name": "Cache-Control",
+          "value": "{no-cache}",
+          "isStatic": false,
+          "required": true
+        },
+        {
+          "name": "Pragma",
+          "value": "{no-cache}",
+          "isStatic": false,
+          "required": true
+        }
+      ],
+      "confidence": 0.7
+    },
+    {
+      "path": "/icons/flowith",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/project/${e.id}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "e.id",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/project/${r.id}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "r.id",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/project/${t.id}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "t.id",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/conv/${a}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "a",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/conv/${e.convId}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "e.convId",
+          "type": "integer",
+          "required": true,
+          "confidence": 0.75
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.75
+    },
+    {
+      "path": "/conv/${o.id}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "o.id",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/conv/${r}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "r",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/login",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/profile",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/project/${r}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "r",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/order",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/project",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/4cbc3a19-411e-42eb-94f8-df3aeb0652c5",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/chat",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/churn-prevention",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/composer",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/compliance/terms-of-service",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/#${e}",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "e",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    },
+    {
+      "path": "/ảnh",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/Sek.",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/xA0clip de 5xA0s",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/xA0image",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/xA0s",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/guest/paid",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/Annot",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/Btn",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/Ch",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/FlateEncode",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/Sig",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/Tx",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/Widget",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "1.3file=&downloadName=EXPR",
+      "method": "GET",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/canvas-agent/code-video",
+      "method": "UNKNOWN",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.7
+    },
+    {
+      "path": "/jobs/${e}/cancel",
+      "method": "UNKNOWN",
+      "pathParams": [
+        {
+          "name": "e",
+          "type": "string",
+          "required": true,
+          "confidence": 0.6
+        }
+      ],
+      "queryParams": [],
+      "bodyParams": [],
+      "confidence": 0.6
+    }
+  ],
+  "stats": {
+    "totalParams": 129,
+    "endpointsWithParams": 95,
+    "byLocation": {
+      "path": 112,
+      "query": 11,
+      "body": 0,
+      "cookie": 6
+    }
+  }
+}

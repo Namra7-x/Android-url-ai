@@ -1,0 +1,4 @@
+
+$ noseyparker report --datastore results/flowith.io/np-datastore --format jsonl
+
+[exit 0] -> results/flowith.io/noseyparker.jsonl
