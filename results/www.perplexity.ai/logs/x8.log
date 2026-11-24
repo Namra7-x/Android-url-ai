@@ -1,0 +1,4 @@
+
+$ x8 -u https://www.perplexity.ai/ -w results/www.perplexity.ai/params.txt
+
+[exit 0] -> results/www.perplexity.ai/x8.txt

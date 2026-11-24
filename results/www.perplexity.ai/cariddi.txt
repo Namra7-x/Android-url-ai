@@ -1,0 +1,7 @@
+https://www.perplexity.ai/sitemap.xml
+https://www.perplexity.ai/
+https://www.perplexity.ai/robots.txt
+https://www.perplexity.ai/favicon.svg
+https://www.perplexity.ai/favicon.ico
+https://www.perplexity.ai/favicon.png
+https://www.perplexity.ai/apple-touch-icon.png

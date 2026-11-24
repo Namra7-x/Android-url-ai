@@ -1,0 +1,14 @@
+{"url": "https://challenges.cloudflare.com", "method": "DELETE", "status_code": 405, "source": "method"}
+{"url": "https://challenges.cloudflare.com", "method": "OPTIONS", "status_code": 405, "source": "method"}
+{"url": "https://challenges.cloudflare.com", "method": "PUT", "status_code": 405, "source": "method"}
+{"url": "https://perplexity.ai/cdn-cgi/challenge-platform/h/b/orchestrate/chl_page/v1?ray=a5faa8156aa8883b", "method": "PUT", "status_code": 405, "source": "method"}
+{"url": "https://challenges.cloudflare.com", "method": "POST", "status_code": 405, "source": "method"}
+{"url": "https://perplexity.ai/cdn-cgi/challenge-platform/h/b/orchestrate/chl_page/v1?ray=a5faa8156aa8883b", "method": "PATCH", "status_code": 405, "source": "method"}
+{"url": "https://perplexity.ai/cdn-cgi/challenge-platform/h/b/orchestrate/chl_page/v1?ray=a5faa8156aa8883b", "method": "OPTIONS", "status_code": 405, "source": "method"}
+{"url": "https://perplexity.ai/cdn-cgi/challenge-platform/h/b/orchestrate/chl_page/v1?ray=a5faa8156aa8883b", "method": "POST", "status_code": 405, "source": "method"}
+{"url": "https://perplexity.ai/cdn-cgi/challenge-platform/h/b/orchestrate/chl_page/v1?ray=a5faa8156aa8883b", "method": "DELETE", "status_code": 405, "source": "method"}
+{"url": "https://challenges.cloudflare.com", "method": "GET", "status_code": 200, "source": "method"}
+{"url": "https://challenges.cloudflare.com", "method": "PATCH", "status_code": 405, "source": "method"}
+{"url": "https://challenges.cloudflare.com", "method": "HEAD", "status_code": 200, "source": "method"}
+{"url": "https://perplexity.ai/cdn-cgi/challenge-platform/h/b/orchestrate/chl_page/v1?ray=a5faa8156aa8883b", "method": "HEAD", "status_code": 200, "source": "method"}
+{"url": "https://perplexity.ai/cdn-cgi/challenge-platform/h/b/orchestrate/chl_page/v1?ray=a5faa8156aa8883b", "method": "GET", "status_code": 200, "source": "method"}

@@ -1,0 +1,6 @@
+{"level":"info-0","ts":"2026-11-24T19:02:33Z","logger":"trufflehog","msg":"running source","source_name":"trufflehog - filesystem","source_type":"SOURCE_TYPE_FILESYSTEM","source_id":1,"job_id":1,"source_manager_worker_id":"xqaFg","with_units":true}
+{"level":"info-0","ts":"2026-11-24T19:02:33Z","logger":"trufflehog","msg":"finished scanning","chunks":1406,"bytes":18541308,"verified_secrets":0,"unverified_secrets":0,"scan_duration":"185.178779ms","trufflehog_version":"3.100.0","verification_caching":{"Hits":0,"Misses":0,"HitsWasted":0,"AttemptsSaved":0,"VerificationTimeSpentMS":0}}
+
+$ trufflehog filesystem results/www.perplexity.ai --json --no-update
+
+[exit 0] -> results/www.perplexity.ai/secrets.jsonl

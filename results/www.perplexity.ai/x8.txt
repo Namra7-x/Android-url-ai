@@ -1,0 +1,5 @@
+urls:         https://www.perplexity.ai/
+methods:      GET
+wordlist len: 2
+
+

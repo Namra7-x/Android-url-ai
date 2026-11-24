@@ -1,0 +1,4 @@
+
+$ subfinder -d www.perplexity.ai -all -recursive -silent -o results/www.perplexity.ai/subfinder.txt
+
+[exit 0]
