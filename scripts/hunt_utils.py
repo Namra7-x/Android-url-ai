@@ -198,7 +198,9 @@ def normalize_url(raw: str, base: str | None = None) -> str | None:
     s = raw.strip().strip("\"'`<>")
     if not s or s.startswith(("data:", "javascript:", "mailto:", "tel:", "blob:", "#")):
         return None
-    if any(bad in s for bad in ("\n", "\r", "\t", " ", "\\u003c", "%5Cu003c", "<", ">")):
+    if any(bad in s for bad in ("\n", "\r", "\t", " ", "\\u003c", "%5Cu003c", "<", ">", "\\", "*", "{", "}", "|", "^")):
+        return None
+    if s.endswith(("/$", "/*")):
         return None
     if s.startswith("//"):
         s = "https:" + s
@@ -363,6 +365,40 @@ def _read_capped_text(path: Path, max_bytes: int = 8 * 1024 * 1024) -> str:
         return ""
 
 
+def _pgid_rss_mb(pgid: int) -> float:
+    """Best-effort physical RSS (MB) sum for a Linux process group via /proc."""
+    if os.name != "posix":
+        return 0.0
+    total_kb = 0
+    proc_root = Path("/proc")
+    if not proc_root.is_dir():
+        return 0.0
+    try:
+        for entry in proc_root.iterdir():
+            if not entry.name.isdigit():
+                continue
+            try:
+                stat_txt = (entry / "stat").read_text(encoding="utf-8", errors="replace")
+                rparen = stat_txt.rfind(")")
+                if rparen == -1:
+                    continue
+                fields = stat_txt[rparen + 2:].split()
+                # fields[2] is pgrp (index 4 in full stat -> index 2 after ') ')
+                if len(fields) > 2 and int(fields[2]) == pgid:
+                    status_txt = (entry / "status").read_text(encoding="utf-8", errors="replace")
+                    for line in status_txt.splitlines():
+                        if line.startswith("VmRSS:"):
+                            parts = line.split()
+                            if len(parts) >= 2 and parts[1].isdigit():
+                                total_kb += int(parts[1])
+                            break
+            except OSError:
+                continue
+    except OSError:
+        return 0.0
+    return total_kb / 1024.0
+
+
 def run_cmd(
     cmd: list[str],
     log_path: Path,
@@ -372,13 +408,16 @@ def run_cmd(
     env: dict[str, str] | None = None,
     stop_event: threading.Event | None = None,
     read_stdout: bool = True,
+    max_rss_mb: int = 2400,
 ) -> tuple[int, str]:
-    """Run subprocess in its own process group with file-backed output and guaranteed kill."""
+    """Run subprocess in its own process group with file-backed output, RSS cap, and guaranteed kill."""
     log_path.parent.mkdir(parents=True, exist_ok=True)
     if stop_event is not None and stop_event.is_set():
         return 124, ""
 
     run_env = os.environ.copy()
+    run_env.setdefault("GOMEMLIMIT", "1400MiB")
+    run_env.setdefault("GOGC", "50")
     if env:
         run_env.update(env)
 
@@ -399,6 +438,8 @@ def run_cmd(
 
     proc: subprocess.Popen[bytes] | None = None
     timed_out = False
+    oom_killed = False
+    rss_peak_mb = 0.0
     try:
         popen_kwargs: dict[str, Any] = {
             "cwd": str(cwd) if cwd else None,
@@ -414,9 +455,18 @@ def run_cmd(
             with _ACTIVE_PROCS_LOCK:
                 _ACTIVE_PROCS.add(proc)
 
+            pgid = proc.pid
+            if os.name == "posix":
+                try:
+                    pgid = os.getpgid(proc.pid)
+                except OSError:
+                    pgid = proc.pid
+
             deadline = time.monotonic() + max(1, int(timeout))
+            last_rss_check = 0.0
             while proc.poll() is None:
-                if time.monotonic() >= deadline or (stop_event is not None and stop_event.is_set()):
+                now = time.monotonic()
+                if now >= deadline or (stop_event is not None and stop_event.is_set()):
                     timed_out = True
                     _terminate_proc_tree(proc)
                     try:
@@ -424,13 +474,28 @@ def run_cmd(
                     except subprocess.TimeoutExpired:
                         pass
                     break
-                time.sleep(min(0.4, max(0.05, deadline - time.monotonic())))
+                if max_rss_mb > 0 and os.name == "posix" and (now - last_rss_check) >= 1.5:
+                    last_rss_check = now
+                    rss_mb = _pgid_rss_mb(pgid)
+                    if rss_mb > rss_peak_mb:
+                        rss_peak_mb = rss_mb
+                    if rss_mb > max_rss_mb:
+                        oom_killed = True
+                        _terminate_proc_tree(proc)
+                        try:
+                            proc.wait(timeout=1.5)
+                        except subprocess.TimeoutExpired:
+                            pass
+                        break
+                time.sleep(min(0.4, max(0.05, deadline - now)))
 
-        rc = 124 if timed_out else int(proc.returncode or 0)
+        rc = 137 if oom_killed else (124 if timed_out else int(proc.returncode or 0))
         out_text = _read_capped_text(out_target) if read_stdout else ""
         err_text = _read_capped_text(tmp_err, max_bytes=256 * 1024)
         with log_path.open("a", encoding="utf-8") as lf:
-            if timed_out:
+            if oom_killed:
+                lf.write(f"$ {' '.join(cmd)}\nKILLED: process group RSS {rss_peak_mb:.0f}MB > {max_rss_mb}MB cap\n")
+            elif timed_out:
                 lf.write(f"$ {' '.join(cmd)}\nTIMEOUT after {timeout}s\n")
             else:
                 lf.write(f"$ {' '.join(cmd)}\nexit={rc}\n")
@@ -458,7 +523,16 @@ def run_cmd(
                     pass
 
 
-NOISE_QUERY_RE = re.compile(r"(?:^|&)(?:utm_[^=]+|_rsc|_bhlid|fbclid|gclid|mc_cid|mc_eid|ref|spm|hsenc|_hsmi)=", re.I)
+NOISE_QUERY_RE = re.compile(r"(?:^|&)(?:utm_[^=]+|_rsc|_bhlid|fbclid|gclid|mc_cid|mc_eid|ref|spm|hsenc|_hsmi|dd-api-key|dd-request-id|batch_time)=", re.I)
+NOISE_PATH_RE = re.compile(
+    r"(?:/cdn-cgi/(?:challenge-platform|scripts|images|l/email-protection)|"
+    r"/api/v\d+/rum\b|/event_logging/|/_next/image\b)",
+    re.I,
+)
+
+
+def is_noise_url(url: str) -> bool:
+    return bool(NOISE_PATH_RE.search(url or ""))
 
 
 def prioritize_probe_urls(
@@ -467,8 +541,11 @@ def prioritize_probe_urls(
     max_probe: int = 3000,
 ) -> list[str]:
     """Rank candidate URLs so AI/API/JS/live endpoints are probed by httpx first."""
-    if max_probe <= 0 or len(candidate_urls) <= max_probe:
-        return candidate_urls
+    cleaned = [u for u in candidate_urls if not is_noise_url(u)]
+    if not cleaned:
+        cleaned = candidate_urls
+    if max_probe <= 0 or len(cleaned) <= max_probe:
+        return cleaned
 
     high_src = {"wellknown_200", "wellknown_401", "wellknown_403", "scrapling", "scrapling_js", "scrapling_xhr", "katana_p1", "katana_p2", "jsluice", "xnLinkFinder", "base_html", "dnsx"}
 
@@ -488,7 +565,7 @@ def prioritize_probe_urls(
             s -= 20
         return (-s, len(u), u)
 
-    ranked = sorted(candidate_urls, key=score_key)
+    ranked = sorted(cleaned, key=score_key)
     return ranked[:max_probe]
 
 
@@ -557,7 +634,7 @@ def build_ai_feed(
 
     for r in win_rows + blocked_rows + all_routes:
         u = str(r.get("url") or "")
-        if not u or u in seen_ai:
+        if not u or u in seen_ai or is_noise_url(u) or r.get("soft_404"):
             continue
         if AI_ROUTE_RE.search(u):
             seen_ai.add(u)
@@ -604,6 +681,25 @@ def build_ai_feed(
             "file": s.get("file", ""),
         })
 
+    seen_nuc: set[tuple[str, str, str]] = set()
+    dedup_nuclei: list[dict[str, Any]] = []
+    for n in nuclei_rows:
+        tid = str(n.get("template-id") or "?")
+        host = str(n.get("host") or "")
+        matcher = str(n.get("matcher-name") or "")
+        key = (tid, host, matcher)
+        if key in seen_nuc:
+            continue
+        seen_nuc.add(key)
+        dedup_nuclei.append(
+            {
+                "severity": (n.get("info") or {}).get("severity", "?"),
+                "template_id": tid,
+                "host": host,
+                "matched_at": n.get("matched-at", ""),
+            }
+        )
+
     feed = {
         "target": base_url,
         "host": exact_host,
@@ -619,7 +715,7 @@ def build_ai_feed(
             "real_vhosts": len(vhosts_real),
             "accessible_200": len(win_rows),
             "exists_blocked": len(blocked_rows),
-            "nuclei_findings": len(nuclei_rows),
+            "nuclei_findings": len(dedup_nuclei),
             "collapsed_patterns": len(collapsed_patterns),
         },
         "secrets": compact_secrets[:100],
@@ -637,15 +733,7 @@ def build_ai_feed(
             "vhosts_real": vhosts_real[:100],
         },
         "route_patterns": collapsed_patterns,
-        "nuclei_findings": [
-            {
-                "severity": (n.get("info") or {}).get("severity", "?"),
-                "template_id": n.get("template-id", "?"),
-                "host": n.get("host", ""),
-                "matched_at": n.get("matched-at", ""),
-            }
-            for n in nuclei_rows[:100]
-        ],
+        "nuclei_findings": dedup_nuclei[:100],
     }
     (target_dir / "ai_feed.json").write_text(json.dumps(feed, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     return feed

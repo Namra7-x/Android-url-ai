@@ -1,6 +1,6 @@
 # Hunt Results
 
-Generated: 2026-11-27T15:07:52Z
+Generated: 2026-11-27T16:23:11Z
 
 Open a target's **REPORT.md** for the human summary or **ai_feed.json** for compact LLM-ready leads.
 

@@ -38,7 +38,7 @@ LINK_MODULE_RE = re.compile(r"<link[^>]+href=[\"'`]([^\"'`]+\.(?:js|mjs|json))[\
 SOURCEMAP_COMMENT_RE = re.compile(r"//#\s*sourceMappingURL=([^\s]+)")
 JS_REF_RE = re.compile(r"[\"'`]((?:https?://[^\"'`\s]+|/[A-Za-z0-9_./-]+\.(?:js|mjs|json|map)(?:\?[^\"'`\s]*)?))[\"'`]")
 FEATURE_FLAG_RE = re.compile(
-    r"(?:feature[-_]?[fF]lag[s]?|experiment[s]?|role|isAdmin|enable[A-Z][A-Za-z0-9_]+|use[A-Z][A-Za-z0-9_]*Flag)\s*[:=]\s*[\"'`]?([A-Za-z0-9_.:-]{2,64})",
+    r"(?:feature[-_]?[fF]lag[s]?|experiment[s]?|user[_-]?role|isAdmin|isStaff|hasPermission|enable[A-Z][A-Za-z0-9_]+|use[A-Z][A-Za-z0-9_]*Flag)\s*[:=]\s*[\"'`]?([A-Za-z0-9_.:-]{2,64})",
 )
 MODEL_CANDIDATE_RE = re.compile(
     r"[\"'`]((?:claude|gemini|gpt|o[134]|devin|deepseek|qwen|llama|grok|sonar|veo|imagen|chirp|hydrogen|sonnet|opus|haiku)[-_a-z0-9.]{1,48})[\"'`]",
@@ -78,7 +78,9 @@ class HuntRunner:
         timeout: int = 120,
         stdout_path: Path | None = None,
         read_stdout: bool = True,
+        max_rss_mb: int | None = None,
     ) -> tuple[int, str]:
+        rss_cap = int(max_rss_mb if max_rss_mb is not None else self.settings.get("max_child_rss_mb", 2200))
         return hu.run_cmd(
             cmd,
             log_path,
@@ -86,6 +88,7 @@ class HuntRunner:
             stdout_path=stdout_path,
             stop_event=self.timer.stop_event,
             read_stdout=read_stdout,
+            max_rss_mb=rss_cap,
         )
 
     def enabled(self, key: str) -> bool:
@@ -225,12 +228,12 @@ class HuntRunner:
         return live_subs
 
     def _step_scrapling(self, wave_deadline: float) -> None:
-        if not self.enabled("enable_scrapling"):
+        if not self.enabled("enable_scrapling") or self.timer.stopped():
             self.record_status("scrapling", 0, 0.0, "disabled")
             return
         t0 = time.monotonic()
-        cap = self.timer.cap(self.settings.get("scrapling_timeout", 120), wave_deadline)
-        max_pages = int(self.settings.get("scrapling_max_pages", 25))
+        cap = self.timer.cap(self.settings.get("scrapling_timeout", 75), wave_deadline)
+        max_pages = min(15, int(self.settings.get("scrapling_max_pages", 15)))
         xhr_out = self.target_dir / "scrapling_xhr.jsonl"
         urls_out = self.target_dir / "scrapling_urls.txt"
         js_out = self.target_dir / "scrapling_js.txt"
@@ -242,7 +245,7 @@ from urllib.parse import urljoin, urlparse
 
 target = sys.argv[1]
 max_pages = int(sys.argv[2])
-deadline = time.monotonic() + max(15, int(sys.argv[3]) - 5)
+deadline = time.monotonic() + max(12, int(sys.argv[3]) - 5)
 xhr_path, urls_path, js_path, cookies_path = sys.argv[4:8]
 
 discovered_urls = set()
@@ -257,7 +260,6 @@ except Exception as exc:
     print(f"scrapling import failed: {exc}", file=sys.stderr)
     sys.exit(2)
 
-origin = f"{urlparse(target).scheme}://{urlparse(target).netloc}"
 visited = set()
 queue = [target]
 
@@ -265,7 +267,7 @@ def record_link(raw, src):
     if not raw or raw.startswith(("data:", "javascript:", "mailto:")):
         return
     u = urljoin(target, raw.strip())
-    if not u.startswith(("http://", "https://")):
+    if not u.startswith(("http://", "https://")) or "/cdn-cgi/" in u:
         return
     discovered_urls.add(u)
     p = urlparse(u).path.lower()
@@ -289,10 +291,13 @@ def extract_html(html_text):
             record_link(m, "html")
 
 def setup_page(page):
+    global ua_str
     def on_req(req):
         try:
             rtype = getattr(req, "resource_type", "") or ""
             rurl = req.url
+            if "/cdn-cgi/" in rurl:
+                return
             if rtype in ("xhr", "fetch", "websocket", "script") or any(k in rurl.lower() for k in ("/api/", "graphql", ".js", ".json", ".map")):
                 xhr_events.append({"method": req.method, "url": rurl, "resource_type": rtype})
             record_link(rurl, f"net_{rtype}")
@@ -307,6 +312,9 @@ def setup_page(page):
     try:
         page.on("request", on_req)
         page.on("websocket", on_ws)
+        ua = page.evaluate("() => navigator.userAgent")
+        if isinstance(ua, str) and ua:
+            ua_str = ua
     except Exception:
         pass
 
@@ -318,25 +326,17 @@ while queue and len(visited) < max_pages and time.monotonic() < deadline:
     page_resp = None
     try:
         if len(visited) == 1:
+            # Launch headless Chromium once for initial render + Cloudflare + XHR capture
             page_resp = StealthyFetcher.fetch(
                 url,
                 headless=True,
                 solve_cloudflare=True,
                 network_idle=True,
                 page_setup=setup_page,
-                timeout=30000,
+                timeout=28000,
             )
         else:
-            page_resp = Fetcher.get(url, timeout=12, stealthy_headers=True)
-            if getattr(page_resp, "status", 0) in (403, 503):
-                page_resp = StealthyFetcher.fetch(
-                    url,
-                    headless=True,
-                    solve_cloudflare=True,
-                    network_idle=True,
-                    page_setup=setup_page,
-                    timeout=25000,
-                )
+            page_resp = Fetcher.get(url, timeout=10, stealthy_headers=True)
     except Exception as exc:
         print(f"fetch error {url}: {exc}", file=sys.stderr)
         continue
@@ -372,6 +372,7 @@ with open(cookies_path, "w", encoding="utf-8") as f:
             self.logs_dir / "scrapling.log",
             timeout=cap,
             read_stdout=False,
+            max_rss_mb=int(self.settings.get("browser_max_rss_mb", 2200)),
         )
 
         if cookies_out.is_file():
@@ -457,14 +458,14 @@ with open(cookies_path, "w", encoding="utf-8") as f:
 
         cnt2 = 0
         rc2 = 0
-        rem = self.timer.cap(85, wave_deadline)
+        rem = self.timer.cap(75, wave_deadline)
         if rem >= 15 and self.settings.get("katana_use_headless_shell", True) and not self.timer.stopped():
             p2_out = kat_dir / "pass2.jsonl"
             shell_path = self._find_headless_shell()
             p2_cmd = [
                 "katana", "-u", self.base_url, "-d", "2", "-headless",
                 "-ho", "--no-sandbox,--disable-gpu", "-xhr", "-kf", "all",
-                "-c", "6", "-p", "3", "-fs", "fqdn", "-mrs", mrs,
+                "-c", "3", "-p", "2", "-fs", "fqdn", "-mrs", mrs,
                 "-filter-similar", "-fst", "8", "-j", "-o", str(p2_out), "-silent",
             ]
             if shell_path:
@@ -476,18 +477,27 @@ with open(cookies_path, "w", encoding="utf-8") as f:
                 self.logs_dir / "katana_pass2.log",
                 timeout=rem,
                 read_stdout=False,
+                max_rss_mb=int(self.settings.get("browser_max_rss_mb", 2200)),
             )
             if rc2 != 0 and not p2_out.is_file() and not self.timer.stopped():
                 fallback2 = [x for x in p2_cmd if x not in ("-filter-similar", "-fst", "8", "-sc")]
                 rc2, _ = self._run_cmd(
                     fallback2,
                     self.logs_dir / "katana_pass2.log",
-                    timeout=self.timer.cap(55, wave_deadline),
+                    timeout=self.timer.cap(45, wave_deadline),
                     read_stdout=False,
+                    max_rss_mb=int(self.settings.get("browser_max_rss_mb", 2200)),
                 )
             cnt2 = self._ingest_katana_jsonl(p2_out, "katana_p2")
 
         self.record_status("katana", rc1 or rc2, time.monotonic() - t0, f"p1={cnt1}, p2={cnt2}")
+
+    def _step_browser_and_crawl(self, wave_deadline: float) -> None:
+        """Run Scrapling Chromium first, then Katana so two Chrome engines never overlap in RAM."""
+        scr_deadline = min(wave_deadline, time.monotonic() + float(self.settings.get("scrapling_timeout", 75)))
+        self._step_scrapling(scr_deadline)
+        if not self.timer.stopped() and time.monotonic() < wave_deadline:
+            self._step_katana(wave_deadline)
 
     def _ingest_url_file_stream(self, path: Path, source: str, limit: int) -> int:
         if not path.is_file():
@@ -508,19 +518,38 @@ with open(cookies_path, "w", encoding="utf-8") as f:
 
     def _step_archive(self, wave_deadline: float) -> None:
         max_archive = int(self.settings.get("max_archive_urls", 50000))
+        archive_rss = int(self.settings.get("archive_max_rss_mb", 1600))
+        if self.enabled("enable_urlfinder") and hu.which("urlfinder") and not self.timer.stopped():
+            t0 = time.monotonic()
+            uf_out = self.target_dir / "urlfinder_raw.txt"
+            max_min = max(1, int(self.settings.get("urlfinder_max_time_min", 1)))
+            cap = self.timer.cap(max_min * 60 + 15, wave_deadline)
+            # Stream stdout directly to uf_out so URLs found before timeout are preserved on disk
+            rc, _ = self._run_cmd(
+                ["urlfinder", "-d", self.subfinder_domain, "-all", "-max-time", str(max_min), "-silent"],
+                self.logs_dir / "urlfinder.log",
+                timeout=cap,
+                stdout_path=uf_out,
+                read_stdout=False,
+                max_rss_mb=archive_rss,
+            )
+            cnt = self._ingest_url_file_stream(uf_out, "urlfinder", max_archive)
+            self.record_status("urlfinder", rc, time.monotonic() - t0, f"{cnt} URLs")
+
         if self.enabled("enable_waymore") and hu.which("waymore") and not self.timer.stopped():
             t0 = time.monotonic()
             wm_out = self.target_dir / "waymore_urls.txt"
-            cap_u = self.timer.cap(min(85, int(self.settings.get("waymore_timeout", 140) * 0.65)), wave_deadline)
+            cap_u = self.timer.cap(min(70, int(self.settings.get("waymore_timeout", 110) * 0.65)), wave_deadline)
             rc, _ = self._run_cmd(
                 ["waymore", "-i", self.subfinder_domain, "-mode", "U", "-oU", str(wm_out), "-nlf"],
                 self.logs_dir / "waymore.log",
                 timeout=cap_u,
                 read_stdout=False,
+                max_rss_mb=archive_rss,
             )
             cnt = self._ingest_url_file_stream(wm_out, "waymore", max_archive)
 
-            rem = self.timer.cap(45, wave_deadline)
+            rem = self.timer.cap(40, wave_deadline)
             if rem >= 15 and not self.timer.stopped():
                 resp_dir = self.target_dir / "waymore_responses"
                 resp_dir.mkdir(parents=True, exist_ok=True)
@@ -530,22 +559,9 @@ with open(cookies_path, "w", encoding="utf-8") as f:
                     self.logs_dir / "waymore_resp.log",
                     timeout=rem,
                     read_stdout=False,
+                    max_rss_mb=archive_rss,
                 )
             self.record_status("waymore", rc, time.monotonic() - t0, f"{cnt} archive URLs")
-
-        if self.enabled("enable_urlfinder") and hu.which("urlfinder") and not self.timer.stopped():
-            t0 = time.monotonic()
-            uf_out = self.target_dir / "urlfinder_raw.txt"
-            max_min = max(1, int(self.settings.get("urlfinder_max_time_min", 2)))
-            cap = self.timer.cap(max_min * 60 + 15, wave_deadline)
-            rc, _ = self._run_cmd(
-                ["urlfinder", "-d", self.subfinder_domain, "-all", "-max-time", str(max_min), "-v", "-o", str(uf_out)],
-                self.logs_dir / "urlfinder.log",
-                timeout=cap,
-                read_stdout=False,
-            )
-            cnt = self._ingest_url_file_stream(uf_out, "urlfinder", max_archive)
-            self.record_status("urlfinder", rc, time.monotonic() - t0, f"{cnt} URLs")
 
     # ------------------------------------------------------------------
     # WAVE 2: Chunk Download & SHA-256 Dedup
@@ -1025,7 +1041,77 @@ with open(cookies_path, "w", encoding="utf-8") as f:
         self.record_status("vhost", 0, time.monotonic() - t0, f"{len(real)} real / {len(all_rows)} tested")
         return real, blocked
 
-    def _step_targeted_fuzz(self, win_rows: list[dict[str, Any]], wordlist_path: Path, cf_blocked: bool, wave_deadline: float) -> list[dict[str, Any]]:
+    def _detect_soft_404_signatures(self) -> list[dict[str, Any]]:
+        """Probe random non-existent paths to detect SPA catch-all 200 responses."""
+        sigs: list[dict[str, Any]] = []
+        origin = f"{urlparse(self.base_url).scheme}://{urlparse(self.base_url).netloc}"
+        for probe_path in ("/__hunt_404_probe_9f1a7c", "/assets/__hunt_404_probe_9f1a7c"):
+            if self.timer.stopped():
+                break
+            code, hdrs, body = self._http_get(origin + probe_path, timeout=5)
+            if code in hu.STATUS_WIN and body:
+                text = body.decode("utf-8", "replace")
+                m = re.search(r"<title[^>]*>(.*?)</title>", text, re.I | re.S)
+                title = m.group(1).strip()[:80] if m else ""
+                ctype = str(hdrs.get("Content-Type") or hdrs.get("content-type") or "").lower()
+                sigs.append({"status_code": code, "length": len(body), "title": title, "content_type": ctype})
+        return sigs
+
+    def _is_soft_404(self, row: dict[str, Any], sigs: list[dict[str, Any]]) -> bool:
+        if not sigs:
+            return False
+        code = int(row.get("status_code") or 0)
+        if code not in hu.STATUS_WIN:
+            return False
+        u = str(row.get("url") or "")
+        path = urlparse(u).path or "/"
+        if path in ("", "/"):
+            return False
+        r_len = int(row.get("content_length") or 0)
+        r_title = str(row.get("title") or "").strip()
+        r_ctype = str(row.get("content_type") or "").lower()
+        for sig in sigs:
+            if code != sig["status_code"]:
+                continue
+            if sig["content_type"] and "html" in sig["content_type"] and r_ctype and "json" in r_ctype:
+                continue
+            tol = max(256, int(sig["length"] * 0.03))
+            if abs(r_len - sig["length"]) <= tol and (not sig["title"] or r_title == sig["title"]):
+                return True
+        return False
+
+    def _filter_fuzz_wildcards(
+        self,
+        rows: list[dict[str, Any]],
+        soft_404_sigs: list[dict[str, Any]],
+    ) -> list[dict[str, Any]]:
+        """Drop wildcard catch-all responses (identical status+size bursts or soft-404s)."""
+        counts: dict[tuple[int, int], int] = {}
+        for r in rows:
+            sc = int(r.get("status_code") or 0)
+            cl = int(r.get("content_length") or 0)
+            counts[(sc, cl)] = counts.get((sc, cl), 0) + 1
+        noisy_sigs = {k for k, cnt in counts.items() if cnt >= 12}
+        kept: list[dict[str, Any]] = []
+        for r in rows:
+            u = str(r.get("url") or "")
+            if hu.is_noise_url(u) or self._is_soft_404(r, soft_404_sigs):
+                continue
+            sc = int(r.get("status_code") or 0)
+            cl = int(r.get("content_length") or 0)
+            if (sc, cl) in noisy_sigs:
+                continue
+            kept.append(r)
+        return kept
+
+    def _step_targeted_fuzz(
+        self,
+        win_rows: list[dict[str, Any]],
+        wordlist_path: Path,
+        cf_blocked: bool,
+        wave_deadline: float,
+        soft_404_sigs: list[dict[str, Any]] | None = None,
+    ) -> list[dict[str, Any]]:
         if not self.enabled("enable_targeted_fuzz") or cf_blocked or not wordlist_path.is_file() or self.timer.stopped():
             return []
         t0 = time.monotonic()
@@ -1034,11 +1120,15 @@ with open(cookies_path, "w", encoding="utf-8") as f:
         max_p = int(self.settings.get("fuzz_prefixes_max", 8))
 
         for r in win_rows:
+            if r.get("soft_404"):
+                continue
             u = str(r.get("url") or "")
+            if hu.is_noise_url(u):
+                continue
             p = urlparse(u)
             if any(seg in p.path.lower() for seg in ("/api", "/v1", "/v2", "/internal", "/data", "/admin")):
                 prefix = f"{p.scheme}://{p.netloc}/" + "/".join([s for s in p.path.split("/") if s][:2])
-                if prefix not in seen_p:
+                if prefix not in seen_p and not hu.is_noise_url(prefix):
                     seen_p.add(prefix)
                     prefixes.append(prefix)
         if not prefixes:
@@ -1049,6 +1139,7 @@ with open(cookies_path, "w", encoding="utf-8") as f:
         fuzz_out = self.target_dir / "fuzz.jsonl"
         total_cap = self.timer.cap(self.settings.get("fuzz_timeout", 65), wave_deadline)
         per_target = max(8, total_cap // max(1, len(prefixes)))
+        sigs = soft_404_sigs or []
 
         if self.settings.get("fuzz_tool", "feroxbuster") == "feroxbuster" and hu.which("feroxbuster"):
             for idx, pref in enumerate(prefixes):
@@ -1062,10 +1153,18 @@ with open(cookies_path, "w", encoding="utf-8") as f:
                     timeout=self.timer.cap(per_target + 5, wave_deadline),
                     read_stdout=False,
                 )
+                raw_hits: list[dict[str, Any]] = []
                 for row in hu.read_jsonl(tmp_out):
                     if row.get("type") == "response" and row.get("url"):
-                        fuzz_rows.append({"url": row["url"], "status_code": row.get("status", 0), "sources": ["feroxbuster"]})
-                        self.add_url(str(row["url"]), "feroxbuster")
+                        raw_hits.append({
+                            "url": row["url"],
+                            "status_code": row.get("status", 0),
+                            "content_length": row.get("content_length", 0),
+                            "sources": ["feroxbuster"],
+                        })
+                for clean_row in self._filter_fuzz_wildcards(raw_hits, sigs):
+                    fuzz_rows.append(clean_row)
+                    self.add_url(str(clean_row["url"]), "feroxbuster")
         elif hu.which("ffuf"):
             for idx, pref in enumerate(prefixes):
                 if time.monotonic() >= wave_deadline or self.timer.stopped():
@@ -1082,10 +1181,18 @@ with open(cookies_path, "w", encoding="utf-8") as f:
                 if tmp_out.is_file():
                     try:
                         data = json.loads(tmp_out.read_text(encoding="utf-8", errors="replace"))
-                        for res in data.get("results", []):
-                            if res.get("url"):
-                                fuzz_rows.append({"url": res["url"], "status_code": res.get("status", 0), "sources": ["ffuf"]})
-                                self.add_url(str(res["url"]), "ffuf")
+                        raw_hits = [
+                            {
+                                "url": res["url"],
+                                "status_code": res.get("status", 0),
+                                "content_length": res.get("length", 0),
+                                "sources": ["ffuf"],
+                            }
+                            for res in data.get("results", []) if res.get("url")
+                        ]
+                        for clean_row in self._filter_fuzz_wildcards(raw_hits, sigs):
+                            fuzz_rows.append(clean_row)
+                            self.add_url(str(clean_row["url"]), "ffuf")
                     except json.JSONDecodeError:
                         pass
 
@@ -1258,7 +1365,7 @@ with open(cookies_path, "w", encoding="utf-8") as f:
         nuclei_rows: list[dict[str, Any]] = []
 
         try:
-            # WAVE 1: Parallel Discovery
+            # WAVE 1: Parallel Discovery (single browser at a time to stay well below runner RAM limits)
             if not self.timer.stopped():
                 w1_start = time.monotonic()
                 w1_deadline = self.timer.wave_deadline(self.settings.get("wave1_budget_seconds", 200))
@@ -1266,8 +1373,7 @@ with open(cookies_path, "w", encoding="utf-8") as f:
                 w1_res = self._run_pool_bounded(
                     [
                         (self._step_subdomains_and_wellknown, (w1_deadline,)),
-                        (self._step_scrapling, (w1_deadline,)),
-                        (self._step_katana, (w1_deadline,)),
+                        (self._step_browser_and_crawl, (w1_deadline,)),
                         (self._step_archive, (w1_deadline,)),
                     ],
                     w1_deadline,
@@ -1323,6 +1429,7 @@ with open(cookies_path, "w", encoding="utf-8") as f:
                 w4_deadline = self.timer.wave_deadline(self.settings.get("wave4_budget_seconds", 175))
                 hu.log(f"WAVE 4 live probe & AI feed ({len(self.routes)} first-party routes)")
 
+                soft_404_sigs = self._detect_soft_404_signatures()
                 probe_rows = self._step_probe(w4_deadline)
                 vhosts_real, vhost_blocked = self._step_vhost(live_subs, w4_deadline)
 
@@ -1340,8 +1447,14 @@ with open(cookies_path, "w", encoding="utf-8") as f:
 
                 probed_by_key = {hu.dedupe_key(str(r.get("url") or "")): r for r in probe_rows if r.get("url")}
                 for r in probe_rows:
+                    u = str(r.get("url") or "")
                     code = int(r.get("status_code") or 0)
-                    if code in hu.STATUS_WIN:
+                    if hu.is_noise_url(u):
+                        other_rows.append(r)
+                    elif self._is_soft_404(r, soft_404_sigs):
+                        r["soft_404"] = True
+                        other_rows.append(r)
+                    elif code in hu.STATUS_WIN:
                         win_rows.append(r)
                     elif code in hu.STATUS_EXISTS:
                         blocked_rows.append(r)
@@ -1351,7 +1464,7 @@ with open(cookies_path, "w", encoding="utf-8") as f:
                 cf_count = sum(1 for r in probe_rows if hu.is_cloudflare_response(r))
                 cf_blocked = bool(probe_rows) and len(win_rows) == 0 and cf_count >= max(1, len(probe_rows) // 2)
 
-                fuzz_rows = self._step_targeted_fuzz(win_rows, wl_path, cf_blocked, w4_deadline)
+                fuzz_rows = self._step_targeted_fuzz(win_rows, wl_path, cf_blocked, w4_deadline, soft_404_sigs)
                 for fr in fuzz_rows:
                     if fr.get("status_code") in hu.STATUS_WIN:
                         win_rows.append(fr)
@@ -1414,7 +1527,7 @@ with open(cookies_path, "w", encoding="utf-8") as f:
             "flags": len(jscope_findings),
             "ai_endpoints": len(feed.get("ai_and_api_candidates", [])),
             "sourcemaps": len(sourcemap_files),
-            "nuclei": len(nuclei_rows),
+            "nuclei": len(feed.get("nuclei_findings", [])),
             "duration_seconds": round(total_duration, 1),
         }
 
