@@ -1,0 +1,9 @@
+$ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python3 -c import runpy, sys
+sys.setrecursionlimit(10000)
+target_bin, target_dir = sys.argv[1], sys.argv[2]
+sys.argv = [target_bin, 'analyze', target_dir, '--verbose']
+runpy.run_path(target_bin, run_name='__main__')
+ /home/runner/.local/bin/jscope results/higgsfield.ai/jscope_stage
+TIMEOUT after 75s
+$ jscope analyze results/higgsfield.ai/jscope_stage --verbose
+TIMEOUT after 45s

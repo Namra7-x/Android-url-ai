@@ -1,0 +1,138 @@
+{
+  "target": "https://higgsfield.ai/",
+  "host": "higgsfield.ai",
+  "scope_apex": "higgsfield.ai",
+  "duration_seconds": 526.7,
+  "wave_timings": {
+    "Wave 1 (Discovery)": 209.233758487,
+    "Wave 2 (Chunks)": 15.377210853999998,
+    "Wave 3 (Offline AST/Secrets)": 120.42399786200002,
+    "Wave 4 (Verify/Fuzz/Feed)": 180.18322554499997
+  },
+  "stats": {
+    "collected": 103049,
+    "probed": 537,
+    "live200": 581,
+    "liveother": 1580,
+    "data": 1319,
+    "subdomains": 86,
+    "vhosts": 0,
+    "js_endpoints": 3021,
+    "secrets": 0,
+    "flags": 238,
+    "ai_endpoints": 200,
+    "sourcemaps": 0,
+    "nuclei": 0,
+    "duration_seconds": 526.7
+  },
+  "tools": [
+    {
+      "tool": "scrapling",
+      "exit_code": 0,
+      "duration_s": 2.8,
+      "detail": "0 URLs/JS captured"
+    },
+    {
+      "tool": "katana",
+      "exit_code": 2,
+      "duration_s": 16.5,
+      "detail": "p1=12, p2=0"
+    },
+    {
+      "tool": "subfinder+dnsx",
+      "exit_code": 0,
+      "duration_s": 39.0,
+      "detail": "1142 subs, 86 live"
+    },
+    {
+      "tool": "wellknown_ai",
+      "exit_code": 0,
+      "duration_s": 4.1,
+      "detail": "19 paths checked"
+    },
+    {
+      "tool": "waymore",
+      "exit_code": 0,
+      "duration_s": 126.1,
+      "detail": "96189 archive URLs"
+    },
+    {
+      "tool": "urlfinder",
+      "exit_code": 124,
+      "duration_s": 83.1,
+      "detail": "0 URLs"
+    },
+    {
+      "tool": "chunk_download",
+      "exit_code": 0,
+      "duration_s": 15.4,
+      "detail": "2500 fetched -> 158 unique SHA-256 chunks"
+    },
+    {
+      "tool": "sourcemapper",
+      "exit_code": 0,
+      "duration_s": 0.1,
+      "detail": "0 maps -> 0 unpacked sources"
+    },
+    {
+      "tool": "xnLinkFinder",
+      "exit_code": 0,
+      "duration_s": 0.5,
+      "detail": "0 endpoints"
+    },
+    {
+      "tool": "jsluice",
+      "exit_code": 0,
+      "duration_s": 11.4,
+      "detail": "155 chunks -> 6942 URLs"
+    },
+    {
+      "tool": "secrets_offline",
+      "exit_code": 0,
+      "duration_s": 11.5,
+      "detail": "0 candidates"
+    },
+    {
+      "tool": "jscope",
+      "exit_code": 124,
+      "duration_s": 120.4,
+      "detail": "155 files -> 238 flags/models"
+    },
+    {
+      "tool": "httpx",
+      "exit_code": 124,
+      "duration_s": 75.0,
+      "detail": "537 probed"
+    },
+    {
+      "tool": "vhost",
+      "exit_code": 0,
+      "duration_s": 0.6,
+      "detail": "0 real / 30 tested"
+    },
+    {
+      "tool": "targeted_fuzz",
+      "exit_code": 0,
+      "duration_s": 75.5,
+      "detail": "1 prefixes -> 3263 hits"
+    },
+    {
+      "tool": "x8",
+      "exit_code": 0,
+      "duration_s": 26.1,
+      "detail": "7 API routes scanned"
+    },
+    {
+      "tool": "methods",
+      "exit_code": 0,
+      "duration_s": 0.4,
+      "detail": "1 probes"
+    },
+    {
+      "tool": "nuclei",
+      "exit_code": 1,
+      "duration_s": 0.1,
+      "detail": "0 findings across 150 URLs"
+    }
+  ]
+}

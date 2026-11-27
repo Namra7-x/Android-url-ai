@@ -1,0 +1,49 @@
+$ waymore -i higgsfield.ai -mode U -oU results/higgsfield.ai/waymore_urls.txt -nlf
+exit=0
+No value for "URLSCAN_API_KEY" in config.yml - consider adding (you can get a FREE api key at urlscan.io)
+No value for "VIRUSTOTAL_API_KEY" in config.yml - consider adding (you can get a FREE api key at virustotal.com)
+Wayback - [ ERR ] Connection error for page  (saved 95867 URLs before error)
+
+https://higgsfield.ai/?_rsc=9SMln1LKe2lPJGrX
+https://higgsfield.ai/apps/trending-templates?_rsc=e7ia0
+https://higgsfield.ai/_assets/main/_next/static/chunks/27464.54b22a1ce652c9f6.js?dpl=dpl-mrlz61g6
+https://higgsfield.ai/_next/static/chunks/app/(private)/ai-influencer-studio/page-bba574446aa97387.js?dpl=dpl-ml0cebne
+https://higgsfield.ai/create/motion-control?_rsc=b9sbp
+https://higgsfield.ai/_next/static/chunks/778-44a53615471b4f55.js
+https://higgsfield.ai/collection/effects?utm_source=superhuman&utm_medium=referral&utm_campaign=openai-is-feeling-the-heat
+https://higgsfield.ai/_assets/main/_next/static/chunks/277-0d5a94b5fb7f0335.js?dpl=dpl-mryg8yha
+https://higgsfield.ai/_assets/main/_next/static/chunks/1621.9b41b3143380a13d.js?dpl=dpl-mrk45zhc
+https://higgsfield.ai/_next/static/chunks/35927.1a4aacd39c7bec42.js?dpl=dpl-mhwmiqlm
+https://higgsfield.ai/_next/static/chunks/app/(public)/community/page-c77df438f2ee21ce.js?dpl=dpl-mltg0t3t
+https://higgsfield.ai/_next/static/chunks/app/(private)/upscale/desktop/page-da5343778a603821.js?dpl=dpl-mjda5rkt
+https://higgsfield.ai/_next/static/chunks/app/(public)/(explore)/sora-2-shorts/layout-47ff70de3fcdc009.js?dpl=dpl-mgn682tc
+https://higgsfield.ai/?_rsc=1ygv6
+https://higgsfield.ai/creative-challenge?_rsc=1qhow
+https://higgsfield.ai/_assets/main/_next/static/chunks/10583-51375a2a4473744e.js?dpl=dpl-ms17ykik
+https://higgsfield.ai/assets/app~agent-chat-page~x6-CdBd4J3e.js
+https://higgsfield.ai/_i18n/routes/en/delta.dfa0e372e0.json
+https://higgsfield.ai/_assets/main/_next/static/chunks/48588.fb5fed0fc948e4dd.js?dpl=dpl-mrgsa4dw
+https://higgsfield.ai/_next/static/chunks/app/error-503c80866625bd0d.js?dpl=dpl-mj90axvf
+https://higgsfield.ai/_next/static/chunks/b0b2742e-844762997af44d47.js?dpl=dpl-mhog0fwq
+https://higgsfield.ai/_next/static/chunks/webpack-0b21e6b4177b931d.js?dpl=dpl-miprak01
+https://higgsfield.ai/_next/static/chunks/1756-1fc75945cab2cf4d.js?dpl=dpl-mgqzygtn
+https://higgsfield.ai/canvas?_rsc=18yz1
+https://higgsfield.ai/_next/static/chunks/app/(public)/contests/%5BcontestSlug%5D/submissions/%5BsubmissionId%5D/page-fb40e17a9534c32e.js?dpl=dpl-mm66xgs1
+https://higgsfield.ai/_next/static/chunks/sentry-de9a3b6aa6e67e79.js?dpl=dpl-mm29r8gu
+https://higgsfield.ai/_next/static/chunks/sentry-ac95f1d8d12cdf83.js?dpl=dpl-mj805m0l
+https://higgsfield.ai/community/d3435515-3f37-436c-98c8-b9baf3d53fd9
+https://higgsfield.ai/_next/static/chunks/64300.c395c65abb0227eb.js?dpl=dpl-mhog0fwq
+https://higgsfield.ai/auth/sign-in?rp=%2Fcanvas&_rsc=1gkc0
+https://higgsfield.ai/auth/sign-in?rp=%2Foauth%2Fconsent%3Fclient_id%3DdEHti0prP36ID3sM%26code_challenge%3DSDTcB8J6FL_ioUrxN26Lq2gOzApeOqTvP0zKYFW8hLk%26code_challenge_method%3DS256%26redirect_uri%3Dhttps%253A%252F%252Fchatgpt.com%252Fconnector%252Foauth%252FxTKW6VTc9S8_%26resource%3Dhttps%253A%252F%252Fopenai-mcp.higgsfield.ai%26response_type%3Dcode%26scope%3Dopenid%2Bemail%2Bprofile%26state%3Dcodex_scheme__oauth_s_6ab8b17a9fb48191a350b141a39467da%26surface%3Dopenai_mcp%26ui_locales%3Den-GB%26auth_completed_at%3D%25221790489053100%2522
+https://higgsfield.ai/_next/static/chunks/73713-c5d61d791150d1d9.js?dpl=dpl-mgirk6ry
+https://higgsfield.ai/_next/static/chunks/sentry-de9a3b6aa6e67e79.js?dpl=dpl-mkj5slja
+https://higgsfield.ai/_next/static/chunks/app/(public)/auth/(public)/sso-callback/page-32ce2032d623853e.js
+https://higgsfield.ai/apps?_rsc=jg60q
+https://higgsfield.ai/_next/static/chunks/app/layout-d3204479c84694f7.js?dpl=dpl-mgtl7el3
+https://higgsfield.ai/_next/static/chunks/app/(private)/app/skin-enhancer/desktop/page-f14072f8c73f88d4.js?dpl=dpl-mm5cufa0
+https://higgsfield.ai/_next/static/chunks/sentry-e081acfc3059ce9c.js?dpl=dpl-miuygekg
+https://higgsfield.ai/_assets/main/_next/static/chunks/66417-fbb08fdeae3fa855.js?dpl=dpl-mrkrd43l
+https://higgsfield.ai/_assets/landings/_next/static/chunks/7487-af2da71f1b102be5.js?dpl=dpl-mrqzsq6w
+https://higgsfield.ai/@cultural_koala_pure91?_rsc=gihix
+https://higgsfield.ai/_next/static/chunks/9375-ea066d4c8977a69c.js
+

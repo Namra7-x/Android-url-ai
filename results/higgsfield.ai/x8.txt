@@ -1,0 +1,47 @@
+=== https://clerk.higgsfield.ai ===
+urls:         https://clerk.higgsfield.ai/
+methods:      GET
+wordlist len: 500
+
+
+
+=== https://clerk.higgsfield.ai ===
+urls:         https://clerk.higgsfield.ai/
+methods:      GET
+wordlist len: 500
+
+
+
+=== https://clerk.reelmagic.higgsfield.ai ===
+urls:         https://clerk.reelmagic.higgsfield.ai/
+methods:      GET
+wordlist len: 500
+
+
+
+=== https://clerk.creators.higgsfield.ai ===
+urls:         https://clerk.creators.higgsfield.ai/
+methods:      GET
+wordlist len: 500
+
+
+
+=== https://clerk.worker.higgsfield.ai ===
+urls:         https://clerk.worker.higgsfield.ai/
+methods:      GET
+wordlist len: 500
+
+
+
+=== https://hf-adobe-updates.higgsfield.ai/adobe/manifest.json ===
+urls:         https://hf-adobe-updates.higgsfield.ai/adobe/manifest.json
+methods:      GET
+wordlist len: 500
+
+
+
+=== https://hf-adobe-updates.higgsfield.ai/banner.json ===
+urls:         https://hf-adobe-updates.higgsfield.ai/banner.json
+methods:      GET
+wordlist len: 500
+

@@ -1,0 +1,50 @@
+$ x8 -u https://clerk.higgsfield.ai -w results/higgsfield.ai/params.txt
+exit=0
+urls:         https://clerk.higgsfield.ai/
+methods:      GET
+wordlist len: 500
+
+
+
+$ x8 -u https://clerk.higgsfield.ai -w results/higgsfield.ai/params.txt
+exit=0
+urls:         https://clerk.higgsfield.ai/
+methods:      GET
+wordlist len: 500
+
+
+
+$ x8 -u https://clerk.reelmagic.higgsfield.ai -w results/higgsfield.ai/params.txt
+exit=0
+urls:         https://clerk.reelmagic.higgsfield.ai/
+methods:      GET
+wordlist len: 500
+
+
+
+$ x8 -u https://clerk.creators.higgsfield.ai -w results/higgsfield.ai/params.txt
+exit=0
+urls:         https://clerk.creators.higgsfield.ai/
+methods:      GET
+wordlist len: 500
+
+
+
+$ x8 -u https://clerk.worker.higgsfield.ai -w results/higgsfield.ai/params.txt
+exit=0
+urls:         https://clerk.worker.higgsfield.ai/
+methods:      GET
+wordlist len: 500
+
+
+
+$ x8 -u https://hf-adobe-updates.higgsfield.ai/adobe/manifest.json -w results/higgsfield.ai/params.txt
+exit=0
+urls:         https://hf-adobe-updates.higgsfield.ai/adobe/manifest.json
+methods:      GET
+wordlist len: 500
+
+
+
+$ x8 -u https://hf-adobe-updates.higgsfield.ai/banner.json -w results/higgsfield.ai/params.txt
+TIMEOUT after 5s

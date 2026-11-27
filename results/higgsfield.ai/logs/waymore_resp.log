@@ -1,0 +1,2 @@
+$ waymore -i higgsfield.ai -mode R -oR results/higgsfield.ai/waymore_responses -ko \.(js|mjs|json|map)(\?|$) -l 60
+TIMEOUT after 50s

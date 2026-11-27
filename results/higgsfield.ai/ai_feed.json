@@ -1,0 +1,4122 @@
+{
+  "target": "https://higgsfield.ai/",
+  "host": "higgsfield.ai",
+  "generated_at": "2026-11-27T10:59:32Z",
+  "duration_seconds": 526.7,
+  "summary": {
+    "secrets": 0,
+    "flags_and_guards": 238,
+    "ai_and_api_candidates": 406,
+    "unpacked_sourcemaps": 0,
+    "data_files": 1319,
+    "live_subdomains": 86,
+    "real_vhosts": 0,
+    "accessible_200": 581,
+    "exists_blocked": 1580,
+    "nuclei_findings": 0,
+    "collapsed_patterns": 120
+  },
+  "secrets": [],
+  "feature_flags_and_guards": [
+    {
+      "kind": "model_candidate",
+      "name": "veo-3-1-preview",
+      "file": "04991bf4a697a2e4_548e0f3a-yLBAHfkD8kEEdz3s.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "veo31",
+      "file": "04991bf4a697a2e4_548e0f3a-yLBAHfkD8kEEdz3s.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "qwen-camera-control",
+      "file": "04991bf4a697a2e4_548e0f3a-yLBAHfkD8kEEdz3s.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "grok-video-flow-preview-2",
+      "file": "04991bf4a697a2e4_548e0f3a-yLBAHfkD8kEEdz3s.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "grok_video_v15",
+      "file": "04991bf4a697a2e4_548e0f3a-yLBAHfkD8kEEdz3s.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "grok_video_v15_lite",
+      "file": "04991bf4a697a2e4_548e0f3a-yLBAHfkD8kEEdz3s.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "grok-video-edit",
+      "file": "04991bf4a697a2e4_548e0f3a-yLBAHfkD8kEEdz3s.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "grok-video-edit-flow-preview",
+      "file": "04991bf4a697a2e4_548e0f3a-yLBAHfkD8kEEdz3s.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_image_2_5_flare",
+      "file": "04991bf4a697a2e4_548e0f3a-yLBAHfkD8kEEdz3s.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt-image-2-5-flare",
+      "file": "04991bf4a697a2e4_548e0f3a-yLBAHfkD8kEEdz3s.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt-image-2-video",
+      "file": "04991bf4a697a2e4_548e0f3a-yLBAHfkD8kEEdz3s.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_image_2_5_sunburst",
+      "file": "04991bf4a697a2e4_548e0f3a-yLBAHfkD8kEEdz3s.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt-image-2-5-sunburst",
+      "file": "04991bf4a697a2e4_548e0f3a-yLBAHfkD8kEEdz3s.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gemini-omni-flash-1-1",
+      "file": "04991bf4a697a2e4_548e0f3a-yLBAHfkD8kEEdz3s.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "separator",
+      "file": "980e6c9068bb0b9c_548e0f3a-H4-724AVG6REWDOq.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "status",
+      "file": "980e6c9068bb0b9c_548e0f3a-H4-724AVG6REWDOq.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "this.options.enableClickSelection",
+      "file": "01501bc4cffa925f_5426644691881.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "claudeai",
+      "file": "01501bc4cffa925f_5426644691881.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "veo3",
+      "file": "c88eee6106b4a8b6_13588333759794.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "veo3_speak",
+      "file": "c88eee6106b4a8b6_13588333759794.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "veo3_draw",
+      "file": "c88eee6106b4a8b6_13588333759794.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "veo3_1",
+      "file": "c88eee6106b4a8b6_13588333759794.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "veo3_1_lite",
+      "file": "c88eee6106b4a8b6_13588333759794.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gemini_omni",
+      "file": "c88eee6106b4a8b6_13588333759794.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "veo3_1_speak",
+      "file": "c88eee6106b4a8b6_13588333759794.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "qwen_camera_control",
+      "file": "c88eee6106b4a8b6_13588333759794.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_image_2",
+      "file": "c88eee6106b4a8b6_13588333759794.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_image_2_unlimited",
+      "file": "c88eee6106b4a8b6_13588333759794.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "grok_video",
+      "file": "c88eee6106b4a8b6_13588333759794.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "grok_image",
+      "file": "c88eee6106b4a8b6_13588333759794.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "grok_video_edit",
+      "file": "c88eee6106b4a8b6_13588333759794.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "qwen_audio_tts",
+      "file": "c88eee6106b4a8b6_13588333759794.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "claudesfield_image",
+      "file": "c88eee6106b4a8b6_13588333759794.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "end_image",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "image",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "alert",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "video",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "a.experiment",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "start_image",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "e.role",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "source_video",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "audio",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "grok-image-2-0",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt-image-2-6-sunburst",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_image_2_6_sunburst",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt-image-2-6-flare",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_image_2_6_flare",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "veo-3-preview",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "Veo-3",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "veo-3-fast",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "veo-3-1-fast",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "veo-3-1-lite",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gemini-omni",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gemini-omni-flash-1-2",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gRokva",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt-image-2-6",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "veo3_1_video",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gemini_omni_flash_1_1_video",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gemini_omni_flash_1_2_video",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "claudesfield",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_general",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_ghibli",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_simpson",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_ink_sketch",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_gumstyle",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_clay",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_futurama",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_bobs_burgers",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_cartoon_fantasy_style_1",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_regular_show",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_bojack_horseman",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_manga",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_gravity_falls",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_adventure_time",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_pixar",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_family_guy",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_south_park",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_simple_geometric",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_rick_and_morty",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_child_like_pro",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_psychodelic",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_cartoon_fantasy_style_2",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_chaotic_forms_simple_drawing",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_crayon_drawing",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_sponge_bob",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_baloon",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_retro_disney",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_lego",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_2d_disney",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_muppet_style",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_minecraft",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gemini_omni_flash_1_1_general",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gemini_omni_flash_1_2_general",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gemini_omni_general",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "grok_video_general",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "grok_video_v15_general",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "grok_video_v15_lite_general",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "grok-video-preset-general",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "grok-imagine-15-preset",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "veo3_1_lite_video_general",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "veo-3.1-lite-preset-general",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gemini_omni_flash_1_1_edit",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gemini_omni_flash_1_1_extend",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gemini_omni_flash_1_2_edit",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gemini_omni_flash_1_2_extend",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "veo3_1video_general",
+      "file": "610f807d8e1f7a6b_548e0f3a-WOu4fIxit5_rekPW.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "O3oNi5",
+      "file": "4dd35820ede1e2c1_9203009422238.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "GptGxg",
+      "file": "4dd35820ede1e2c1_9203009422238.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "timer",
+      "file": "c656487dcadd24f7_548e0f3a-Lbk2eSVligb7YlS7.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "img",
+      "file": "c656487dcadd24f7_548e0f3a-Lbk2eSVligb7YlS7.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_image_2_5",
+      "file": "c656487dcadd24f7_548e0f3a-Lbk2eSVligb7YlS7.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt_image_2_6",
+      "file": "c656487dcadd24f7_548e0f3a-Lbk2eSVligb7YlS7.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "button",
+      "file": "853048f80a4e09c5_548e0f3a-_rwpvCwtPaO9WX7E.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "dialog",
+      "file": "ba712048baf829a2_548e0f3a-6godFTCrzGInjEwt.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "listbox",
+      "file": "ba712048baf829a2_548e0f3a-6godFTCrzGInjEwt.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "menu",
+      "file": "ba712048baf829a2_548e0f3a-6godFTCrzGInjEwt.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "menuitem",
+      "file": "ba712048baf829a2_548e0f3a-6godFTCrzGInjEwt.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "option",
+      "file": "ba712048baf829a2_548e0f3a-6godFTCrzGInjEwt.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "tooltip",
+      "file": "ba712048baf829a2_548e0f3a-6godFTCrzGInjEwt.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "slider",
+      "file": "ba712048baf829a2_548e0f3a-6godFTCrzGInjEwt.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "textbox",
+      "file": "ba712048baf829a2_548e0f3a-6godFTCrzGInjEwt.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gpt-image-2-5-model-FxNLrAdK",
+      "file": "ce7410de267000e5_548e0f3a-NCXmAL81zKfG7-4l.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "o1el_6",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "o4V7pQ",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "veoModelName",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "GEMINI_OMNI_MAX_VIDEOS",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "GpTaPB",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "O1AMkI",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "O3QA7g",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "GEMINI_OMNI_MAX_IMAGES",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "QWEN_AUDIO_MAX_INSTRUCTION_LENGTH",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "imageNumber",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "GEMINI_OMNI_MAX_IMAGES_WITH_VIDEO",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "GEMINI_OMNI_MAX_PROMPT_LENGTH",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "QWEN_AUDIO_MAX_PROMPT_LENGTH",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "o10FX6",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "o3C80b",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "o3QvUs",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "o470ar",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "GEMINI_OMNI_BATCH_SIZE_MIN",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "GEMINI_OMNI_BATCH_SIZE_MAX",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "O14pAv",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "O4YIW0",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "O1-93T",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "O3T9Nb",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "GptxX_",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "O3MPp-",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "o38qt6",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "o498OO",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "O4l8Rk",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "o3IDMA",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "GPtuoj",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "O3skX7",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "O11HQX",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "O3PgqH",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "O3eAyU",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "o1tU25",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "veo31Until",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "O1G2nq",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "O1Uc7q",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "O1ogS5",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "o3Y0BF",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "o3eIEQ",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "o3n65t",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "o4d171",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "o4ljab",
+      "file": "6da14c19e2735e68_13263433018842.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "link",
+      "file": "229da1a6923f7b58_548e0f3a-BbSZExVLaIXCMz_I.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "void",
+      "file": "229da1a6923f7b58_548e0f3a-BbSZExVLaIXCMz_I.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "d.role",
+      "file": "229da1a6923f7b58_548e0f3a-BbSZExVLaIXCMz_I.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "te",
+      "file": "229da1a6923f7b58_548e0f3a-BbSZExVLaIXCMz_I.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "menuitemcheckbox",
+      "file": "ff2ac78ff715d28e_548e0f3a-NqANvumjzzLTtu35.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "group",
+      "file": "ff2ac78ff715d28e_548e0f3a-NqANvumjzzLTtu35.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "presentation",
+      "file": "ff2ac78ff715d28e_548e0f3a-NqANvumjzzLTtu35.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "alertdialog",
+      "file": "a586a40e87259ccb_548e0f3a-Z02c23EjO5rx6Ir3.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "Hwe",
+      "file": "a586a40e87259ccb_548e0f3a-Z02c23EjO5rx6Ir3.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "gptImage2Items",
+      "file": "a586a40e87259ccb_548e0f3a-Z02c23EjO5rx6Ir3.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "e.last_message.role",
+      "file": "eee14dd1a8672936_548e0f3a-hAhkw4L9qkvH8VL6.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "e.chat.last_message.role",
+      "file": "eee14dd1a8672936_548e0f3a-hAhkw4L9qkvH8VL6.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "o.defaultRole",
+      "file": "eee14dd1a8672936_548e0f3a-hAhkw4L9qkvH8VL6.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "e.headline",
+      "file": "eee14dd1a8672936_548e0f3a-hAhkw4L9qkvH8VL6.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "reference_image",
+      "file": "eee14dd1a8672936_548e0f3a-hAhkw4L9qkvH8VL6.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "motion",
+      "file": "eee14dd1a8672936_548e0f3a-hAhkw4L9qkvH8VL6.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "protagonist",
+      "file": "eee14dd1a8672936_548e0f3a-hAhkw4L9qkvH8VL6.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "companion",
+      "file": "eee14dd1a8672936_548e0f3a-hAhkw4L9qkvH8VL6.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "mentor",
+      "file": "eee14dd1a8672936_548e0f3a-hAhkw4L9qkvH8VL6.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "antagonist",
+      "file": "eee14dd1a8672936_548e0f3a-hAhkw4L9qkvH8VL6.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "bystander",
+      "file": "eee14dd1a8672936_548e0f3a-hAhkw4L9qkvH8VL6.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "main",
+      "file": "eee14dd1a8672936_548e0f3a-hAhkw4L9qkvH8VL6.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "set",
+      "file": "eee14dd1a8672936_548e0f3a-hAhkw4L9qkvH8VL6.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "home",
+      "file": "eee14dd1a8672936_548e0f3a-hAhkw4L9qkvH8VL6.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "dungeon",
+      "file": "eee14dd1a8672936_548e0f3a-hAhkw4L9qkvH8VL6.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "MacGuffin",
+      "file": "eee14dd1a8672936_548e0f3a-hAhkw4L9qkvH8VL6.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "tool",
+      "file": "eee14dd1a8672936_548e0f3a-hAhkw4L9qkvH8VL6.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "clue",
+      "file": "eee14dd1a8672936_548e0f3a-hAhkw4L9qkvH8VL6.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "cover",
+      "file": "eee14dd1a8672936_548e0f3a-hAhkw4L9qkvH8VL6.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "story",
+      "file": "eee14dd1a8672936_548e0f3a-hAhkw4L9qkvH8VL6.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "closing",
+      "file": "eee14dd1a8672936_548e0f3a-hAhkw4L9qkvH8VL6.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "user",
+      "file": "eee14dd1a8672936_548e0f3a-hAhkw4L9qkvH8VL6.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "assistant",
+      "file": "eee14dd1a8672936_548e0f3a-hAhkw4L9qkvH8VL6.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "generation",
+      "file": "eee14dd1a8672936_548e0f3a-hAhkw4L9qkvH8VL6.js"
+    }
+  ],
+  "ai_and_api_candidates": [
+    {
+      "url": "https://higgsfield.ai/llms-full.txt",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 90
+    },
+    {
+      "url": "https://higgsfield.ai/auxiliary/mobile-chunk-sw-config.json",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://hf-adobe-updates.higgsfield.ai/adobe/manifest.json",
+      "status_code": 200,
+      "title": "",
+      "sources": [],
+      "score": 50
+    },
+    {
+      "url": "https://higgsfield.ai/blog/Testing-Top-5-AI-Video-Generator-Models",
+      "status_code": 301,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 50
+    },
+    {
+      "url": "https://higgsfield.ai/debug/enterprise-onboarding",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 50
+    },
+    {
+      "url": "https://higgsfield.ai/models/sand/",
+      "status_code": 307,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 50
+    },
+    {
+      "url": "https://docs.higgsfield.ai/docs/openapi.json",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 40
+    },
+    {
+      "url": "https://higgsfield.ai/llms.txt",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "wellknown_200",
+        "waymore"
+      ],
+      "score": 40
+    },
+    {
+      "url": "https://assets.higgsfield.ai/auxiliary/mobile-chunk-sw-config.json",
+      "status_code": 404,
+      "title": "Not Found",
+      "sources": [
+        "chunk_round1"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/?_bhlid=fb855fe448b36e9a9d38511ca38884f7536482eb&utm_campaign=april-ai-toolkit-new-ai-tools-agents-and-models&utm_medium=newsletter&utm_source=ainsider.beehiiv.com",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/?utm_campaign=google-s-nano-banana-2-just-beat-pro-models-for-free-here-s-how-to-master-it&utm_medium=referral&utm_source=www.aifire.co",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/_next/static/chunks/config.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/ai/image?model=gpt_image_2&prompt=Transform+the+main+subject+of+the+attached+image+into+a+clean+educational+cutaway+diagram+on+%7B%7Bbackground%7D%7D.%0A%0A%2A%2ASubject%3A%2A%2A+keep+the+subject%27s+distinctive+features%2C+shape%2C+proportions+and+recognizable+details+from+the+original+image+so+it+is+clearly+the+same+object.+If+no+image+is+attached%2C+illustrate+%7B%7Bsubject%7D%7D.%0A%0A%2A%2AThe+cutaway%3A%2A%2A+show+a+believable+%7B%7Bcutaway_type%7D%7D+revealing+a+plausible+layered+interior+%E2%80%94+internal+structures%2C+materials%2C+chambers+or+components+rendered+accurately+in+correct+relative+scale+and+position%2C+as+an+expert+illustrator+would+reconstruct+them.%0A%0A%2A%2ACallouts%3A%2A%2A+add+clear+labeled+callouts+with+thin+leader+lines+pointing+to+each+key+part%2C+using+%7B%7Blabel_style%7D%7D.+Include+roughly+%7B%7Bdetail_level%7D%7D.+Keep+every+label+to+a+few+words+%E2%80%94+no+paragraphs.%0A%0A%2A%2AStyle%3A%2A%2A+%7B%7Bdiagram_style%7D%7D%2C+%7B%7Bcolor_style%7D%7D.+Clarity+and+anatomical+or+structural+accuracy+are+prioritized+over+dramatic+or+artistic+styling%3A+even+flat+lighting%2C+no+heavy+shadows%2C+no+dramatic+angles%2C+no+artistic+flourishes.%0A%0ACrisp+perfectly+legible+correctly-spelled+labels%2C+clean+alignment%2C+high+detail%2C+4k%2C+sharp+%E2%80%94+a+diagram+that+would+look+at+home+in+a+textbook+or+museum+exhibit.",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/ai/video?aspect_ratio=21%3A9&audio=on&duration=15&model=seedance_2_0&recreate=SCENE+CONTEXT+A+man+fights+his+way+to+the+edge+of+an+oasis+as+three+riders+on+ostriches+close+in+behind+him+with+guttural+cries+%E2%80%94+he+spots+the+black-and-green+case+under+a+palm+and+hurls+himself+at+it%2C+but+the+sandstorm+wall+overruns+him+mid-flight%2C+meters+short+of+the+case%2C+and+buries+everything.+ACTIVE+REFERENCES+Sequence-wide+identity+lock%3A+one+man%2C+one+dune+field%2C+one+oasis%2C+one+rider+design%2C+one+ostrich+design%2C+held+identical+across+every+shot.+%40main_character_desert+%E2%80%94+young+man%2C+hood+UP+over+his+dark+curly+hair+in+every+frame%2C+thin+mustache%2C+layered+beige+desert+robes+with+rust-red+scarf%2C+clothes+torn+and+dusted+with+sand%2C+worn+leather+satchel+on+a+crossbody+strap.+100%25+matches+the+reference.+%40button+%E2%80%94+rugged+matte-black+metal+case+with+bright+green+side+panels+and+one+glowing+green+square+button+on+its+lid.+100%25+matches+the+reference.+It+lies+flat+on+the+sand+in+the+shade+of+a+palm+at+the+oasis+edge.+%40rider+%E2%80%94+man+wrapped+head+to+toe+in+dusty+black+robes+and+black+head-wrap%2C+only+weathered+eyes+visible%2C+leather+belt+with+a+coiled+rope%2C+worn+leather+boots.+100%25+matches+the+reference.+A+three-man+crew+rides+in+this+scene%3A+the+LEAD%2C+the+SECOND%2C+the+THIRD+%E2%80%94+identical+in+dress%2C+distinct+only+by+position.+%40ostrich+%E2%80%94+black+ostrich+with+neon-green+tail+plumes+and+a+green+stripe+down+its+neck%2C+wearing+small+leather+goggles%2C+a+worn+leather+saddle+and+rope+reins.+Stands+a+head+taller+than+a+man.+100%25+matches+the+reference.+Each+of+the+three+crew+members+sits+mounted+in+the+saddle+of+his+own+ostrich+%E2%80%94+a+three-bird+pack.+%40location_desert+%E2%80%94+the+dune+field.+Defines+the+sand+terrain+of+the+chase+up+to+the+oasis+edge.+%40oasis+%E2%80%94+the+oasis%3A+date+palms%2C+green+brush%2C+a+pond.+Defines+the+oasis+ahead+of+the+man+camera-left+across+its+full+approach%3A+a+distant+green+cluster+in+shot+1%2C+real+palm+trunks%2C+thrashing+fronds+and+dense+brush+by+shot+2%2C+the+physical+environment+he+crashes+into+in+shots+3%E2%80%934+%E2%80%94+the+brush+at+its+edge+and+the+nearest+palm+shading+the+case.+LOCATION+MAP+One+direction+axis%2C+continued+from+the+previous+part%3A+the+man+labors+camera-LEFT+toward+the+oasis+%28%40oasis%29%2C+which+grows+from+a+green+cluster+on+the+horizon+to+real+palms+he+reaches+by+the+end%3B+the+case+%28%40button%29+lies+under+the+nearest+palm+at+the+oasis+edge.+The+three-bird+pack+closes+behind+him+from+camera-RIGHT%2C+shrinking+the+gap+from+roughly+150+meters+to+20+meters+across+this+part.+Behind+them+the+full-height+storm+wall%2C+as+tall+as+a+hundred+men+stacked%2C+races+in+at+80+km%2Fh+from+camera-right%2C+its+shadow+sweeping+the+sand+%E2%80%94+by+the+final+shot+the+wall+itself+enters+the+frame+and+crosses+it+right+to+left%2C+in+the+same+direction+the+man+runs%2C+faster+than+he+moves.+World+geometry%2C+continued+from+the+previous+part%3A+the+oasis+is+always+AHEAD+of+the+man%2C+the+pack+and+the+storm+always+BEHIND+him+%E2%80%94+so+the+storm+reaches+the+man+BEFORE+the+man+reaches+the+case.+Sun+camera-right%2C+dimming+from+40%25+to+blackout%3A+while+any+direct+light+survives+it+strikes+the+man%27s+back-right+shoulder%2C+and+his+shadow+%E2%80%94+soft+and+fading+%E2%80%94+falls+ahead-left+of+him+along+his+run+line.+FIRST+FRAME+%2F+BLOCKING+47%C2%B0+frontal+MS%3A+the+man+laboring+straight+at+camera+through+deep+sand%2C+hood+framing+his+gritted+face%2C+the+three+riders+small+but+distinct+in+the+background+behind+him%2C+the+storm+wall+filling+the+sky+behind+them.+FORMAT+MODE+Timed+multishot.+Cuts+only+at+the+specified+points%2C+the+camera+does+not+cut+on+its+own.+0.0s+to+2.0s+%E2%80%94+LENS+LOCK%3A+47%C2%B0+frontal+tracking%2C+retreating+just+ahead+of+the+man+at+his+labored+13+km%2Fh%2C+MS+from+the+front.+He+fights+straight+at+camera+%E2%80%94+short+driving+strides%2C+each+footfall+sinking+to+the+ankle+and+sliding+back%2C+knees+pumping+high%2C+breath+tearing+%E2%80%94+the+weak+sun+catching+his+back-right+shoulder%2C+his+faint+shadow+thrown+ahead+of+him+toward+the+lens%3B+behind+him+the+three-bird+pack+GROWS+in+frame+shot-long%2C+legs+a+rapid+scissoring+blur%2C+gliding+over+the+sand+that+swallows+his+feet%3B+the+LEAD+rises+in+his+stirrups+with+a+long+ululating+cry%2C+the+SECOND+answers+with+sharp+whistles%2C+the+THIRD+barks+a+guttural+command+%E2%80%94+the+pack+surges+on+the+cries%3B+the+storm%27s+shadow+races+across+the+sand+and+swallows+the+ground+behind+them.+Shot+holds+47%C2%B0+to+the+cut.+2.0s+HARD+CUT+2.0s+to+4.0s+%E2%80%94+LENS+LOCK%3A+63%C2%B0+from+BEHIND+the+pack%2C+tracking+at+their+50+km%2Fh%2C+low+over+the+riders%27+backs+%E2%80%94+hunting+geometry%3A+the+three+black-robed+backs+fill+the+near+frame%2C+robes+cracking%2C+green+tail+plumes+streaming+beneath+them%3B+between+their+bobbing+shoulders%2C+ahead+and+below%2C+the+small+laboring+figure+of+the+man+running+camera-LEFT+away+from+the+lens+%E2%80%94+and+beyond+him+the+oasis+is+REAL+now%3A+palm+trunks%2C+thrashing+fronds%2C+brush%2C+meters+of+ground+closing%3B+the+LEAD+throws+his+head+back+and+howls+a+war+cry%2C+the+others+answering+in+overlapping+shouts%2C+heels+drumming+the+birds%27+flanks%3B+daylight+dying+at+the+frame+edges+as+the+storm%27s+murk+bleeds+in+from+behind.+Shot+holds+63%C2%B0+to+the+cut.+4.0s+HARD+CUT+4.0s+to+5.5s+%E2%80%94+LENS+LOCK%3A+47%C2%B0+low+tracking+beside+the+man+at+his+pace%2C+tight+MS+in+profile%2C+facing+camera-left.+He+crashes+through+the+first+brush+at+the+oasis+edge%2C+the+last+amber+light+grazing+his+back-right+shoulder+%E2%80%94+and+his+eyes+LOCK+camera-left+onto+the+case+under+the+nearest+palm%2C+the+green+button+glowing+in+the+palm%27s+shade+eight+meters+ahead%3B+his+whole+body+redirects+toward+it%2C+one+arm+already+reaching%2C+the+riders%27+cries+and+the+wind+roar+stacking+behind+him+%E2%80%94+and+the+frame+itself+darkens+beat+by+beat+as+the+storm+wall%27s+leading+edge+eats+the+sky+behind+him.+Shot+holds+47%C2%B0+to+the+cut.+5.5s+HARD+CUT+5.5s+to+7.0s+%E2%80%94+LENS+LOCK%3A+29%C2%B0+low+angle+at+sand+level+beside+the+case%2C+locked+off.+Internal+timing+of+this+single+locked+shot%3A+at+5.5s+the+case+sits+large+in+the+left+foreground%2C+green+button+glowing%2C+and+the+storm+wall+is+ALREADY+IN+FRAME+%E2%80%94+a+churning+ochre+cliff+filling+the+entire+right+third%2C+racing+camera-left+at+80+km%2Fh%2C+sand+streaking+horizontally+ahead+of+it.+At+5.9s+the+man+DIVES+into+frame+from+the+right+ahead+of+the+wall+%E2%80%94+a+full-body+lunge+through+the+air%2C+hood+pinned+by+the+wind%2C+arm+at+maximum+stretch+toward+the+button%2C+still+meters+of+open+air+between+his+fingertips+and+the+case.+At+6.2s%2C+mid-flight%2C+the+wall+CATCHES+him+%E2%80%94+the+churning+murk+swallows+the+man+first%2C+whole%2C+while+he+is+still+airborne+and+still+meters+short%2C+his+outstretched+arm+the+last+of+him+to+vanish.+At+6.4s+the+murk+rolls+on+across+the+remaining+gap+and+drowns+the+case+%E2%80%94+the+green+glow+the+last+thing+visible%2C+untouched%2C+then+gone.+From+6.5s+to+7.0s+the+frame+is+solid+churning+ochre%2C+sand+grains+streaking+horizontally+past+the+lens.+The+wall+moves+faster+than+the+man+flies%3B+it+closes+the+distance+before+he+can.+Shot+holds+29%C2%B0+to+the+end.+CAMERA+Shot+1+frontal+retreat+at+the+man%27s+pace%2C+1+cm+rhythmic+tremor+from+the+closing+strides.+Shot+2+low+tracking+behind+the+pack%2C+sharing+its+jolting+rhythm%2C+unstabilized.+Shot+3+low+lateral+tracking+beside+the+man%2C+tight.+Shot+4+locked+off+at+sand+level+as+the+storm+crosses+and+overruns+the+frame.+No+drift+mid-segment.+PERFORMANCE+The+man%3A+desperate+labor+inside+the+hood+%E2%80%94+mouth+open%2C+breath+ragged%2C+effort+in+every+muscle%3B+the+moment+he+sees+the+case%2C+his+face+sharpens+from+panic+to+purpose%3B+the+dive+is+total+commitment%2C+eyes+fixed+on+the+button+%E2%80%94+then+the+wall+takes+him+mid-reach%2C+arm+still+stretched+into+empty+air.+The+riders%3A+predatory+momentum+%E2%80%94+rising+in+stirrups%2C+heads+thrown+back+on+the+cries%2C+heels+working+the+flanks%2C+bodies+pitching+with+the+stride.+The+ostriches%3A+heads+low+and+thrust+ahead%2C+surging+on+every+shout.+PHYSICS+His+run+obeys+sand+physics%3A+footfalls+sink+to+the+ankle+and+slide+back%2C+sand+spraying+from+his+kicks%2C+a+churned+trench+behind+him%3B+the+brush+at+the+oasis+edge+whips+and+snaps+as+he+crashes+through.+The+dive+is+true+ballistics+%E2%80%94+launched+off+one+driving+leg%2C+body+stretched+horizontal%2C+sand+bursting+where+he+took+off%3B+a+human+dive+covers+two+meters+of+air%2C+and+the+case+lies+eight+meters+out+%E2%80%94+his+trajectory+falls+short+by+physics+alone.+The+storm+wall+moves+at+80+km%2Fh%2C+four+times+faster+than+his+flight+%E2%80%94+it+overtakes+him+mid-air+from+behind.+The+ostriches%27+legs+cycle+in+a+rapid+blur%2C+ground+contact+a+fraction+of+a+beat%2C+wide+two-toed+feet+barely+sinking.+Palm+fronds+thrash+and+bend+leeward.+Airborne+sand+thickens+in+visible+layers%3B+grains+streak+horizontally+as+the+wall+arrives%3B+the+wind+plasters+the+hood+tighter+against+his+head.+LIGHTING+Sun+camera-right%2C+40%25+dimmed+at+frame+one+and+dying+fast+%E2%80%94+while+it+lasts+it+strikes+the+man%27s+back-right+shoulder%2C+his+fading+shadow+falling+ahead-left+along+his+run+line%3B+the+storm%27s+shadow+sweeps+the+sand+in+shot+1%2C+murk+bleeds+into+the+frame+edges+in+shot+2%2C+deep+amber+gloom+by+shot+3.+Shot+4+is+exposed+for+the+button%27s+green+glow%2C+the+brightest+element+in+frame+%E2%80%94+a+saturated+glow+in+the+dimness%2C+the+diving+man+reading+as+a+dark+shape+with+a+faint+amber+rim%2C+detail+sacrificed+to+the+gloom+%E2%80%94+the+man+vanishes+into+the+murk+first%2C+then+the+green+glow+drowns+last%2C+still+untouched%2C+then+near-total+ochre+blackout.+AUDIO+Rising+deafening+wind+roar+underneath+everything%3B+the+rapid+drumming+of+six+ostrich+feet+closing%3B+his+tearing+breath+and+the+crunch-slide+of+sinking+footfalls%3B+the+riders%27+voices+cutting+through+the+wind+%E2%80%94+ululating+cry%2C+sharp+whistles%2C+guttural+overlapping+shouts%2C+one+final+war+cry+%E2%80%94+each+closer+than+the+last%3B+the+crash+of+brush%3B+then+the+wall+hits+with+a+concussive+WHUMP+of+sand+that+cuts+the+riders%27+cries+dead%2C+and+from+inside+the+murk+a+muffled+scream+%E2%80%94+%22NOOO%21%21%21%22+%E2%80%94+swallowed+by+the+roar.+STYLE+Photoreal+live-action+adventure+film+look%2C+anamorphic+widescreen%2C+fine+grain%2C+8K.+Anamorphic+character%3A+a+last+horizontal+flare+smears+off+the+dying+sun+camera-right%3B+the+green+button+glow+blooms+as+a+soft+oval+highlight+in+the+gloom%3B+the+storm+wall+stretches+across+the+full+21%3A9+width+as+it+crosses+the+frame.+OUTPUT+SETTINGS+2.39%3A1+%2821%3A9%29+anamorphic+frame%2C+real-time+throughout.+POSITIVE+LOCKS+HEADCOUNT+LOCK%3A+the+crew+is+exactly+three+%E2%80%94+the+LEAD%2C+the+SECOND%2C+the+THIRD%2C+each+on+his+own+ostrich%2C+the+same+three+throughout.+DIRECTION+LOCK%3A+one+axis+continued+from+the+previous+part+%E2%80%94+the+man+runs+camera-LEFT+toward+the+oasis+in+every+shot+where+he+appears%3B+his+chest%2C+hips+and+toes+point+toward+the+oasis+and+the+case%3B+the+pack+and+the+storm+wall+stay+behind+him+frame-right+until+the+wall+overruns+the+frame%3B+while+any+sunlight+survives+it+strikes+his+back-right+shoulder+and+his+shadow+falls+ahead-left+along+his+run+line.+OUTCOME+LOCK+%E2%80%94+order+of+events+is+fixed%3A+the+storm+reaches+the+man+BEFORE+the+man+reaches+the+case.+The+man%27s+dive+launches+from+eight+meters+out+and+covers+two%3B+the+wall+swallows+him+mid-air+at+6.2s+while+meters+of+open+air+still+separate+his+fingertips+from+the+case%3B+his+hand+touches+only+churning+sand+and+empty+air%2C+never+the+case%2C+never+the+button.+The+case+stays+flat+on+the+sand+through+the+entire+shot+%E2%80%94+untouched%2C+lid+closed%2C+button+unpressed%2C+its+green+glow+the+last+visible+object%2C+drowning+at+6.4s+after+the+man+is+already+gone.+The+part+ends+on+solid+churning+ochre+with+the+muffled+%22NOOO%21%21%21%22+%E2%80%94+no+contact%2C+no+resolution.+His+hood+stays+up+in+every+frame.+The+case+matches+%40button+exactly%2C+flat+in+the+palm%27s+shade.+Ostriches+match+%40ostrich%2C+legs+always+a+rapid+blur%2C+wide+two-toed+feet%3B+the+pack+stays+behind+the+man+for+the+whole+part%2C+gap+shrinking+from+150+to+20+meters+but+never+reaching+him.+The+oasis+matching+%40oasis+grows+from+a+distant+cluster+to+real+brush+and+palms+he+physically+enters+%E2%80%94+its+edge+brush+and+the+nearest+palm+are+the+set+of+shots+3%E2%80%934%3B+the+sand+terrain+of+the+chase+before+the+oasis+edge+matches+%40location_desert.&resolution=4k",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/ai/video?aspect_ratio=21%3A9&audio=on&duration=15&model=seedance_2_0&recreate=SCENE+CONTEXT+One+continuous+shot.+The+camera+faces+down+the+wrecked%2C+burning+deck+toward+the+BOW+of+the+ship+%E2%80%94+and+Eduardo%2C+thrown+FORWARD+from+the+stern+by+a+blast%2C+comes+FLYING+IN+from+ABOVE+AND+BEHIND+the+camera+%E2%80%94+sailing+in+over+the+lens+on+a+forward+arc%2C+through+raining+seawater+%E2%80%94+slams+onto+the+deck+AHEAD+of+the+camera+and+rolls+through+a+tumbling+somersault%2C+momentum+carrying+him+toward+the+bow.+Two+crewmen+flee+past+him+%E2%80%94+one+leaps+overboard.+Eduardo+fights+his+way+toward+the+bow+under+incoming+fire%3A+an+explosion+bursts+on+his+LEFT+%E2%80%94+he+dodges+away+and+is+knocked+down%3B+he+struggles+back+to+his+feet+%E2%80%94+a+second+explosion+on+his+RIGHT+%E2%80%94+he+ducks+and+shields+behind+debris%3B+then+he+breaks+into+a+sprint+for+the+bow+%E2%80%94+the+camera+sweeps+around+ahead+of+him+and+settles+OFF+THE+BOW%2C+FRONTAL%3A+he+leaps+over+the+bow+rail+TOWARD+the+camera%2C+the+ship+filling+the+background+behind+him+%E2%80%94+and+THE+INSTANT+he+clears+the+rail%2C+a+COLOSSAL+explosion+consumes+the+ship+behind+him%3A+the+blast+wall+catches+him+MID-AIR+and+he+VANISHES+inside+it+%E2%80%94+he+never+escapes.+The+cloud+overtakes+the+camera%3B+the+frame+floods+to+100%25+smoke+and+dust.+The+shot+ENDS+inside+the+dust%3A+no+transition%2C+no+reveal+%E2%80%94+it+holds+to+the+end.+ACTIVE+REFERENCES+%40eduardo+%E2%80%94+lean+pirate+captain%2C+dark+curly+hair+falling+free+from+under+a+dusty+mustard-yellow+cloth+bandana%2C+a+small+white+shark+tooth+pinned+to+the+front+of+the+bandana+above+his+temple%2C+thin+moustache%2C+gold+hoop+earrings%2C+cream+linen+shirt+under+a+worn+brown+leather+waistcoat%2C+cloth+sash+and+leather+belts.+100%25+matches+the+reference%3B+the+man+fighting+down+the+deck+toward+the+bow.+%40main_ship_sheet+%E2%80%94+Eduardo%27s+galleon%3A+pale+square+sails%2C+tall+wooden+sterncastle.+100%25+matches+the+reference%3B+already+battle-damaged+in+this+shot+%E2%80%94+burst+bulwark%2C+smoldering+rigging%2C+debris+on+the+deck.+%40ocean_location+%E2%80%94+calm+bright+sea%2C+glittering+sun+path%2C+hazy+horizon.+Controls+water+and+sky+atmosphere+only.+%40eduardo_crew+%E2%80%94+weathered+pirate+crewmen+%28bandanas%2C+rough+shirts%2C+vests%29.+100%25+match+the+reference%3B+TWO+of+them+appear+early+in+the+shot%2C+fleeing+%E2%80%94+one+leaps+overboard.+LOCATION+MAP+The+main+deck+of+%40main_ship_sheet+on+%40ocean_location+%E2%80%94+a+wrecked+corridor+of+splintered+planks%2C+fallen+spars%2C+torn+rigging+and+small+fires+running+FORWARD+from+the+mainmast+to+the+BOW.+The+bow+rail+and+bowsprit+are+the+destination%2C+background-center%2C+open+sea+beyond+them.+Sea+and+smoke+beyond+the+broken+side+rails%3B+seawater+from+near-miss+columns+rains+down+over+the+deck+in+the+opening.+FIRST+FRAME+%2F+BLOCKING+First+frame%3A+deck+level%2C+MS%2C+camera+facing+down+the+wrecked+deck+toward+the+BOW+in+the+background-center+%E2%80%94+bow+rail+and+bowsprit+against+open+sea+and+sky%2C+smoke+streaming+across+the+frame%2C+small+fires+burning+left+and+right%2C+seawater+spray+falling+across+the+deck+like+rain%2C+the+deck+listing%2C+loose+gear+sliding.+Eduardo+is+NOT+in+the+first+frame%3B+within+the+first+half+second+he+enters+from+ABOVE+AND+BEHIND+the+camera+%E2%80%94+his+body+sweeping+in+OVER+the+lens%2C+boots+crossing+the+top+of+the+frame%2C+flying+FORWARD+into+the+depth+of+the+shot+toward+the+bow.+FORMAT+MODE+One+continuous+shot+%E2%80%94+the+camera+does+not+cut+on+its+own.+The+shot+ENDS+inside+the+dust+whiteout%3B+there+is+NO+location+change+and+NO+reveal+after+it.+PHASE+1+%E2%80%94+the+landing+and+the+gauntlet%3A+%40eduardo+comes+FLYING+IN+from+ABOVE+AND+BEHIND+the+camera+%E2%80%94+thrown+FORWARD+from+the+stern+by+a+blast%2C+his+body+sweeping+in+over+the+lens+and+arcing+DOWN-AND-FORWARD+into+the+depth+of+the+frame%2C+arms+out+in+front+of+him%2C+back+to+camera+%E2%80%94+falling+THROUGH+a+curtain+of+seawater+raining+down+from+a+collapsed+near-miss+column%3B+he+SLAMS+onto+the+wet+deck+planks+several+meters+AHEAD+of+the+camera+and+rolls+through+a+hard+tumbling+somersault+AWAY+from+the+lens%2C+toward+the+bow%2C+water+bursting+off+him+and+the+boards%2C+scattering+debris%2C+coming+up+to+a+crouch+facing+the+bow%2C+soaked+and+shaken.+TWO+crewmen+of+%40eduardo_crew+bolt+past+him+in+panic+%E2%80%94+one+sprints+aft+past+the+camera%2C+the+other+vaults+the+side+rail+and+LEAPS+OVERBOARD%2C+legs+kicking.+Eduardo+starts+working+down+the+deck+toward+the+bow%2C+camera+following+behind.+An+incoming+round+EXPLODES+on+his+LEFT+%E2%80%94+a+burst+of+flame%2C+planks+and+spray+%E2%80%94+he+flinches+away+to+the+right+and+is+knocked+off+his+feet+onto+the+deck.+He+struggles+up%2C+heavy+and+unsteady%2C+one+hand+pushing+off+a+fallen+spar+%E2%80%94+and+a+second+round+EXPLODES+on+his+RIGHT+%E2%80%94+he+ducks+hard%2C+shielding+his+head+behind+a+broken+mast+stump%2C+debris+raining+over+him.+PHASE+2+%E2%80%94+the+sprint%2C+the+frontal+jump%2C+the+blast%2C+the+dust%3A+he+shoves+off+and+breaks+into+a+desperate+sprint+at+12+km%2Fh+for+the+bow+%E2%80%94+and+as+he+runs%2C+the+camera+SWEEPS+AROUND+him+in+one+continuous+arc%2C+ending+positioned+OFF+THE+BOW%2C+out+over+the+open+water%2C+FACING+BACK+at+the+ship%3A+now+Eduardo+sprints+STRAIGHT+AT+THE+CAMERA%2C+the+burning+ship+towering+behind+him.+He+plants+one+boot+on+the+bow+rail+and+LEAPS+OVERBOARD+TOWARD+THE+CAMERA+%E2%80%94+body+launching+up+and+out+over+the+water%2C+frontal%2C+face+and+reaching+arms+filling+the+frame+%E2%80%94+and+THE+INSTANT+he+clears+the+rail%2C+mid-air%2C+the+ENTIRE+SHIP+EXPLODES+behind+him+in+full+view%3A+a+colossal+white+flash+silhouetting+his+flying+body+for+two+frames%2C+the+whole+vessel+going+up+in+one+blast+%E2%80%94+and+the+expanding+wall+of+flame-lit+smoke+and+debris+CATCHES+HIM+IN+THE+AIR+from+behind%2C+swallowing+his+silhouette+whole+before+he+can+fall+clear+%E2%80%94+he+VANISHES+inside+the+explosion%2C+never+escaping+it+%E2%80%94+and+the+cloud+overtakes+the+lens%2C+the+dust+filling+100%25+of+the+frame.+The+dust+churns%2C+a+deep+orange+glow+pulsing+inside+it+and+fading.+HOLD+inside+the+full+dust+to+the+last+frame+%E2%80%94+the+generation+ENDS+here%2C+inside+the+dust.+He+never+reaches+the+water%3B+the+blast+takes+him+mid-air.+OPTICS+47%C2%B0+neutral+through+the+landing%2C+the+gauntlet+and+the+jump.+No+drift.+Focus+rides+Eduardo+throughout%3B+in+the+final+dust+the+frame+is+pure+particulate+with+no+fixed+plane.+CAMERA+Handheld+chase+behind+him+for+the+entire+shot%2C+deck+level%2C+always+looking+TOWARD+THE+BOW+%E2%80%94+footstep+energy+visible%2C+jolted+by+each+explosion%3B+in+phase+2+it+accelerates+after+his+sprint%2C+then+arcs+around+him+in+one+unbroken+move+and+settles+off+the+bow+over+the+water%2C+FRONTAL+to+Eduardo+%E2%80%94+he+runs+and+leaps+straight+into+the+lens+with+the+ship+in+the+background+of+his+jump.+The+final+blast+is+the+WHOLE+SHIP+exploding+behind+his+airborne+body+%E2%80%94+a+colossal+flash%2C+then+the+wall+of+smoke+bursting+forward%2C+swallowing+him+mid-air+and+then+the+lens+%E2%80%94+the+camera+stays+buried%2C+holding+inside+the+churning+dust+until+the+end.+ACTION+Strict+order+of+events%3A+flying+entry+from+above+through+falling+seawater+%E2%86%92+hard+landing+roll+%28somersault+over+one+shoulder%2C+forward+momentum+carrying+the+roll+toward+the+bow%2C+ending+in+a+crouch%29+%E2%86%92+two+crewmen+flee+past%2C+one+over+the+side+%E2%86%92+left+explosion+%E2%86%92+dodge+right+%E2%86%92+knocked+down+%E2%86%92+a+hard%2C+clumsy+struggle+back+to+his+feet+%E2%86%92+right+explosion+%E2%86%92+duck+and+shield+behind+the+mast+stump+%E2%86%92+shove+off+%E2%86%92+full+sprint+to+the+bow%2C+camera+arcing+around+to+meet+him+head-on+%E2%86%92+one+boot+on+the+rail+%E2%86%92+LEAP+overboard+straight+toward+the+camera+%E2%86%92+THE+INSTANT+he+clears+the+rail%2C+the+ENTIRE+SHIP+EXPLODES+behind+him+%E2%86%92+the+blast+wall+catches+him+MID-AIR+and+swallows+him+whole+%E2%86%92+the+cloud+overtakes+the+camera+%E2%86%92+dust+to+100%25+%E2%86%92+hold+in+the+dust+%E2%86%92+END.+He+never+escapes+and+never+reaches+the+water.+Each+explosion+visibly+moves+his+body%3A+the+first+throws+him+down%2C+the+second+folds+him+behind+cover.+PERFORMANCE+During+the+gauntlet%3A+jaw+clenched%2C+eyes+fixed+forward%2C+water+streaming+off+his+face+after+the+landing.+The+fleeing+crewmen+are+pure+panic+%E2%80%94+arms+pumping%2C+one+glance+back%2C+the+vault+over+the+rail+desperate.+In+the+final+sprint%3A+full+commitment%2C+arms+reaching+for+the+rail%2C+eyes+wide+%E2%80%94+in+the+jump%3A+full+commitment%2C+arms+reaching+at+the+lens%2C+eyes+wide+%E2%80%94+and+mid-air+the+world+behind+him+turns+white%3A+his+flying+silhouette+swallowed+by+the+blast%2C+reaching+hands+the+last+thing+visible.+PHYSICS+The+flying+entry+has+true+ballistic+momentum%3A+he+arrives+on+an+arc+from+above%2C+and+the+landing+roll+absorbs+it+%E2%80%94+impact+compresses+the+body%2C+the+somersault+carries+the+leftover+energy%2C+no+weightless+float.+Falling+seawater+has+real+weight+%E2%80%94+it+rains+in+heavy+drops+and+sheets%2C+splashing+off+planks%2C+soaking+cloth+so+it+clings+and+darkens.+The+listing+deck+tilts+his+movement%3B+debris+has+weight+and+stops+his+foot+when+hit.+The+two+deck+explosions+throw+real+shockwaves+%E2%80%94+planks+lift%2C+flame+flashes+then+roll+into+smoke%2C+and+Eduardo%27s+falls+carry+true+body+weight%2C+hard+contact+with+the+deck%2C+no+bounce.+The+overboard+crewman+drops+with+real+gravity.+The+final+whole-ship+explosion+obeys+mass%3A+the+shockwave+arrives+first+%E2%80%94+cloth+and+hair+snap+flat%2C+the+deck+bucks+under+his+planted+boot+%E2%80%94+then+the+fireball%27s+light%2C+then+the+wall+of+smoke+and+debris%2C+heavy+pieces+falling+short%2C+fine+dust+travelling+farthest+and+swallowing+the+frame.+Dust+churns+with+internal+motion%2C+dense%2C+filling+every+corner+of+the+frame.+LIGHTING+High+sea+daylight+5600K%2C+hardened+by+fire-glow+accents+from+the+deck+fires+and+smoke+shadow+sweeping+the+deck%3B+falling+water+catches+the+sun+as+bright+streaks%3B+each+of+the+two+explosions+throws+a+brief+warm+flash+from+its+side+of+the+frame.+The+final+whole-ship+blast%3A+two+frames+of+white-hot+overexposure+flooding+from+behind%2C+then+deep+fire-orange+glow+inside+the+rolling+dust%2C+fading+toward+neutral+grey-brown+as+the+frame+holds+and+ends.+AUDIO+Phase+1%3A+a+whistling+whoosh+as+he+drops+in%2C+heavy+water+raining+on+planks%2C+a+THUD+and+clatter+of+the+landing+roll%2C+grunt%2C+ragged+breath%3B+panicked+boots+of+the+fleeing+crewmen%2C+a+yell+and+a+distant+splash+as+one+goes+over+the+side%3B+then+BOOM+left%2C+ringing+ears%2C+his+grunt+as+he+hits+the+deck%3B+scrabbling+boots%3B+BOOM+right%2C+debris+pattering+down+over+him.+Phase+2%3A+sprinting+boots+hammering+the+deck%2C+the+wooden+knock+of+his+boot+on+the+bow+rail%2C+half+a+beat+of+pure+wind+as+he+hangs+in+the+air+%E2%80%94+then+ONE+colossal+BOOM+as+the+whole+ship+goes+up+behind+him%2C+the+deepest+sound+of+the+film%2C+cracking+timber+and+folding+masts+inside+the+roar%2C+everything+collapsing+into+a+muffled+ring%2C+sound+buried+with+the+picture+%E2%80%94+the+ring+and+the+churn+of+dust+holding+to+the+last+frame.+No+music.+STYLE+Photoreal+live-action%2C+fine+film+grain%2C+real+pyrotechnic+and+particulate+language%2C+one+unbroken+take%2C+8K+master.+POSITIVE+LOCKS+One+continuous+shot%3B+the+camera+stays+at+deck+level%2C+behind+Eduardo%2C+always+looking+TOWARD+THE+BOW.+The+shot+OPENS+with+Eduardo+NOT+in+frame%3B+he+flies+in+from+ABOVE+AND+BEHIND+the+camera%2C+over+the+lens%2C+on+a+forward+arc+toward+the+bow%2C+through+falling+seawater%2C+and+lands+in+a+tumbling+roll+ahead+of+the+camera+%E2%80%94+he+does+not+walk+into+frame+and+never+appears+standing+before+the+landing.+Exactly+TWO+fleeing+crewmen%3A+one+runs+aft%2C+one+leaps+overboard+%E2%80%94+they+appear+only+in+the+opening+beat.+The+deck+explosions+land+in+strict+order+after+his+landing%3A+first+LEFT+of+him+%28he+dodges+and+falls%29%2C+then+RIGHT+of+him+%28he+ducks+behind+cover%29%2C+then+the+final+blast+%E2%80%94+the+ENTIRE+SHIP+exploding+the+INSTANT+he+clears+the+bow+rail+%E2%80%94+three+explosions+total%2C+no+more.+The+jump+is+FRONTAL%3A+the+camera+faces+Eduardo+from+off+the+bow%2C+he+leaps+toward+the+lens+with+the+exploding+ship+behind+him+in+frame.+HE+NEVER+ESCAPES%3A+the+blast+wall+catches+him+MID-AIR+and+he+vanishes+inside+the+explosion+before+he+can+fall+clear+%E2%80%94+no+water+contact%2C+no+landing%2C+no+survival+beat%3B+the+dust+swallows+him+and+then+the+lens.+The+dust+reaches+100%25+frame+coverage+and+the+shot+ENDS+inside+the+dust%3A+the+frame+stays+fully+dust-filled+to+the+last+frame%2C+no+clearing%2C+no+new+location%2C+no+reveal.+Eduardo%27s+head%3A+mustard-yellow+bandana+with+the+small+white+shark+tooth+at+the+front%2C+hair+loose.&resolution=4k",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/ai/video?aspect_ratio=21%3A9&audio=on&duration=15&model=seedance_2_0&recreate=SCENE+CONTEXT+The+frame+opens+as+a+solid+impenetrable+wall+of+ochre+dust+%E2%80%94+pure+blind+murk+with+nothing+visible+%E2%80%94+holding+for+seconds+before+it+slowly+begins+to+thin%3B+the+dune+location+emerges+only+gradually%2C+and+only+then+a+young+man+hauls+himself+over+the+crest%2C+finds+endless+empty+desert%2C+and+screams+a+name%3B+beyond+the+dunes%2C+three+riders+in+black+on+saddled+ostriches+%E2%80%94+birds+dozing+with+heads+lowered+%E2%80%94+snap+their+heads+toward+the+scream+in+perfect+unison%2C+exchange+a+few+rough+words%2C+and+launch+into+a+sprint.+Light+sand-wind+only%2C+no+storm.+ACTIVE+REFERENCES+Sequence-wide+identity+lock%3A+one+man%2C+one+dune+field%2C+one+rider+design%2C+one+ostrich+design%2C+held+identical+across+every+shot.+%40main_character_desert+%E2%80%94+young+man%2C+hood+UP+over+his+dark+curly+hair+in+every+frame%2C+thin+mustache%2C+layered+beige+desert+robes+with+rust-red+scarf%2C+clothes+torn+and+dusted+with+sand.+100%25+matches+the+reference.+%40rider+%E2%80%94+man+wrapped+head+to+toe+in+dusty+black+robes+and+black+head-wrap%2C+only+weathered+eyes+visible%2C+leather+belt+with+a+coiled+rope%2C+worn+leather+boots.+100%25+matches+the+reference.+Exactly+three+identical+riders+in+this+scene.+Rough%2C+guttural+desert+voices.+%40ostrich+%E2%80%94+black+ostrich+with+neon-green+tail+plumes+and+a+green+stripe+down+its+neck%2C+wearing+small+leather+goggles%2C+a+worn+leather+saddle+and+rope+reins.+Stands+a+head+taller+than+a+man.+100%25+matches+the+reference.+Each+of+the+three+riders+sits+mounted+in+the+saddle+of+an+ostrich%2C+boots+tucked+against+its+flanks%2C+rope+reins+slack+in+hand+%E2%80%94+three+riders%2C+three+ostriches.+%40location_desert+%E2%80%94+endless+field+of+golden+dunes+to+the+horizon%2C+no+landmarks.+Defines+the+entire+environment+across+all+shots.+100%25+matches+the+reference.+LOCATION+MAP+The+man%27s+dune%3A+camera+on+the+front+slope+just+below+the+sharp+crest%2C+thin+sand+ribbons+blowing+off+its+edge+camera-left.+The+riders%27+hollow%3A+a+sheltered+flat+between+dunes+further+out%2C+same+dune+field%2C+same+light+%E2%80%94+the+three+mounted+riders+clustered+there%2C+birds+idle.+Background+everywhere%3A+rolling+crests+dissolving+into+pale+heat+haze.+Sun+high+and+camera-right.+FIRST+FRAME+%2F+BLOCKING+First+frame+is+a+completely+opaque+wall+of+suspended+dust%3A+100%25+density%2C+uniform+warm+ochre-brown+filling+the+entire+frame%2C+visibility+zero+%E2%80%94+no+shapes%2C+no+horizon%2C+no+sky%2C+no+ground%2C+only+faint+darker+and+lighter+swirls+churning+through+it.+The+frame+HOLDS+this+total+blindness+for+the+first+2.5+seconds%3B+from+2.5s+to+4.5s+the+haze+thins+slowly+and+steadily+%E2%80%94+100%25+to+70%25+to+50%25+to+30%25+%E2%80%94+the+EMPTY+dune+crest+resolving+in+stages.+Only+after+the+air+has+cleared+to+30%25+does+the+man+appear.+FORMAT+MODE+Timed+multishot.+Cuts+only+at+the+specified+points%2C+the+camera+does+not+cut+on+its+own.+0.0s+to+12.0s+%E2%80%94+ONE+CONTINUOUS+UNBROKEN+SHOT%2C+no+internal+cuts.+LENS+LOCK%3A+29%C2%B0+from+0.0s+to+8.5s%2C+camera+2+meters+from+the+crest%2C+eye-level%2C+handheld+1%E2%80%932+cm+tremor.+0.0s+to+2.5s%3A+total+ochre+blindness%2C+100%25+dust+density%2C+visibility+zero+%E2%80%94+the+frame+is+nothing+but+slowly+churning+dust+texture%2C+holding+blind+the+entire+2.5+seconds.+2.5s+to+4.5s%3A+the+haze+dissolves+slowly+and+evenly+from+100%25+down+to+30%25%2C+the+empty+dune+crest+emerging+from+the+murk+in+stages+%E2%80%94+light+gradient+first%2C+then+a+soft+dark+edge%2C+then+a+sharp+crest+line+%E2%80%94+still+no+one+in+frame.+At+4.5s+a+hand+FLINGS+into+frame+from+behind+the+dune+crest+and+slams+down+on+the+sand%2C+fingers+digging+in%3B+a+second+hand+follows%3B+the+man+drags+himself+up+over+the+crest+chest-first%2C+his+hood+already+up%2C+dry+sand+shedding+off+the+OUTSIDE+of+his+hood+and+shoulders+as+he+moves%3B+he+coughs+hard+%E2%80%94+dry+racking+coughs+of+clear+air%2C+chest+heaving+%E2%80%94+and+pushes+up+onto+his+knees%2C+turning+his+head+left%2C+then+right+%E2%80%94+nothing+but+dunes.+At+8.5s+he+drags+in+one+huge+breath%2C+tilts+his+head+back+and+screams+with+his+whole+body%2C+fists+pressed+into+the+sand+%E2%80%94+and+on+the+first+beat+of+the+scream+the+handheld+tremor+settles+and+the+camera+lifts+off+into+a+crane+retreat%3A+easing+into+motion+over+the+first+half+second%2C+then+gliding+at+constant+speed%2C+buttery+and+unbroken%2C+from+2+meters+to+150+meters+away+and+60+meters+up+by+12.0s%2C+the+FOV+widening+gradually+and+evenly+from+29%C2%B0+to+107%C2%B0+ultra-wide+across+the+retreat+%E2%80%94+his+kneeling+figure+shrinks+to+a+speck+in+an+infinite+field+of+dunes%2C+the+horizon+stretching+across+the+full+21%3A9+width.+Shot+ends+at+107%C2%B0.+12.0s+HARD+CUT+12.0s+to+13.5s+%E2%80%94+LENS+LOCK%3A+63%C2%B0+MS+on+the+riders%27+hollow%2C+locked+off%2C+clear+air.+Deadpan+stillness%3A+the+three+riders+slumped+relaxed+in+their+saddles%2C+all+three+ostriches+with+heads+LOWERED+out+of+frame+or+drooped+to+the+sand%2C+idly+pecking%2C+tail+plumes+twitching.+The+faint+distant+scream+carries+on+the+wind+%E2%80%94+and+the+three+RIDERS%27+heads+snap+toward+the+sound+in+one+crisp+synchronized+whip%2C+bodies+otherwise+frozen%3B+the+birds+keep+pecking%2C+oblivious.+The+lead+rider+growls+a+short+guttural+question%3B+the+SECOND+answers+with+one+rough+clipped+word%3B+the+THIRD+gives+a+single+curt+nod%3B+the+lead+barks+a+two-syllable+command+%E2%80%94+three+riders%2C+three+voices%2C+three+birds.+Shot+holds+63%C2%B0+to+the+cut.+13.5s+HARD+CUT+13.5s+to+15.0s+%E2%80%94+LENS+LOCK%3A+29%C2%B0+medium-close%2C+locked+off%2C+framed+on+the+rider%27s+knee+and+saddle%2C+empty+sky+above.+A+beat+%E2%80%94+then+an+ostrich+head+RISES+into+frame+from+below+on+its+long+neck%2C+goggles+askew%2C+a+few+grains+of+sand+dropping+off+its+beak%3B+it+rotates+toward+the+sound+in+one+smooth+owl-like+turn%2C+blinks+once+behind+the+goggles%2C+and+lets+out+a+sharp+rasping+chirr-honk.+Shot+holds+29%C2%B0+to+the+cut.+15.0s+HARD+CUT+15.0s+to+16.0s+%E2%80%94+LENS+LOCK%3A+84%C2%B0+low+wide+on+the+hollow%2C+locked+off.+All+three+riders+yank+their+reins+in+unison+with+short+harsh+driving+shouts%3B+the+three+ostriches+wheel+on+the+spot+in+tight+scratching+turns%2C+sand+spraying+from+their+feet%2C+and+EXPLODE+across+the+hollow+camera-left+%E2%80%94+legs+instantly+a+rapid+scissoring+blur%2C+at+least+three+full+strides+per+second%2C+feet+snapping+off+the+sand+the+instant+they+touch%2C+necks+shooting+forward%2C+green+tail+plumes+streaming+%E2%80%94+and+all+three+RUN+OUT+of+the+left+edge+of+frame+before+the+cut%2C+leaving+only+their+hanging+dust+and+collapsing+footprints+in+the+empty+hollow.+Shot+holds+84%C2%B0+to+the+end.+CAMERA+Shot+1+is+one+unbroken+take%3A+handheld+tremor+planted+at+the+crest+through+the+blind+opening+and+the+crawl%2C+then+at+8.5s+the+tremor+settles+and+the+same+camera+lifts+into+a+smooth+constant-speed+crane+retreat%2C+buttery+like+a+drone+glide%2C+his+figure+centered+the+entire+move.+Shots+2%E2%80%934+locked+off%3B+in+shot+4+the+birds+exit+frame+left%2C+the+camera+stays.+No+drift+mid-segment+except+the+stated+continuous+FOV+widening+during+the+shot-1+retreat.+PERFORMANCE+The+man%3A+racking+dry+coughs+of+clear+air%2C+sand+on+his+lashes%3B+during+the+scream%2C+neck+tendons+standing+out%2C+ribcage+expanding%2C+the+scream+held+past+comfort%2C+his+open+mouth+clean.+The+riders%3A+bone-dry+comic+timing+%E2%80%94+total+stillness%2C+then+the+single+synchronized+head-snap%2C+nothing+else+moving%3B+the+exchange+is+clipped+and+businesslike%2C+eyes+never+leaving+the+horizon%3B+alert+eyes+above+the+wraps.+The+ostrich+in+the+insert%3A+unhurried%2C+faintly+indignant%2C+the+goggles+slightly+crooked+%E2%80%94+comedy+through+deadpan%2C+never+mugging.+PHYSICS+The+opening+dust+behaves+as+a+dense+suspended+cloud%2C+not+a+surface%3A+at+100%25+it+blocks+all+light+transmission+and+all+depth%2C+its+interior+churning+slowly+in+the+15+km%2Fh+wind+with+layered+eddies+drifting+camera-left%3B+it+dissolves+by+dilution+%E2%80%94+thinning+evenly+everywhere+rather+than+parting+like+a+curtain%2C+the+reveal+slow+and+continuous+over+two+full+seconds.+Sand+as+dry+granular+flow%3A+sheds+only+from+the+outer+surface+of+his+clothes+%E2%80%94+hood%2C+shoulders%2C+sleeves+%E2%80%94+in+thin+streams+triggered+by+his+movement%3B+handprints+collapse.+His+coughs+and+his+scream+are+clear+air+from+an+empty+mouth%2C+his+lips+and+mouth+free+of+sand.+Wind+at+15+km%2Fh+drifts+thin+sand+ribbons+camera-left+%E2%80%94+light+drift%2C+storm-free+sky+once+the+haze+clears.+In+the+launch+every+mass+obeys+inertia%3A+the+wheeling+turns+gouge+arcs+in+the+sand%2C+the+riders%27+bodies+lag+the+acceleration+and+snap+forward%2C+saddles+creak%3B+at+full+sprint+the+legs+cycle+in+a+fast+scissoring+blur+%E2%80%94+three-plus+strides+per+second%2C+ground+contact+a+fraction+of+a+beat+%E2%80%94+bodies+bouncing+vertically+with+each+kick%2C+necks+swinging+as+counterweights%2C+two-toed+prints+ripping+open+and+collapsing+behind%3B+after+the+exit%2C+their+dust+hangs+and+drifts+across+the+empty+frame.+LIGHTING+Single+hard+sun+high+and+camera-right%2C+5600K.+Through+the+long+blind+opening+the+light+is+fully+diffused+inside+the+dust+%E2%80%94+a+shadowless+warm+ochre+glow+with+no+visible+sun+disk%2C+brightness+pulsing+faintly+as+denser+eddies+drift+through%3B+as+the+haze+thins+the+sun+burns+through+first+as+a+bright+smear%2C+then+hardens+into+a+single+sharp+source+with+crisp+shadows+by+the+time+the+man+appears.+Black+plumage+reads+as+deep+light-drinking+feather+mass+with+sun+rim-lighting+its+edges%3B+the+neon-green+tail+plumes+and+neck+stripes+are+the+only+saturated+accents%3B+goggle+lenses+throw+small+hard+glints.+AUDIO+The+long+blind+opening+is+a+wall+of+muffled+wind-choked+roar%2C+sand+hissing+against+the+lens%2C+no+other+sound+for+the+first+2.5+seconds%3B+the+roar+drops+steadily+as+the+haze+thins%2C+wind+resolving+into+distinct+gusts%3B+dry+racking+coughs%3B+one+long+scream+%E2%80%94+%22CIN-DEEEEEEEE%21%21%21%22+%E2%80%94+the+final+vowel+a+long+held+%22EE%22+sound%2C+stretched+and+fading+as+the+camera+retreats%3B+the+same+scream+faint+on+the+wind+over+the+hollow%2C+then+near-silence+for+the+head-snap%3B+a+short+exchange+of+rough+guttural+desert+voices+%E2%80%94+a+growled+question%2C+one+clipped+answer%2C+a+barked+two-syllable+command+%E2%80%94+wordless+gruff+phrases%2C+no+clear+language%3B+the+soft+peck-peck+of+a+beak+in+sand%3B+one+sharp+rasping+chirr-honk%3B+then+harsh+driving+shouts+and+an+explosive+fast+drumroll+of+two-toed+feet+dopplering+away+as+the+birds+exit%2C+wind+over+the+emptied+hollow.+STYLE+Photoreal+live-action+adventure+film+look%2C+anamorphic+widescreen%2C+fine+grain%2C+8K.+Anamorphic+character%3A+oval+out-of-focus+highlights+in+the+drifting+dust%2C+a+long+horizontal+flare+streaking+off+the+sun+at+the+widest+framing%2C+distant+ridges+compressing+into+layers+of+heat+shimmer.+OUTPUT+SETTINGS+2.39%3A1+%2821%3A9%29+anamorphic+frame%2C+real-time+throughout.+POSITIVE+LOCKS+OPENING+LOCK%3A+the+first+2.5+seconds+are+100%25+opaque+ochre+dust+%E2%80%94+visibility+zero%2C+no+shapes%2C+no+people%3B+the+haze+thins+to+30%25+between+2.5s+and+4.5s+over+an+EMPTY+crest%2C+and+the+man%27s+hand+enters+frame+only+at+4.5s.+ONER+LOCK%3A+the+first+12+seconds+are+ONE+CONTINUOUS+SHOT+with+zero+internal+cuts+%E2%80%94+handheld+at+29%C2%B0+until+the+scream+at+8.5s%2C+then+one+smooth+constant-speed+retreat+widening+evenly+to+107%C2%B0+by+12.0s%3B+the+first+cut+lands+exactly+at+12.0s.+CLEAN+MOUTH+LOCK%3A+sand+sheds+only+from+the+outside+of+his+clothing%3B+his+mouth+stays+clean%2C+every+cough+and+the+scream+release+only+clear+air.+HEADCOUNT+LOCK%3A+exactly+THREE+riders+on+exactly+THREE+ostriches+in+every+shot+where+they+appear+%E2%80%94+never+two%2C+never+four.+The+man+matches+%40main_character_desert%3B+his+hood+stays+up+in+every+frame%2C+his+face+readable%2C+the+desert+around+him+empty.+Ostriches+match+%40ostrich%2C+each+with+a+rider+matching+%40rider+in+its+saddle+in+shots+2%E2%80%934.+In+shot+2+the+birds%27+heads+stay+down+while+ONLY+the+riders%27+heads+snap+toward+the+sound%3B+the+exchange+is+short%2C+rough+and+wordless.+In+shot+3+exactly+one+ostrich+head+rises+into+frame+and+honks.+At+full+sprint+the+legs+cycle+in+a+rapid+blur%2C+three-plus+strides+per+second%3B+in+the+final+shot+all+three+birds+RUN+OUT+of+the+left+frame+edge%2C+the+last+frames+holding+the+empty+hollow+with+hanging+dust.+Shot+4+moves+camera-left.&resolution=4k",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/api/ads-studio-intro/carousel/",
+      "status_code": 307,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/api/i/array/phc_nAcCHDBUspNpjMXoEt7RUffSwfjsVsYAPVwEeHAfsWEd/config.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/api/i/flags/?v=2",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/api/mcp/v2/",
+      "status_code": 307,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/api/sora2-videos/vertical/",
+      "status_code": 307,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/apps?utm_campaign=microsoft-and-openai-launch-voice-models&utm_medium=referral&utm_source=superhuman",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/blog/5-Best-AI-Video-Models-2026-Tested-Compared",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/blog/best-ai-image-models-fashion-brand-content-2026",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/blog/future-models-insights",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/blog/future-models-insights?_rsc=1jv32",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/blog/future-models-insights?_rsc=871ul",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/blog/future-models-insights?_rsc=c1s3o",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/blog/future-models-insights?_rsc=ebk79",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/blog/future-models-insights?_rsc=mn6h9",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/blog/new-unlimited-more-models",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/cinema-studio?utm_source=369admingroup",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/collection/effects?_bhlid=6f5cd9fad6c13b67b6caef7144bc985ae6b38419&utm_campaign=all-ai-models-might-blackmail-you&utm_medium=newsletter&utm_source=www.theneurondaily.com",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/collection/effects?utm_campaign=all-ai-models-might-blackmail-you&utm_medium=referral&utm_source=www.theneurondaily.com",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/config",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/create/video?utm_source=369admingroup",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/creator-hub/help-center/ai-models",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/creator-hub/help-center/ai-models/how-do-i-create-and-use-a-soul-id-character",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/creator-hub/help-center/ai-models/how-do-i-create-and-use-a-soul-id-character.md",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/creator-hub/help-center/ai-models/how-do-i-use-dop",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/creator-hub/help-center/ai-models/how-do-i-use-dop.md",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/creator-hub/help-center/ai-models/how-do-i-use-kling",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/creator-hub/help-center/ai-models/how-do-i-use-kling.md",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/creator-hub/help-center/ai-models/how-do-i-use-lipsync-voiceover-and-aspect-ratios",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/creator-hub/help-center/ai-models/how-do-i-use-lipsync-voiceover-and-aspect-ratios.md",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/creator-hub/help-center/ai-models/how-do-i-use-nano-banana",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/creator-hub/help-center/ai-models/how-do-i-use-nano-banana-pro",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/creator-hub/help-center/ai-models/how-do-i-use-nano-banana.md",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/creator-hub/help-center/ai-models/how-do-i-use-popcorn",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/creator-hub/help-center/ai-models/how-do-i-use-popcorn.md",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/creator-hub/help-center/ai-models/how-do-i-use-seedance",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/creator-hub/help-center/ai-models/how-do-i-use-seedance.md",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/creator-hub/help-center/ai-models/how-do-i-use-soul-cinema",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/creator-hub/help-center/ai-models/how-do-i-use-soul-cinema.md",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/creator-hub/help-center/ai-models/how-do-i-use-soul-to-generate-images",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/creator-hub/help-center/ai-models/how-do-i-use-soul-to-generate-images.md",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/creator-hub/help-center/ai-models/which-ai-model-should-i-use",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/creator-hub/help-center/ai-models/which-ai-model-should-i-use.md",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/creator-hub/help-center/credits-and-usage/what-are-unlimited-models-and-which-plans-include-them",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/creator-hub/help-center/credits/what-are-unlimited-models-and-which-plans-include-them",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/creator-hub/help-center/credits/what-are-unlimited-models-and-which-plans-include-them.md",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/de/creator-hub/help-center/ai-models/how-do-i-use-soul-to-generate-images",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/de/creator-hub/help-center/ai-models/how-do-i-use-soul-to-generate-images.md",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/debug/adobe/",
+      "status_code": 307,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/debug/application/",
+      "status_code": 307,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/debug/figma/feature-7.png",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/debug/gpt-astra/use-cases/new-york-time-machine-20260906/",
+      "status_code": 307,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/debug/headshot/",
+      "status_code": 307,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/debug/image-bg-remover/",
+      "status_code": 307,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/debug/landing-static/faceswap/",
+      "status_code": 307,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/debug/landing-static/popcorn/",
+      "status_code": 307,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/debug/landing-static/popcorn/tutorial/",
+      "status_code": 307,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/debug/link-to-ad/",
+      "status_code": 307,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/debug/minimax-h3/",
+      "status_code": 307,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/debug/public/promotions/newsletter-free-gens/",
+      "status_code": 307,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/debug/supercomputer-onboarding/marketing-campaign/",
+      "status_code": 307,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/debug/touring/v1/",
+      "status_code": 307,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/edit/canvas?_bhlid=48bdf48f40acf78ba333b1e6d93c584851a05bbd&utm_campaign=all-ai-models-might-blackmail-you&utm_medium=newsletter&utm_source=www.theneurondaily.com",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/edit/canvas?utm_campaign=all-ai-models-might-blackmail-you&utm_medium=referral&utm_source=www.theneurondaily.com",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/graphql",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://open.higgsfield.ai/models/higgsfield/genjutsu/motion-transfer/v1.0/api-reference",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://open.higgsfield.ai/models/higgsfield/genjutsu/object-swap/v1.0/api-reference",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://higgsfield.ai/@creativemanifesto/projects/@id__62fda908-531f-4338-98b0-c81bd2f2f5d4",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "jsluice"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/drama-route-preload-manifest?v=3b5877d6-MnYBTBg7l0mlcL7K.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/drama-route-preload-manifest?v=3b5877d6-RA47Q6S3Xf2WRs1u.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/hook-predictor/demo-analysis",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/i/static/1.422.5/conversations.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/i/static/1.422.5/dead-clicks-autocapture.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/i/static/1.422.5/exception-autocapture.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/i/static/1.422.5/posthog-recorder.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/i/static/1.422.5/surveys.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/i/static/1.422.5/web-vitals-with-attribution.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/manga/templates",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=00b70aac-HFyxEUzH.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=01bd19df-3lBvQ9NjhPjUCQ_Y.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=01bd19df-F8UHfCKPlXfJ-axs.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=01bd19df-OYqdma0clNDqDlg8.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=01bd19df-R1rldVZOiWOmKlwX.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=01bd19df-R9lvPpPJhUPMVxRP.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=01bd19df-RhfZtLDB6ntdiSRp.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=01bd19df-YX3RpWKFiBoaNPR_.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=01bd19df-d3avJ6N_h7pdgllN.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=01bd19df-jnoPirV2wHiUJJKr.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=01bd19df-swu_vtq8HIRfSbiW.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=01bd19df-tizTrxZnYjpQkCM-.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=03997d52-K5qRx6k0.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=13be0baf-DaQB7soz.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=15e3df32-G20ta-xcv4npQoS_.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=187ac5b1-4Asf3g4lhAh3o66k.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=187ac5b1-5LgakM00IdyZnY9I.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=187ac5b1-6O_dqDK1cBncYvZz.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=187ac5b1-9ZhxwvacrVc8z5cP.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=187ac5b1-NOsISIoHIOr7LGX8.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=187ac5b1-iRryM7j3WqmAJ037.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=187ac5b1-uzwI2C5Axbu5sXW1.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=1a2c0e3d-8vtEMbpg91huIt_6.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=1a2c0e3d-9HZdeu8zyQWrAs0F.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=1a2c0e3d-YmpYuYl_MdOam0h0.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=1a2c0e3d-di_npAb2VpfM_Nrj.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=1a2c0e3d-ulw2B9UEe564mw62.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=1ce71d11-B7tQ5UA9.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=209690a6-0-SQmBH7gf-5lal_.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=209690a6-2JhvL_4qzBo24J_v.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=209690a6-5nyCycbXzigUBEal.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=209690a6-67wBFSAlgW9fil5j.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=209690a6-95o1oQOENcZrSmaW.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=209690a6-DLjeaUEWQzp-ybYO.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=209690a6-MCnUMRBFn5oN5kDQ.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=209690a6-P9Yltx9LIyx6Mp0l.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=209690a6-cLYaJ13h3dsfkYOk.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=209690a6-rS4aZ2xcFk9hs5S7.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=209690a6-ueJ8QDg4SIozTmZV.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=209690a6-xlOop2HpS4e1cu4H.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=27573d18-Nx7hWd_M8gspa6Pb.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=27573d18-ZbaasLvg8C_H7hW2.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=27573d18-hEhurllJeCOo77o6.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=29a85c7b-DNpMzTh1.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=2bf7bce2-D2Z740zX.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=2feeef17-MaGrC3kYnIoKp7pE.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=2feeef17-W5zsah_2Jqd8z4PL.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=2feeef17-bA0Ssml2hMh7ucts.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=2feeef17-lWcg-cC-tt53-O1r.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=34e7f833-B7kF4bnY.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=36a35cd1-gOaplVvrJyLHKmeH.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=36a35cd1-s4gV8nYFpysGU80v.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=3805ddcc-WAtyLt5Xzbe0NwfM.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=38acc405-B97ss9BU.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=403179fd-21Lg6GxS8mVmsdiM.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=46e09d1d-05VpyN2T.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=497a4abf-hPllOYtX.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=5060f188-CxQN5yhH.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=52f380c4-9F9NvTbbOdHHOjft.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=52f380c4-FCM2_C5zcXq6KOch.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=52f380c4-f61CHFczqKSwBVEn.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=52f380c4-hAqrUhmkymXTZH_W.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=52f380c4-r6c7V3n-kjgv3pfj.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=5e9c0119-0_dQG0d0HL3YlrRK.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=5e9c0119-57HAgoCX3PpLTKOd.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=5e9c0119-B3NLRsFAOWzQ3jxW.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=5e9c0119-V6814a5kpvgNZThk.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=5e9c0119-jo4D6ghBWo9jDK3H.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=5e9c0119-uHxOO1r13do9mgT4.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=5ec11181-BC6jTyKh.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=6300d72b-n3znCKjf4P6R6xcQ.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=6300d72b-pqZe9-3saKBkS_Z4.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=6462b0a7-CYYMhKHOTj6AuJKm.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=6b85b5e7-qBuU_cns9cw4_zMA.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=6b85b5e7-wUxD0WF5qZgp_r04.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=80f4b3ed-B2nxz8Yu5aq6hjhJ.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=80f4b3ed-D06olbX266JAokfd.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=80f4b3ed-PPhbTLwBLeIuDQm-.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=80f4b3ed-UqnUjQgt0p7KJwHH.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=80f4b3ed-owRSm-Mxfb2V-Dat.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=84b0607b-BHxBV43IWSIGeamN.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=84b0607b-HAvZsHEpX0QDqRYo.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=84b0607b-_5RVFZaIFg4gloE3.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=84b0607b-sC_gW6MEp_N3W8rX.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=868a8dba--4ZmBQ8N6P9A8nFJ.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=868a8dba--_T00_6Dqs6uieyc.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=868a8dba-5_pkU-L1yVrdK4uf.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=868a8dba-70veRCAK_wrqiOn6.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=868a8dba-7Wz0QIQXiSqufMYy.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=868a8dba-8Jr3DPGeKIG0zoN9.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=868a8dba-9maqWYhDoVpamtB6.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=868a8dba-CSJQfgAf2XiXq11Z.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=868a8dba-DIluxoVbCOztgc3m.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=868a8dba-DdM4BoVJYPperzsL.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=868a8dba-F4OEa5f_ODiYAQP5.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=868a8dba-L_jPgrDAiYOyV9BQ.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=868a8dba-UC_VHFkSh0M2m97u.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=868a8dba-XVLMZf0EZ9FmnxLa.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=868a8dba-a0rAnRZkKdG7z8Ed.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=868a8dba-dNglupWCIsAVExNM.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=868a8dba-eHvnRKgO0lgIIIYP.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=868a8dba-emX6tsnaRZDxSBgU.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=868a8dba-fhUo08S4jzgw85kZ.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=868a8dba-jbAJmiWu2d_bVOL6.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=868a8dba-jg-4szchjd6s2ojH.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://higgsfield.ai/api/route-preload-manifest?v=868a8dba-ozUgpSD2eWHlLew-.js",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "waymore"
+      ],
+      "score": 0
+    }
+  ],
+  "unpacked_sourcemaps_and_configs": {
+    "sourcemap_files": [],
+    "data_files": [
+      {
+        "url": "https://assets.higgsfield.ai/auxiliary/mobile-chunk-sw-config.json",
+        "status_code": 404
+      },
+      {
+        "url": "https://assets.higgsfield.ai/emoji.json",
+        "status_code": 404
+      },
+      {
+        "url": "https://docs.higgsfield.ai/docs/openapi.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://hf-adobe-updates.higgsfield.ai/adobe/manifest.json",
+        "status_code": 200
+      },
+      {
+        "url": "https://hf-adobe-updates.higgsfield.ai/banner.json",
+        "status_code": 200
+      },
+      {
+        "url": "https://higgsfield.ai/.well-known/pgp-key.txt",
+        "status_code": 200
+      },
+      {
+        "url": "https://higgsfield.ai/.well-known/security.txt",
+        "status_code": 200
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/de.0085d8b632.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/de.0c2ef95ebe.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/de.16da08b75a.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/de.1bc03168b6.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/de.23de244708.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/de.2ecb4422c4.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/de.3b52839738.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/de.408129f577.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/de.6748d64436.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/de.6e4b3ee72a.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/de.74a4d1656d.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/de.7a6546f0a6.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/de.8629210669.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/de.98c51ff6bb.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/de.a31e099f51.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/de.b643eb331d.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/de.bea1f178d8.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/de.bea737d5e1.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/de.c287a2ae5d.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/de.c56d6cb892.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/de.d58d97156f.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/de.e28832a667.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/de.ecb7d4a3f1.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/de.fc2f38ec04.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.001a0407c7.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.015a2ea565.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.03a9228d4f.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.03ea263284.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.0410c79c92.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.0604cd79ee.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.071d5af4cc.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.082681482e.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.082c845eca.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.092bd1048e.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.09485fe3df.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.09ab9b9b8b.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.09c4b6c299.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.09d673cfd3.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.0a2c8e8a6e.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.0b3c8d5302.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.0b6e19482d.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.0beae024c7.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.0d845cec37.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.0dcdcd50ad.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.0e4d735e8e.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.0e8e721187.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.0ea2c07c66.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.0f1bfcf788.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.0f945d22f2.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.0fee6cdf75.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.1069cf20a2.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.1295f37fe0.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.12b1016a38.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.134a53ef16.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.13e5bd39f5.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.1418c6e7af.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.1476ca1710.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.157764801e.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.1599aee62f.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.15b51efdc6.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.16a93ec285.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.16d4870f4c.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.1746182348.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.178e99177e.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.19f7e67b07.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.1a448de016.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.1a49cba4fc.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.1b80f101dc.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.1ca3320bb4.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.1d16b9f8ed.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.1db4529f02.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.1ed7602d05.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.1f1ee1e1a3.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.1f8d9a9980.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.2055cd09cd.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.20f20c0288.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.21ec1bbd08.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.227ac04d90.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.22f5b85314.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.24a2db9f76.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.26a7933a59.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.26ff6c31f9.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.2747f13fe2.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.280e4fddf2.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.29c2b4ab2d.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.2a7a7e2d5c.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.2aa3e45ccf.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.2aca1e8955.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.2b697cee1b.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.2b81ea9b84.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.2cc142562e.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.2cca038315.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.2d26acdd30.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.2d4c85e0fa.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.2e2f0047c4.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.2e7defd4ce.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.30cc68ca8d.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.326cf31a46.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.3546b8c6b3.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.3740e41297.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.37ae5bd386.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.3820cb395f.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.39b534803a.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.3a8cf6e3b7.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.3b319cf03c.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.3b8b39687e.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.3d3d5cca1d.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.3d75a3caab.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.3e855e8aa3.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.3f61c1326b.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.3fd64e45ee.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.415374816a.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.41fb7d881e.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.43d4ab9ba1.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.44bf13e682.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.44fa6c89f2.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.4591a127ea.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.497a2ee407.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.49cb766870.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.4bfa921f37.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.4c39bfa14b.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.4cb86eb94e.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.4cf6a92ec4.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.4d2cfa34b5.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.4d34b5f694.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.4dc8afb3d3.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.4ebcffa274.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.4ecc355d76.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.4f16d755b3.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.50af5c8a81.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.5118dd7592.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.51a4a2a3d5.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.524c76ae6a.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.53251a607c.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.54001853ef.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.5552382481.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.559b97c115.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.55f0ceb06c.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.5679d115e0.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.56927eb49b.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.5711910f37.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.5756f4d79f.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://higgsfield.ai/_i18n/en.5776f63f28.json",
+        "status_code": 0
+      }
+    ]
+  },
+  "live_subdomains_and_vhosts": {
+    "subdomains": [
+      "3d-scene-builder.higgsfield.ai",
+      "accounts.creators.higgsfield.ai",
+      "accounts.higgsfield.ai",
+      "accounts.reelmagic.higgsfield.ai",
+      "accounts.worker.higgsfield.ai",
+      "agents-updates.higgsfield.ai",
+      "amplitude.higgsfield.ai",
+      "api.higgsfield.ai",
+      "apps-marketplace.higgsfield.ai",
+      "assets.higgsfield.ai",
+      "autodiscover.higgsfield.ai",
+      "billing.higgsfield.ai",
+      "blender-auth.higgsfield.ai",
+      "blendercam.higgsfield.ai",
+      "bridge.higgsfield.ai",
+      "canvas-media.higgsfield.ai",
+      "canvas-worker.higgsfield.ai",
+      "cdn.higgsfield.ai",
+      "clerk.creators.higgsfield.ai",
+      "clerk.higgsfield.ai",
+      "clerk.reelmagic.higgsfield.ai",
+      "clerk.worker.higgsfield.ai",
+      "cloud-cdn.higgsfield.ai",
+      "cloud.higgsfield.ai",
+      "clouds.higgsfield.ai",
+      "cms.higgsfield.ai",
+      "commerce.higgsfield.ai",
+      "console.higgsfield.ai",
+      "content.higgsfield.ai",
+      "creator-hub-chat-dev.higgsfield.ai",
+      "creator-hub-chat.higgsfield.ai",
+      "creators.higgsfield.ai",
+      "cs-chat-dev.higgsfield.ai",
+      "cs-chat.higgsfield.ai",
+      "dam-editor-worker.higgsfield.ai",
+      "dash-preview.higgsfield.ai",
+      "dash.higgsfield.ai",
+      "davinci-auth.higgsfield.ai",
+      "dd.higgsfield.ai",
+      "desktop-preview.higgsfield.ai",
+      "desktop.higgsfield.ai",
+      "dev-content.higgsfield.ai",
+      "dev-fnf-api-gw.higgsfield.ai",
+      "dev.higgsfield.ai",
+      "docs.higgsfield.ai",
+      "email.higgsfield.ai",
+      "fnf-api-gw.higgsfield.ai",
+      "fnf-device-auth.higgsfield.ai",
+      "fnf.higgsfield.ai",
+      "geo.higgsfield.ai",
+      "goto.higgsfield.ai",
+      "hf-adobe-updates.higgsfield.ai",
+      "kopir.higgsfield.ai",
+      "l10n.higgsfield.ai",
+      "lab.higgsfield.ai",
+      "layer-worker.higgsfield.ai",
+      "marketplace-media-dev.higgsfield.ai",
+      "marketplace-media.higgsfield.ai",
+      "mcp.higgsfield.ai",
+      "media.higgsfield.ai",
+      "messenger.higgsfield.ai",
+      "minecraft-auth.higgsfield.ai",
+      "notification.higgsfield.ai",
+      "open.higgsfield.ai",
+      "parity-assets.higgsfield.ai",
+      "parity.higgsfield.ai",
+      "platform.higgsfield.ai",
+      "project-preview-cdn.higgsfield.ai",
+      "ps-plugin-auth.higgsfield.ai",
+      "quiz-cs.higgsfield.ai",
+      "records.higgsfield.ai",
+      "resources.higgsfield.ai",
+      "share.higgsfield.ai",
+      "shopify.higgsfield.ai",
+      "static-public-media.higgsfield.ai",
+      "static.higgsfield.ai",
+      "status.higgsfield.ai",
+      "sync.higgsfield.ai",
+      "trust.higgsfield.ai",
+      "unreal-engine-auth.higgsfield.ai",
+      "uxp.higgsfield.ai",
+      "ventures.higgsfield.ai",
+      "vibe-video-static.higgsfield.ai",
+      "webinars.higgsfield.ai",
+      "www.higgsfield.ai",
+      "yt.higgsfield.ai"
+    ],
+    "vhosts_real": []
+  },
+  "route_patterns": [
+    {
+      "pattern": "higgsfield.ai/",
+      "count": 2307,
+      "sample": "http://higgsfield.ai/"
+    },
+    {
+      "pattern": "higgsfield.ai/apps",
+      "count": 1228,
+      "sample": "https://higgsfield.ai/apps"
+    },
+    {
+      "pattern": "higgsfield.ai/community/{uuid}",
+      "count": 1085,
+      "sample": "https://higgsfield.ai/community/00712b08-7847-4f1a-8c5a-1eba48b9575c"
+    },
+    {
+      "pattern": "higgsfield.ai/auth/sign-in",
+      "count": 938,
+      "sample": "https://higgsfield.ai/auth/sign-in"
+    },
+    {
+      "pattern": "higgsfield.ai/chat",
+      "count": 749,
+      "sample": "https://higgsfield.ai/chat"
+    },
+    {
+      "pattern": "higgsfield.ai/create/video",
+      "count": 743,
+      "sample": "https://higgsfield.ai/create/video"
+    },
+    {
+      "pattern": "higgsfield.ai/contests/make-your-action-scene/submissions/{uuid}",
+      "count": 692,
+      "sample": "https://higgsfield.ai/contests/make-your-action-scene/submissions/017453cf-b842-4337-b76a-493fa969ed70"
+    },
+    {
+      "pattern": "higgsfield.ai/cinema-studio",
+      "count": 654,
+      "sample": "https://higgsfield.ai/cinema-studio"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/polyfills-42372ed130431b0a.js",
+      "count": 549,
+      "sample": "https://higgsfield.ai/_next/static/chunks/polyfills-42372ed130431b0a.js"
+    },
+    {
+      "pattern": "higgsfield.ai/edit",
+      "count": 494,
+      "sample": "https://higgsfield.ai/edit"
+    },
+    {
+      "pattern": "higgsfield.ai/auth",
+      "count": 490,
+      "sample": "https://higgsfield.ai/auth"
+    },
+    {
+      "pattern": "higgsfield.ai/blog/{slug}",
+      "count": 445,
+      "sample": "https://higgsfield.ai/blog/100-plus-ad-variations-ai"
+    },
+    {
+      "pattern": "higgsfield.ai/cookie-notice",
+      "count": 429,
+      "sample": "https://higgsfield.ai/cookie-notice"
+    },
+    {
+      "pattern": "higgsfield.ai/ai-influencer-studio",
+      "count": 415,
+      "sample": "https://higgsfield.ai/ai-influencer-studio"
+    },
+    {
+      "pattern": "higgsfield.ai/cli",
+      "count": 405,
+      "sample": "https://higgsfield.ai/cli"
+    },
+    {
+      "pattern": "higgsfield.ai/character",
+      "count": 389,
+      "sample": "https://higgsfield.ai/character"
+    },
+    {
+      "pattern": "higgsfield.ai/ai/video",
+      "count": 343,
+      "sample": "https://higgsfield.ai/ai/video"
+    },
+    {
+      "pattern": "higgsfield.ai/creative-challenge",
+      "count": 342,
+      "sample": "https://higgsfield.ai/creative-challenge"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/sentry-de9a3b6aa6e67e79.js",
+      "count": 334,
+      "sample": "https://higgsfield.ai/_next/static/chunks/sentry-de9a3b6aa6e67e79.js"
+    },
+    {
+      "pattern": "higgsfield.ai/{locale}/ai/video",
+      "count": 334,
+      "sample": "https://higgsfield.ai/de/ai/video"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/react-query-0fdf3c22e854a2ec.js",
+      "count": 332,
+      "sample": "https://higgsfield.ai/_next/static/chunks/react-query-0fdf3c22e854a2ec.js?dpl=dpl-mk92gi0k"
+    },
+    {
+      "pattern": "higgsfield.ai/community",
+      "count": 324,
+      "sample": "https://higgsfield.ai/community"
+    },
+    {
+      "pattern": "higgsfield.ai/api/route-preload-manifest",
+      "count": 285,
+      "sample": "https://higgsfield.ai/api/route-preload-manifest?v=00b70aac-HFyxEUzH.js"
+    },
+    {
+      "pattern": "higgsfield.ai/auth/sign-up",
+      "count": 263,
+      "sample": "https://higgsfield.ai/auth/sign-up"
+    },
+    {
+      "pattern": "higgsfield.ai/app/angles",
+      "count": 258,
+      "sample": "https://higgsfield.ai/app/angles"
+    },
+    {
+      "pattern": "higgsfield.ai/canvas",
+      "count": 217,
+      "sample": "https://higgsfield.ai/canvas"
+    },
+    {
+      "pattern": "higgsfield.ai/auth/email/sign-in",
+      "count": 184,
+      "sample": "https://higgsfield.ai/auth/email/sign-in"
+    },
+    {
+      "pattern": "higgsfield.ai/create/speech",
+      "count": 164,
+      "sample": "https://higgsfield.ai/create/speech"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/app/error-11e26fc07e7b15db.js",
+      "count": 162,
+      "sample": "https://higgsfield.ai/_next/static/chunks/app/error-11e26fc07e7b15db.js"
+    },
+    {
+      "pattern": "higgsfield.ai/cdn-cgi/challenge-platform/h/g/jsd/oneshot/ea2d291c0fdc/0.36707159097325237:1774424211:9_pSV23kWGmNtldQToc5YDBzJFUfKD8QS_h75YB-Zx0/{hex}",
+      "count": 160,
+      "sample": "https://higgsfield.ai/cdn-cgi/challenge-platform/h/g/jsd/oneshot/ea2d291c0fdc/0.36707159097325237:1774424211:9_pSV23kWGmNtldQToc5YDBzJFUfKD8QS_h75YB-Zx0/9e1e1754096ef4d9"
+    },
+    {
+      "pattern": "higgsfield.ai/apps/angles",
+      "count": 159,
+      "sample": "https://higgsfield.ai/apps/angles"
+    },
+    {
+      "pattern": "higgsfield.ai/animate",
+      "count": 154,
+      "sample": "https://higgsfield.ai/animate"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/app/(public)/motion/%5BmotionId%5D/layout-69dbabfb9387f5cb.js",
+      "count": 144,
+      "sample": "https://higgsfield.ai/_next/static/chunks/app/(public)/motion/%5BmotionId%5D/layout-69dbabfb9387f5cb.js"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/52774a7f-9bb1b03263676e51.js",
+      "count": 136,
+      "sample": "https://higgsfield.ai/_next/static/chunks/52774a7f-9bb1b03263676e51.js"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/35260-fb08210604b5bcc7.js",
+      "count": 131,
+      "sample": "https://higgsfield.ai/_next/static/chunks/35260-fb08210604b5bcc7.js"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/92679-16ced795b0f210fa.js",
+      "count": 131,
+      "sample": "https://higgsfield.ai/_next/static/chunks/92679-16ced795b0f210fa.js"
+    },
+    {
+      "pattern": "higgsfield.ai/app/skin-enhancer",
+      "count": 122,
+      "sample": "https://higgsfield.ai/app/skin-enhancer"
+    },
+    {
+      "pattern": "higgsfield.ai/asset/all/{uuid}",
+      "count": 113,
+      "sample": "https://higgsfield.ai/asset/all/0ffaa14a-46f6-470f-9d82-635c1d83944c"
+    },
+    {
+      "pattern": "higgsfield.ai/app/recast",
+      "count": 111,
+      "sample": "https://higgsfield.ai/app/recast"
+    },
+    {
+      "pattern": "higgsfield.ai/collection/effects",
+      "count": 111,
+      "sample": "https://higgsfield.ai/collection/effects"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/ui-libs-9181c8725c0a11b6.js",
+      "count": 108,
+      "sample": "https://higgsfield.ai/_next/static/chunks/ui-libs-9181c8725c0a11b6.js"
+    },
+    {
+      "pattern": "higgsfield.ai/app/video-face-swap",
+      "count": 107,
+      "sample": "https://higgsfield.ai/app/video-face-swap"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/app/global-error-24a3399b0926e202.js",
+      "count": 106,
+      "sample": "https://higgsfield.ai/_next/static/chunks/app/global-error-24a3399b0926e202.js"
+    },
+    {
+      "pattern": "higgsfield.ai/cdn-cgi/challenge-platform/h/b/scripts/jsd/8340802ab0bb/main.js",
+      "count": 106,
+      "sample": "https://higgsfield.ai/cdn-cgi/challenge-platform/h/b/scripts/jsd/8340802ab0bb/main.js?ray=a557a489084c586f"
+    },
+    {
+      "pattern": "higgsfield.ai/app/link-to-video-ad",
+      "count": 102,
+      "sample": "https://higgsfield.ai/app/link-to-video-ad"
+    },
+    {
+      "pattern": "higgsfield.ai/create/edit",
+      "count": 99,
+      "sample": "https://higgsfield.ai/create/edit"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/app/(public)/share/%5Bid%5D/layout-28b71681c6a70a54.js",
+      "count": 96,
+      "sample": "https://higgsfield.ai/_next/static/chunks/app/(public)/share/%5Bid%5D/layout-28b71681c6a70a54.js"
+    },
+    {
+      "pattern": "higgsfield.ai/apps/trending-templates",
+      "count": 95,
+      "sample": "https://higgsfield.ai/apps/trending-templates"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/react-query-a4d43e45821b4381.js",
+      "count": 94,
+      "sample": "https://higgsfield.ai/_next/static/chunks/react-query-a4d43e45821b4381.js"
+    },
+    {
+      "pattern": "higgsfield.ai/academy",
+      "count": 90,
+      "sample": "https://higgsfield.ai/academy"
+    },
+    {
+      "pattern": "higgsfield.ai/apps/extras",
+      "count": 87,
+      "sample": "https://higgsfield.ai/apps/extras"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/28322-5b42dd7c8c012abd.js",
+      "count": 82,
+      "sample": "https://higgsfield.ai/_next/static/chunks/28322-5b42dd7c8c012abd.js"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/9940.aa934be60913a8c7.js",
+      "count": 80,
+      "sample": "https://higgsfield.ai/_next/static/chunks/9940.aa934be60913a8c7.js"
+    },
+    {
+      "pattern": "higgsfield.ai/apps/games-characters",
+      "count": 80,
+      "sample": "https://higgsfield.ai/apps/games-characters"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/9136-90a86bcc36556e15.js",
+      "count": 79,
+      "sample": "https://higgsfield.ai/_next/static/chunks/9136-90a86bcc36556e15.js"
+    },
+    {
+      "pattern": "higgsfield.ai/ads",
+      "count": 79,
+      "sample": "https://higgsfield.ai/ads"
+    },
+    {
+      "pattern": "higgsfield.ai/apps/ads-products",
+      "count": 76,
+      "sample": "https://higgsfield.ai/apps/ads-products"
+    },
+    {
+      "pattern": "higgsfield.ai/app/relight",
+      "count": 74,
+      "sample": "https://higgsfield.ai/app/relight"
+    },
+    {
+      "pattern": "higgsfield.ai/asset/all",
+      "count": 74,
+      "sample": "https://higgsfield.ai/asset/all"
+    },
+    {
+      "pattern": "higgsfield.ai/@wer",
+      "count": 73,
+      "sample": "https://higgsfield.ai/@wer"
+    },
+    {
+      "pattern": "higgsfield.ai/app/ai-stylist",
+      "count": 73,
+      "sample": "https://higgsfield.ai/app/ai-stylist"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/app/global-error-4d75bef6036d17d3.js",
+      "count": 72,
+      "sample": "https://higgsfield.ai/_next/static/chunks/app/global-error-4d75bef6036d17d3.js"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/sentry-a8a4f5f13a5ffab0.js",
+      "count": 72,
+      "sample": "https://higgsfield.ai/_next/static/chunks/sentry-a8a4f5f13a5ffab0.js"
+    },
+    {
+      "pattern": "higgsfield.ai/apps/enhance-style",
+      "count": 72,
+      "sample": "https://higgsfield.ai/apps/enhance-style"
+    },
+    {
+      "pattern": "higgsfield.ai/apps/video-editing",
+      "count": 71,
+      "sample": "https://higgsfield.ai/apps/video-editing"
+    },
+    {
+      "pattern": "higgsfield.ai/@jighit",
+      "count": 67,
+      "sample": "https://higgsfield.ai/@jighit"
+    },
+    {
+      "pattern": "higgsfield.ai/@zhanay",
+      "count": 67,
+      "sample": "https://higgsfield.ai/@zhanay"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/15961-e8d6184f135a7893.js",
+      "count": 67,
+      "sample": "https://higgsfield.ai/_next/static/chunks/15961-e8d6184f135a7893.js"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/49727-110e60165e78bc1b.js",
+      "count": 67,
+      "sample": "https://higgsfield.ai/_next/static/chunks/49727-110e60165e78bc1b.js"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/51811-830adb64a9ac6c1a.js",
+      "count": 67,
+      "sample": "https://higgsfield.ai/_next/static/chunks/51811-830adb64a9ac6c1a.js"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/54271-10ae7773ea0b8b6f.js",
+      "count": 67,
+      "sample": "https://higgsfield.ai/_next/static/chunks/54271-10ae7773ea0b8b6f.js"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/67229-58c3bab9f0401081.js",
+      "count": 67,
+      "sample": "https://higgsfield.ai/_next/static/chunks/67229-58c3bab9f0401081.js"
+    },
+    {
+      "pattern": "higgsfield.ai/@young_drill",
+      "count": 66,
+      "sample": "https://higgsfield.ai/@young_drill"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/4bd1b696-671fa906ba489f72.js",
+      "count": 66,
+      "sample": "https://higgsfield.ai/_next/static/chunks/4bd1b696-671fa906ba489f72.js"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/88332-8611a51c78e6f412.js",
+      "count": 66,
+      "sample": "https://higgsfield.ai/_next/static/chunks/88332-8611a51c78e6f412.js"
+    },
+    {
+      "pattern": "higgsfield.ai/apps/camera-motion",
+      "count": 66,
+      "sample": "https://higgsfield.ai/apps/camera-motion"
+    },
+    {
+      "pattern": "higgsfield.ai/@qwerty_322",
+      "count": 65,
+      "sample": "https://higgsfield.ai/@qwerty_322"
+    },
+    {
+      "pattern": "higgsfield.ai/apps/face-identity",
+      "count": 65,
+      "sample": "https://higgsfield.ai/apps/face-identity"
+    },
+    {
+      "pattern": "higgsfield.ai/@gradient_tomatos",
+      "count": 64,
+      "sample": "https://higgsfield.ai/@gradient_tomatos"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/34657-c5fcac7b98be0cc1.js",
+      "count": 64,
+      "sample": "https://higgsfield.ai/_next/static/chunks/34657-c5fcac7b98be0cc1.js"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/60333-8807254b77cb1c77.js",
+      "count": 64,
+      "sample": "https://higgsfield.ai/_next/static/chunks/60333-8807254b77cb1c77.js"
+    },
+    {
+      "pattern": "higgsfield.ai/{locale}/blog/{slug}",
+      "count": 64,
+      "sample": "https://higgsfield.ai/de/blog/9-best-ai-video-generators-social-media"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/react-query-0ea3091f4e3da05c.js",
+      "count": 62,
+      "sample": "https://higgsfield.ai/_next/static/chunks/react-query-0ea3091f4e3da05c.js"
+    },
+    {
+      "pattern": "higgsfield.ai/{slug}",
+      "count": 61,
+      "sample": "https://higgsfield.ai/ai-animal-video-generator"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/51261.316e31245673e960.js",
+      "count": 60,
+      "sample": "https://higgsfield.ai/_next/static/chunks/51261.316e31245673e960.js?dpl=dpl-mk92gi0k"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/54125.925744b4a3821256.js",
+      "count": 60,
+      "sample": "https://higgsfield.ai/_next/static/chunks/54125.925744b4a3821256.js?dpl=dpl-mk92gi0k"
+    },
+    {
+      "pattern": "higgsfield.ai/cdn-cgi/challenge-platform/h/b/scripts/jsd/f8df4d4a0cd6/main.js",
+      "count": 58,
+      "sample": "https://higgsfield.ai/cdn-cgi/challenge-platform/h/b/scripts/jsd/f8df4d4a0cd6/main.js?ray=a5a50c8aaa7423fd"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/40755-b092ae8a1024ea27.js",
+      "count": 55,
+      "sample": "https://higgsfield.ai/_next/static/chunks/40755-b092ae8a1024ea27.js"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/app/(public)/apps/page-9a4d0dfa767e3d3b.js",
+      "count": 54,
+      "sample": "https://higgsfield.ai/_next/static/chunks/app/(public)/apps/page-9a4d0dfa767e3d3b.js"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/48733.2db8508d3390d96b.js",
+      "count": 53,
+      "sample": "https://higgsfield.ai/_next/static/chunks/48733.2db8508d3390d96b.js?dpl=dpl-mgmc91ig"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/84728.a617e4114e6b4d60.js",
+      "count": 53,
+      "sample": "https://higgsfield.ai/_next/static/chunks/84728.a617e4114e6b4d60.js?dpl=dpl-mgmc91ig"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/90303.b0d31c044fa96c53.js",
+      "count": 53,
+      "sample": "https://higgsfield.ai/_next/static/chunks/90303.b0d31c044fa96c53.js?dpl=dpl-mgmc91ig"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/48588.92a006b118bd04b3.js",
+      "count": 52,
+      "sample": "https://higgsfield.ai/_next/static/chunks/48588.92a006b118bd04b3.js?dpl=dpl-mgmc91ig"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/53935-9a617163e63db536.js",
+      "count": 52,
+      "sample": "https://higgsfield.ai/_next/static/chunks/53935-9a617163e63db536.js"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/95790.595df58f86af049c.js",
+      "count": 52,
+      "sample": "https://higgsfield.ai/_next/static/chunks/95790.595df58f86af049c.js?dpl=dpl-mk92gi0k"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/ui-libs-876b8f0d0da77203.js",
+      "count": 52,
+      "sample": "https://higgsfield.ai/_next/static/chunks/ui-libs-876b8f0d0da77203.js"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/68156-9628dd2ac0266fbc.js",
+      "count": 51,
+      "sample": "https://higgsfield.ai/_next/static/chunks/68156-9628dd2ac0266fbc.js"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/35976-cd84a10f8aad60be.js",
+      "count": 50,
+      "sample": "https://higgsfield.ai/_next/static/chunks/35976-cd84a10f8aad60be.js"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/16252-62c94f04aa83422a.js",
+      "count": 49,
+      "sample": "https://higgsfield.ai/_next/static/chunks/16252-62c94f04aa83422a.js"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/63629-de5ce6201cc89520.js",
+      "count": 49,
+      "sample": "https://higgsfield.ai/_next/static/chunks/63629-de5ce6201cc89520.js"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/ui-libs-9ff4c095f8a6719d.js",
+      "count": 49,
+      "sample": "https://higgsfield.ai/_next/static/chunks/ui-libs-9ff4c095f8a6719d.js"
+    },
+    {
+      "pattern": "higgsfield.ai/apps/virality-predictor",
+      "count": 49,
+      "sample": "https://higgsfield.ai/apps/virality-predictor"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/59389-e2491abd5390cd43.js",
+      "count": 48,
+      "sample": "https://higgsfield.ai/_next/static/chunks/59389-e2491abd5390cd43.js"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/60333-94f062af37f6de8a.js",
+      "count": 47,
+      "sample": "https://higgsfield.ai/_next/static/chunks/60333-94f062af37f6de8a.js"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/97697-e32a6881585df96d.js",
+      "count": 47,
+      "sample": "https://higgsfield.ai/_next/static/chunks/97697-e32a6881585df96d.js"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/98500-118f585c43870ea5.js",
+      "count": 47,
+      "sample": "https://higgsfield.ai/_next/static/chunks/98500-118f585c43870ea5.js?dpl=dpl-mhulsees"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/app/error-503c80866625bd0d.js",
+      "count": 47,
+      "sample": "https://higgsfield.ai/_next/static/chunks/app/error-503c80866625bd0d.js"
+    },
+    {
+      "pattern": "higgsfield.ai/auth/sso-callback",
+      "count": 47,
+      "sample": "https://higgsfield.ai/auth/sso-callback"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/57036-6611f976631e805d.js",
+      "count": 46,
+      "sample": "https://higgsfield.ai/_next/static/chunks/57036-6611f976631e805d.js"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/app/(private)/profile/%5Busername%5D/layout-9701a8a1cda35249.js",
+      "count": 46,
+      "sample": "https://higgsfield.ai/_next/static/chunks/app/(private)/profile/%5Busername%5D/layout-9701a8a1cda35249.js"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/ui-libs-0b78b1e3033cbe74.js",
+      "count": 46,
+      "sample": "https://higgsfield.ai/_next/static/chunks/ui-libs-0b78b1e3033cbe74.js"
+    },
+    {
+      "pattern": "higgsfield.ai/blog",
+      "count": 46,
+      "sample": "https://higgsfield.ai/blog"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/15243-39f6dd13ab2c0756.js",
+      "count": 44,
+      "sample": "https://higgsfield.ai/_next/static/chunks/15243-39f6dd13ab2c0756.js"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/4bd1b696-19cf1e523a3c9545.js",
+      "count": 44,
+      "sample": "https://higgsfield.ai/_next/static/chunks/4bd1b696-19cf1e523a3c9545.js?dpl=dpl-mhulsees"
+    },
+    {
+      "pattern": "higgsfield.ai/cdn-cgi/challenge-platform/h/g/jsd/oneshot/b0a7532ac8ec/0.9638146709925312:1776468331:_2ZlXQqnb8hYgaUzIaW9N-XOHWBpFaThPA-VRGa1_AI/{hex}",
+      "count": 44,
+      "sample": "https://higgsfield.ai/cdn-cgi/challenge-platform/h/g/jsd/oneshot/b0a7532ac8ec/0.9638146709925312:1776468331:_2ZlXQqnb8hYgaUzIaW9N-XOHWBpFaThPA-VRGa1_AI/9edf7b8a192d9cd0"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/2342-b99a2fff0325f757.js",
+      "count": 43,
+      "sample": "https://higgsfield.ai/_next/static/chunks/2342-b99a2fff0325f757.js"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/59389-ff1aeb1686487055.js",
+      "count": 43,
+      "sample": "https://higgsfield.ai/_next/static/chunks/59389-ff1aeb1686487055.js?dpl=dpl-mhulsees"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/97753.3ecfae65aab54573.js",
+      "count": 43,
+      "sample": "https://higgsfield.ai/_next/static/chunks/97753.3ecfae65aab54573.js?dpl=dpl-ml8vj8vw"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/app/(private)/layout-6a9236943c9673ab.js",
+      "count": 43,
+      "sample": "https://higgsfield.ai/_next/static/chunks/app/(private)/layout-6a9236943c9673ab.js"
+    },
+    {
+      "pattern": "higgsfield.ai/_next/static/chunks/57036-14296fa39ebef81e.js",
+      "count": 42,
+      "sample": "https://higgsfield.ai/_next/static/chunks/57036-14296fa39ebef81e.js?dpl=dpl-mhulsees"
+    }
+  ],
+  "nuclei_findings": []
+}

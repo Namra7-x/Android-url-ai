@@ -1,0 +1,2 @@
+$ uro -i results/higgsfield.ai/urls_to_probe.txt
+exit=0

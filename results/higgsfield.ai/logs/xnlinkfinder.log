@@ -1,0 +1,5 @@
+$ xnLinkFinder -i results/higgsfield.ai/chunks_unique -sf higgsfield.ai -o cli -op results/higgsfield.ai/xn_params.txt -os results/higgsfield.ai/xn_secrets.json
+exit=0
+The config.yml file was created at /home/runner/.config/xnLinkFinder/config.yml
+
+

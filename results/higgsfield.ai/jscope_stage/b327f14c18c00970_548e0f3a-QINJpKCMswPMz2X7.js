@@ -1,0 +1,4 @@
+!function(){try{var e="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:{},n=(new e.Error).stack;n&&(e._posthogChunkIds=e._posthogChunkIds||{},e._posthogChunkIds[n]="a33b1c2a-0e71-5e91-a180-82cda37c5593")}catch(e){}}();import{n as e}from"./548e0f3a-ogOdE30g8Jc45kfx.js";var t;function n(){return(n=e((()=>{t=e=>e})))()}function r(e,t,n,r,i){let c,l,u=0;do l=t+(n-t)/2,c=a(l,r,i)-e,c>0?n=l:t=l;while(Math.abs(c)>o&&++u<s);return l}function i(e,n,i,o){if(e===n&&i===o)return t;let s=t=>r(t,0,1,e,i);return e=>e===0||e===1?e:a(s(e),n,o)}var a,o,s;function c(){return(c=e((()=>{n(),a=(e,t,n)=>(((1-3*n+3*t)*e+(3*n-6*t))*e+3*t)*e,o=1e-7,s=12})))()}export{t as i,c as n,n as r,i as t};
+//# debugId=a33b1c2a-0e71-5e91-a180-82cda37c5593
+
+//# chunkId=a33b1c2a-0e71-5e91-a180-82cda37c5593

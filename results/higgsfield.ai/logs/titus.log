@@ -1,0 +1,42 @@
+$ titus scan results/higgsfield.ai/chunks_unique --format json --output results/higgsfield.ai/titus_0.json
+exit=0
+
+  ______ ____ ______ __  __ _____
+ /_  __//  _//_  __// / / // ___/
+  / /   / /   / /  / / / / \__ \
+ / /  _/ /   / /  / /_/ / ___/ /
+/_/  /___/  /_/   \____/ /____/
+ There's always something.
+ Praetorian Security, Inc.
+
+[vectorscan] cached Hyperscan database /home/runner/.cache/titus/rules/63ff0e50da26773baa965d955897a16fc7627a6efb723e40c2c923220023e908.hsdb
+[vectorscan] 502/502 rules compiled for Hyperscan, 0 rules use regexp2 fallback
+Scanned 9758293 B from 158 blobs in 0 second (98038929 B/s); 4 new matches
+Results stored in: results/higgsfield.ai/titus_0.json/datastore.db
+
+
+odW5rLXN3OnJldHJ5YH0pKX1mdW5jdGlvbiBzKCl7YSgpLG8oKX1mdW5jdGlvbiBjKGUpe2lmKGUub3JpZ2luIT09bG9jYXRpb24ub3JpZ2lufHxlLnNvdXJjZSE9PW4uY29udHJvbGxlcnx8IUJSKG4uY29udHJvbGxlcikpcmV0dXJuO2xldCB0PWUuZGF0YTt0JiZ0eXBlb2YgdD09YG9iamVjdGAmJmB0eXBlYGluIHQmJnQudHlwZT09PWBoZjptb2JpbGUtY2h1bmstc3c6dGVsZW1ldHJ5YCYmYG9ic2VydmF0aW9uYGluIHQmJlJkKHQub2JzZXJ2YXRpb24pJiZWUih0Lm9ic2VydmF0aW9uKX1mdW5jdGlvbiBsKCl7bi5yZW1vdmVFdmVudExpc3RlbmVyKGBjb250cm9sbGVyY2hhbmdlYCxzKSxuLnJlbW92ZUV2ZW50TGlzdGVuZXIoYG1lc3NhZ2VgLGMpfW4uYWRkRXZlbnRMaXN0ZW5lcihgY29udHJvbGxlcmNoYW5nZWAscyksbi5hZGRFdmVudExpc3RlbmVyKGBtZXNzYWdlYCxjKSxhKCk7YXN5bmMgZnVuY3Rpb24gdSgpe2xldCBlPWF3YWl0IG4uZ2V0UmVnaXN0cmF0aW9uKGAvYCk7W2U9PW51bGw/dm9pZCAwOmUuYWN0aXZlLGU9PW51bGw/dm9pZCAwOmUud2FpdGluZyxlPT1udWxsP3ZvaWQgMDplLmluc3RhbGxpbmddLnNvbWUoZT0+ZSYmIUJSKGUpKT8oVlIoe2tpbmQ6YHJlZ2lzdHJhdGlvbmAsc3RhdHVzOmBza2lwcGVkX2ZvcmVpZ25gfSksbCgpKTphd2FpdCBod2UoKT8oYXdhaXQgbi5yZWdpc3RlcihuZXcgVVJMKHpkLGxvY2F0aW9uLm9yaWdpbikuaHJlZix7c2NvcGU6YC9fY2xlcmsvdjEvc2FtbC9hY3MvYCx1cGRhdGVWaWFDYWNoZTpgbm9uZWB9KSxhd2FpdCBuLnJlZ2lzdGVyKHIuaHJlZix7c2NvcGU6YC9gLHVwZGF0ZVZpYUNhY2hlOmBub25lYH0pLHdpbmRvdy5hZGRFdmVudExpc3RlbmVyKGBvbmxpbmVgLG8pLGRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXIoYHZpc2liaWxpdHljaGFuZ2VgLCgpPT57ZG9jdW1lbnQudmlzaWJpbGl0eVN0YXRlPT09YHZpc2libGVgJiZvKCl9KSxvKCkpOmF3YWl0KGU9PW51bGw/dm9pZCAwOmUudXBkYXRlKCkpfXUoKS5jYXRjaChlPT57bCgpLHdpbmRvdy5fX0hGX01PQklMRV9DSFVOS19TV19TVEFSVEVEX189ITEsVlIoe2tpbmQ6YHJlZ2lzdHJhdGlvbmAsc3RhdHVzOmBmYWlsZWRgLGVycm9yTmFtZTplIGluc3RhbmNlb2YgRXJyb3I/ZS5uYW1lOmB1bmtub3duYH0pLGNvbnNvbGUud2FybihgTW9iaWxlIGNodW5rIHNlcnZpY2Ugd29ya2VyIHJlZ2lzdHJhdGlvbiBmYWlsZWRgLGUpfSl9ZnVuY3Rpb24gSFIoKXtyZXR1cm4oSFI9dCgoKT0+e1dkKCl9KSkoKX12YXIgVVI7ZnVuY3Rpb24gV1IoKXtyZXR1cm4oV1I9dCgoKT0+e0tkKCksVVI9R2R9KSkoKX1mdW5jdGlvbiBfd2Uoe2FjdGl2ZTplfSl7bGV0IHQ9YCR7YGh0dHBzOi8vYXNzZXRzLmhpZ2dzZmllbGQuYWkvdGFuc3RhY2svYC5yZXBsYWNlKC9cLyQvLGBgKX0ke2pnfWA7cmV0dXJuKDAsR1IudXNlRWZmZWN0KSgoKT0+e2UmJmd3ZSh0KX0sW2UsdF0pLGU/KDAsS1IuanN4KShgc2NyaXB0YCx7ImRhdGEtaGYtbW9iaWxlLWNodW5rLXNlcnZpY2Utd29ya2VyIjp0LGRhbmdlcm91c2x5U2V0SW5uZXJIVE1MOntfX2h0bWw6VVJ9fSk6bnVsbH12YXIgR1IsS1I7ZnVuY3Rpb24gcVIoKXtyZXR1cm4ocVI9dCgoKT0+e0ZnKCksSFIoKSxXUigpLEdSPXooKSxLUj1WKCl9KSkoKX1mdW5jdGlvbiBKUigpe2xldCBlPXVyKCksdD1Mcih7ZnJvbTpgX19yb290X19gLHNlbGVjdDp0PT57dmFyIG47cmV0dXJuKG49dC5xdWVyeUNsaWVudCk9PW51bGw/ZS5vcHRpb25zLmNvbnRleHQucXVlcnlDbGllbnQ6bn19KSxuPUxyKHtmcm9tOmBfX3Jvb3RfX2Asc2VsZWN0OmU9Pnt2YXIgdDtyZXR1cm4odD1lLmxvY2FsZSk9PW51bGw/YGVuYDp0fX0pLHI9cXIoe2Zyb206YF9fcm9vdF9fYCxzZWxlY3Q6ZT0+e3ZhciB0O3JldHVybih0PWU9PW51bGw/dm9pZCAwOmUuaW5pdGlhbEVudGVycHJpc2UpIT1udWxsJiZ0fX0pLGk9THIoe2Zyb206YF9fcm9vdF9fYCxzZWxlY3Q6ZT0+ZS5jbGVya1Byb3h5VXJsfSksYT1xcih7ZnJvbTpgX19yb290X19gLHNlbGVjdDplPT5lPT1udWxsP3ZvaWQgMDplLmNsZXJrUHJveHlVcmx9KSxvPWE9PW51bGw/aTphLHM9THIoe2Zyb206YF9fcm9vdF9fYCxzZWxlY3Q6ZT0+ZS5uZXdNb2JpbGVBY2Nlc3N9KSxjPUxyKHtmcm9tOmBfX3Jvb3RfX2Asc2VsZWN0OmU9PmUuZmVhdHVyZUZsYWdzfSk7cmV0dXJue3F1ZXJ5Q2xpZW50OnQsbG9jYWxlOm4saW5pdGlhbEVudGVycHJpc2U6cixjbGVya1Byb3h5VXJsOm8sbmV3TW9iaWxlQWNjZXNzOnMsaTE4blBhdGhuYW1lOkxyKHtmcm9tOmBfX3Jvb3RfX2Asc2VsZWN0OmU9Pnt2YXIgdDtyZXR1cm4odD1lLmkxOG5QYXRobmFtZSk9PW51bGw/ZS5zaGVsbFBhdGhuYW1lOnR9fSksaTE4blNjb3BlOkxyKHtmcm9tOmBfX3Jvb3RfX2Asc2VsZWN0OmU9PmUuaTE4blNjb3BlfSksaTE4blJvdXRlSGludHM6THIoe2Zyb206YF9fcm9vdF9fYCxzZWxlY3Q6ZT0+ZS5pMThuUm91dGVIaW50c30pLGZlYXR1cmVGbGFnczpjfX1mdW5jdGlvbiBZUigpe3JldHVybihZUj10KCgpPT57cSgpLGZpZSgpLGhpZSgpLGZyKA=="
+    },
+    "locations": [
+      {
+        "repository": null,
+        "path": "results/higgsfield.ai/chunks_unique/a586a40e87259ccb_548e0f3a-Z02c23EjO5rx6Ir3.js",
+        "range": {
+          "start": {
+            "line": 84,
+            "column": 125996
+          },
+          "end": {
+            "line": 84,
+            "column": 126055
+          }
+        },
+        "commit": null,
+        "commit_date": null,
+        "absolute_path": "/home/runner/work/web-hunt/web-hunt/results/higgsfield.ai/chunks_unique/a586a40e87259ccb_548e0f3a-Z02c23EjO5rx6Ir3.js",
+        "host_recorded": true
+      }
+    ]
+  }
+]
+

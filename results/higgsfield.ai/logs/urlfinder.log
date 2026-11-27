@@ -1,0 +1,2 @@
+$ urlfinder -d higgsfield.ai -all -max-time 2 -v -o results/higgsfield.ai/urlfinder_raw.txt
+TIMEOUT after 83s
