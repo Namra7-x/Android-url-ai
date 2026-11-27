@@ -1,5 +1,3 @@
 # One target URL per line. Comments (#) and blank lines are ignored.
-https://devin.ai/
-https://higgsfield.ai/
-https://modelstudio.console.alibabacloud.com/
-https://ai.azure.com/catalog
+https://claude.ai/
+https://chatgpt.com/
