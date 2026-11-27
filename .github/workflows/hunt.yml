@@ -91,7 +91,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: |
-            ~/.cache/hunt-tools-ready-v3
+            ~/.cache/hunt-tools-ready-v4
             ~/go/bin
             ~/.local
             ~/tools/bin
@@ -100,9 +100,9 @@ jobs:
             ~/.cache/camoufox
             ~/.cache/chrome-headless-shell
             ~/nuclei-templates
-          key: hunt-tools-v3-${{ runner.os }}-${{ hashFiles('scripts/install_tools.sh') }}
+          key: hunt-tools-v4-${{ runner.os }}-${{ hashFiles('scripts/install_tools.sh') }}
           restore-keys: |
-            hunt-tools-v3-${{ runner.os }}-
+            hunt-tools-v4-${{ runner.os }}-
 
       - name: Setup Go (builder only on cache miss)
         if: steps.cache.outputs.cache-hit != 'true'
@@ -135,7 +135,7 @@ jobs:
     needs: [prepare, tools]
     if: needs.prepare.outputs.count != '0'
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 18
     strategy:
       fail-fast: false
       max-parallel: ${{ fromJSON(inputs.max_parallel) }}
@@ -151,7 +151,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: |
-            ~/.cache/hunt-tools-ready-v3
+            ~/.cache/hunt-tools-ready-v4
             ~/go/bin
             ~/.local
             ~/tools/bin
@@ -160,20 +160,24 @@ jobs:
             ~/.cache/camoufox
             ~/.cache/chrome-headless-shell
             ~/nuclei-templates
-          key: hunt-tools-v3-${{ runner.os }}-${{ hashFiles('scripts/install_tools.sh') }}
+          key: hunt-tools-v4-${{ runner.os }}-${{ hashFiles('scripts/install_tools.sh') }}
           restore-keys: |
-            hunt-tools-v3-${{ runner.os }}-
+            hunt-tools-v4-${{ runner.os }}-
 
       - name: Activate cached toolchain
         run: bash scripts/install_tools.sh
 
       - name: Hunt ${{ matrix.target }}
+        env:
+          BUDGET_MIN: ${{ inputs.time_budget_minutes }}
         run: |
-          python3 scripts/hunt.py \
-            --url "${{ matrix.target }}" \
-            --out results \
-            --settings config/settings.json \
-            --budget-min "${{ inputs.time_budget_minutes }}"
+          HARD_CAP=$(python3 -c 'import os; print(max(60, int(float(os.environ.get("BUDGET_MIN") or 11) * 60 + 45)))')
+          timeout --preserve-status --signal=TERM --kill-after=30 "$HARD_CAP" \
+            python3 scripts/hunt.py \
+              --url "${{ matrix.target }}" \
+              --out results \
+              --settings config/settings.json \
+              --budget-min "${{ inputs.time_budget_minutes }}"
 
       - name: Push this target's results (race-safe)
         if: always()
@@ -191,6 +195,7 @@ jobs:
           find "$TARGET_DIR" -type f \
             ! -path "*/chunks/*" \
             ! -path "*/chunks_unique/*" \
+            ! -path "*/jscope_stage/*" \
             ! -path "*/sourcemaps/*" \
             ! -path "*/waymore_responses/*" \
             -print0 | xargs -0 -r git add -f
@@ -240,9 +245,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
 
-      - name: Rebuild INDEX.md and SUMMARY.md
-        run: python3 scripts/make_index.py results
+      - name: Pull latest results and rebuild INDEX.md and SUMMARY.md
+        run: |
+          git pull --rebase --autostash origin main || true
+          python3 scripts/make_index.py results
 
       - name: Commit index
         run: |

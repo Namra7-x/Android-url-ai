@@ -14,13 +14,14 @@ import base64
 import json
 import os
 import re
+import signal
 import ssl
 import sys
 import threading
 import time
 import urllib.error
 import urllib.request
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor, TimeoutError as FuturesTimeoutError, as_completed, wait
 from pathlib import Path
 from typing import Any
 from urllib.parse import urljoin, urlparse
@@ -59,7 +60,8 @@ class HuntRunner:
 
         self.settings = settings
         budget_sec = int(budget_min * 60) if budget_min else int(settings.get("target_budget_seconds", 660))
-        self.timer = hu.BudgetTimer(budget_sec)
+        reserve_sec = int(settings.get("save_reserve_seconds", 45))
+        self.timer = hu.BudgetTimer(budget_sec, reserve_seconds=reserve_sec)
 
         self._lock = threading.Lock()
         self.routes: dict[str, dict[str, Any]] = {}
@@ -68,6 +70,23 @@ class HuntRunner:
         self.tool_statuses: list[dict[str, Any]] = []
         self.scrapling_cookies: dict[str, str] = {}
         self.scrapling_ua: str = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+    def _run_cmd(
+        self,
+        cmd: list[str],
+        log_path: Path,
+        timeout: int = 120,
+        stdout_path: Path | None = None,
+        read_stdout: bool = True,
+    ) -> tuple[int, str]:
+        return hu.run_cmd(
+            cmd,
+            log_path,
+            timeout=timeout,
+            stdout_path=stdout_path,
+            stop_event=self.timer.stop_event,
+            read_stdout=read_stdout,
+        )
 
     def enabled(self, key: str) -> bool:
         return bool(self.settings.get(key, True))
@@ -126,25 +145,35 @@ class HuntRunner:
         t0 = time.monotonic()
         live_subs: list[str] = []
 
-        if self.enabled("enable_subdomains") and hu.which("subfinder"):
+        if self.enabled("enable_subdomains") and hu.which("subfinder") and not self.timer.stopped():
             sf_out = self.target_dir / "subfinder.txt"
             cap = self.timer.cap(self.settings.get("subfinder_timeout", 60), wave_deadline)
-            rc, _ = hu.run_cmd(
+            rc, _ = self._run_cmd(
                 ["subfinder", "-d", self.subfinder_domain, "-silent", "-all", "-o", str(sf_out)],
                 self.logs_dir / "subfinder.log",
                 timeout=cap,
+                read_stdout=False,
             )
-            subs = []
+            max_subs = int(self.settings.get("max_subdomains", 2000))
+            subs_set: set[str] = set()
             if sf_out.is_file():
-                subs = sorted({l.strip().lower() for l in sf_out.read_text(encoding="utf-8", errors="replace").splitlines() if l.strip()})
+                with sf_out.open("r", encoding="utf-8", errors="replace") as fh:
+                    for line in fh:
+                        s = line.strip().lower()
+                        if s:
+                            subs_set.add(s)
+                            if len(subs_set) >= max_subs:
+                                break
+            subs = sorted(subs_set)
             (self.target_dir / "subdomains_all.txt").write_text("\n".join(subs) + ("\n" if subs else ""), encoding="utf-8")
 
-            if subs and hu.which("dnsx"):
+            if subs and hu.which("dnsx") and not self.timer.stopped():
                 dns_out = self.target_dir / "dnsx.jsonl"
-                rc2, _ = hu.run_cmd(
+                rc2, _ = self._run_cmd(
                     ["dnsx", "-l", str(self.target_dir / "subdomains_all.txt"), "-silent", "-a", "-cname", "-resp", "-json", "-o", str(dns_out)],
                     self.logs_dir / "dnsx.log",
                     timeout=self.timer.cap(25, wave_deadline),
+                    read_stdout=False,
                 )
                 for row in hu.read_jsonl(dns_out):
                     h = str(row.get("host") or "").strip().lower()
@@ -162,12 +191,12 @@ class HuntRunner:
             )
             self.record_status("subfinder+dnsx", rc, time.monotonic() - t0, f"{len(subs)} subs, {len(live_subs)} live")
 
-        if self.enabled("enable_wellknown_ai_probes"):
+        if self.enabled("enable_wellknown_ai_probes") and not self.timer.stopped():
             wt0 = time.monotonic()
             probe_rows: list[dict[str, Any]] = []
             origin = f"{urlparse(self.base_url).scheme}://{urlparse(self.base_url).netloc}"
             for path in hu.WELLKNOWN_AI_PATHS:
-                if time.monotonic() >= wave_deadline:
+                if time.monotonic() >= wave_deadline or self.timer.stopped():
                     break
                 url = origin + path
                 code, _hdrs, body = self._http_get(url, timeout=6)
@@ -337,11 +366,12 @@ with open(xhr_path, "w", encoding="utf-8") as f:
 with open(cookies_path, "w", encoding="utf-8") as f:
     json.dump({"cookies": cookies_dict, "user_agent": ua_str}, f)
 '''
-        rc, _ = hu.run_cmd(
+        rc, _ = self._run_cmd(
             [sys.executable, "-c", helper_code, self.base_url, str(max_pages), str(cap),
              str(xhr_out), str(urls_out), str(js_out), str(cookies_out)],
             self.logs_dir / "scrapling.log",
             timeout=cap,
+            read_stdout=False,
         )
 
         if cookies_out.is_file():
@@ -387,7 +417,7 @@ with open(cookies_path, "w", encoding="utf-8") as f:
         return cnt
 
     def _step_katana(self, wave_deadline: float) -> None:
-        if not self.enabled("enable_katana") or not hu.which("katana"):
+        if not self.enabled("enable_katana") or not hu.which("katana") or self.timer.stopped():
             self.record_status("katana", 0, 0.0, "disabled or missing")
             return
         t0 = time.monotonic()
@@ -398,91 +428,123 @@ with open(cookies_path, "w", encoding="utf-8") as f:
 
         depth = str(self.settings.get("katana_depth", 3))
         mrs = str(self.settings.get("katana_max_response", 2097152))
+        conc = str(self.settings.get("katana_concurrency", 12))
+        par = str(self.settings.get("katana_parallelism", 6))
         p1_out = kat_dir / "pass1.jsonl"
         p1_cmd = [
             "katana", "-u", self.base_url, "-d", depth, "-kf", "all",
-            "-c", "20", "-p", "10", "-fs", "fqdn", "-mrs", mrs,
+            "-c", conc, "-p", par, "-fs", "fqdn", "-mrs", mrs,
             "-filter-similar", "-fst", "8", "-j", "-o", str(p1_out), "-silent",
         ]
         if self.settings.get("katana_use_jsl", True):
             p1_cmd.append("-jsl")
 
-        rc1, _ = hu.run_cmd(p1_cmd, self.logs_dir / "katana_pass1.log", timeout=self.timer.cap(100, pass1_deadline))
-        if rc1 != 0 and not p1_out.is_file():
-            # Retry without -filter-similar/-fst in case of older binary flag mismatch
+        rc1, _ = self._run_cmd(
+            p1_cmd,
+            self.logs_dir / "katana_pass1.log",
+            timeout=self.timer.cap(95, pass1_deadline),
+            read_stdout=False,
+        )
+        if rc1 != 0 and not p1_out.is_file() and not self.timer.stopped():
             fallback = [x for x in p1_cmd if x not in ("-filter-similar", "-fst", "8")]
-            rc1, _ = hu.run_cmd(fallback, self.logs_dir / "katana_pass1.log", timeout=self.timer.cap(80, pass1_deadline))
+            rc1, _ = self._run_cmd(
+                fallback,
+                self.logs_dir / "katana_pass1.log",
+                timeout=self.timer.cap(75, pass1_deadline),
+                read_stdout=False,
+            )
         cnt1 = self._ingest_katana_jsonl(p1_out, "katana_p1")
 
         cnt2 = 0
         rc2 = 0
-        rem = self.timer.cap(90, wave_deadline)
-        if rem >= 15 and self.settings.get("katana_use_headless_shell", True):
+        rem = self.timer.cap(85, wave_deadline)
+        if rem >= 15 and self.settings.get("katana_use_headless_shell", True) and not self.timer.stopped():
             p2_out = kat_dir / "pass2.jsonl"
             shell_path = self._find_headless_shell()
             p2_cmd = [
                 "katana", "-u", self.base_url, "-d", "2", "-headless",
                 "-ho", "--no-sandbox,--disable-gpu", "-xhr", "-kf", "all",
-                "-c", "10", "-p", "5", "-fs", "fqdn", "-mrs", mrs,
+                "-c", "6", "-p", "3", "-fs", "fqdn", "-mrs", mrs,
                 "-filter-similar", "-fst", "8", "-j", "-o", str(p2_out), "-silent",
             ]
             if shell_path:
-                p2_cmd.extend(["-sc", "-spo", shell_path])
+                p2_cmd.append("-sc")
             if self.settings.get("katana_use_jsl", True):
                 p2_cmd.append("-jsl")
-            rc2, _ = hu.run_cmd(p2_cmd, self.logs_dir / "katana_pass2.log", timeout=rem)
-            if rc2 != 0 and not p2_out.is_file():
-                fallback2 = [x for x in p2_cmd if x not in ("-filter-similar", "-fst", "8")]
-                rc2, _ = hu.run_cmd(fallback2, self.logs_dir / "katana_pass2.log", timeout=self.timer.cap(60, wave_deadline))
+            rc2, _ = self._run_cmd(
+                p2_cmd,
+                self.logs_dir / "katana_pass2.log",
+                timeout=rem,
+                read_stdout=False,
+            )
+            if rc2 != 0 and not p2_out.is_file() and not self.timer.stopped():
+                fallback2 = [x for x in p2_cmd if x not in ("-filter-similar", "-fst", "8", "-sc")]
+                rc2, _ = self._run_cmd(
+                    fallback2,
+                    self.logs_dir / "katana_pass2.log",
+                    timeout=self.timer.cap(55, wave_deadline),
+                    read_stdout=False,
+                )
             cnt2 = self._ingest_katana_jsonl(p2_out, "katana_p2")
 
         self.record_status("katana", rc1 or rc2, time.monotonic() - t0, f"p1={cnt1}, p2={cnt2}")
 
+    def _ingest_url_file_stream(self, path: Path, source: str, limit: int) -> int:
+        if not path.is_file():
+            return 0
+        cnt = 0
+        with path.open("r", encoding="utf-8", errors="replace") as fh:
+            for line in fh:
+                s = line.strip()
+                if not s:
+                    continue
+                if hu.is_asset(s) and not hu.is_js_or_map_url(s):
+                    continue
+                self.add_url(s, source)
+                cnt += 1
+                if cnt >= limit:
+                    break
+        return cnt
+
     def _step_archive(self, wave_deadline: float) -> None:
-        if self.enabled("enable_waymore") and hu.which("waymore"):
+        max_archive = int(self.settings.get("max_archive_urls", 50000))
+        if self.enabled("enable_waymore") and hu.which("waymore") and not self.timer.stopped():
             t0 = time.monotonic()
             wm_out = self.target_dir / "waymore_urls.txt"
-            cap_u = self.timer.cap(min(90, int(self.settings.get("waymore_timeout", 140) * 0.65)), wave_deadline)
-            rc, _ = hu.run_cmd(
+            cap_u = self.timer.cap(min(85, int(self.settings.get("waymore_timeout", 140) * 0.65)), wave_deadline)
+            rc, _ = self._run_cmd(
                 ["waymore", "-i", self.subfinder_domain, "-mode", "U", "-oU", str(wm_out), "-nlf"],
                 self.logs_dir / "waymore.log",
                 timeout=cap_u,
+                read_stdout=False,
             )
-            cnt = 0
-            if wm_out.is_file():
-                for line in wm_out.read_text(encoding="utf-8", errors="replace").splitlines():
-                    if line.strip():
-                        self.add_url(line.strip(), "waymore")
-                        cnt += 1
+            cnt = self._ingest_url_file_stream(wm_out, "waymore", max_archive)
 
-            rem = self.timer.cap(50, wave_deadline)
-            if rem >= 15:
+            rem = self.timer.cap(45, wave_deadline)
+            if rem >= 15 and not self.timer.stopped():
                 resp_dir = self.target_dir / "waymore_responses"
                 resp_dir.mkdir(parents=True, exist_ok=True)
-                hu.run_cmd(
+                self._run_cmd(
                     ["waymore", "-i", self.subfinder_domain, "-mode", "R", "-oR", str(resp_dir),
                      "-ko", r"\.(js|mjs|json|map)(\?|$)", "-l", "60"],
                     self.logs_dir / "waymore_resp.log",
                     timeout=rem,
+                    read_stdout=False,
                 )
             self.record_status("waymore", rc, time.monotonic() - t0, f"{cnt} archive URLs")
 
-        if self.enabled("enable_urlfinder") and hu.which("urlfinder"):
+        if self.enabled("enable_urlfinder") and hu.which("urlfinder") and not self.timer.stopped():
             t0 = time.monotonic()
             uf_out = self.target_dir / "urlfinder_raw.txt"
             max_min = max(1, int(self.settings.get("urlfinder_max_time_min", 2)))
             cap = self.timer.cap(max_min * 60 + 15, wave_deadline)
-            rc, _ = hu.run_cmd(
+            rc, _ = self._run_cmd(
                 ["urlfinder", "-d", self.subfinder_domain, "-all", "-max-time", str(max_min), "-v", "-o", str(uf_out)],
                 self.logs_dir / "urlfinder.log",
                 timeout=cap,
+                read_stdout=False,
             )
-            cnt = 0
-            if uf_out.is_file():
-                for line in uf_out.read_text(encoding="utf-8", errors="replace").splitlines():
-                    if line.strip():
-                        self.add_url(line.strip(), "urlfinder")
-                        cnt += 1
+            cnt = self._ingest_url_file_stream(uf_out, "urlfinder", max_archive)
             self.record_status("urlfinder", rc, time.monotonic() - t0, f"{cnt} URLs")
 
     # ------------------------------------------------------------------
@@ -522,10 +584,13 @@ with open(cookies_path, "w", encoding="utf-8") as f:
         rounds = int(self.settings.get("js_crawl_rounds", 3))
         threads = int(self.settings.get("js_download_threads", 32))
         dl_timeout = int(self.settings.get("js_download_timeout", 8))
+        fallback_state = {"fails": 0}
 
         def fetch_one(u: str) -> tuple[str, int, bytes]:
+            if time.monotonic() >= wave_deadline or self.timer.stopped():
+                return u, 0, b""
             c, _h, b = self._http_get(u, timeout=dl_timeout)
-            if c in (403, 503):
+            if c in (403, 503) and fallback_state["fails"] < 5 and not self.timer.stopped():
                 try:
                     from scrapling.fetchers import Fetcher  # type: ignore[import-not-found]
                     resp = Fetcher.get(u, timeout=dl_timeout, stealthy_headers=True)
@@ -533,47 +598,58 @@ with open(cookies_path, "w", encoding="utf-8") as f:
                     body = getattr(resp, "body", b"")
                     if sc == 200 and body:
                         return u, sc, body if isinstance(body, (bytes, bytearray)) else str(body).encode("utf-8", "replace")
+                    fallback_state["fails"] += 1
                 except Exception:  # noqa: BLE001
-                    pass
+                    fallback_state["fails"] += 1
             return u, c, b
 
         for rnd in range(rounds):
-            if time.monotonic() >= wave_deadline or len(downloaded_urls) >= max_files:
+            if time.monotonic() >= wave_deadline or self.timer.stopped() or len(downloaded_urls) >= max_files:
                 break
             with self._lock:
                 pending = [u for u in sorted(self.js_urls) if u not in downloaded_urls][:max_files - len(downloaded_urls)]
             if not pending:
                 break
             newly_found: set[str] = set()
-            with ThreadPoolExecutor(max_workers=threads) as pool:
+            pool = ThreadPoolExecutor(max_workers=threads)
+            try:
                 futs = [pool.submit(fetch_one, u) for u in pending]
-                for fut in as_completed(futs):
-                    if time.monotonic() >= wave_deadline:
-                        break
-                    u, c, b = fut.result()
-                    downloaded_urls.add(u)
-                    if c != 200 or not b:
-                        continue
-                    digest = hu.sha256_bytes(b)
-                    name_part = Path(urlparse(u).path).name or f"chunk_{rnd}.js"
-                    if not any(name_part.lower().endswith(e) for e in hu.JS_OR_DATA_EXT):
-                        name_part += ".js"
-                    if digest not in seen_hashes:
-                        dst = chunks_dir / f"{digest[:16]}_{hu.safe_filename(name_part)}"
-                        dst.write_bytes(b)
-                        seen_hashes[digest] = dst
-                    manifest_rows.append({"url": u, "sha256": digest, "file": seen_hashes[digest].name, "bytes": len(b), "round": rnd + 1})
+                rem_wait = max(1.0, wave_deadline - time.monotonic())
+                try:
+                    for fut in as_completed(futs, timeout=rem_wait):
+                        if time.monotonic() >= wave_deadline or self.timer.stopped():
+                            break
+                        u, c, b = fut.result()
+                        downloaded_urls.add(u)
+                        if c != 200 or not b:
+                            continue
+                        digest = hu.sha256_bytes(b)
+                        name_part = Path(urlparse(u).path).name or f"chunk_{rnd}.js"
+                        if not any(name_part.lower().endswith(e) for e in hu.JS_OR_DATA_EXT):
+                            name_part += ".js"
+                        if digest not in seen_hashes:
+                            dst = chunks_dir / f"{digest[:16]}_{hu.safe_filename(name_part)}"
+                            dst.write_bytes(b)
+                            seen_hashes[digest] = dst
+                        manifest_rows.append({"url": u, "sha256": digest, "file": seen_hashes[digest].name, "bytes": len(b), "round": rnd + 1})
 
-                    text = b.decode("utf-8", "replace")
-                    for m in SOURCEMAP_COMMENT_RE.findall(text):
-                        if not m.startswith("data:"):
-                            map_u = hu.normalize_url(urljoin(u, m), u)
-                            if map_u:
-                                newly_found.add(map_u)
-                    for m in JS_REF_RE.findall(text):
-                        ref_u = hu.normalize_url(m, u)
-                        if ref_u and hu.is_first_party(ref_u, self.exact_host, self.scope_apex) and hu.is_js_or_map_url(ref_u):
-                            newly_found.add(ref_u)
+                        text = b.decode("utf-8", "replace")
+                        for m in SOURCEMAP_COMMENT_RE.findall(text):
+                            if not m.startswith("data:"):
+                                map_u = hu.normalize_url(urljoin(u, m), u)
+                                if map_u:
+                                    newly_found.add(map_u)
+                        for m in JS_REF_RE.findall(text):
+                            ref_u = hu.normalize_url(m, u)
+                            if ref_u and hu.is_first_party(ref_u, self.exact_host, self.scope_apex) and hu.is_js_or_map_url(ref_u):
+                                newly_found.add(ref_u)
+                except (TimeoutError, FuturesTimeoutError):
+                    pass
+            finally:
+                try:
+                    pool.shutdown(wait=False, cancel_futures=True)
+                except TypeError:
+                    pool.shutdown(wait=False)
             for nu in newly_found:
                 self.add_url(nu, f"chunk_round{rnd + 1}")
 
@@ -587,7 +663,7 @@ with open(cookies_path, "w", encoding="utf-8") as f:
     # WAVE 3: Offline Parallel Analysis
     # ------------------------------------------------------------------
     def _step_jsluice(self, js_files: list[Path], wave_deadline: float) -> None:
-        if not self.enabled("enable_jsluice") or not hu.which("jsluice") or not js_files:
+        if not self.enabled("enable_jsluice") or not hu.which("jsluice") or not js_files or self.timer.stopped():
             return
         t0 = time.monotonic()
         batch = int(self.settings.get("jsluice_batch", 100))
@@ -597,15 +673,17 @@ with open(cookies_path, "w", encoding="utf-8") as f:
         sec_buf: list[str] = []
 
         for i in range(0, len(js_files), batch):
-            if time.monotonic() >= wave_deadline:
+            if time.monotonic() >= wave_deadline or self.timer.stopped():
                 break
             group = [str(p) for p in js_files[i:i + batch]]
-            cap = self.timer.cap(45, wave_deadline)
-            _, u_stdout = hu.run_cmd(["jsluice", "urls", *group], self.logs_dir / "jsluice.log", timeout=cap)
+            cap = self.timer.cap(40, wave_deadline)
+            _, u_stdout = self._run_cmd(["jsluice", "urls", *group], self.logs_dir / "jsluice.log", timeout=cap)
             if u_stdout:
                 url_buf.append(u_stdout)
-            cap = self.timer.cap(45, wave_deadline)
-            _, s_stdout = hu.run_cmd(["jsluice", "secrets", *group], self.logs_dir / "jsluice.log", timeout=cap)
+            if time.monotonic() >= wave_deadline or self.timer.stopped():
+                break
+            cap = self.timer.cap(40, wave_deadline)
+            _, s_stdout = self._run_cmd(["jsluice", "secrets", *group], self.logs_dir / "jsluice.log", timeout=cap)
             if s_stdout:
                 sec_buf.append(s_stdout)
 
@@ -619,7 +697,7 @@ with open(cookies_path, "w", encoding="utf-8") as f:
         self.record_status("jsluice", 0, time.monotonic() - t0, f"{len(js_files)} chunks -> {cnt} URLs")
 
     def _step_xnlinkfinder(self, chunks_dir: Path, wave_deadline: float) -> None:
-        if not self.enabled("enable_xnlinkfinder") or not hu.which("xnLinkFinder"):
+        if not self.enabled("enable_xnlinkfinder") or not hu.which("xnLinkFinder") or self.timer.stopped():
             return
         if not any(chunks_dir.iterdir()):
             return
@@ -627,8 +705,8 @@ with open(cookies_path, "w", encoding="utf-8") as f:
         ep_out = self.target_dir / "xnlinkfinder_endpoints.txt"
         params_out = self.target_dir / "xn_params.txt"
         sec_out = self.target_dir / "xn_secrets.json"
-        cap = self.timer.cap(90, wave_deadline)
-        rc, stdout = hu.run_cmd(
+        cap = self.timer.cap(80, wave_deadline)
+        rc, stdout = self._run_cmd(
             ["xnLinkFinder", "-i", str(chunks_dir), "-sf", self.scope_apex,
              "-o", "cli", "-op", str(params_out), "-os", str(sec_out)],
             self.logs_dir / "xnlinkfinder.log",
@@ -641,7 +719,7 @@ with open(cookies_path, "w", encoding="utf-8") as f:
         self.record_status("xnLinkFinder", rc, time.monotonic() - t0, f"{len(ep_lines)} endpoints")
 
     def _step_sourcemapper(self, chunks_dir: Path, wave_deadline: float) -> list[str]:
-        if not self.enabled("enable_sourcemapper"):
+        if not self.enabled("enable_sourcemapper") or self.timer.stopped():
             return []
         t0 = time.monotonic()
         smap_dir = self.target_dir / "sourcemaps"
@@ -649,7 +727,7 @@ with open(cookies_path, "w", encoding="utf-8") as f:
 
         # 1. Decode inline base64 sourceMappingURL comments directly
         for js_file in chunks_dir.glob("*.js"):
-            if time.monotonic() >= wave_deadline:
+            if time.monotonic() >= wave_deadline or self.timer.stopped():
                 break
             try:
                 text = js_file.read_text(encoding="utf-8", errors="replace")
@@ -673,13 +751,14 @@ with open(cookies_path, "w", encoding="utf-8") as f:
         map_files = list(chunks_dir.glob("*.map"))
         if map_files and hu.which("sourcemapper"):
             for mf in map_files[:40]:
-                if time.monotonic() >= wave_deadline:
+                if time.monotonic() >= wave_deadline or self.timer.stopped():
                     break
                 out_sub = smap_dir / mf.stem
-                hu.run_cmd(
+                self._run_cmd(
                     ["sourcemapper", "-url", str(mf), "-output", str(out_sub)],
                     self.logs_dir / "sourcemapper.log",
                     timeout=self.timer.cap(20, wave_deadline),
+                    read_stdout=False,
                 )
 
         unpacked = sorted(str(p.relative_to(smap_dir)) for p in smap_dir.rglob("*") if p.is_file())
@@ -700,7 +779,7 @@ with open(cookies_path, "w", encoding="utf-8") as f:
                 seen_fg.add(key)
                 findings.append({"kind": kind, "name": name, "file": file_name})
 
-        # Stage JS files <= 3MB so Jscope skips oversized vendor bundles
+        # Stage JS files <= 3MB using symlinks so Jscope skips oversized vendor bundles without copying
         stage_dir = self.target_dir / "jscope_stage"
         stage_dir.mkdir(parents=True, exist_ok=True)
         staged: list[Path] = []
@@ -709,7 +788,10 @@ with open(cookies_path, "w", encoding="utf-8") as f:
                 if p.stat().st_size <= max_bytes:
                     link = stage_dir / p.name
                     if not link.exists():
-                        link.write_bytes(p.read_bytes())
+                        try:
+                            os.symlink(p.resolve(), link)
+                        except OSError:
+                            link.write_bytes(p.read_bytes())
                     staged.append(link)
             except OSError:
                 continue
@@ -717,14 +799,7 @@ with open(cookies_path, "w", encoding="utf-8") as f:
         jscope_raw = self.target_dir / "jscope.txt"
         rc = 0
         jscope_bin = hu.which("jscope")
-        if self.enabled("enable_jscope") and jscope_bin and staged:
-            wrapper = (
-                "import runpy, sys\n"
-                f"sys.setrecursionlimit({rec_limit})\n"
-                "sys.argv = ['jscope', 'analyze', sys.argv[2], '--verbose']\n"
-                "runpy.run_path(sys.argv[1] if False else __import__('shutil').which('jscope'), run_name='__main__')\n"
-            )
-            # Pass jscope_bin explicitly as argv[1] and stage_dir as argv[2]
+        if self.enabled("enable_jscope") and jscope_bin and staged and not self.timer.stopped():
             wrapper = (
                 "import runpy, sys\n"
                 f"sys.setrecursionlimit({rec_limit})\n"
@@ -732,32 +807,27 @@ with open(cookies_path, "w", encoding="utf-8") as f:
                 "sys.argv = [target_bin, 'analyze', target_dir, '--verbose']\n"
                 "runpy.run_path(target_bin, run_name='__main__')\n"
             )
-            cap = self.timer.cap(75, wave_deadline)
-            rc, stdout = hu.run_cmd(
+            cap = self.timer.cap(55, wave_deadline)
+            rc, stdout = self._run_cmd(
                 [sys.executable, "-c", wrapper, jscope_bin, str(stage_dir)],
                 self.logs_dir / "jscope.log",
                 timeout=cap,
                 stdout_path=jscope_raw,
             )
-            if rc != 0 and not stdout.strip():
-                rc, stdout = hu.run_cmd(
-                    ["jscope", "analyze", str(stage_dir), "--verbose"],
-                    self.logs_dir / "jscope.log",
-                    timeout=self.timer.cap(45, wave_deadline),
-                    stdout_path=jscope_raw,
-                )
             for line in stdout.splitlines():
                 for kind in ("feature_flag", "role", "route_guard"):
                     m = re.search(rf"{kind}:([A-Za-z0-9_.:-]+)", line)
                     if m:
                         add_finding(kind, m.group(1), "jscope")
 
-        # Fast deterministic backup scan over chunks + unpacked sourcemaps
+        # Fast deterministic backup scan over chunks + unpacked sourcemaps (deadline-guarded)
         scan_dirs = [self.target_dir / "chunks_unique", self.target_dir / "sourcemaps"]
         for sdir in scan_dirs:
-            if not sdir.exists():
+            if not sdir.exists() or time.monotonic() >= wave_deadline or self.timer.stopped():
                 continue
             for p in sdir.rglob("*"):
+                if time.monotonic() >= wave_deadline or self.timer.stopped():
+                    break
                 if not p.is_file() or p.suffix.lower() not in (".js", ".mjs", ".ts", ".tsx", ".jsx", ".json"):
                     continue
                 if p.stat().st_size > max_bytes:
@@ -776,20 +846,20 @@ with open(cookies_path, "w", encoding="utf-8") as f:
         t0 = time.monotonic()
         scan_targets = [p for p in (self.target_dir / "chunks_unique", self.target_dir / "sourcemaps") if p.exists() and any(p.rglob("*"))]
         normalized: list[dict[str, Any]] = []
-        if not scan_targets:
+        if not scan_targets or self.timer.stopped():
             hu.write_jsonl(self.target_dir / "secrets.jsonl", [])
             return normalized
 
-        if self.enabled("enable_trufflehog") and hu.which("trufflehog"):
+        if self.enabled("enable_trufflehog") and hu.which("trufflehog") and not self.timer.stopped():
             th_out = self.target_dir / "trufflehog.jsonl"
             all_th: list[str] = []
             for st in scan_targets:
-                if time.monotonic() >= wave_deadline:
+                if time.monotonic() >= wave_deadline or self.timer.stopped():
                     break
-                _, out = hu.run_cmd(
+                _, out = self._run_cmd(
                     ["trufflehog", "filesystem", str(st), "--json", "--no-update"],
                     self.logs_dir / "trufflehog.log",
-                    timeout=self.timer.cap(60, wave_deadline),
+                    timeout=self.timer.cap(55, wave_deadline),
                 )
                 if out:
                     all_th.append(out)
@@ -803,16 +873,17 @@ with open(cookies_path, "w", encoding="utf-8") as f:
                     "file": ((row.get("SourceMetadata") or {}).get("Data") or {}).get("Filesystem", {}).get("file", ""),
                 })
 
-        if self.enabled("enable_titus") and hu.which("titus"):
+        if self.enabled("enable_titus") and hu.which("titus") and not self.timer.stopped():
             ti_out = self.target_dir / "titus.json"
             for idx, st in enumerate(scan_targets):
-                if time.monotonic() >= wave_deadline:
+                if time.monotonic() >= wave_deadline or self.timer.stopped():
                     break
                 sub_out = self.target_dir / f"titus_{idx}.json"
-                hu.run_cmd(
+                self._run_cmd(
                     ["titus", "scan", str(st), "--format", "json", "--output", str(sub_out)],
                     self.logs_dir / "titus.log",
-                    timeout=self.timer.cap(60, wave_deadline),
+                    timeout=self.timer.cap(55, wave_deadline),
+                    read_stdout=False,
                 )
                 if sub_out.is_file():
                     try:
@@ -876,57 +947,68 @@ with open(cookies_path, "w", encoding="utf-8") as f:
     def _step_probe(self, wave_deadline: float) -> list[dict[str, Any]]:
         raw_urls = sorted(self.routes.keys())
         (self.target_dir / "raw_collected.txt").write_text("\n".join(raw_urls) + ("\n" if raw_urls else ""), encoding="utf-8")
+        if self.timer.stopped():
+            return []
 
         probe_candidates = [u for u in raw_urls if self.settings.get("probe_assets") or not hu.is_asset(u)]
         cap_max = int(self.settings.get("max_urls", 0) or 0)
         if cap_max > 0:
-            probe_candidates = probe_candidates[:cap_max]
+            probe_candidates = hu.prioritize_probe_urls(self.routes, probe_candidates, cap_max)
+        elif len(probe_candidates) > 15000:
+            probe_candidates = hu.prioritize_probe_urls(self.routes, probe_candidates, 15000)
 
         to_probe = self.target_dir / "urls_to_probe.txt"
         to_probe.write_text("\n".join(probe_candidates) + ("\n" if probe_candidates else ""), encoding="utf-8")
 
-        use_list = to_probe
-        if self.enabled("enable_uro") and hu.which("uro") and probe_candidates:
+        deduped = probe_candidates
+        if self.enabled("enable_uro") and hu.which("uro") and probe_candidates and not self.timer.stopped():
             uro_out = self.target_dir / "urls_to_probe_uro.txt"
-            rc, stdout = hu.run_cmd(
+            rc, _ = self._run_cmd(
                 ["uro", "-i", str(to_probe)],
                 self.logs_dir / "uro.log",
                 timeout=self.timer.cap(25, wave_deadline),
                 stdout_path=uro_out,
+                read_stdout=False,
             )
             if rc == 0 and uro_out.is_file() and uro_out.stat().st_size > 0:
-                use_list = uro_out
+                deduped = [l.strip() for l in uro_out.read_text(encoding="utf-8", errors="replace").splitlines() if l.strip()]
+
+        max_probe = int(self.settings.get("max_probe_urls", 3000) or 3000)
+        prioritized = hu.prioritize_probe_urls(self.routes, deduped, max_probe)
+        final_list = self.target_dir / "urls_to_probe_prioritized.txt"
+        final_list.write_text("\n".join(prioritized) + ("\n" if prioritized else ""), encoding="utf-8")
 
         probe_out = self.target_dir / "probe.jsonl"
-        if not self.enabled("enable_httpx") or not hu.which("httpx") or not probe_candidates:
+        if not self.enabled("enable_httpx") or not hu.which("httpx") or not prioritized or self.timer.stopped():
             return []
 
         t0 = time.monotonic()
         cap = self.timer.cap(self.settings.get("httpx_timeout", 75), wave_deadline)
-        rc, _ = hu.run_cmd(
+        rc, _ = self._run_cmd(
             [
-                "httpx", "-l", str(use_list), "-mc", hu.ALL_CODES,
+                "httpx", "-l", str(final_list), "-mc", hu.ALL_CODES,
                 "-sc", "-cl", "-ct", "-title", "-td", "-j",
                 "-o", str(probe_out), "-silent",
-                "-timeout", str(self.settings.get("request_timeout", 15)), "-retries", "1",
-                "-rl", str(self.settings.get("httpx_rate", 120)),
-                "-threads", str(self.settings.get("httpx_threads", 60)),
+                "-timeout", str(self.settings.get("request_timeout", 8)), "-retries", "1",
+                "-rl", str(self.settings.get("httpx_rate", 150)),
+                "-threads", str(self.settings.get("httpx_threads", 80)),
             ],
             self.logs_dir / "httpx.log",
             timeout=cap,
+            read_stdout=False,
         )
         rows = hu.read_jsonl(probe_out)
-        self.record_status("httpx", rc, time.monotonic() - t0, f"{len(rows)} probed")
+        self.record_status("httpx", rc, time.monotonic() - t0, f"{len(rows)}/{len(prioritized)} probed")
         return rows
 
     def _step_vhost(self, live_subs: list[str], wave_deadline: float) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
-        if not self.enabled("enable_vhost") or not live_subs:
+        if not self.enabled("enable_vhost") or not live_subs or self.timer.stopped():
             return [], []
         t0 = time.monotonic()
         all_rows: list[dict[str, Any]] = []
         origin = f"{urlparse(self.base_url).scheme}://{urlparse(self.base_url).netloc}"
         for sub in live_subs[:30]:
-            if time.monotonic() >= wave_deadline:
+            if time.monotonic() >= wave_deadline or self.timer.stopped():
                 break
             code, _h, body = self._http_get(origin, timeout=4, headers={"Host": sub})
             title = ""
@@ -944,7 +1026,7 @@ with open(cookies_path, "w", encoding="utf-8") as f:
         return real, blocked
 
     def _step_targeted_fuzz(self, win_rows: list[dict[str, Any]], wordlist_path: Path, cf_blocked: bool, wave_deadline: float) -> list[dict[str, Any]]:
-        if not self.enabled("enable_targeted_fuzz") or cf_blocked or not wordlist_path.is_file():
+        if not self.enabled("enable_targeted_fuzz") or cf_blocked or not wordlist_path.is_file() or self.timer.stopped():
             return []
         t0 = time.monotonic()
         prefixes: list[str] = []
@@ -965,19 +1047,20 @@ with open(cookies_path, "w", encoding="utf-8") as f:
 
         fuzz_rows: list[dict[str, Any]] = []
         fuzz_out = self.target_dir / "fuzz.jsonl"
-        total_cap = self.timer.cap(self.settings.get("fuzz_timeout", 75), wave_deadline)
+        total_cap = self.timer.cap(self.settings.get("fuzz_timeout", 65), wave_deadline)
         per_target = max(8, total_cap // max(1, len(prefixes)))
 
         if self.settings.get("fuzz_tool", "feroxbuster") == "feroxbuster" and hu.which("feroxbuster"):
             for idx, pref in enumerate(prefixes):
-                if time.monotonic() >= wave_deadline:
+                if time.monotonic() >= wave_deadline or self.timer.stopped():
                     break
                 tmp_out = self.target_dir / f"ferox_{idx}.json"
-                hu.run_cmd(
+                self._run_cmd(
                     ["feroxbuster", "-u", pref, "-w", str(wordlist_path), "--silent", "--no-state",
                      "--depth", "1", "--time-limit", f"{per_target}s", "--json", "-o", str(tmp_out)],
                     self.logs_dir / "feroxbuster.log",
                     timeout=self.timer.cap(per_target + 5, wave_deadline),
+                    read_stdout=False,
                 )
                 for row in hu.read_jsonl(tmp_out):
                     if row.get("type") == "response" and row.get("url"):
@@ -985,15 +1068,16 @@ with open(cookies_path, "w", encoding="utf-8") as f:
                         self.add_url(str(row["url"]), "feroxbuster")
         elif hu.which("ffuf"):
             for idx, pref in enumerate(prefixes):
-                if time.monotonic() >= wave_deadline:
+                if time.monotonic() >= wave_deadline or self.timer.stopped():
                     break
                 tmp_out = self.target_dir / f"ffuf_{idx}.json"
-                hu.run_cmd(
+                self._run_cmd(
                     ["ffuf", "-u", pref.rstrip("/") + "/FUZZ", "-w", str(wordlist_path),
                      "-mc", "200,201,204,301,302,307,401,403,405", "-maxtime", str(per_target),
                      "-of", "json", "-o", str(tmp_out), "-s"],
                     self.logs_dir / "ffuf.log",
                     timeout=self.timer.cap(per_target + 5, wave_deadline),
+                    read_stdout=False,
                 )
                 if tmp_out.is_file():
                     try:
@@ -1010,8 +1094,8 @@ with open(cookies_path, "w", encoding="utf-8") as f:
         return fuzz_rows
 
     def _step_x8(self, win_rows: list[dict[str, Any]], param_file: Path, cf_blocked: bool, wave_deadline: float) -> None:
-        if not self.enabled("enable_x8") or not hu.which("x8") or cf_blocked:
-            self.record_status("x8", 0, 0.0, "skipped (cf_blocked or disabled)")
+        if not self.enabled("enable_x8") or not hu.which("x8") or cf_blocked or self.timer.stopped():
+            self.record_status("x8", 0, 0.0, "skipped (cf_blocked, stopped, or disabled)")
             return
         if not param_file.is_file() or param_file.stat().st_size == 0:
             self.record_status("x8", 0, 0.0, "no params")
@@ -1029,9 +1113,9 @@ with open(cookies_path, "w", encoding="utf-8") as f:
         per_cap = max(8, cap // len(api_urls))
         out_buf: list[str] = []
         for u in api_urls:
-            if time.monotonic() >= wave_deadline:
+            if time.monotonic() >= wave_deadline or self.timer.stopped():
                 break
-            _, out = hu.run_cmd(
+            _, out = self._run_cmd(
                 ["x8", "-u", u, "-w", str(param_file)],
                 self.logs_dir / "x8.log",
                 timeout=self.timer.cap(per_cap, wave_deadline),
@@ -1042,7 +1126,7 @@ with open(cookies_path, "w", encoding="utf-8") as f:
         self.record_status("x8", 0, time.monotonic() - t0, f"{len(api_urls)} API routes scanned")
 
     def _step_methods(self, candidate_rows: list[dict[str, Any]], cf_blocked: bool, wave_deadline: float) -> list[dict[str, Any]]:
-        if not self.enabled("enable_methods") or cf_blocked:
+        if not self.enabled("enable_methods") or cf_blocked or self.timer.stopped():
             return []
         t0 = time.monotonic()
         targets = [
@@ -1054,10 +1138,10 @@ with open(cookies_path, "w", encoding="utf-8") as f:
         rows: list[dict[str, Any]] = []
         ctx = ssl.create_default_context()
         for u in targets:
-            if time.monotonic() >= wave_deadline:
+            if time.monotonic() >= wave_deadline or self.timer.stopped():
                 break
             for meth in ("OPTIONS", "POST"):
-                if time.monotonic() >= wave_deadline:
+                if time.monotonic() >= wave_deadline or self.timer.stopped():
                     break
                 req = urllib.request.Request(u, headers={"User-Agent": self.scrapling_ua}, method=meth)
                 try:
@@ -1070,135 +1154,230 @@ with open(cookies_path, "w", encoding="utf-8") as f:
         self.record_status("methods", 0, time.monotonic() - t0, f"{len(rows)} probes")
         return rows
 
+    def _find_nuclei_templates(self) -> Path | None:
+        candidates = [
+            Path.home() / "nuclei-templates",
+            Path.home() / ".local" / "nuclei-templates",
+            Path.home() / ".config" / "nuclei" / "nuclei-templates",
+        ]
+        for c in candidates:
+            if c.is_dir() and any(c.iterdir()):
+                return c
+        return None
+
     def _step_nuclei(self, live_rows: list[dict[str, Any]], wave_deadline: float) -> list[dict[str, Any]]:
-        if not self.enabled("enable_nuclei") or not hu.which("nuclei"):
+        if not self.enabled("enable_nuclei") or not hu.which("nuclei") or self.timer.stopped():
             return []
         t0 = time.monotonic()
         max_targets = int(self.settings.get("nuclei_max_targets", 150))
         urls = list({str(r["url"]): True for r in live_rows if r.get("url")})[:max_targets]
         if not urls:
             return []
+        tpl_dir = self._find_nuclei_templates()
+        if tpl_dir is None:
+            self._run_cmd(
+                ["nuclei", "-update-templates", "-silent"],
+                self.logs_dir / "nuclei.log",
+                timeout=self.timer.cap(30, wave_deadline),
+                read_stdout=False,
+            )
+            tpl_dir = self._find_nuclei_templates()
+        if tpl_dir is None:
+            self.record_status("nuclei", 1, time.monotonic() - t0, "no templates found")
+            return []
+
         nuc_list = self.target_dir / "nuclei_urls.txt"
         nuc_list.write_text("\n".join(urls) + "\n", encoding="utf-8")
         nuc_out = self.target_dir / "nuclei.jsonl"
-        cap = self.timer.cap(self.settings.get("nuclei_timeout", 90), wave_deadline)
-        rc, _ = hu.run_cmd(
+        cap = self.timer.cap(self.settings.get("nuclei_timeout", 80), wave_deadline)
+        rc, _ = self._run_cmd(
             [
-                "nuclei", "-l", str(nuc_list), "-tags", "exposure,misconfig,tech,panel",
+                "nuclei", "-l", str(nuc_list), "-t", str(tpl_dir),
+                "-tags", "exposure,misconfig,tech,panel",
                 "-rl", "50", "-c", "25", "-jsonl", "-o", str(nuc_out),
                 "-silent", "-duc", "-timeout", "8", "-retries", "1",
             ],
             self.logs_dir / "nuclei.log",
             timeout=cap,
+            read_stdout=False,
         )
         rows = hu.read_jsonl(nuc_out)
         self.record_status("nuclei", rc, time.monotonic() - t0, f"{len(rows)} findings across {len(urls)} URLs")
         return rows
 
+    def _run_pool_bounded(self, tasks: list[tuple[Any, tuple[Any, ...]]], deadline: float) -> list[Any]:
+        pool = ThreadPoolExecutor(max_workers=len(tasks))
+        results: list[Any] = [None] * len(tasks)
+        try:
+            futs = [pool.submit(fn, *args) for fn, args in tasks]
+            rem = max(1.0, deadline - time.monotonic() + 3.0)
+            wait(futs, timeout=rem)
+            for idx, fut in enumerate(futs):
+                if fut.done() and not fut.cancelled():
+                    try:
+                        results[idx] = fut.result(timeout=0)
+                    except Exception as exc:  # noqa: BLE001
+                        hu.log(f"worker error: {exc}")
+        finally:
+            try:
+                pool.shutdown(wait=False, cancel_futures=True)
+            except TypeError:
+                pool.shutdown(wait=False)
+        return results
+
+    def _start_watchdog(self) -> threading.Event:
+        done_ev = threading.Event()
+
+        def watchdog() -> None:
+            wait_sec = max(1.0, self.timer.work_deadline - time.monotonic())
+            if not done_ev.wait(timeout=wait_sec):
+                hu.log(f"Budget work_deadline reached ({self.timer.elapsed():.1f}s); stopping active tools to save results")
+                self.timer.request_stop()
+                hu.kill_all_active_procs()
+
+        t = threading.Thread(target=watchdog, name="hunt-watchdog", daemon=True)
+        t.start()
+        return done_ev
+
     def run(self) -> int:
         wave_timings: dict[str, float] = {}
+        done_ev = self._start_watchdog()
 
-        # WAVE 1: Parallel Discovery
-        w1_start = time.monotonic()
-        w1_deadline = self.timer.wave_deadline(self.settings.get("wave1_budget_seconds", 210))
-        hu.log(f"WAVE 1 starting for {self.base_url} (subfinder_domain={self.subfinder_domain})")
         live_subs: list[str] = []
-        with ThreadPoolExecutor(max_workers=4) as pool:
-            f_sub = pool.submit(self._step_subdomains_and_wellknown, w1_deadline)
-            f_scr = pool.submit(self._step_scrapling, w1_deadline)
-            f_kat = pool.submit(self._step_katana, w1_deadline)
-            f_arc = pool.submit(self._step_archive, w1_deadline)
-            live_subs = f_sub.result()
-            f_scr.result()
-            f_kat.result()
-            f_arc.result()
-        wave_timings["Wave 1 (Discovery)"] = time.monotonic() - w1_start
-
-        # WAVE 2: Chunk Download & SHA-256 Dedup
-        w2_start = time.monotonic()
-        w2_deadline = self.timer.wave_deadline(self.settings.get("wave2_budget_seconds", 120))
-        hu.log(f"WAVE 2 chunk download ({len(self.js_urls)} JS/JSON/map URLs)")
-        unique_chunks = self.step_download_js(w2_deadline)
-        js_files = [p for p in unique_chunks if p.suffix.lower() in (".js", ".mjs")]
-        wave_timings["Wave 2 (Chunks)"] = time.monotonic() - w2_start
-
-        # WAVE 3: Offline Parallel Analysis
-        w3_start = time.monotonic()
-        w3_deadline = self.timer.wave_deadline(self.settings.get("wave3_budget_seconds", 150))
-        hu.log(f"WAVE 3 offline analysis on {len(unique_chunks)} unique chunks")
-        chunks_dir = self.target_dir / "chunks_unique"
-        with ThreadPoolExecutor(max_workers=5) as pool:
-            f_jsl = pool.submit(self._step_jsluice, js_files, w3_deadline)
-            f_xn = pool.submit(self._step_xnlinkfinder, chunks_dir, w3_deadline)
-            f_smap = pool.submit(self._step_sourcemapper, chunks_dir, w3_deadline)
-            f_jsc = pool.submit(self._step_jscope, js_files, w3_deadline)
-            f_sec = pool.submit(self._step_secrets_offline, w3_deadline)
-            f_jsl.result()
-            f_xn.result()
-            sourcemap_files = f_smap.result()
-            jscope_findings = f_jsc.result()
-            secrets = f_sec.result()
-        wave_timings["Wave 3 (Offline AST/Secrets)"] = time.monotonic() - w3_start
-
-        # WAVE 4: Live Verification, Targeted Fuzz, Exposure Check & AI Feed
-        w4_start = time.monotonic()
-        w4_deadline = self.timer.wave_deadline(self.settings.get("wave4_budget_seconds", 180))
-        hu.log(f"WAVE 4 live probe & AI feed ({len(self.routes)} first-party routes)")
-
-        probe_rows = self._step_probe(w4_deadline)
-        vhosts_real, vhost_blocked = self._step_vhost(live_subs, w4_deadline)
-
-        wl_path = self.target_dir / "wordlist.txt"
-        pf_path = self.target_dir / "params.txt"
-        wordlist.build(
-            self.target_dir,
-            self.base_url,
-            self.settings.get("wordlist", "wordlists/common.txt"),
-            wl_path,
-            int(self.settings.get("wordlist_max", 6000)),
-            pf_path,
-        )
-
-        # Categorize probed rows
-        probed_by_key = {hu.dedupe_key(str(r.get("url") or "")): r for r in probe_rows if r.get("url")}
+        sourcemap_files: list[str] = []
+        jscope_findings: list[dict[str, Any]] = []
+        secrets: list[dict[str, Any]] = []
+        probe_rows: list[dict[str, Any]] = []
+        vhosts_real: list[dict[str, Any]] = []
+        vhost_blocked: list[dict[str, Any]] = []
         win_rows: list[dict[str, Any]] = []
         blocked_rows: list[dict[str, Any]] = []
         other_rows: list[dict[str, Any]] = []
+        probed_by_key: dict[str, dict[str, Any]] = {}
+        method_rows: list[dict[str, Any]] = []
+        nuclei_rows: list[dict[str, Any]] = []
 
-        for r in probe_rows:
-            code = int(r.get("status_code") or 0)
-            if code in hu.STATUS_WIN:
-                win_rows.append(r)
-            elif code in hu.STATUS_EXISTS:
-                blocked_rows.append(r)
+        try:
+            # WAVE 1: Parallel Discovery
+            if not self.timer.stopped():
+                w1_start = time.monotonic()
+                w1_deadline = self.timer.wave_deadline(self.settings.get("wave1_budget_seconds", 200))
+                hu.log(f"WAVE 1 starting for {self.base_url} (subfinder_domain={self.subfinder_domain})")
+                w1_res = self._run_pool_bounded(
+                    [
+                        (self._step_subdomains_and_wellknown, (w1_deadline,)),
+                        (self._step_scrapling, (w1_deadline,)),
+                        (self._step_katana, (w1_deadline,)),
+                        (self._step_archive, (w1_deadline,)),
+                    ],
+                    w1_deadline,
+                )
+                if isinstance(w1_res[0], list):
+                    live_subs = w1_res[0]
+                wave_timings["Wave 1 (Discovery)"] = time.monotonic() - w1_start
+
+            # WAVE 2: Chunk Download & SHA-256 Dedup
+            js_files: list[Path] = []
+            if not self.timer.stopped():
+                w2_start = time.monotonic()
+                w2_deadline = self.timer.wave_deadline(self.settings.get("wave2_budget_seconds", 110))
+                hu.log(f"WAVE 2 chunk download ({len(self.js_urls)} JS/JSON/map URLs)")
+                unique_chunks = self.step_download_js(w2_deadline)
+                js_files = [p for p in unique_chunks if p.suffix.lower() in (".js", ".mjs")]
+                wave_timings["Wave 2 (Chunks)"] = time.monotonic() - w2_start
             else:
-                other_rows.append(r)
+                chunks_dir_existing = self.target_dir / "chunks_unique"
+                if chunks_dir_existing.exists():
+                    unique_chunks = sorted(chunks_dir_existing.iterdir())
+                    js_files = [p for p in unique_chunks if p.suffix.lower() in (".js", ".mjs")]
+                else:
+                    unique_chunks = []
 
-        cf_count = sum(1 for r in probe_rows if hu.is_cloudflare_response(r))
-        cf_blocked = bool(probe_rows) and len(win_rows) == 0 and cf_count >= max(1, len(probe_rows) // 2)
+            # WAVE 3: Offline Parallel Analysis
+            if not self.timer.stopped() and unique_chunks:
+                w3_start = time.monotonic()
+                w3_deadline = self.timer.wave_deadline(self.settings.get("wave3_budget_seconds", 130))
+                hu.log(f"WAVE 3 offline analysis on {len(unique_chunks)} unique chunks")
+                chunks_dir = self.target_dir / "chunks_unique"
+                w3_res = self._run_pool_bounded(
+                    [
+                        (self._step_jsluice, (js_files, w3_deadline)),
+                        (self._step_xnlinkfinder, (chunks_dir, w3_deadline)),
+                        (self._step_sourcemapper, (chunks_dir, w3_deadline)),
+                        (self._step_jscope, (js_files, w3_deadline)),
+                        (self._step_secrets_offline, (w3_deadline,)),
+                    ],
+                    w3_deadline,
+                )
+                if isinstance(w3_res[2], list):
+                    sourcemap_files = w3_res[2]
+                if isinstance(w3_res[3], list):
+                    jscope_findings = w3_res[3]
+                if isinstance(w3_res[4], list):
+                    secrets = w3_res[4]
+                wave_timings["Wave 3 (Offline AST/Secrets)"] = time.monotonic() - w3_start
 
-        fuzz_rows = self._step_targeted_fuzz(win_rows, wl_path, cf_blocked, w4_deadline)
-        for fr in fuzz_rows:
-            if fr.get("status_code") in hu.STATUS_WIN:
-                win_rows.append(fr)
-            elif fr.get("status_code") in hu.STATUS_EXISTS:
-                blocked_rows.append(fr)
+            # WAVE 4: Live Verification, Targeted Fuzz, Exposure Check & AI Feed
+            if not self.timer.stopped():
+                w4_start = time.monotonic()
+                w4_deadline = self.timer.wave_deadline(self.settings.get("wave4_budget_seconds", 175))
+                hu.log(f"WAVE 4 live probe & AI feed ({len(self.routes)} first-party routes)")
 
-        self._step_x8(win_rows, pf_path, cf_blocked, w4_deadline)
-        method_rows = self._step_methods(win_rows + blocked_rows, cf_blocked, w4_deadline)
-        nuclei_rows = self._step_nuclei(win_rows + blocked_rows, w4_deadline)
-        wave_timings["Wave 4 (Verify/Fuzz/Feed)"] = time.monotonic() - w4_start
+                probe_rows = self._step_probe(w4_deadline)
+                vhosts_real, vhost_blocked = self._step_vhost(live_subs, w4_deadline)
 
-        # Save all raw preserved artifacts
+                wl_path = self.target_dir / "wordlist.txt"
+                pf_path = self.target_dir / "params.txt"
+                if not self.timer.stopped():
+                    wordlist.build(
+                        self.target_dir,
+                        self.base_url,
+                        self.settings.get("wordlist", "wordlists/common.txt"),
+                        wl_path,
+                        int(self.settings.get("wordlist_max", 6000)),
+                        pf_path,
+                    )
+
+                probed_by_key = {hu.dedupe_key(str(r.get("url") or "")): r for r in probe_rows if r.get("url")}
+                for r in probe_rows:
+                    code = int(r.get("status_code") or 0)
+                    if code in hu.STATUS_WIN:
+                        win_rows.append(r)
+                    elif code in hu.STATUS_EXISTS:
+                        blocked_rows.append(r)
+                    else:
+                        other_rows.append(r)
+
+                cf_count = sum(1 for r in probe_rows if hu.is_cloudflare_response(r))
+                cf_blocked = bool(probe_rows) and len(win_rows) == 0 and cf_count >= max(1, len(probe_rows) // 2)
+
+                fuzz_rows = self._step_targeted_fuzz(win_rows, wl_path, cf_blocked, w4_deadline)
+                for fr in fuzz_rows:
+                    if fr.get("status_code") in hu.STATUS_WIN:
+                        win_rows.append(fr)
+                    elif fr.get("status_code") in hu.STATUS_EXISTS:
+                        blocked_rows.append(fr)
+
+                self._step_x8(win_rows, pf_path, cf_blocked, w4_deadline)
+                method_rows = self._step_methods(win_rows + blocked_rows, cf_blocked, w4_deadline)
+                nuclei_rows = self._step_nuclei(win_rows + blocked_rows, w4_deadline)
+                wave_timings["Wave 4 (Verify/Fuzz/Feed)"] = time.monotonic() - w4_start
+        finally:
+            done_ev.set()
+            hu.kill_all_active_procs()
+
+        # Always save all raw preserved artifacts + compact feed even if budget/SIGTERM hit
         all_routes = []
-        for k, entry in sorted(self.routes.items()):
+        with self._lock:
+            routes_snapshot = sorted(self.routes.items())
+            third_party_rows = sorted(self.third_party.values(), key=lambda x: x["url"])
+        for k, entry in routes_snapshot:
             merged = dict(entry)
             if k in probed_by_key:
                 merged["status_code"] = probed_by_key[k].get("status_code", 0)
                 merged["title"] = probed_by_key[k].get("title", "")
             all_routes.append(merged)
 
-        third_party_rows = sorted(self.third_party.values(), key=lambda x: x["url"])
         data_files = [r for r in all_routes if hu.is_data_file_url(r["url"])]
         params_rows = [r for r in all_routes if "?" in r["url"]]
         js_endpoints = [r for r in all_routes if any(s in ("jsluice", "xnLinkFinder", "scrapling_xhr") for s in r.get("sources", []))]
@@ -1262,6 +1441,20 @@ def main() -> int:
         settings = json.loads(s_path.read_text(encoding="utf-8"))
 
     runner = HuntRunner(args.url, Path(args.out), settings, args.budget_min)
+
+    def _handle_signal(signum: int, _frame: Any) -> None:
+        hu.log(f"Received signal {signum}; stopping active workers and flushing results")
+        runner.timer.request_stop()
+        hu.kill_all_active_procs()
+
+    for sig_name in ("SIGTERM", "SIGINT"):
+        sig = getattr(signal, sig_name, None)
+        if sig is not None:
+            try:
+                signal.signal(sig, _handle_signal)
+            except (ValueError, OSError):
+                pass
+
     return runner.run()
 
 

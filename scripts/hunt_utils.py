@@ -14,7 +14,9 @@ import json
 import os
 import re
 import shutil
+import signal
 import subprocess
+import tempfile
 import threading
 import time
 from collections import Counter, defaultdict
@@ -93,12 +95,21 @@ WELLKNOWN_AI_PATHS = [
 
 
 class BudgetTimer:
-    """Thread-safe wall-clock budget tracker keeping runs inside <=12m."""
+    """Thread-safe wall-clock budget tracker with reserved save buffer & abort event."""
 
-    def __init__(self, total_seconds: int) -> None:
-        self.total_seconds = max(60, int(total_seconds))
+    def __init__(self, total_seconds: int, reserve_seconds: int = 45) -> None:
+        self.total_seconds = max(30, int(total_seconds))
+        reserve = min(max(5, int(reserve_seconds)), max(5, self.total_seconds // 5))
         self.start = time.monotonic()
         self.deadline = self.start + self.total_seconds
+        self.work_deadline = self.start + max(15, self.total_seconds - reserve)
+        self.stop_event = threading.Event()
+
+    def request_stop(self) -> None:
+        self.stop_event.set()
+
+    def stopped(self) -> bool:
+        return self.stop_event.is_set() or time.monotonic() >= self.work_deadline
 
     def elapsed(self) -> float:
         return time.monotonic() - self.start
@@ -106,14 +117,21 @@ class BudgetTimer:
     def remaining(self) -> float:
         return max(0.0, self.deadline - time.monotonic())
 
+    def work_remaining(self) -> float:
+        if self.stop_event.is_set():
+            return 0.0
+        return max(0.0, self.work_deadline - time.monotonic())
+
     def expired(self) -> bool:
-        return time.monotonic() >= self.deadline
+        return self.stopped()
 
     def wave_deadline(self, wave_seconds: float) -> float:
-        return min(self.deadline, time.monotonic() + max(5.0, float(wave_seconds)))
+        return min(self.work_deadline, time.monotonic() + max(5.0, float(wave_seconds)))
 
     def cap(self, wanted: float, wave_deadline: float | None = None, min_sec: int = 5) -> int:
-        limit = self.deadline if wave_deadline is None else min(self.deadline, wave_deadline)
+        if self.stop_event.is_set():
+            return 1
+        limit = self.work_deadline if wave_deadline is None else min(self.work_deadline, wave_deadline)
         rem = max(0.0, limit - time.monotonic())
         if rem <= 1.0:
             return 1
@@ -288,6 +306,63 @@ def write_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
             fh.write(json.dumps(row, ensure_ascii=False) + "\n")
 
 
+_ACTIVE_PROCS_LOCK = threading.Lock()
+_ACTIVE_PROCS: set[Any] = set()
+
+
+def _terminate_proc_tree(proc: subprocess.Popen[bytes]) -> None:
+    """Terminate a process and all its descendants without blocking on pipes."""
+    if proc.poll() is not None:
+        return
+    try:
+        if os.name == "posix":
+            try:
+                pgid = os.getpgid(proc.pid)
+                os.killpg(pgid, signal.SIGTERM)
+                deadline = time.monotonic() + 1.0
+                while proc.poll() is None and time.monotonic() < deadline:
+                    time.sleep(0.05)
+                if proc.poll() is None:
+                    os.killpg(pgid, signal.SIGKILL)
+            except ProcessLookupError:
+                pass
+        else:
+            proc.terminate()
+            try:
+                proc.wait(timeout=1.0)
+            except subprocess.TimeoutExpired:
+                proc.kill()
+    except Exception:  # noqa: BLE001
+        try:
+            proc.kill()
+        except Exception:  # noqa: BLE001
+            pass
+
+
+def kill_all_active_procs() -> None:
+    """Force-terminate every active subprocess group (used on global timeout/SIGTERM)."""
+    with _ACTIVE_PROCS_LOCK:
+        procs = list(_ACTIVE_PROCS)
+    for proc in procs:
+        _terminate_proc_tree(proc)
+
+
+def _read_capped_text(path: Path, max_bytes: int = 8 * 1024 * 1024) -> str:
+    try:
+        if not path.is_file():
+            return ""
+        size = path.stat().st_size
+        with path.open("rb") as fh:
+            if size > max_bytes:
+                fh.seek(0)
+                data = fh.read(max_bytes)
+            else:
+                data = fh.read()
+        return data.decode("utf-8", "replace")
+    except OSError:
+        return ""
+
+
 def run_cmd(
     cmd: list[str],
     log_path: Path,
@@ -295,44 +370,126 @@ def run_cmd(
     stdout_path: Path | None = None,
     cwd: Path | None = None,
     env: dict[str, str] | None = None,
+    stop_event: threading.Event | None = None,
+    read_stdout: bool = True,
 ) -> tuple[int, str]:
-    """Run subprocess safely, capturing logs and enforcing timeout."""
+    """Run subprocess in its own process group with file-backed output and guaranteed kill."""
     log_path.parent.mkdir(parents=True, exist_ok=True)
+    if stop_event is not None and stop_event.is_set():
+        return 124, ""
+
     run_env = os.environ.copy()
     if env:
         run_env.update(env)
+
+    tmp_out: Path | None = None
+    tmp_err: Path | None = None
+    out_target = stdout_path
+    if out_target is not None:
+        out_target.parent.mkdir(parents=True, exist_ok=True)
+    else:
+        fd, tmp_name = tempfile.mkstemp(prefix="hunt_out_", dir=str(log_path.parent))
+        os.close(fd)
+        tmp_out = Path(tmp_name)
+        out_target = tmp_out
+
+    fd_err, err_name = tempfile.mkstemp(prefix="hunt_err_", dir=str(log_path.parent))
+    os.close(fd_err)
+    tmp_err = Path(err_name)
+
+    proc: subprocess.Popen[bytes] | None = None
+    timed_out = False
     try:
-        proc = subprocess.run(
-            cmd,
-            capture_output=True,
-            timeout=max(1, int(timeout)),
-            cwd=str(cwd) if cwd else None,
-            env=run_env,
-        )
-        out_text = (proc.stdout or b"").decode("utf-8", "replace")
-        err_text = (proc.stderr or b"").decode("utf-8", "replace")
-        if stdout_path is not None:
-            stdout_path.parent.mkdir(parents=True, exist_ok=True)
-            stdout_path.write_text(out_text, encoding="utf-8")
+        popen_kwargs: dict[str, Any] = {
+            "cwd": str(cwd) if cwd else None,
+            "env": run_env,
+        }
+        if os.name == "posix":
+            popen_kwargs["start_new_session"] = True
+        elif os.name == "nt":
+            popen_kwargs["creationflags"] = getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0)
+
+        with out_target.open("wb") as fout, tmp_err.open("wb") as ferr:
+            proc = subprocess.Popen(cmd, stdout=fout, stderr=ferr, **popen_kwargs)
+            with _ACTIVE_PROCS_LOCK:
+                _ACTIVE_PROCS.add(proc)
+
+            deadline = time.monotonic() + max(1, int(timeout))
+            while proc.poll() is None:
+                if time.monotonic() >= deadline or (stop_event is not None and stop_event.is_set()):
+                    timed_out = True
+                    _terminate_proc_tree(proc)
+                    try:
+                        proc.wait(timeout=1.5)
+                    except subprocess.TimeoutExpired:
+                        pass
+                    break
+                time.sleep(min(0.4, max(0.05, deadline - time.monotonic())))
+
+        rc = 124 if timed_out else int(proc.returncode or 0)
+        out_text = _read_capped_text(out_target) if read_stdout else ""
+        err_text = _read_capped_text(tmp_err, max_bytes=256 * 1024)
         with log_path.open("a", encoding="utf-8") as lf:
-            lf.write(f"$ {' '.join(cmd)}\nexit={proc.returncode}\n")
+            if timed_out:
+                lf.write(f"$ {' '.join(cmd)}\nTIMEOUT after {timeout}s\n")
+            else:
+                lf.write(f"$ {' '.join(cmd)}\nexit={rc}\n")
             if err_text:
                 lf.write(err_text[-8000:] + "\n")
             if stdout_path is None and out_text:
                 lf.write(out_text[-4000:] + "\n")
-        return proc.returncode, out_text
-    except subprocess.TimeoutExpired as exc:
-        out_text = (exc.stdout or b"").decode("utf-8", "replace") if isinstance(exc.stdout, (bytes, bytearray)) else (exc.stdout or "")
-        if stdout_path is not None and out_text:
-            stdout_path.parent.mkdir(parents=True, exist_ok=True)
-            stdout_path.write_text(out_text, encoding="utf-8")
-        with log_path.open("a", encoding="utf-8") as lf:
-            lf.write(f"$ {' '.join(cmd)}\nTIMEOUT after {timeout}s\n")
-        return 124, out_text
+        return rc, out_text
     except Exception as exc:  # noqa: BLE001
+        if proc is not None:
+            _terminate_proc_tree(proc)
         with log_path.open("a", encoding="utf-8") as lf:
             lf.write(f"$ {' '.join(cmd)}\nERROR: {exc}\n")
         return 1, ""
+    finally:
+        if proc is not None:
+            with _ACTIVE_PROCS_LOCK:
+                _ACTIVE_PROCS.discard(proc)
+        for tmp in (tmp_out, tmp_err):
+            if tmp is not None:
+                try:
+                    if tmp.exists():
+                        tmp.unlink()
+                except OSError:
+                    pass
+
+
+NOISE_QUERY_RE = re.compile(r"(?:^|&)(?:utm_[^=]+|_rsc|_bhlid|fbclid|gclid|mc_cid|mc_eid|ref|spm|hsenc|_hsmi)=", re.I)
+
+
+def prioritize_probe_urls(
+    routes: dict[str, dict[str, Any]],
+    candidate_urls: list[str],
+    max_probe: int = 3000,
+) -> list[str]:
+    """Rank candidate URLs so AI/API/JS/live endpoints are probed by httpx first."""
+    if max_probe <= 0 or len(candidate_urls) <= max_probe:
+        return candidate_urls
+
+    high_src = {"wellknown_200", "wellknown_401", "wellknown_403", "scrapling", "scrapling_js", "scrapling_xhr", "katana_p1", "katana_p2", "jsluice", "xnLinkFinder", "base_html", "dnsx"}
+
+    def score_key(u: str) -> tuple[int, int, str]:
+        entry = routes.get(dedupe_key(u)) or {}
+        sources = set(entry.get("sources") or [])
+        s = 0
+        if AI_ROUTE_RE.search(u):
+            s += 100
+        if sources & high_src:
+            s += 40
+        if "?" not in u:
+            s += 15
+        elif NOISE_QUERY_RE.search(u.split("?", 1)[1]):
+            s -= 30
+        if len(u) > 220:
+            s -= 20
+        return (-s, len(u), u)
+
+    ranked = sorted(candidate_urls, key=score_key)
+    return ranked[:max_probe]
 
 
 def is_cloudflare_response(row: dict[str, Any]) -> bool:

@@ -17,13 +17,17 @@ if [ -n "${GITHUB_PATH:-}" ]; then
   } >> "$GITHUB_PATH"
 fi
 
-MARKER="$HOME/.cache/hunt-tools-ready-v3"
+MARKER="$HOME/.cache/hunt-tools-ready-v4"
 have() { command -v "$1" >/dev/null 2>&1; }
 
 REQUIRED="katana httpx ffuf uro subfinder dnsx uncover jsluice urlfinder x8 jscope waymore xnLinkFinder jq trufflehog titus feroxbuster sourcemapper nuclei"
 
 has_scrapling() {
   python3 -c "import scrapling" >/dev/null 2>&1
+}
+
+has_patchright_browser() {
+  [ -n "$(find "$HOME/.cache/ms-playwright" -type f -name "chrome" 2>/dev/null | head -n 1)" ]
 }
 
 has_headless_shell() {
@@ -38,20 +42,25 @@ link_headless_shell() {
   fi
 }
 
+has_nuclei_templates() {
+  [ -d "$HOME/nuclei-templates" ] && [ -n "$(ls -A "$HOME/nuclei-templates" 2>/dev/null)" ]
+}
+
 all_present() {
   for t in $REQUIRED; do
     have "$t" || return 1
   done
   has_scrapling || return 1
+  has_patchright_browser || return 1
   has_headless_shell || return 1
-  [ -d "$HOME/nuclei-templates" ] || return 1
+  has_nuclei_templates || return 1
   return 0
 }
 
 link_headless_shell
 
 if [ -f "$MARKER" ] && all_present; then
-  echo "Cached toolchain v3 complete — ZERO installs this run."
+  echo "Cached toolchain v4 complete — ZERO installs this run."
   exit 0
 fi
 
@@ -93,7 +102,9 @@ fi
 if ! has_scrapling; then
   python3 -m pip install --user "scrapling[all]" || python3 -m pip install --user "scrapling[fetchers]" || echo "WARN scrapling"
 fi
-if has_scrapling && { [ ! -d "$HOME/.cache/ms-playwright" ] || [ -z "$(ls -A "$HOME/.cache/ms-playwright" 2>/dev/null)" ]; }; then
+if has_scrapling && ! has_patchright_browser; then
+  python3 -m patchright install chromium || patchright install chromium || true
+  python3 -m patchright install-deps chromium >/dev/null 2>&1 || true
   scrapling install || python3 -m scrapling install || echo "WARN scrapling install"
 fi
 echo "::endgroup::"
@@ -160,7 +171,7 @@ if ! has_headless_shell; then
   fi
 fi
 
-if have nuclei && [ ! -d "$HOME/nuclei-templates" ]; then
+if have nuclei && ! has_nuclei_templates; then
   nuclei -update-templates -silent >/dev/null 2>&1 || echo "WARN nuclei-templates"
 fi
 echo "::endgroup::"
@@ -176,8 +187,9 @@ for t in $REQUIRED; do
   fi
 done
 if has_scrapling; then echo "  OK   scrapling"; else echo "  MISS scrapling"; MISSING=1; fi
+if has_patchright_browser; then echo "  OK   patchright-chromium"; else echo "  MISS patchright-chromium"; fi
 if has_headless_shell; then echo "  OK   chrome-headless-shell"; else echo "  MISS chrome-headless-shell"; fi
-if [ -d "$HOME/nuclei-templates" ]; then echo "  OK   nuclei-templates"; else echo "  MISS nuclei-templates"; fi
+if has_nuclei_templates; then echo "  OK   nuclei-templates"; else echo "  MISS nuclei-templates"; fi
 echo "::endgroup::"
 
 if [ "$MISSING" -ne 0 ]; then
@@ -186,4 +198,4 @@ if [ "$MISSING" -ne 0 ]; then
 fi
 
 touch "$MARKER"
-echo "Toolchain v3 ready (cached for future runs)."
+echo "Toolchain v4 ready (cached for future runs)."
