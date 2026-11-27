@@ -1,0 +1,141 @@
+$ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python3 -c 
+import json, re, sys, time
+from urllib.parse import urljoin, urlparse
+
+target = sys.argv[1]
+max_pages = int(sys.argv[2])
+deadline = time.monotonic() + max(15, int(sys.argv[3]) - 5)
+xhr_path, urls_path, js_path, cookies_path = sys.argv[4:8]
+
+discovered_urls = set()
+discovered_js = set()
+xhr_events = []
+cookies_dict = {}
+ua_str = ""
+
+try:
+    from scrapling.fetchers import StealthyFetcher, Fetcher
+except Exception as exc:
+    print(f"scrapling import failed: {exc}", file=sys.stderr)
+    sys.exit(2)
+
+origin = f"{urlparse(target).scheme}://{urlparse(target).netloc}"
+visited = set()
+queue = [target]
+
+def record_link(raw, src):
+    if not raw or raw.startswith(("data:", "javascript:", "mailto:")):
+        return
+    u = urljoin(target, raw.strip())
+    if not u.startswith(("http://", "https://")):
+        return
+    discovered_urls.add(u)
+    p = urlparse(u).path.lower()
+    if p.endswith((".js", ".mjs", ".cjs", ".json", ".map")):
+        discovered_js.add(u)
+    elif urlparse(u).netloc == urlparse(target).netloc and u not in visited and len(visited) + len(queue) < max_pages * 3:
+        if not any(p.endswith(ext) for ext in (".png", ".jpg", ".jpeg", ".svg", ".css", ".woff2", ".ico")):
+            queue.append(u)
+
+def extract_html(html_text):
+    if not html_text:
+        return
+    for pat in (
+        r'<script[^>]+src=["\']([^"\']+)["\']',
+        r'<link[^>]+href=["\']([^"\']+)["\']',
+        r'<a[^>]+href=["\']([^"\']+)["\']',
+        r'["\'](/_next/static/[^"\']+)["\']',
+        r'["\'](/assets/[^"\']+\.(?:js|mjs|json))["\']',
+    ):
+        for m in re.findall(pat, html_text, re.I):
+            record_link(m, "html")
+
+def setup_page(page):
+    def on_req(req):
+        try:
+            rtype = getattr(req, "resource_type", "") or ""
+            rurl = req.url
+            if rtype in ("xhr", "fetch", "websocket", "script") or any(k in rurl.lower() for k in ("/api/", "graphql", ".js", ".json", ".map")):
+                xhr_events.append({"method": req.method, "url": rurl, "resource_type": rtype})
+            record_link(rurl, f"net_{rtype}")
+        except Exception:
+            pass
+    def on_ws(ws):
+        try:
+            xhr_events.append({"method": "WS", "url": ws.url, "resource_type": "websocket"})
+            discovered_urls.add(ws.url)
+        except Exception:
+            pass
+    try:
+        page.on("request", on_req)
+        page.on("websocket", on_ws)
+    except Exception:
+        pass
+
+while queue and len(visited) < max_pages and time.monotonic() < deadline:
+    url = queue.pop(0)
+    if url in visited:
+        continue
+    visited.add(url)
+    page_resp = None
+    try:
+        if len(visited) == 1:
+            page_resp = StealthyFetcher.fetch(
+                url,
+                headless=True,
+                solve_cloudflare=True,
+                network_idle=True,
+                page_setup=setup_page,
+                timeout=30000,
+            )
+        else:
+            page_resp = Fetcher.get(url, timeout=12, stealthy_headers=True)
+            if getattr(page_resp, "status", 0) in (403, 503):
+                page_resp = StealthyFetcher.fetch(
+                    url,
+                    headless=True,
+                    solve_cloudflare=True,
+                    network_idle=True,
+                    page_setup=setup_page,
+                    timeout=25000,
+                )
+    except Exception as exc:
+        print(f"fetch error {url}: {exc}", file=sys.stderr)
+        continue
+
+    if page_resp is None:
+        continue
+    try:
+        c = getattr(page_resp, "cookies", None)
+        if isinstance(c, dict):
+            cookies_dict.update({str(k): str(v) for k, v in c.items()})
+    except Exception:
+        pass
+    try:
+        body = getattr(page_resp, "body", b"")
+        text = body.decode("utf-8", "replace") if isinstance(body, (bytes, bytearray)) else str(getattr(page_resp, "text", "") or "")
+        extract_html(text)
+    except Exception:
+        pass
+
+with open(urls_path, "w", encoding="utf-8") as f:
+    f.write("\n".join(sorted(discovered_urls)) + ("\n" if discovered_urls else ""))
+with open(js_path, "w", encoding="utf-8") as f:
+    f.write("\n".join(sorted(discovered_js)) + ("\n" if discovered_js else ""))
+with open(xhr_path, "w", encoding="utf-8") as f:
+    for ev in xhr_events:
+        f.write(json.dumps(ev) + "\n")
+with open(cookies_path, "w", encoding="utf-8") as f:
+    json.dump({"cookies": cookies_dict, "user_agent": ua_str}, f)
+ https://modelstudio.console.alibabacloud.com/ 25 120 results/modelstudio.console.alibabacloud.com/scrapling_xhr.jsonl results/modelstudio.console.alibabacloud.com/scrapling_urls.txt results/modelstudio.console.alibabacloud.com/scrapling_js.txt results/modelstudio.console.alibabacloud.com/scrapling_cookies.json
+exit=0
+fetch error https://modelstudio.console.alibabacloud.com/: BrowserType.launch_persistent_context: Executable doesn't exist at /home/runner/.cache/ms-playwright/chromium-1248/chrome-linux64/chrome
+╔════════════════════════════════════════════════════════════╗
+║ Looks like Playwright was just installed or updated.       ║
+║ Please run the following command to download new browsers: ║
+║                                                            ║
+║     patchright install                                     ║
+║                                                            ║
+║ <3 Patchright Team                                         ║
+╚════════════════════════════════════════════════════════════╝
+

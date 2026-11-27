@@ -1,0 +1,2 @@
+$ waymore -i modelstudio.console.alibabacloud.com -mode R -oR results/modelstudio.console.alibabacloud.com/waymore_responses -ko \.(js|mjs|json|map)(\?|$) -l 60
+TIMEOUT after 50s

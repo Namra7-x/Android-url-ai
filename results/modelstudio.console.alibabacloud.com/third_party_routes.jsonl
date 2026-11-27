@@ -1,0 +1,45 @@
+{"url": "https://at.alicdn.com/", "method": "GET", "sources": ["wellknown_json"]}
+{"url": "https://at.alicdn.com/t/a/font_4647901_6oigtfhrla.css", "method": "GET", "sources": ["wellknown_json", "jsluice"]}
+{"url": "https://cloud-assets.alicdn.com/console.js", "method": "GET", "sources": ["wellknown_json", "base_html"]}
+{"url": "https://cws.alicdn.com/", "method": "GET", "sources": ["wellknown_json"]}
+{"url": "https://fecs.console.aliyun.com/", "method": "GET", "sources": ["wellknown_json"]}
+{"url": "https://g.alicdn.com/", "method": "GET", "sources": ["wellknown_json"]}
+{"url": "https://g.alicdn.com/alicloud-components/common/feedback/feedback.js", "method": "GET", "sources": ["wellknown_json", "base_html"]}
+{"url": "https://g.alicdn.com/alilog/mlog/aplus_v2.js", "method": "GET", "sources": ["wellknown_json", "jsluice"]}
+{"url": "https://g.alicdn.com/aliyun/console/1.4.92/scripts/browser-not-supported.js", "method": "GET", "sources": ["wellknown_json", "base_html"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.256/assets/first-screen-intl.js", "method": "GET", "sources": ["wellknown_json", "base_html"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-site-fe/0.0.256/assets/index.js", "method": "GET", "sources": ["wellknown_json", "base_html"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-vendors/0.0.2/react-dom/18.2.0/esm/client.production.min.js", "method": "GET", "sources": ["wellknown_json", "jsluice"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-vendors/0.0.2/react-dom/18.2.0/esm/react-dom.production.min.js", "method": "GET", "sources": ["wellknown_json", "jsluice"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-vendors/0.0.2/react/18.2.0/esm/jsx-runtime.production.min.js", "method": "GET", "sources": ["wellknown_json", "jsluice"]}
+{"url": "https://g.alicdn.com/bailian-fe/bailian-vendors/0.0.2/react/18.2.0/esm/react.production.min.js", "method": "GET", "sources": ["wellknown_json", "jsluice"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/antd.bundle.js", "method": "GET", "sources": ["wellknown_json", "jsluice"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/index.js", "method": "GET", "sources": ["wellknown_json", "jsluice"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/locale/en.js", "method": "GET", "sources": ["wellknown_json", "jsluice"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/locale/zh-cn.js", "method": "GET", "sources": ["wellknown_json", "jsluice"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/plugin/", "method": "GET", "sources": ["wellknown_json", "jsluice"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/plugin/advancedFormat.js", "method": "GET", "sources": ["wellknown_json", "jsluice"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/plugin/customParseFormat.js", "method": "GET", "sources": ["wellknown_json", "jsluice"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/plugin/duration.js", "method": "GET", "sources": ["wellknown_json", "jsluice"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/plugin/isoWeek.js", "method": "GET", "sources": ["wellknown_json", "jsluice"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/plugin/localeData.js", "method": "GET", "sources": ["wellknown_json", "jsluice"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/plugin/quarterOfYear.js", "method": "GET", "sources": ["wellknown_json", "jsluice"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/plugin/relativeTime.js", "method": "GET", "sources": ["wellknown_json", "jsluice"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/plugin/timezone.js", "method": "GET", "sources": ["wellknown_json", "jsluice"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/plugin/updateLocale.js", "method": "GET", "sources": ["wellknown_json", "jsluice"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/plugin/utc.js", "method": "GET", "sources": ["wellknown_json", "jsluice"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/plugin/weekOfYear.js", "method": "GET", "sources": ["wellknown_json", "jsluice"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/plugin/weekYear.js", "method": "GET", "sources": ["wellknown_json", "jsluice"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/dayjs/plugin/weekday.js", "method": "GET", "sources": ["wellknown_json", "jsluice"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/locale/en_US.js", "method": "GET", "sources": ["wellknown_json", "jsluice"]}
+{"url": "https://g.alicdn.com/code/npm/@ali/bfal-antd/6.6.8/esm/locale/zh_CN.js", "method": "GET", "sources": ["wellknown_json", "jsluice"]}
+{"url": "https://g.alicdn.com/console/performance-reporter/index.js", "method": "GET", "sources": ["wellknown_json", "base_html"]}
+{"url": "https://gj.mmstat.com/", "method": "GET", "sources": ["wellknown_json"]}
+{"url": "https://help.aliyun.com/", "method": "GET", "sources": ["wellknown_json"]}
+{"url": "https://img.alicdn.com/imgextra/i1/O1CN01Es0c28049TL083Vo_!!6000000002263-2-tps-64-64.png", "method": "GET", "sources": ["wellknown_json"]}
+{"url": "https://img.alicdn.com/imgextra/i2/O1CN01JiWo7t1xljFrksp6L_!!6000000006484-55-tps-192-192.svg", "method": "GET", "sources": ["wellknown_json"]}
+{"url": "https://img.alicdn.com/tfs/TB1_ZXuNcfpK1RjSZFOXXa6nFXa-32-32.ico", "method": "GET", "sources": ["wellknown_json"]}
+{"url": "https://o.alicdn.com/console/hijack-for-service/index.js", "method": "GET", "sources": ["wellknown_json", "base_html"]}
+{"url": "https://oneconsole.alicdn.com/one-mcms/visage/1.0.7/visage_en-us.js", "method": "GET", "sources": ["wellknown_json", "base_html"]}
+{"url": "https://uaction.alicdn.com/", "method": "GET", "sources": ["wellknown_json"]}
+{"url": "https://ynuf.alipay.com/", "method": "GET", "sources": ["wellknown_json"]}

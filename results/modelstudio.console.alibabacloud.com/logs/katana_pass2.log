@@ -1,0 +1,8 @@
+$ katana -u https://modelstudio.console.alibabacloud.com/ -d 2 -headless -ho --no-sandbox,--disable-gpu -xhr -kf all -c 10 -p 5 -fs fqdn -mrs 2097152 -filter-similar -fst 8 -j -o results/modelstudio.console.alibabacloud.com/katana/pass2.jsonl -silent -sc -spo /home/runner/tools/bin/chrome-headless-shell -jsl
+exit=2
+flag provided but not defined: -spo
+
+$ katana -u https://modelstudio.console.alibabacloud.com/ -d 2 -headless -ho --no-sandbox,--disable-gpu -xhr -kf all -c 10 -p 5 -fs fqdn -mrs 2097152 -j -o results/modelstudio.console.alibabacloud.com/katana/pass2.jsonl -silent -sc -spo /home/runner/tools/bin/chrome-headless-shell -jsl
+exit=2
+flag provided but not defined: -spo
+

@@ -1,0 +1,11 @@
+$ /opt/hostedtoolcache/Python/3.12.16/x64/bin/python3 -c import runpy, sys
+sys.setrecursionlimit(10000)
+target_bin, target_dir = sys.argv[1], sys.argv[2]
+sys.argv = [target_bin, 'analyze', target_dir, '--verbose']
+runpy.run_path(target_bin, run_name='__main__')
+ /home/runner/.local/bin/jscope results/modelstudio.console.alibabacloud.com/jscope_stage
+exit=0
+[>] Inspecting JavaScript and related source files...
+[+] Inspecting JavaScript and related source files complete
+next: jscope findings | jscope show 1 | jscope graph
+

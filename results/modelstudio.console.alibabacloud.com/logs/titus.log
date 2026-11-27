@@ -1,0 +1,19 @@
+$ titus scan results/modelstudio.console.alibabacloud.com/chunks_unique --format json --output results/modelstudio.console.alibabacloud.com/titus_0.json
+exit=0
+
+  ______ ____ ______ __  __ _____
+ /_  __//  _//_  __// / / // ___/
+  / /   / /   / /  / / / / \__ \
+ / /  _/ /   / /  / /_/ / ___/ /
+/_/  /___/  /_/   \____/ /____/
+ There's always something.
+ Praetorian Security, Inc.
+
+[vectorscan] cached Hyperscan database /home/runner/.cache/titus/rules/63ff0e50da26773baa965d955897a16fc7627a6efb723e40c2c923220023e908.hsdb
+[vectorscan] 502/502 rules compiled for Hyperscan, 0 rules use regexp2 fallback
+Scanned 180053 B from 24 blobs in 0 second (42424487 B/s); 0 new matches
+Results stored in: results/modelstudio.console.alibabacloud.com/titus_0.json/datastore.db
+
+
+[]
+

@@ -1,0 +1,48 @@
+$ waymore -i modelstudio.console.alibabacloud.com -mode U -oU results/modelstudio.console.alibabacloud.com/waymore_urls.txt -nlf
+exit=0
+IMPORTANT: It looks like you may be passing a subdomain. If you want ALL subs for a domain, then pass the domain only. It will be a LOT quicker, and you won't miss anything. NEVER pass a file of subdomains if you want everything, just the domains.
+
+No value for "URLSCAN_API_KEY" in config.yml - consider adding (you can get a FREE api key at urlscan.io)
+No value for "VIRUSTOTAL_API_KEY" in config.yml - consider adding (you can get a FREE api key at virustotal.com)
+
+d.com/eu-central-1
+https://modelstudio.console.alibabacloud.com/ap-southeast-1/?spm=a2ty_o05.31384571.0.0.1d489f6bHX4kCv&tab=api
+https://docs.modelstudio.console.alibabacloud.com/en/model-studio/models
+http://docs.modelstudio.console.alibabacloud.com/en/model-studio/legacy-image-to-video-api-reference
+http://docs.modelstudio.console.alibabacloud.com/en/model-studio/model-deployment-quick-start
+https://docs.modelstudio.console.alibabacloud.com/en/model-studio/qwen3-8-max
+https://modelstudio.console.alibabacloud.com/ap-southeast-1/?tab=dashboard&spm=a3c0i.22593246.9641670990.i0.5df9449cd5E2yd
+https://modelstudio.console.alibabacloud.com/ap-southeast-1/?spm=a2c63.p38356.0.0.5ce86c3eT0uuA6&tab=costing-balance
+https://modelstudio.console.alibabacloud.com/ap-southeast-1?tab=api
+https://docs.modelstudio.console.alibabacloud.com/en/model-studio/related-agreements
+https://modelstudio.console.alibabacloud.com/ap-southeast-1/model/market?capabilities=ASR%2CTTS%2CVoice-Replication%2CAU%2CMultimodal-Omni
+https://docs.modelstudio.console.alibabacloud.com/en/model-studio/models?_rsc=u61hr
+https://modelstudio.console.alibabacloud.com/ap-southeast-1/?tab=globalset&spm=a3c0i.22593246.9641670990.i0.5df9449cLjgrCX
+https://modelstudio.console.alibabacloud.com/?spm=a3c0i.22593246.2868180290.3.7a70449crEkUEp&tab=doc
+https://modelstudio.console.alibabacloud.com/ap-northeast-1/model/market/detail/qwen3.8-omni-flash?serviceSite=global&ref=list&workspace=1036634
+https://modelstudio.console.alibabacloud.com/ap-southeast-1?s=&tab=doc&utm_content=m_20000001640
+https://docs.modelstudio.console.alibabacloud.com/en/model-studio/cherry-studio
+https://docs.modelstudio.console.alibabacloud.com/en/model-studio/token-plan-overview?_rsc=11jjt
+https://docs.modelstudio.console.alibabacloud.com/en/model-studio/budget-management?_rsc=a6c4r
+https://docs.modelstudio.console.alibabacloud.com/en/model-studio/cli
+https://modelstudio.console.alibabacloud.com/us-east-1?switchAgent=35880&productCode=p_efm&switchUserType=3&tab=home
+https://modelstudio.console.alibabacloud.com/ap-southeast-1?spm=a2ty_o05.31384571.0.0.5e7d9f6b6dXSHw&tab=doc
+https://docs.modelstudio.console.alibabacloud.com/en/model-studio/what-is-model-studio
+http://docs.modelstudio.console.alibabacloud.com/en/model-studio/text-to-image
+https://modelstudio.console.alibabacloud.com/ap-southeast-1/subscription/token-plan?accounttraceid=77c1d6338bb84b74bf5726139c82ab3aaxvf
+https://modelstudio.console.alibabacloud.com/.well-known/ai-plugin.json
+https://modelstudio.console.alibabacloud.com/ap-southeast-1/?spm=a3c0i.7911826.2422939000.2.b19631f7sCXRrD&tab=doc
+https://modelstudio.console.alibabacloud.com/us-east-1/model/experience/text?modelId=qwen3.8-max
+https://modelstudio.console.alibabacloud.com/ap-southeast-1?spm=a2ty_o05.31384571.0.0.5e7d9f6b8Y8d6S&tab=doc
+https://docs.modelstudio.console.alibabacloud.com/en/model-studio/model-training-and-deployment-billing?_rsc=u61hr
+http://docs.modelstudio.console.alibabacloud.com/en/model-studio/create-fine-tuning-job-api
+http://docs.modelstudio.console.alibabacloud.com/en/model-studio/text-to-image-prompt
+https://docs.modelstudio.console.alibabacloud.com/en/model-studio/obtain-the-app-id-and-workspace-id?_rsc=cudkm
+https://modelstudio.console.alibabacloud.com/ap-southeast-1/?spm=a2c63.p38356.0.0.3aa211059ghLSO&tab=coding-plan
+https://modelstudio.console.alibabacloud.com/ap-southeast-1/?&tab=dashboard
+https://modelstudio.console.alibabacloud.com/ap-southeast-1/?spm=a2c63.p38356.0.0.6b147e19CMHtry&tab=dashboard
+https://modelstudio.console.alibabacloud.com/?tab=doc&utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_k4q-Yl0Xna4yeebcx02VcnM52GRlLWi_s0_ruSnM7QDFEMcki0s9o9OJP_4Z0a9FJ5oS7
+https://docs.modelstudio.console.alibabacloud.com/en/model-studio/workflow-application
+https://docs.modelstudio.console.alibabacloud.com/en/model-studio/rate-limit?_rsc=u61hr
+https://modelstudio.console.alibabacloud.com/cn-hongkong/model/market/detail/deepseek-v4-pro-0813
+

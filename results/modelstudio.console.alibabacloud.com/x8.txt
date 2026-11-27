@@ -1,0 +1,49 @@
+=== https://modelstudio.console.alibabacloud.com/api.json ===
+urls:         https://modelstudio.console.alibabacloud.com/api.json
+methods:      GET
+wordlist len: 93
+
+
+
+=== https://modelstudio.console.alibabacloud.com/data/api.json ===
+urls:         https://modelstudio.console.alibabacloud.com/data/api.json
+methods:      GET
+wordlist len: 93
+
+
+
+=== https://modelstudio.console.alibabacloud.com/_agt/api ===
+urls:         https://modelstudio.console.alibabacloud.com/_agt/api
+methods:      GET
+wordlist len: 93
+
+
+=== https://modelstudio.console.alibabacloud.com/api-host.js ===
+urls:         https://modelstudio.console.alibabacloud.com/api-host.js
+methods:      GET
+wordlist len: 93
+
+
+=== https://modelstudio.console.alibabacloud.com/api/config ===
+urls:         https://modelstudio.console.alibabacloud.com/api/config
+methods:      GET
+wordlist len: 93
+
+
+=== https://modelstudio.console.alibabacloud.com/api/models ===
+urls:         https://modelstudio.console.alibabacloud.com/api/models
+methods:      GET
+wordlist len: 93
+
+
+=== https://modelstudio.console.alibabacloud.com/api ===
+urls:         https://modelstudio.console.alibabacloud.com/api
+methods:      GET
+wordlist len: 93
+
+
+=== https://modelstudio.console.alibabacloud.com/api/v1 ===
+urls:         https://modelstudio.console.alibabacloud.com/api/v1
+methods:      GET
+wordlist len: 93
+

@@ -1,0 +1,7 @@
+{"url": "https://modelstudio.console.alibabacloud.com/redoc", "status_code": 403, "sources": ["feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/logout", "status_code": 302, "sources": ["feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/openapi.json", "status_code": 403, "sources": ["feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/openapi.yaml", "status_code": 403, "sources": ["feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/swagger.json", "status_code": 403, "sources": ["feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/swagger.yaml", "status_code": 403, "sources": ["feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/api-docs", "status_code": 403, "sources": ["feroxbuster"]}

@@ -1,0 +1,138 @@
+{
+  "target": "https://modelstudio.console.alibabacloud.com/",
+  "host": "modelstudio.console.alibabacloud.com",
+  "scope_apex": "modelstudio.console.alibabacloud.com",
+  "duration_seconds": 294.5,
+  "wave_timings": {
+    "Wave 1 (Discovery)": 103.784270095,
+    "Wave 2 (Chunks)": 3.6818216300000017,
+    "Wave 3 (Offline AST/Secrets)": 6.612195076000006,
+    "Wave 4 (Verify/Fuzz/Feed)": 180.35849324999998
+  },
+  "stats": {
+    "collected": 1688,
+    "probed": 1,
+    "live200": 783,
+    "liveother": 7,
+    "data": 56,
+    "subdomains": 1,
+    "vhosts": 0,
+    "js_endpoints": 0,
+    "secrets": 0,
+    "flags": 0,
+    "ai_endpoints": 200,
+    "sourcemaps": 0,
+    "nuclei": 0,
+    "duration_seconds": 294.5
+  },
+  "tools": [
+    {
+      "tool": "scrapling",
+      "exit_code": 0,
+      "duration_s": 1.3,
+      "detail": "0 URLs/JS captured"
+    },
+    {
+      "tool": "katana",
+      "exit_code": 2,
+      "duration_s": 12.3,
+      "detail": "p1=1, p2=0"
+    },
+    {
+      "tool": "subfinder+dnsx",
+      "exit_code": 0,
+      "duration_s": 26.5,
+      "detail": "1 subs, 1 live"
+    },
+    {
+      "tool": "wellknown_ai",
+      "exit_code": 0,
+      "duration_s": 23.0,
+      "detail": "19 paths checked"
+    },
+    {
+      "tool": "waymore",
+      "exit_code": 0,
+      "duration_s": 67.1,
+      "detail": "932 archive URLs"
+    },
+    {
+      "tool": "urlfinder",
+      "exit_code": 0,
+      "duration_s": 36.6,
+      "detail": "889 URLs"
+    },
+    {
+      "tool": "chunk_download",
+      "exit_code": 0,
+      "duration_s": 3.7,
+      "detail": "29 fetched -> 26 unique SHA-256 chunks"
+    },
+    {
+      "tool": "sourcemapper",
+      "exit_code": 0,
+      "duration_s": 0.0,
+      "detail": "0 maps -> 0 unpacked sources"
+    },
+    {
+      "tool": "jsluice",
+      "exit_code": 0,
+      "duration_s": 0.2,
+      "detail": "4 chunks -> 60 URLs"
+    },
+    {
+      "tool": "xnLinkFinder",
+      "exit_code": 0,
+      "duration_s": 0.4,
+      "detail": "0 endpoints"
+    },
+    {
+      "tool": "jscope",
+      "exit_code": 0,
+      "duration_s": 0.7,
+      "detail": "4 files -> 0 flags/models"
+    },
+    {
+      "tool": "secrets_offline",
+      "exit_code": 0,
+      "duration_s": 6.6,
+      "detail": "0 candidates"
+    },
+    {
+      "tool": "httpx",
+      "exit_code": 124,
+      "duration_s": 75.2,
+      "detail": "1 probed"
+    },
+    {
+      "tool": "vhost",
+      "exit_code": 0,
+      "duration_s": 1.2,
+      "detail": "0 real / 1 tested"
+    },
+    {
+      "tool": "targeted_fuzz",
+      "exit_code": 0,
+      "duration_s": 53.0,
+      "detail": "1 prefixes -> 789 hits"
+    },
+    {
+      "tool": "x8",
+      "exit_code": 0,
+      "duration_s": 50.8,
+      "detail": "8 API routes scanned"
+    },
+    {
+      "tool": "methods",
+      "exit_code": 0,
+      "duration_s": 0.0,
+      "detail": "0 probes"
+    },
+    {
+      "tool": "nuclei",
+      "exit_code": 1,
+      "duration_s": 0.1,
+      "detail": "0 findings across 150 URLs"
+    }
+  ]
+}

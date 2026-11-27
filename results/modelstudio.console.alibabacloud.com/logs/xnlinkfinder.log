@@ -1,0 +1,5 @@
+$ xnLinkFinder -i results/modelstudio.console.alibabacloud.com/chunks_unique -sf modelstudio.console.alibabacloud.com -o cli -op results/modelstudio.console.alibabacloud.com/xn_params.txt -os results/modelstudio.console.alibabacloud.com/xn_secrets.json
+exit=0
+The config.yml file was created at /home/runner/.config/xnLinkFinder/config.yml
+
+

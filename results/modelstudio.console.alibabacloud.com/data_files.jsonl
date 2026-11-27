@@ -1,0 +1,56 @@
+{"url": "http://docs.modelstudio.console.alibabacloud.com/llms.txt", "method": "GET", "sources": ["waymore"]}
+{"url": "http://docs.modelstudio.console.alibabacloud.com/robots.txt", "method": "GET", "sources": ["waymore"]}
+{"url": "http://modelstudio.console.alibabacloud.com/robots.txt", "method": "GET", "sources": ["waymore"]}
+{"url": "https://docs.modelstudio.console.alibabacloud.com/llms.txt", "method": "GET", "sources": ["waymore"]}
+{"url": "https://docs.modelstudio.console.alibabacloud.com/robots.txt", "method": "GET", "sources": ["waymore"]}
+{"url": "https://modelstudio.console.alibabacloud.com/.well-known/ai-plugin.json", "method": "GET", "sources": ["waymore", "wellknown_200", "urlfinder", "feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/.well-known/assetlinks.json", "method": "GET", "sources": ["waymore", "urlfinder", "feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/.well-known/dnt-policy.txt", "method": "GET", "sources": ["waymore"]}
+{"url": "https://modelstudio.console.alibabacloud.com/.well-known/gpc.json", "method": "GET", "sources": ["waymore", "urlfinder"]}
+{"url": "https://modelstudio.console.alibabacloud.com/.well-known/security.txt", "method": "GET", "sources": ["waymore", "wellknown_200", "feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/.well-known/trust.txt", "method": "GET", "sources": ["waymore"]}
+{"url": "https://modelstudio.console.alibabacloud.com/ads.txt", "method": "GET", "sources": ["waymore", "feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/all.atom.xml", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/api.json", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/app-ads.txt", "method": "GET", "sources": ["waymore", "feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/asset-manifest.json", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/atom.xml", "method": "GET", "sources": ["waymore", "urlfinder", "feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/build-manifest.json", "method": "GET", "sources": ["wellknown_200", "feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/config.json", "method": "GET", "sources": ["wellknown_200", "feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/crossdomain.xml", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/custom.json", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/data.json", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/data/api.json", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/data/api.json?_tag=&action=GetSeatSubscriptionSummary&product=BssOpenAPI-V3", "method": "GET", "sources": ["waymore", "urlfinder"]}
+{"url": "https://modelstudio.console.alibabacloud.com/data/api.json?_tag=&action=GetTokenPlanAccountDetail&product=ModelStudio", "method": "GET", "sources": ["waymore", "urlfinder"]}
+{"url": "https://modelstudio.console.alibabacloud.com/data/api.json?_tag=&action=QuerySubscriptionGray&product=BssOpenAPI-V3", "method": "GET", "sources": ["waymore", "urlfinder"]}
+{"url": "https://modelstudio.console.alibabacloud.com/data/api.json?_tag=&action=UacGetAccountDetail&product=ModelStudio", "method": "GET", "sources": ["waymore", "urlfinder"]}
+{"url": "https://modelstudio.console.alibabacloud.com/data/api.json?_v=undefined&action=GetWorkspaceLimitNumber&api=zeldaEasy.bailian-dash-workspace.space.getWorkspaceLimitNumber&product=BailianControl", "method": "GET", "sources": ["waymore", "urlfinder"]}
+{"url": "https://modelstudio.console.alibabacloud.com/data/api.json?_v=undefined&action=IntlBroadScopeAspnGateway&api=zeldaOneConsole.bailian-dash-workspace.api-key.listApiKeys4Agent&product=sfm_bailian", "method": "GET", "sources": ["waymore", "urlfinder"]}
+{"url": "https://modelstudio.console.alibabacloud.com/data/api.json?_v=undefined&action=ListApiKeys&api=zeldaEasy.bailian-dash-workspace.api-key.listApiKeys&product=BailianControl", "method": "GET", "sources": ["waymore", "urlfinder"]}
+{"url": "https://modelstudio.console.alibabacloud.com/data/api.json?_v=undefined&action=ListUsers&api=zeldaEasy.bailian-dash-workspace.account.listUsers&product=BailianControl", "method": "GET", "sources": ["waymore", "urlfinder"]}
+{"url": "https://modelstudio.console.alibabacloud.com/data/api.json?_v=undefined&action=ListWorkspaceRegions&api=zeldaOneConsole.bailian-dash-workspace.bailianWorkspaceRegionService.list&product=BailianControl", "method": "GET", "sources": ["waymore", "urlfinder"]}
+{"url": "https://modelstudio.console.alibabacloud.com/data/api.json?_v=undefined&action=ListWorkspaces&api=zeldaEasy.bailian-dash-workspace.space.listWorkspaces&product=BailianControl", "method": "GET", "sources": ["waymore", "urlfinder"]}
+{"url": "https://modelstudio.console.alibabacloud.com/data/api.json?action=...", "method": "GET", "sources": ["waymore", "urlfinder"]}
+{"url": "https://modelstudio.console.alibabacloud.com/data/api.json?action=...%60", "method": "GET", "sources": ["waymore"]}
+{"url": "https://modelstudio.console.alibabacloud.com/data/api.json?action=MenuPath&product=DocHelpService", "method": "GET", "sources": ["waymore", "urlfinder"]}
+{"url": "https://modelstudio.console.alibabacloud.com/data/custom.json", "method": "GET", "sources": ["waymore", "urlfinder", "feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/data/publicCustom.json?_tag=&action=QueryOrderLight&product=occa-payment-aliyun", "method": "GET", "sources": ["waymore", "urlfinder"]}
+{"url": "https://modelstudio.console.alibabacloud.com/data/publicCustom.json?action=QueryOrderLight&product=occa-payment-aliyun", "method": "GET", "sources": ["waymore", "urlfinder"]}
+{"url": "https://modelstudio.console.alibabacloud.com/feed.xml", "method": "GET", "sources": ["waymore", "urlfinder", "feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/feeds/all.atom.xml", "method": "GET", "sources": ["waymore", "urlfinder", "feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/humans.txt", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/index.xml", "method": "GET", "sources": ["waymore", "urlfinder", "feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/llms-full.txt", "method": "GET", "sources": ["wellknown_200", "feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/llms.txt", "method": "GET", "sources": ["wellknown_200", "feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/manifest.json", "method": "GET", "sources": ["wellknown_200", "feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/models.json", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/openapi.json", "method": "GET", "sources": ["wellknown_403", "feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/openapi.yaml", "method": "GET", "sources": ["wellknown_403", "feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/robots.txt", "method": "GET", "sources": ["waymore", "wellknown_200", "feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/security.txt", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/settings.json", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/sitemap.xml", "method": "GET", "sources": ["waymore", "wellknown_200", "urlfinder", "feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/sitemap_index.xml", "method": "GET", "sources": ["wellknown_200", "feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/swagger.json", "method": "GET", "sources": ["wellknown_403", "feroxbuster"]}
+{"url": "https://modelstudio.console.alibabacloud.com/swagger.yaml", "method": "GET", "sources": ["feroxbuster"]}

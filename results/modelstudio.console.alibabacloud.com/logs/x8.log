@@ -1,0 +1,28 @@
+$ x8 -u https://modelstudio.console.alibabacloud.com/api.json -w results/modelstudio.console.alibabacloud.com/params.txt
+exit=0
+urls:         https://modelstudio.console.alibabacloud.com/api.json
+methods:      GET
+wordlist len: 93
+
+
+
+$ x8 -u https://modelstudio.console.alibabacloud.com/data/api.json -w results/modelstudio.console.alibabacloud.com/params.txt
+exit=0
+urls:         https://modelstudio.console.alibabacloud.com/data/api.json
+methods:      GET
+wordlist len: 93
+
+
+
+$ x8 -u https://modelstudio.console.alibabacloud.com/_agt/api -w results/modelstudio.console.alibabacloud.com/params.txt
+TIMEOUT after 8s
+$ x8 -u https://modelstudio.console.alibabacloud.com/api-host.js -w results/modelstudio.console.alibabacloud.com/params.txt
+TIMEOUT after 8s
+$ x8 -u https://modelstudio.console.alibabacloud.com/api/config -w results/modelstudio.console.alibabacloud.com/params.txt
+TIMEOUT after 8s
+$ x8 -u https://modelstudio.console.alibabacloud.com/api/models -w results/modelstudio.console.alibabacloud.com/params.txt
+TIMEOUT after 8s
+$ x8 -u https://modelstudio.console.alibabacloud.com/api -w results/modelstudio.console.alibabacloud.com/params.txt
+TIMEOUT after 2s
+$ x8 -u https://modelstudio.console.alibabacloud.com/api/v1 -w results/modelstudio.console.alibabacloud.com/params.txt
+TIMEOUT after 1s

@@ -1,0 +1,23 @@
+======================================================================
+JSCOPE ANALYSIS REPORT
+======================================================================
+
+[executive snapshot]
+  files analyzed : 4
+  frameworks     : React
+  findings       : 1
+    MEDIUM         1
+
+[findings appendix]
+  -- framework (1) --
+  JS-0001  [MEDIUM        score= 4]  React
+       analyzers: framework_detector
+       - LITERAL_STRING_MATCH (+1): found React production bundle fingerprint
+       - LITERAL_STRING_MATCH #2 (+0.5, diminished): found React production bundle fingerprint
+       - AST_PATTERN_MATCH (+2): React marker recurs across 2 files
+       - AST_PATTERN_MATCH #2 (+1, diminished): React marker recurs across 2 files
+
+[diagnostics]
+  ! [incremental] reused 0 file(s), re-analyzed 4, dropped 0 removed
+
+(run `jscope explain <finding-id>` for the full evidence chain on any finding)

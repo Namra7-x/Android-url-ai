@@ -1,0 +1,2659 @@
+{
+  "target": "https://modelstudio.console.alibabacloud.com/",
+  "host": "modelstudio.console.alibabacloud.com",
+  "generated_at": "2026-11-27T10:55:35Z",
+  "duration_seconds": 294.5,
+  "summary": {
+    "secrets": 0,
+    "flags_and_guards": 0,
+    "ai_and_api_candidates": 1688,
+    "unpacked_sourcemaps": 0,
+    "data_files": 56,
+    "live_subdomains": 1,
+    "real_vhosts": 0,
+    "accessible_200": 783,
+    "exists_blocked": 7,
+    "nuclei_findings": 0,
+    "collapsed_patterns": 120
+  },
+  "secrets": [],
+  "feature_flags_and_guards": [],
+  "ai_and_api_candidates": [
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/$discovery",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 115
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/$discovery/rest",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 115
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/$discovery/rest?version=v1alpha",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 115
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/$discovery/rest?version=v1beta",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 115
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/ai-plugin.json",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 115
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/api/v1alpha",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 115
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/api/v1beta",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 115
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/llms-full.txt",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 115
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/llms.txt",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 115
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/swagger-ui",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 115
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/v1alpha",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 115
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/v1alpha/models",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 115
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/v1beta",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 115
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/v1beta/models",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 115
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/openapi.json",
+      "status_code": 403,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 90
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/openapi.yaml",
+      "status_code": 403,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 90
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/swagger.json",
+      "status_code": 403,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 90
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/swagger.yaml",
+      "status_code": 403,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 90
+    },
+    {
+      "url": "https://docs.modelstudio.console.alibabacloud.com/custom.js",
+      "status_code": 200,
+      "title": "",
+      "sources": [],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/&amp",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/&tab=dashboard",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/)",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/).",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/...",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/aplus.js",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/apple-app-site-association",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/assetlinks.json",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/at.alicdn.com",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/at.alicdn.com/t/a/font_4647901_6oigtfhrla.css",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/bailian-fe/agent-playground",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/bailian-fe/bailian-agent-infra",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/bailian-fe/bailian-asset-center",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/bailian-fe/bailian-cli-landing",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/bailian-fe/bailian-connector",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/bailian-fe/bailian-costing-balance",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/bailian-fe/bailian-managed-agents",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/bailian-fe/bailian-memory",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/bailian-fe/bailian-micro-fe-agent-detail",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/bailian-fe/bailian-model-experience",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/bailian-fe/bailian-model-experience-old",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/bailian-fe/bailian-model-market",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/bailian-fe/bailian-model-telemetry",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/bailian-fe/bailian-model-training",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/bailian-fe/bailian-observe",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/bailian-fe/bailian-rag",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/bailian-fe/bailian-tokenplan",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/bailian-fe/bailian-uac",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/bailian-fe/model-exp-embedding",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/change-password",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/cws.alicdn.com",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/fecs.console.aliyun.com",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/g.alicdn.com",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/g.alicdn.com/aliyun/console/1.4.92/scripts/browser-not-supported.js",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/gj.mmstat.com",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/help.aliyun.com",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/image/x-icon",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/nodeinfo",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/oauth-authorization-server",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/openid-configuration",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/security.txt",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/uaction.alicdn.com",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/webfinger",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/.well-known/ynuf.alipay.com",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/1.0.7",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/_agt/api",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/antd/locale/en_US",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/antd/locale/zh_CN",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/api",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/aplus.js",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/at.alicdn.com",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/at.alicdn.com/t/a/font_4647901_6oigtfhrla.css",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/bailian-fe/agent-playground",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/bailian-fe/bailian-agent-infra",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/bailian-fe/bailian-asset-center",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/bailian-fe/bailian-connector",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/bailian-fe/bailian-costing-balance",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/bailian-fe/bailian-managed-agents",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/bailian-fe/bailian-memory",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/bailian-fe/bailian-micro-fe-agent-detail",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/bailian-fe/bailian-model-experience",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/bailian-fe/bailian-model-experience-old",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/bailian-fe/bailian-model-market",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/bailian-fe/bailian-model-telemetry",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/bailian-fe/bailian-model-training",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/bailian-fe/bailian-observe",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/bailian-fe/bailian-rag",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/bailian-fe/bailian-tokenplan",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/bailian-fe/bailian-uac",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/bailian-fe/model-exp-embedding",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/cws.alicdn.com",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/dayjs/locale/en",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/dayjs/locale/zh-cn",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/dayjs/plugin",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/dayjs/plugin/advancedFormat",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/dayjs/plugin/customParseFormat",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/dayjs/plugin/duration",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/dayjs/plugin/isoWeek",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/dayjs/plugin/localeData",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/dayjs/plugin/quarterOfYear",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/dayjs/plugin/relativeTime",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/dayjs/plugin/timezone",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/dayjs/plugin/updateLocale",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/dayjs/plugin/utc",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/dayjs/plugin/weekOfYear",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/dayjs/plugin/weekYear",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/dayjs/plugin/weekday",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/fecs.console.aliyun.com",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/g.alicdn.com/alilog/mlog/aplus_v2.js",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/g.alicdn.com/aliyun/console/1.4.92/scripts/browser-not-supported.js",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/g.alicdn.com/bailian-fe/bailian-site-fe/0.0.256/assets/first-screen-intl.js",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/g.alicdn.com/bailian-fe/bailian-site-fe/0.0.256/assets/index.js",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/gj.mmstat.com",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/help.aliyun.com",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/image/x-icon",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/isipfe/beebot",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/isipfe/efm-fe",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/isipfe/template",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/o.alicdn.com/console/hijack-for-service/index.js",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/oneconsole.alicdn.com/one-mcms/visage/1.0.7/visage_en-us.js",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/react-dom/client",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/react/jsx-runtime",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/uaction.alicdn.com",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_agt/ynuf.alipay.com",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/_next",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/account",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/accounts",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/admin",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/administrator",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/ads.txt",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alert",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/antd/locale/en_US",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/antd/locale/zh_CN",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/aplus.js",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/aplus_v2.js",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/at.alicdn.com",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/at.alicdn.com/t/a/font_4647901_6oigtfhrla.css",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/bailian-fe/agent-playground",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/bailian-fe/bailian-agent-infra",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/bailian-fe/bailian-asset-center",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/bailian-fe/bailian-cli-landing",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/bailian-fe/bailian-connector",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/bailian-fe/bailian-costing-balance",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/bailian-fe/bailian-managed-agents",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/bailian-fe/bailian-memory",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/bailian-fe/bailian-micro-fe-agent-detail",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/bailian-fe/bailian-model-experience",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/bailian-fe/bailian-model-experience-old",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/bailian-fe/bailian-model-market",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/bailian-fe/bailian-model-telemetry",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/bailian-fe/bailian-model-training",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/bailian-fe/bailian-observe",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/bailian-fe/bailian-rag",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/bailian-fe/bailian-tokenplan",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/bailian-fe/bailian-uac",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/bailian-fe/model-exp-embedding",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/cws.alicdn.com",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/dayjs/locale/en",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/dayjs/locale/zh-cn",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/dayjs/plugin",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/dayjs/plugin/advancedFormat",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/dayjs/plugin/customParseFormat",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/dayjs/plugin/duration",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/dayjs/plugin/isoWeek",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/dayjs/plugin/localeData",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/dayjs/plugin/quarterOfYear",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/dayjs/plugin/relativeTime",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/dayjs/plugin/timezone",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/dayjs/plugin/updateLocale",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/dayjs/plugin/utc",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/dayjs/plugin/weekOfYear",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/dayjs/plugin/weekYear",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/dayjs/plugin/weekday",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/fecs.console.aliyun.com",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/g.alicdn.com",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/g.alicdn.com/alilog/mlog/aplus_v2.js",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/g.alicdn.com/aliyun/console/1.4.92/scripts/browser-not-supported.js",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/g.alicdn.com/bailian-fe/bailian-site-fe/0.0.256/assets/first-screen-intl.js",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/g.alicdn.com/bailian-fe/bailian-site-fe/0.0.256/assets/index.js",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/gj.mmstat.com",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/help.aliyun.com",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/image/x-icon",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/isipfe/beebot",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/isipfe/efm-fe",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/isipfe/template",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/o.alicdn.com/console/hijack-for-service/index.js",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/oneconsole.alicdn.com/one-mcms/visage/1.0.7/visage_en-us.js",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/react-dom/client",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/react/jsx-runtime",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/uaction.alicdn.com",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alilog/mlog/ynuf.alipay.com",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/all.atom.xml",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/alpha",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/android",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/antd/locale/en_US",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/antd/locale/zh_CN",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    },
+    {
+      "url": "https://modelstudio.console.alibabacloud.com/ap",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 75
+    }
+  ],
+  "unpacked_sourcemaps_and_configs": {
+    "sourcemap_files": [],
+    "data_files": [
+      {
+        "url": "http://docs.modelstudio.console.alibabacloud.com/llms.txt",
+        "status_code": 0
+      },
+      {
+        "url": "http://docs.modelstudio.console.alibabacloud.com/robots.txt",
+        "status_code": 0
+      },
+      {
+        "url": "http://modelstudio.console.alibabacloud.com/robots.txt",
+        "status_code": 0
+      },
+      {
+        "url": "https://docs.modelstudio.console.alibabacloud.com/llms.txt",
+        "status_code": 0
+      },
+      {
+        "url": "https://docs.modelstudio.console.alibabacloud.com/robots.txt",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/.well-known/ai-plugin.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/.well-known/assetlinks.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/.well-known/dnt-policy.txt",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/.well-known/gpc.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/.well-known/security.txt",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/.well-known/trust.txt",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/ads.txt",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/all.atom.xml",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/api.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/app-ads.txt",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/asset-manifest.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/atom.xml",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/build-manifest.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/config.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/crossdomain.xml",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/custom.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/data.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/data/api.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/data/api.json?_tag=&action=GetSeatSubscriptionSummary&product=BssOpenAPI-V3",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/data/api.json?_tag=&action=GetTokenPlanAccountDetail&product=ModelStudio",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/data/api.json?_tag=&action=QuerySubscriptionGray&product=BssOpenAPI-V3",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/data/api.json?_tag=&action=UacGetAccountDetail&product=ModelStudio",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/data/api.json?_v=undefined&action=GetWorkspaceLimitNumber&api=zeldaEasy.bailian-dash-workspace.space.getWorkspaceLimitNumber&product=BailianControl",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/data/api.json?_v=undefined&action=IntlBroadScopeAspnGateway&api=zeldaOneConsole.bailian-dash-workspace.api-key.listApiKeys4Agent&product=sfm_bailian",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/data/api.json?_v=undefined&action=ListApiKeys&api=zeldaEasy.bailian-dash-workspace.api-key.listApiKeys&product=BailianControl",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/data/api.json?_v=undefined&action=ListUsers&api=zeldaEasy.bailian-dash-workspace.account.listUsers&product=BailianControl",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/data/api.json?_v=undefined&action=ListWorkspaceRegions&api=zeldaOneConsole.bailian-dash-workspace.bailianWorkspaceRegionService.list&product=BailianControl",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/data/api.json?_v=undefined&action=ListWorkspaces&api=zeldaEasy.bailian-dash-workspace.space.listWorkspaces&product=BailianControl",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/data/api.json?action=...",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/data/api.json?action=...%60",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/data/api.json?action=MenuPath&product=DocHelpService",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/data/custom.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/data/publicCustom.json?_tag=&action=QueryOrderLight&product=occa-payment-aliyun",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/data/publicCustom.json?action=QueryOrderLight&product=occa-payment-aliyun",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/feed.xml",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/feeds/all.atom.xml",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/humans.txt",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/index.xml",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/llms-full.txt",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/llms.txt",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/manifest.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/models.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/openapi.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/openapi.yaml",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/robots.txt",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/security.txt",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/settings.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/sitemap.xml",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/sitemap_index.xml",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/swagger.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://modelstudio.console.alibabacloud.com/swagger.yaml",
+        "status_code": 0
+      }
+    ]
+  },
+  "live_subdomains_and_vhosts": {
+    "subdomains": [
+      "docs.modelstudio.console.alibabacloud.com"
+    ],
+    "vhosts_real": []
+  },
+  "route_patterns": [
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/ap-southeast-1",
+      "count": 189,
+      "sample": "https://modelstudio.console.alibabacloud.com/ap-southeast-1"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/{slug}",
+      "count": 138,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/access-model-studio-through-privatelink"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/",
+      "count": 79,
+      "sample": "http://modelstudio.console.alibabacloud.com/"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/get-api-key",
+      "count": 14,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/get-api-key"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/data/api.json",
+      "count": 14,
+      "sample": "https://modelstudio.console.alibabacloud.com/data/api.json"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/token-plan-overview",
+      "count": 12,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/token-plan-overview"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/what-is-model-studio",
+      "count": 12,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/what-is-model-studio"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/model-pricing",
+      "count": 11,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/model-pricing"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/cli",
+      "count": 11,
+      "sample": "https://docs.modelstudio.console.alibabacloud.com/en/model-studio/cli"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/first-api-call-to-qwen",
+      "count": 10,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/first-api-call-to-qwen"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/models",
+      "count": 10,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/models"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/new-free-quota",
+      "count": 9,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/new-free-quota"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/quota-management",
+      "count": 9,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/quota-management"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/rate-limit",
+      "count": 9,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/rate-limit"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/regions",
+      "count": 9,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/regions"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/ap-southeast-1/costing-balance/free-quota",
+      "count": 9,
+      "sample": "https://modelstudio.console.alibabacloud.com/ap-southeast-1/costing-balance/free-quota"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/us-east-1",
+      "count": 9,
+      "sample": "https://modelstudio.console.alibabacloud.com/us-east-1"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/ap-southeast-1/model/market",
+      "count": 8,
+      "sample": "https://modelstudio.console.alibabacloud.com/ap-southeast-1/model/market"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/ap-southeast-1/model/market/detail/qwen3.8-flash",
+      "count": 7,
+      "sample": "http://modelstudio.console.alibabacloud.com/ap-southeast-1/model/market/detail/qwen3.8-flash?file=qwen3.8-flash&serviceSite=international&spm=a2c63.p38356.0.0.5b93776ffI0ynv"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/base-url",
+      "count": 7,
+      "sample": "https://docs.modelstudio.console.alibabacloud.com/en/model-studio/base-url"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/ap-southeast-1/subscription/overview",
+      "count": 7,
+      "sample": "https://modelstudio.console.alibabacloud.com/ap-southeast-1/subscription/overview"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/ap-southeast-1/subscription/token-plan",
+      "count": 7,
+      "sample": "https://modelstudio.console.alibabacloud.com/ap-southeast-1/subscription/token-plan"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/eu-central-1",
+      "count": 7,
+      "sample": "https://modelstudio.console.alibabacloud.com/eu-central-1"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/budget-management",
+      "count": 6,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/budget-management"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/cn-beijing",
+      "count": 6,
+      "sample": "https://modelstudio.console.alibabacloud.com/cn-beijing"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/cn-hongkong",
+      "count": 6,
+      "sample": "https://modelstudio.console.alibabacloud.com/cn-hongkong"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}",
+      "count": 4,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/{locale}",
+      "count": 4,
+      "sample": "https://modelstudio.console.alibabacloud.com/ap"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/ap-northeast-1",
+      "count": 4,
+      "sample": "https://modelstudio.console.alibabacloud.com/ap-northeast-1"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/ap-northeast-1/model/market",
+      "count": 4,
+      "sample": "https://modelstudio.console.alibabacloud.com/ap-northeast-1/model/market"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/ap-southeast-1/model/market/detail/qwen-image-2.1-turbo",
+      "count": 4,
+      "sample": "https://modelstudio.console.alibabacloud.com/ap-southeast-1/model/market/detail/qwen-image-2.1-turbo"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/ap-southeast-1/model/market/detail/qwen3.8-max",
+      "count": 4,
+      "sample": "https://modelstudio.console.alibabacloud.com/ap-southeast-1/model/market/detail/qwen3.8-max"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/ap-southeast-1/subscription/token-plan/personal",
+      "count": 4,
+      "sample": "https://modelstudio.console.alibabacloud.com/ap-southeast-1/subscription/token-plan/personal"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/cli/overview",
+      "count": 3,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/cli/overview"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/optimize-prompt",
+      "count": 3,
+      "sample": "https://docs.modelstudio.console.alibabacloud.com/en/model-studio/optimize-prompt"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/prompt-custom-template",
+      "count": 3,
+      "sample": "https://docs.modelstudio.console.alibabacloud.com/en/model-studio/prompt-custom-template"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/prompt-template",
+      "count": 3,
+      "sample": "https://docs.modelstudio.console.alibabacloud.com/en/model-studio/prompt-template"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/token-plan-personal-faq",
+      "count": 3,
+      "sample": "https://docs.modelstudio.console.alibabacloud.com/en/model-studio/token-plan-personal-faq"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/workflow-application",
+      "count": 3,
+      "sample": "https://docs.modelstudio.console.alibabacloud.com/en/model-studio/workflow-application"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/$discovery/rest",
+      "count": 3,
+      "sample": "https://modelstudio.console.alibabacloud.com/$discovery/rest"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/.well-known/bailian-fe/{slug}",
+      "count": 3,
+      "sample": "https://modelstudio.console.alibabacloud.com/.well-known/bailian-fe/bailian-micro-fe-agent-detail"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/_agt/bailian-fe/{slug}",
+      "count": 3,
+      "sample": "https://modelstudio.console.alibabacloud.com/_agt/bailian-fe/bailian-micro-fe-agent-detail"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/alilog/mlog/bailian-fe/{slug}",
+      "count": 3,
+      "sample": "https://modelstudio.console.alibabacloud.com/alilog/mlog/bailian-fe/bailian-micro-fe-agent-detail"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/ap-northeast-1/settings/api-key",
+      "count": 3,
+      "sample": "https://modelstudio.console.alibabacloud.com/ap-northeast-1/settings/api-key"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/ap-northeast-1/settings/workspace",
+      "count": 3,
+      "sample": "https://modelstudio.console.alibabacloud.com/ap-northeast-1/settings/workspace"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/ap-southeast-1/model/market/detail/qwen-image-2.1-pro",
+      "count": 3,
+      "sample": "https://modelstudio.console.alibabacloud.com/ap-southeast-1/model/market/detail/qwen-image-2.1-pro"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/api/bailian-fe/{slug}",
+      "count": 3,
+      "sample": "https://modelstudio.console.alibabacloud.com/api/bailian-fe/bailian-micro-fe-agent-detail"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/bailian-fe/{slug}",
+      "count": 3,
+      "sample": "https://modelstudio.console.alibabacloud.com/bailian-fe/bailian-micro-fe-agent-detail"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/console/hijack-for-service/bailian-fe/{slug}",
+      "count": 3,
+      "sample": "https://modelstudio.console.alibabacloud.com/console/hijack-for-service/bailian-fe/bailian-micro-fe-agent-detail"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/console/performance-reporter/bailian-fe/{slug}",
+      "count": 3,
+      "sample": "https://modelstudio.console.alibabacloud.com/console/performance-reporter/bailian-fe/bailian-micro-fe-agent-detail"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/{locale}/bailian-fe/{slug}",
+      "count": 3,
+      "sample": "https://modelstudio.console.alibabacloud.com/en/bailian-fe/bailian-micro-fe-agent-detail"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/one-mcms/visage/1.0.7/bailian-fe/{slug}",
+      "count": 3,
+      "sample": "https://modelstudio.console.alibabacloud.com/one-mcms/visage/1.0.7/bailian-fe/bailian-micro-fe-agent-detail"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/settings/bailian-fe/{slug}",
+      "count": 3,
+      "sample": "https://modelstudio.console.alibabacloud.com/settings/bailian-fe/bailian-micro-fe-agent-detail"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/",
+      "count": 2,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/custom.js",
+      "count": 2,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/custom.js"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/batch-inference",
+      "count": 2,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/batch-inference"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/claude-code",
+      "count": 2,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/claude-code"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/context-cache",
+      "count": 2,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/context-cache"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/explicit-cache-guide",
+      "count": 2,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/explicit-cache-guide"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/image-to-video-guide",
+      "count": 2,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/image-to-video-guide"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/model-evaluation-intl",
+      "count": 2,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/model-evaluation-intl"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/model-telemetry",
+      "count": 2,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/model-telemetry"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/model-usage-statistics",
+      "count": 2,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/model-usage-statistics"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/openclaw",
+      "count": 2,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/openclaw"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/opencode",
+      "count": 2,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/opencode"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/privacy-notice",
+      "count": 2,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/privacy-notice"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/qwen3-7-plus",
+      "count": 2,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/qwen3-7-plus"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/realtime",
+      "count": 2,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/realtime"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/related-agreements",
+      "count": 2,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/related-agreements"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/text-to-image-prompt",
+      "count": 2,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/text-to-image-prompt"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/text-to-video-prompt",
+      "count": 2,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/text-to-video-prompt"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/tpm-reservation",
+      "count": 2,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/tpm-reservation"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/web-extractor",
+      "count": 2,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/web-extractor"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/web-search",
+      "count": 2,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/web-search"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/llms.txt",
+      "count": 2,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/llms.txt"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/robots.txt",
+      "count": 2,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/robots.txt"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/qwen3-6-plus",
+      "count": 2,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/zh/model-studio/qwen3-6-plus"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/ap-",
+      "count": 2,
+      "sample": "http://modelstudio.console.alibabacloud.com/ap-"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/robots.txt",
+      "count": 2,
+      "sample": "http://modelstudio.console.alibabacloud.com/robots.txt"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/qwen3-8-max",
+      "count": 2,
+      "sample": "https://docs.modelstudio.console.alibabacloud.com/en/model-studio/qwen3-8-max"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/rag-knowledge-base",
+      "count": 2,
+      "sample": "https://docs.modelstudio.console.alibabacloud.com/en/model-studio/rag-knowledge-base?_rsc=1s74q"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/rag-optimization",
+      "count": 2,
+      "sample": "https://docs.modelstudio.console.alibabacloud.com/en/model-studio/rag-optimization?_rsc=1mhe7"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/use-workspace",
+      "count": 2,
+      "sample": "https://docs.modelstudio.console.alibabacloud.com/en/model-studio/use-workspace"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/&amp",
+      "count": 2,
+      "sample": "https://modelstudio.console.alibabacloud.com/&amp"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/&tab=dashboard",
+      "count": 2,
+      "sample": "https://modelstudio.console.alibabacloud.com/&tab=dashboard"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/.well-known/{slug}",
+      "count": 2,
+      "sample": "https://modelstudio.console.alibabacloud.com/.well-known/apple-app-site-association"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/ap-northeast-1/model/market/detail/qwen3.8-omni-flash",
+      "count": 2,
+      "sample": "https://modelstudio.console.alibabacloud.com/ap-northeast-1/model/market/detail/qwen3.8-omni-flash?ref=list&serviceSite=global&workspace=1036283"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/ap-northeast-1/settings/workspace/detail/ws-rbgop00bt88hu3vz/tts-test_2/false/{id}",
+      "count": 2,
+      "sample": "https://modelstudio.console.alibabacloud.com/ap-northeast-1/settings/workspace/detail/ws-rbgop00bt88hu3vz/tts-test_2/false/1036283?workspace=1036283"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/ap-southeast-1/model/experience/text",
+      "count": 2,
+      "sample": "https://modelstudio.console.alibabacloud.com/ap-southeast-1/model/experience/text"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/ap-southeast-1/settings/workspace",
+      "count": 2,
+      "sample": "https://modelstudio.console.alibabacloud.com/ap-southeast-1/settings/workspace"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/console",
+      "count": 2,
+      "sample": "https://modelstudio.console.alibabacloud.com/console"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/data/publicCustom.json",
+      "count": 2,
+      "sample": "https://modelstudio.console.alibabacloud.com/data/publicCustom.json?_tag=&action=QueryOrderLight&product=occa-payment-aliyun"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/feed",
+      "count": 2,
+      "sample": "https://modelstudio.console.alibabacloud.com/feed"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/model-releases",
+      "count": 2,
+      "sample": "https://modelstudio.console.alibabacloud.com/model-releases"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/tab=dashboard",
+      "count": 2,
+      "sample": "https://modelstudio.console.alibabacloud.com/tab=dashboard"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/us-east-1/model/experience/text",
+      "count": 2,
+      "sample": "https://modelstudio.console.alibabacloud.com/us-east-1/model/experience/text"
+    },
+    {
+      "pattern": "modelstudio.console.alibabacloud.com/us-east-1/model/market",
+      "count": 2,
+      "sample": "https://modelstudio.console.alibabacloud.com/us-east-1/model/market"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/custom.css",
+      "count": 1,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/custom.css"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/mode",
+      "count": 1,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/mode"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/assistant-api",
+      "count": 1,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/assistant-api"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/bailian-ram-permission",
+      "count": 1,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/bailian-ram-permission"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/cli/installation",
+      "count": 1,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/cli/installation"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/content-security",
+      "count": 1,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/content-security"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/data-retention-policy",
+      "count": 1,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/data-retention-policy"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/decision-model-preview",
+      "count": 1,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/decision-model-preview"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/deep-thinking",
+      "count": 1,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/deep-thinking"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/deepseek-api",
+      "count": 1,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/deepseek-api"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/embedding-rerank-model",
+      "count": 1,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/embedding-rerank-model"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/error-code",
+      "count": 1,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/error-code"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/error-code-start",
+      "count": 1,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/error-code-start"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/evaluation-metrics",
+      "count": 1,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/evaluation-metrics"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/fine-tuning",
+      "count": 1,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/fine-tuning"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/fine-tuning-api-guide",
+      "count": 1,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/fine-tuning-api-guide"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/get-fine-tuning-job-api",
+      "count": 1,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/get-fine-tuning-job-api"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/get-started-with-models",
+      "count": 1,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/get-started-with-models"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/hermes-agent",
+      "count": 1,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/hermes-agent"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/install-sdk",
+      "count": 1,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/install-sdk"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/kimi-k3-1-pro",
+      "count": 1,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/kimi-k3-1-pro"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/model-depreciation",
+      "count": 1,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/model-depreciation"
+    },
+    {
+      "pattern": "docs.modelstudio.console.alibabacloud.com/{locale}/model-studio/model-log-backflow",
+      "count": 1,
+      "sample": "http://docs.modelstudio.console.alibabacloud.com/en/model-studio/model-log-backflow"
+    }
+  ],
+  "nuclei_findings": []
+}

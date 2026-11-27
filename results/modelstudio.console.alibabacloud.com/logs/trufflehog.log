@@ -1,0 +1,5 @@
+$ trufflehog filesystem results/modelstudio.console.alibabacloud.com/chunks_unique --json --no-update
+exit=0
+{"level":"info-0","ts":"2026-11-27T10:52:29Z","logger":"trufflehog","msg":"running source","source_name":"trufflehog - filesystem","source_type":"SOURCE_TYPE_FILESYSTEM","source_id":1,"job_id":1,"source_manager_worker_id":"EOmBB","with_units":true}
+{"level":"info-0","ts":"2026-11-27T10:52:30Z","logger":"trufflehog","msg":"finished scanning","chunks":49,"bytes":320294,"verified_secrets":0,"unverified_secrets":0,"scan_duration":"12.649033ms","trufflehog_version":"3.100.1","verification_caching":{"Hits":0,"Misses":0,"HitsWasted":0,"AttemptsSaved":0,"VerificationTimeSpentMS":0}}
+
