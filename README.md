@@ -1,4 +1,4 @@
-# Android-url-ai — High-Speed Concurrent Web & Early-Signal Hunt Pipeline
+# web-hunt — High-Speed Concurrent Web & Early-Signal Hunt Pipeline
 
 A fast, 4-wave parallel reconnaissance and client-side intelligence pipeline built for GitHub Actions (`<= 10-12 min` hard cap per target URL).
 
