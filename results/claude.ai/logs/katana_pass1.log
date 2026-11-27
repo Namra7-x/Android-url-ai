@@ -1,0 +1,2 @@
+$ katana -u https://claude.ai/ -d 3 -kf all -c 12 -p 6 -fs fqdn -mrs 2097152 -filter-similar -fst 8 -j -o results/claude.ai/katana/pass1.jsonl -silent -jsl
+exit=0

@@ -1,0 +1,138 @@
+{
+  "target": "https://claude.ai/",
+  "host": "claude.ai",
+  "scope_apex": "claude.ai",
+  "duration_seconds": 337.0,
+  "wave_timings": {
+    "Wave 1 (Discovery)": 199.21627249600002,
+    "Wave 2 (Chunks)": 0.8367092469999875,
+    "Wave 3 (Offline AST/Secrets)": 18.085884969999995,
+    "Wave 4 (Verify/Fuzz/Feed)": 118.86304431000002
+  },
+  "stats": {
+    "collected": 686,
+    "probed": 339,
+    "live200": 259,
+    "liveother": 276,
+    "data": 21,
+    "subdomains": 15,
+    "vhosts": 1,
+    "js_endpoints": 77,
+    "secrets": 0,
+    "flags": 15,
+    "ai_endpoints": 39,
+    "sourcemaps": 0,
+    "nuclei": 75,
+    "duration_seconds": 337.0
+  },
+  "tools": [
+    {
+      "tool": "katana",
+      "exit_code": 0,
+      "duration_s": 20.0,
+      "detail": "p1=5, p2=3"
+    },
+    {
+      "tool": "subfinder+dnsx",
+      "exit_code": 0,
+      "duration_s": 32.0,
+      "detail": "99 subs, 15 live"
+    },
+    {
+      "tool": "wellknown_ai",
+      "exit_code": 0,
+      "duration_s": 0.9,
+      "detail": "19 paths checked"
+    },
+    {
+      "tool": "scrapling",
+      "exit_code": 0,
+      "duration_s": 44.9,
+      "detail": "936 URLs/JS captured"
+    },
+    {
+      "tool": "waymore",
+      "exit_code": 124,
+      "duration_s": 130.1,
+      "detail": "0 archive URLs"
+    },
+    {
+      "tool": "urlfinder",
+      "exit_code": 124,
+      "duration_s": 69.1,
+      "detail": "0 URLs"
+    },
+    {
+      "tool": "chunk_download",
+      "exit_code": 0,
+      "duration_s": 0.8,
+      "detail": "97 fetched -> 30 unique SHA-256 chunks"
+    },
+    {
+      "tool": "sourcemapper",
+      "exit_code": 0,
+      "duration_s": 0.0,
+      "detail": "0 maps -> 0 unpacked sources"
+    },
+    {
+      "tool": "xnLinkFinder",
+      "exit_code": 0,
+      "duration_s": 0.4,
+      "detail": "0 endpoints"
+    },
+    {
+      "tool": "jsluice",
+      "exit_code": 0,
+      "duration_s": 2.4,
+      "detail": "25 chunks -> 913 URLs"
+    },
+    {
+      "tool": "secrets_offline",
+      "exit_code": 0,
+      "duration_s": 7.6,
+      "detail": "0 candidates"
+    },
+    {
+      "tool": "jscope",
+      "exit_code": 0,
+      "duration_s": 18.1,
+      "detail": "25 files -> 15 flags/models"
+    },
+    {
+      "tool": "httpx",
+      "exit_code": 0,
+      "duration_s": 7.2,
+      "detail": "339/344 probed"
+    },
+    {
+      "tool": "vhost",
+      "exit_code": 0,
+      "duration_s": 0.6,
+      "detail": "1 real / 15 tested"
+    },
+    {
+      "tool": "targeted_fuzz",
+      "exit_code": 0,
+      "duration_s": 9.3,
+      "detail": "2 prefixes -> 266 hits"
+    },
+    {
+      "tool": "x8",
+      "exit_code": 0,
+      "duration_s": 20.0,
+      "detail": "5 API routes scanned"
+    },
+    {
+      "tool": "methods",
+      "exit_code": 0,
+      "duration_s": 1.0,
+      "detail": "24 probes"
+    },
+    {
+      "tool": "nuclei",
+      "exit_code": 124,
+      "duration_s": 80.1,
+      "detail": "75 findings across 150 URLs"
+    }
+  ]
+}

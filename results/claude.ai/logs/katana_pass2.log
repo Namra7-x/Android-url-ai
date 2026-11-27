@@ -1,0 +1,2 @@
+$ katana -u https://claude.ai/ -d 2 -headless -ho --no-sandbox,--disable-gpu -xhr -kf all -c 6 -p 3 -fs fqdn -mrs 2097152 -filter-similar -fst 8 -j -o results/claude.ai/katana/pass2.jsonl -silent -sc -jsl
+exit=0

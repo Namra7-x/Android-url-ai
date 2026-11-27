@@ -1,0 +1,2 @@
+$ subfinder -d claude.ai -silent -all -o results/claude.ai/subfinder.txt
+exit=0

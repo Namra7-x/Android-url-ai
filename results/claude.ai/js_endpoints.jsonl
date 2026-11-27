@@ -1,0 +1,77 @@
+{"url": "https://assets.claude.ai/videos/login-hero-kt3-still-005fec8b.webp", "method": "GET", "sources": ["jsluice"]}
+{"url": "https://claude.ai/", "method": "GET", "sources": ["katana_p1", "robots_txt", "scrapling", "jsluice"]}
+{"url": "https://claude.ai/.json", "method": "GET", "sources": ["jsluice"]}
+{"url": "https://claude.ai/.json?v=", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/?cache_bust=1&growthbook_format=sdk&include_system_prompts=false&statsig_hashing_algorithm=djb2", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/?cb=0", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/?report=1", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/api/event_logging/v2/batch?for=experiment-exposure", "method": "GET", "sources": ["scrapling", "scrapling_xhr"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/api/event_logging/v2/batch?for=product-analytics", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://claude.ai/api/organizations/", "method": "GET", "sources": ["jsluice"]}
+{"url": "https://claude.ai/api/v2/rum?_dd.api=fetch&batch_time=1795791719441&build_ts=1795787081&dd-api-key=pub71869dceb5b70dba6123af9ca357d1f9&dd-evp-encoding=deflate&dd-evp-origin=browser&dd-evp-origin-version=7.6.0&dd-request-id=f25e327a-cacf-45bb-9069-9c2f545713cc&ddsource=browser", "method": "GET", "sources": ["scrapling", "scrapling_xhr"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/api/v2/rum?_dd.api=fetch&batch_time=1795791719588&build_ts=1795787081&dd-api-key=pub71869dceb5b70dba6123af9ca357d1f9&dd-evp-encoding=deflate&dd-evp-origin=browser&dd-evp-origin-version=7.6.0&dd-request-id=4dc5e0ad-f092-476c-bcd9-6a1ad85f214e&ddsource=browser", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://claude.ai/api/v2/rum?_dd.api=fetch&batch_time=1795791727790&build_ts=1795787081&dd-api-key=pub71869dceb5b70dba6123af9ca357d1f9&dd-evp-encoding=deflate&dd-evp-origin=browser&dd-evp-origin-version=7.6.0&dd-request-id=7190e8c5-aea3-4eda-a648-d86ddd167160&ddsource=browser", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://claude.ai/api/v2/rum?_dd.api=fetch&batch_time=1795791727911&build_ts=1795787081&dd-api-key=pub71869dceb5b70dba6123af9ca357d1f9&dd-evp-encoding=deflate&dd-evp-origin=browser&dd-evp-origin-version=7.6.0&dd-request-id=3e2a2acd-f481-4994-b679-273db176dd37&ddsource=browser", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://claude.ai/api/v2/rum?_dd.api=fetch&batch_time=1795791737489&build_ts=1795787081&dd-api-key=pub71869dceb5b70dba6123af9ca357d1f9&dd-evp-encoding=deflate&dd-evp-origin=browser&dd-evp-origin-version=7.6.0&dd-request-id=3d407df6-8bd1-40fa-8cdb-164a1b9b7fb0&ddsource=browser", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://claude.ai/api/v2/rum?_dd.api=fetch&batch_time=1795791737543&build_ts=1795787081&dd-api-key=pub71869dceb5b70dba6123af9ca357d1f9&dd-evp-encoding=deflate&dd-evp-origin=browser&dd-evp-origin-version=7.6.0&dd-request-id=af91f3a3-1833-4c2f-a6ba-024d58983b89&ddsource=browser", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://claude.ai/api/v2/rum?_dd.api=fetch&batch_time=1795791745967&build_ts=1795787081&dd-api-key=pub71869dceb5b70dba6123af9ca357d1f9&dd-evp-encoding=deflate&dd-evp-origin=browser&dd-evp-origin-version=7.6.0&dd-request-id=85c8ffd3-14ec-46e7-b725-8427d4a745b9&ddsource=browser", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://claude.ai/api/v2/rum?_dd.api=fetch&batch_time=1795791746078&build_ts=1795787081&dd-api-key=pub71869dceb5b70dba6123af9ca357d1f9&dd-evp-encoding=deflate&dd-evp-origin=browser&dd-evp-origin-version=7.6.0&dd-request-id=8a6a5e01-3f7f-4e98-b8f8-88727791bd6f&ddsource=browser", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://claude.ai/api/v2/rum?_dd.api=fetch&batch_time=1795791754821&build_ts=1795787081&dd-api-key=pub71869dceb5b70dba6123af9ca357d1f9&dd-evp-encoding=deflate&dd-evp-origin=browser&dd-evp-origin-version=7.6.0&dd-request-id=92f760ef-2268-4a1f-924c-278314499897&ddsource=browser", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://claude.ai/api/v2/rum?_dd.api=fetch&batch_time=1795791754888&build_ts=1795787081&dd-api-key=pub71869dceb5b70dba6123af9ca357d1f9&dd-evp-encoding=deflate&dd-evp-origin=browser&dd-evp-origin-version=7.6.0&dd-request-id=3bcb863c-5a92-4d2d-a264-3e37cd67c8b6&ddsource=browser", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://claude.ai/app_start", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/appeal-status", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/assets/v1/shared-900-Blx34kFz.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "chunk_round1", "jsluice", "feroxbuster"], "status_code": 200, "title": "Claude"}
+{"url": "https://claude.ai/assets/v1/shared-902-CnzfQ-lJ.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "chunk_round1", "jsluice", "feroxbuster"], "status_code": 200, "title": "Claude"}
+{"url": "https://claude.ai/assets/v1/shared-903-CiPWzGcA.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "chunk_round1", "jsluice", "feroxbuster"], "status_code": 200, "title": "Claude"}
+{"url": "https://claude.ai/assets/v1/shared-904-BeZk8dfT.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "chunk_round1", "jsluice", "feroxbuster"], "status_code": 200, "title": "Claude"}
+{"url": "https://claude.ai/assets/v1/shared-905-D7SUPDob.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "chunk_round1", "jsluice", "feroxbuster"], "status_code": 200, "title": "Claude"}
+{"url": "https://claude.ai/assets/v1/shared-906-CnQE0w1_.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "chunk_round1", "jsluice", "feroxbuster"], "status_code": 200, "title": "Claude"}
+{"url": "https://claude.ai/assets/v1/shared-907-COaoC0Y3.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "chunk_round1", "jsluice", "feroxbuster"], "status_code": 200, "title": "Claude"}
+{"url": "https://claude.ai/assets/v1/shared-908-Da0xDGzO.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "chunk_round1", "jsluice", "feroxbuster"], "status_code": 200, "title": "Claude"}
+{"url": "https://claude.ai/assets/v1/shared-909-nPVv7__w.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "chunk_round1", "jsluice", "feroxbuster"], "status_code": 200, "title": "Claude"}
+{"url": "https://claude.ai/assets/v1/shared-910-DjIELDbX.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "chunk_round1", "jsluice", "feroxbuster"], "status_code": 200, "title": "Claude"}
+{"url": "https://claude.ai/assets/v1/shared-911-BK2KbpUe.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "chunk_round1", "jsluice", "feroxbuster"], "status_code": 200, "title": "Claude"}
+{"url": "https://claude.ai/bootstrap", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/bootstrap/", "method": "GET", "sources": ["jsluice"]}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/h/g/jsd/oneshot/b9d4778be3d9/0.6088777056110393:1795785923:J6YFUfQ-sLovHDFsyDrFTS4JX4GGqBU-htqdBrA6ADo/a61202dfed101776", "method": "GET", "sources": ["scrapling", "scrapling_xhr"], "status_code": 405, "title": ""}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/h/g/jsd/oneshot/b9d4778be3d9/0.6088777056110393:1795785923:J6YFUfQ-sLovHDFsyDrFTS4JX4GGqBU-htqdBrA6ADo/a61203157a4d9b27", "method": "GET", "sources": ["scrapling", "scrapling_xhr"], "status_code": 405, "title": ""}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/h/g/jsd/oneshot/b9d4778be3d9/0.6088777056110393:1795785923:J6YFUfQ-sLovHDFsyDrFTS4JX4GGqBU-htqdBrA6ADo/a61203518988f6f9", "method": "GET", "sources": ["scrapling", "scrapling_xhr"], "status_code": 405, "title": ""}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/h/g/jsd/oneshot/b9d4778be3d9/0.6088777056110393:1795785923:J6YFUfQ-sLovHDFsyDrFTS4JX4GGqBU-htqdBrA6ADo/a6120386d997bc7d", "method": "GET", "sources": ["scrapling", "scrapling_xhr"], "status_code": 405, "title": ""}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/h/g/jsd/oneshot/b9d4778be3d9/0.6088777056110393:1795785923:J6YFUfQ-sLovHDFsyDrFTS4JX4GGqBU-htqdBrA6ADo/a61203bdf955e6f2", "method": "GET", "sources": ["scrapling", "scrapling_xhr"], "status_code": 405, "title": ""}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/h/g/scripts/jsd/b9d4778be3d9/main.js?ray=a61202dfed101776", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"], "status_code": 200, "title": ""}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/h/g/scripts/jsd/b9d4778be3d9/main.js?ray=a61203157a4d9b27", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/h/g/scripts/jsd/b9d4778be3d9/main.js?ray=a61203518988f6f9", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/h/g/scripts/jsd/b9d4778be3d9/main.js?ray=a6120386d997bc7d", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/h/g/scripts/jsd/b9d4778be3d9/main.js?ray=a61203bdf955e6f2", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a61202dfed101776", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"], "status_code": 302, "title": ""}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a61203157a4d9b27", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a61203518988f6f9", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a6120386d997bc7d", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a61203bdf955e6f2", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://claude.ai/chat_conversations_v2?archived=false&consistency=eventual&light_settings=true&limit=30&offset=0", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/connector-consent", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/edge-api", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/edge-api/bootstrap?cache_bust=1&growthbook_format=sdk&include_system_prompts=false&statsig_hashing_algorithm=djb2", "method": "GET", "sources": ["scrapling", "scrapling_xhr"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/edge-api/client-health/check", "method": "GET", "sources": ["jsluice"]}
+{"url": "https://claude.ai/edge-api/client-health/check?EXPR=", "method": "GET", "sources": ["jsluice"], "status_code": 200, "title": ""}
+{"url": "https://claude.ai/edge-api/client-health/check?bundle=1795787081&locale=en-US&platform=web", "method": "GET", "sources": ["scrapling", "scrapling_xhr"], "status_code": 200, "title": ""}
+{"url": "https://claude.ai/edge-api/client-health/reload-request", "method": "GET", "sources": ["jsluice"], "status_code": 200, "title": ""}
+{"url": "https://claude.ai/gift/redeem", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/health/unavailable?returnTo=", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/health/unavailable?returnTo=EXPREXPR", "method": "GET", "sources": ["jsluice"]}
+{"url": "https://claude.ai/health/update-required?returnTo=", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/health/update-required?returnTo=EXPR", "method": "GET", "sources": ["jsluice"]}
+{"url": "https://claude.ai/i18n/", "method": "GET", "sources": ["jsluice"]}
+{"url": "https://claude.ai/i18n/dynamic/", "method": "GET", "sources": ["jsluice"]}
+{"url": "https://claude.ai/images/claude_ogimage.png", "method": "GET", "sources": ["jsluice"]}
+{"url": "https://claude.ai/login", "method": "GET", "sources": ["katana_p2", "robots_txt", "scrapling", "jsluice"]}
+{"url": "https://claude.ai/login/popup-google-auth", "method": "GET", "sources": ["jsluice"], "status_code": 200, "title": "Claude"}
+{"url": "https://claude.ai/logout", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/magic-link", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/manifest.json", "method": "GET", "sources": ["wellknown_403", "scrapling", "scrapling_js", "scrapling_xhr", "chunk_round1"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/meta", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/mobile/", "method": "GET", "sources": ["jsluice"]}
+{"url": "https://claude.ai/new", "method": "GET", "sources": ["scrapling", "jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/new/", "method": "GET", "sources": ["jsluice"]}
+{"url": "https://claude.ai/oauth/authorize", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/sso-callback", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}

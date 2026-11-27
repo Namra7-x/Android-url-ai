@@ -1,0 +1,5 @@
+$ xnLinkFinder -i results/claude.ai/chunks_unique -sf claude.ai -o cli -op results/claude.ai/xn_params.txt -os results/claude.ai/xn_secrets.json
+exit=0
+The config.yml file was created at /home/runner/.config/xnLinkFinder/config.yml
+
+

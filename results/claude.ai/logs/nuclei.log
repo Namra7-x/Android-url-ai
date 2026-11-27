@@ -1,0 +1,2 @@
+$ nuclei -l results/claude.ai/nuclei_urls.txt -t /home/runner/nuclei-templates -tags exposure,misconfig,tech,panel -rl 50 -c 25 -jsonl -o results/claude.ai/nuclei.jsonl -silent -duc -timeout 8 -retries 1
+TIMEOUT after 80s

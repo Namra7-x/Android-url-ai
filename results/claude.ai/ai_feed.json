@@ -1,0 +1,1589 @@
+{
+  "target": "https://claude.ai/",
+  "host": "claude.ai",
+  "generated_at": "2026-11-27T15:07:34Z",
+  "duration_seconds": 337.0,
+  "summary": {
+    "secrets": 0,
+    "flags_and_guards": 15,
+    "ai_and_api_candidates": 39,
+    "unpacked_sourcemaps": 0,
+    "data_files": 21,
+    "live_subdomains": 15,
+    "real_vhosts": 1,
+    "accessible_200": 259,
+    "exists_blocked": 276,
+    "nuclei_findings": 75,
+    "collapsed_patterns": 120
+  },
+  "secrets": [],
+  "feature_flags_and_guards": [
+    {
+      "kind": "flag_or_role",
+      "name": "initial",
+      "file": "2317cd7e5fc4136c_shared-903-CiPWzGcA.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "menuitem",
+      "file": "2317cd7e5fc4136c_shared-903-CiPWzGcA.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "button",
+      "file": "2317cd7e5fc4136c_shared-903-CiPWzGcA.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "checkbox",
+      "file": "2317cd7e5fc4136c_shared-903-CiPWzGcA.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "radio",
+      "file": "2317cd7e5fc4136c_shared-903-CiPWzGcA.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "switch",
+      "file": "2317cd7e5fc4136c_shared-903-CiPWzGcA.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "tab",
+      "file": "2317cd7e5fc4136c_shared-903-CiPWzGcA.js"
+    },
+    {
+      "kind": "flag_or_role",
+      "name": "status",
+      "file": "2317cd7e5fc4136c_shared-903-CiPWzGcA.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "claude-conversation-store",
+      "file": "2317cd7e5fc4136c_shared-903-CiPWzGcA.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "claudeai.v1.",
+      "file": "2317cd7e5fc4136c_shared-903-CiPWzGcA.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "claudeai.gatedHeld.v1",
+      "file": "2317cd7e5fc4136c_shared-903-CiPWzGcA.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "claudeAppBindings",
+      "file": "2317cd7e5fc4136c_shared-903-CiPWzGcA.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "claudeai.lastChatHost.v1",
+      "file": "2317cd7e5fc4136c_shared-903-CiPWzGcA.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "claudeai.lastChatLook.v1",
+      "file": "2317cd7e5fc4136c_shared-903-CiPWzGcA.js"
+    },
+    {
+      "kind": "model_candidate",
+      "name": "Claude.ai",
+      "file": "2317cd7e5fc4136c_shared-903-CiPWzGcA.js"
+    }
+  ],
+  "ai_and_api_candidates": [
+    {
+      "url": "https://claude.ai/assets/v1/llms-full.txt",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 90
+    },
+    {
+      "url": "https://claude.ai/assets/v1/llms.txt",
+      "status_code": 200,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 90
+    },
+    {
+      "url": "https://claude.ai/llms-full.txt",
+      "status_code": 200,
+      "title": "Claude",
+      "sources": [],
+      "score": 90
+    },
+    {
+      "url": "https://claude.ai/llms.txt",
+      "status_code": 200,
+      "title": "Claude",
+      "sources": [],
+      "score": 90
+    },
+    {
+      "url": "https://claude.ai/$discovery/rest?version=v1alpha",
+      "status_code": 403,
+      "title": "Just a moment...",
+      "sources": [],
+      "score": 65
+    },
+    {
+      "url": "https://claude.ai/openapi.json",
+      "status_code": 403,
+      "title": "Just a moment...",
+      "sources": [],
+      "score": 65
+    },
+    {
+      "url": "https://claude.ai/openapi.yaml",
+      "status_code": 403,
+      "title": "Just a moment...",
+      "sources": [],
+      "score": 65
+    },
+    {
+      "url": "https://claude.ai/swagger.json",
+      "status_code": 403,
+      "title": "Just a moment...",
+      "sources": [],
+      "score": 65
+    },
+    {
+      "url": "https://claude.ai/api/config",
+      "status_code": 403,
+      "title": "Just a moment...",
+      "sources": [],
+      "score": 50
+    },
+    {
+      "url": "https://claude.ai/api/event_logging/v2/batch?for=experiment-exposure",
+      "status_code": 403,
+      "title": "Just a moment...",
+      "sources": [],
+      "score": 50
+    },
+    {
+      "url": "https://claude.ai/api/models",
+      "status_code": 403,
+      "title": "Just a moment...",
+      "sources": [],
+      "score": 50
+    },
+    {
+      "url": "https://claude.ai/config.json",
+      "status_code": 403,
+      "title": "Just a moment...",
+      "sources": [],
+      "score": 50
+    },
+    {
+      "url": "https://claude.ai/v1/models",
+      "status_code": 403,
+      "title": "Just a moment...",
+      "sources": [],
+      "score": 50
+    },
+    {
+      "url": "https://claude.ai/$discovery/rest?version=v1beta",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "wellknown_403"
+      ],
+      "score": 40
+    },
+    {
+      "url": "https://claude.ai/api/*",
+      "status_code": 403,
+      "title": "Just a moment...",
+      "sources": [],
+      "score": 25
+    },
+    {
+      "url": "https://claude.ai/api/desktop",
+      "status_code": 403,
+      "title": "Just a moment...",
+      "sources": [],
+      "score": 25
+    },
+    {
+      "url": "https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect",
+      "status_code": 403,
+      "title": "Just a moment...",
+      "sources": [],
+      "score": 25
+    },
+    {
+      "url": "https://claude.ai/api/desktop/win32/arm64/setup/latest/redirect",
+      "status_code": 403,
+      "title": "Just a moment...",
+      "sources": [],
+      "score": 25
+    },
+    {
+      "url": "https://claude.ai/api/desktop/win32/x64/setup/latest/redirect",
+      "status_code": 403,
+      "title": "Just a moment...",
+      "sources": [],
+      "score": 25
+    },
+    {
+      "url": "https://claude.ai/api/organizations",
+      "status_code": 403,
+      "title": "Just a moment...",
+      "sources": [],
+      "score": 25
+    },
+    {
+      "url": "https://claude.ai/api/v2/rum?_dd.api=fetch&batch_time=1795791719441&build_ts=1795787081&dd-api-key=pub71869dceb5b70dba6123af9ca357d1f9&dd-evp-encoding=deflate&dd-evp-origin=browser&dd-evp-origin-version=7.6.0&dd-request-id=f25e327a-cacf-45bb-9069-9c2f545713cc&ddsource=browser",
+      "status_code": 403,
+      "title": "Just a moment...",
+      "sources": [],
+      "score": 25
+    },
+    {
+      "url": "https://claude.ai/assets/api/*",
+      "status_code": 403,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://claude.ai/assets/api/desktop",
+      "status_code": 403,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://claude.ai/build-manifest.json",
+      "status_code": 403,
+      "title": "Just a moment...",
+      "sources": [],
+      "score": 25
+    },
+    {
+      "url": "https://claude.ai/cdn-cgi/api/*",
+      "status_code": 403,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://claude.ai/cdn-cgi/api/desktop",
+      "status_code": 403,
+      "title": "",
+      "sources": [
+        "feroxbuster"
+      ],
+      "score": 25
+    },
+    {
+      "url": "https://claude.ai/manifest.json",
+      "status_code": 403,
+      "title": "Just a moment...",
+      "sources": [],
+      "score": 25
+    },
+    {
+      "url": "https://claude.ai/api/desktop/",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "robots_txt"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://claude.ai/api/event_logging/v2/batch?for=product-analytics",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "scrapling",
+        "scrapling_xhr"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://claude.ai/api/organizations/",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "jsluice"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://claude.ai/api/v2/rum?_dd.api=fetch&batch_time=1795791719588&build_ts=1795787081&dd-api-key=pub71869dceb5b70dba6123af9ca357d1f9&dd-evp-encoding=deflate&dd-evp-origin=browser&dd-evp-origin-version=7.6.0&dd-request-id=4dc5e0ad-f092-476c-bcd9-6a1ad85f214e&ddsource=browser",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "scrapling",
+        "scrapling_xhr"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://claude.ai/api/v2/rum?_dd.api=fetch&batch_time=1795791727790&build_ts=1795787081&dd-api-key=pub71869dceb5b70dba6123af9ca357d1f9&dd-evp-encoding=deflate&dd-evp-origin=browser&dd-evp-origin-version=7.6.0&dd-request-id=7190e8c5-aea3-4eda-a648-d86ddd167160&ddsource=browser",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "scrapling",
+        "scrapling_xhr"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://claude.ai/api/v2/rum?_dd.api=fetch&batch_time=1795791727911&build_ts=1795787081&dd-api-key=pub71869dceb5b70dba6123af9ca357d1f9&dd-evp-encoding=deflate&dd-evp-origin=browser&dd-evp-origin-version=7.6.0&dd-request-id=3e2a2acd-f481-4994-b679-273db176dd37&ddsource=browser",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "scrapling",
+        "scrapling_xhr"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://claude.ai/api/v2/rum?_dd.api=fetch&batch_time=1795791737489&build_ts=1795787081&dd-api-key=pub71869dceb5b70dba6123af9ca357d1f9&dd-evp-encoding=deflate&dd-evp-origin=browser&dd-evp-origin-version=7.6.0&dd-request-id=3d407df6-8bd1-40fa-8cdb-164a1b9b7fb0&ddsource=browser",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "scrapling",
+        "scrapling_xhr"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://claude.ai/api/v2/rum?_dd.api=fetch&batch_time=1795791737543&build_ts=1795787081&dd-api-key=pub71869dceb5b70dba6123af9ca357d1f9&dd-evp-encoding=deflate&dd-evp-origin=browser&dd-evp-origin-version=7.6.0&dd-request-id=af91f3a3-1833-4c2f-a6ba-024d58983b89&ddsource=browser",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "scrapling",
+        "scrapling_xhr"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://claude.ai/api/v2/rum?_dd.api=fetch&batch_time=1795791745967&build_ts=1795787081&dd-api-key=pub71869dceb5b70dba6123af9ca357d1f9&dd-evp-encoding=deflate&dd-evp-origin=browser&dd-evp-origin-version=7.6.0&dd-request-id=85c8ffd3-14ec-46e7-b725-8427d4a745b9&ddsource=browser",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "scrapling",
+        "scrapling_xhr"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://claude.ai/api/v2/rum?_dd.api=fetch&batch_time=1795791746078&build_ts=1795787081&dd-api-key=pub71869dceb5b70dba6123af9ca357d1f9&dd-evp-encoding=deflate&dd-evp-origin=browser&dd-evp-origin-version=7.6.0&dd-request-id=8a6a5e01-3f7f-4e98-b8f8-88727791bd6f&ddsource=browser",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "scrapling",
+        "scrapling_xhr"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://claude.ai/api/v2/rum?_dd.api=fetch&batch_time=1795791754821&build_ts=1795787081&dd-api-key=pub71869dceb5b70dba6123af9ca357d1f9&dd-evp-encoding=deflate&dd-evp-origin=browser&dd-evp-origin-version=7.6.0&dd-request-id=92f760ef-2268-4a1f-924c-278314499897&ddsource=browser",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "scrapling",
+        "scrapling_xhr"
+      ],
+      "score": 0
+    },
+    {
+      "url": "https://claude.ai/api/v2/rum?_dd.api=fetch&batch_time=1795791754888&build_ts=1795787081&dd-api-key=pub71869dceb5b70dba6123af9ca357d1f9&dd-evp-encoding=deflate&dd-evp-origin=browser&dd-evp-origin-version=7.6.0&dd-request-id=3bcb863c-5a92-4d2d-a264-3e37cd67c8b6&ddsource=browser",
+      "status_code": 0,
+      "title": "",
+      "sources": [
+        "scrapling",
+        "scrapling_xhr"
+      ],
+      "score": 0
+    }
+  ],
+  "unpacked_sourcemaps_and_configs": {
+    "sourcemap_files": [],
+    "data_files": [
+      {
+        "url": "https://claude.ai/.json",
+        "status_code": 0
+      },
+      {
+        "url": "https://claude.ai/.json?v=",
+        "status_code": 403
+      },
+      {
+        "url": "https://claude.ai/.well-known/security.txt",
+        "status_code": 302
+      },
+      {
+        "url": "https://claude.ai/assets/v1/.well-known/security.txt",
+        "status_code": 0
+      },
+      {
+        "url": "https://claude.ai/assets/v1/humans.txt",
+        "status_code": 0
+      },
+      {
+        "url": "https://claude.ai/assets/v1/llms-full.txt",
+        "status_code": 0
+      },
+      {
+        "url": "https://claude.ai/assets/v1/llms.txt",
+        "status_code": 0
+      },
+      {
+        "url": "https://claude.ai/assets/v1/robots.txt",
+        "status_code": 0
+      },
+      {
+        "url": "https://claude.ai/assets/v1/security.txt",
+        "status_code": 0
+      },
+      {
+        "url": "https://claude.ai/build-manifest.json",
+        "status_code": 403
+      },
+      {
+        "url": "https://claude.ai/config.json",
+        "status_code": 403
+      },
+      {
+        "url": "https://claude.ai/llms-full.txt",
+        "status_code": 200
+      },
+      {
+        "url": "https://claude.ai/llms.txt",
+        "status_code": 200
+      },
+      {
+        "url": "https://claude.ai/manifest.json",
+        "status_code": 403
+      },
+      {
+        "url": "https://claude.ai/openapi.json",
+        "status_code": 403
+      },
+      {
+        "url": "https://claude.ai/openapi.yaml",
+        "status_code": 403
+      },
+      {
+        "url": "https://claude.ai/opensearch.xml?v=2",
+        "status_code": 403
+      },
+      {
+        "url": "https://claude.ai/robots.txt",
+        "status_code": 200
+      },
+      {
+        "url": "https://claude.ai/sitemap.xml",
+        "status_code": 403
+      },
+      {
+        "url": "https://claude.ai/sitemap_index.xml",
+        "status_code": 403
+      },
+      {
+        "url": "https://claude.ai/swagger.json",
+        "status_code": 403
+      }
+    ]
+  },
+  "live_subdomains_and_vhosts": {
+    "subdomains": [
+      "a.claude.ai",
+      "a.preview.claude.ai",
+      "assets.claude.ai",
+      "cadence.claude.ai",
+      "console.claude.ai",
+      "downloads.claude.ai",
+      "downloads.preview.claude.ai",
+      "pivot.claude.ai",
+      "preview.claude.ai",
+      "sso.claude.ai",
+      "staging.claude.ai",
+      "status.claude.ai",
+      "tidewater.claude.ai",
+      "tidewater.preview.claude.ai",
+      "www.claude.ai"
+    ],
+    "vhosts_real": [
+      {
+        "host": "www.claude.ai",
+        "status_code": 301,
+        "title": "301 Moved Permanently"
+      }
+    ]
+  },
+  "route_patterns": [
+    {
+      "pattern": "claude.ai/api/v2/rum",
+      "count": 10,
+      "sample": "https://claude.ai/api/v2/rum?_dd.api=fetch&batch_time=1795791719441&build_ts=1795787081&dd-api-key=pub71869dceb5b70dba6123af9ca357d1f9&dd-evp-encoding=deflate&dd-evp-origin=browser&dd-evp-origin-version=7.6.0&dd-request-id=f25e327a-cacf-45bb-9069-9c2f545713cc&ddsource=browser"
+    },
+    {
+      "pattern": "claude.ai/cdn-cgi/challenge-platform/scripts/jsd/main.js",
+      "count": 9,
+      "sample": "https://claude.ai/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a61202dfed101776"
+    },
+    {
+      "pattern": "claude.ai/",
+      "count": 8,
+      "sample": "https://claude.ai/"
+    },
+    {
+      "pattern": "claude.ai/cdn-cgi/challenge-platform/h/g/jsd/oneshot/b9d4778be3d9/0.6088777056110393:1795785923:J6YFUfQ-sLovHDFsyDrFTS4JX4GGqBU-htqdBrA6ADo/{hex}",
+      "count": 5,
+      "sample": "https://claude.ai/cdn-cgi/challenge-platform/h/g/jsd/oneshot/b9d4778be3d9/0.6088777056110393:1795785923:J6YFUfQ-sLovHDFsyDrFTS4JX4GGqBU-htqdBrA6ADo/a61202dfed101776"
+    },
+    {
+      "pattern": "claude.ai/cdn-cgi/challenge-platform/h/g/scripts/jsd/b9d4778be3d9/main.js",
+      "count": 5,
+      "sample": "https://claude.ai/cdn-cgi/challenge-platform/h/g/scripts/jsd/b9d4778be3d9/main.js?ray=a61202dfed101776"
+    },
+    {
+      "pattern": "claude.ai/edge-api/client-health/check",
+      "count": 3,
+      "sample": "https://claude.ai/edge-api/client-health/check"
+    },
+    {
+      "pattern": "claude.ai/$discovery/rest",
+      "count": 2,
+      "sample": "https://claude.ai/$discovery/rest?version=v1alpha"
+    },
+    {
+      "pattern": "claude.ai/.json",
+      "count": 2,
+      "sample": "https://claude.ai/.json"
+    },
+    {
+      "pattern": "claude.ai/api/event_logging/v2/batch",
+      "count": 2,
+      "sample": "https://claude.ai/api/event_logging/v2/batch?for=experiment-exposure"
+    },
+    {
+      "pattern": "claude.ai/bootstrap",
+      "count": 2,
+      "sample": "https://claude.ai/bootstrap"
+    },
+    {
+      "pattern": "claude.ai/cdn-cgi/challenge-platform/h/g/orchestrate/chl_page/v1",
+      "count": 2,
+      "sample": "https://claude.ai/cdn-cgi/challenge-platform/h/g/orchestrate/chl_page/v1?ray=a61202dbca86609d"
+    },
+    {
+      "pattern": "claude.ai/{slug}",
+      "count": 2,
+      "sample": "https://claude.ai/claude-for-google-workspace"
+    },
+    {
+      "pattern": "claude.ai/customers",
+      "count": 2,
+      "sample": "https://claude.ai/customers"
+    },
+    {
+      "pattern": "claude.ai/health/unavailable",
+      "count": 2,
+      "sample": "https://claude.ai/health/unavailable?returnTo="
+    },
+    {
+      "pattern": "claude.ai/health/update-required",
+      "count": 2,
+      "sample": "https://claude.ai/health/update-required?returnTo="
+    },
+    {
+      "pattern": "claude.ai/login",
+      "count": 2,
+      "sample": "https://claude.ai/login"
+    },
+    {
+      "pattern": "claude.ai/new",
+      "count": 2,
+      "sample": "https://claude.ai/new"
+    },
+    {
+      "pattern": "a.claude.ai/",
+      "count": 1,
+      "sample": "https://a.claude.ai/"
+    },
+    {
+      "pattern": "a.preview.claude.ai/",
+      "count": 1,
+      "sample": "https://a.preview.claude.ai/"
+    },
+    {
+      "pattern": "assets.claude.ai/",
+      "count": 1,
+      "sample": "https://assets.claude.ai/"
+    },
+    {
+      "pattern": "assets.claude.ai/videos/login-hero-kt3-932d39be.mp4",
+      "count": 1,
+      "sample": "https://assets.claude.ai/videos/login-hero-kt3-932d39be.mp4"
+    },
+    {
+      "pattern": "assets.claude.ai/videos/login-hero-kt3-still-005fec8b.webp",
+      "count": 1,
+      "sample": "https://assets.claude.ai/videos/login-hero-kt3-still-005fec8b.webp"
+    },
+    {
+      "pattern": "assets.claude.ai/videos/login-hero-kt3-still-1d2e63a3.webp",
+      "count": 1,
+      "sample": "https://assets.claude.ai/videos/login-hero-kt3-still-1d2e63a3.webp"
+    },
+    {
+      "pattern": "cadence.claude.ai/",
+      "count": 1,
+      "sample": "https://cadence.claude.ai/"
+    },
+    {
+      "pattern": "claude.ai/$",
+      "count": 1,
+      "sample": "https://claude.ai/$"
+    },
+    {
+      "pattern": "claude.ai/.well-known/security.txt",
+      "count": 1,
+      "sample": "https://claude.ai/.well-known/security.txt"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/0088q-6-qloh3.js",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/0088q-6-qloh3.js"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/0088q-6-qloh3.js\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/0088q-6-qloh3.js\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/00928170b0199602.css",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/00928170b0199602.css"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/00928170b0199602.css\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/00928170b0199602.css\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/00h04bxmkpw-h.css",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/00h04bxmkpw-h.css"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/00h04bxmkpw-h.css\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/00h04bxmkpw-h.css\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/034c0d400ac5dcdc.css",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/034c0d400ac5dcdc.css"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/034c0d400ac5dcdc.css\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/034c0d400ac5dcdc.css\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/066nce1cmpoak.js",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/066nce1cmpoak.js"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/066nce1cmpoak.js\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/066nce1cmpoak.js\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/06a7eb658fac9763.css",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/06a7eb658fac9763.css"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/06a7eb658fac9763.css\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/06a7eb658fac9763.css\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/06b57b36168654bd.js",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/06b57b36168654bd.js"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/06b57b36168654bd.js\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/06b57b36168654bd.js\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/0cz1d0mv5g_q7.js",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/0cz1d0mv5g_q7.js"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/0d1de59dbd2e9f77.js",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/0d1de59dbd2e9f77.js"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/0d1de59dbd2e9f77.js\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/0d1de59dbd2e9f77.js\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/0d4a7b94a2864b12.js",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/0d4a7b94a2864b12.js"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/0d4a7b94a2864b12.js\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/0d4a7b94a2864b12.js\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/0e3rz2l-8qnvs.js",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/0e3rz2l-8qnvs.js"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/0e3rz2l-8qnvs.js\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/0e3rz2l-8qnvs.js\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/0j25mr0yftuo_.css",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/0j25mr0yftuo_.css"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/0j25mr0yftuo_.css\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/0j25mr0yftuo_.css\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/0s4gapj8--uv9.js",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/0s4gapj8--uv9.js"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/0s4gapj8--uv9.js\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/0s4gapj8--uv9.js\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/138f8d4aa5765d6b.css",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/138f8d4aa5765d6b.css"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/138f8d4aa5765d6b.css\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/138f8d4aa5765d6b.css\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/13gxn23nb18aq.js",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/13gxn23nb18aq.js"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/13gxn23nb18aq.js\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/13gxn23nb18aq.js\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/170i3503aox9l.js",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/170i3503aox9l.js"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/170i3503aox9l.js\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/170i3503aox9l.js\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/18da136dac008870.js",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/18da136dac008870.js"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/18da136dac008870.js\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/18da136dac008870.js\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/18mn8begn77t4.css",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/18mn8begn77t4.css"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/18mn8begn77t4.css\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/18mn8begn77t4.css\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/18wr5p_dnrfjj.js",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/18wr5p_dnrfjj.js"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/1913bcf3a122d9f0.css",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/1913bcf3a122d9f0.css"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/1913bcf3a122d9f0.css\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/1913bcf3a122d9f0.css\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/195c2e474ca3e6f7.css",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/195c2e474ca3e6f7.css"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/195c2e474ca3e6f7.css\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/195c2e474ca3e6f7.css\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/1c573bd1f388005c.js",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/1c573bd1f388005c.js"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/1c573bd1f388005c.js\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/1c573bd1f388005c.js\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/1mlczai5z_i3f.js",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/1mlczai5z_i3f.js"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/1mlczai5z_i3f.js\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/1mlczai5z_i3f.js\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/1qzniqktmx0s5.js",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/1qzniqktmx0s5.js"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/1qzniqktmx0s5.js\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/1qzniqktmx0s5.js\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/204bb0973f0559c5.css",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/204bb0973f0559c5.css"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/204bb0973f0559c5.css\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/204bb0973f0559c5.css\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/21m5u_p1kqapx.js",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/21m5u_p1kqapx.js"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/21m5u_p1kqapx.js\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/21m5u_p1kqapx.js\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/22v-ehdsv9f6c.js",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/22v-ehdsv9f6c.js"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/25y31adaq0h32.css",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/25y31adaq0h32.css"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/25y31adaq0h32.css\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/25y31adaq0h32.css\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/292vrn_htk6i4.css",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/292vrn_htk6i4.css"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/292vrn_htk6i4.css\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/292vrn_htk6i4.css\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/29c-ianfmq4vw.js",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/29c-ianfmq4vw.js"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/2a15e163bb17c16f.js",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/2a15e163bb17c16f.js"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/2a15e163bb17c16f.js\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/2a15e163bb17c16f.js\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/2fjzxfue--c8s.js",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/2fjzxfue--c8s.js"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/2fjzxfue--c8s.js\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/2fjzxfue--c8s.js\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/2rnl8jqu2ttxj.js",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/2rnl8jqu2ttxj.js"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/2v7gtkzflt10z.css",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/2v7gtkzflt10z.css"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/2v7gtkzflt10z.css\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/2v7gtkzflt10z.css\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/2vb62zvkrgyos.css",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/2vb62zvkrgyos.css"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/2vb62zvkrgyos.css\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/2vb62zvkrgyos.css\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/2vr3z7qvd4n69.js",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/2vr3z7qvd4n69.js"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/2vr3z7qvd4n69.js\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/2vr3z7qvd4n69.js\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/2z54dhb7z-089.js",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/2z54dhb7z-089.js"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/2z54dhb7z-089.js\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/2z54dhb7z-089.js\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/32rb_b1i5cwk7.css",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/32rb_b1i5cwk7.css"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/32rb_b1i5cwk7.css\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/32rb_b1i5cwk7.css\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/33x6yeo4aw0y-.css",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/33x6yeo4aw0y-.css"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/33x6yeo4aw0y-.css\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/33x6yeo4aw0y-.css\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/35tfr062uk0av.css",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/35tfr062uk0av.css"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/35tfr062uk0av.css\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/35tfr062uk0av.css\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/37kx6qw8pz7f-.js",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/37kx6qw8pz7f-.js"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/37kx6qw8pz7f-.js\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/37kx6qw8pz7f-.js\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/37xtlvo25ygju.js",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/37xtlvo25ygju.js"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/37xtlvo25ygju.js\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/37xtlvo25ygju.js\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/398_zh1d3cjdt.js",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/398_zh1d3cjdt.js"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/398_zh1d3cjdt.js\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/398_zh1d3cjdt.js\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/3b-1au86bf8am.js",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/3b-1au86bf8am.js"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/3b-1au86bf8am.js\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/3b-1au86bf8am.js\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/3b6f9unmb69zh.js",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/3b6f9unmb69zh.js"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/3b6f9unmb69zh.js\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/3b6f9unmb69zh.js\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/3d72pny881zaq.js",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/3d72pny881zaq.js"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/3d72pny881zaq.js\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/3d72pny881zaq.js\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/3dtkw-brchl5w.js",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/3dtkw-brchl5w.js"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/3dtkw-brchl5w.js\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/3dtkw-brchl5w.js\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/3eb85ed729550711.js",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/3eb85ed729550711.js"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/3h_m4rr1bfp9r.css",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/3h_m4rr1bfp9r.css"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/3h_m4rr1bfp9r.css\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/3h_m4rr1bfp9r.css\\"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/3jqfxa_i7au_f.css",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/3jqfxa_i7au_f.css"
+    },
+    {
+      "pattern": "claude.ai/_next/static/chunks/3jqfxa_i7au_f.css\\",
+      "count": 1,
+      "sample": "https://claude.ai/_next/static/chunks/3jqfxa_i7au_f.css\\"
+    }
+  ],
+  "nuclei_findings": [
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    },
+    {
+      "severity": "info",
+      "template_id": "dns-waf-detect",
+      "host": "claude.ai",
+      "matched_at": "claude.ai"
+    }
+  ]
+}

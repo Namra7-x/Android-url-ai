@@ -1,0 +1,15 @@
+https://a.claude.ai/
+https://a.preview.claude.ai/
+https://assets.claude.ai/
+https://cadence.claude.ai/
+https://console.claude.ai/
+https://downloads.claude.ai/
+https://downloads.preview.claude.ai/
+https://pivot.claude.ai/
+https://preview.claude.ai/
+https://sso.claude.ai/
+https://staging.claude.ai/
+https://status.claude.ai/
+https://tidewater.claude.ai/
+https://tidewater.preview.claude.ai/
+https://www.claude.ai/

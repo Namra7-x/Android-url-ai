@@ -1,0 +1,14 @@
+{"host": "a.claude.ai", "status_code": 403, "title": "403 Forbidden"}
+{"host": "a.preview.claude.ai", "status_code": 403, "title": "403 Forbidden"}
+{"host": "assets.claude.ai", "status_code": 403, "title": "403 Forbidden"}
+{"host": "cadence.claude.ai", "status_code": 403, "title": "403 Forbidden"}
+{"host": "console.claude.ai", "status_code": 403, "title": "403 Forbidden"}
+{"host": "downloads.claude.ai", "status_code": 403, "title": "403 Forbidden"}
+{"host": "downloads.preview.claude.ai", "status_code": 403, "title": "403 Forbidden"}
+{"host": "pivot.claude.ai", "status_code": 403, "title": "403 Forbidden"}
+{"host": "preview.claude.ai", "status_code": 403, "title": "403 Forbidden"}
+{"host": "sso.claude.ai", "status_code": 403, "title": "403 Forbidden"}
+{"host": "staging.claude.ai", "status_code": 403, "title": "403 Forbidden"}
+{"host": "status.claude.ai", "status_code": 403, "title": "403 Forbidden"}
+{"host": "tidewater.claude.ai", "status_code": 403, "title": "403 Forbidden"}
+{"host": "tidewater.preview.claude.ai", "status_code": 403, "title": "403 Forbidden"}

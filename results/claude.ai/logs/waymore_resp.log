@@ -1,0 +1,5 @@
+$ waymore -i claude.ai -mode R -oR results/claude.ai/waymore_responses -ko \.(js|mjs|json|map)(\?|$) -l 60
+TIMEOUT after 45s
+No value for "URLSCAN_API_KEY" in config.yml - consider adding (you can get a FREE api key at urlscan.io)
+No value for "VIRUSTOTAL_API_KEY" in config.yml - consider adding (you can get a FREE api key at virustotal.com)
+

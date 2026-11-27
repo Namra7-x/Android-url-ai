@@ -1,0 +1,2 @@
+$ dnsx -l results/claude.ai/subdomains_all.txt -silent -a -cname -resp -json -o results/claude.ai/dnsx.jsonl
+exit=0

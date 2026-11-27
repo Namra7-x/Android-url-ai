@@ -1,0 +1,15 @@
+a.claude.ai
+a.preview.claude.ai
+assets.claude.ai
+cadence.claude.ai
+console.claude.ai
+downloads.claude.ai
+downloads.preview.claude.ai
+pivot.claude.ai
+preview.claude.ai
+sso.claude.ai
+staging.claude.ai
+status.claude.ai
+tidewater.claude.ai
+tidewater.preview.claude.ai
+www.claude.ai

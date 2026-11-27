@@ -1,0 +1,255 @@
+======================================================================
+JSCOPE ANALYSIS REPORT
+======================================================================
+
+[executive snapshot]
+  files analyzed : 25
+  frameworks     : none detected
+  findings       : 19
+    HIGH           2
+    MEDIUM         16
+    LOW            1
+
+[where to start testing]  (deterministic ranking; reasons shown)
+   43  [HIGH] JS-0002  auth: mechanism:cookie_credentials
+       test: Cookie-authenticated cross-origin calls: test CSRF (SameSite, token checks) and CORS reflection of credentials.
+       why : +34 attack surface 'auth'; +9 confidence HIGH
+
+[priority attack surfaces]
+  * auth  (1 finding(s))
+      - [HIGH] JS-0002  mechanism:cookie_credentials
+          test: Cookie-authenticated cross-origin calls: test CSRF (SameSite, token checks) and CORS reflection of credentials.
+
+[findings appendix]
+  -- auth (1) --
+  JS-0002  [HIGH          score= 9]  mechanism:cookie_credentials
+       analyzers: auth_analyzer
+       - AST_PATTERN_MATCH (+2): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #2 (+1, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #6 (+0.2, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #7 (+0.2, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #8 (+0.2, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #9 (+0.2, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #10 (+0.2, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #11 (+0.2, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #12 (+0.2, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #13 (+0.2, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #14 (+0.2, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #15 (+0.2, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #16 (+0.2, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #17 (+0.2, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #18 (+0.2, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #19 (+0.2, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #20 (+0.2, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #21 (+0.2, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #22 (+0.2, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #23 (+0.2, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #24 (+0.2, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #25 (+0.2, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #26 (+0.2, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #27 (+0.2, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #28 (+0.2, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #29 (+0.2, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #30 (+0.2, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #31 (+0.2, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #32 (+0.2, diminished): fetch credentials: 'include' (cookie-based session)
+       - AST_PATTERN_MATCH #33 (+0.2, diminished): fetch credentials: 'include' (cookie-based session)
+
+  -- endpoint (1) --
+  JS-0001  [MEDIUM        score= 6]  /edge-api/client-health/reload-request
+       analyzers: endpoint_analyzer
+       - AST_PATTERN_MATCH (+2): fetch() call with this URL argument
+       - AST_PATTERN_MATCH #2 (+1, diminished): fetch() call with this URL argument
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): fetch() call with this URL argument
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): fetch() call with this URL argument
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): fetch() call with this URL argument
+       - LITERAL_STRING_MATCH (+1): URL is a literal string, not dynamically constructed
+       - LITERAL_STRING_MATCH #2 (+0.5, diminished): URL is a literal string, not dynamically constructed
+       - LITERAL_STRING_MATCH #3 (+0.25, diminished): URL is a literal string, not dynamically constructed
+       - LITERAL_STRING_MATCH #4 (+0.1, diminished): URL is a literal string, not dynamically constructed
+       - LITERAL_STRING_MATCH #5 (+0.1, diminished): URL is a literal string, not dynamically constructed
+
+  -- storage (17) --
+  JS-0004  [HIGH          score= 9]  localStorage:crash-report-device
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'crash-report-device'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage delete with key 'crash-report-device'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage write with key 'crash-report-device'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): localStorage read with key 'crash-report-device'
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): localStorage delete with key 'crash-report-device'
+       - AST_PATTERN_MATCH #6 (+0.2, diminished): localStorage write with key 'crash-report-device'
+       - AST_PATTERN_MATCH #7 (+0.2, diminished): localStorage read with key 'crash-report-device'
+       - AST_PATTERN_MATCH #8 (+0.2, diminished): localStorage delete with key 'crash-report-device'
+       - AST_PATTERN_MATCH #9 (+0.2, diminished): localStorage write with key 'crash-report-device'
+       - AST_PATTERN_MATCH #10 (+0.2, diminished): localStorage read with key 'crash-report-device'
+       - AST_PATTERN_MATCH #11 (+0.2, diminished): localStorage delete with key 'crash-report-device'
+       - AST_PATTERN_MATCH #12 (+0.2, diminished): localStorage write with key 'crash-report-device'
+       - AST_PATTERN_MATCH #13 (+0.2, diminished): localStorage read with key 'crash-report-device'
+       - AST_PATTERN_MATCH #14 (+0.2, diminished): localStorage delete with key 'crash-report-device'
+       - AST_PATTERN_MATCH #15 (+0.2, diminished): localStorage write with key 'crash-report-device'
+       - AST_PATTERN_MATCH #16 (+0.2, diminished): localStorage read with key 'crash-report-device'
+       - AST_PATTERN_MATCH #17 (+0.2, diminished): localStorage delete with key 'crash-report-device'
+       - AST_PATTERN_MATCH #18 (+0.2, diminished): localStorage write with key 'crash-report-device'
+       - AST_PATTERN_MATCH #19 (+0.2, diminished): localStorage read with key 'crash-report-device'
+       - AST_PATTERN_MATCH #20 (+0.2, diminished): localStorage delete with key 'crash-report-device'
+       - AST_PATTERN_MATCH #21 (+0.2, diminished): localStorage write with key 'crash-report-device'
+       - AST_PATTERN_MATCH #22 (+0.2, diminished): localStorage read with key 'crash-report-device'
+       - AST_PATTERN_MATCH #23 (+0.2, diminished): localStorage delete with key 'crash-report-device'
+       - AST_PATTERN_MATCH #24 (+0.2, diminished): localStorage write with key 'crash-report-device'
+       - AST_PATTERN_MATCH #25 (+0.2, diminished): localStorage read with key 'crash-report-device'
+       - AST_PATTERN_MATCH #26 (+0.2, diminished): localStorage delete with key 'crash-report-device'
+       - AST_PATTERN_MATCH #27 (+0.2, diminished): localStorage write with key 'crash-report-device'
+       - AST_PATTERN_MATCH #28 (+0.2, diminished): localStorage read with key 'crash-report-device'
+       - AST_PATTERN_MATCH #29 (+0.2, diminished): localStorage delete with key 'crash-report-device'
+       - AST_PATTERN_MATCH #30 (+0.2, diminished): localStorage write with key 'crash-report-device'
+       - AST_PATTERN_MATCH #31 (+0.2, diminished): localStorage read with key 'crash-report-device'
+       - AST_PATTERN_MATCH #32 (+0.2, diminished): localStorage delete with key 'crash-report-device'
+       - AST_PATTERN_MATCH #33 (+0.2, diminished): localStorage write with key 'crash-report-device'
+  JS-0003  [MEDIUM        score= 5]  localStorage:persisted.build-seen
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'persisted.build-seen'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage read with key 'persisted.build-seen'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage read with key 'persisted.build-seen'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): localStorage read with key 'persisted.build-seen'
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): localStorage read with key 'persisted.build-seen'
+       - AST_PATTERN_MATCH #6 (+0.2, diminished): localStorage read with key 'persisted.build-seen'
+       - AST_PATTERN_MATCH #7 (+0.2, diminished): localStorage read with key 'persisted.build-seen'
+       - AST_PATTERN_MATCH #8 (+0.2, diminished): localStorage read with key 'persisted.build-seen'
+       - AST_PATTERN_MATCH #9 (+0.2, diminished): localStorage read with key 'persisted.build-seen'
+       - AST_PATTERN_MATCH #10 (+0.2, diminished): localStorage read with key 'persisted.build-seen'
+       - AST_PATTERN_MATCH #11 (+0.2, diminished): localStorage read with key 'persisted.build-seen'
+  JS-0005  [MEDIUM        score= 5]  sessionStorage:login_timing_hop_t0
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage write with key 'login_timing_hop_t0'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage write with key 'login_timing_hop_t0'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): sessionStorage write with key 'login_timing_hop_t0'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): sessionStorage write with key 'login_timing_hop_t0'
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): sessionStorage write with key 'login_timing_hop_t0'
+       - AST_PATTERN_MATCH #6 (+0.2, diminished): sessionStorage write with key 'login_timing_hop_t0'
+       - AST_PATTERN_MATCH #7 (+0.2, diminished): sessionStorage write with key 'login_timing_hop_t0'
+       - AST_PATTERN_MATCH #8 (+0.2, diminished): sessionStorage write with key 'login_timing_hop_t0'
+       - AST_PATTERN_MATCH #9 (+0.2, diminished): sessionStorage write with key 'login_timing_hop_t0'
+       - AST_PATTERN_MATCH #10 (+0.2, diminished): sessionStorage write with key 'login_timing_hop_t0'
+       - AST_PATTERN_MATCH #11 (+0.2, diminished): sessionStorage write with key 'login_timing_hop_t0'
+  JS-0006  [MEDIUM        score= 5]  localStorage:spa:locale
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'spa:locale'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage read with key 'spa:locale'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage read with key 'spa:locale'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): localStorage read with key 'spa:locale'
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): localStorage read with key 'spa:locale'
+       - AST_PATTERN_MATCH #6 (+0.2, diminished): localStorage read with key 'spa:locale'
+       - AST_PATTERN_MATCH #7 (+0.2, diminished): localStorage read with key 'spa:locale'
+       - AST_PATTERN_MATCH #8 (+0.2, diminished): localStorage read with key 'spa:locale'
+       - AST_PATTERN_MATCH #9 (+0.2, diminished): localStorage read with key 'spa:locale'
+       - AST_PATTERN_MATCH #10 (+0.2, diminished): localStorage read with key 'spa:locale'
+       - AST_PATTERN_MATCH #11 (+0.2, diminished): localStorage read with key 'spa:locale'
+       - AST_PATTERN_MATCH #12 (+0.2, diminished): localStorage read with key 'spa:locale'
+  JS-0007  [MEDIUM        score= 5]  localStorage:claudeai.gatedHeld.v1
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'claudeai.gatedHeld.v1'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage read with key 'claudeai.gatedHeld.v1'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage read with key 'claudeai.gatedHeld.v1'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): localStorage read with key 'claudeai.gatedHeld.v1'
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): localStorage read with key 'claudeai.gatedHeld.v1'
+       - AST_PATTERN_MATCH #6 (+0.2, diminished): localStorage read with key 'claudeai.gatedHeld.v1'
+       - AST_PATTERN_MATCH #7 (+0.2, diminished): localStorage read with key 'claudeai.gatedHeld.v1'
+       - AST_PATTERN_MATCH #8 (+0.2, diminished): localStorage read with key 'claudeai.gatedHeld.v1'
+       - AST_PATTERN_MATCH #9 (+0.2, diminished): localStorage read with key 'claudeai.gatedHeld.v1'
+       - AST_PATTERN_MATCH #10 (+0.2, diminished): localStorage read with key 'claudeai.gatedHeld.v1'
+       - AST_PATTERN_MATCH #11 (+0.2, diminished): localStorage read with key 'claudeai.gatedHeld.v1'
+  JS-0012  [MEDIUM        score= 5]  localStorage:draft-edited
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage write with key 'draft-edited'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage write with key 'draft-edited'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage write with key 'draft-edited'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): localStorage write with key 'draft-edited'
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): localStorage write with key 'draft-edited'
+       - AST_PATTERN_MATCH #6 (+0.2, diminished): localStorage write with key 'draft-edited'
+       - AST_PATTERN_MATCH #7 (+0.2, diminished): localStorage write with key 'draft-edited'
+       - AST_PATTERN_MATCH #8 (+0.2, diminished): localStorage write with key 'draft-edited'
+       - AST_PATTERN_MATCH #9 (+0.2, diminished): localStorage write with key 'draft-edited'
+       - AST_PATTERN_MATCH #10 (+0.2, diminished): localStorage write with key 'draft-edited'
+       - AST_PATTERN_MATCH #11 (+0.2, diminished): localStorage write with key 'draft-edited'
+  JS-0008  [MEDIUM        score= 4]  localStorage:spa:cai_frolicking_almond
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'spa:cai_frolicking_almond'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage read with key 'spa:cai_frolicking_almond'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage read with key 'spa:cai_frolicking_almond'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): localStorage read with key 'spa:cai_frolicking_almond'
+  JS-0009  [MEDIUM        score= 4]  sessionStorage:__ml_handoff
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage read with key '__ml_handoff'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage read with key '__ml_handoff'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): sessionStorage read with key '__ml_handoff'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): sessionStorage read with key '__ml_handoff'
+  JS-0010  [MEDIUM        score= 4]  localStorage:persisted.spa:cai_floofy_candle
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'persisted.spa:cai_floofy_candle'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage read with key 'persisted.spa:cai_floofy_candle'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage read with key 'persisted.spa:cai_floofy_candle'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): localStorage read with key 'persisted.spa:cai_floofy_candle'
+  JS-0011  [MEDIUM        score= 4]  localStorage:LSS-persisted.kind-breeze
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'LSS-persisted.kind-breeze'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage read with key 'LSS-persisted.kind-breeze'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage read with key 'LSS-persisted.kind-breeze'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): localStorage read with key 'LSS-persisted.kind-breeze'
+  JS-0013  [MEDIUM        score= 4]  sessionStorage:client_health_lockout
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): sessionStorage write with key 'client_health_lockout'
+       - AST_PATTERN_MATCH #2 (+1, diminished): sessionStorage write with key 'client_health_lockout'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): sessionStorage write with key 'client_health_lockout'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): sessionStorage write with key 'client_health_lockout'
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): sessionStorage write with key 'client_health_lockout'
+  JS-0014  [MEDIUM        score= 4]  localStorage:chat-draft-organization
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'chat-draft-organization'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage read with key 'chat-draft-organization'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage read with key 'chat-draft-organization'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): localStorage read with key 'chat-draft-organization'
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): localStorage read with key 'chat-draft-organization'
+       - AST_PATTERN_MATCH #6 (+0.2, diminished): localStorage read with key 'chat-draft-organization'
+  JS-0015  [MEDIUM        score= 4]  localStorage:signed-out-at
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'signed-out-at'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage read with key 'signed-out-at'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage read with key 'signed-out-at'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): localStorage read with key 'signed-out-at'
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): localStorage read with key 'signed-out-at'
+       - AST_PATTERN_MATCH #6 (+0.2, diminished): localStorage read with key 'signed-out-at'
+  JS-0016  [MEDIUM        score= 4]  localStorage:organization-switched-at
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'organization-switched-at'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage read with key 'organization-switched-at'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage read with key 'organization-switched-at'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): localStorage read with key 'organization-switched-at'
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): localStorage read with key 'organization-switched-at'
+       - AST_PATTERN_MATCH #6 (+0.2, diminished): localStorage read with key 'organization-switched-at'
+  JS-0017  [MEDIUM        score= 4]  localStorage:spa:cai_crystalline_mango
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'spa:cai_crystalline_mango'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage read with key 'spa:cai_crystalline_mango'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage read with key 'spa:cai_crystalline_mango'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): localStorage read with key 'spa:cai_crystalline_mango'
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): localStorage read with key 'spa:cai_crystalline_mango'
+       - AST_PATTERN_MATCH #6 (+0.2, diminished): localStorage read with key 'spa:cai_crystalline_mango'
+  JS-0018  [MEDIUM        score= 4]  localStorage:spa:any_click
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'spa:any_click'
+       - AST_PATTERN_MATCH #2 (+1, diminished): localStorage read with key 'spa:any_click'
+       - AST_PATTERN_MATCH #3 (+0.5, diminished): localStorage read with key 'spa:any_click'
+       - AST_PATTERN_MATCH #4 (+0.2, diminished): localStorage read with key 'spa:any_click'
+       - AST_PATTERN_MATCH #5 (+0.2, diminished): localStorage read with key 'spa:any_click'
+       - AST_PATTERN_MATCH #6 (+0.2, diminished): localStorage read with key 'spa:any_click'
+  JS-0019  [LOW           score= 2]  localStorage:spa:kept-catalog
+       analyzers: storage_analyzer
+       - AST_PATTERN_MATCH (+2): localStorage read with key 'spa:kept-catalog'
+
+[diagnostics]
+  ! [incremental] reused 0 file(s), re-analyzed 25, dropped 0 removed
+
+(run `jscope explain <finding-id>` for the full evidence chain on any finding)

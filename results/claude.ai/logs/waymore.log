@@ -1,0 +1,6 @@
+$ waymore -i claude.ai -mode U -oU results/claude.ai/waymore_urls.txt -nlf
+TIMEOUT after 85s
+No value for "URLSCAN_API_KEY" in config.yml - consider adding (you can get a FREE api key at urlscan.io)
+No value for "VIRUSTOTAL_API_KEY" in config.yml - consider adding (you can get a FREE api key at virustotal.com)
+AlienVault - [ 429 ] Rate limit reached, so stopping. Links that have already been retrieved will be saved.
+

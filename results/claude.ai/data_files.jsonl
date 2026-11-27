@@ -1,0 +1,21 @@
+{"url": "https://claude.ai/.json", "method": "GET", "sources": ["jsluice"]}
+{"url": "https://claude.ai/.json?v=", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/.well-known/security.txt", "method": "GET", "sources": ["wellknown_200"], "status_code": 302, "title": "302 Found"}
+{"url": "https://claude.ai/assets/v1/.well-known/security.txt", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/humans.txt", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/llms-full.txt", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/llms.txt", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/robots.txt", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/security.txt", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/build-manifest.json", "method": "GET", "sources": ["wellknown_403"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/config.json", "method": "GET", "sources": ["wellknown_403"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/llms-full.txt", "method": "GET", "sources": ["wellknown_200"], "status_code": 200, "title": "Claude"}
+{"url": "https://claude.ai/llms.txt", "method": "GET", "sources": ["wellknown_200"], "status_code": 200, "title": "Claude"}
+{"url": "https://claude.ai/manifest.json", "method": "GET", "sources": ["wellknown_403", "scrapling", "scrapling_js", "scrapling_xhr", "chunk_round1"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/openapi.json", "method": "GET", "sources": ["wellknown_403"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/openapi.yaml", "method": "GET", "sources": ["wellknown_403"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/opensearch.xml?v=2", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/robots.txt", "method": "GET", "sources": ["wellknown_200"], "status_code": 200, "title": ""}
+{"url": "https://claude.ai/sitemap.xml", "method": "GET", "sources": ["robots_txt", "wellknown_403"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/sitemap_index.xml", "method": "GET", "sources": ["wellknown_403"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/swagger.json", "method": "GET", "sources": ["wellknown_403"], "status_code": 403, "title": "Just a moment..."}

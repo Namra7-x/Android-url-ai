@@ -1,0 +1,77 @@
+[
+  {
+    "kind": "flag_or_role",
+    "name": "initial",
+    "file": "2317cd7e5fc4136c_shared-903-CiPWzGcA.js"
+  },
+  {
+    "kind": "flag_or_role",
+    "name": "menuitem",
+    "file": "2317cd7e5fc4136c_shared-903-CiPWzGcA.js"
+  },
+  {
+    "kind": "flag_or_role",
+    "name": "button",
+    "file": "2317cd7e5fc4136c_shared-903-CiPWzGcA.js"
+  },
+  {
+    "kind": "flag_or_role",
+    "name": "checkbox",
+    "file": "2317cd7e5fc4136c_shared-903-CiPWzGcA.js"
+  },
+  {
+    "kind": "flag_or_role",
+    "name": "radio",
+    "file": "2317cd7e5fc4136c_shared-903-CiPWzGcA.js"
+  },
+  {
+    "kind": "flag_or_role",
+    "name": "switch",
+    "file": "2317cd7e5fc4136c_shared-903-CiPWzGcA.js"
+  },
+  {
+    "kind": "flag_or_role",
+    "name": "tab",
+    "file": "2317cd7e5fc4136c_shared-903-CiPWzGcA.js"
+  },
+  {
+    "kind": "flag_or_role",
+    "name": "status",
+    "file": "2317cd7e5fc4136c_shared-903-CiPWzGcA.js"
+  },
+  {
+    "kind": "model_candidate",
+    "name": "claude-conversation-store",
+    "file": "2317cd7e5fc4136c_shared-903-CiPWzGcA.js"
+  },
+  {
+    "kind": "model_candidate",
+    "name": "claudeai.v1.",
+    "file": "2317cd7e5fc4136c_shared-903-CiPWzGcA.js"
+  },
+  {
+    "kind": "model_candidate",
+    "name": "claudeai.gatedHeld.v1",
+    "file": "2317cd7e5fc4136c_shared-903-CiPWzGcA.js"
+  },
+  {
+    "kind": "model_candidate",
+    "name": "claudeAppBindings",
+    "file": "2317cd7e5fc4136c_shared-903-CiPWzGcA.js"
+  },
+  {
+    "kind": "model_candidate",
+    "name": "claudeai.lastChatHost.v1",
+    "file": "2317cd7e5fc4136c_shared-903-CiPWzGcA.js"
+  },
+  {
+    "kind": "model_candidate",
+    "name": "claudeai.lastChatLook.v1",
+    "file": "2317cd7e5fc4136c_shared-903-CiPWzGcA.js"
+  },
+  {
+    "kind": "model_candidate",
+    "name": "Claude.ai",
+    "file": "2317cd7e5fc4136c_shared-903-CiPWzGcA.js"
+  }
+]

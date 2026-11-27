@@ -1,0 +1,686 @@
+{"url": "https://a.claude.ai/", "method": "GET", "sources": ["dnsx"]}
+{"url": "https://a.preview.claude.ai/", "method": "GET", "sources": ["dnsx"]}
+{"url": "https://assets.claude.ai/", "method": "GET", "sources": ["dnsx", "scrapling"]}
+{"url": "https://assets.claude.ai/videos/login-hero-kt3-932d39be.mp4", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://assets.claude.ai/videos/login-hero-kt3-still-005fec8b.webp", "method": "GET", "sources": ["jsluice"]}
+{"url": "https://assets.claude.ai/videos/login-hero-kt3-still-1d2e63a3.webp", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://cadence.claude.ai/", "method": "GET", "sources": ["dnsx"]}
+{"url": "https://claude.ai/", "method": "GET", "sources": ["katana_p1", "robots_txt", "scrapling", "jsluice"]}
+{"url": "https://claude.ai/$", "method": "GET", "sources": ["robots_txt"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/$discovery/rest?version=v1alpha", "method": "GET", "sources": ["wellknown_403"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/$discovery/rest?version=v1beta", "method": "GET", "sources": ["wellknown_403"]}
+{"url": "https://claude.ai/.json", "method": "GET", "sources": ["jsluice"]}
+{"url": "https://claude.ai/.json?v=", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/.well-known/security.txt", "method": "GET", "sources": ["wellknown_200"], "status_code": 302, "title": "302 Found"}
+{"url": "https://claude.ai/?__cf_chl_f_tk=hD6tNsPSgq7.3.71ud0sZTkggKM88VZgFjz9kV2jdC4-1795791717-1.0.1.1-sCcqduHG40IqBan5O9iL5c6m1E9zGzUrHCaLzAs8KZ4", "method": "GET", "sources": ["katana_p1"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/?__cf_chl_rt_tk=hD6tNsPSgq7.3.71ud0sZTkggKM88VZgFjz9kV2jdC4-1795791717-1.0.1.1-sCcqduHG40IqBan5O9iL5c6m1E9zGzUrHCaLzAs8KZ4", "method": "GET", "sources": ["katana_p1"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/?__cf_chl_tk=hD6tNsPSgq7.3.71ud0sZTkggKM88VZgFjz9kV2jdC4-1795791717-1.0.1.1-sCcqduHG40IqBan5O9iL5c6m1E9zGzUrHCaLzAs8KZ4", "method": "GET", "sources": ["katana_p1"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/?cache_bust=1&growthbook_format=sdk&include_system_prompts=false&statsig_hashing_algorithm=djb2", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/?cb=0", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/?forward=off", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/?report=1", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/0088q-6-qloh3.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/0088q-6-qloh3.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/00928170b0199602.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/00928170b0199602.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/00h04bxmkpw-h.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/00h04bxmkpw-h.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/034c0d400ac5dcdc.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/034c0d400ac5dcdc.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/066nce1cmpoak.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/066nce1cmpoak.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/06a7eb658fac9763.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/06a7eb658fac9763.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/06b57b36168654bd.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/06b57b36168654bd.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/0cz1d0mv5g_q7.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/0d1de59dbd2e9f77.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/0d1de59dbd2e9f77.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/0d4a7b94a2864b12.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/0d4a7b94a2864b12.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/0e3rz2l-8qnvs.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/0e3rz2l-8qnvs.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/0j25mr0yftuo_.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/0j25mr0yftuo_.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/0s4gapj8--uv9.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/0s4gapj8--uv9.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/138f8d4aa5765d6b.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/138f8d4aa5765d6b.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/13gxn23nb18aq.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/13gxn23nb18aq.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/170i3503aox9l.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/170i3503aox9l.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/18da136dac008870.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/18da136dac008870.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/18mn8begn77t4.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/18mn8begn77t4.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/18wr5p_dnrfjj.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/1913bcf3a122d9f0.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/1913bcf3a122d9f0.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/195c2e474ca3e6f7.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/195c2e474ca3e6f7.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/1c573bd1f388005c.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/1c573bd1f388005c.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/1mlczai5z_i3f.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/1mlczai5z_i3f.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/1qzniqktmx0s5.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/1qzniqktmx0s5.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/204bb0973f0559c5.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/204bb0973f0559c5.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/21m5u_p1kqapx.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/21m5u_p1kqapx.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/22v-ehdsv9f6c.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/25y31adaq0h32.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/25y31adaq0h32.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/292vrn_htk6i4.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/292vrn_htk6i4.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/29c-ianfmq4vw.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/2a15e163bb17c16f.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/2a15e163bb17c16f.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/2fjzxfue--c8s.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/2fjzxfue--c8s.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/2rnl8jqu2ttxj.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/2v7gtkzflt10z.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/2v7gtkzflt10z.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/2vb62zvkrgyos.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/2vb62zvkrgyos.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/2vr3z7qvd4n69.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/2vr3z7qvd4n69.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/2z54dhb7z-089.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/2z54dhb7z-089.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/32rb_b1i5cwk7.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/32rb_b1i5cwk7.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/33x6yeo4aw0y-.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/33x6yeo4aw0y-.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/35tfr062uk0av.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/35tfr062uk0av.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/37kx6qw8pz7f-.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/37kx6qw8pz7f-.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/37xtlvo25ygju.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/37xtlvo25ygju.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/398_zh1d3cjdt.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/398_zh1d3cjdt.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/3b-1au86bf8am.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/3b-1au86bf8am.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/3b6f9unmb69zh.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/3b6f9unmb69zh.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/3d72pny881zaq.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/3d72pny881zaq.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/3dtkw-brchl5w.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/3dtkw-brchl5w.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/3eb85ed729550711.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/3h_m4rr1bfp9r.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/3h_m4rr1bfp9r.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/3jqfxa_i7au_f.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/3jqfxa_i7au_f.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/3k3_4q7j5d_w2.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/3k3_4q7j5d_w2.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/3l5qsi0ymqnv1.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/3l5qsi0ymqnv1.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/3lzxfkmxeyqd-.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/3lzxfkmxeyqd-.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/3m6icerhet92y.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/3m6icerhet92y.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/3qpurwukiksip.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/3qpurwukiksip.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/3zn4ca1t_v47c.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/3zn4ca1t_v47c.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/4169756a1f006107.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/41z5hkz3faniu.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/41z5hkz3faniu.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/42d_j2uu2fkig.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/42d_j2uu2fkig.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/440a08772fc6c86c.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/440a08772fc6c86c.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/44_h1f8a2h5x4.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/44_h1f8a2h5x4.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/460a3a2ec566ba0d.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/460a3a2ec566ba0d.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/4be8285ac2227a29.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/4be8285ac2227a29.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/4e7df137f18ecb16.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/4e7df137f18ecb16.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/55573173f752e9f2.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/55573173f752e9f2.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/58a2f51f37b5f6ce.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/58a2f51f37b5f6ce.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/5d65bfe6c3339a14.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/5d65bfe6c3339a14.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/62b5b69171614e0d.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/641e7b42a02352de.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/641e7b42a02352de.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/66f39b7c8d1fc63f.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/66f39b7c8d1fc63f.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/6b934002fdd39e34.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/6b934002fdd39e34.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/73e3194f06db260e.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/73e3194f06db260e.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/757aee5c4fb29362.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/757aee5c4fb29362.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/75d5747d8c8b5dee.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/75d5747d8c8b5dee.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/76835439768c86b7.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/76835439768c86b7.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/8cb17d4497d1d7", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/8cb17d4497d1d7ad.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/8cb17d4497d1d7ad.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/8f5eb8fd81c168c9.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/8f5eb8fd81c168c9.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/9bc8bb62f53ffd18.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/9bc8bb62f53ffd18.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/a6dad97d9634a72d.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/a77907bd0f0b468e.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/a7a20e0cd1629b3f.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/a7a20e0cd1629b3f.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/ae01c02bb2c8fafb.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/ae01c02bb2c8fafb.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/b0621af7e077be99.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/b0621af7e077be99.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/b46e4a52efe1f9ce.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/b46e4a52efe1f9ce.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/b53de4b7fffe58d3.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/b53de4b7fffe58d3.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/b6ab747a81eb3a9e.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/b6ab747a81eb3a9e.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/c66465a02e9323a6.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/c66465a02e9323a6.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/cf745c4b3f3ac840.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/cf745c4b3f3ac840.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/d821f94981249a47.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/d821f94981249a47.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/d96012bcfc98706a.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/d96012bcfc98706a.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/dacb6cfb076d7e5a.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/dacb6cfb076d7e5a.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/dd76d2212403293b.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/dd76d2212403293b.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/dd830fb8f438eeab.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/dd830fb8f438eeab.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/e3ec95a77f6e90a3.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/e3ec95a77f6e90a3.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/eccd7ca8bd66f6c2.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/eccd7ca8bd66f6c2.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/f2978ed852d5142f.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/f2978ed852d5142f.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/f676a2bc00146125.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/f676a2bc00146125.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/f8280cab374bdf10.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/f9832fb463307449.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/chunks/f9832fb463307449.css\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/fcca20f", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/fcca20fe809d5e4f.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/fcca20fe809d5e4f.js\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/chunks/turbopack-2c3mg3r-05n1w.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/chunks/turbopack-bbdf0bd6786b32c3.js", "method": "GET", "sources": ["scrapling", "scrapling_js"], "status_code": 404, "title": ""}
+{"url": "https://claude.ai/_next/static/media/AnthropicMono_Italic_Web-s.p.0x1wr-4z1xgw3.woff2", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/media/AnthropicMono_Italic_Web-s.p.0x1wr-4z1xgw3.woff2\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/media/AnthropicMono_Italic_Web-s.p.3934308", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/media/AnthropicMono_Roman_Web-s.p.16xhthj2n-pap.woff2", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/media/AnthropicMono_Roman_Web-s.p.16xhthj2n-pap.woff2\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/media/AnthropicMono_Roman_Web-s.p.80d4607c.woff2\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/media/AnthropicSans_Italic_Web-s.p.212cqpul8-axk.woff2", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/media/AnthropicSans_Italic_Web-s.p.212cqpul8-axk.woff2\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/media/AnthropicSans_Italic_Web-s.p.6550bf15.woff2\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/media/AnthropicSans_Roman_Web-s.p.050e7498.woff2\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/media/AnthropicSans_Roman_Web-s.p.1e3n6bt4oqimz.woff2", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/media/AnthropicSans_Roman_Web-s.p.1e3n6bt4oqimz.woff2\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/media/AnthropicSerif_Italic_Web-s.p.1fjksu1uimpf3.woff2", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/media/AnthropicSerif_Italic_Web-s.p.1fjksu1uimpf3.woff2\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/media/AnthropicSerif_Italic_Web-s.p.43888cc6.woff2\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/media/AnthropicSerif_Roman_Web-s.p.0twp0vwi-lncj.woff2", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/_next/static/media/AnthropicSerif_Roman_Web-s.p.0twp0vwi-lncj.woff2\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/_next/static/media/AnthropicSerif_Roman_Web-s.p.c28786b4.woff2\\", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/api/*", "method": "GET", "sources": ["robots_txt"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/api/config", "method": "GET", "sources": ["wellknown_403"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/api/desktop/", "method": "GET", "sources": ["robots_txt"]}
+{"url": "https://claude.ai/api/desktop/darwin/universal/dmg/latest/redirect", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/api/desktop/win32/arm64/setup/latest/redirect", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/api/desktop/win32/x64/setup/latest/redirect", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/api/event_logging/v2/batch?for=experiment-exposure", "method": "GET", "sources": ["scrapling", "scrapling_xhr"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/api/event_logging/v2/batch?for=product-analytics", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://claude.ai/api/models", "method": "GET", "sources": ["wellknown_403"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/api/organizations/", "method": "GET", "sources": ["jsluice"]}
+{"url": "https://claude.ai/api/v2/rum?_dd.api=fetch&batch_time=1795791719441&build_ts=1795787081&dd-api-key=pub71869dceb5b70dba6123af9ca357d1f9&dd-evp-encoding=deflate&dd-evp-origin=browser&dd-evp-origin-version=7.6.0&dd-request-id=f25e327a-cacf-45bb-9069-9c2f545713cc&ddsource=browser", "method": "GET", "sources": ["scrapling", "scrapling_xhr"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/api/v2/rum?_dd.api=fetch&batch_time=1795791719588&build_ts=1795787081&dd-api-key=pub71869dceb5b70dba6123af9ca357d1f9&dd-evp-encoding=deflate&dd-evp-origin=browser&dd-evp-origin-version=7.6.0&dd-request-id=4dc5e0ad-f092-476c-bcd9-6a1ad85f214e&ddsource=browser", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://claude.ai/api/v2/rum?_dd.api=fetch&batch_time=1795791727790&build_ts=1795787081&dd-api-key=pub71869dceb5b70dba6123af9ca357d1f9&dd-evp-encoding=deflate&dd-evp-origin=browser&dd-evp-origin-version=7.6.0&dd-request-id=7190e8c5-aea3-4eda-a648-d86ddd167160&ddsource=browser", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://claude.ai/api/v2/rum?_dd.api=fetch&batch_time=1795791727911&build_ts=1795787081&dd-api-key=pub71869dceb5b70dba6123af9ca357d1f9&dd-evp-encoding=deflate&dd-evp-origin=browser&dd-evp-origin-version=7.6.0&dd-request-id=3e2a2acd-f481-4994-b679-273db176dd37&ddsource=browser", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://claude.ai/api/v2/rum?_dd.api=fetch&batch_time=1795791737489&build_ts=1795787081&dd-api-key=pub71869dceb5b70dba6123af9ca357d1f9&dd-evp-encoding=deflate&dd-evp-origin=browser&dd-evp-origin-version=7.6.0&dd-request-id=3d407df6-8bd1-40fa-8cdb-164a1b9b7fb0&ddsource=browser", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://claude.ai/api/v2/rum?_dd.api=fetch&batch_time=1795791737543&build_ts=1795787081&dd-api-key=pub71869dceb5b70dba6123af9ca357d1f9&dd-evp-encoding=deflate&dd-evp-origin=browser&dd-evp-origin-version=7.6.0&dd-request-id=af91f3a3-1833-4c2f-a6ba-024d58983b89&ddsource=browser", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://claude.ai/api/v2/rum?_dd.api=fetch&batch_time=1795791745967&build_ts=1795787081&dd-api-key=pub71869dceb5b70dba6123af9ca357d1f9&dd-evp-encoding=deflate&dd-evp-origin=browser&dd-evp-origin-version=7.6.0&dd-request-id=85c8ffd3-14ec-46e7-b725-8427d4a745b9&ddsource=browser", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://claude.ai/api/v2/rum?_dd.api=fetch&batch_time=1795791746078&build_ts=1795787081&dd-api-key=pub71869dceb5b70dba6123af9ca357d1f9&dd-evp-encoding=deflate&dd-evp-origin=browser&dd-evp-origin-version=7.6.0&dd-request-id=8a6a5e01-3f7f-4e98-b8f8-88727791bd6f&ddsource=browser", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://claude.ai/api/v2/rum?_dd.api=fetch&batch_time=1795791754821&build_ts=1795787081&dd-api-key=pub71869dceb5b70dba6123af9ca357d1f9&dd-evp-encoding=deflate&dd-evp-origin=browser&dd-evp-origin-version=7.6.0&dd-request-id=92f760ef-2268-4a1f-924c-278314499897&ddsource=browser", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://claude.ai/api/v2/rum?_dd.api=fetch&batch_time=1795791754888&build_ts=1795787081&dd-api-key=pub71869dceb5b70dba6123af9ca357d1f9&dd-evp-encoding=deflate&dd-evp-origin=browser&dd-evp-origin-version=7.6.0&dd-request-id=3bcb863c-5a92-4d2d-a264-3e37cd67c8b6&ddsource=browser", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://claude.ai/app_start", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/appeal-status", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/artifact/", "method": "GET", "sources": ["robots_txt"]}
+{"url": "https://claude.ai/artifacts/", "method": "GET", "sources": ["robots_txt"]}
+{"url": "https://claude.ai/assets/api/*", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/api/desktop", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/artifact", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/artifacts", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/code/artifact", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/code/frame", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/docs", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/login", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/lti/*", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/motion", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/public/artifacts", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/share", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/sheets", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/signin-first/anthropic-sans-first-67015809.woff2", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/assets/signin-first/anthropic-serif-first-3d9cf05e.woff2", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/assets/signin-first/anthropicons-first-c52dc736.woff2", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/assets/slides", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/.well-known/assets/v1/shared-900-Blx34kFz.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/.well-known/assets/v1/shared-902-CnzfQ-lJ.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/.well-known/assets/v1/shared-903-CiPWzGcA.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/.well-known/assets/v1/shared-904-BeZk8dfT.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/.well-known/assets/v1/shared-905-D7SUPDob.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/.well-known/assets/v1/shared-906-CnQE0w1_.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/.well-known/assets/v1/shared-907-COaoC0Y3.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/.well-known/assets/v1/shared-908-Da0xDGzO.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/.well-known/assets/v1/shared-909-nPVv7__w.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/.well-known/assets/v1/shared-910-DjIELDbX.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/.well-known/assets/v1/shared-911-BK2KbpUe.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/.well-known/favicon.ico", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/.well-known/images/claude_ogimage.png", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/.well-known/security.txt", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/.well-known/videos/login-hero-kt3-still-005fec8b.webp", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/0088q-6-qloh3.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/066nce1cmpoak.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/06b57b36168654bd.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/0cz1d0mv5g_q7.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/0d1de59dbd2e9f77.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/0d4a7b94a2864b12.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/0e3rz2l-8qnvs.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/0s4gapj8--uv9.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/1/api.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/1/assets/v1/shared-900-Blx34kFz.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/1/assets/v1/shared-902-CnzfQ-lJ.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/1/assets/v1/shared-903-CiPWzGcA.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/1/assets/v1/shared-904-BeZk8dfT.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/1/assets/v1/shared-905-D7SUPDob.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/1/assets/v1/shared-906-CnQE0w1_.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/1/assets/v1/shared-907-COaoC0Y3.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/1/assets/v1/shared-908-Da0xDGzO.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/1/assets/v1/shared-909-nPVv7__w.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/1/assets/v1/shared-910-DjIELDbX.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/1/assets/v1/shared-911-BK2KbpUe.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/1/favicon.ico", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/1/images/claude_ogimage.png", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/1/videos/login-hero-kt3-still-005fec8b.webp", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/13gxn23nb18aq.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/170i3503aox9l.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/18da136dac008870.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/18wr5p_dnrfjj.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/1c573bd1f388005c.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/1mlczai5z_i3f.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/1qzniqktmx0s5.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/21m5u_p1kqapx.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/22v-ehdsv9f6c.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/29c-ianfmq4vw.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/2a15e163bb17c16f.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/2fjzxfue--c8s.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/2rnl8jqu2ttxj.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/2vr3z7qvd4n69.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/2z54dhb7z-089.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/37kx6qw8pz7f-.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/37xtlvo25ygju.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/398_zh1d3cjdt.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/3b-1au86bf8am.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/3b6f9unmb69zh.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/3d72pny881zaq.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/3dtkw-brchl5w.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/3eb85ed729550711.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/3k3_4q7j5d_w2.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/3lzxfkmxeyqd-.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/3m6icerhet92y.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/3qpurwukiksip.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/3zn4ca1t_v47c.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/4169756a1f006107.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/41z5hkz3faniu.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/42d_j2uu2fkig.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/44_h1f8a2h5x4.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/4e7df137f18ecb16.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/55573173f752e9f2.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/58a2f51f37b5f6ce.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/62b5b69171614e0d.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/641e7b42a02352de.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/66f39b7c8d1fc63f.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/73e3194f06db260e.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/757aee5c4fb29362.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/75d5747d8c8b5dee.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/76835439768c86b7.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/8cb17d4497d1d7ad.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/9bc8bb62f53ffd18.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/0088q-6-qloh3.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/066nce1cmpoak.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/06b57b36168654bd.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/0cz1d0mv5g_q7.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/0d1de59dbd2e9f77.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/0d4a7b94a2864b12.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/0e3rz2l-8qnvs.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/0s4gapj8--uv9.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/13gxn23nb18aq.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/170i3503aox9l.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/18da136dac008870.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/18wr5p_dnrfjj.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/1c573bd1f388005c.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/1mlczai5z_i3f.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/1qzniqktmx0s5.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/21m5u_p1kqapx.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/22v-ehdsv9f6c.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/29c-ianfmq4vw.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/2a15e163bb17c16f.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/2fjzxfue--c8s.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/2rnl8jqu2ttxj.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/2vr3z7qvd4n69.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/2z54dhb7z-089.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/37kx6qw8pz7f-.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/37xtlvo25ygju.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/398_zh1d3cjdt.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/3b-1au86bf8am.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/3b6f9unmb69zh.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/3d72pny881zaq.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/3dtkw-brchl5w.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/3eb85ed729550711.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/3k3_4q7j5d_w2.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/3lzxfkmxeyqd-.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/3m6icerhet92y.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/3qpurwukiksip.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/3zn4ca1t_v47c.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/4169756a1f006107.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/41z5hkz3faniu.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/42d_j2uu2fkig.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/44_h1f8a2h5x4.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/4e7df137f18ecb16.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/55573173f752e9f2.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/58a2f51f37b5f6ce.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/62b5b69171614e0d.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/641e7b42a02352de.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/66f39b7c8d1fc63f.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/73e3194f06db260e.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/757aee5c4fb29362.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/75d5747d8c8b5dee.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/76835439768c86b7.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/8cb17d4497d1d7ad.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/9bc8bb62f53ffd18.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/a6dad97d9634a72d.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/a77907bd0f0b468e.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/a7a20e0cd1629b3f.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/assets/v1/shared-900-Blx34kFz.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/assets/v1/shared-902-CnzfQ-lJ.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/assets/v1/shared-903-CiPWzGcA.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/assets/v1/shared-904-BeZk8dfT.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/assets/v1/shared-905-D7SUPDob.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/assets/v1/shared-906-CnQE0w1_.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/assets/v1/shared-907-COaoC0Y3.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/assets/v1/shared-908-Da0xDGzO.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/assets/v1/shared-909-nPVv7__w.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/assets/v1/shared-910-DjIELDbX.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/assets/v1/shared-911-BK2KbpUe.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/b0621af7e077be99.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/b46e4a52efe1f9ce.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/b6ab747a81eb3a9e.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/d96012bcfc98706a.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/dd76d2212403293b.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/dd830fb8f438eeab.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/e3ec95a77f6e90a3.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/eccd7ca8bd66f6c2.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/f8280cab374bdf10.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/favicon.ico", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/fcca20fe809d5e4f.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/images/claude_ogimage.png", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/turbopack-2c3mg3r-05n1w.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/_next/static/chunks/videos/login-hero-kt3-still-005fec8b.webp", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/a6dad97d9634a72d.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/a77907bd0f0b468e.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/a7a20e0cd1629b3f.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/api.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/assets/v1/assets/v1/shared-900-Blx34kFz.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/assets/v1/assets/v1/shared-902-CnzfQ-lJ.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/assets/v1/assets/v1/shared-903-CiPWzGcA.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/assets/v1/assets/v1/shared-904-BeZk8dfT.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/assets/v1/assets/v1/shared-905-D7SUPDob.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/assets/v1/assets/v1/shared-906-CnQE0w1_.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/assets/v1/assets/v1/shared-907-COaoC0Y3.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/assets/v1/assets/v1/shared-908-Da0xDGzO.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/assets/v1/assets/v1/shared-909-nPVv7__w.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/assets/v1/assets/v1/shared-910-DjIELDbX.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/assets/v1/assets/v1/shared-911-BK2KbpUe.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/assets/v1/favicon.ico", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/assets/v1/images/claude_ogimage.png", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/assets/v1/shared-900-Blx34kFz.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/assets/v1/shared-902-CnzfQ-lJ.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/assets/v1/shared-903-CiPWzGcA.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/assets/v1/shared-904-BeZk8dfT.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/assets/v1/shared-905-D7SUPDob.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/assets/v1/shared-906-CnQE0w1_.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/assets/v1/shared-907-COaoC0Y3.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/assets/v1/shared-908-Da0xDGzO.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/assets/v1/shared-909-nPVv7__w.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/assets/v1/shared-910-DjIELDbX.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/assets/v1/shared-911-BK2KbpUe.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/assets/v1/videos/login-hero-kt3-still-005fec8b.webp", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/b0621af7e077be99.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/b46e4a52efe1f9ce.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/b6ab747a81eb3a9e.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/cdn-cgi/challenge-platform/scripts/jsd/assets/v1/shared-900-Blx34kFz.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/cdn-cgi/challenge-platform/scripts/jsd/assets/v1/shared-902-CnzfQ-lJ.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/cdn-cgi/challenge-platform/scripts/jsd/assets/v1/shared-903-CiPWzGcA.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/cdn-cgi/challenge-platform/scripts/jsd/assets/v1/shared-904-BeZk8dfT.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/cdn-cgi/challenge-platform/scripts/jsd/assets/v1/shared-905-D7SUPDob.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/cdn-cgi/challenge-platform/scripts/jsd/assets/v1/shared-906-CnQE0w1_.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/cdn-cgi/challenge-platform/scripts/jsd/assets/v1/shared-907-COaoC0Y3.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/cdn-cgi/challenge-platform/scripts/jsd/assets/v1/shared-908-Da0xDGzO.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/cdn-cgi/challenge-platform/scripts/jsd/assets/v1/shared-909-nPVv7__w.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/cdn-cgi/challenge-platform/scripts/jsd/assets/v1/shared-910-DjIELDbX.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/cdn-cgi/challenge-platform/scripts/jsd/assets/v1/shared-911-BK2KbpUe.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/cdn-cgi/challenge-platform/scripts/jsd/favicon.ico", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/cdn-cgi/challenge-platform/scripts/jsd/images/claude_ogimage.png", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/cdn-cgi/challenge-platform/scripts/jsd/main.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/cdn-cgi/challenge-platform/scripts/jsd/videos/login-hero-kt3-still-005fec8b.webp", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/d96012bcfc98706a.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/dd76d2212403293b.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/dd830fb8f438eeab.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/e3ec95a77f6e90a3.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/eccd7ca8bd66f6c2.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/f8280cab374bdf10.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/favicon.ico", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/fcca20fe809d5e4f.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/humans.txt", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/images/claude_ogimage.png", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/llms-full.txt", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/llms.txt", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/main.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/robots.txt", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/s.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/security.txt", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/shared-900-Blx34kFz.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "chunk_round1", "jsluice", "feroxbuster"], "status_code": 200, "title": "Claude"}
+{"url": "https://claude.ai/assets/v1/shared-902-CnzfQ-lJ.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "chunk_round1", "jsluice", "feroxbuster"], "status_code": 200, "title": "Claude"}
+{"url": "https://claude.ai/assets/v1/shared-903-CiPWzGcA.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "chunk_round1", "jsluice", "feroxbuster"], "status_code": 200, "title": "Claude"}
+{"url": "https://claude.ai/assets/v1/shared-904-BeZk8dfT.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "chunk_round1", "jsluice", "feroxbuster"], "status_code": 200, "title": "Claude"}
+{"url": "https://claude.ai/assets/v1/shared-905-D7SUPDob.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "chunk_round1", "jsluice", "feroxbuster"], "status_code": 200, "title": "Claude"}
+{"url": "https://claude.ai/assets/v1/shared-906-CnQE0w1_.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "chunk_round1", "jsluice", "feroxbuster"], "status_code": 200, "title": "Claude"}
+{"url": "https://claude.ai/assets/v1/shared-907-COaoC0Y3.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "chunk_round1", "jsluice", "feroxbuster"], "status_code": 200, "title": "Claude"}
+{"url": "https://claude.ai/assets/v1/shared-908-Da0xDGzO.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "chunk_round1", "jsluice", "feroxbuster"], "status_code": 200, "title": "Claude"}
+{"url": "https://claude.ai/assets/v1/shared-909-nPVv7__w.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "chunk_round1", "jsluice", "feroxbuster"], "status_code": 200, "title": "Claude"}
+{"url": "https://claude.ai/assets/v1/shared-910-DjIELDbX.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "chunk_round1", "jsluice", "feroxbuster"], "status_code": 200, "title": "Claude"}
+{"url": "https://claude.ai/assets/v1/shared-911-BK2KbpUe.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "chunk_round1", "jsluice", "feroxbuster"], "status_code": 200, "title": "Claude"}
+{"url": "https://claude.ai/assets/v1/turbopack-2c3mg3r-05n1w.js", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/assets/v1/videos/login-hero-kt3-still-005fec8b.webp", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/bootstrap", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/bootstrap/", "method": "GET", "sources": ["jsluice"]}
+{"url": "https://claude.ai/build-manifest.json", "method": "GET", "sources": ["wellknown_403"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/cdn-cgi/api/*", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/cdn-cgi/api/desktop", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/cdn-cgi/artifact", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/cdn-cgi/artifacts", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/h/g/fo/1207394958:1795785918:1xMfpkI4CpFDcQWjbFSDUgUEl5WLsJ3YT4DebwVv7sM/a612033609a30608/2ACxXrCt2ptSv.RuiSQhBidGHSlxpqX0uear16I8vZo-1795791732-1.2.1.1-YxhWn0vQHMehBzJn_7WT9.YnZx0jhY8DLJ_mAvWvesjBbYqFGxNz8VKhbo6g4TrP", "method": "POST", "sources": ["katana_p2"], "status_code": 400, "title": ""}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/h/g/jsd/oneshot/b9d4778be3d9/0.6088777056110393:1795785923:J6YFUfQ-sLovHDFsyDrFTS4JX4GGqBU-htqdBrA6ADo/a61202dfed101776", "method": "GET", "sources": ["scrapling", "scrapling_xhr"], "status_code": 405, "title": ""}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/h/g/jsd/oneshot/b9d4778be3d9/0.6088777056110393:1795785923:J6YFUfQ-sLovHDFsyDrFTS4JX4GGqBU-htqdBrA6ADo/a61203157a4d9b27", "method": "GET", "sources": ["scrapling", "scrapling_xhr"], "status_code": 405, "title": ""}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/h/g/jsd/oneshot/b9d4778be3d9/0.6088777056110393:1795785923:J6YFUfQ-sLovHDFsyDrFTS4JX4GGqBU-htqdBrA6ADo/a61203518988f6f9", "method": "GET", "sources": ["scrapling", "scrapling_xhr"], "status_code": 405, "title": ""}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/h/g/jsd/oneshot/b9d4778be3d9/0.6088777056110393:1795785923:J6YFUfQ-sLovHDFsyDrFTS4JX4GGqBU-htqdBrA6ADo/a6120386d997bc7d", "method": "GET", "sources": ["scrapling", "scrapling_xhr"], "status_code": 405, "title": ""}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/h/g/jsd/oneshot/b9d4778be3d9/0.6088777056110393:1795785923:J6YFUfQ-sLovHDFsyDrFTS4JX4GGqBU-htqdBrA6ADo/a61203bdf955e6f2", "method": "GET", "sources": ["scrapling", "scrapling_xhr"], "status_code": 405, "title": ""}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/h/g/orchestrate/chl_page/v1?ray=a61202dbca86609d", "method": "GET", "sources": ["katana_p1"], "status_code": 200, "title": ""}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/h/g/orchestrate/chl_page/v1?ray=a612033609a30608", "method": "GET", "sources": ["katana_p2"]}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/h/g/scripts/jsd/b9d4778be3d9/main.js?ray=a61202dfed101776", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"], "status_code": 200, "title": ""}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/h/g/scripts/jsd/b9d4778be3d9/main.js?ray=a61203157a4d9b27", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/h/g/scripts/jsd/b9d4778be3d9/main.js?ray=a61203518988f6f9", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/h/g/scripts/jsd/b9d4778be3d9/main.js?ray=a6120386d997bc7d", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/h/g/scripts/jsd/b9d4778be3d9/main.js?ray=a61203bdf955e6f2", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a61202dfed101776", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"], "status_code": 302, "title": ""}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a61203157a4d9b27", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a61203518988f6f9", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a6120386d997bc7d", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a61203bdf955e6f2", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a61207b9aa9dffc6", "method": "GET", "sources": ["chunk_round1"]}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a61207b9ac51db71", "method": "GET", "sources": ["chunk_round1"]}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a61207b9acb9d6ec", "method": "GET", "sources": ["chunk_round1"]}
+{"url": "https://claude.ai/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a61207b9afe1c17b", "method": "GET", "sources": ["chunk_round1"]}
+{"url": "https://claude.ai/cdn-cgi/code/artifact", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/cdn-cgi/code/frame", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/cdn-cgi/docs", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/cdn-cgi/login", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/cdn-cgi/lti/*", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/cdn-cgi/motion", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/cdn-cgi/public/artifacts", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/cdn-cgi/share", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/cdn-cgi/sheets", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/cdn-cgi/slides", "method": "GET", "sources": ["feroxbuster"]}
+{"url": "https://claude.ai/chat_conversations_v2?archived=false&consistency=eventual&light_settings=true&limit=30&offset=0", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/check-files", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/claude-for-google-workspace", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/claude-for-microsoft-365", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/claude-in-chrome", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/code/artifact/", "method": "GET", "sources": ["robots_txt"]}
+{"url": "https://claude.ai/code/frame/", "method": "GET", "sources": ["robots_txt"]}
+{"url": "https://claude.ai/community", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/config.json", "method": "GET", "sources": ["wellknown_403"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/connector-consent", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/contact-sales", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/customers", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/customers?amp%3B38d7aa68_sort_date=desc&fcdaa149_sort_date=desc", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/docs/", "method": "GET", "sources": ["robots_txt"]}
+{"url": "https://claude.ai/download", "method": "GET", "sources": ["scrapling"], "status_code": 301, "title": "301 Moved Permanently"}
+{"url": "https://claude.ai/edge-api", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/edge-api/bootstrap?cache_bust=1&growthbook_format=sdk&include_system_prompts=false&statsig_hashing_algorithm=djb2", "method": "GET", "sources": ["scrapling", "scrapling_xhr"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/edge-api/client-health/check", "method": "GET", "sources": ["jsluice"]}
+{"url": "https://claude.ai/edge-api/client-health/check?EXPR=", "method": "GET", "sources": ["jsluice"], "status_code": 200, "title": ""}
+{"url": "https://claude.ai/edge-api/client-health/check?bundle=1795787081&locale=en-US&platform=web", "method": "GET", "sources": ["scrapling", "scrapling_xhr"], "status_code": 200, "title": ""}
+{"url": "https://claude.ai/edge-api/client-health/reload-request", "method": "GET", "sources": ["jsluice"], "status_code": 200, "title": ""}
+{"url": "https://claude.ai/favicon.ico", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/features/artifacts", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/form/anthropic-content-reporting", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/gift/redeem", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/health/unavailable?returnTo=", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/health/unavailable?returnTo=EXPREXPR", "method": "GET", "sources": ["jsluice"]}
+{"url": "https://claude.ai/health/update-required?returnTo=", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/health/update-required?returnTo=EXPR", "method": "GET", "sources": ["jsluice"]}
+{"url": "https://claude.ai/i18n/", "method": "GET", "sources": ["jsluice"]}
+{"url": "https://claude.ai/i18n/dynamic/", "method": "GET", "sources": ["jsluice"]}
+{"url": "https://claude.ai/icon.png", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/icon.svg", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/images/claude_ogimage.png", "method": "GET", "sources": ["jsluice"]}
+{"url": "https://claude.ai/images/icon-192x192.png", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/images/icons/apple-touch-icon.png", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/images/icons/favicon-32x32.png", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/images/icons/safari-pinned-tab.svg", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.ai/import-memory", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/legal", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/legal/aup", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/llms-full.txt", "method": "GET", "sources": ["wellknown_200"], "status_code": 200, "title": "Claude"}
+{"url": "https://claude.ai/llms.txt", "method": "GET", "sources": ["wellknown_200"], "status_code": 200, "title": "Claude"}
+{"url": "https://claude.ai/login", "method": "GET", "sources": ["katana_p2", "robots_txt", "scrapling", "jsluice"]}
+{"url": "https://claude.ai/login/popup-google-auth", "method": "GET", "sources": ["jsluice"], "status_code": 200, "title": "Claude"}
+{"url": "https://claude.ai/login?returnTo=%2F%3Fforward%3Doff", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/logout", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/lti/*", "method": "GET", "sources": ["robots_txt"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/magic-link", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/manifest.json", "method": "GET", "sources": ["wellknown_403", "scrapling", "scrapling_js", "scrapling_xhr", "chunk_round1"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/marketplace", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/marketplace/connectors-plugins", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/marketplace/plugins", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/marketplace/service-partners", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/meta", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/mobile/", "method": "GET", "sources": ["jsluice"]}
+{"url": "https://claude.ai/motion/", "method": "GET", "sources": ["robots_txt"]}
+{"url": "https://claude.ai/new", "method": "GET", "sources": ["scrapling", "jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/new/", "method": "GET", "sources": ["jsluice"]}
+{"url": "https://claude.ai/news", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/oauth/authorize", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/openapi.json", "method": "GET", "sources": ["wellknown_403"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/openapi.yaml", "method": "GET", "sources": ["wellknown_403"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/opensearch.xml?v=2", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/partners", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/partners/claude-on-aws", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/partners/google-cloud", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/partners/microsoft-foundry", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/partners/powered-by-claude", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/platform/api", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/platform/claude-managed-agents", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/pricing", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/product/claude-code", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/product/claude-code/enterprise", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/product/claude-duet", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/product/claude-science", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/product/claude-security", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/product/claude-ship", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/product/code-review", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/product/cowork", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/product/design", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/product/overview", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/product/tag", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/programs/campus", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/programs/frontier-academy", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/programs/startups", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/programs/team-plan-for-scientists", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/public/artifacts/", "method": "GET", "sources": ["robots_txt"]}
+{"url": "https://claude.ai/regional-compliance", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/resources", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/resources/articles", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/resources/webinars", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/robots.txt", "method": "GET", "sources": ["wellknown_200"], "status_code": 200, "title": ""}
+{"url": "https://claude.ai/search", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/share/", "method": "GET", "sources": ["robots_txt"]}
+{"url": "https://claude.ai/sheets/", "method": "GET", "sources": ["robots_txt"]}
+{"url": "https://claude.ai/sitemap.xml", "method": "GET", "sources": ["robots_txt", "wellknown_403"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/sitemap_index.xml", "method": "GET", "sources": ["wellknown_403"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/skills", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/slides/", "method": "GET", "sources": ["robots_txt"]}
+{"url": "https://claude.ai/solutions/agents", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/solutions/coding", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/solutions/commerce", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/solutions/customer-support", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/solutions/cybersecurity", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/solutions/education", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/solutions/enterprise", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/solutions/financial-advisors", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/solutions/financial-services", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/solutions/government", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/solutions/healthcare", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/solutions/legal", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/solutions/life-sciences", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/solutions/manufacturing", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/solutions/nonprofits", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/solutions/sales", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/solutions/small-business", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/solutions/teachers", "method": "GET", "sources": ["scrapling"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/sso-callback", "method": "GET", "sources": ["jsluice"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/swagger.json", "method": "GET", "sources": ["wellknown_403"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://claude.ai/v1/models", "method": "GET", "sources": ["wellknown_403"], "status_code": 403, "title": "Just a moment..."}
+{"url": "https://console.claude.ai/", "method": "GET", "sources": ["dnsx"]}
+{"url": "https://downloads.claude.ai/", "method": "GET", "sources": ["dnsx"]}
+{"url": "https://downloads.claude.ai/claude-science/latest/linux-x64", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://downloads.claude.ai/claude-science/latest/mac-arm64.dmg", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://downloads.claude.ai/claude-science/latest/mac-x64.dmg", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://downloads.claude.ai/claude-science/latest/windows-x64.exe", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://downloads.preview.claude.ai/", "method": "GET", "sources": ["dnsx"]}
+{"url": "https://pivot.claude.ai/", "method": "GET", "sources": ["dnsx"]}
+{"url": "https://preview.claude.ai/", "method": "GET", "sources": ["dnsx"]}
+{"url": "https://sso.claude.ai/", "method": "GET", "sources": ["dnsx"]}
+{"url": "https://staging.claude.ai/", "method": "GET", "sources": ["dnsx"]}
+{"url": "https://status.claude.ai/", "method": "GET", "sources": ["dnsx"]}
+{"url": "https://tidewater.claude.ai/", "method": "GET", "sources": ["dnsx"]}
+{"url": "https://tidewater.preview.claude.ai/", "method": "GET", "sources": ["dnsx"]}
+{"url": "https://www.claude.ai/", "method": "GET", "sources": ["dnsx"]}

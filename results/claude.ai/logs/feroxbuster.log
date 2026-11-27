@@ -1,0 +1,4 @@
+$ feroxbuster -u https://claude.ai/assets/v1 -w results/claude.ai/wordlist.txt --silent --no-state --depth 1 --time-limit 32s --json -o results/claude.ai/ferox_0.json
+exit=0
+$ feroxbuster -u https://claude.ai/cdn-cgi/challenge-platform -w results/claude.ai/wordlist.txt --silent --no-state --depth 1 --time-limit 32s --json -o results/claude.ai/ferox_1.json
+exit=0

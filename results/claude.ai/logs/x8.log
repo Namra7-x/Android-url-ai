@@ -1,0 +1,40 @@
+$ x8 -u https://claude.ai/edge-api/client-health/reload-request -w results/claude.ai/params.txt
+exit=0
+urls:         https://claude.ai/edge-api/client-health/reload-request
+methods:      GET
+wordlist len: 500
+
+
+
+$ x8 -u https://claude.ai/edge-api/client-health/check?bundle=1795787081&locale=en-US&platform=web -w results/claude.ai/params.txt
+exit=0
+urls:         https://claude.ai/edge-api/client-health/check?bundle=1795787081&locale=en-US&platform=web
+methods:      GET
+wordlist len: 500
+
+
+
+$ x8 -u https://claude.ai/edge-api/client-health/check?EXPR= -w results/claude.ai/params.txt
+exit=0
+urls:         https://claude.ai/edge-api/client-health/check?EXPR=
+methods:      GET
+wordlist len: 500
+
+
+
+$ x8 -u https://claude.ai/assets/v1/1/api.js -w results/claude.ai/params.txt
+exit=0
+urls:         https://claude.ai/assets/v1/1/api.js
+methods:      GET
+wordlist len: 500
+
+
+
+$ x8 -u https://claude.ai/assets/v1/api.js -w results/claude.ai/params.txt
+exit=0
+urls:         https://claude.ai/assets/v1/api.js
+methods:      GET
+wordlist len: 500
+
+
+

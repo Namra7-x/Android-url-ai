@@ -1,0 +1,344 @@
+{"url": "http://claude.com/claude-in-chrome", "method": "GET", "sources": ["scrapling"]}
+{"url": "http://code.claude.com/docs/en/desktop-linux", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://0112ebce8936.w.hcaptcha.com/logo.png", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://0902e8ff8e78.w.hcaptcha.com/logo.png", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://128adec1b6fa.w.hcaptcha.com/logo.png", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://2803a8e2e5e2.w.hcaptcha.com/logo.png", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://46dc7d380f14.w.hcaptcha.com/logo.png", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://48a13da052fb.w.hcaptcha.com/logo.png", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://5443f04d7add.w.hcaptcha.com/logo.png", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://5ab274cdf113.w.hcaptcha.com/logo.png", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://5f4eedc7ebdd.w.hcaptcha.com/logo.png", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://6c744f9a4265.w.hcaptcha.com/logo.png", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://810d03cb361e.w.hcaptcha.com/logo.png", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://8be89644373b.w.hcaptcha.com/logo.png", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://98aafbde8bc9.w.hcaptcha.com/logo.png", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://academy.claude.com/", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://academy.claude.com/courses", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://academy.claude.com/tutorials", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://academy.claude.com/use-cases", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://accounts.google.com/", "method": "GET", "sources": ["scrapling", "jsluice"]}
+{"url": "https://accounts.google.com/gsi/client", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://accounts.google.com/gsi/status?bs=2fqGbaDvEv%2FT4z2Bs8CeW1aNyVAvoO8s7%2B02vNqqSCU&cas=LDC8FKUS%2Bive9DDvAqeI3wLTEdI%2BlISKmiEsUytoikY&client_id=1062961139910-l2m55cb9h51u5cuc9c56eb3fevouidh9.apps.googleusercontent.com", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://accounts.google.com/gsi/status?bs=AVcDA9%2BpjvqU%2BLVyqf6ukbQ1M%2FKzdy%2B8S5GDvFv6RHE&cas=819dT6KMURLPzZvoWnmKVgf9sAIOH7PU2iHhMhEt%2BlY&client_id=1062961139910-l2m55cb9h51u5cuc9c56eb3fevouidh9.apps.googleusercontent.com", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://accounts.google.com/gsi/status?bs=Y4iM1p5%2BjTmtYctJKsZDCCGDi8uJlCIkylNsKNa3NrI&cas=8HOAPgg2VgfiErU78xtxTwZkScY6M5f2VwtJ1wnTNLw&client_id=1062961139910-l2m55cb9h51u5cuc9c56eb3fevouidh9.apps.googleusercontent.com", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://accounts.google.com/gsi/status?bs=hKaRvpB5GpTK6PNydMmp7b6ZtcgEj%2FOvrieY23P1X3A&cas=KrvmhDim0vYgayLTh0MyhAQRAv3bVGTtXKfc2oH8gpM&client_id=1062961139910-l2m55cb9h51u5cuc9c56eb3fevouidh9.apps.googleusercontent.com", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://accounts.google.com/gsi/status?bs=kPR16yWbxXiZf62jxPH0kvCGK0ExhGDjbSFYp8XvwfU&cas=aYcC9OLeBMSDhiN3oOAAyqK4XO9REEF13GLFVO0w92M&client_id=1062961139910-l2m55cb9h51u5cuc9c56eb3fevouidh9.apps.googleusercontent.com", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://accounts.google.com/gsi/style", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://anthropic.com/aup", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://anthropic.com/legal/k12-dpa", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://anthropic.com/legal/k12-terms", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://anthropic.com/privacy", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://anthropic.com/transparency", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://api.hcaptcha.com/checksiteconfig?host=claude.ai&sc=1&sitekey=a8086506-2036-46f4-ae50-00d8be805efa&spst=1&swa=1&v=a7305732738ccf3b7862eab7fe6d8f7b136a48f4", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://api.hcaptcha.com/checksiteconfig?host=claude.ai&sc=1&sitekey=f1b21a9c-9100-4022-a928-8d5c29de2e6a&spst=1&swa=1&v=a7305732738ccf3b7862eab7fe6d8f7b136a48f4", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://apps.apple.com/us/app/claude-by-anthropic/id6473753684", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://apps.microsoft.com/detail/9P6K58THS811", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://assets-proxy.anthropic.com/", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/attestation-BAScOKSG.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c0395e3a8-DT6jxE-l.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c03e914a7-Cbkh73en.woff2", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c0725a970-BpYYAvuy.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c09817156-fXrg_WWR.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c0a553578-CGd6qt-Q.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c0a6a8d0b-Bqmopc6j.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c0f0fd491-CVZYfg_e.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c0f671921-zp6MCa-7.woff2", "method": "GET", "sources": ["scrapling", "jsluice"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c0fa964ae-BIu54hjl.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c10bf8b47-B4P7fYTQ.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c129d018a-0ZbJsTbu.png", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c16e64920-CwGKDgFb.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c17c7d4a4-Ct9s_cLj.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c1b566eca-COwrxyLg.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c1bb2e957-BZ3iTiML.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c1d78e7b0-AV3hVipU.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c1e041953-D7NoaFnu.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c1e767dfc-D4FlL0Cx.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c2ffeb729-gUGr7g9U.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c37cd06b5-D9Q7MmKW.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c4167c038-95gcye_x.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c4a46687a-Cz9ICf67.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c4aaf7930-B97sKlZJ.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c51252cf5-hLNX1rWg.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c58dc6080-DA2L2tTb.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c59089a71-NDkRSQ3_.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c66fc489e-2VcCjn5t.woff2", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c6a992d55-XkVuIkHN.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c6e058b68-C7WqOn3H.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c7184d3b9-D6a2zyqC.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c79af6e0e-CfOeLQjZ.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/c81a7b76b-BGDF4KB9.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/ca1c397dd-DlspOAz2.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/ca4162c51-ClBBILti.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cb6189430-pNs7Oitl.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cb663c05c-AsDvga1e.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cc3c2fe20-BR2GO61q.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/ccead441d-CK922Zn6.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cd02a42d9-Vq_H3mgS.svg", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cd21d9b5b-BiQrGm5A.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cd541bbac-CkhAwtM0.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cd9c7953e-Vgy89DCS.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cda5eef31-BwmYTbdm.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/ce687f7f5-BXVF66Vn.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/ce8767226-BIOB_HaH.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/cea37f031-DSn9GyJu.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/chunk-0hMcuQv5.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/chunk-CWLepLS9.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/chunk-CcQ57nyf.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/chunk-CtXAJhBr.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/chunk-DB-pMiyQ.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/chunk-D_AQyIqy.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/chunk-DxC_mlQs.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/chunk-DyO_xEQE.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/docxDraftsDatabase-B7QrSKRm.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/drawAhead-DUByPQj2.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/experiments-T8MGiuEu.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/expiredStorageItems-SuHQH_ES.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/freeLineTest-DTEkihDO.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/google-vwyqjYGB.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/index-D7WnNv9C.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr", "jsluice"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/later-DFIB-Po0.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/onboarding-main-CQL9bEWv.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/pictograms-C0d3plkz.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/preload-helper-DpspwfKW.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/pressFirst-BU9hRmN2.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/retiredHomeTypedWords-D2sH3PI1.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/retiredStorageKeys-D8H8_sPL.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/rolldown-runtime-CMxR0yB3.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/rumIntake-G6VPqyQL.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/rumencoder-UR22OLUL.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/sections-6EL4LDDM.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/sections-BEdZBQrP.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-0-lqIMUQVL.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-1-Cm1OmSAz.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-100-CXeWH_tL.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-12-CkX-fWmi.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-140-BmItzhzb.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-160-ClSXwrSf.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-18-fXRCBrh5.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-19-CsMWxMC1.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-21-CX_JYzUa.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-22-BFocM3qo.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-3-DkvfIZuT.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-31-CSCAJbyB.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-36-ACD0uWla.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-37-q3S7X06I.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-38-DMC88lrT.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-39-CbcGDe-a.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-44-D-V5sJlw.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-46-BQd1uYP-.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-500-Bjgzsk9E.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-68-Z5xOyu3Q.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-8-Dba4uWd9.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-80-FN6SDK0t.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-950-BtX94_PJ.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-951-PMySpeQF.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-frame-Cy3yPhLf.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-frame-_uruiBU6.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-frame-boot-t4zD4Vv-.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-frame-pager-BGi3NrFY.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-l-0-BU5srDxs.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-l-m-0-DwotRdSU.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-l-p-m-w-0-sPNopovN.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-l-p-m-w-1-Bybz_aOS.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-l-p-m-w-14-BjQ1BbTB.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-l-p-m-w-3-Lg2Dlmu4.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-l-p-m-w-4-B3Bh79B6.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-l-p-m-w-5-DByNZ3Go.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-l-p-m-w-8-BS7a5fzw.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-m-0-C3B8k5IZ.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-m-1-BR6JNQOy.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-m-10--upKfgLo.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-m-500-C711zo82.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-m-501-DAZQXJnD.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-m-w-0-D1SPbrDL.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-p-m-0-DxTNFggy.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-p-m-w-0-ccq62wT9.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-styles-BX0nwm2r.css", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-styles-BhcrAIIA.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/shared-w-0-BG80661N.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/sift-B5himHkx.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/signInPrerender-CSr2stez.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/signin-CA7lhgKk.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/staticComposerDraftMirrorLimits-CEL_xGuS.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/telemetry-B40sLPCf.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/telemetryParts-BtYcaKnO.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/vendor-all-0-OSCe1bjT.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/vendor-all-l-p-m-w-0-BRkgHrVS.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/vendor-all-m-w-0-B3S9nNFW.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/vendor-datadog-BNlD0npb.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/vendor-frame-DjesVZNR.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/vendor-markdown-NpbDVXaC.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/vendor-prosemirror-Cd8rzHUY.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/vendor-query-B-rw7YaC.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/vendor-utils-CIN0D-60.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/vendor-zod-CmFrmpxU.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/vitals-CpV3wG2G.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets-proxy.anthropic.com/claude-ai/v2/assets/v1/web-main-B7ySj1u_.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://assets.claude.com/43c13f51a6d9755341433f79cf63c966ed9200ea.pdf", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://assets.claude.com/88cf16e8b7d203be16d2c726bcd28a6ec7c7f5c8.pdf", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://assets.claude.com/a1dfa29eb8cc8993f5a1b91b2cc420ce3eb24179.svg", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://b545fba01eba.w.hcaptcha.com/logo.png", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/blog", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/check-files", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/claude-for-google-workspace", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/claude-for-microsoft-365", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/claude-in-chrome", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/community", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/connectors", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/contact-sales", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/customers", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/de/download", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/download", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/ecosystem", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/es/download", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/features/artifacts", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/form/anthropic-content-reporting", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/form/life-sciences-verification-program", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/fr/download", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/it/download", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/ja/download", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/ko/download", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/marketplace", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/marketplace/connectors-plugins", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/marketplace/plugins", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/marketplace/service-partners", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/partners", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/partners/claude-on-aws", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/partners/google-cloud", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/partners/microsoft-foundry", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/partners/powered-by-claude", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/platform/api", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/platform/marketplace", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/plugins", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/pricing", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/product/claude-code", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/product/claude-code/enterprise", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/product/claude-science", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/product/claude-security", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/product/cowork", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/product/design", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/product/overview", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/product/tag", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/programs/campus", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/programs/frontier-academy", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/programs/startups", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/programs/team-plan-for-scientists", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/regional-compliance", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/resources", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/resources/articles", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/resources/courses", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/resources/tutorials", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/resources/use-cases", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/resources/webinars", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/skills", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/solutions/agents", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/solutions/coding", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/solutions/commerce", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/solutions/customer-support", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/solutions/cybersecurity", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/solutions/education", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/solutions/enterprise", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/solutions/financial-advisors", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/solutions/financial-services", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/solutions/government", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/solutions/healthcare", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/solutions/legal", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/solutions/life-sciences", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/solutions/nonprofits", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/solutions/sales", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/solutions/small-business", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.com/solutions/teachers", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://claude.dev/", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://code.claude.com/docs/en/overview", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://console.anthropic.com/", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://docs.google.com/forms/d/e/1FAIpQLSdokCNPiZvSXohDuLVJdekevCTgMeZglKrauGmLkfwdLMCZaw/viewform?usp=sf_link", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://docs.google.com/forms/d/e/1FAIpQLSeDGdVzv9XYm0eNaI88Aqm8fXO63UhbvFB9_4t-8CMlfUPewQ/viewform", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://e7e298b45880.w.hcaptcha.com/logo.png", "method": "GET", "sources": ["scrapling", "scrapling_xhr"]}
+{"url": "https://instagram.com/claudeai", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://js.hcaptcha.com/", "method": "GET", "sources": ["scrapling", "jsluice"]}
+{"url": "https://js.hcaptcha.com/1/api.js?amp%3Bonload=__antClientAttestationHcaptchaInvisibleReady&amp%3Brecaptchacompat=off&render=explicit", "method": "GET", "sources": ["scrapling", "scrapling_js"]}
+{"url": "https://js.hcaptcha.com/1/api.js?onload=__antClientAttestationHcaptchaInvisibleReady&recaptchacompat=off&render=explicit", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://marketplace.microsoft.com/en-us/product/WA200010724", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://marketplace.microsoft.com/en-us/product/office/WA200010001?tab=Overview", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://marketplace.microsoft.com/en-us/product/office/WA200010453?tab=Overview", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://marketplace.microsoft.com/en-us/product/saas/wa200009404?tab=overview", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://newassets.hcaptcha.com/", "method": "GET", "sources": ["scrapling", "jsluice"]}
+{"url": "https://newassets.hcaptcha.com/c/07e917eada0aecdcb6739332847317e3dc504027ff89444a6016e8748c685495/hsw.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://newassets.hcaptcha.com/captcha/v1/a7305732738ccf3b7862eab7fe6d8f7b136a48f4/static/hcaptcha.html", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://platform.claude.com/", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://platform.claude.com/docs", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://platform.claude.com/docs/en/home", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://plugins.jetbrains.com/plugin/27310-claude-code-beta-", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://s-cdn.anthropic.com/images/60849.gif?S=9a57788fd784c17ecd72d8245d0e7281&ab=false&bk=99dfa2e716&bn=Chrome&cd=24&ce=true&cf=94933689814c3f62b2669d78b7ae0d03&cs=UTF-8&d=0&db=false&fa=255&fad=124.04347776696522&fc=0&fcd=24&fce=true&fcg=srgb&fdm=16&ffc=false&fhc=4&fhdr=false&fin=true&fl=cce16c45e622d9ceae4b626c9353ecec&fls=true&fm=0&fmf=70d5293b39f33c702acb3eef83e768dd&fp=Linux+x86_64&fpdf=true&fph=c0f48806e2dc75d6fcbd91de7957bb6f&frm=false&fsh=1080&fss=true&fsw=1920&ft=UTC&fte=false&ftp=0&fts=false&fvch=418711b9360f0ff97a5476ce480683b2&fvf=chrome&h=claude.ai&hc=4&in=true&inc=false&je=false&l=en-US&ls=true&mh=63196a00446a1e285d1992cfe444aa55&nm=2&np=5&npe=granted&oh=1080&ol=true&ow=1920&p=Linux+x86_64&pf=27&pfe=8&ph=332b72bdb211e34e6e3c24f88d7c393b&pr=Gecko&ps=20030107&r=802990700&rf=https%3A%2F%2Fwww.google.com%2F&sh=1080&sri=0&ss=true&sw=1920&t=Sign+in+or+create+an+account+%7C+Claude.ai&tb=false&tl=false&to=0&tp=0&tr=false&ts=false&u=https%3A%2F%2Fclaude.ai%2Flogin%23main-content&ua=Mozilla%2F5.0+%28X11%3B+Linux+x86_64%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Chrome%2F156.0.0.0+Safari%2F537.36&uu=d250f2df-b268-443e-87e0-8f01f46b40f4&v=122&vd=Google+Inc.&wd=false&z=z", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://s-cdn.anthropic.com/images/711482.gif?S=83dad2ac3a5ebe09560d4b7d6b65ec31&ab=false&bk=99dfa2e716&bn=Chrome&cd=24&ce=true&cf=94933689814c3f62b2669d78b7ae0d03&cs=UTF-8&d=0&db=false&fa=255&fad=124.04347776696522&fc=0&fcd=24&fce=true&fcg=srgb&fdm=16&ffc=false&fhc=4&fhdr=false&fin=true&fl=cce16c45e622d9ceae4b626c9353ecec&fls=true&fm=0&fmf=70d5293b39f33c702acb3eef83e768dd&fp=Linux+x86_64&fpdf=true&fph=c0f48806e2dc75d6fcbd91de7957bb6f&frm=false&fsh=1080&fss=true&fsw=1920&ft=UTC&fte=false&ftp=0&fts=false&fvch=418711b9360f0ff97a5476ce480683b2&fvf=chrome&h=claude.ai&hc=4&in=true&inc=false&je=false&l=en-US&ls=true&mh=63196a00446a1e285d1992cfe444aa55&nm=2&np=5&npe=granted&oh=1080&ol=true&ow=1920&p=Linux+x86_64&pf=27&pfe=13&ph=332b72bdb211e34e6e3c24f88d7c393b&pr=Gecko&ps=20030107&r=63334016&rf=https%3A%2F%2Fwww.google.com%2F&sh=1080&sri=0&ss=true&sw=1920&t=Sign+in+or+create+an+account+%7C+Claude.ai&tb=false&tl=false&to=0&tp=0&tr=false&ts=false&u=https%3A%2F%2Fclaude.ai%2Flogin%3FreturnTo%3D&ua=Mozilla%2F5.0+%28X11%3B+Linux+x86_64%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Chrome%2F156.0.0.0+Safari%2F537.36&uu=05f33061-625f-4a27-9de2-0d4ec41c772c&v=122&vd=Google+Inc.&wd=false&z=z", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://s-cdn.anthropic.com/images/72207.gif?S=1916158aace072a02c6b26038a850b38&ab=false&bk=99dfa2e716&bn=Chrome&cd=24&ce=true&cf=94933689814c3f62b2669d78b7ae0d03&cs=UTF-8&d=0&db=false&fa=255&fad=124.04347776696522&fc=0&fcd=24&fce=true&fcg=srgb&fdm=16&ffc=false&fhc=4&fhdr=false&fin=true&fl=cce16c45e622d9ceae4b626c9353ecec&fls=true&fm=0&fmf=70d5293b39f33c702acb3eef83e768dd&fp=Linux+x86_64&fpdf=true&fph=c0f48806e2dc75d6fcbd91de7957bb6f&frm=false&fsh=1080&fss=true&fsw=1920&ft=UTC&fte=false&ftp=0&fts=false&fvch=418711b9360f0ff97a5476ce480683b2&fvf=chrome&h=claude.ai&hc=4&in=true&inc=false&je=false&l=en-US&ls=true&mh=63196a00446a1e285d1992cfe444aa55&nm=2&np=5&npe=granted&oh=1080&ol=true&ow=1920&p=Linux+x86_64&pf=24&pfe=23&ph=332b72bdb211e34e6e3c24f88d7c393b&pr=Gecko&ps=20030107&r=401966253&rf=https%3A%2F%2Fwww.google.com%2F&sh=1080&sri=0&ss=true&sw=1920&t=Sign+in+or+create+an+account+%7C+Claude.ai&tb=false&tl=false&to=0&tp=0&tr=false&ts=false&u=https%3A%2F%2Fclaude.ai%2Flogin%23additional-use-case-guidelines&ua=Mozilla%2F5.0+%28X11%3B+Linux+x86_64%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Chrome%2F156.0.0.0+Safari%2F537.36&uu=510d4882-31cd-47bf-af74-8b65e033a78f&v=122&vd=Google+Inc.&wd=false&z=z", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://s-cdn.anthropic.com/images/74697.gif?S=941cbf18a481038ea5dbaa1f850c1ec8&ab=false&bk=99dfa2e716&bn=Chrome&cd=24&ce=true&cf=94933689814c3f62b2669d78b7ae0d03&cs=UTF-8&d=0&db=false&fa=255&fad=124.04347776696522&fc=0&fcd=24&fce=true&fcg=srgb&fdm=16&ffc=false&fhc=4&fhdr=false&fin=true&fl=cce16c45e622d9ceae4b626c9353ecec&fls=true&fm=0&fmf=70d5293b39f33c702acb3eef83e768dd&fp=Linux+x86_64&fpdf=true&fph=c0f48806e2dc75d6fcbd91de7957bb6f&frm=false&fsh=1080&fss=true&fsw=1920&ft=UTC&fte=false&ftp=0&fts=false&fvch=418711b9360f0ff97a5476ce480683b2&fvf=chrome&h=claude.ai&hc=4&in=true&inc=false&je=false&l=en-US&ls=true&mh=63196a00446a1e285d1992cfe444aa55&nm=2&np=5&npe=granted&oh=1080&ol=true&ow=1920&p=Linux+x86_64&pf=32&pfe=12&ph=332b72bdb211e34e6e3c24f88d7c393b&pr=Gecko&ps=20030107&r=785002992&rf=https%3A%2F%2Fwww.google.com%2F&sh=1080&sri=0&ss=true&sw=1920&t=Sign+in+or+create+an+account+%7C+Claude.ai&tb=false&tl=false&to=0&tp=0&tr=false&ts=false&u=https%3A%2F%2Fclaude.ai%2Flogin&ua=Mozilla%2F5.0+%28X11%3B+Linux+x86_64%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Chrome%2F156.0.0.0+Safari%2F537.36&uu=8c126533-faf6-4148-bd8a-3efe3117b490&v=122&vd=Google+Inc.&wd=false&z=z", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://s-cdn.anthropic.com/images/952894.gif?S=61ae5569ccedb23ac940d6df0348571a&ab=false&bk=99dfa2e716&bn=Chrome&cd=24&ce=true&cf=94933689814c3f62b2669d78b7ae0d03&cs=UTF-8&d=0&db=false&fa=255&fad=124.04347776696522&fc=0&fcd=24&fce=true&fcg=srgb&fdm=16&ffc=false&fhc=4&fhdr=false&fin=true&fl=cce16c45e622d9ceae4b626c9353ecec&fls=true&fm=0&fmf=70d5293b39f33c702acb3eef83e768dd&fp=Linux+x86_64&fpdf=true&fph=c0f48806e2dc75d6fcbd91de7957bb6f&frm=false&fsh=1080&fss=true&fsw=1920&ft=UTC&fte=false&ftp=0&fts=false&fvch=418711b9360f0ff97a5476ce480683b2&fvf=chrome&h=claude.ai&hc=4&in=true&inc=false&je=false&l=en-US&ls=true&mh=63196a00446a1e285d1992cfe444aa55&nm=2&np=5&npe=granted&oh=1080&ol=true&ow=1920&p=Linux+x86_64&pf=71&pfe=14&ph=332b72bdb211e34e6e3c24f88d7c393b&pr=Gecko&ps=20030107&r=823581515&rf=https%3A%2F%2Fwww.google.com%2F&sh=1080&sri=0&ss=true&sw=1920&t=Sign+in+or+create+an+account+%7C+Claude.ai&tb=false&tl=false&to=0&tp=0&tr=false&ts=false&u=https%3A%2F%2Fclaude.ai%2Flogin&ua=Mozilla%2F5.0+%28X11%3B+Linux+x86_64%29+AppleWebKit%2F537.36+%28KHTML%2C+like+Gecko%29+Chrome%2F156.0.0.0+Safari%2F537.36&uu=9ffa5a82-fd2e-4876-8281-e1a7df7ef217&v=122&vd=Google+Inc.&wd=false&z=z", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://s-cdn.anthropic.com/s.js", "method": "GET", "sources": ["scrapling", "scrapling_js", "scrapling_xhr"]}
+{"url": "https://schema.org/", "method": "GET", "sources": ["jsluice"]}
+{"url": "https://slack.com/oauth/v2/authorize?amp%3Bscope=app_mentions%3Aread%2Cassistant%3Awrite%2Cchannels%3Ahistory%2Cchannels%3Aread%2Cchat%3Awrite%2Cfiles%3Aread%2Cfiles%3Awrite%2Cgroups%3Ahistory%2Cgroups%3Aread%2Cim%3Ahistory%2Cim%3Aread%2Cim%3Awrite%2Cmpim%3Ahistory%2Creactions%3Awrite%2Cusers%3Aread%2Cusers%3Aread.email%2Ccommands%2Csearch%3Aread.public&amp%3Buser_scope=bookmarks%3Aread%2Cchannels%3Ahistory%2Cchannels%3Aread%2Cchat%3Awrite%2Cemoji%3Aread%2Cfiles%3Aread%2Cgroups%3Ahistory%2Cgroups%3Aread%2Cgroups%3Awrite%2Cim%3Ahistory%2Cim%3Aread%2Cim%3Awrite%2Clinks%3Aread%2Cmpim%3Ahistory%2Cmpim%3Aread%2Cmpim%3Awrite%2Cmpim%3Awrite.topic%2Cpins%3Aread%2Creactions%3Aread%2Creactions%3Awrite%2Cremote_files%3Aread%2Cteam%3Aread%2Cusers%3Aread%2Cusers%3Aread.email%2Csearch%3Aread.public%2Csearch%3Aread.private%2Csearch%3Aread.im%2Csearch%3Aread.mpim%2Csearch%3Aread.files%2Csearch%3Aread.users%2Ccanvases%3Aread%2Ccanvases%3Awrite&client_id=1601185624273.8899143856786", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://status.anthropic.com/", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://support.anthropic.com/", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://support.anthropic.com/en/articles/8241253-trust-and-safety-warnings-and-appeals", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://support.anthropic.com/en/articles/8325617-how-do-i-cancel-my-claude-pro-subscription", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://support.anthropic.com/en/articles/9307344-responsible-use-of-anthropic-s-models-guidelines-for-organizations-serving-minors", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://support.anthropic.com/en/articles/9797557-usage-limit-best-practices", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://support.anthropic.com/en/collections/4078535-safeguards", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://support.anthropic.com/en/collections/4078535-trust-safety", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://support.claude.com/en", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://support.claude.com/en/", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://support.claude.com/en/articles/12611117-deploy-claude-desktop-for-macos", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://support.claude.com/en/articles/12622703-deploy-claude-desktop-for-windows", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://support.claude.com/en/articles/13145358-anthropic-software-directory-policy", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://support.claude.com/en/articles/13171706-crisis-helpline-support-in-claude", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://support.claude.com/en/articles/14604842-real-time-cyber-safeguards-on-claude-opus-and-sonnet", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://support.claude.com/en/articles/15591275-child-safety-guidance-for-developers", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://support.claude.com/en/articles/9015913-how-to-get-support", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://support.claude.com/en/collections/4078535-safeguards", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://trust.anthropic.com/", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://workspace.google.com/marketplace/app/claude/12459801340", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.anthropic.com/", "method": "GET", "sources": ["scrapling", "jsluice"]}
+{"url": "https://www.anthropic.com/careers", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.anthropic.com/claude-ai-locations", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.anthropic.com/claude/fable", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.anthropic.com/claude/haiku", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.anthropic.com/claude/mythos", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.anthropic.com/claude/opus", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.anthropic.com/claude/sonnet", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.anthropic.com/company", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.anthropic.com/engineering", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.anthropic.com/events", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.anthropic.com/legal/archive/baeb68ac-c81c-4931-9539-58f46b6f090c", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.anthropic.com/legal/aup", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.anthropic.com/legal/commercial-terms", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.anthropic.com/legal/consumer-terms", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.anthropic.com/legal/consumer-terms/KR", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.anthropic.com/legal/cookies", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.anthropic.com/legal/k12-dpa", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.anthropic.com/legal/k12-terms", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.anthropic.com/legal/privacy", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.anthropic.com/legal/supported-regions", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.anthropic.com/news", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.anthropic.com/policy", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.anthropic.com/policy-on-the-ai-exponential", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.anthropic.com/pricing", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.anthropic.com/research", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.anthropic.com/responsible-disclosure-policy", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.anthropic.com/supported-countries", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.anthropic.com/transparency", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.claude.com/pricing", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.ftc.go.kr/selectBizOvrCommPop.do?apvPermMgtNo=2025%EA%B3%B5%EC%A0%950020", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.google.com/preferences/source?q=claude.com", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.instagram.com/claudeai", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.linkedin.com/company/anthropic", "method": "GET", "sources": ["jsluice"]}
+{"url": "https://www.linkedin.com/company/anthropicresearch", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.linkedin.com/showcase/claude", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.linkedin.com/showcase/claude/", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.threads.com/@claudeai", "method": "GET", "sources": ["scrapling"]}
+{"url": "https://www.youtube.com/@anthropic-ai", "method": "GET", "sources": ["scrapling", "jsluice"]}
+{"url": "https://x.com/AnthropicAI", "method": "GET", "sources": ["scrapling", "jsluice"]}
+{"url": "https://x.com/claudeai", "method": "GET", "sources": ["scrapling"]}
