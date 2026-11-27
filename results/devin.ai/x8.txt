@@ -1,5 +1,0 @@
-urls:         https://devin.ai/
-methods:      GET
-wordlist len: 24
-
-

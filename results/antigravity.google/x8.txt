@@ -1,5 +1,0 @@
-urls:         https://antigravity.google/
-methods:      GET
-wordlist len: 53
-
-

@@ -1,5 +1,0 @@
-
-$ dnsx -l results/aistudio.google.com/subdomains_all.txt -silent -o results/aistudio.google.com/subdomains_live.txt
-www.aistudio.google.com
-
-[exit 0]

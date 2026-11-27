@@ -1,4 +1,0 @@
-
-$ uro -i results/aistudio.google.com/urls_to_probe.txt -o results/aistudio.google.com/urls_to_probe_uro.txt
-
-[exit 0]

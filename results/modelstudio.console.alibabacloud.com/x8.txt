@@ -1,5 +1,0 @@
-urls:         https://modelstudio.console.alibabacloud.com/
-methods:      GET
-wordlist len: 18
-
-

@@ -1,7 +1,0 @@
-
-$ noseyparker scan --datastore results/devin.ai/np-datastore results/devin.ai/chunks
-Scanned 7.96 MiB from 87 blobs in 0 seconds (196.87 MiB/s); 0/0 new matches
-
-Run the `report` command next to show finding details.
-
-[exit 0]

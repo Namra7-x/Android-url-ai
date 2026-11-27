@@ -1,6 +1,0 @@
-{"level":"info-0","ts":"2026-11-22T18:29:24Z","logger":"trufflehog","msg":"running source","source_name":"trufflehog - filesystem","source_type":"SOURCE_TYPE_FILESYSTEM","source_id":1,"job_id":1,"source_manager_worker_id":"LqDfI","with_units":true}
-{"level":"info-0","ts":"2026-11-22T18:29:25Z","logger":"trufflehog","msg":"finished scanning","chunks":894,"bytes":11067813,"verified_secrets":0,"unverified_secrets":1,"scan_duration":"1.074858838s","trufflehog_version":"3.100.0","verification_caching":{"Hits":0,"Misses":1,"HitsWasted":0,"AttemptsSaved":0,"VerificationTimeSpentMS":217}}
-
-$ trufflehog filesystem results/antigravity.google/chunks --json --no-update
-
-[exit 0] -> results/antigravity.google/secrets.jsonl

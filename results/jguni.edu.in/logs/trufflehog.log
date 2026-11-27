@@ -1,6 +1,0 @@
-{"level":"info-0","ts":"2026-11-21T19:46:05Z","logger":"trufflehog","msg":"running source","source_name":"trufflehog - filesystem","source_type":"SOURCE_TYPE_FILESYSTEM","source_id":1,"job_id":1,"source_manager_worker_id":"B0C0C","with_units":true}
-{"level":"info-0","ts":"2026-11-21T19:46:05Z","logger":"trufflehog","msg":"finished scanning","chunks":346,"bytes":4250943,"verified_secrets":0,"unverified_secrets":0,"scan_duration":"122.387702ms","trufflehog_version":"3.100.0","verification_caching":{"Hits":0,"Misses":0,"HitsWasted":0,"AttemptsSaved":0,"VerificationTimeSpentMS":0}}
-
-$ trufflehog filesystem results/jguni.edu.in/chunks --json --no-update
-
-[exit 0] -> results/jguni.edu.in/secrets.jsonl

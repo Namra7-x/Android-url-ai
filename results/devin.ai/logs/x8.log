@@ -1,4 +1,0 @@
-
-$ x8 -u https://devin.ai/ -w results/devin.ai/params.txt
-
-[exit 0] -> results/devin.ai/x8.txt

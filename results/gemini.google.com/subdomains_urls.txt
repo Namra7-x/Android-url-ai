@@ -1,4 +1,0 @@
-https://enterprise-autopush.gemini.google.com
-https://enterprise-staging.gemini.google.com
-https://enterprise.gemini.google.com
-https://lti.gemini.google.com

@@ -1,4 +1,0 @@
-
-$ urlfinder -d aistudio.google.com -o results/aistudio.google.com/urlfinder_raw.txt -duc -silent -max-time 0
-
-[exit 0]

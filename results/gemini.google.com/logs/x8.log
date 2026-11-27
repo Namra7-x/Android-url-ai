@@ -1,4 +1,0 @@
-
-$ x8 -u https://gemini.google.com/ -w results/gemini.google.com/params.txt
-
-[exit 0] -> results/gemini.google.com/x8.txt

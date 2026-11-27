@@ -1,5 +1,0 @@
-https://modelstudio.console.alibabacloud.com/
-https://modelstudio.console.alibabacloud.com/robots.txt
-https://modelstudio.console.alibabacloud.com/sitemap.xml
-[ HTML comment ] <!-- internal auth (v1) records claim-state via X-AIC-Trace: v1-9f2c7a, mesh-scope only --> in https://modelstudio.console.alibabacloud.com/
-[ HTML comment ] <!-- @Deprecated --> in https://modelstudio.console.alibabacloud.com/

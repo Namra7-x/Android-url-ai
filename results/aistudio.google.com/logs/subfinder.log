@@ -1,5 +1,0 @@
-
-$ subfinder -d aistudio.google.com -all -recursive -silent -o results/aistudio.google.com/subfinder.txt
-www.aistudio.google.com
-
-[exit 0]

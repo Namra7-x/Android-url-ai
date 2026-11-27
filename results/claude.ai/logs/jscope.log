@@ -1,7 +1,0 @@
-[>] Inspecting JavaScript and related source files...
-[+] Inspecting JavaScript and related source files complete
-next: jscope findings | jscope show 1 | jscope graph
-
-$ jscope analyze results/claude.ai/chunks --verbose
-
-[exit 0] -> results/claude.ai/jscope.txt

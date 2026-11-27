@@ -1,4 +1,0 @@
-
-$ x8 -u https://aistudio.google.com/ -w results/aistudio.google.com/params.txt
-
-[exit 0] -> results/aistudio.google.com/x8.txt

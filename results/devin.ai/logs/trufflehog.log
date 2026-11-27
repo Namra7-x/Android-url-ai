@@ -1,6 +1,0 @@
-{"level":"info-0","ts":"2026-11-23T15:51:55Z","logger":"trufflehog","msg":"running source","source_name":"trufflehog - filesystem","source_type":"SOURCE_TYPE_FILESYSTEM","source_id":1,"job_id":1,"source_manager_worker_id":"G0ytB","with_units":true}
-{"level":"info-0","ts":"2026-11-23T15:51:55Z","logger":"trufflehog","msg":"finished scanning","chunks":876,"bytes":10876496,"verified_secrets":0,"unverified_secrets":3,"scan_duration":"360.266895ms","trufflehog_version":"3.100.0","verification_caching":{"Hits":0,"Misses":3,"HitsWasted":0,"AttemptsSaved":0,"VerificationTimeSpentMS":731}}
-
-$ trufflehog filesystem results/devin.ai/chunks --json --no-update
-
-[exit 0] -> results/devin.ai/secrets.jsonl

@@ -1,8 +1,8 @@
 name: Web Hunt Pipeline
 
-# ONE-SHOT manual trigger. MULTIPLE URLs supported: one parallel job per URL.
-# Each job pushes its own results the moment it finishes and uploads its own
-# artifact, so a slow/failing/cancelled URL never blocks or loses the others.
+# Concurrent 4-wave hunt pipeline (10-12 min max per target URL).
+# Supports multiple targets from urls.txt or ad-hoc urls_inline,
+# multiple concurrent workflow_dispatch triggers, and runtime-only caching.
 
 on:
   workflow_dispatch:
@@ -11,16 +11,24 @@ on:
         description: "Path to URL list (one URL per line)"
         required: false
         default: "urls.txt"
-      max_parallel:
-        description: "Max URLs hunting at once (be polite to your other repos)"
+      urls_inline:
+        description: "Optional ad-hoc URLs (space, comma, or newline separated; overrides urls_file)"
         required: false
-        default: "3"
+        default: ""
+      max_parallel:
+        description: "Max URLs hunting at once"
+        required: false
+        default: "10"
+      time_budget_minutes:
+        description: "Hard hunt budget per URL in minutes"
+        required: false
+        default: "11"
 
 permissions:
   contents: write
 
 concurrency:
-  group: web-hunt
+  group: web-hunt-${{ github.run_id }}
   cancel-in-progress: false
 
 jobs:
@@ -34,16 +42,37 @@ jobs:
       - id: set
         env:
           URLS_FILE: ${{ inputs.urls_file }}
+          URLS_INLINE: ${{ inputs.urls_inline }}
         run: |
           python3 - "$URLS_FILE" >> "$GITHUB_OUTPUT" <<'EOF'
-          import json, sys
+          import json
+          import os
+          import re
+          import sys
+
+          inline = os.environ.get("URLS_INLINE", "").strip()
           path = sys.argv[1] if len(sys.argv) > 1 else "urls.txt"
           urls = []
-          with open(path, encoding="utf-8") as f:
-              for line in f:
-                  s = line.strip()
-                  if s and not s.startswith("#"):
-                      urls.append(s)
+          seen = set()
+
+          def add_url(raw: str) -> None:
+              s = raw.strip()
+              if not s or s.startswith("#"):
+                  return
+              if not s.startswith(("http://", "https://")):
+                  s = "https://" + s
+              if s not in seen:
+                  seen.add(s)
+                  urls.append(s)
+
+          if inline:
+              for token in re.split(r"[\s,]+", inline):
+                  add_url(token)
+          else:
+              with open(path, encoding="utf-8") as f:
+                  for line in f:
+                      add_url(line)
+
           print("matrix=" + json.dumps({"target": urls}))
           print("count=" + str(len(urls)))
           EOF
@@ -52,40 +81,61 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-go@v5
-        with:
-          go-version: "1.26"
-          cache: false
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-      - name: Cache toolchain
+
+      - name: Cache runtime toolchain
+        id: cache
         uses: actions/cache@v4
         with:
           path: |
-            ~/.cache/hunt-tools-ready
+            ~/.cache/hunt-tools-ready-v3
             ~/go/bin
+            ~/.local
+            ~/tools/bin
+            ~/.cache/ms-playwright
+            ~/.cache/patchright
+            ~/.cache/camoufox
+            ~/.cache/chrome-headless-shell
+            ~/nuclei-templates
+          key: hunt-tools-v3-${{ runner.os }}-${{ hashFiles('scripts/install_tools.sh') }}
+          restore-keys: |
+            hunt-tools-v3-${{ runner.os }}-
+
+      - name: Setup Go (builder only on cache miss)
+        if: steps.cache.outputs.cache-hit != 'true'
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.26"
+          cache: false
+
+      - name: Setup Node (builder only on cache miss)
+        if: steps.cache.outputs.cache-hit != 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Cache Go build modules (builder only)
+        if: steps.cache.outputs.cache-hit != 'true'
+        uses: actions/cache@v4
+        with:
+          path: |
             ~/go/pkg/mod
             ~/.cache/go-build
-            ~/.local
-            ~/tools
-            ~/.cache/puppeteer
-            ~/nuclei-templates
-            ~/.npm
-          key: hunt-tools-v2-${{ runner.os }}-${{ hashFiles('scripts/install_tools.sh') }}
+          key: go-build-cache-${{ runner.os }}-${{ hashFiles('scripts/install_tools.sh') }}
           restore-keys: |
-            hunt-tools-v2-${{ runner.os }}-
-      - name: Build/warm tool cache
+            go-build-cache-${{ runner.os }}-
+
+      - name: Verify or build tool cache
         run: bash scripts/install_tools.sh
 
   hunt:
     needs: [prepare, tools]
     if: needs.prepare.outputs.count != '0'
     runs-on: ubuntu-latest
-    timeout-minutes: 150
+    timeout-minutes: 20
     strategy:
       fail-fast: false
       max-parallel: ${{ fromJSON(inputs.max_parallel) }}
@@ -93,39 +143,28 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-go@v5
-        with:
-          go-version: "1.26"
-          cache: false
-
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-
-      # restore-keys means even after installer edits we restore the previous
-      # cache and the installer skips everything already present -> zero installs.
-      - name: Cache toolchain
+      - name: Restore runtime toolchain
         uses: actions/cache@v4
         with:
           path: |
-            ~/.cache/hunt-tools-ready
+            ~/.cache/hunt-tools-ready-v3
             ~/go/bin
-            ~/go/pkg/mod
-            ~/.cache/go-build
             ~/.local
-            ~/tools
-            ~/.cache/puppeteer
+            ~/tools/bin
+            ~/.cache/ms-playwright
+            ~/.cache/patchright
+            ~/.cache/camoufox
+            ~/.cache/chrome-headless-shell
             ~/nuclei-templates
-            ~/.npm
-          key: hunt-tools-v2-${{ runner.os }}-${{ hashFiles('scripts/install_tools.sh') }}
+          key: hunt-tools-v3-${{ runner.os }}-${{ hashFiles('scripts/install_tools.sh') }}
           restore-keys: |
-            hunt-tools-v2-${{ runner.os }}-
+            hunt-tools-v3-${{ runner.os }}-
 
-      - name: Install tools (zero installs when cached)
+      - name: Activate cached toolchain
         run: bash scripts/install_tools.sh
 
       - name: Hunt ${{ matrix.target }}
@@ -133,23 +172,44 @@ jobs:
           python3 scripts/hunt.py \
             --url "${{ matrix.target }}" \
             --out results \
-            --settings config/settings.json
+            --settings config/settings.json \
+            --budget-min "${{ inputs.time_budget_minutes }}"
 
-      - name: Push this target's results (retry-safe)
+      - name: Push this target's results (race-safe)
         if: always()
+        env:
+          TARGET_URL: ${{ matrix.target }}
         run: |
+          HOST=$(python3 -c 'import os, urllib.parse as u; print((u.urlparse(os.environ["TARGET_URL"]).netloc.split(":")[0] or "target").replace("/", "_"))')
+          TARGET_DIR="results/$HOST"
+          if [ ! -d "$TARGET_DIR" ]; then
+            echo "No results directory for $TARGET_DIR"
+            exit 0
+          fi
           git config user.name "hunt-bot"
           git config user.email "hunt-bot@users.noreply.github.com"
-          for i in 1 2 3 4; do
-            mkdir -p results
-            find results -type f ! -path "*/chunks/*" ! -path "*/sourcemaps/*" -print0 \
-              | xargs -0 -r git add -f
-            if git diff --cached --quiet; then echo "nothing to commit"; break; fi
-            git commit -m "Hunt results $(date -u +%Y-%m-%dT%H:%M:%SZ)" || true
-            if git push; then echo "pushed"; break; fi
-            echo "push rejected, rebasing (attempt $i)"
-            git pull --rebase origin main || true
+          find "$TARGET_DIR" -type f \
+            ! -path "*/chunks/*" \
+            ! -path "*/chunks_unique/*" \
+            ! -path "*/sourcemaps/*" \
+            ! -path "*/waymore_responses/*" \
+            -print0 | xargs -0 -r git add -f
+          if git diff --cached --quiet; then
+            echo "Nothing to commit for $TARGET_DIR"
+            exit 0
+          fi
+          git commit -m "Hunt results $HOST $(date -u +%Y-%m-%dT%H:%M:%SZ)" || true
+          sleep $((RANDOM % 7))
+          for i in 1 2 3 4 5 6 7 8; do
+            if git push; then
+              echo "Pushed $TARGET_DIR on attempt $i"
+              exit 0
+            fi
+            echo "Push rejected for $TARGET_DIR, rebasing (attempt $i/8)"
+            git pull --rebase --autostash origin main || true
+            sleep $((RANDOM % 5 + 1))
           done
+          echo "::warning::Could not push $TARGET_DIR after 8 attempts; preserved in workflow artifact."
 
       - name: Artifact name
         id: meta
@@ -180,17 +240,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Rebuild INDEX.md from all targets
+
+      - name: Rebuild INDEX.md and SUMMARY.md
         run: python3 scripts/make_index.py results
+
       - name: Commit index
         run: |
           git config user.name "hunt-bot"
           git config user.email "hunt-bot@users.noreply.github.com"
           git add -f results/INDEX.md results/SUMMARY.md || true
-          if git diff --cached --quiet; then echo "index unchanged"; else
-            for i in 1 2 3; do
-              git commit -m "Update hunt index" || true
-              git push && break
-              git pull --rebase origin main || true
-            done
+          if git diff --cached --quiet; then
+            echo "Index unchanged"
+            exit 0
           fi
+          git commit -m "Update hunt index $(date -u +%Y-%m-%dT%H:%M:%SZ)" || true
+          for i in 1 2 3 4 5 6; do
+            if git push; then
+              echo "Index pushed on attempt $i"
+              exit 0
+            fi
+            git pull --rebase --autostash origin main || true
+            sleep $((RANDOM % 4 + 1))
+          done

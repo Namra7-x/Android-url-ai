@@ -1,15 +1,11 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
-Target-specific wordlist foundry.
+Target-specific wordlist and parameter foundry.
 
-Builds a wordlist from what the pipeline ACTUALLY discovered:
-chunk strings, routes, params, historical URLs, static base words.
-
-This is the "context hand-off" layer: every tool writes findings,
-this module turns those findings into words for the next tool.
+Mines paths, segments, and query/body parameters from downloaded JS/JSON chunks,
+unpacked sourcemaps, jsluice/xnLinkFinder/katana/scrapling/archive outputs, and
+merges them with AI-discovery seed terms while filtering HTML escape junk.
 """
-
 from __future__ import annotations
 
 import json
@@ -18,214 +14,189 @@ from collections import Counter
 from pathlib import Path
 from urllib.parse import parse_qsl, urlparse
 
-INTERESTING = {
-    "api", "apis", "admin", "internal", "private", "config", "configuration",
-    "settings", "data", "dataset", "datasets", "models", "model", "export",
-    "exports", "download", "downloads", "upload", "uploads", "auth", "oauth",
-    "token", "tokens", "user", "users", "account", "accounts", "org", "orgs",
-    "team", "teams", "workspace", "workspaces", "project", "projects",
-    "dashboard", "console", "portal", "app", "apps", "v1", "v2", "v3", "v4",
-    "graphql", "rest", "rpc", "trpc", "debug", "dev", "staging", "test",
-    "beta", "alpha", "preview", "sandbox", "demo", "status", "health",
-    "metrics", "version", "info", "docs", "swagger", "openapi", "redoc",
-    "manifest", "public", "static", "assets", "files", "file", "media",
-    "cdn", "_next", "next", "data.json",
+INTERESTING_TERMS = {
+    "api", "apis", "admin", "administrator", "internal", "private", "hidden",
+    "config", "configuration", "settings", "data", "dataset", "datasets",
+    "models", "model", "capabilities", "features", "flags", "feature-flags",
+    "experiments", "export", "exports", "download", "downloads", "upload",
+    "uploads", "auth", "oauth", "token", "tokens", "user", "users", "account",
+    "accounts", "org", "orgs", "team", "teams", "workspace", "workspaces",
+    "project", "projects", "dashboard", "console", "portal", "app", "apps",
+    "v1", "v1alpha", "v1beta", "v2", "v3", "v4", "graphql", "graphiql",
+    "rest", "rpc", "trpc", "debug", "dev", "staging", "test", "beta", "alpha",
+    "preview", "canary", "sandbox", "demo", "status", "health", "healthz",
+    "readyz", "metrics", "version", "info", "docs", "swagger", "openapi",
+    "redoc", "manifest", "build-manifest.json", "llms.txt", "llms-full.txt",
+    "public", "static", "assets", "files", "file", "media", "cdn", "_next",
+    "data.json", "$discovery",
 }
 
-EXT_PRIORITY = [
-    "json", "jsonl", "ndjson", "xml", "csv", "xlsx",
-    "txt", "html", "php", "aspx", "js",
-]
-
-SEG_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,39}$")
-EXT_RE = re.compile(r"\.([A-Za-z]{1,8})$")
+SEG_RE = re.compile(r"^[A-Za-z0-9$._~-]{1,48}$")
+PARAM_RE = re.compile(r"^[A-Za-z_][A-Za-z0-9_.-]{0,40}$")
 QUOTED_PATH_RE = re.compile(
-    r"[\"'`](/[A-Za-z0-9_\-./?=&%{}:;,@+~#\[\]]{2,250})[\"'`]"
+    r"[\"'`](/[A-Za-z0-9_\-./?=&%{}:;,@+~#\[\]$]{2,220})[\"'`]"
 )
-ABS_RE = re.compile(r"https?://[^\s\"'<>\\\)\]\},;]+", re.I)
+ABS_URL_RE = re.compile(r"https?://[^\s\"'<>\\\)\]\},;]+", re.I)
+PARAM_KEY_RE = re.compile(
+    r"(?:[?&]|[\"'`])([A-Za-z_][A-Za-z0-9_]{1,35})(?:=|[\"']\s*:)"
+)
+
+HTML_JUNK_MARKERS = (
+    "<", ">", "\\u003c", "\\u003e", "%5cu003c", "%5cu003e", "%5cu003",
+    "%3c", "%3e", "&lt;", "&gt;", "\\x3c", "\\x3e", "\\", "\"", "'", "`",
+)
+
+STATIC_EXT_SKIP = {
+    ".png", ".jpg", ".jpeg", ".gif", ".svg", ".ico", ".webp", ".avif",
+    ".woff", ".woff2", ".ttf", ".eot", ".otf", ".mp4", ".webm", ".mp3",
+    ".css", ".map",
+}
 
 
-def _read(path, limit: int = 8_000_000) -> str:
+def is_clean_token(token: str) -> bool:
+    """Reject HTML-escaped markup, control chars, hex blobs, and empty tokens."""
+    if not token or len(token) > 64:
+        return False
+    low = token.lower()
+    if any(marker in low for marker in HTML_JUNK_MARKERS):
+        return False
+    if any(ch.isspace() or ord(ch) < 32 or ord(ch) > 126 for ch in token):
+        return False
+    if len(token) >= 24 and re.fullmatch(r"[0-9a-fA-F_-]+", token):
+        return False
+    return True
+
+
+def _read_text(path: Path, limit: int = 4_000_000) -> str:
     try:
-        p = Path(path)
-        if p.stat().st_size > limit:
+        if not path.is_file() or path.stat().st_size > limit:
             return ""
-        return p.read_text(encoding="utf-8", errors="replace")
-    except Exception:  # noqa: BLE001
+        return path.read_text(encoding="utf-8", errors="replace")
+    except OSError:
         return ""
 
 
-def _json_strings(obj, out):
-    if isinstance(obj, str):
-        out.append(obj)
-    elif isinstance(obj, dict):
-        for v in obj.values():
-            _json_strings(v, out)
-    elif isinstance(obj, list):
-        for v in obj:
-            _json_strings(v, out)
+def _add_url_parts(url_or_path: str, segs: Counter[str], paths: Counter[str], params: Counter[str]) -> None:
+    if not url_or_path or not is_clean_token(url_or_path.split("?", 1)[0][:180]):
+        return
+    try:
+        parsed = urlparse(url_or_path)
+    except ValueError:
+        return
+    path = parsed.path or ""
+    if not is_clean_token(path) or any(path.lower().endswith(ext) for ext in STATIC_EXT_SKIP):
+        return
+
+    clean_path = path.strip("/")
+    if clean_path and len(clean_path) <= 100 and clean_path.count("/") <= 4:
+        if not any(part.startswith("{") or "$" in part for part in clean_path.split("/")):
+            paths[clean_path] += 1
+
+    for part in clean_path.split("/"):
+        if part and SEG_RE.match(part) and is_clean_token(part):
+            segs[part] += 1
+
+    for key, _ in parse_qsl(parsed.query, keep_blank_values=True):
+        if PARAM_RE.match(key) and is_clean_token(key):
+            params[key] += 1
 
 
-def _raw_strings(target_dir: Path):
-    out = []
-    for p in target_dir.rglob("*"):
-        if not p.is_file():
+def _collect_from_files(target_dir: Path, segs: Counter[str], paths: Counter[str], params: Counter[str]) -> None:
+    chunk_dirs = [target_dir / "chunks_unique", target_dir / "chunks", target_dir / "sourcemaps"]
+    for cdir in chunk_dirs:
+        if not cdir.exists():
             continue
-        if "logs" in p.parts:
-            continue
-        name = p.name.lower()
-        if name in ("wordlist.txt", "params.txt", "urls_to_probe.txt"):
-            continue
-        suffix = p.suffix.lower()
-
-        if suffix == ".js":
-            t = _read(p)
-            if not t:
+        for p in sorted(cdir.rglob("*")):
+            if p.suffix.lower() not in {".js", ".mjs", ".ts", ".tsx", ".jsx", ".json", ".map"}:
                 continue
-            out.extend(m.group(1) for m in QUOTED_PATH_RE.finditer(t))
-            out.extend(m.group(0) for m in ABS_RE.finditer(t))
-        elif suffix == ".json":
-            t = _read(p)
-            if not t:
+            text = _read_text(p)
+            if not text:
+                continue
+            for m in QUOTED_PATH_RE.findall(text):
+                _add_url_parts(m, segs, paths, params)
+            for m in ABS_URL_RE.findall(text):
+                _add_url_parts(m, segs, paths, params)
+            for m in PARAM_KEY_RE.findall(text):
+                if PARAM_RE.match(m) and is_clean_token(m):
+                    params[m] += 1
+
+    for jf in list(target_dir.glob("*.jsonl")) + list((target_dir / "katana").glob("*.jsonl") if (target_dir / "katana").exists() else []):
+        text = _read_text(jf)
+        for line in text.splitlines():
+            line = line.strip()
+            if not line:
                 continue
             try:
-                _json_strings(json.loads(t), out)
-            except Exception:  # noqa: BLE001
-                pass
-        elif suffix == ".jsonl":
-            for line in _read(p).splitlines():
-                line = line.strip()
-                if not line:
-                    continue
-                try:
-                    _json_strings(json.loads(line), out)
-                except Exception:  # noqa: BLE001
-                    pass
-        elif suffix in (".txt", ".csv", ".md"):
-            out.extend(_read(p).splitlines())
+                obj = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            for key in ("url", "endpoint", "input"):
+                val = obj.get(key)
+                if isinstance(val, str):
+                    _add_url_parts(val, segs, paths, params)
+            req = obj.get("request")
+            if isinstance(req, dict) and isinstance(req.get("endpoint"), str):
+                _add_url_parts(req["endpoint"], segs, paths, params)
 
-    return out
+    for tf_name in ("waymore_urls.txt", "urlfinder_raw.txt", "scrapling_urls.txt", "xnlinkfinder_endpoints.txt"):
+        text = _read_text(target_dir / tf_name)
+        for line in text.splitlines():
+            _add_url_parts(line.strip(), segs, paths, params)
+
+    xn_params = _read_text(target_dir / "xn_params.txt")
+    for line in xn_params.splitlines():
+        tok = line.strip()
+        if PARAM_RE.match(tok) and is_clean_token(tok):
+            params[tok] += 3
 
 
-def build(target_dir, base: str, static_file: str, out_file: str,
-          max_words: int = 8000, param_file: str | None = None) -> dict:
-    target_dir = Path(target_dir)
-    base_host = urlparse(base).netloc.lower()
-    if base_host.startswith("www."):
-        base_host = base_host[4:]
+def build(
+    target_dir: str | Path,
+    base_url: str,
+    base_wordlist: str | Path,
+    out_wordlist: str | Path,
+    max_words: int = 6000,
+    out_params: str | Path | None = None,
+) -> dict[str, int]:
+    """Generate clean target-specific wordlist.txt and params.txt."""
+    tdir = Path(target_dir)
+    segs: Counter[str] = Counter()
+    paths: Counter[str] = Counter()
+    params: Counter[str] = Counter()
 
-    seg = Counter()
-    multi = Counter()
-    exts = Counter()
-    params = Counter()
+    _add_url_parts(base_url, segs, paths, params)
+    _collect_from_files(tdir, segs, paths, params)
 
-    def feed(raw):
-        raw = (raw or "").strip().strip("\"'`,;)]}>")
-        if not raw:
-            return
-        if raw.startswith("//"):
-            raw = "https:" + raw
+    seeds: list[str] = []
+    wl_path = Path(base_wordlist)
+    if wl_path.is_file():
+        for line in wl_path.read_text(encoding="utf-8", errors="replace").splitlines():
+            w = line.strip().lstrip("/")
+            if w and not w.startswith("#") and is_clean_token(w):
+                seeds.append(w)
 
-        if re.match(r"^https?://", raw, re.I):
-            try:
-                p = urlparse(raw)
-            except (ValueError, TypeError):
-                # Broken bracketed hosts (e.g. "http://[abc") are junk from
-                # minified JS. Skip only this string, never the whole run.
-                return
-            host = p.netloc.lower()
-            if host.startswith("www."):
-                host = host[4:]
-            if not host or host != base_host:
-                return
-            path = p.path or "/"
-            for k, _ in parse_qsl(p.query, keep_blank_values=True):
-                if k and len(k) <= 40:
-                    params[k.lower()] += 1
-        elif raw.startswith("/"):
-            path = raw.split("?")[0]
-        else:
-            return
+    scored: dict[str, float] = {}
+    for w in seeds:
+        scored[w] = max(scored.get(w, 0.0), 50.0 if w.lower() in INTERESTING_TERMS else 20.0)
+    for p, cnt in paths.items():
+        bonus = 30.0 if any(t in p.lower() for t in INTERESTING_TERMS) else 0.0
+        scored[p] = max(scored.get(p, 0.0), cnt * 3.0 + bonus)
+    for s, cnt in segs.items():
+        bonus = 25.0 if s.lower() in INTERESTING_TERMS else 0.0
+        scored[s] = max(scored.get(s, 0.0), cnt * 1.5 + bonus)
 
-        parts = [x for x in path.split("/") if x]
-        clean = []
-        for part in parts:
-            part = part.split(";")[0]
-            m = EXT_RE.search(part)
-            if m:
-                e = m.group(1).lower()
-                if 1 <= len(e) <= 8:
-                    exts[e] += 1
-                part = part[:m.start()]
-            if SEG_RE.match(part) and len(part) >= 2:
-                clean.append(part.lower())
+    ordered = [
+        word for word, _ in sorted(scored.items(), key=lambda kv: (-kv[1], len(kv[0]), kv[0]))
+    ][:max_words]
 
-        for c in clean:
-            seg[c] += 1
+    out_wl = Path(out_wordlist)
+    out_wl.parent.mkdir(parents=True, exist_ok=True)
+    out_wl.write_text("\n".join(ordered) + ("\n" if ordered else ""), encoding="utf-8")
 
-        # multi-segment words (api/v2/users)
-        for i in range(len(clean)):
-            for depth in (2, 3):
-                if i + depth <= len(clean):
-                    multi["/".join(clean[i:i + depth])] += 1
-        if 2 <= len(clean) <= 4:
-            multi["/".join(clean)] += 1
+    param_list = [p for p, _ in params.most_common(500)]
+    if out_params is not None:
+        out_p = Path(out_params)
+        out_p.parent.mkdir(parents=True, exist_ok=True)
+        out_p.write_text("\n".join(param_list) + ("\n" if param_list else ""), encoding="utf-8")
 
-    for s in _raw_strings(target_dir):
-        feed(s)
-
-    base_words = set()
-    for line in _read(static_file).splitlines():
-        line = line.strip().lower()
-        if line and not line.startswith("#"):
-            base_words.add(line)
-
-    words: dict[str, int] = {}
-
-    def add(w: str, score: int):
-        w = (w or "").strip().lower().strip("/")
-        if not w or len(w) < 2 or len(w) > 120:
-            return
-        if any(ch in w for ch in " \t\"'<>\\"):
-            return
-        if w not in words or score > words[w]:
-            words[w] = score
-
-    for w in base_words:
-        add(w, 1)
-
-    for w, c in seg.items():
-        add(w, c + (8 if w in INTERESTING else 0))
-
-    for w, c in multi.items():
-        boost = 5
-        if w.split("/")[0] in INTERESTING:
-            boost += 5
-        add(w, c + boost)
-
-    # segment + observed extension
-    for w, c in seg.items():
-        for e in EXT_PRIORITY:
-            if exts.get(e):
-                add(f"{w}.{e}", c + 2)
-
-    ordered = sorted(words.items(), key=lambda kv: (-kv[1], kv[0]))
-    final = [w for w, _ in ordered[:max_words]]
-
-    out_path = Path(out_file)
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-    out_path.write_text("\n".join(final) + "\n", encoding="utf-8")
-
-    if param_file:
-        pf = Path(param_file)
-        pf.parent.mkdir(parents=True, exist_ok=True)
-        pf.write_text("\n".join(sorted(params)) + "\n", encoding="utf-8")
-
-    return {
-        "wordlist": str(out_path),
-        "count": len(final),
-        "segments": len(seg),
-        "multi": len(multi),
-        "params": len(params),
-        "extensions": dict(exts.most_common(20)),
-    }
+    return {"words": len(ordered), "params": len(param_list)}

@@ -1,4 +1,0 @@
-
-$ urlfinder -d claude.ai -o results/claude.ai/urlfinder_raw.txt -duc -silent -max-time 0
-
-[exit 0]

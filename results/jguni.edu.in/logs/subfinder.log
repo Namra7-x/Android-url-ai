@@ -1,6 +1,0 @@
-
-$ subfinder -d jguni.edu.in -all -recursive -silent -o results/jguni.edu.in/subfinder.txt
-autoconfig.jguni.edu.in
-www.jguni.edu.in
-
-[exit 0]

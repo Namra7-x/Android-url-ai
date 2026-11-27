@@ -1,5 +1,4 @@
-# One target per line. Add more later.
-# First test target:
+# One target URL per line. Comments (#) and blank lines are ignored.
 https://devin.ai/
 https://higgsfield.ai/
 https://modelstudio.console.alibabacloud.com/

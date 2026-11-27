@@ -1,4 +1,0 @@
-
-$ x8 -u https://modelstudio.console.alibabacloud.com/ -w results/modelstudio.console.alibabacloud.com/params.txt
-
-[exit 0] -> results/modelstudio.console.alibabacloud.com/x8.txt

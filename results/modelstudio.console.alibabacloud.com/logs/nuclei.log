@@ -1,4 +1,0 @@
-
-$ nuclei -l results/modelstudio.console.alibabacloud.com/nuclei_urls.txt -tags exposure,misconfig,tech,panel -rl 50 -c 25 -jsonl -o results/modelstudio.console.alibabacloud.com/nuclei.jsonl -silent -duc -timeout 10 -retries 1
-
-[timeout 1800s]

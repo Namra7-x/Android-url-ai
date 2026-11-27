@@ -1,4 +1,0 @@
-
-$ uro -i results/jguni.edu.in/urls_to_probe.txt -o results/jguni.edu.in/urls_to_probe_uro.txt
-
-[exit 0]

@@ -1,8 +1,0 @@
-
-$ subfinder -d gemini.google.com -all -recursive -silent -o results/gemini.google.com/subfinder.txt
-enterprise.gemini.google.com
-enterprise-autopush.gemini.google.com
-enterprise-staging.gemini.google.com
-lti.gemini.google.com
-
-[exit 0]

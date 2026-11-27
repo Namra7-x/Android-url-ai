@@ -1,5 +1,0 @@
-
-$ subfinder -d modelstudio.console.alibabacloud.com -all -recursive -silent -o results/modelstudio.console.alibabacloud.com/subfinder.txt
-docs.modelstudio.console.alibabacloud.com
-
-[exit 0]

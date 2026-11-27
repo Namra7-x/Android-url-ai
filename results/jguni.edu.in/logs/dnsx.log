@@ -1,6 +1,0 @@
-
-$ dnsx -l results/jguni.edu.in/subdomains_all.txt -silent -o results/jguni.edu.in/subdomains_live.txt
-www.jguni.edu.in
-autoconfig.jguni.edu.in
-
-[exit 0]

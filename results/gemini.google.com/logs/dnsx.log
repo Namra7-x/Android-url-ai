@@ -1,8 +1,0 @@
-
-$ dnsx -l results/gemini.google.com/subdomains_all.txt -silent -o results/gemini.google.com/subdomains_live.txt
-enterprise.gemini.google.com
-enterprise-staging.gemini.google.com
-lti.gemini.google.com
-enterprise-autopush.gemini.google.com
-
-[exit 0]
